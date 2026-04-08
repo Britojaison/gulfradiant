@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,7 +31,7 @@ export default function ClientsPage() {
         </div>
         <nav>
           <ul className="navbar-nav" id="main-nav">
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/homepage">Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/productpage">Products</Link></li>
             <li><span className="nav-dropdown">Useful Information</span></li>
@@ -52,11 +54,13 @@ export default function ClientsPage() {
         />
         <div className="clients-hero-overlay"></div>
         <div className="clients-hero-content">
-          <h1 className="clients-hero-title">Trusted Partners</h1>
-          <h2 className="clients-hero-subtitle">Working with Industry-Leading Brands</h2>
-          <p className="clients-hero-description">
-            We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.
-          </p>
+          <div className="clients-hero-text-wrapper">
+            <h1 className="clients-hero-subtitle">Trusted Patners</h1>
+            <h2 className="clients-hero-subheading">Working with Industry-Leading Brands</h2>
+            <p className="clients-hero-description">
+              We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -66,8 +70,8 @@ export default function ClientsPage() {
           <div className="section-label">
             <span className="orange-square"></span> PARTNER NETWORK
           </div>
-          <h2 className="section-title-inline">
-            Our <span>Partnered Brands</span>
+          <h2 className="section-title-inline" style={{ color: "#1e1e1e", fontSize: "36px", marginTop: "10px", fontWeight: "600" }}>
+            Our <span style={{ color: "#FF5B05" }}>Partnered Brands</span>
           </h2>
         </div>
 
@@ -108,7 +112,7 @@ export default function ClientsPage() {
           <div className="footer-col">
             <h4>Navigation</h4>
             <ul>
-              <li><Link href="/">Home</Link></li>
+              <li><Link href="/homepage">Home</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/productpage">Products</Link></li>
               <li><Link href="/projects">Projects</Link></li>
@@ -137,6 +141,113 @@ export default function ClientsPage() {
           <span>© Gulf Radiant 2025. All rights reserved.</span>
         </div>
       </footer>
+
+      <style jsx global>{`
+        /* CLIENTS HERO */
+        .clients-hero {
+          position: relative;
+          width: 100%;
+          height: 480px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          text-align: left;
+          color: white;
+          margin-top: 0;
+        }
+        .clients-hero-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 100%);
+          z-index: 1;
+        }
+        .clients-hero-content {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          padding: 100px 40px 0;
+        }
+        .clients-hero-text-wrapper {
+          max-width: 700px;
+        }
+        .clients-hero-subheading {
+          font-size: 32px;
+          font-weight: 500;
+          margin-bottom: 25px;
+          color: #eee;
+        }
+        .clients-hero-subtitle {
+          font-size: 72px;
+          font-weight: 600;
+          margin-bottom: 5px;
+          line-height: 1.1;
+          letter-spacing: -1px;
+        }
+        .clients-hero-description {
+          font-size: 15px;
+          line-height: 1.6;
+          color: #ddd;
+          max-width: 90%;
+        }
+
+        /* CLIENTS BRANDS SECTION */
+        .clients-brands-section {
+          padding: 80px 80px;
+          max-width: 1440px;
+          margin: 0 auto;
+        }
+        .clients-brands-header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+        .section-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          font-size: 11px;
+          font-weight: 700;
+          color: #888;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 5px;
+        }
+        .orange-square {
+          width: 8px;
+          height: 8px;
+          background: #FF5B05;
+        }
+        .clients-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0;
+        }
+        .client-card {
+          aspect-ratio: 16/9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 30px;
+          transition: transform 0.3s ease;
+        }
+        .client-card:hover {
+          transform: scale(1.05);
+          z-index: 10;
+          background: #fff !important;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .client-card.bg-gray {
+          background-color: #f7f7f7;
+        }
+        .client-card.bg-white {
+          background-color: #ffffff;
+        }
+        .client-logo-wrapper {
+          position: relative;
+          width: 75%;
+          height: 75%;
+        }
+      `}</style>
     </>
   );
 }

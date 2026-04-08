@@ -56,7 +56,7 @@ export default function ProjectsPage() {
             alt="Gulf Radiant Logo"
             width={180}
             height={64}
-            style={{ height: "auto", width: "180px", filter: "brightness(0) invert(1)" }}
+            style={{ height: "auto", width: "180px" }}
           />
         </div>
         <nav>
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} style={{ filter: "brightness(0) invert(1)" }} />
+              <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>

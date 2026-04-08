@@ -43,7 +43,7 @@ export default function Homepage() {
           <Image src="/Images/logo.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
         </div>
         <nav className="hp-navbar-nav">
-          <Link href="/" className="active">Home</Link>
+          <Link href="/homepage" className="active">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/productpage">Products</Link>
           <span className="dropdown">Useful Information</span>
@@ -149,7 +149,7 @@ export default function Homepage() {
             </div>
 
             <div className="hp-cert-btn-container">
-              <button className="hp-btn-orange" style={{ fontSize: "14px", padding: "12px 24px" }}>View All Certificates</button>
+              <Link href="/certifications" className="hp-btn-orange" style={{ fontSize: "14px", padding: "12px 24px", display: "inline-block", textDecoration: "none" }}>View All Certificates</Link>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function Homepage() {
           <div className="hp-trusted-left">
             <h2>Trusted by Industry<br />Leaders</h2>
             <p>We proudly distribute certified products from globally<br />recognized manufacturers serving infrastructure,<br />commercial, and industrial sectors.</p>
-            <button className="hp-btn-orange" style={{ marginTop: "30px", padding: "14px 28px", fontSize: "14px" }}>View All Brand Partners</button>
+            <Link href="/clients" className="hp-btn-orange" style={{ marginTop: "30px", padding: "14px 28px", fontSize: "14px", display: "inline-block", textDecoration: "none" }}>View All Brand Partners</Link>
           </div>
           <div className="hp-trusted-right">
             <div className="hp-trusted-grid-inner">
@@ -284,7 +284,7 @@ export default function Homepage() {
           <div className="hp-contact-left">
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-            <button className="hp-btn-orange" style={{ marginTop: "15px", padding: "14px 28px" }}>Request a Quote</button>
+            <Link href="/contact" className="hp-btn-orange" style={{ marginTop: "15px", padding: "14px 28px", display: "inline-block", textDecoration: "none" }}>Request a Quote</Link>
           </div>
           <div className="hp-contact-right">
             <div className="hp-contact-formbox">
@@ -325,7 +325,7 @@ export default function Homepage() {
             <div className="hp-footer-col">
               <h4>Navigation</h4>
               <ul>
-                <li><Link href="/">Home</Link></li>
+                <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
                 <li><Link href="/contact">Contact</Link></li>

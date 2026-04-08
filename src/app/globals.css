@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
   --orange: #E85D04;
@@ -101,7 +101,7 @@ body {
 }
 
 .nav-dropdown::after {
-  content: '▾';
+  content: 'â–¾';
   margin-left: 4px;
   font-size: 10px;
 }
@@ -671,7 +671,7 @@ body {
 .hp-navbar-nav a.active::after {
   content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: #E85D04; border-radius: 1px;
 }
-.hp-navbar-nav span.dropdown::after { content: '▾'; margin-left: 4px; font-size: 10px; }
+.hp-navbar-nav span.dropdown::after { content: 'â–¾'; margin-left: 4px; font-size: 10px; }
 
 /* HERO */
 .hp-hero-new {
@@ -1387,3 +1387,69 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ============================== */
+/* GLOBAL BUTTON HOVERS & ANIMATIONS */
+/* ============================== */
+button, 
+.hp-btn-orange, 
+.hp-btn-white-hero, 
+.hp-btn-orange-full, 
+.btn-orange, 
+.btn-outline-dark, 
+.btn-primary, 
+.btn-outline, 
+.cert-download-btn,
+.hp-projects-link,
+.segment-tab {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, 
+.hp-btn-orange:hover, 
+.hp-btn-white-hero:hover, 
+.hp-btn-orange-full:hover, 
+.btn-orange:hover, 
+.btn-outline-dark:hover, 
+.btn-primary:hover, 
+.btn-outline:hover, 
+.cert-download-btn:hover,
+.hp-projects-link:hover,
+.segment-tab:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  filter: brightness(1.15);
+}
+
+button:active, 
+.hp-btn-orange:active, 
+.hp-btn-white-hero:active, 
+.hp-btn-orange-full:active, 
+.btn-orange:active, 
+.btn-outline-dark:active, 
+.btn-primary:active, 
+.btn-outline:active,
+.segment-tab:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  filter: brightness(0.9);
+}
+
+/* Nav link hovers */
+.navbar-nav a, 
+.hp-navbar-nav a {
+  transition: all 0.3s ease !important;
+  display: inline-block;
+}
+
+.navbar-nav a:hover, 
+.hp-navbar-nav a:hover {
+  color: #E85D04 !important;
+  transform: scale(1.08);
+}
+
