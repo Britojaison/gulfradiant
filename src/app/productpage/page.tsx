@@ -28,7 +28,7 @@ export default function ProductPage() {
         <nav>
           <ul className="navbar-nav" id="main-nav">
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/homepage">Home</Link>
             </li>
             <li>
               <Link href="/about">About</Link>
@@ -91,7 +91,7 @@ export default function ProductPage() {
           <div className="footer-col">
             <h4>Navigation</h4>
             <ul>
-              <li><Link href="/">Home</Link></li>
+              <li><Link href="/homepage">Home</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/productpage">Products</Link></li>
               <li><Link href="/projects">Projects</Link></li>
