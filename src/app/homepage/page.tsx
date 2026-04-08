@@ -71,51 +71,53 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* PRODUCTS WE DISTRIBUTE */}
-      <section className="hp-products-dist">
-        <h2>Products We Distribute</h2>
+      {/* PRODUCTS & STATS (FULL SCROLL) */}
+      <div className="hp-full-scroll-section">
+        <section className="hp-products-dist">
+          <h2>Products We Distribute</h2>
 
-        <div className="hp-dist-marquee-wrapper">
-          <div className="hp-dist-logos">
-            {productLogos.map((logo, i) => (
-              <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-              </div>
-            ))}
-            {/* Duplicate for infinite scroll effect */}
-            {productLogos.map((logo, i) => (
-              <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-              </div>
-            ))}
+          <div className="hp-dist-marquee-wrapper">
+            <div className="hp-dist-logos">
+              {productLogos.map((logo, i) => (
+                <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
+                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                </div>
+              ))}
+              {/* Duplicate for infinite scroll effect */}
+              {productLogos.map((logo, i) => (
+                <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
+                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <Link href="/productpage" className="hp-btn-orange" style={{ display: "inline-block", textAlign: "center" }}>
-          View All
-        </Link>
-      </section>
+          <Link href="/productpage" className="hp-btn-orange" style={{ display: "inline-block", textAlign: "center" }}>
+            View All
+          </Link>
+        </section>
 
-      {/* STATS */}
-      <section className="hp-stats-container">
-        <div className="hp-stat-block">
-          <h3>25<span>+</span></h3>
-          <h4>Premium Quality Brands</h4>
-          <p>We only stock products that<br />adhere to international safety<br />standards.</p>
-        </div>
-        <div className="hp-stat-divider"></div>
-        <div className="hp-stat-block">
-          <h3>30<span>+</span></h3>
-          <h4>Years of Industry Experience</h4>
-          <p>We only stock products that<br />adhere to international safety<br />standards.</p>
-        </div>
-        <div className="hp-stat-divider"></div>
-        <div className="hp-stat-block">
-          <h3>100<span>+</span></h3>
-          <h4>Global Partners</h4>
-          <p>We only stock products that<br />adhere to international safety<br />standards.</p>
-        </div>
-      </section>
+        {/* STATS */}
+        <section className="hp-stats-container">
+          <div className="hp-stat-block">
+            <h3>25<span>+</span></h3>
+            <h4>Premium Quality Brands</h4>
+            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+          </div>
+          <div className="hp-stat-divider"></div>
+          <div className="hp-stat-block">
+            <h3>30<span>+</span></h3>
+            <h4>Years of Industry Experience</h4>
+            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+          </div>
+          <div className="hp-stat-divider"></div>
+          <div className="hp-stat-block">
+            <h3>100<span>+</span></h3>
+            <h4>Global Partners</h4>
+            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+          </div>
+        </section>
+      </div>
 
       {/* VIDEO BANNER */}
       <section className="hp-video-banner">
