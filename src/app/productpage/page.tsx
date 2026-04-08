@@ -63,16 +63,28 @@ export default function ProductPage() {
           <h1 className="product-page-title">Our Product Range</h1>
           
           <div className="product-brands-grid">
-            {logos.map((logo, i) => (
-              <div className="product-brand-card" key={i}>
-                <Image
-                  src={`/Images/product/${logo}`}
-                  alt={`Product Brand ${i + 1}`}
-                  fill
-                  style={{ objectFit: "contain", padding: "24px" }}
-                />
-              </div>
-            ))}
+            {logos.map((logo, i) => {
+              const isKumwell = logo === "image 3.png";
+              return isKumwell ? (
+                <Link href="/product-kumwell" className="product-brand-card" key={i}>
+                  <Image
+                    src={`/Images/product/${logo}`}
+                    alt={`Product Brand ${i + 1}`}
+                    fill
+                    style={{ objectFit: "contain", padding: "24px" }}
+                  />
+                </Link>
+              ) : (
+                <div className="product-brand-card" key={i}>
+                  <Image
+                    src={`/Images/product/${logo}`}
+                    alt={`Product Brand ${i + 1}`}
+                    fill
+                    style={{ objectFit: "contain", padding: "24px" }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </main>

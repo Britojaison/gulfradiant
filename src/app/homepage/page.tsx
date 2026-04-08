@@ -5,7 +5,26 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Homepage() {
-  const [showAllProducts, setShowAllProducts] = useState(false);
+  const [certIndex, setCertIndex] = useState(0);
+
+  const certImages = [
+    "image 82.png", "image 85.png", "image 86.png", "image 88.png", "image 89.png",
+    "Rectangle 10.png", "Rectangle 11.png", "Rectangle 12.png"
+  ];
+
+  const nextCert = () => {
+    setCertIndex((prev) => (prev + 1) % certImages.length);
+  };
+
+  const prevCert = () => {
+    setCertIndex((prev) => (prev === 0 ? certImages.length - 1 : prev - 1));
+  };
+
+  const visibleCerts = [
+    certImages[certIndex % certImages.length],
+    certImages[(certIndex + 1) % certImages.length],
+    certImages[(certIndex + 2) % certImages.length]
+  ];
 
   const productLogos = [
     "image 3.png", "image 4.png", "image 6.png", "image 7.png", "image 9.png", "image 10.png",
@@ -56,38 +75,25 @@ export default function Homepage() {
       <section className="hp-products-dist">
         <h2>Products We Distribute</h2>
 
-        {showAllProducts ? (
-          <div className="hp-dist-grid">
+        <div className="hp-dist-marquee-wrapper">
+          <div className="hp-dist-logos">
             {productLogos.map((logo, i) => (
-              <div className="hp-dist-logo-item" key={`grid-${i}`}>
+              <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
+                <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+              </div>
+            ))}
+            {/* Duplicate for infinite scroll effect */}
+            {productLogos.map((logo, i) => (
+              <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
                 <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
               </div>
             ))}
           </div>
-        ) : (
-          <div className="hp-dist-marquee-wrapper">
-            <div className="hp-dist-logos">
-              {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-                </div>
-              ))}
-              {/* Duplicate for infinite scroll effect */}
-              {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
 
-        <button
-          className="hp-btn-orange"
-          onClick={() => setShowAllProducts(!showAllProducts)}
-        >
-          {showAllProducts ? "View Less" : "View All"}
-        </button>
+        <Link href="/productpage" className="hp-btn-orange" style={{ display: "inline-block", textAlign: "center" }}>
+          View All
+        </Link>
       </section>
 
       {/* STATS */}
@@ -129,13 +135,15 @@ export default function Homepage() {
 
           <div className="hp-cert-right-container">
             <div className="hp-cert-carousel">
-              <span className="hp-cert-arrow">&lt;</span>
+              <span className="hp-cert-arrow" onClick={prevCert} style={{ cursor: "pointer", userSelect: "none" }}>&lt;</span>
               <div className="hp-cert-logos">
-                <div className="hp-cert-box"><Image src="/Images/Home/Rectangle 10.png" alt="Cert" fill style={{ objectFit: "contain", padding: "10px" }} /></div>
-                <div className="hp-cert-box"><Image src="/Images/Home/Rectangle 11.png" alt="Cert" fill style={{ objectFit: "contain", padding: "10px" }} /></div>
-                <div className="hp-cert-box"><Image src="/Images/Home/Rectangle 12.png" alt="Cert" fill style={{ objectFit: "contain", padding: "10px" }} /></div>
+                {visibleCerts.map((cert, idx) => (
+                  <div className="hp-cert-box" key={idx}>
+                    <Image src={`/Images/Home/${cert}`} alt="Cert" fill style={{ objectFit: "contain", padding: "10px" }} />
+                  </div>
+                ))}
               </div>
-              <span className="hp-cert-arrow">&gt;</span>
+              <span className="hp-cert-arrow" onClick={nextCert} style={{ cursor: "pointer", userSelect: "none" }}>&gt;</span>
             </div>
 
             <div className="hp-cert-btn-container">
@@ -181,18 +189,42 @@ export default function Homepage() {
         <div className="hp-projects-masonry">
           <div className="hp-projects-col">
             <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 23 (1).png" alt="Project 1" fill style={{ objectFit: "cover" }} />
+              <Image src="/Images/Home/Rectangle 24.png" alt="Solar Power Plant" fill style={{ objectFit: "cover" }} />
+              <div className="hp-project-overlay">
+                <div className="hp-project-info">
+                  <h4>Al-dhafra solar power plant</h4>
+                  <p>Abu Dhabi, United Arab Emirates</p>
+                </div>
+              </div>
             </div>
             <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 23.png" alt="Project 3" fill style={{ objectFit: "cover" }} />
+              <Image src="/Images/Home/Rectangle 23.png" alt="Uptown Tower" fill style={{ objectFit: "cover" }} />
+              <div className="hp-project-overlay">
+                <div className="hp-project-info">
+                  <h4>Dubai Uptown Tower</h4>
+                  <p>Dubai, United Arab Emirates</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="hp-projects-col">
             <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 24.png" alt="Project 2" fill style={{ objectFit: "cover" }} />
+              <Image src="/Images/Home/Rectangle 24 (1).png" alt="Etihad Rail" fill style={{ objectFit: "cover" }} />
+              <div className="hp-project-overlay">
+                <div className="hp-project-info">
+                  <h4>Etihad Rail</h4>
+                  <p>Abu Dhabi, United Arab Emirates</p>
+                </div>
+              </div>
             </div>
             <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 24 (1).png" alt="Project 4" fill style={{ objectFit: "cover" }} />
+              <Image src="/Images/Home/Rectangle 23 (1).png" alt="Waste to Energy" fill style={{ objectFit: "cover" }} />
+              <div className="hp-project-overlay">
+                <div className="hp-project-info">
+                  <h4>Dubai Waste to Energy</h4>
+                  <p>Dubai, United Arab Emirates</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
