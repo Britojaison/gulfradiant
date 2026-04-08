@@ -1,0 +1,26 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    public/Images/H1.png
+	deleted:    public/Images/Rectangle 81.png
+	deleted:    public/Images/image 33.png
+	deleted:    public/Images/image 34.png
+	deleted:    public/Images/image 35.png
+	deleted:    public/Images/image 36.png
+	deleted:    public/Images/logo.png
+	deleted:    public/Images/pr1.jpg
+	deleted:    public/Images/pr2.jpg
+	deleted:    public/Images/pr3.jpg
+	modified:   src/app/globals.css
+	modified:   src/app/page.tsx
+	modified:   src/app/productpage/page.tsx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	result.txt
+	src/app/product-kumwell/
+
+no changes added to commit (use "git add" and/or "git commit -a")
