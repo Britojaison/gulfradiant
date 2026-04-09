@@ -40,7 +40,7 @@ export default function Homepage() {
       {/* HEADER */}
       <header className="hp-navbar">
         <div className="hp-navbar-logo">
-          <Image src="/Images/logo.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
+          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
         </div>
         <nav className="hp-navbar-nav">
           <Link href="/homepage" className="active">Home</Link>
@@ -58,15 +58,16 @@ export default function Homepage() {
       <section className="hp-hero-new">
         <Image src="/Images/Home/f6b8aed5ae226daa7b778061ebc1bdb0aaa5cd56.jpg" alt="Hero Background" fill style={{ objectFit: "cover" }} priority />
         <div className="hp-hero-overlay-new"></div>
-        <div className="hp-hero-content-new">
-          <h1>Powering Infrastructure<br />That Delivers</h1>
+        <div className="hp-hero-content">
+          <div className="hp-hero-subtitle">
+            <span className="hp-dot"></span> TRUSTED SUPPLIER &bull; INDUSTRIAL PROJECTS &bull; GCC WIDE
+          </div>
+          <h1>Powering Infrastructure <br />That Delivers</h1>
           <p>
-            Gulf Radiant is an international trade partner.<br />
-            We specialise in supplying a wide range of electrical items and<br />
-            equipment to major infrastructure projects.
+            We power critical infrastructure with reliable electrical products and solutions. Our expertise ensures seamless execution, safety, and long-term performance. From sourcing to supply, we support every project with precision and efficiency.
           </p>
-          <Link href="/productpage" className="hp-btn-white-hero">
-            Our Products <span style={{ marginLeft: "8px" }}>&rarr;</span>
+          <Link href="/contact" className="hp-btn-hero-quote">
+            Request a Quote <span className="arrow">&rarr;</span>
           </Link>
         </div>
       </section>
@@ -74,57 +75,69 @@ export default function Homepage() {
       {/* PRODUCTS & STATS (FULL SCROLL) */}
       <div className="hp-full-scroll-section">
         <section className="hp-products-dist">
-          <h2>Products We Distribute</h2>
+          <div className="hp-dist-header">
+            <div className="hp-dist-subtitle"><span className="hp-dot"></span> WHERE WE OPERATE</div>
+            <h2><span>Products</span> We Distribute</h2>
+          </div>
 
-          <div className="hp-dist-marquee-wrapper">
-            <div className="hp-dist-logos">
-              {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-                </div>
-              ))}
-              {/* Duplicate for infinite scroll effect */}
-              {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
-                </div>
-              ))}
+          <div className="hp-dist-content-container">
+            <div className="hp-dist-marquee-wrapper">
+              <div className="hp-dist-logos">
+                {productLogos.map((logo, i) => (
+                  <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
+                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                  </div>
+                ))}
+                {/* Duplicate for infinite scroll effect */}
+                {productLogos.map((logo, i) => (
+                  <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
+                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <Link href="/productpage" className="hp-btn-orange" style={{ display: "inline-block", textAlign: "center" }}>
-            View All
-          </Link>
+          <div className="hp-dist-btn-container">
+            <Link href="/productpage" className="hp-btn-orange-rect">
+              View All
+            </Link>
+          </div>
         </section>
 
         {/* STATS */}
         <section className="hp-stats-container">
           <div className="hp-stat-block">
             <h3>25<span>+</span></h3>
-            <h4>Premium Quality Brands</h4>
-            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+            <h4>Years of professionalism</h4>
+            <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
           </div>
           <div className="hp-stat-divider"></div>
           <div className="hp-stat-block">
             <h3>30<span>+</span></h3>
-            <h4>Years of Industry Experience</h4>
-            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+            <h4>Countries served worldwide</h4>
+            <p>Supporting projects across global<br />markets with a strong supply network</p>
           </div>
           <div className="hp-stat-divider"></div>
           <div className="hp-stat-block">
             <h3>100<span>+</span></h3>
-            <h4>Global Partners</h4>
-            <p>We only stock products that<br />adhere to international safety<br />standards.</p>
+            <h4>Product categories</h4>
+            <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
           </div>
         </section>
       </div>
 
       {/* VIDEO BANNER */}
       <section className="hp-video-banner">
-        <Image src="/Images/Home/video.jpg" alt="Video Placeholder" fill style={{ objectFit: "cover" }} />
-        <div className="hp-play-btn">
-          <div className="hp-play-triangle"></div>
-        </div>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="hp-video-element"
+        >
+          <source src="/Images/Home/video.mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* CERTIFICATION */}
@@ -149,7 +162,7 @@ export default function Homepage() {
             </div>
 
             <div className="hp-cert-btn-container">
-              <Link href="/certifications" className="hp-btn-orange" style={{ fontSize: "14px", padding: "12px 24px", display: "inline-block", textDecoration: "none" }}>View All Certificates</Link>
+              <Link href="/certifications" className="hp-btn-orange-rect" style={{ width: "213px" }}>View All Certificates</Link>
             </div>
           </div>
         </div>
@@ -161,7 +174,7 @@ export default function Homepage() {
           <div className="hp-trusted-left">
             <h2>Trusted by Industry<br />Leaders</h2>
             <p>We proudly distribute certified products from globally<br />recognized manufacturers serving infrastructure,<br />commercial, and industrial sectors.</p>
-            <Link href="/clients" className="hp-btn-orange" style={{ marginTop: "30px", padding: "14px 28px", fontSize: "14px", display: "inline-block", textDecoration: "none" }}>View All Brand Partners</Link>
+            <Link href="/clients" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "30px" }}>View All Brand Partners</Link>
           </div>
           <div className="hp-trusted-right">
             <div className="hp-trusted-grid-inner">
@@ -284,7 +297,7 @@ export default function Homepage() {
           <div className="hp-contact-left">
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-            <Link href="/contact" className="hp-btn-orange" style={{ marginTop: "15px", padding: "14px 28px", display: "inline-block", textDecoration: "none" }}>Request a Quote</Link>
+            <Link href="/contact" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "15px" }}>Request a Quote</Link>
           </div>
           <div className="hp-contact-right">
             <div className="hp-contact-formbox">
@@ -320,7 +333,7 @@ export default function Homepage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>

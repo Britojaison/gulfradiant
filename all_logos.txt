@@ -1,0 +1,5 @@
+﻿C:\Users\HP\Desktop\88gb\Gulf-radiant\all_logos.txt
+C:\Users\HP\Desktop\88gb\Gulf-radiant\.next\dev\static\media\logo.0dwy0g1_b09vi.png
+C:\Users\HP\Desktop\88gb\Gulf-radiant\node_modules\next\dist\next-devtools\dev-overlay\components\devtools-indicator\next-logo.d.ts
+C:\Users\HP\Desktop\88gb\Gulf-radiant\public\logopaths.txt
+C:\Users\HP\Desktop\88gb\Gulf-radiant\public\Images\product_kumwell images\logo.png

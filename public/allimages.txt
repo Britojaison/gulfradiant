@@ -1,0 +1,145 @@
+﻿
+Name                      
+----                      
+file.svg                  
+globe.svg                 
+next.svg                  
+vercel.svg                
+window.svg                
+about-facility 1.jpg      
+git.jpg                   
+Frame 76.png              
+image 48.png              
+image 49.png              
+image 50.png              
+image 51.png              
+image 52.png              
+image 53.png              
+image 54.png              
+image 55.png              
+image 56.png              
+image 57.png              
+image 58.png              
+image 59.png              
+image 60.png              
+image 61.png              
+image 62.png              
+image 63.png              
+image 64.png              
+image 65.png              
+image 66.png              
+image 67.png              
+image 68.png              
+image 69.png              
+image 70.png              
+image 71.png              
+image 72.png              
+image 73.png              
+image 74.png              
+image 75.png              
+image 76.png              
+image 77.png              
+image 78.png              
+image 79.png              
+image 80.png              
+image 81.png              
+oil-refinery-evening 2.png
+Background.png            
+Ellipse 13-1.png          
+Ellipse 13-2.png          
+Ellipse 13.png            
+Ellipse 37.png            
+Ellipse 38.png            
+Ellipse 39.png            
+Ellipse 40.png            
+Ellipse 41.png            
+Ellipse 42.png            
+Ellipse 43.png            
+Ellipse 44.png            
+Ellipse 45.png            
+Frame 76.png              
+image 38.png              
+Ellipse 3.png             
+f6b8aed5ae226daa7b77806...
+Frame 10.png              
+git.jpg                   
+image 82.png              
+image 85.png              
+image 86.png              
+image 88.png              
+image 89.png              
+others.png                
+Rectangle 10.png          
+Rectangle 11 (1).png      
+Rectangle 11.png          
+Rectangle 12 (1).png      
+Rectangle 12.png          
+Rectangle 16.png          
+Rectangle 17.png          
+Rectangle 18.png          
+Rectangle 19.png          
+Rectangle 20.png          
+Rectangle 21.png          
+Rectangle 22.png          
+Rectangle 23 (1).png      
+Rectangle 23.png          
+Rectangle 24 (1).png      
+Rectangle 24.png          
+Rectangle 35.png          
+Rectangle 36.png          
+Rectangle 37.png          
+video.jpg                 
+image 40.jpg              
+Rectangle 23 (1).png      
+Rectangle 23.jpg          
+Rectangle 24.jpg          
+Rectangle 72.jpg          
+Rectangle 73.jpg          
+Rectangle 74.jpg          
+close-up-electric-route...
+close-up-electric-route...
+close-up-electric-route...
+image 10.png              
+image 11.png              
+image 12.png              
+image 13.png              
+image 14.png              
+image 15.png              
+image 16.png              
+image 17.png              
+image 18.png              
+image 19.png              
+image 20.png              
+image 21.png              
+image 22.png              
+image 23.png              
+image 24.png              
+image 25.png              
+image 26.png              
+image 27.png              
+image 28.png              
+image 29.png              
+image 3.png               
+image 30.png              
+image 31.png              
+image 4.png               
+image 6.png               
+image 7.png               
+image 9.png               
+Rectangle 38.png          
+Rectangle 39.png          
+Rectangle 40.png          
+Rectangle 41.png          
+Rectangle 42.png          
+H1.png                    
+image 33.png              
+image 34.png              
+image 35.png              
+image 36.png              
+logo.png                  
+pr1.jpg                   
+pr2.jpg                   
+pr3.jpg                   
+Rectangle 81.png          
+
+

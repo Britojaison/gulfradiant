@@ -437,9 +437,11 @@ export default function AboutPage() {
         
         .section-header { margin-bottom: 30px; }
         .section-subtitle {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 2px;
+          font-family: var(--font-geist-mono), monospace;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0;
+          line-height: 100%;
           text-transform: uppercase;
           color: #333;
           display: flex;
@@ -480,9 +482,11 @@ export default function AboutPage() {
           max-width: 700px;
         }
         .about-tag {
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 4px;
+          font-family: var(--font-geist-mono), monospace;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 2px;
+          line-height: 100%;
           margin-bottom: 25px;
           color: rgba(255, 255, 255, 0.8);
         }
@@ -784,7 +788,7 @@ export default function AboutPage() {
         .cta-section h2 { font-size: 56px; margin-bottom: 40px; line-height: 1.1; letter-spacing: -2px; }
         .cta-btns { display: flex; justify-content: center; gap: 20px; }
         .btn-orange {
-          background: #E85D04;
+          background: #FF5B05;
           color: white;
           padding: 18px 45px;
           border-radius: 2px;
