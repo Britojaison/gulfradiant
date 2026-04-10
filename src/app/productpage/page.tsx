@@ -18,11 +18,11 @@ export default function ProductPage() {
       <header className="navbar" id="navbar">
         <div className="navbar-logo">
           <Image
-            src="/Images/logo.png"
+            src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
             width={180}
-            height={64}
-            style={{ height: "auto", width: "180px" }}
+            height={50}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <nav>
@@ -51,7 +51,7 @@ export default function ProductPage() {
               <Link href="/certifications">Our Certifications</Link>
             </li>
             <li>
-               <Link href="/contact">Contact</Link>
+               <Link href="/homepage#contact">Contact</Link>
             </li>
           </ul>
         </nav>
@@ -89,47 +89,42 @@ export default function ProductPage() {
         </div>
       </main>
 
-      <footer className="footer" id="footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Image
-              src="/Images/logo.png"
-              alt="Gulf Radiant Logo"
-              width={150}
-              height={54}
-              style={{ height: "auto", width: "150px" }}
-            />
+      <footer className="hp-footer">
+        <div className="hp-footer-content">
+          <div className="hp-footer-grid">
+            <div className="hp-footer-brand">
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+            </div>
+            <div className="hp-footer-col">
+              <h4>Navigation</h4>
+              <ul>
+                <li><Link href="/homepage">Home</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/homepage#contact">Contact</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Information</h4>
+              <ul>
+                <li><Link href="#">Technical Charts</Link></li>
+                <li><Link href="#">Product Guides</Link></li>
+                <li><Link href="#">Resources</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="#">Dubai, UAE</a></li>
+                <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
+                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-              <li><Link href="/homepage">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/productpage">Products</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
+          <div className="hp-footer-bottom">
+            <Link href="/privacy">Privacy Policy</Link>
+            <span>© Gulf Radiant 2025. All rights reserved.</span>
           </div>
-          <div className="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><Link href="/technical-charts">Technical Charts</Link></li>
-              <li><Link href="/product-guides">Product Guides</Link></li>
-              <li><Link href="/resources">Resources</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="#">Dubai, UAE</a></li>
-              <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-              <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <Link href="/privacy">Privacy Policy</Link>
-          <span>© Gulf Radiant 2025. All rights reserved.</span>
         </div>
       </footer>
     </>

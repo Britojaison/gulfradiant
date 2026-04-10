@@ -22,11 +22,11 @@ export default function ClientsPage() {
       <header className="navbar" id="navbar">
         <div className="navbar-logo">
           <Image
-            src="/Images/logo.png"
+            src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
             width={180}
-            height={64}
-            style={{ height: "auto", width: "180px" }}
+            height={50}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <nav>
@@ -38,7 +38,7 @@ export default function ClientsPage() {
             <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/clients" className="active">Clients</Link></li>
             <li><Link href="/certifications">Our Certifications</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
@@ -55,7 +55,7 @@ export default function ClientsPage() {
         <div className="clients-hero-overlay"></div>
         <div className="clients-hero-content">
           <div className="clients-hero-text-wrapper">
-            <h1 className="clients-hero-subtitle">Trusted Patners</h1>
+            <h1 className="clients-hero-subtitle">Trusted Partners</h1>
             <h2 className="clients-hero-subheading">Working with Industry-Leading Brands</h2>
             <p className="clients-hero-description">
               We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.
@@ -70,8 +70,8 @@ export default function ClientsPage() {
           <div className="section-label">
             <span className="orange-square"></span> PARTNER NETWORK
           </div>
-          <h2 className="section-title-inline" style={{ color: "#1e1e1e", fontSize: "36px", marginTop: "10px", fontWeight: "600" }}>
-            Our <span style={{ color: "#FF5B05" }}>Partnered Brands</span>
+          <h2 className="section-title-inline">
+            Our <span>Partnered Brands</span>
           </h2>
         </div>
 
@@ -103,42 +103,42 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* STANDARD FOOTER */}
-      <footer className="footer" id="footer" style={{marginTop:0}}>
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
+      <footer className="hp-footer">
+        <div className="hp-footer-content">
+          <div className="hp-footer-grid">
+            <div className="hp-footer-brand">
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+            </div>
+            <div className="hp-footer-col">
+              <h4>Navigation</h4>
+              <ul>
+                <li><Link href="/homepage">Home</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/homepage#contact">Contact</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Information</h4>
+              <ul>
+                <li><Link href="#">Technical Charts</Link></li>
+                <li><Link href="#">Product Guides</Link></li>
+                <li><Link href="#">Resources</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="#">Dubai, UAE</a></li>
+                <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
+                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-              <li><Link href="/homepage">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/productpage">Products</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
+          <div className="hp-footer-bottom">
+            <Link href="/privacy">Privacy Policy</Link>
+            <span>© Gulf Radiant 2025. All rights reserved.</span>
           </div>
-          <div className="footer-col">
-            <h4>Information</h4>
-            <ul>
-              <li><Link href="#">Technical Charts</Link></li>
-              <li><Link href="#">Product Guides</Link></li>
-              <li><Link href="#">Resources</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="#">Dubai, UAE</a></li>
-              <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-              <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <Link href="/privacy">Privacy Policy</Link>
-          <span>© Gulf Radiant 2025. All rights reserved.</span>
         </div>
       </footer>
 
@@ -147,9 +147,9 @@ export default function ClientsPage() {
         .clients-hero {
           position: relative;
           width: 100%;
-          height: 480px;
+          height: 100vh;
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           justify-content: flex-start;
           text-align: left;
           color: white;
@@ -162,10 +162,13 @@ export default function ClientsPage() {
           z-index: 1;
         }
         .clients-hero-content {
-          position: relative;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
           z-index: 2;
           width: 100%;
-          padding: 100px 40px 0;
+          padding: 0 80px;
         }
         .clients-hero-text-wrapper {
           max-width: 700px;
@@ -192,13 +195,14 @@ export default function ClientsPage() {
 
         /* CLIENTS BRANDS SECTION */
         .clients-brands-section {
-          padding: 80px 80px;
-          max-width: 1440px;
-          margin: 0 auto;
+          padding: 80px 0;
+          max-width: 100%;
+          margin: 0;
         }
         .clients-brands-header {
           text-align: center;
           margin-bottom: 60px;
+          padding: 0 80px;
         }
         .section-label {
           display: flex;
@@ -214,6 +218,19 @@ export default function ClientsPage() {
           line-height: 100%;
           margin-bottom: 5px;
           vertical-align: middle;
+        }
+        .section-title-inline {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-weight: 600;
+          font-size: 48px;
+          line-height: 100%;
+          letter-spacing: 0;
+          color: #1e1e1e;
+          margin-top: 10px;
+          vertical-align: middle;
+        }
+        .section-title-inline span {
+          color: #FF5B05;
         }
         .orange-square {
           width: 8px;

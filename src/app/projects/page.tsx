@@ -7,42 +7,42 @@ export default function ProjectsPage() {
       category: "Infrastructure",
       title: "Dubai Uptown Tower",
       location: "Dubai, UAE",
-      description: "Supplied comprehensive electrical switchgear and low voltage components, ensuring reliable power distribution setup.",
+      description: "Electrical supply solutions for a high-rise commercial development, delivering reliable power distribution, safety systems, and efficient performance across all operational requirements.",
       img: "Rectangle 23.jpg"
     },
     {
       category: "Transportation Infrastructure",
       title: "Etihad Rail",
-      location: "Abu Dhabi, UAE",
-      description: "Delivered highly durable cable management systems and earthing components designed to withstand harsh outdoor conditions.",
+      location: "Dubai, UAE",
+      description: "Delivering electrical supply solutions for a large-scale rail infrastructure project, ensuring reliable power systems, enhanced safety measures, and seamless operations across transport networks with a focus on long-term efficiency.",
       img: "Rectangle 24.jpg"
     },
     {
       category: "Energy & Utilities",
       title: "Dubai Waste to Energy",
       location: "Dubai, UAE",
-      description: "Supplied specialized cables, conduits, and heavy-duty fittings for a waste-to-energy plant, maintaining high safety standards.",
+      description: "Electrical supply solutions for a large-scale waste-to-energy facility, supporting reliable power distribution, advanced safety systems, and efficient energy conversion operations with a focus on sustainability and performance.",
       img: "Rectangle 72.jpg"
     },
     {
       category: "Energy & Utilities",
-      title: "Mohammed Bin Rashid Al Maktoum Solar Park",
+      title: "Aldhafra PV2 Solar Power Plant",
       location: "Dubai, UAE",
-      description: "Provided ruggedized, UV-resistant wiring and protective systems, ensuring uninterrupted operation of critical infrastructure.",
+      description: "Electrical supply solutions for one of the world’s largest solar power projects, supporting reliable power distribution, advanced safety systems, and efficient renewable energy generation with long-term operational performance.",
       img: "Rectangle 73.jpg"
     },
     {
       category: "Commercial Infrastructure",
-      title: "South Market, Abu Dhabi",
-      location: "Abu Dhabi, UAE",
-      description: "Supplied energy-efficient electrical components, LED lighting, and switchgear to support daily commercial operations and public safety.",
+      title: "SeaWorld Abu Dhabi",
+      location: "Dubai, UAE",
+      description: "Electrical supply solutions for a large-scale entertainment destination, supporting reliable power distribution, advanced safety systems, and efficient operations across complex commercial infrastructure.",
       img: "Rectangle 74.jpg"
     },
     {
       category: "Residential Infrastructure",
-      title: "Al Habtoor City",
+      title: "Aykon Tower",
       location: "Dubai, UAE",
-      description: "Provided extensive electrical supplies, switchgear, and lighting solutions tailored for high-end residential living spaces.",
+      description: "Electrical supply solutions for a high-rise mixed-use development, supporting reliable power distribution, advanced safety systems, and efficient operations across residential and commercial spaces.",
       img: "Rectangle 23 (1).png"
     }
   ];
@@ -52,11 +52,11 @@ export default function ProjectsPage() {
       <header className="navbar" id="navbar">
         <div className="navbar-logo">
           <Image
-            src="/Images/logo.png"
+            src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
             width={180}
-            height={64}
-            style={{ height: "auto", width: "180px" }}
+            height={50}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <nav>
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
             <li><Link href="/projects" className="active">Projects</Link></li>
             <li><Link href="/clients">Clients</Link></li>
             <li><Link href="/certifications">Our Certifications</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
           <div className="projects-hero-overlay"></div>
           <div className="projects-hero-content">
             <h1>Our Projects</h1>
-            <p>Delivering excellence across industries. Gulf Radiant is proud to have contributed to some of the most dynamic infrastructure developments in the region.</p>
+            <p>Delivering Reliable Electrical Solutions Across Industries With a strong presence across infrastructure, industrial, and utility sectors, our projects reflect our commitment to quality, performance, and long-term reliability.</p>
           </div>
         </div>
 
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/homepage#contact">Contact</Link></li>
               </ul>
             </div>
             <div className="hp-footer-col">

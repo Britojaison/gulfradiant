@@ -7,11 +7,11 @@ export default function ProductKumwellPage() {
       <header className="navbar" id="navbar">
         <div className="navbar-logo">
           <Image
-            src="/Images/product_kumwell%20images/logo.png"
+            src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
-            width={150}
-            height={54}
-            style={{ height: "auto", width: "150px" }}
+            width={180}
+            height={50}
+            style={{ objectFit: "contain" }}
           />
         </div>
         <nav>
@@ -23,7 +23,7 @@ export default function ProductKumwellPage() {
             <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/clients">Clients</Link></li>
             <li><Link href="/certifications">Our Certifications</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
@@ -54,34 +54,25 @@ export default function ProductKumwellPage() {
             </a>
           </div>
         </div>
-        <div className="hero-carousel-indicators">
-          <div className="indicator active"></div>
-          <div className="indicator"></div>
-          <div className="indicator"></div>
-          <div className="indicator"></div>
-        </div>
       </section>
 
       <section className="product-range">
         <h2 className="section-title">Product Range</h2>
-        <div className="product-grid">
-          <div className="product-card">
-            <div className="product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr1.jpg" alt="Grounding Protection System" fill style={{ objectFit: "contain", padding: "20px" }} />
+        <div className="kumwell-product-grid">
+          <div className="kumwell-product-card">
+            <div className="kumwell-product-card-image">
+              <Image src="/Images/product_kumwell%20images/pr1.jpg" alt="Grounding Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
-            <div className="product-card-title">Grounding Protection <br/> System</div>
           </div>
-          <div className="product-card">
-            <div className="product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr2.jpg" alt="Lightning Protection System" fill style={{ objectFit: "contain", padding: "20px" }} />
+          <div className="kumwell-product-card">
+            <div className="kumwell-product-card-image">
+              <Image src="/Images/product_kumwell%20images/pr2.jpg" alt="Lightning Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
-            <div className="product-card-title">Lightning Protection <br/> System</div>
           </div>
-          <div className="product-card">
-            <div className="product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr3.jpg" alt="Exothermic Welding Systems" fill style={{ objectFit: "contain", padding: "20px" }} />
+          <div className="kumwell-product-card">
+            <div className="kumwell-product-card-image">
+              <Image src="/Images/product_kumwell%20images/pr3.jpg" alt="Exothermic Welding Systems" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
-            <div className="product-card-title">Exothermic Welding <br/> Systems</div>
           </div>
         </div>
       </section>
@@ -118,41 +109,42 @@ export default function ProductKumwellPage() {
         </div>
       </section>
 
-      <footer className="footer" id="footer">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Image src="/Images/product_kumwell%20images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
+      <footer className="hp-footer">
+        <div className="hp-footer-content">
+          <div className="hp-footer-grid">
+            <div className="hp-footer-brand">
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+            </div>
+            <div className="hp-footer-col">
+              <h4>Navigation</h4>
+              <ul>
+                <li><Link href="/homepage">Home</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/homepage#contact">Contact</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Information</h4>
+              <ul>
+                <li><Link href="#">Technical Charts</Link></li>
+                <li><Link href="#">Product Guides</Link></li>
+                <li><Link href="#">Resources</Link></li>
+              </ul>
+            </div>
+            <div className="hp-footer-col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="#">Dubai, UAE</a></li>
+                <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
+                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-              <li><Link href="/homepage">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/productpage">Products</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
+          <div className="hp-footer-bottom">
+            <Link href="/privacy">Privacy Policy</Link>
+            <span>© Gulf Radiant 2025. All rights reserved.</span>
           </div>
-          <div className="footer-col">
-            <h4>Information</h4>
-            <ul>
-              <li><Link href="#">Technical Charts</Link></li>
-              <li><Link href="#">Product Guides</Link></li>
-              <li><Link href="#">Resources</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="#">Dubai, UAE</a></li>
-              <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-              <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <Link href="/privacy">Privacy Policy</Link>
-          <span>© Gulf Radiant 2025. All rights reserved.</span>
         </div>
       </footer>
     </>

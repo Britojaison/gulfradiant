@@ -50,7 +50,7 @@ export default function Homepage() {
           <Link href="/projects">Projects</Link>
           <Link href="/clients">Clients</Link>
           <Link href="/certifications">Our Certifications</Link>
-          <Link href="/contact">Contact</Link>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -66,9 +66,9 @@ export default function Homepage() {
           <p>
             We power critical infrastructure with reliable electrical products and solutions. Our expertise ensures seamless execution, safety, and long-term performance. From sourcing to supply, we support every project with precision and efficiency.
           </p>
-          <Link href="/contact" className="hp-btn-hero-quote">
+          <a href="#contact" className="hp-btn-hero-quote">
             Request a Quote <span className="arrow">&rarr;</span>
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -154,7 +154,7 @@ export default function Homepage() {
               <div className="hp-cert-logos">
                 {visibleCerts.map((cert, idx) => (
                   <div className="hp-cert-box" key={idx}>
-                    <Image src={`/Images/Home/${cert}`} alt="Cert" fill style={{ objectFit: "contain", padding: "10px" }} />
+                    <Image src={`/Images/Home/${cert}`} alt="Cert" fill style={{ objectFit: "contain", padding: "20px" }} />
                   </div>
                 ))}
               </div>
@@ -194,12 +194,9 @@ export default function Homepage() {
 
       {/* PROJECTS (MASONRY) */}
       <section className="hp-projects-section-new">
-        <div className="hp-projects-top">
-          <div className="hp-projects-title-area">
-            <div className="hp-projects-subtitle"><span className="hp-dot"></span> PROJECTS</div>
-            <h2>Projects We've Supplied</h2>
-          </div>
-          <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
+        <div className="hp-projects-top-fixed">
+          <div className="hp-projects-subtitle"><span className="hp-dot"></span> PROJECTS</div>
+          <h2>Projects We've Supplied</h2>
         </div>
         <div className="hp-projects-masonry">
           <div className="hp-projects-col">
@@ -223,6 +220,7 @@ export default function Homepage() {
             </div>
           </div>
           <div className="hp-projects-col">
+            <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
             <div className="hp-project-card">
               <Image src="/Images/Home/Rectangle 24 (1).png" alt="Etihad Rail" fill style={{ objectFit: "cover" }} />
               <div className="hp-project-overlay">
@@ -290,16 +288,22 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new">
+      <section className="hp-contact-banner-new" id="contact">
         <div className="hp-contact-bg"><Image src="/Images/Home/git.jpg" alt="Contact BG" fill style={{ objectFit: "cover" }} /></div>
         <div className="hp-contact-overlay"></div>
         <div className="hp-contact-content">
           <div className="hp-contact-left">
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-            <Link href="/contact" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "15px" }}>Request a Quote</Link>
+            <button 
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hp-btn-orange-rect" 
+              style={{ width: "213px", marginTop: "15px", border: 'none', cursor: 'pointer' }}
+            >
+              Request a Quote
+            </button>
           </div>
-          <div className="hp-contact-right">
+          <div className="hp-contact-right" id="contact-form">
             <div className="hp-contact-formbox">
               <h3>Get in touch</h3>
               <form>
@@ -341,7 +345,7 @@ export default function Homepage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
             <div className="hp-footer-col">

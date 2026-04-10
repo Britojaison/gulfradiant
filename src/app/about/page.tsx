@@ -64,7 +64,7 @@ export default function AboutPage() {
       {/* HEADER */}
       <header className="hp-navbar">
         <div className="hp-navbar-logo">
-          <Image src="/Images/logo.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
+          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
         </div>
         <nav className="hp-navbar-nav">
           <Link href="/homepage">Home</Link>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <Link href="/projects">Projects</Link>
           <Link href="/clients">Clients</Link>
           <Link href="/certifications">Our Certifications</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/homepage#contact">Contact</Link>
         </nav>
       </header>
 
@@ -89,12 +89,13 @@ export default function AboutPage() {
         />
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content">
-          <div className="about-tag">GULF RADIANT</div>
+          <div className="about-tag">
+            <span className="orange-square"></span>
+            ABOUT THE COMPANY
+          </div>
           <h1>Engineering <br />Reliability. <br />Delivering Scale.</h1>
           <p>
-            Gulf Radiant is an international trade partner.<br />
-            We specialise in supplying a wide range of electrical items and<br />
-            equipment to major infrastructure projects.
+            One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001.
           </p>
         </div>
       </section>
@@ -375,7 +376,7 @@ export default function AboutPage() {
         <div className="container">
           <h2>Let's Build Your <br /><span className="text-orange">Next Project</span></h2>
           <div className="cta-btns">
-            <Link href="/contact" className="btn-orange">Contact </Link>
+            <Link href="/homepage#contact" className="btn-orange">Contact </Link>
             <Link href="#" className="btn-outline-dark">Download Profile</Link>
           </div>
         </div>
@@ -386,7 +387,7 @@ export default function AboutPage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/logo.png" alt="Gulf Radiant Logo" width={150} height={54} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>
@@ -394,7 +395,7 @@ export default function AboutPage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/homepage#contact">Contact</Link></li>
               </ul>
             </div>
             <div className="hp-footer-col">
@@ -428,8 +429,8 @@ export default function AboutPage() {
           overflow-x: hidden;
         }
         .container {
-          max-width: 1440px;
-          margin: 0 auto;
+          max-width: 100%;
+          margin: 0;
           padding: 0 80px;
         }
         .text-center { text-align: center; }
@@ -492,6 +493,9 @@ export default function AboutPage() {
           line-height: 100%;
           margin-bottom: 25px;
           color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          align-items: center;
+          vertical-align: middle;
         }
         .about-hero-content h1 {
           font-size: 64px;
@@ -510,8 +514,8 @@ export default function AboutPage() {
         /* MAIN INFO */
         .about-main-info { padding: 100px 0 0px; background: #fff; }
         .about-info-container {
-          max-width: 1440px;
-          margin: 0 auto;
+          max-width: 100%;
+          margin: 0;
           display: flex;
           gap: 80px;
           align-items: flex-start;
@@ -629,14 +633,14 @@ export default function AboutPage() {
 
         /* CAPABILITIES */
         .capabilities { padding: 80px 0; background: #fff; }
-        .capabilities .container { max-width: 1360px; }
+        .capabilities .container { max-width: 100%; }
         .capabilities .section-header h2 { font-size: 52px; font-weight: 600; letter-spacing: -1.5px; }
         .capabilities-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          margin: 40px auto 0;
+          margin: 40px 0 0;
           width: 100%;
-          max-width: 1280px;
+          max-width: 100%;
           height: 308px;
           border: 1px solid #eeeeee;
           border-right: none;
@@ -740,9 +744,9 @@ export default function AboutPage() {
         .clientele { padding: 100px 0; background: #fff; }
         .clientele-content {
           display: flex;
-          margin: 60px auto 0;
+          margin: 60px 0 0;
           width: 100%;
-          max-width: 1280px;
+          max-width: 100%;
           height: 321px;
           border: 1px solid #eeeeee;
         }
@@ -848,42 +852,93 @@ export default function AboutPage() {
         .cta-section h2 { font-size: 56px; margin-bottom: 40px; line-height: 1.1; letter-spacing: -2px; }
         .cta-btns { display: flex; justify-content: center; gap: 20px; }
         .btn-orange {
+          width: 184px;
+          height: 66px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 18px 30px;
           background: #FF5B05;
           color: white;
-          padding: 18px 45px;
-          border-radius: 2px;
-          font-weight: 700;
+          border-radius: 0;
+          border: 1px solid #FF5B05;
+          font-family: var(--font-inter-tight), sans-serif;
+          font-weight: 500;
+          font-size: 25px;
+          line-height: 100%;
+          letter-spacing: 0;
+          text-align: center;
           text-decoration: none;
-          display: inline-block;
+          opacity: 1;
+          box-sizing: border-box;
           transition: background 0.3s;
         }
-        .btn-orange:hover { background: #d05303; }
+        .btn-orange:hover { background: #d05303; border-color: #d05303; }
         .btn-outline-dark {
+          height: 66px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 18px 30px;
           background: white;
           color: #000;
-          padding: 18px 45px;
-          border-radius: 2px;
-          font-weight: 700;
+          border-radius: 0;
+          font-family: var(--font-inter-tight), sans-serif;
+          font-weight: 500;
+          font-size: 25px;
+          line-height: 100%;
+          letter-spacing: 0;
+          text-align: center;
           text-decoration: none;
           border: 1px solid #000;
-          display: inline-block;
+          box-sizing: border-box;
           transition: all 0.3s;
         }
         .btn-outline-dark:hover { background: #000; color: #fff; }
 
         @media (max-width: 1024px) {
+          .container { padding: 0 40px; }
+          .hp-navbar { padding: 30px 40px; }
+          .about-hero { padding-left: 40px; }
           .about-hero-content h1 { font-size: 52px; }
-          .about-info-container { flex-direction: column; gap: 60px; }
-          .about-image-side { flex: 0 0 auto; width: 100%; }
-          .why-gr-grid { grid-template-columns: repeat(2, 1fr); }
-          .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
-          .clientele-content { flex-direction: column; }
-          .clientele-tabs { flex: 0 0 auto; }
-          .trusted-grid { gap: 30px; }
-          .certified-approvals .certs-grid { grid-template-columns: repeat(3, 1fr); }
+          .about-info-container { flex-direction: column; gap: 50px; padding: 0 40px; }
+          .about-image-side { flex: 0 0 auto; width: 100%; aspect-ratio: 16/9; }
+          .about-text-side { padding-top: 0; }
+          .about-main-title { font-size: 38px; margin-bottom: 30px; }
+          .why-gr-grid { grid-template-columns: repeat(2, 1fr); background: none; border: 1px solid #eeeeee; }
+          .why-gr-item { border: 1px solid #eeeeee; }
+          .capabilities-grid { grid-template-columns: repeat(2, 1fr); height: auto; }
+          .cap-column { border-bottom: 1px solid #eeeeee; }
+          .clientele-content { flex-direction: column; height: auto; }
+          .clientele-tabs { flex: 0 0 auto; border-right: none; border-bottom: 1px solid #eeeeee; }
+          .segment-tab { padding: 20px; }
+          .clientele-info-side { flex: 0 0 auto; }
+          .info-box { padding: 40px; }
+          .timeline-labels { flex-direction: column; gap: 40px; padding-top: 0; padding-left: 20px; }
+          .timeline-line { width: 1px; height: 100%; left: 0; top: 0; }
+          .time-dot { top: 10px; left: -24px; }
+          .timeline-item { padding-right: 0; }
+          .trusted-title { font-size: 38px; }
+          .cta-section h2 { font-size: 42px; }
+          .btn-orange, .btn-outline-dark { font-size: 20px; height: 56px; }
         }
-        @media (max-width: 600px) {
+
+        @media (max-width: 768px) {
+          .container { padding: 0 20px; }
+          .hp-navbar { padding: 20px; }
+          .about-hero { padding-left: 20px; height: 70vh; }
+          .about-hero-content h1 { font-size: 40px; }
+          .about-info-container { padding: 0 20px; }
+          .about-main-title { font-size: 32px; }
           .why-gr-grid { grid-template-columns: 1fr; }
+          .capabilities-grid { grid-template-columns: 1fr; }
+          .timeline-title { font-size: 32px; margin-bottom: 40px; }
+          .cta-section h2 { font-size: 32px; }
+          .cta-btns { flex-direction: column; align-items: center; }
+          .btn-orange, .btn-outline-dark { width: 100%; max-width: 280px; }
+          .capabilities-grid { border-right: 1px solid #eeeeee; }
         }
       `}</style>
     </div>
