@@ -81,7 +81,7 @@ export default function AboutPage() {
       {/* HERO SECTION */}
       <section className="about-hero">
         <Image 
-          src="/Images/About/git.jpg" 
+          src="/Images/About/aboutimg.jpg" 
           alt="Engineering Reliability" 
           fill 
           style={{ objectFit: "cover" }} 
@@ -114,33 +114,34 @@ export default function AboutPage() {
           </div>
           <div className="about-text-side">
             <div className="section-subtitle">
-              <span className="orange-square"></span> ABOUT <span className="text-orange">GULF RADIANT</span>
+              <span className="orange-square"></span> WHO WE ARE
             </div>
             
-            <div className="info-block">
-              <h3>Our Identity</h3>
-              <p>
-                Established in 2001, Gulf Radiant has evolved from an electrical components 
-                supplier into a trusted partner for large-scale infrastructure projects. We 
-                specialize in providing high-quality electrical solutions.
-              </p>
-            </div>
+            <h2 className="about-main-title">
+              ABOUT <span className="text-orange">GULF RADIANT</span>
+            </h2>
 
-            <div className="info-block">
-              <h3>Where We Operate</h3>
-              <p>
-                From our headquarters in Abu Dhabi, we serve clients across the UAE and 
-                the GCC region, providing essential electrical components for complex 
-                infrastructure projects.
-              </p>
-            </div>
+            <div className="info-blocks-wrapper">
+              <div className="info-block">
+                <h3>Our Identity</h3>
+                <p>
+                  Since 2001, Gulf Radiant has built a reputation of professionalism and trust as a one-stop solution provider for electrical, electro-mechanical, building material, oil field, industrial and allied technical engineering products.
+                </p>
+              </div>
 
-            <div className="info-block">
-              <h3>Our Strength</h3>
-              <p>
-                Established in 2001, Gulf Radiant has evolved from an electrical components 
-                supplier into a trusted partner for large-scale infrastructure projects.
-              </p>
+              <div className="info-block">
+                <h3>Where We Operate</h3>
+                <p>
+                  Based in UAE (Dubai & Abu Dhabi), we cater to the GCC, Middle East, Africa, Indian Sub-continent and other emerging markets across 15+ countries.
+                </p>
+              </div>
+
+              <div className="info-block">
+                <h3>Our Strength</h3>
+                <p>
+                  Dedicated & qualified engineers with in-depth product knowledge and vast experience in providing prompt solutions to all our clientele.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -440,21 +441,23 @@ export default function AboutPage() {
           font-family: var(--font-geist-mono), monospace;
           font-size: 12px;
           font-weight: 500;
-          letter-spacing: 0;
+          letter-spacing: 0%;
           line-height: 100%;
           text-transform: uppercase;
-          color: #333;
+          color: #000000;
           display: flex;
           align-items: center;
           margin-bottom: 20px;
+          vertical-align: middle;
         }
         .text-orange { color: #FF5B05 !important; }
         .orange-square {
           width: 8px;
           height: 8px;
-          background: #FF5B05;
+          background: #B43E00;
           margin-right: 12px;
           display: inline-block;
+          flex-shrink: 0;
         }
         h2 { font-size: 42px; font-weight: 700; line-height: 1.1; letter-spacing: -0.5px; }
         h3 { font-size: 32px; font-weight: 700; margin-bottom: 25px; letter-spacing: -0.5px; }
@@ -472,7 +475,7 @@ export default function AboutPage() {
         .about-hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
+          background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
           z-index: 1;
         }
         .about-hero-content {
@@ -496,6 +499,7 @@ export default function AboutPage() {
           line-height: 1.05;
           margin-bottom: 30px;
           letter-spacing: -1px;
+          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .about-hero-content p {
           color: rgba(255,255,255,0.9);
@@ -504,24 +508,64 @@ export default function AboutPage() {
         }
 
         /* MAIN INFO */
-        .about-main-info { padding: 80px 0; background: #fff; }
+        .about-main-info { padding: 100px 0 0px; background: #fff; }
         .about-info-container {
-          max-width: 1240px;
+          max-width: 1440px;
           margin: 0 auto;
           display: flex;
-          gap: 60px;
-          align-items: center;
-          padding: 0 40px;
+          gap: 80px;
+          align-items: flex-start;
+          padding: 0 80px;
         }
-        .about-image-side { flex: 0 0 500px; }
-        .about-facility-img { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .about-text-side { flex: 1; }
-        .info-block { margin-bottom: 30px; }
-        .info-block h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; letter-spacing: 0; }
-        .info-block p { font-size: 14px; color: #666; line-height: 1.8; }
+        .about-image-side { 
+          flex: 0 0 630px; 
+          position: relative;
+          aspect-ratio: 630 / 730;
+        }
+        .about-facility-img { 
+          object-fit: cover; 
+          border-radius: 2px;
+        }
+        .about-text-side { flex: 1; padding-top: 20px; }
+        .about-main-title {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 100%;
+          margin-bottom: 50px;
+          letter-spacing: 0%;
+          color: #000000;
+          vertical-align: middle;
+        }
+        .info-blocks-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+        .info-block { 
+          border-left: 2px solid #FF5B05;
+          padding-left: 30px;
+        }
+        .info-block h3 { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 30px; 
+          font-weight: 500; 
+          margin-bottom: 12px; 
+          color: #1a1a1a; 
+          line-height: 100%;
+          letter-spacing: 0%;
+        }
+        .info-block p { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 17px; 
+          color: #555; 
+          line-height: 100%; 
+          font-weight: 400;
+          letter-spacing: 0%;
+        }
 
         /* WHY GR NEW */
-        .why-gr { padding: 80px 0; background: #fff; }
+        .why-gr { padding: 0px 0 80px; background: #fff; }
         .why-gr-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -564,8 +608,24 @@ export default function AboutPage() {
           stroke: white;
         }
         .why-gr-item .feature-icon { margin-bottom: 30px; }
-        .why-gr-item h4 { font-size: 19px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.2px; }
-        .why-gr-item p { font-size: 14px; color: #777; line-height: 1.6; }
+        .why-gr-item h4 { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 26px; 
+          font-weight: 500; 
+          margin-bottom: 15px; 
+          letter-spacing: 0%; 
+          line-height: 100%;
+          vertical-align: middle;
+        }
+        .why-gr-item p { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 20px; 
+          color: #777; 
+          line-height: 100%; 
+          font-weight: 400;
+          letter-spacing: 0%;
+          vertical-align: middle;
+        }
 
         /* CAPABILITIES */
         .capabilities { padding: 80px 0; background: #fff; }

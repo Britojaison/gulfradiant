@@ -205,17 +205,21 @@ export default function ClientsPage() {
           align-items: center;
           justify-content: center;
           gap: 8px;
-          font-size: 11px;
-          font-weight: 700;
-          color: #888;
+          font-family: var(--font-geist-mono), monospace;
+          font-size: 12px;
+          font-weight: 500;
+          color: #000000;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0%;
+          line-height: 100%;
           margin-bottom: 5px;
+          vertical-align: middle;
         }
         .orange-square {
           width: 8px;
           height: 8px;
-          background: #FF5B05;
+          background: #B43E00;
+          flex-shrink: 0;
         }
         .clients-grid {
           display: grid;

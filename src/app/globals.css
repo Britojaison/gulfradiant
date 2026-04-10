@@ -690,17 +690,18 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0%;
   line-height: 100%;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #FFFFFF;
+  vertical-align: middle;
 }
 .hp-hero-subtitle .hp-dot {
   width: 8px;
   height: 8px;
-  background: #fff;
+  background: #B43E00;
   margin-right: 12px;
 }
 .hp-hero-content h1 {
@@ -757,15 +758,16 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px; 
   font-weight: 500; 
-  color: #121212; 
+  color: #000000; 
   margin-bottom: 20px; 
   display: flex; 
   align-items: center; 
-  letter-spacing: 0; 
+  letter-spacing: 0%; 
   line-height: 100%; 
   text-transform: uppercase; 
+  vertical-align: middle;
 }
-.hp-dist-subtitle .hp-dot { width: 7px; height: 7px; background: var(--orange); margin-right: 12px; border-radius: 0; }
+.hp-dist-subtitle .hp-dot { width: 7px; height: 7px; background: #B43E00; margin-right: 12px; border-radius: 0; }
 .hp-products-dist h2 { 
   font-family: var(--font-inter-tight), sans-serif;
   font-size: 48px; 
@@ -905,18 +907,19 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0%;
   line-height: 100%;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #FFFFFF;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 .hp-cert-subtitle .hp-dot {
   width: 6px;
   height: 6px;
-  background: #f7701d;
+  background: #B43E00;
   margin-right: 8px;
 }
 .hp-cert-left h2 { font-size: 42px; font-weight: 600; line-height: 1.1; }
@@ -982,15 +985,16 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px; 
   font-weight: 500; 
-  color: #666; 
+  color: #000000; 
   margin-bottom: 12px; 
   display: flex; 
   align-items: center; 
-  letter-spacing: 0; 
+  letter-spacing: 0%; 
   line-height: 100%; 
   text-transform: uppercase; 
+  vertical-align: middle;
 }
-.hp-projects-subtitle .hp-dot { width: 6px; height: 6px; background: var(--orange); margin-right: 8px; }
+.hp-projects-subtitle .hp-dot { width: 6px; height: 6px; background: #B43E00; margin-right: 8px; }
 .hp-projects-title-area h2 { font-size: 36px; font-weight: 600; color: #1a1a1a; letter-spacing: -0.5px; line-height: 1.1; }
 .hp-projects-link { 
   color: var(--orange); 
@@ -1181,21 +1185,23 @@ body {
 }
 
 .projects-trusted-subtitle {
-  font-size: 11px;
-  font-weight: 800;
-  color: white;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
   margin-bottom: 12px;
   display: flex;
   align-items: center;
-  letter-spacing: 2px;
+  letter-spacing: 0%;
+  line-height: 100%;
   text-transform: uppercase;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  vertical-align: middle;
 }
 
 .projects-dot {
   width: 7px;
   height: 7px;
-  background: #FF5B05;
+  background: #B43E00;
   margin-right: 12px;
   border: 1.5px solid white;
 }
@@ -1349,11 +1355,12 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0%;
   line-height: 100%;
-  color: #000;
+  color: #000000;
   margin-bottom: 12px;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .orange-square {
@@ -1361,7 +1368,7 @@ body {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  background-color: var(--orange);
+  background-color: #B43E00;
 }
 
 .section-title-inline {
@@ -1445,11 +1452,12 @@ body {
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0%;
   line-height: 100%;
-  color: #000;
+  color: #000000;
   margin-bottom: 12px;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .certs-orange-square {
@@ -1457,7 +1465,7 @@ body {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  background-color: var(--orange);
+  background-color: #B43E00;
 }
 
 .certs-title-inline {
