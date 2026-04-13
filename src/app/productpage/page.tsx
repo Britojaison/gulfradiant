@@ -73,7 +73,7 @@ export default function ProductPage() {
                     src={`/Images/product/${logo}`}
                     alt={`Product Brand ${i + 1}`}
                     fill
-                    style={{ objectFit: "contain", padding: "80px" }}
+                    style={{ objectFit: "contain" }}
                   />
                 </Link>
               ) : (
@@ -82,7 +82,7 @@ export default function ProductPage() {
                     src={`/Images/product/${logo}`}
                     alt={`Product Brand ${i + 1}`}
                     fill
-                    style={{ objectFit: "contain", padding: "80px" }}
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               );

@@ -928,18 +928,32 @@ export default function AboutPage() {
 
         @media (max-width: 768px) {
           .container { padding: 0 20px; }
-          .hp-navbar { padding: 20px; }
-          .about-hero { padding-left: 20px; height: 70vh; }
-          .about-hero-content h1 { font-size: 40px; }
-          .about-info-container { padding: 0 20px; }
-          .about-main-title { font-size: 32px; }
-          .why-gr-grid { grid-template-columns: 1fr; }
-          .capabilities-grid { grid-template-columns: 1fr; }
-          .timeline-title { font-size: 32px; margin-bottom: 40px; }
-          .cta-section h2 { font-size: 32px; }
-          .cta-btns { flex-direction: column; align-items: center; }
+          .hp-navbar { padding: 15px 20px; }
+          .hp-navbar-logo img { width: 140px !important; height: auto !important; }
+          .about-hero { padding-left: 20px; height: 60vh; }
+          .about-hero-content { width: 100%; padding-right: 20px; top: 35% !important; transform: translateY(-50%) !important; }
+          .about-hero-content h1 { font-size: 32px; text-align: left; line-height: 1.2; margin-top: 10px; }
+          .about-hero-content h1 br { display: none; }
+          .about-tag { margin-bottom: 5px !important; }
+          .about-info-container { padding: 0 20px; gap: 30px; }
+          .about-main-info { padding: 50px 0 20px; }
+          .about-main-title { font-size: 32px; text-align: left; }
+          .why-gr { padding: 20px 0 50px; }
+          .why-gr-grid { grid-template-columns: 1fr; margin-top: 30px; }
+          .why-gr-item { padding: 30px 20px; }
+          .capabilities { padding: 50px 0; }
+          .capabilities .section-header h2 { font-size: 32px; text-align: left; }
+          .capabilities-grid { grid-template-columns: 1fr; border-right: 1px solid #eeeeee; margin-top: 20px; }
+          .timeline-section { padding: 50px 0; }
+          .timeline-title { font-size: 30px; margin-bottom: 30px; text-align: left; }
+          .clientele { padding: 50px 0; }
+          .info-box { padding: 30px 20px; }
+          .trusted-leaders { padding: 40px 0; }
+          .trusted-title { font-size: 30px; text-align: left; }
+          .cta-section { padding: 60px 0; }
+          .cta-section h2 { font-size: 32px; text-align: center; }
+          .cta-btns { flex-direction: column; align-items: center; gap: 15px; }
           .btn-orange, .btn-outline-dark { width: 100%; max-width: 280px; }
-          .capabilities-grid { border-right: 1px solid #eeeeee; }
         }
       `}</style>
     </div>

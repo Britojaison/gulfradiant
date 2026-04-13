@@ -220,7 +220,6 @@ export default function Homepage() {
             </div>
           </div>
           <div className="hp-projects-col">
-            <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
             <div className="hp-project-card">
               <Image src="/Images/Home/Rectangle 24 (1).png" alt="Etihad Rail" fill style={{ objectFit: "cover" }} />
               <div className="hp-project-overlay">
@@ -240,6 +239,7 @@ export default function Homepage() {
               </div>
             </div>
           </div>
+          <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
         </div>
       </section>
 
