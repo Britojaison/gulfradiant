@@ -32,7 +32,7 @@ export default function ProductKumwellPage() {
 
       <section className="hero">
         <Image
-          src="/Images/product_kumwell%20images/H1.png"
+          src="/Images/kumwell/H1.png"
           alt="Hero Background"
           fill
           style={{ objectFit: "cover" }}
@@ -63,17 +63,17 @@ export default function ProductKumwellPage() {
         <div className="kumwell-product-grid">
           <div className="kumwell-product-card">
             <div className="kumwell-product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr1.jpg" alt="Grounding Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
+              <Image src="/Images/kumwell/pr1.jpg" alt="Grounding Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
           </div>
           <div className="kumwell-product-card">
             <div className="kumwell-product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr2.jpg" alt="Lightning Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
+              <Image src="/Images/kumwell/pr2.jpg" alt="Lightning Protection System" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
           </div>
           <div className="kumwell-product-card">
             <div className="kumwell-product-card-image">
-              <Image src="/Images/product_kumwell%20images/pr3.jpg" alt="Exothermic Welding Systems" fill style={{ objectFit: "contain", padding: "0" }} />
+              <Image src="/Images/kumwell/pr3.jpg" alt="Exothermic Welding Systems" fill style={{ objectFit: "contain", padding: "0" }} />
             </div>
           </div>
         </div>
@@ -82,10 +82,10 @@ export default function ProductKumwellPage() {
       <section className="certified-section">
         <h2 className="section-title" style={{ marginBottom: "20px" }}>Certified & Approved</h2>
         <div className="certified-logos">
-          <Image className="certified-logo" src="/Images/product_kumwell%20images/image 33.png" alt="Etihad WE" width={180} height={60} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/product_kumwell%20images/image 34.png" alt="RTA" width={180} height={60} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/product_kumwell%20images/image 35.png" alt="TAQA" width={180} height={60} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/product_kumwell%20images/image 36.png" alt="IEEE" width={180} height={60} style={{ objectFit: "contain" }} />
+          <Image className="certified-logo" src="/Images/kumwell/image 33.png" alt="Etihad WE" width={180} height={60} style={{ objectFit: "contain" }} />
+          <Image className="certified-logo" src="/Images/kumwell/image 34.png" alt="RTA" width={180} height={60} style={{ objectFit: "contain" }} />
+          <Image className="certified-logo" src="/Images/kumwell/image 35.png" alt="TAQA" width={180} height={60} style={{ objectFit: "contain" }} />
+          <Image className="certified-logo" src="/Images/kumwell/image 36.png" alt="IEEE" width={180} height={60} style={{ objectFit: "contain" }} />
         </div>
       </section>
 
@@ -106,7 +106,7 @@ export default function ProductKumwellPage() {
             </div>
           </div>
           <div className="about-image">
-            <Image src="/Images/product_kumwell%20images/Rectangle 81.png" alt="Kumwell HQ" fill style={{ objectFit: "cover" }} />
+            <Image src="/Images/kumwell/Rectangle 81.png" alt="Kumwell HQ" fill style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>

@@ -683,7 +683,7 @@ export default function AboutPage() {
         }
         .cap-column ul { list-style: none; }
         .cap-column ul li {
-          font-size: 12px;
+          font-size: 15px;
           color: #777;
           margin-bottom: 14px;
           padding-left: 16px;

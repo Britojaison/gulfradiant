@@ -277,11 +277,12 @@ export default function ClientsPage() {
         }
 
         @media (max-width: 768px) {
-          .clients-hero-content { padding: 0 20px; }
-          .clients-brands-header { padding: 0 20px; margin-bottom: 30px; }
-          .clients-hero-subtitle { font-size: 40px; }
-          .clients-hero-subheading { font-size: 20px; }
-          .clients-hero-description { font-size: 14px; }
+          .clients-hero-content { padding: 0 20px; text-align: left; }
+          .clients-hero-text-wrapper { text-align: left; }
+          .clients-brands-header { padding: 0 20px; margin-bottom: 30px; text-align: left; }
+          .clients-hero-subtitle { font-size: 40px; text-align: left; }
+          .clients-hero-subheading { font-size: 20px; text-align: left; }
+          .clients-hero-description { font-size: 14px; text-align: left; }
           .section-title-inline { font-size: 30px; }
           .clients-grid { grid-template-columns: repeat(2, 1fr); }
           .client-card { padding: 16px; }
