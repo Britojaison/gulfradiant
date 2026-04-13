@@ -31,7 +31,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return (    
     <html lang="en" className={`${inter.variable} ${interTight.variable} ${geistMono.variable}`}>
       <body>{children}</body>
     </html>
