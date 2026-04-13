@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
 export default function ProjectsPage() {
   const projects = [
@@ -71,6 +72,7 @@ export default function ProjectsPage() {
             <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
+        <MobileNav activePage="Projects" />
       </header>
 
       <main className="projects-page-wrapper">
@@ -91,7 +93,7 @@ export default function ProjectsPage() {
 
         <div className="projects-trusted-bar">
           <div className="projects-trusted-subtitle"><span className="projects-dot"></span> CERTIFIED QUALITY</div>
-          <h2>Trusted by Clients Across Industries</h2>
+          <h2><span style={{color: "var(--orange)"}}>Trusted</span> by Clients Across Industries</h2>
         </div>
 
         <div className="projects-grid-container">

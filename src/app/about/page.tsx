@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import MobileNav from "@/components/MobileNav";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Oil & Gas");
@@ -76,6 +77,7 @@ export default function AboutPage() {
           <Link href="/certifications">Our Certifications</Link>
           <Link href="/homepage#contact">Contact</Link>
         </nav>
+        <MobileNav activePage="About" />
       </header>
 
       {/* HERO SECTION */}
@@ -498,11 +500,12 @@ export default function AboutPage() {
           vertical-align: middle;
         }
         .about-hero-content h1 {
+          font-family: var(--font-inter-tight), sans-serif;
           font-size: 64px;
           font-weight: 700;
           line-height: 1.05;
           margin-bottom: 30px;
-          letter-spacing: -1px;
+          letter-spacing: 1px;
           text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .about-hero-content p {

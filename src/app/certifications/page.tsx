@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
 export default function CertificationsPage() {
   const certs = [
@@ -42,6 +43,7 @@ export default function CertificationsPage() {
             <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
+        <MobileNav activePage="Our Certifications" />
       </header>
 
       {/* HERO SECTION */}

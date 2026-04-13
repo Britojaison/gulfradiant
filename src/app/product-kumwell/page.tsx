@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
 export default function ProductKumwellPage() {
   return (
@@ -26,6 +27,7 @@ export default function ProductKumwellPage() {
             <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
+        <MobileNav activePage="Products" />
       </header>
 
       <section className="hero">

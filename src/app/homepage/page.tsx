@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import MobileNav from "@/components/MobileNav";
 
 export default function Homepage() {
   const [certIndex, setCertIndex] = useState(0);
@@ -52,6 +53,7 @@ export default function Homepage() {
           <Link href="/certifications">Our Certifications</Link>
           <a href="#contact">Contact</a>
         </nav>
+        <MobileNav activePage="Home" />
       </header>
 
       {/* HERO */}
@@ -264,7 +266,6 @@ export default function Homepage() {
               <div className="hp-news-img"><Image src="/Images/Home/Rectangle 35.png" alt="News" fill style={{objectFit:"cover"}} /></div>
               <div className="hp-news-content">
                  <h4>Industry Expo 2025: Showcasing Advanced Electrical Solutions for Modern Infrastructure</h4>
-                 <p>We participated in Industry Expo 2025, showcasing our electrical solutions and connecting with industry leaders to explore new opportunities and innovations.</p>
                  <div className="hp-news-meta">by Admin • 2025 • 2 Comments</div>
               </div>
            </div>
@@ -272,7 +273,6 @@ export default function Homepage() {
               <div className="hp-news-img"><Image src="/Images/Home/Rectangle 36.png" alt="News" fill style={{objectFit:"cover"}} /></div>
               <div className="hp-news-content">
                  <h4>Delivering Reliable Electrical Solutions for Large-Scale Projects</h4>
-                 <p>We participated in Industry Expo 2025, showcasing our electrical solutions and connecting with industry leaders to explore new opportunities and innovations.</p>
                  <div className="hp-news-meta">by Admin • 2025 • 2 Comments</div>
               </div>
            </div>
@@ -280,7 +280,6 @@ export default function Homepage() {
               <div className="hp-news-img"><Image src="/Images/Home/Rectangle 37.png" alt="News" fill style={{objectFit:"cover"}} /></div>
               <div className="hp-news-content">
                  <h4>Introducing Advanced Electrical Solutions for Modern Infrastructure</h4>
-                 <p>Expanding our product range, we are introducing a new lineup of high-quality electrical solutions to meet the growing demands of infrastructure and industrial projects.</p>
                  <div className="hp-news-meta">by Admin • 2025 • 3 Comments</div>
               </div>
            </div>

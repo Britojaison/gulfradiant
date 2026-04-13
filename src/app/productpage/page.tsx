@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
 export default function ProductPage() {
   // Ordered roughly matching the visual grid from the reference image
@@ -55,6 +56,7 @@ export default function ProductPage() {
             </li>
           </ul>
         </nav>
+        <MobileNav activePage="Products" />
       </header>
 
       <main className="product-page-wrapper">
@@ -71,7 +73,7 @@ export default function ProductPage() {
                     src={`/Images/product/${logo}`}
                     alt={`Product Brand ${i + 1}`}
                     fill
-                    style={{ objectFit: "contain", padding: "24px" }}
+                    style={{ objectFit: "contain", padding: "80px" }}
                   />
                 </Link>
               ) : (
@@ -80,7 +82,7 @@ export default function ProductPage() {
                     src={`/Images/product/${logo}`}
                     alt={`Product Brand ${i + 1}`}
                     fill
-                    style={{ objectFit: "contain", padding: "24px" }}
+                    style={{ objectFit: "contain", padding: "80px" }}
                   />
                 </div>
               );

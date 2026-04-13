@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
 export default function ClientsPage() {
   const brandLogos = [
@@ -41,6 +42,7 @@ export default function ClientsPage() {
             <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
+        <MobileNav activePage="Clients" />
       </header>
 
       {/* HERO SECTION */}
@@ -184,7 +186,7 @@ export default function ClientsPage() {
           font-weight: 600;
           margin-bottom: 5px;
           line-height: 1.1;
-          letter-spacing: -1px;
+          letter-spacing: 1px;
         }
         .clients-hero-description {
           font-size: 15px;
@@ -267,6 +269,24 @@ export default function ClientsPage() {
           position: relative;
           width: 75%;
           height: 75%;
+        }
+
+        @media (max-width: 1024px) {
+          .clients-hero-content { padding: 0 40px; }
+          .clients-brands-header { padding: 0 40px; }
+          .clients-hero-subtitle { font-size: 52px; }
+          .clients-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+          .clients-hero-content { padding: 0 20px; }
+          .clients-brands-header { padding: 0 20px; margin-bottom: 30px; }
+          .clients-hero-subtitle { font-size: 40px; }
+          .clients-hero-subheading { font-size: 20px; }
+          .clients-hero-description { font-size: 14px; }
+          .section-title-inline { font-size: 30px; }
+          .clients-grid { grid-template-columns: repeat(2, 1fr); }
+          .client-card { padding: 16px; }
         }
       `}</style>
     </>
