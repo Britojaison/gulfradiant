@@ -96,9 +96,7 @@ export default function AboutPage() {
             ABOUT THE COMPANY
           </div>
           <h1>Engineering <br />Reliability. <br />Delivering Scale.</h1>
-          <p>
-            One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001.
-          </p>
+
         </div>
       </section>
 
@@ -457,7 +455,7 @@ export default function AboutPage() {
         .orange-square {
           width: 8px;
           height: 8px;
-          background: #B43E00;
+          background: #FF5B05;
           margin-right: 12px;
           display: inline-block;
           flex-shrink: 0;

@@ -59,9 +59,7 @@ export default function ClientsPage() {
           <div className="clients-hero-text-wrapper">
             <h1 className="clients-hero-subtitle">Trusted Partners</h1>
             <h2 className="clients-hero-subheading">Working with Industry-Leading Brands</h2>
-            <p className="clients-hero-description">
-              We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.
-            </p>
+
           </div>
         </div>
       </section>
@@ -237,7 +235,7 @@ export default function ClientsPage() {
         .orange-square {
           width: 8px;
           height: 8px;
-          background: #B43E00;
+          background: #FF5B05;
           flex-shrink: 0;
         }
         .clients-grid {

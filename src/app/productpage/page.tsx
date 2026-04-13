@@ -62,7 +62,7 @@ export default function ProductPage() {
       <main className="product-page-wrapper">
         <div className="product-page-bg"></div>
         <div className="product-page-content">
-          <h1 className="product-page-title">Our Product Range</h1>
+          <h1 className="product-page-title">Our <span>Product Range</span></h1>
           
           <div className="product-brands-grid">
             {logos.map((logo, i) => {

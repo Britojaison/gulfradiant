@@ -676,11 +676,17 @@ body {
 
 .product-page-title {
   text-align: left;
-  font-family: var(--font-sans);
-  font-size: 32px;
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 48px;
   font-weight: 600;
   color: var(--white);
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
   margin-bottom: 50px;
+}
+.product-page-title span {
+  color: var(--orange);
 }
 
 .product-brands-grid {
@@ -791,7 +797,7 @@ body {
 .hp-hero-subtitle .hp-dot {
   width: 8px;
   height: 8px;
-  background: #B43E00;
+  background: #FF5B05;
   margin-right: 12px;
 }
 .hp-hero-content h1 {
@@ -831,7 +837,7 @@ body {
   color: #FFFFFF; 
 }
 .hp-btn-hero-quote .arrow {
-  color: #B43E00;
+  color: #FF5B05;
   font-size: 18px;
   display: inline-flex;
   transition: color 0.3s;
@@ -864,7 +870,7 @@ body {
   text-transform: uppercase; 
   vertical-align: middle;
 }
-.hp-dist-subtitle .hp-dot { width: 7px; height: 7px; background: #B43E00; margin-right: 12px; border-radius: 0; }
+.hp-dist-subtitle .hp-dot { width: 7px; height: 7px; background: #FF5B05; margin-right: 12px; border-radius: 0; }
 .hp-products-dist h2 { 
   font-family: var(--font-inter-tight), sans-serif;
   font-size: 48px; 
@@ -1016,7 +1022,7 @@ body {
 .hp-cert-subtitle .hp-dot {
   width: 6px;
   height: 6px;
-  background: #B43E00;
+  background: #FF5B05;
   margin-right: 8px;
 }
 .hp-cert-left h2 { font-size: 42px; font-weight: 600; line-height: 1.1; }
@@ -1092,8 +1098,9 @@ body {
   text-transform: uppercase; 
   vertical-align: middle;
 }
-.hp-projects-subtitle .hp-dot { width: 6px; height: 6px; background: #B43E00; margin-right: 8px; }
+.hp-projects-subtitle .hp-dot { width: 6px; height: 6px; background: #FF5B05; margin-right: 8px; }
 .hp-projects-top-fixed h2 { font-size: 36px; font-weight: 600; color: #1a1a1a; letter-spacing: -0.5px; line-height: 1.1; }
+.hp-projects-top-fixed h2 span { color: var(--orange); }
 .hp-projects-link { 
   font-family: var(--font-inter-tight), sans-serif;
   font-weight: 500; 
@@ -1156,8 +1163,8 @@ body {
   font-weight: 500;
   font-style: italic;
   font-size: 26px;
-  line-height: 112%;
-  letter-spacing: 0%;
+  line-height: 160%;
+  letter-spacing: 1px;
   text-align: center;
   vertical-align: middle;
   max-width: 1238px; 
@@ -1178,9 +1185,9 @@ body {
 .hp-news-content h4 { 
   font-family: var(--font-inter-tight), sans-serif;
   font-weight: 500; 
-  font-size: 24px; 
+  font-size: 18px; 
   line-height: 150%;
-  color: #222; 
+  color: #6F6F6F; 
   margin-bottom: 16px; 
 }
 .hp-news-content p { 
@@ -1335,7 +1342,7 @@ body {
 .projects-dot {
   width: 8px;
   height: 8px;
-  background: #B43E00;
+  background: #FF5B05;
 }
 
 .projects-trusted-bar h2 {
@@ -1410,7 +1417,7 @@ body {
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0px;
-  color: #000000;
+  color: #5A5A5A !important;
   vertical-align: middle;
   margin-bottom: 16px;
 }
@@ -1421,7 +1428,7 @@ body {
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0px;
-  color: #000000;
+  color: #5A5A5A !important;
   vertical-align: middle;
 }
 
@@ -1514,7 +1521,7 @@ body {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  background-color: #B43E00;
+  background-color: #FF5B05;
 }
 
 .section-title-inline {
@@ -1558,12 +1565,13 @@ body {
 
 .certs-hero-title {
   font-family: var(--font-inter-tight), sans-serif;
-  font-size: 64px;
-  font-weight: 600;
+  font-size: 80px;
+  font-weight: 500;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 100%;
   margin-bottom: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 .certs-hero-subtitle {
@@ -1586,9 +1594,7 @@ body {
 
 .certs-header {
   margin-bottom: 60px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1626,7 +1632,7 @@ body {
   color: #000;
   letter-spacing: -1px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -1853,7 +1859,7 @@ button:active,
   .hp-news-section-new { padding: 50px 20px; }
   .hp-news-header h2 { font-size: 30px; }
   .hp-news-grid { flex-direction: column; gap: 40px; }
-  .hp-news-content h4 { font-size: 20px; }
+  .hp-news-content h4 { font-size: 16px; }
 
   /* Certifications */
   .hp-cert-box { width: 140px; height: 90px; }

@@ -65,9 +65,7 @@ export default function Homepage() {
             <span className="hp-dot"></span> TRUSTED SUPPLIER &bull; INDUSTRIAL PROJECTS &bull; GCC WIDE
           </div>
           <h1>Powering Infrastructure <br />That Delivers</h1>
-          <p>
-            We power critical infrastructure with reliable electrical products and solutions. Our expertise ensures seamless execution, safety, and long-term performance. From sourcing to supply, we support every project with precision and efficiency.
-          </p>
+
           <a href="#contact" className="hp-btn-hero-quote">
             Request a Quote <span className="arrow">&rarr;</span>
           </a>
@@ -131,11 +129,11 @@ export default function Homepage() {
 
       {/* VIDEO BANNER */}
       <section className="hp-video-banner">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="hp-video-element"
         >
           <source src="/Images/Home/video.mp4" type="video/mp4" />
@@ -198,7 +196,7 @@ export default function Homepage() {
       <section className="hp-projects-section-new">
         <div className="hp-projects-top-fixed">
           <div className="hp-projects-subtitle"><span className="hp-dot"></span> PROJECTS</div>
-          <h2>Projects We've Supplied</h2>
+          <h2><span>Projects</span> We've Supplied</h2>
         </div>
         <div className="hp-projects-masonry">
           <div className="hp-projects-col">
@@ -247,7 +245,7 @@ export default function Homepage() {
 
       {/* QUOTE BANNER */}
       <section className="hp-quote-banner-new">
-        <p><i>"Our strength lies in trusted global partnerships and a deep understanding of regional market needs. We are<br />committed to ensuring that every product we distribute meets the highest standards of quality, compliance,<br />and reliability."</i></p>
+        <p><i>"Our strength lies in trusted global partnerships and a deep understanding<br />of regional market needs, ensuring every product meets the highest<br />standards of quality and reliability."</i></p>
         <div className="hp-quote-author">
           <div className="hp-quote-avatar">
             <Image src="/Images/Home/Ellipse 3.png" alt="Author" fill style={{ objectFit: "cover" }} />
@@ -259,30 +257,27 @@ export default function Homepage() {
       {/* NEWS */}
       <section className="hp-news-section-new">
         <div className="hp-news-header">
-           <h2>News <span>&</span> Announcements</h2>
+          <h2>News <span>&</span> Announcements</h2>
         </div>
         <div className="hp-news-grid">
-           <div className="hp-news-card">
-              <div className="hp-news-img"><Image src="/Images/Home/Rectangle 35.png" alt="News" fill style={{objectFit:"cover"}} /></div>
-              <div className="hp-news-content">
-                 <h4>Industry Expo 2025: Showcasing Advanced Electrical Solutions for Modern Infrastructure</h4>
-                 <div className="hp-news-meta">by Admin • 2025 • 2 Comments</div>
-              </div>
-           </div>
-           <div className="hp-news-card">
-              <div className="hp-news-img"><Image src="/Images/Home/Rectangle 36.png" alt="News" fill style={{objectFit:"cover"}} /></div>
-              <div className="hp-news-content">
-                 <h4>Delivering Reliable Electrical Solutions for Large-Scale Projects</h4>
-                 <div className="hp-news-meta">by Admin • 2025 • 2 Comments</div>
-              </div>
-           </div>
-           <div className="hp-news-card">
-              <div className="hp-news-img"><Image src="/Images/Home/Rectangle 37.png" alt="News" fill style={{objectFit:"cover"}} /></div>
-              <div className="hp-news-content">
-                 <h4>Introducing Advanced Electrical Solutions for Modern Infrastructure</h4>
-                 <div className="hp-news-meta">by Admin • 2025 • 3 Comments</div>
-              </div>
-           </div>
+          <div className="hp-news-card">
+            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 35.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
+            <div className="hp-news-content">
+              <h4>Industry Expo 2025: Showcasing Advanced Electrical Solutions for Modern Infrastructure</h4>
+            </div>
+          </div>
+          <div className="hp-news-card">
+            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 36.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
+            <div className="hp-news-content">
+              <h4>Delivering Reliable Electrical Solutions for Large-Scale Projects</h4>
+            </div>
+          </div>
+          <div className="hp-news-card">
+            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 37.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
+            <div className="hp-news-content">
+              <h4>Introducing Advanced Electrical Solutions for Modern Infrastructure</h4>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -294,9 +289,9 @@ export default function Homepage() {
           <div className="hp-contact-left">
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-            <button 
+            <button
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="hp-btn-orange-rect" 
+              className="hp-btn-orange-rect"
               style={{ width: "213px", marginTop: "15px", border: 'none', cursor: 'pointer' }}
             >
               Request a Quote
@@ -307,24 +302,24 @@ export default function Homepage() {
               <h3>Get in touch</h3>
               <form>
                 <div className="hp-form-group">
-                   <label>Full Name</label>
-                   <input type="text" placeholder="Jhon Smith" />
+                  <label>Full Name</label>
+                  <input type="text" placeholder="Jhon Smith" />
                 </div>
                 <div className="hp-form-row">
-                   <div className="hp-form-group hp-form-half">
-                      <label>Email Address</label>
-                      <input type="email" placeholder="john@email.com" />
-                   </div>
-                   <div className="hp-form-group hp-form-half">
-                      <label>Phone Number</label>
-                      <input type="text" placeholder="+91 XXXXXXXXX" />
-                   </div>
+                  <div className="hp-form-group hp-form-half">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@email.com" />
+                  </div>
+                  <div className="hp-form-group hp-form-half">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="+91 XXXXXXXXX" />
+                  </div>
                 </div>
                 <div className="hp-form-group">
-                   <label>Project Details (Optional)</label>
-                   <textarea placeholder="Tell us about your project..." rows={4}></textarea>
+                  <label>Project Details (Optional)</label>
+                  <textarea placeholder="Tell us about your project..." rows={4}></textarea>
                 </div>
-                <button type="submit" className="hp-btn-orange-full" style={{marginTop: "5px"}}>Send Message</button>
+                <button type="submit" className="hp-btn-orange-full" style={{ marginTop: "5px" }}>Send Message</button>
               </form>
             </div>
           </div>

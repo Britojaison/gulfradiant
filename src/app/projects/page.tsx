@@ -87,7 +87,7 @@ export default function ProjectsPage() {
           <div className="projects-hero-overlay"></div>
           <div className="projects-hero-content">
             <h1>Our Projects</h1>
-            <p>Delivering Reliable Electrical Solutions Across Industries With a strong presence across infrastructure, industrial, and utility sectors, our projects reflect our commitment to quality, performance, and long-term reliability.</p>
+            <p className="projects-hero-desc">Delivering Reliable Electrical Solutions Across Industries With a strong presence across infrastructure, industrial, and utility sectors, our projects reflect our commitment to quality, performance, and long-term reliability.</p>
           </div>
         </div>
 
