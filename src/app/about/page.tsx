@@ -499,12 +499,11 @@ export default function AboutPage() {
         }
         .about-hero-content h1 {
           font-family: var(--font-inter-tight), sans-serif;
-          font-size: 64px;
-          font-weight: 700;
-          line-height: 1.05;
-          margin-bottom: 30px;
+          font-size: 80px;
+          font-weight: 500;
+          line-height: 100%;
+          margin-bottom: 32px;
           letter-spacing: 1px;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .about-hero-content p {
           color: rgba(255,255,255,0.9);

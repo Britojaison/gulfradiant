@@ -290,9 +290,11 @@ export default function Homepage() {
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
             <button
+              type="button"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="hp-btn-orange-rect"
               style={{ width: "213px", marginTop: "15px", border: 'none', cursor: 'pointer' }}
+              suppressHydrationWarning
             >
               Request a Quote
             </button>
@@ -303,23 +305,23 @@ export default function Homepage() {
               <form>
                 <div className="hp-form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="Jhon Smith" />
+                  <input type="text" placeholder="Jhon Smith" suppressHydrationWarning />
                 </div>
                 <div className="hp-form-row">
                   <div className="hp-form-group hp-form-half">
                     <label>Email Address</label>
-                    <input type="email" placeholder="john@email.com" />
+                    <input type="email" placeholder="john@email.com" suppressHydrationWarning />
                   </div>
                   <div className="hp-form-group hp-form-half">
                     <label>Phone Number</label>
-                    <input type="text" placeholder="+91 XXXXXXXXX" />
+                    <input type="text" placeholder="+91 XXXXXXXXX" suppressHydrationWarning />
                   </div>
                 </div>
                 <div className="hp-form-group">
                   <label>Project Details (Optional)</label>
-                  <textarea placeholder="Tell us about your project..." rows={4}></textarea>
+                  <textarea placeholder="Tell us about your project..." rows={4} suppressHydrationWarning></textarea>
                 </div>
-                <button type="submit" className="hp-btn-orange-full" style={{ marginTop: "5px" }}>Send Message</button>
+                <button type="submit" className="hp-btn-orange-full" style={{ marginTop: "5px" }} suppressHydrationWarning>Send Message</button>
               </form>
             </div>
           </div>
