@@ -41,7 +41,7 @@ export default function Homepage() {
       {/* HEADER */}
       <header className="hp-navbar">
         <div className="hp-navbar-logo">
-          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
+          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={240} height={67} style={{ objectFit: "contain" }} />
         </div>
         <nav className="hp-navbar-nav">
           <Link href="/homepage" className="active">Home</Link>
@@ -174,7 +174,7 @@ export default function Homepage() {
           <div className="hp-trusted-left">
             <h2>Trusted by Industry<br />Leaders</h2>
             <p>We proudly distribute certified products from globally<br />recognized manufacturers serving infrastructure,<br />commercial, and industrial sectors.</p>
-            <Link href="/clients" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "30px" }}>View All Brand Partners</Link>
+            <Link href="/clients" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "30px" }}>View All Clients</Link>
           </div>
           <div className="hp-trusted-right">
             <div className="hp-trusted-grid-inner">
@@ -201,6 +201,15 @@ export default function Homepage() {
         <div className="hp-projects-masonry">
           <div className="hp-projects-col">
             <div className="hp-project-card">
+              <Image src="/Images/Home/Rectangle 23 (1).png" alt="Waste to Energy" fill style={{ objectFit: "cover" }} />
+              <div className="hp-project-overlay">
+                <div className="hp-project-info">
+                  <h4>Dubai Waste to Energy</h4>
+                  <p>Dubai, United Arab Emirates</p>
+                </div>
+              </div>
+            </div>
+            <div className="hp-project-card">
               <Image src="/Images/Home/Rectangle 24.png" alt="Solar Power Plant" fill style={{ objectFit: "cover" }} />
               <div className="hp-project-overlay">
                 <div className="hp-project-info">
@@ -209,6 +218,9 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="hp-projects-col">
+            <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
             <div className="hp-project-card">
               <Image src="/Images/Home/Rectangle 23.png" alt="Uptown Tower" fill style={{ objectFit: "cover" }} />
               <div className="hp-project-overlay">
@@ -218,8 +230,6 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="hp-projects-col">
             <div className="hp-project-card">
               <Image src="/Images/Home/Rectangle 24 (1).png" alt="Etihad Rail" fill style={{ objectFit: "cover" }} />
               <div className="hp-project-overlay">
@@ -229,17 +239,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 23 (1).png" alt="Waste to Energy" fill style={{ objectFit: "cover" }} />
-              <div className="hp-project-overlay">
-                <div className="hp-project-info">
-                  <h4>Dubai Waste to Energy</h4>
-                  <p>Dubai, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
           </div>
-          <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
         </div>
       </section>
 
@@ -302,6 +302,10 @@ export default function Homepage() {
               <h3>Get in touch</h3>
               <form>
                 <div className="hp-form-group">
+                  <label>Company</label>
+                  <input type="text" placeholder="Jhon Smith" />
+                </div>
+                <div className="hp-form-group">
                   <label>Full Name</label>
                   <input type="text" placeholder="Jhon Smith" />
                 </div>
@@ -312,8 +316,38 @@ export default function Homepage() {
                   </div>
                   <div className="hp-form-group hp-form-half">
                     <label>Phone Number</label>
-                    <input type="text" placeholder="+91 XXXXXXXXX" />
+                    <input type="text" placeholder="+91 XXXXXXXXXXX" />
                   </div>
+                </div>
+                <div className="hp-form-group">
+                  <label>Country</label>
+                  <select>
+                    <option>-None-</option>
+                    <option>United Arab Emirates</option>
+                    <option>Saudi Arabia</option>
+                    <option>Oman</option>
+                    <option>Qatar</option>
+                    <option>Bahrain</option>
+                    <option>Kuwait</option>
+                    <option>India</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className="hp-form-group">
+                  <label>Industry</label>
+                  <select>
+                    <option>-None-</option>
+                    <option>Electrical Engineering</option>
+                    <option>Electro-Mechanical</option>
+                    <option>Building Materials / Construction</option>
+                    <option>Oil & Gas / Oil-field</option>
+                    <option>Industrial Engineering</option>
+                    <option>Infrastructure Projects</option>
+                    <option>Petrochemical / Refinery</option>
+                    <option>Real Estate / Housing</option>
+                    <option>Aviation / Airports</option>
+                    <option>Ports / Marine</option>
+                  </select>
                 </div>
                 <div className="hp-form-group">
                   <label>Project Details (Optional)</label>
@@ -331,7 +365,12 @@ export default function Homepage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={240} height={67} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <div style={{ marginTop: "25px", display: "flex", gap: "15px", paddingLeft: "90px" }}>
+                <a href="https://linkedin.com/company/gulf-radiant" target="_blank" rel="noopener noreferrer" className="hp-footer-linkedin">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>
@@ -339,6 +378,7 @@ export default function Homepage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
@@ -355,7 +395,7 @@ export default function Homepage() {
               <ul>
                 <li><a href="#">Dubai, UAE</a></li>
                 <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+                <li><a href="tel:+97142671662">+971 4 2671662 / 882</a></li>
               </ul>
             </div>
           </div>
