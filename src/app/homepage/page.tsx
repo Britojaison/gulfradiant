@@ -9,8 +9,14 @@ export default function Homepage() {
   const [certIndex, setCertIndex] = useState(0);
 
   const certImages = [
-    "image 82.png", "image 85.png", "image 86.png", "image 88.png", "image 89.png",
-    "Rectangle 10.png", "Rectangle 11.png", "Rectangle 12.png"
+    { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Palazzoli - DEWA APPROVAL" },
+    { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Kumwell - DEWA APPROVAL" },
+    { src: "/Images/Certificates/cert-jsrs-logo.jpg", alt: "JSRS CERTIFICATE" },
+    { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR AD ICV Certificate" },
+    { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR ICV Certificate" },
+    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "PITTAS - ADDC Pre-Qualification" },
+    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "KUMWELL - ADDC Pre-Qualification" },
+    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "Gulf Radiant Electricals - ADDC Pre-Qualification" },
   ];
 
   const nextCert = () => {
@@ -154,7 +160,7 @@ export default function Homepage() {
               <div className="hp-cert-logos">
                 {visibleCerts.map((cert, idx) => (
                   <div className="hp-cert-box" key={idx}>
-                    <Image src={`/Images/Home/${cert}`} alt="Cert" fill style={{ objectFit: "contain", padding: "20px" }} />
+                    <Image src={cert.src} alt={cert.alt} fill style={{ objectFit: "contain", padding: "20px" }} />
                   </div>
                 ))}
               </div>
