@@ -357,7 +357,7 @@ export default function Homepage() {
                   <input type="text" placeholder="Jhon Smith" />
                 </div>
                 <div className="hp-form-group">
-                  <label>Full Name</label>
+                  <label>Name</label>
                   <input type="text" placeholder="Jhon Smith" suppressHydrationWarning />
                 </div>
                 <div className="hp-form-row">
