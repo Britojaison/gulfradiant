@@ -640,86 +640,233 @@ body {
 /* ============================== */
 /* PRODUCT PAGE                   */
 /* ============================== */
-.product-page-wrapper {
+/* PRODUCT PAGE — REDESIGN        */
+/* ============================== */
+
+/* Hero */
+.prod-hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background-color: var(--white);
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 80px 80px;
 }
-
-.product-page-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 800px;
-  background-image: url('/Images/product/close-up-electric-router-spindle-moulder-furniture-assembly-shop 1.png');
-  background-size: cover;
-  background-position: center top;
-  z-index: 0;
-}
-
-.product-page-bg::after {
-  content: '';
+.prod-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.25) 100%);
+  z-index: 1;
 }
-
-.product-page-content {
+.prod-hero-content {
   position: relative;
   z-index: 2;
-  padding: 140px 80px 100px;
-  max-width: 100%;
-  margin: 0;
+  max-width: 650px;
+}
+.prod-hero-tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.prod-orange-sq {
+  width: 8px;
+  height: 8px;
+  background: #FF5B05;
+  flex-shrink: 0;
+}
+.prod-hero-content h1 {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.prod-hero-content h1 span {
+  color: #FF5B05;
+}
+.prod-hero-content p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 500px;
 }
 
-.product-page-title {
-  text-align: left;
-  font-family: var(--font-inter-tight), sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
+/* Grid Section */
+.prod-grid-section {
+  padding: 80px 80px 60px;
+  background: #fafafa;
+}
+.prod-grid-header {
   margin-bottom: 50px;
 }
-.product-page-title span {
-  color: var(--orange);
+.prod-grid-tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.prod-grid-header h2 {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+.prod-grid-header h2 span {
+  color: #FF5B05;
 }
 
-.product-brands-grid {
+/* Cards Grid */
+.prod-brands-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
-.product-brand-card {
-  background: var(--white);
-  border-radius: 8px;
-  aspect-ratio: 4/3;
+.prod-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.prod-card:hover {
+  border-color: #FF5B05;
+  box-shadow: 0 12px 40px rgba(255, 91, 5, 0.1);
+  transform: translateY(-6px);
+}
+
+.prod-card-logo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
-
-.product-brand-card img {
-  padding: 20%;
+.prod-card-logo img {
+  padding: 22% 18%;
 }
-
-.product-brand-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
-}
-
-.product-brand-card-dark {
+.prod-card-logo-dark {
   background: #1a1a1a;
 }
+
+.prod-card-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+.prod-card-name span {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.prod-card-name svg {
+  color: #bbb;
+  transition: all 0.3s ease;
+}
+.prod-card:hover .prod-card-name {
+  background: #FF5B05;
+  border-color: #FF5B05;
+}
+.prod-card:hover .prod-card-name span {
+  color: #fff;
+}
+.prod-card:hover .prod-card-name svg {
+  color: #fff;
+  transform: translate(2px, -2px);
+}
+
+/* CTA */
+.prod-cta {
+  padding: 80px 80px;
+  background: #111;
+  text-align: center;
+}
+.prod-cta h2 {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.prod-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+.prod-cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #FF5B05;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.prod-cta-btn:hover {
+  background: #e04f00;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .prod-brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .prod-hero { padding: 0 40px 60px; }
+  .prod-grid-section { padding: 60px 40px 50px; }
+  .prod-cta { padding: 60px 40px; }
+  .prod-hero-content h1 { font-size: 48px; }
+}
+
+@media (max-width: 768px) {
+  .prod-hero {
+    height: 55vh;
+    min-height: 400px;
+    padding: 0 24px 50px;
+  }
+  .prod-hero-content h1 { font-size: 36px; }
+  .prod-hero-content p { font-size: 14px; }
+  .prod-grid-section { padding: 50px 24px 40px; }
+  .prod-grid-header h2 { font-size: 30px; }
+  .prod-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .prod-card-name { padding: 12px 16px; }
+  .prod-card-name span { font-size: 13px; }
+  .prod-cta { padding: 50px 24px; }
+  .prod-cta h2 { font-size: 28px; }
+}
+
+/* Legacy classes kept for backward compat */
+.product-page-wrapper { display: none; }
 
 @media (max-width: 1024px) {
   .product-brands-grid {

@@ -47,66 +47,84 @@ export default function ProductPage() {
         </div>
         <nav>
           <ul className="navbar-nav" id="main-nav">
-            <li>
-              <Link href="/homepage">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/productpage" className="active">
-                Products
-              </Link>
-            </li>
-            <li>
-              <span className="nav-dropdown">Useful Information</span>
-            </li>
-            <li>
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="/clients">Clients</Link>
-            </li>
-            <li>
-              <Link href="/certifications">Our Certifications</Link>
-            </li>
-            <li>
-               <Link href="/homepage#contact">Contact</Link>
-            </li>
+            <li><Link href="/homepage">Home</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/productpage" className="active">Products</Link></li>
+            <li><span className="nav-dropdown">Useful Information</span></li>
+            <li><Link href="/projects">Projects</Link></li>
+            <li><Link href="/clients">Clients</Link></li>
+            <li><Link href="/certifications">Our Certifications</Link></li>
+            <li><Link href="/homepage#contact">Contact</Link></li>
           </ul>
         </nav>
         <MobileNav activePage="Products" />
       </header>
 
-      <main className="product-page-wrapper">
-        <div className="product-page-bg"></div>
-        <div className="product-page-content">
-          <h1 className="product-page-title">Our <span>Product Range</span></h1>
-          
-          <div className="product-brands-grid">
-            {logos.map((logo, i) => {
-              const cardClass = `product-brand-card${logo.dark ? " product-brand-card-dark" : ""}`;
-              const card = (
-                <Image
-                  src={`/Images/product/${logo.src}`}
-                  alt={logo.brand}
-                  fill
-                  style={{ objectFit: "contain" }}
-                />
-              );
-              return logo.link ? (
-                <Link href={logo.link} className={cardClass} key={i}>
-                  {card}
-                </Link>
-              ) : (
-                <div className={cardClass} key={i}>
-                  {card}
-                </div>
-              );
-            })}
+      {/* HERO */}
+      <section className="prod-hero">
+        <Image
+          src="/Images/product/close-up-electric-router-spindle-moulder-furniture-assembly-shop 1.png"
+          alt="Industrial products"
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
+        <div className="prod-hero-overlay"></div>
+        <div className="prod-hero-content">
+          <div className="prod-hero-tag">
+            <span className="prod-orange-sq"></span>
+            OUR PARTNERS
           </div>
+          <h1>Products We<br /><span>Distribute</span></h1>
+          <p>We represent globally recognized manufacturers, delivering certified products for infrastructure, industrial, and commercial projects.</p>
         </div>
-      </main>
+      </section>
+
+      {/* BRANDS GRID */}
+      <section className="prod-grid-section">
+        <div className="prod-grid-header">
+          <div className="prod-grid-tag">
+            <span className="prod-orange-sq"></span>
+            BRAND PORTFOLIO
+          </div>
+          <h2>Trusted <span>Brands</span></h2>
+        </div>
+
+        <div className="prod-brands-grid">
+          {logos.map((logo, i) => {
+            const inner = (
+              <>
+                <div className={`prod-card-logo${logo.dark ? " prod-card-logo-dark" : ""}`}>
+                  <Image
+                    src={`/Images/product/${logo.src}`}
+                    alt={logo.brand}
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <div className="prod-card-name">
+                  <span>{logo.brand}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                  </svg>
+                </div>
+              </>
+            );
+            return logo.link ? (
+              <Link href={logo.link} className="prod-card" key={i}>{inner}</Link>
+            ) : (
+              <div className="prod-card" key={i}>{inner}</div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="prod-cta">
+        <h2>Need Help Choosing<br />the Right Product?</h2>
+        <p>Our engineers can help you find the right solution for your project requirements.</p>
+        <Link href="/homepage#contact" className="prod-cta-btn">Get in Touch</Link>
+      </section>
 
       <footer className="hp-footer">
         <div className="hp-footer-content">
