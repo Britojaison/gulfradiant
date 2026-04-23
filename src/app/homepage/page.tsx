@@ -64,7 +64,7 @@ export default function Homepage() {
 
       {/* HERO */}
       <section className="hp-hero-new">
-        <Image src="/Images/Home/f6b8aed5ae226daa7b778061ebc1bdb0aaa5cd56.jpg" alt="Hero Background" fill style={{ objectFit: "cover" }} priority />
+        <Image src="/Images/Home/herobanner.png" alt="Hero Background" fill style={{ objectFit: "cover" }} priority />
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
           <div className="hp-hero-subtitle">
@@ -295,15 +295,58 @@ export default function Homepage() {
           <div className="hp-contact-left">
             <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
             <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-            <button
-              type="button"
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="hp-btn-orange-rect"
-              style={{ width: "213px", marginTop: "15px", border: 'none', cursor: 'pointer' }}
-              suppressHydrationWarning
-            >
-              Request a Quote
-            </button>
+
+            {/* Location 1 - Abu Dhabi */}
+            <div className="hp-location-row">
+              <div className="hp-location-map">
+                <iframe
+                  src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gulf Radiant - Abu Dhabi Office"
+                ></iframe>
+              </div>
+              <div className="hp-location-info">
+                <h4>Abu Dhabi Office</h4>
+                <p>GULF RADIANT ELECTRICALS L.L.C</p>
+                <p>P.O. Box: 91366, M-9,<br />Abu Dhabi, U.A.E</p>
+                <div className="hp-location-contact">
+                  <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
+                  <a href="tel:+97124488449">+971 2 4488449</a>
+                  <a href="tel:+971506409192">+971 50 6409192</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Location 2 - Dubai */}
+            <div className="hp-location-row">
+              <div className="hp-location-map">
+                <iframe
+                  src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gulf Radiant - Dubai Office"
+                ></iframe>
+              </div>
+              <div className="hp-location-info">
+                <h4>Dubai Office</h4>
+                <p>GULF RADIANT L.L.C</p>
+                <p>P.O. Box: 26426, Amman Street,<br />Al Qusais Industrial Area - 3,<br />Dubai, United Arab Emirates</p>
+                <div className="hp-location-contact">
+                  <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
+                  <a href="tel:+97142671662">+971 4 2671662 / 882</a>
+                  <span>Fax: +971 4 2671883</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="hp-contact-right" id="contact-form">
             <div className="hp-contact-formbox">

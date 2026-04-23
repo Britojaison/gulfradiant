@@ -3,15 +3,34 @@ import Link from "next/link";
 import MobileNav from "@/components/MobileNav";
 
 export default function ProductPage() {
-  // Ordered roughly matching the visual grid from the reference image
   const logos = [
-    "image 3.png", "image 4.png", "image 7.png", "image 6.png",
-    "image 9.png", "image 10.png", "image 11.png", "image 12.png",
-    "image 13.png", "image 14.png", "image 15.png", "image 16.png",
-    "image 17.png", "image 18.png", "image 19.png", "image 20.png",
-    "image 21.png", "image 22.png", "image 23.png", "image 24.png",
-    "image 25.png", "image 26.png", "image 27.png", "image 28.png",
-    "image 29.png", "image 30.png", "image 31.png"
+    { src: "kumwell.png", brand: "Kumwell", link: "/product-kumwell" },
+    { src: "pittas.jpg", brand: "Pittas" },
+    { src: "CITEL LOGO.png", brand: "Citel" },
+    { src: "OBSTA LOGO.png", brand: "Obsta" },
+    { src: "PALAZZOLI GROUP LOGO.png", brand: "Palazzoli" },
+    { src: "TIGO LOGO.png", brand: "Tigo" },
+    { src: "graig&derricott.png", brand: "Craig & Derricott" },
+    { src: "NVENT CADDY LOGO.svg", brand: "nVent Caddy" },
+    { src: "NVENT ERICO LOGO.svg", brand: "nVent Erico" },
+    { src: "WALLMAX LOGO.png", brand: "Wallmax" },
+    { src: "siechem.png", brand: "Siechem" },
+    { src: "TUBIFOR LOGO.png", brand: "Tubifor" },
+    { src: "dietzel.png", brand: "Dietzel" },
+    { src: "BAHRA CABLES.svg", brand: "Bahra Cables" },
+    { src: "TEKAB CABLES.png", brand: "Tekab Cables" },
+    { src: "NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables" },
+    { src: "PSI LOGO.png", brand: "PSI" },
+    { src: "EMI LOGO.png", brand: "EMI", dark: true },
+    { src: "LITETECH LOGO.webp", brand: "Litetech" },
+    { src: "HAUFF TECHNIK LOGO.png", brand: "Hauff Technik" },
+    { src: "CCG Logo.png", brand: "CCG" },
+    { src: "cabex.png", brand: "Cabex" },
+    { src: "obo.png", brand: "OBO" },
+    { src: "ROSE LOGO.png", brand: "Rose" },
+    { src: "SIRENA LOGO.png", brand: "Sirena" },
+    { src: "FRATER1-LOGO.webp", brand: "Frater" },
+    { src: "COSMOPLAST LOGO.avif", brand: "Cosmoplast" },
   ];
 
   return (
@@ -66,24 +85,22 @@ export default function ProductPage() {
           
           <div className="product-brands-grid">
             {logos.map((logo, i) => {
-              const isKumwell = logo === "image 3.png";
-              return isKumwell ? (
-                <Link href="/product-kumwell" className="product-brand-card" key={i}>
-                  <Image
-                    src={`/Images/product/${logo}`}
-                    alt={`Product Brand ${i + 1}`}
-                    fill
-                    style={{ objectFit: "contain" }}
-                  />
+              const cardClass = `product-brand-card${logo.dark ? " product-brand-card-dark" : ""}`;
+              const card = (
+                <Image
+                  src={`/Images/product/${logo.src}`}
+                  alt={logo.brand}
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              );
+              return logo.link ? (
+                <Link href={logo.link} className={cardClass} key={i}>
+                  {card}
                 </Link>
               ) : (
-                <div className="product-brand-card" key={i}>
-                  <Image
-                    src={`/Images/product/${logo}`}
-                    alt={`Product Brand ${i + 1}`}
-                    fill
-                    style={{ objectFit: "contain" }}
-                  />
+                <div className={cardClass} key={i}>
+                  {card}
                 </div>
               );
             })}
