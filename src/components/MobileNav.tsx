@@ -41,8 +41,8 @@ export default function MobileNav({ activePage }: MobileNavProps) {
               <Image
                 src="/Images/Brand_partners/Frame 76.png"
                 alt="Gulf Radiant"
-                width={140}
-                height={40}
+                width={240}
+                height={67}
                 style={{ objectFit: "contain" }}
               />
               <button className="mobile-menu-close" onClick={() => setOpen(false)} aria-label="Close menu">

@@ -10,8 +10,8 @@ export default function ProductKumwellPage() {
           <Image
             src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
-            width={180}
-            height={50}
+            width={240}
+            height={67}
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -47,7 +47,7 @@ export default function ProductKumwellPage() {
           </p>
           <div className="hero-buttons">
             <button className="btn-primary">Request a Quote</button>
-            <a href="#" className="btn-outline">
+            <a href="https://www.kumwell.com/en/about-us" target="_blank" rel="noopener noreferrer" className="btn-outline">
               Visit Website 
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
                 <path d="M7 17L17 7"></path>
@@ -115,7 +115,12 @@ export default function ProductKumwellPage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={240} height={67} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <div style={{ marginTop: "25px", display: "flex", gap: "15px", paddingLeft: "90px" }}>
+                <a href="https://linkedin.com/company/gulf-radiant" target="_blank" rel="noopener noreferrer" className="hp-footer-linkedin">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>
@@ -123,6 +128,7 @@ export default function ProductKumwellPage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/homepage#contact">Contact</Link></li>
               </ul>
             </div>
@@ -139,7 +145,7 @@ export default function ProductKumwellPage() {
               <ul>
                 <li><a href="#">Dubai, UAE</a></li>
                 <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+                <li><a href="tel:+97142671662">+971 4 2671662 / 882</a></li>
               </ul>
             </div>
           </div>

@@ -85,8 +85,8 @@ export default function CertificationsPage() {
           <Image
             src="/Images/Brand_partners/Frame 76.png"
             alt="Gulf Radiant Logo"
-            width={180}
-            height={50}
+            width={240}
+            height={67}
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -254,6 +254,7 @@ export default function CertificationsPage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/homepage#contact">Contact</Link></li>
               </ul>
             </div>
@@ -270,7 +271,7 @@ export default function CertificationsPage() {
               <ul>
                 <li><a href="#">Dubai, UAE</a></li>
                 <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+                <li><a href="tel:+97142671662">+971 4 2671662 / 882</a></li>
               </ul>
             </div>
           </div>

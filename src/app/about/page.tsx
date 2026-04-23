@@ -65,7 +65,7 @@ export default function AboutPage() {
       {/* HEADER */}
       <header className="hp-navbar">
         <div className="hp-navbar-logo">
-          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={180} height={50} style={{ objectFit: "contain" }} />
+          <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={240} height={67} style={{ objectFit: "contain" }} />
         </div>
         <nav className="hp-navbar-nav">
           <Link href="/homepage">Home</Link>
@@ -144,6 +144,31 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DIVISIONS SECTION */}
+      <section className="divisions-section">
+        <div className="container">
+          <div className="division-card">
+            <div className="div-header">
+              <div className="div-icon">
+                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 22L12 2l4 20"/><path d="M3 14h18"/><path d="M5 9h14"/><path d="M10 22l-2-8"/><path d="M14 22l2-8"/><circle cx="3" cy="14" r="1"/><circle cx="21" cy="14" r="1"/><circle cx="5" cy="9" r="1"/><circle cx="19" cy="9" r="1"/></svg>
+              </div>
+              <h3>Electrical Division</h3>
+            </div>
+            <p>We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently..</p>
+          </div>
+          
+          <div className="division-card">
+            <div className="div-header">
+              <div className="div-icon">
+                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 22H2"/><path d="M4 22V10l3 2V8l4 3V6l4 3V4h3v18"/><path d="M16 14h2"/><path d="M16 18h2"/><path d="M10 18h2"/><path d="M6 3c.5 0 2-2 3-2"/></svg>
+              </div>
+              <h3>Industrial Division</h3>
+            </div>
+            <p>The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...</p>
           </div>
         </div>
       </section>
@@ -387,7 +412,12 @@ export default function AboutPage() {
         <div className="hp-footer-content">
           <div className="hp-footer-grid">
             <div className="hp-footer-brand">
-              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={175} height={59} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={240} height={67} style={{ objectFit: "contain", objectPosition: "left" }} />
+              <div style={{ marginTop: "25px", display: "flex", gap: "15px", paddingLeft: "90px" }}>
+                <a href="https://linkedin.com/company/gulf-radiant" target="_blank" rel="noopener noreferrer" className="hp-footer-linkedin">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
             </div>
             <div className="hp-footer-col">
               <h4>Navigation</h4>
@@ -395,6 +425,7 @@ export default function AboutPage() {
                 <li><Link href="/homepage">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/productpage">Products</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/homepage#contact">Contact</Link></li>
               </ul>
             </div>
@@ -411,7 +442,7 @@ export default function AboutPage() {
               <ul>
                 <li><a href="#">Dubai, UAE</a></li>
                 <li><a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a></li>
-                <li><a href="tel:+97143579062">+971 4 357 9062</a></li>
+                <li><a href="tel:+97142671662">+971 4 2671662 / 882</a></li>
               </ul>
             </div>
           </div>
@@ -522,9 +553,8 @@ export default function AboutPage() {
           padding: 0 80px;
         }
         .about-image-side { 
-          flex: 0 0 630px; 
+          flex: 0 0 600px; 
           position: relative;
-          aspect-ratio: 630 / 730;
         }
         .about-facility-img { 
           object-fit: cover; 
@@ -566,6 +596,41 @@ export default function AboutPage() {
           line-height: 100%; 
           font-weight: 400;
           letter-spacing: 0%;
+        }
+
+        /* DIVISIONS CONTENT */
+        .divisions-section { padding: 80px 0 60px; background: #fff; }
+        .divisions-section .container { display: flex; gap: 40px; }
+        .division-card {
+          flex: 1;
+          background: white;
+          border: 1px solid #FF5B05;
+          border-radius: 6px;
+          padding: 60px 50px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+          transition: transform 0.3s;
+          min-height: 420px;
+        }
+        .division-card:hover { transform: translateY(-5px); }
+        .div-header { display: flex; align-items: center; margin-bottom: 30px; gap: 20px; }
+        .div-icon { flex-shrink: 0; }
+        .div-header h3 { 
+          font-family: var(--font-inter-tight), sans-serif; 
+          font-size: 34px; 
+          font-weight: 600; 
+          color: #FF5B05; 
+          margin: 0; 
+        }
+        .division-card p { 
+          font-family: var(--font-inter-tight), sans-serif; 
+          font-weight: 400;
+          font-style: normal;
+          font-size: 20px; 
+          line-height: 1.6; 
+          letter-spacing: 0.5px;
+          vertical-align: middle;
+          color: #555; 
+          margin: 0; 
         }
 
         /* WHY GR NEW */
