@@ -1201,16 +1201,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  border-radius: 12px;
+  border-radius: 0;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   transition: background 0.3s, border-color 0.3s;
 }
 
 .hp-btn-hero-quote:hover {
-  background: rgba(255, 91, 5, 0.55);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #FFFFFF;
+  background: #e04f00;
 }
 
 .hp-btn-hero-quote .arrow {
