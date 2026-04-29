@@ -3175,8 +3175,14 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     gap: 30px;
   }
 
+  .about-image {
+    margin: 0 auto !important;
+    justify-self: center !important;
+    max-width: 380px !important;
+  }
+
   .kumwell-product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
@@ -3741,7 +3747,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .kumwell-product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
@@ -3770,6 +3776,12 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   .about-content {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .about-image {
+    margin: 0 auto !important;
+    justify-self: center !important;
+    max-width: 380px !important;
   }
 
   .about-text p {
@@ -4184,6 +4196,14 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .clients-hero-subtitle {
     font-size: 32px;
+  }
+
+  .kumwell-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    max-width: 100% !important;
   }
 
   .segment-tab {
