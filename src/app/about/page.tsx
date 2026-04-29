@@ -444,7 +444,7 @@ export default function AboutPage() {
         .about-hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
+          background: rgba(0,0,0,0.25) !important;
           z-index: 1;
         }
         .about-hero-content {
@@ -931,8 +931,8 @@ export default function AboutPage() {
           .container { padding: 0 20px; }
           .hp-navbar { padding: 15px 20px; }
           .hp-navbar-logo img { width: 140px !important; height: auto !important; }
-          .about-hero { padding-left: 20px; height: 60vh; }
-          .about-hero-content { width: 100%; padding-right: 20px; top: 35% !important; transform: translateY(-50%) !important; }
+          .about-hero { padding-left: 20px; height: 100vh; }
+          .about-hero-content { width: 100%; padding-right: 20px; }
           .about-hero-content h1 { font-size: 32px; text-align: left; line-height: 1.2; margin-top: 10px; }
           .about-hero-content h1 br { display: none; }
           .about-tag { margin-bottom: 5px !important; }
