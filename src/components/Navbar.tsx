@@ -61,9 +61,15 @@ export default function Navbar() {
       key={animKey}
       className={`hp-navbar${scrolled ? " hp-navbar-scrolled" : ""}${atTop ? " hp-navbar-at-top" : ""}`}
     >
-      <div className="hp-navbar-logo">
-        <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={560} height={120} style={{ objectFit: "contain" }} />
-      </div>
+      <Link href="/homepage" className="hp-navbar-logo">
+        <Image 
+          src="/Images/Brand_partners/Frame 76.png" 
+          alt="Gulf Radiant" 
+          width={560} 
+          height={120} 
+          style={{ objectFit: "contain", objectPosition: "left center" }} 
+        />
+      </Link>
       <nav className="hp-navbar-nav">
         {navLinks.map((link) =>
           link.label === "Contact" ? (

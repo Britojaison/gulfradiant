@@ -9,7 +9,7 @@ export default function ProductPage() {
     { src: "OBSTA LOGO.png", brand: "Obsta" },
     { src: "PALAZZOLI GROUP LOGO.png", brand: "Palazzoli" },
     { src: "TIGO LOGO.png", brand: "Tigo" },
-    { src: "graig&derricott.png", brand: "Craig & Derricott" },
+    { src: "graig-derricott.png", brand: "Craig & Derricott" },
     { src: "NVENT CADDY LOGO.svg", brand: "nVent Caddy" },
     { src: "NVENT ERICO LOGO.svg", brand: "nVent Erico" },
     { src: "WALLMAX LOGO.png", brand: "Wallmax" },
