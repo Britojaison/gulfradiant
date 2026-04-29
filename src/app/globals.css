@@ -1008,7 +1008,7 @@ body {
   margin: 0;
   padding: 0;
   flex-shrink: 0;
-  margin-left: -26px !important;
+  margin-left: 28px !important;
 }
 
 .hp-navbar-logo img {
@@ -1024,7 +1024,7 @@ body {
 
 @media (max-width: 1440px) {
   .hp-navbar-logo {
-    margin-left: -26px !important;
+    margin-left: 28px !important;
     left: auto !important;
   }
 }
