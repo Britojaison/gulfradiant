@@ -1187,8 +1187,8 @@ body {
 .hp-btn-hero-quote {
   width: 213px;
   height: 51px;
-  background: rgba(255, 91, 5, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #FF5B05;
+  border: none;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -1198,13 +1198,11 @@ body {
   justify-content: center;
   gap: 15px;
   border-radius: 12px;
-  transition: background 0.3s, border-color 0.3s;
+  transition: background 0.3s;
 }
 
 .hp-btn-hero-quote:hover {
-  background: rgba(255, 91, 5, 0.55);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #FFFFFF;
+  background: #e04f00;
 }
 
 .hp-btn-hero-quote .arrow {
