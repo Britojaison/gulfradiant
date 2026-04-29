@@ -3696,8 +3696,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   /* ---- KUMWELL PAGE ---- */
   .hero {
-    height: 100vh;
-    min-height: 380px;
+    height: 50svh;
+    min-height: 280px;
   }
 
   .hero-content {
