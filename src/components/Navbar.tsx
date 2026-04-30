@@ -74,7 +74,6 @@ export default function Navbar() {
             </Link>
           )
         )}
-        <span className="dropdown">Useful Information</span>
       </nav>
       <MobileNav activePage={activePage} />
     </header>

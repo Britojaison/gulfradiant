@@ -972,9 +972,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 18px 0 0;
+  gap: clamp(12px, 1.8vw, 32px);
+  padding: 0 clamp(16px, 2vw, 32px);
   box-sizing: border-box;
   border-radius: 0;
+  overflow-x: clip;
 
   background: transparent;
   --tw-backdrop-blur: blur(8px);
@@ -1007,15 +1009,17 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  min-width: 0;
+  flex: 0 1 clamp(210px, 22vw, 320px);
   flex-shrink: 0;
-  margin-left: 28px !important;
+  margin-left: 0 !important;
 }
 
 .hp-navbar-logo img {
-  width: 560px !important;
+  width: clamp(210px, 22vw, 320px) !important;
   height: auto !important;
   max-width: 100% !important;
-  max-height: 120px !important;
+  max-height: 96px !important;
   margin: 0 !important;
   padding: 0 !important;
   object-fit: contain !important;
@@ -1024,20 +1028,23 @@ body {
 
 @media (max-width: 1440px) {
   .hp-navbar-logo {
-    margin-left: 28px !important;
+    margin-left: 0 !important;
     left: auto !important;
   }
 }
 
 .hp-navbar-nav {
   display: flex;
-  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: flex-end;
+  gap: clamp(2px, 0.45vw, 8px);
   align-items: center;
   background: none;
   border: none;
   border-radius: 0;
   padding: 0;
-  margin-right: 80px;
+  margin-right: 0;
   margin-left: auto;
 }
 
@@ -1046,15 +1053,15 @@ body {
   color: #ffffff;
   font-family: var(--font-inter-tight), sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: clamp(14px, 0.95vw, 18px);
   letter-spacing: 0.08em;
   text-transform: capitalize;
-  line-height: 100%;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   position: relative;
   vertical-align: middle;
-  padding: 10px 20px;
+  padding: 10px clamp(10px, 0.9vw, 20px);
   border-radius: 30px;
   transition: color 0.25s ease, background 0.25s ease;
   white-space: nowrap;
@@ -2934,8 +2941,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   gap: 15px;
 }
 
-/* Show hamburger on tablet/mobile */
-@media (max-width: 1024px) {
+/* Switch to mobile nav before desktop links begin to overflow on laptops */
+@media (max-width: 1280px) {
   .mobile-nav-wrapper {
     display: block;
   }
@@ -2943,6 +2950,24 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   .hp-navbar-nav,
   .navbar-nav {
     display: none !important;
+  }
+
+  .hp-navbar,
+  .navbar {
+    height: 88px;
+    padding: 0 24px !important;
+  }
+
+  .hp-navbar-logo {
+    flex: 0 1 auto;
+    margin-left: 0 !important;
+    left: auto !important;
+  }
+
+  .hp-navbar-logo img {
+    width: min(300px, 52vw) !important;
+    max-height: 88px !important;
+    object-position: left center !important;
   }
 }
 
