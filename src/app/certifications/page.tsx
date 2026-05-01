@@ -55,6 +55,12 @@ export default function CertificationsPage() {
       type: "pdf" as const,
     },
     {
+      image: "GR-iso.jpg",
+      title: "GR ISO 9001:2015 Certificate",
+      doc: "gr-iso-9001-2015.pdf",
+      type: "pdf" as const,
+    },
+    {
       image: "cert-addc-logo.jpg",
       title: "PITTAS - ADDC Pre-Qualification",
       doc: "pittas-addc-taqa-approval.pdf",

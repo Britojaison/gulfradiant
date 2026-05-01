@@ -40,6 +40,17 @@ export default function Navbar() {
   const [atTop, setAtTop] = useState(true);
   const [animKey, setAnimKey] = useState(0);
 
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/" || pathname === "/homepage") {
+      event.preventDefault();
+      const hero = document.getElementById("home-hero");
+      if (hero) {
+        hero.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", "/homepage#home-hero");
+      }
+    }
+  };
+
   useEffect(() => {
     let wasAtTop = true;
     const onScroll = () => {
@@ -61,9 +72,14 @@ export default function Navbar() {
       key={animKey}
       className={`hp-navbar${scrolled ? " hp-navbar-scrolled" : ""}${atTop ? " hp-navbar-at-top" : ""}`}
     >
-      <div className="hp-navbar-logo">
+      <Link
+        href="/homepage#home-hero"
+        className="hp-navbar-logo"
+        aria-label="Go to homepage hero section"
+        onClick={handleLogoClick}
+      >
         <Image src="/Images/Brand_partners/Frame 76.png" alt="Gulf Radiant" width={560} height={120} style={{ objectFit: "contain" }} />
-      </div>
+      </Link>
       <nav className="hp-navbar-nav">
         {navLinks.map((link) =>
           link.label === "Contact" ? (

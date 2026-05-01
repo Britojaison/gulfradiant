@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 interface MobileNavProps {
@@ -10,6 +11,7 @@ interface MobileNavProps {
 }
 
 export default function MobileNav({ activePage }: MobileNavProps) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
 
@@ -27,6 +29,18 @@ export default function MobileNav({ activePage }: MobileNavProps) {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (pathname === "/" || pathname === "/homepage") {
+      event.preventDefault();
+      const hero = document.getElementById("home-hero");
+      if (hero) {
+        hero.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", "/homepage#home-hero");
+      }
+    }
+  };
 
   const links = [
     { href: "/homepage", label: "Home" },
@@ -76,13 +90,20 @@ export default function MobileNav({ activePage }: MobileNavProps) {
             flexShrink: 0,
           }}
         >
-          <Image
-            src="/Images/Brand_partners/Frame 76.png"
-            alt="Gulf Radiant"
-            width={140}
-            height={40}
-            style={{ objectFit: "contain" }}
-          />
+          <Link
+            href="/homepage#home-hero"
+            onClick={handleLogoClick}
+            aria-label="Go to homepage hero section"
+            style={{ display: "inline-flex", alignItems: "center" }}
+          >
+            <Image
+              src="/Images/Brand_partners/Frame 76.png"
+              alt="Gulf Radiant"
+              width={140}
+              height={40}
+              style={{ objectFit: "contain" }}
+            />
+          </Link>
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"

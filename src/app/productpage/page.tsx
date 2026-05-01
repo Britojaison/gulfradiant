@@ -3,33 +3,36 @@ import Link from "next/link";
 
 export default function ProductPage() {
   const logos = [
-    { src: "kumwell.png", brand: "Kumwell", link: "/product-kumwell" },
-    { src: "pittas.jpg", brand: "Pittas" },
-    { src: "CITEL LOGO.png", brand: "Citel" },
-    { src: "OBSTA LOGO.png", brand: "Obsta" },
-    { src: "PALAZZOLI GROUP LOGO.png", brand: "Palazzoli" },
-    { src: "TIGO LOGO.png", brand: "Tigo" },
-    { src: "graig-derricott.png", brand: "Craig & Derricott" },
-    { src: "NVENT CADDY LOGO.svg", brand: "nVent Caddy" },
-    { src: "NVENT ERICO LOGO.svg", brand: "nVent Erico" },
-    { src: "WALLMAX LOGO.png", brand: "Wallmax" },
-    { src: "siechem.png", brand: "Siechem" },
-    { src: "TUBIFOR LOGO.png", brand: "Tubifor" },
-    { src: "dietzel.png", brand: "Dietzel" },
-    { src: "BAHRA CABLES.svg", brand: "Bahra Cables" },
-    { src: "TEKAB CABLES.png", brand: "Tekab Cables" },
-    { src: "NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables" },
-    { src: "PSI LOGO.png", brand: "PSI" },
-    { src: "EMI LOGO.png", brand: "EMI", dark: true },
-    { src: "LITETECH LOGO.webp", brand: "Litetech" },
-    { src: "HAUFF TECHNIK LOGO.png", brand: "Hauff Technik" },
-    { src: "CCG Logo.png", brand: "CCG" },
-    { src: "cabex.png", brand: "Cabex" },
-    { src: "obo.png", brand: "OBO" },
-    { src: "ROSE LOGO.png", brand: "Rose" },
-    { src: "SIRENA LOGO.png", brand: "Sirena" },
-    { src: "FRATER1-LOGO.webp", brand: "Frater" },
-    { src: "COSMOPLAST LOGO.avif", brand: "Cosmoplast" },
+    { src: "/Images/product/Products/kumwell.png", brand: "Kumwell", link: "/product-kumwell" },
+    { src: "/Images/product/Products/pittas.jpg", brand: "Pittas" },
+    { src: "/Images/product/Products/CITEL LOGO.png", brand: "Citel", scale: 1.8 },
+    { src: "/Images/product/Products/OBSTA LOGO.png", brand: "Obsta", scale: 2 },
+    { src: "/Images/product/Products/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli" },
+    { src: "/Images/product/Products/TIGO LOGO.png", brand: "Tigo" },
+    { src: "/Images/product/CRAIG AND DERRICOTT LOGO.png", brand: "Craig & Derricott", scale: 2 },
+    { src: "/Images/product/Products/NVENT CADDY LOGO.svg", brand: "nVent Caddy", scale: 2 },
+    { src: "/Images/product/Products/NVENT ERICO LOGO.svg", brand: "nVent Erico" },
+    { src: "/Images/product/Products/WALLMAX LOGO.png", brand: "Wallmax" },
+    { src: "/Images/product/siechem.png", brand: "Siechem", scale: 1.14 },
+    { src: "/Images/product/Products/TUBIFOR LOGO.png", brand: "Tubifor" },
+    { src: "/Images/product/dietzel.png", brand: "Dietzel" },
+    { src: "/Images/product/Products/BAHRA CABLES.svg", brand: "Bahra Cables" },
+    { src: "/Images/product/Products/TEKAB CABLES.png", brand: "Tekab Cables" },
+    { src: "/Images/product/Products/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", scale: 2 },
+    { src: "/Images/product/Products/PSI LOGO.png", brand: "PSI", scale: 2.5 },
+    { src: "/Images/product/Products/EMI LOGO.png", brand: "EMI", dark: true },
+    { src: "/Images/product/Products/LITETECH LOGO.webp", brand: "Litetech" },
+    { src: "/Images/product/Products/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik" },
+    { src: "/Images/product/Products/CCG Logo.png", brand: "CCG", scale: 2 },
+    // { src: "/Images/product/cabex.png", brand: "Cabex" },
+    { src: "/Images/product/obo.png", brand: "OBO", scale: 2.5 },
+    { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", scale: 2.5 },
+    { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "HELUKABEL" },
+    { src: "/Images/product/extras/NVENT ERIFLEX LOGO.svg", brand: "nVent Eriflex" },
+    { src: "/Images/product/Products/ROSE LOGO.png", brand: "Rose", scale: 2 },
+    { src: "/Images/product/Products/SIRENA LOGO.png", brand: "Sirena" },
+    { src: "/Images/product/Products/FRATER1-LOGO.webp", brand: "Frater" },
+    { src: "/Images/product/Products/COSMOPLAST LOGO.avif", brand: "Cosmoplast" },
   ];
 
   return (
@@ -70,10 +73,13 @@ export default function ProductPage() {
               <>
                 <div className={`prod-card-logo${logo.dark ? " prod-card-logo-dark" : ""}`}>
                   <Image
-                    src={`/Images/product/${logo.src}`}
+                    src={logo.src}
                     alt={logo.brand}
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{
+                      objectFit: "contain",
+                      transform: logo.scale ? `scale(${logo.scale})` : undefined,
+                    }}
                   />
                 </div>
                 <div className="prod-card-name">

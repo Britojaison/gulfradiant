@@ -46,7 +46,7 @@ export default function Homepage() {
   return (
     <div className="homepage-wrapper">
       {/* HERO */}
-      <section className="hp-hero-new">
+      <section className="hp-hero-new" id="home-hero">
         <Image src="/Images/Home/herobanner.png" alt="Hero Background" fill style={{ objectFit: "cover" }} priority />
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
