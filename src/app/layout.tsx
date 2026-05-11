@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import "@/components/StaggeredMenu.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -10,16 +12,28 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-geist-mono-real",
   subsets: ["latin"],
   weight: ["500"],
+});
+
+const degular = localFont({
+  variable: "--font-degular",
+  src: [
+    { path: "./fonts/DegularDisplayDemo-Regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/DegularDisplayDemo-Medium.otf", weight: "500", style: "normal" },
+    { path: "./fonts/DegularDisplayDemo-Semibold.otf", weight: "600", style: "normal" },
+    { path: "./fonts/DegularDisplayDemo-Bold.otf", weight: "700", style: "normal" },
+  ],
+});
+
+const neutiva = localFont({
+  variable: "--font-neutiva",
+  src: [
+    { path: "./fonts/Neutiva-Regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/Neutiva-Bold.otf", weight: "700", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (    
-    <html lang="en" className={`${inter.variable} ${interTight.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${geistMono.variable} ${degular.variable} ${neutiva.variable}`}>
       <body>
         <Navbar />
         <div className="page-content-wrapper">

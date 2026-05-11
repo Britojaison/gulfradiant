@@ -2,10 +2,47 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const newsItems = [
+  {
+    title: "Delivering Reliable Electrical Solutions Across Infrastructure & Industrial Projects",
+    meta: "Aug 10 · 6 min read",
+    image: "news1.jpg",
+    alt: "Industrial facility campus",
+  },
+  {
+    title: "Gulf Radiant Expands Product Portfolio",
+    meta: "Aug 10 · 5 min read",
+    image: "news2.png",
+    alt: "Industrial product facility",
+  },
+  {
+    title: "Participation in Industry Expo 2025",
+    meta: "Aug 08 · 4 min read",
+    image: "news4.png",
+    alt: "Port cranes and industrial infrastructure",
+  },
+  {
+    title: "Successful Supply for Infrastructure Development",
+    meta: "Aug 05 · 6 min read",
+    image: "news5.png",
+    alt: "Industrial energy facility at sunset",
+  },
+  {
+    title: "New Engineering Product Solutions Introduced",
+    meta: "Aug 02 · 5 min read",
+    image: "news6.png",
+    alt: "Urban rail infrastructure",
+  },
+];
 
 export default function Homepage() {
-  const [certIndex, setCertIndex] = useState(0);
+  const statsRef = useRef<HTMLElement | null>(null);
+  const statCardsRef = useRef<Array<HTMLDivElement | null>>([]);
+  const certRef = useRef<HTMLElement | null>(null);
+  const certCardsRef = useRef<Array<HTMLDivElement | null>>([]);
+  const [activeNewsIndex, setActiveNewsIndex] = useState(0);
 
   const certImages = [
     { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Kumwell - DEWA APPROVAL" },
@@ -17,20 +54,100 @@ export default function Homepage() {
     { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "KUMWELL - ADDC Pre-Qualification" },
     { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "Gulf Radiant Electricals - ADDC Pre-Qualification" },
   ];
+  useEffect(() => {
+    let rafId = 0;
 
-  const nextCert = () => {
-    setCertIndex((prev) => (prev + 1) % certImages.length);
-  };
+    const updateStatsCards = () => {
+      if (!statsRef.current) return;
 
-  const prevCert = () => {
-    setCertIndex((prev) => (prev === 0 ? certImages.length - 1 : prev - 1));
-  };
+      const rect = statsRef.current.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+      const scrollRange = Math.max(rect.height - viewport, 1);
+      const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
+      const centeredY = Math.max((viewport - 344) / 2, 0);
+      const startY = viewport + 80;
+      const clamp01 = (value: number) => Math.min(Math.max(value, 0), 1);
+      const easeOut = (value: number) => 1 - Math.pow(1 - value, 3);
+      const moveBetween = (from: number, to: number, start: number, duration: number) => {
+        const easedProgress = easeOut(clamp01((progress - start) / duration));
+        return from + (to - from) * easedProgress;
+      };
 
-  const visibleCerts = [
-    certImages[certIndex % certImages.length],
-    certImages[(certIndex + 1) % certImages.length],
-    certImages[(certIndex + 2) % certImages.length]
-  ];
+      statCardsRef.current.forEach((card, index) => {
+        if (!card) return;
+
+        let translateY = startY;
+
+        if (index === 0) {
+          translateY = moveBetween(startY, centeredY, 0.25, 0.18);
+        } else if (index === 1) {
+          translateY = moveBetween(startY, centeredY, 0.50, 0.18);
+        } else if (index === 2) {
+          translateY = moveBetween(startY, centeredY, 0.75, 0.18);
+        }
+
+        card.style.transform = `translate3d(0, ${translateY}px, 0)`;
+      });
+    };
+
+    const updateCertCards = () => {
+      if (!certRef.current) return;
+
+      const rect = certRef.current.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+      const scrollRange = Math.max(rect.height - viewport, 1);
+      const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
+      const count = certCardsRef.current.length || 1;
+      const loopProgress = progress * count;
+      const activeIndex = Math.min(Math.floor(loopProgress), count - 1);
+      const activeProgress = loopProgress - activeIndex;
+
+      certCardsRef.current.forEach((card, index) => {
+        if (!card) return;
+
+        const isActive = index === activeIndex;
+        const t = isActive ? activeProgress : 0;
+        const ease = 1 - Math.pow(1 - t, 3);
+        const translateX = Math.round(Math.sin(t * Math.PI) * 44);
+        const startY = -Math.min(Math.max(viewport * 0.30, 230), 330);
+        const endY = Math.min(Math.max(viewport * 0.42, 320), 470);
+        const translateY = Math.round(startY + (endY - startY) * ease);
+        const opacityIn = Math.min(Math.max(t / 0.10, 0), 1);
+        const opacityOut = Math.min(Math.max((1 - t) / 0.12, 0), 1);
+        const opacity = isActive ? opacityIn * opacityOut : 0;
+
+        card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0)`;
+        card.style.opacity = `${opacity}`;
+      });
+    };
+
+    const onScroll = () => {
+      window.cancelAnimationFrame(rafId);
+      rafId = window.requestAnimationFrame(() => {
+        updateStatsCards();
+        updateCertCards();
+      });
+    };
+
+    updateStatsCards();
+    updateCertCards();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveNewsIndex((index) => (index + 1) % newsItems.length);
+    }, 3500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   const productLogos = [
     "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png", "cabex.png",
@@ -43,29 +160,88 @@ export default function Homepage() {
     "TUBIFOR LOGO.png", "WALLMAX LOGO.png"
   ];
 
+  const suppliedProjects = [
+    {
+      title: "Sea World Abu Dhabi",
+      alt: "Sea World Abu Dhabi",
+      image: "p1.png",
+      position: "center bottom",
+    },
+    {
+      title: "Aldhafra PV2 Solar Power Plant",
+      alt: "Aldhafra PV2 Solar Power Plant",
+      image: "p2.png",
+      position: "center center",
+    },
+    {
+      title: "Dubai Waste to Energy",
+      alt: "Dubai Waste to Energy",
+      image: "p3.png",
+      position: "center center",
+    },
+    {
+      title: "Etihad Rail",
+      alt: "Etihad Rail",
+      image: "p4.png",
+      position: "center center",
+    },
+    {
+      title: "Meydan One Mall",
+      alt: "Meydan One Mall",
+      image: "p5.png",
+      position: "center center",
+    },
+    {
+      title: "Logistics Infrastructure",
+      alt: "Logistics Infrastructure",
+      image: "p6.png",
+      position: "center center",
+    },
+    {
+      title: "Dubai Uptown Tower",
+      alt: "Dubai Uptown Tower",
+      image: "p7.png",
+      position: "center center",
+    },
+    {
+      title: "DMCC Tower",
+      alt: "DMCC Tower",
+      image: "p8.png",
+      position: "center center",
+    },
+  ];
+
+  const featuredNews = newsItems[activeNewsIndex];
+  const latestPosts = newsItems.filter((_, index) => index !== activeNewsIndex);
+
   return (
     <div className="homepage-wrapper">
       {/* HERO */}
       <section className="hp-hero-new" id="home-hero">
-        <Image src="/Images/Home/herobanner.png" alt="Hero Background" fill style={{ objectFit: "cover" }} priority />
+        <video className="hp-hero-video" autoPlay muted loop playsInline preload="auto" aria-label="Gulf Radiant infrastructure hero video">
+          <source src="/Images/Home/hero video.mp4" type="video/mp4" />
+        </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
-          <div className="hp-hero-subtitle">
-            <span className="hp-dot"></span> TRUSTED SUPPLIER &bull; INDUSTRIAL PROJECTS &bull; GCC WIDE
-          </div>
           <h1>Powering Infrastructure <br />That Delivers</h1>
-
-          <a href="#contact" className="hp-btn-hero-quote">
-            Request a Quote
+          <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
+            <span></span>
           </a>
         </div>
       </section>
 
       {/* PRODUCTS & STATS (FULL SCROLL) */}
       <div className="hp-full-scroll-section">
-        <section className="hp-products-dist">
+        <section className="hp-products-dist" id="products-distribute">
           <div className="hp-dist-header">
-            <div className="hp-dist-subtitle"><span className="hp-dot"></span> WHERE WE OPERATE</div>
+            <div className="hp-dist-subtitle" aria-label="Where we operate">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+              </div>
+            </div>
             <h2><span>Products</span> We Distribute</h2>
           </div>
 
@@ -95,23 +271,24 @@ export default function Homepage() {
         </section>
 
         {/* STATS */}
-        <section className="hp-stats-container">
-          <div className="hp-stat-block">
-            <h3>25<span>+</span></h3>
-            <h4>Years of professionalism</h4>
-            <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
-          </div>
-          <div className="hp-stat-divider"></div>
-          <div className="hp-stat-block">
-            <h3>30<span>+</span></h3>
-            <h4>Countries served worldwide</h4>
-            <p>Supporting projects across global<br />markets with a strong supply network</p>
-          </div>
-          <div className="hp-stat-divider"></div>
-          <div className="hp-stat-block">
-            <h3>100<span>+</span></h3>
-            <h4>Product categories</h4>
-            <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
+        <section className="hp-stats-container" ref={statsRef}>
+          <div className="hp-stats-stage">
+            <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
+            <div className="hp-stat-block hp-stat-card-one" ref={(node) => { statCardsRef.current[0] = node; }}>
+              <h3>25<span>+</span></h3>
+              <h4>Years of professionalism</h4>
+              <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
+            </div>
+            <div className="hp-stat-block hp-stat-card-two" ref={(node) => { statCardsRef.current[1] = node; }}>
+              <h3>30<span>+</span></h3>
+              <h4>Countries served worldwide</h4>
+              <p>Supporting projects across global<br />markets with a strong supply network</p>
+            </div>
+            <div className="hp-stat-block hp-stat-card-three" ref={(node) => { statCardsRef.current[2] = node; }}>
+              <h3>100<span>+</span></h3>
+              <h4>Product categories</h4>
+              <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
+            </div>
           </div>
         </section>
       </div>
@@ -130,28 +307,27 @@ export default function Homepage() {
       </section>
 
       {/* CERTIFICATION */}
-      <section className="hp-cert-section">
+      <section className="hp-cert-section" ref={certRef}>
         <div className="hp-cert-content-inner">
           <div className="hp-cert-left">
-            <div className="hp-cert-subtitle"><span className="hp-dot"></span> INDUSTRY CERTIFICATIONS</div>
+            <div className="hp-cert-subtitle">- WHERE WE OPERATE -</div>
             <h2>Certification<br />& Approvals</h2>
+            <div className="hp-cert-btn-container">
+              <Link href="/certifications" className="hp-btn-orange-rect">View All Certificates</Link>
+            </div>
           </div>
 
           <div className="hp-cert-right-container">
-            <div className="hp-cert-carousel">
-              <span className="hp-cert-arrow" onClick={prevCert} style={{ cursor: "pointer", userSelect: "none" }}>&lt;</span>
-              <div className="hp-cert-logos">
-                {visibleCerts.map((cert, idx) => (
-                  <div className="hp-cert-box" key={idx}>
-                    <Image src={cert.src} alt={cert.alt} fill style={{ objectFit: "contain", padding: "20px" }} />
-                  </div>
-                ))}
-              </div>
-              <span className="hp-cert-arrow" onClick={nextCert} style={{ cursor: "pointer", userSelect: "none" }}>&gt;</span>
-            </div>
-
-            <div className="hp-cert-btn-container">
-              <Link href="/certifications" className="hp-btn-orange-rect" style={{ width: "213px" }}>View All Certificates</Link>
+            <div className="hp-cert-scroll-window" aria-label="Certification approvals">
+              {certImages.map((cert, idx) => (
+                <div
+                  className="hp-cert-box"
+                  key={`${cert.src}-${idx}`}
+                  ref={(node) => { certCardsRef.current[idx] = node; }}
+                >
+                  <Image src={cert.src} alt={cert.alt} fill style={{ objectFit: "contain", padding: "12px" }} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -160,20 +336,54 @@ export default function Homepage() {
       {/* TRUSTED LEADERS */}
       <section className="hp-trusted-section">
         <div className="hp-trusted-content">
-          <div className="hp-trusted-left">
-            <h2>Trusted by Industry<br />Leaders</h2>
-            <p>We proudly distribute certified products from globally<br />recognized manufacturers serving infrastructure,<br />commercial, and industrial sectors.</p>
-            <Link href="/clients" className="hp-btn-orange-rect" style={{ width: "213px", marginTop: "30px" }}>View All Clients</Link>
+          <div className="hp-trusted-header">
+            <h2>Trusted by Industry Leaders</h2>
           </div>
-          <div className="hp-trusted-right">
-            <div className="hp-trusted-grid-inner">
-              {[
-                "Rectangle 11 (1).png", "Rectangle 12 (1).png", "Rectangle 22.png",
-                "Rectangle 20.png", "Rectangle 21.png", "Rectangle 16.png",
-                "Rectangle 17.png", "Rectangle 18.png", "Rectangle 19.png"
-              ].map((img, idx) => (
-                <div className="hp-trusted-logo-box" key={idx}>
-                  <Image src={`/Images/Home/${img}`} alt="Client Logo" fill style={{ objectFit: "contain" }} />
+          <div className="hp-trusted-grid-inner">
+            {[
+              { src: "Rectangle 11 (1).png", alt: "Occidental of Oman Inc." },
+              { src: "Rectangle 12 (1).png", alt: "Danieli" },
+              { src: "Rectangle 22.png", alt: "Emirates Global Aluminium" },
+              { src: "Rectangle 20.png", alt: "Dragon Oil" },
+              { src: "Rectangle 21.png", alt: "Sharjah Electricity and Water Authority" },
+              { src: "Rectangle 16.png", alt: "Energy China" },
+              { src: "Rectangle 17.png", alt: "Port of Salalah" },
+              { src: "Rectangle 18.png", alt: "Julphar Gulf Pharmaceutical Industries" },
+              { src: "Rectangle 19.png", alt: "DP World" },
+            ].map((client) => (
+              <div className="hp-trusted-logo-box" key={client.src}>
+                <Image src={`/Images/Home/${client.src}`} alt={client.alt} fill style={{ objectFit: "contain" }} />
+              </div>
+            ))}
+          </div>
+          <Link href="/clients" className="hp-btn-orange-rect hp-trusted-cta">View All Clients</Link>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section className="hp-projects-section-new">
+        <div className="hp-projects-sticky">
+          <div className="hp-projects-top-fixed">
+            <div className="hp-projects-subtitle">- OUR PROJECTS -</div>
+            <h2>Projects We've Supplied</h2>
+          </div>
+          <div className="hp-projects-viewport">
+            <div className="hp-projects-track">
+              {suppliedProjects.map((project, index) => (
+                <div className="hp-project-card" key={project.title}>
+                  <Image
+                    src={`/Images/Our Projects/${project.image}`}
+                    alt={project.alt}
+                    fill
+                    sizes="(max-width: 767px) 82vw, (max-width: 1199px) 44vw, 520px"
+                    style={{ objectFit: "cover", objectPosition: project.position }}
+                  />
+                  <span className="hp-project-label">{project.title}</span>
+                  {index === 0 && (
+                    <Link href="/projects" className="hp-projects-link" aria-label="View all projects">
+                      View All Projects
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
@@ -181,215 +391,103 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* PROJECTS (MASONRY) */}
-      <section className="hp-projects-section-new">
-        <div className="hp-projects-top-fixed">
-          <div className="hp-projects-subtitle"><span className="hp-dot"></span> PROJECTS</div>
-          <h2><span>Projects</span> We've Supplied</h2>
-        </div>
-        <div className="hp-projects-masonry">
-          <div className="hp-projects-col">
-            <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 23 (1).png" alt="Waste to Energy" fill style={{ objectFit: "cover" }} />
-              <div className="hp-project-overlay">
-                <div className="hp-project-info">
-                  <h4>Dubai Waste to Energy</h4>
-                  <p>Dubai, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
-            <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 24.png" alt="Solar Power Plant" fill style={{ objectFit: "cover" }} />
-              <div className="hp-project-overlay">
-                <div className="hp-project-info">
-                  <h4>Al-dhafra solar power plant</h4>
-                  <p>Abu Dhabi, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hp-projects-col">
-            <Link href="/projects" className="hp-projects-link">Explore more Projects &#x2197;</Link>
-            <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 23.png" alt="Uptown Tower" fill style={{ objectFit: "cover" }} />
-              <div className="hp-project-overlay">
-                <div className="hp-project-info">
-                  <h4>Dubai Uptown Tower</h4>
-                  <p>Dubai, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
-            <div className="hp-project-card">
-              <Image src="/Images/Home/Rectangle 24 (1).png" alt="Etihad Rail" fill style={{ objectFit: "cover" }} />
-              <div className="hp-project-overlay">
-                <div className="hp-project-info">
-                  <h4>Etihad Rail</h4>
-                  <p>Abu Dhabi, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* QUOTE BANNER */}
       <section className="hp-quote-banner-new">
-        <p><i>"Our strength lies in trusted global partnerships and a deep understanding<br />of regional market needs, ensuring every product meets the highest<br />standards of quality and reliability."</i></p>
-        <div className="hp-quote-author">
-          <div className="hp-quote-avatar">
-            <Image src="/Images/Home/Ellipse 3.png" alt="Author" fill style={{ objectFit: "cover" }} />
+        <div className="hp-leadership-card">
+          <div className="hp-leadership-left">
+            <div className="hp-leadership-eyebrow">- LEADERSHIP MESSAGE -</div>
+            <h3>Madhusudan<br />Mathilakath</h3>
+            <p>(CEO)</p>
           </div>
-          <span>Madhusudan Mathilakath</span>
+          <div className="hp-leadership-copy">
+            <p className="hp-leadership-main">
+              "At Gulf Radiant, we believe that reliable engineering solutions are built through trust, quality, and long-term partnerships. For over two decades, we have proudly supported infrastructure, industrial, and energy projects across the GCC with globally trusted electrical solutions.
+            </p>
+            <div>
+              <p>Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries."</p>
+              <p>Thank you.</p>
+            </div>
+          </div>
         </div>
+        <Image
+          src="/Images/Our Projects/quote2.svg"
+          alt=""
+          width={271}
+          height={200}
+          className="hp-leadership-quote hp-leadership-quote-glow"
+          aria-hidden="true"
+        />
+        <Image
+          src="/Images/Our Projects/quote2.svg"
+          alt=""
+          width={271}
+          height={200}
+          className="hp-leadership-quote"
+          aria-hidden="true"
+        />
       </section>
 
       {/* NEWS */}
-      <section className="hp-news-section-new">
-        <div className="hp-news-header">
-          <h2>News <span>&</span> Announcements</h2>
-        </div>
-        <div className="hp-news-grid">
-          <div className="hp-news-card">
-            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 35.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
-            <div className="hp-news-content">
-              <h4>Industry Expo 2025: Showcasing Advanced Electrical Solutions for Modern Infrastructure</h4>
-            </div>
+      <section className="hp-news-section-new" id="useful-information">
+        <div className="hp-news-inner">
+          <div className="hp-news-feature">
+            <div className="hp-news-eyebrow">- INSIGHTS -</div>
+            <h2>Latest News &amp; Industry Updates</h2>
+            <article className="hp-news-feature-card">
+              <Image
+                src={`/Images/Our Projects/${featuredNews.image}`}
+                alt={featuredNews.alt}
+                key={featuredNews.image}
+                fill
+                sizes="(max-width: 991px) 100vw, 760px"
+                style={{ objectFit: "cover", objectPosition: "center center" }}
+              />
+              <div className="hp-news-feature-info">
+                <span className="hp-news-pill"><span></span>Industry News</span>
+                <h3>{featuredNews.title}</h3>
+                <p>{featuredNews.meta}</p>
+              </div>
+            </article>
           </div>
-          <div className="hp-news-card">
-            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 36.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
-            <div className="hp-news-content">
-              <h4>Delivering Reliable Electrical Solutions for Large-Scale Projects</h4>
+          <aside className="hp-latest-posts" aria-label="Latest posts">
+            <h3>Latest Posts</h3>
+            <div className="hp-latest-list">
+              {latestPosts.map((post) => (
+                <button
+                  className="hp-latest-item"
+                  key={post.title}
+                  type="button"
+                  onClick={() => setActiveNewsIndex(newsItems.findIndex((item) => item.title === post.title))}
+                >
+                  <div className="hp-latest-thumb">
+                    <Image
+                      src={`/Images/Our Projects/${post.image}`}
+                      alt={post.alt}
+                      fill
+                      sizes="100px"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="hp-latest-copy">
+                    <h4>{post.title}</h4>
+                    <p>{post.meta}</p>
+                  </div>
+                </button>
+              ))}
             </div>
-          </div>
-          <div className="hp-news-card">
-            <div className="hp-news-img"><Image src="/Images/Home/Rectangle 37.png" alt="News" fill style={{ objectFit: "cover" }} /></div>
-            <div className="hp-news-content">
-              <h4>Introducing Advanced Electrical Solutions for Modern Infrastructure</h4>
-            </div>
-          </div>
+          </aside>
         </div>
       </section>
 
       {/* CONTACT BANNER */}
       <section className="hp-contact-banner-new" id="contact">
-        <div className="hp-contact-bg"><Image src="/Images/Home/git.jpg" alt="Contact BG" fill style={{ objectFit: "cover" }} /></div>
-        <div className="hp-contact-overlay"></div>
-        <div className="hp-contact-content">
-          <div className="hp-contact-left">
-            <h2>Ready to Power Your Next Project?<br />With Reliable Electrical Solutions</h2>
-            <p>Explore our range of trusted electrical products and<br />solutions designed for infrastructure, industrial, and<br />commercial projects.</p>
-
-            {/* Location 1 - Abu Dhabi */}
-            <div className="hp-location-row">
-              <div className="hp-location-map">
-                <iframe
-                  src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Gulf Radiant - Abu Dhabi Office"
-                ></iframe>
-              </div>
-              <div className="hp-location-info">
-                <h4>Abu Dhabi Office</h4>
-                <p>GULF RADIANT ELECTRICALS L.L.C</p>
-                <p>P.O. Box: 91366, M-9,<br />Abu Dhabi, U.A.E</p>
-                <div className="hp-location-contact">
-                  <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
-                  <a href="tel:+97124488449">+971 2 4488449</a>
-                  <a href="tel:+971506409192">+971 50 6409192</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Location 2 - Dubai */}
-            <div className="hp-location-row">
-              <div className="hp-location-map">
-                <iframe
-                  src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Gulf Radiant - Dubai Office"
-                ></iframe>
-              </div>
-              <div className="hp-location-info">
-                <h4>Dubai Office</h4>
-                <p>GULF RADIANT L.L.C</p>
-                <p>P.O. Box: 26426, Amman Street,<br />Al Qusais Industrial Area - 3,<br />Dubai, United Arab Emirates</p>
-                <div className="hp-location-contact">
-                  <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
-                  <a href="tel:+97142671662">+971 4 2671662 / 882</a>
-                  <span>Fax: +971 4 2671883</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hp-contact-right" id="contact-form">
-            <div className="hp-contact-formbox">
-              <h3>Get in touch</h3>
-              <form>
-                <div className="hp-form-group">
-                  <label>Company</label>
-                  <input type="text" placeholder="Jhon Smith" />
-                </div>
-                <div className="hp-form-group">
-                  <label>Name</label>
-                  <input type="text" placeholder="Jhon Smith" suppressHydrationWarning />
-                </div>
-                <div className="hp-form-row">
-                  <div className="hp-form-group hp-form-half">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="john@email.com" suppressHydrationWarning />
-                  </div>
-                  <div className="hp-form-group hp-form-half">
-                    <label>Phone Number</label>
-                    <input type="text" placeholder="+91 XXXXXXXXX" suppressHydrationWarning />
-                  </div>
-                </div>
-                <div className="hp-form-group">
-                  <label>Country</label>
-                  <select>
-                    <option>-None-</option>
-                    <option>United Arab Emirates</option>
-                    <option>Saudi Arabia</option>
-                    <option>Oman</option>
-                    <option>Qatar</option>
-                    <option>Bahrain</option>
-                    <option>Kuwait</option>
-                    <option>India</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div className="hp-form-group">
-                  <label>Industry</label>
-                  <select>
-                    <option>-None-</option>
-                    <option>Electrical Engineering</option>
-                    <option>Electro-Mechanical</option>
-                    <option>Building Materials / Construction</option>
-                    <option>Oil & Gas / Oil-field</option>
-                    <option>Industrial Engineering</option>
-                    <option>Infrastructure Projects</option>
-                    <option>Petrochemical / Refinery</option>
-                    <option>Real Estate / Housing</option>
-                    <option>Aviation / Airports</option>
-                    <option>Ports / Marine</option>
-                  </select>
-                </div>
-                <div className="hp-form-group">
-                  <label>Project Details (Optional)</label>
-                  <textarea placeholder="Tell us about your project..." rows={4} suppressHydrationWarning></textarea>
-                </div>
-                <button type="submit" className="hp-btn-orange-full" style={{ marginTop: "5px" }} suppressHydrationWarning>Send Message</button>
-              </form>
-            </div>
+        <Image src="/Images/Our Projects/nextpr.png" alt="" fill sizes="100vw" className="hp-contact-bg-img" />
+        <div className="hp-contact-card">
+          <div className="hp-contact-kicker">- BOOK A CALL -</div>
+          <h2>READY TO POWER<br />YOUR NEXT PROJECT?</h2>
+          <p>Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.</p>
+          <div className="hp-contact-action">
+            <Link href="mailto:info@gulfradiant.com" className="hp-contact-quote-btn">Request a quote</Link>
           </div>
         </div>
       </section>
