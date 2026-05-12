@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const newsItems = [
   {
@@ -38,10 +39,17 @@ const newsItems = [
 ];
 
 export default function Homepage() {
+  const router = useRouter();
   const statsRef = useRef<HTMLElement | null>(null);
   const statCardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const certRef = useRef<HTMLElement | null>(null);
   const certCardsRef = useRef<Array<HTMLDivElement | null>>([]);
+  const projectsRef = useRef<HTMLElement | null>(null);
+  const projectsTrackRef = useRef<HTMLDivElement | null>(null);
+  const projectsStickyRef = useRef<HTMLDivElement | null>(null);
+  const cursorLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const projectsTopRef = useRef<HTMLDivElement | null>(null);
+  const projectsViewportRef = useRef<HTMLDivElement | null>(null);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
 
   const certImages = [
@@ -63,29 +71,26 @@ export default function Homepage() {
       const rect = statsRef.current.getBoundingClientRect();
       const viewport = window.innerHeight || 1;
       const scrollRange = Math.max(rect.height - viewport, 1);
-      const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
-      const centeredY = Math.max((viewport - 344) / 2, 0);
-      const startY = viewport + 80;
-      const clamp01 = (value: number) => Math.min(Math.max(value, 0), 1);
-      const easeOut = (value: number) => 1 - Math.pow(1 - value, 3);
-      const moveBetween = (from: number, to: number, start: number, duration: number) => {
-        const easedProgress = easeOut(clamp01((progress - start) / duration));
-        return from + (to - from) * easedProgress;
-      };
+
+      // Include entry phase: progress 0 when section first enters viewport,
+      // 0.25 when fully pinned, 1 when fully scrolled through.
+      const totalTravel = scrollRange + viewport;
+      const progress = Math.min(Math.max((viewport - rect.top) / totalTravel, 0), 1);
+
+      const centeredY = Math.max((viewport - 480) / 2, 0);
+      const startY = viewport + 100;
+
+      const clamp01 = (v: number) => Math.min(Math.max(v, 0), 1);
+      const easeOut = (v: number) => 1 - Math.pow(1 - v, 3);
+
+      // card 1 at 0.25 (just pinned), card 2 at 0.50, card 3 at 0.75
+      const thresholds = [0.25, 0.50, 0.75];
+      const durations  = [0.05, 0.12, 0.12]; // card 1 snaps in fast
 
       statCardsRef.current.forEach((card, index) => {
         if (!card) return;
-
-        let translateY = startY;
-
-        if (index === 0) {
-          translateY = moveBetween(startY, centeredY, 0.25, 0.18);
-        } else if (index === 1) {
-          translateY = moveBetween(startY, centeredY, 0.50, 0.18);
-        } else if (index === 2) {
-          translateY = moveBetween(startY, centeredY, 0.75, 0.18);
-        }
-
+        const t = clamp01((progress - thresholds[index]) / durations[index]);
+        const translateY = startY + (centeredY - startY) * easeOut(t);
         card.style.transform = `translate3d(0, ${translateY}px, 0)`;
       });
     };
@@ -105,29 +110,147 @@ export default function Homepage() {
       certCardsRef.current.forEach((card, index) => {
         if (!card) return;
 
-        const isActive = index === activeIndex;
-        const t = isActive ? activeProgress : 0;
-        const ease = 1 - Math.pow(1 - t, 3);
-        const translateX = Math.round(Math.sin(t * Math.PI) * 44);
-        const startY = -Math.min(Math.max(viewport * 0.30, 230), 330);
-        const endY = Math.min(Math.max(viewport * 0.42, 320), 470);
-        const translateY = Math.round(startY + (endY - startY) * ease);
-        const opacityIn = Math.min(Math.max(t / 0.10, 0), 1);
-        const opacityOut = Math.min(Math.max((1 - t) / 0.12, 0), 1);
-        const opacity = isActive ? opacityIn * opacityOut : 0;
+        // Map progress to allow all cards to pass through center
+        const centerIndex = progress * (count - 1);
+        const d = centerIndex - index;
+        
+        // Angle step: PI/2 gives a full semi-circle for 3 cards
+        const theta = d * (Math.PI / 2);
+        
+        const radiusY = viewport * 0.45; // Move to edges
+        const radiusX = 500; // Stronger bulge
+        
+        const translateX = radiusX * Math.cos(theta) - 750;
+        const translateY = radiusY * Math.sin(theta);
+        
+        // Show only one card at a time (fully visible at center)
+        const opacity = Math.max(0, 1 - Math.abs(d));
+        
+        // Scale effect: slightly smaller when not in center
+        const scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
 
-        card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0)`;
+        card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
         card.style.opacity = `${opacity}`;
+        card.style.zIndex = Math.round((1 - Math.abs(d)) * 10);
       });
     };
+
+    const updateProjects = () => {
+      if (!projectsRef.current || !projectsTrackRef.current || !projectsStickyRef.current) return;
+
+      const trackWidth = projectsTrackRef.current.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      const maxTranslate = Math.max(trackWidth - viewportWidth + 40, 0);
+      const scrollFactor = 2.5; // Increase this to make scrolling slower
+
+      // Set the height of the section to match the scroll distance * factor
+      projectsRef.current.style.height = `${window.innerHeight + maxTranslate * scrollFactor}px`;
+
+      const rect = projectsRef.current.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+
+      // JS Fallback for sticky behavior
+      if (rect.top <= 0 && rect.bottom >= viewport) {
+        // Active range: Make it FIXED at top
+        projectsStickyRef.current.style.position = 'fixed';
+        projectsStickyRef.current.style.top = '0';
+        projectsStickyRef.current.style.width = '100%';
+        projectsStickyRef.current.style.left = '0';
+      } else if (rect.bottom < viewport) {
+        // Scrolled past: Make it ABSOLUTE at bottom of section
+        projectsStickyRef.current.style.position = 'absolute';
+        projectsStickyRef.current.style.top = 'auto';
+        projectsStickyRef.current.style.bottom = '0';
+        projectsStickyRef.current.style.width = '100%';
+        projectsStickyRef.current.style.left = '0';
+      } else {
+        // Not reached yet: Make it ABSOLUTE at top of section
+        projectsStickyRef.current.style.position = 'absolute';
+        projectsStickyRef.current.style.top = '0';
+        projectsStickyRef.current.style.bottom = 'auto';
+        projectsStickyRef.current.style.width = '100%';
+        projectsStickyRef.current.style.left = '0';
+      }
+
+      const progress = Math.min(Math.max(-rect.top / (maxTranslate * scrollFactor), 0), 1);
+
+      const translateX = -progress * maxTranslate;
+
+      projectsTrackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
+    };
+
+    let lastMouseX = 0;
+    let lastMouseY = 0;
 
     const onScroll = () => {
       window.cancelAnimationFrame(rafId);
       rafId = window.requestAnimationFrame(() => {
         updateStatsCards();
         updateCertCards();
+        updateProjects();
+        
+        // Check mouse position relative to projects viewport on scroll
+        const viewport = projectsViewportRef.current;
+        if (viewport && cursorLinkRef.current) {
+          const rect = viewport.getBoundingClientRect();
+          if (lastMouseX >= rect.left && lastMouseX <= rect.right && 
+              lastMouseY >= rect.top && lastMouseY <= rect.bottom) {
+            cursorLinkRef.current.style.opacity = '1';
+            cursorLinkRef.current.style.visibility = 'visible';
+            cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+          } else {
+            cursorLinkRef.current.style.opacity = '0';
+            cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(0)`;
+          }
+        }
       });
     };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!cursorLinkRef.current) return;
+      cursorLinkRef.current.style.left = `${e.clientX}px`;
+      cursorLinkRef.current.style.top = `${e.clientY}px`;
+      
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+
+      const viewport = projectsViewportRef.current;
+      if (viewport) {
+        const rect = viewport.getBoundingClientRect();
+        
+        // If section is scrolled out of view, hide circle
+        if (rect.top > window.innerHeight || rect.bottom < 0) {
+          cursorLinkRef.current.style.opacity = '0';
+          cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(0)`;
+          return;
+        }
+
+        // Check if mouse is inside the horizontal slider viewport
+        if (e.clientX >= rect.left && e.clientX <= rect.right && 
+            e.clientY >= rect.top && e.clientY <= rect.bottom) {
+          cursorLinkRef.current.style.opacity = '1';
+          cursorLinkRef.current.style.visibility = 'visible';
+          cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+        } else {
+          cursorLinkRef.current.style.opacity = '0';
+          cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(0)`;
+        }
+      }
+    };
+
+    const onClick = () => {
+      router.push('/projects');
+    };
+
+    const projectsSticky = projectsStickyRef.current;
+    const projectsViewport = projectsViewportRef.current;
+
+    // Attach mousemove to window to prevent circle getting stuck during fast scroll
+    window.addEventListener("mousemove", onMouseMove);
+
+    if (projectsViewport) {
+      projectsViewport.addEventListener("click", onClick);
+    }
 
     updateStatsCards();
     updateCertCards();
@@ -138,6 +261,10 @@ export default function Homepage() {
       window.cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("mousemove", onMouseMove);
+      if (projectsViewport) {
+        projectsViewport.removeEventListener("click", onClick);
+      }
     };
   }, []);
 
@@ -185,18 +312,7 @@ export default function Homepage() {
       image: "p4.png",
       position: "center center",
     },
-    {
-      title: "Meydan One Mall",
-      alt: "Meydan One Mall",
-      image: "p5.png",
-      position: "center center",
-    },
-    {
-      title: "Logistics Infrastructure",
-      alt: "Logistics Infrastructure",
-      image: "p6.png",
-      position: "center center",
-    },
+
     {
       title: "Dubai Uptown Tower",
       alt: "Dubai Uptown Tower",
@@ -223,7 +339,9 @@ export default function Homepage() {
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
-          <h1>Powering Infrastructure <br />That Delivers</h1>
+          <h1 style={{ fontSize: "128px", lineHeight: "1.1" }}>
+            <span style={{ whiteSpace: "nowrap" }}>Powering Infrastructure</span><br />That Delivers
+          </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
             <span></span>
           </a>
@@ -250,13 +368,13 @@ export default function Homepage() {
               <div className="hp-dist-logos">
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
                   </div>
                 ))}
                 {/* Duplicate for infinite scroll effect */}
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
                   </div>
                 ))}
               </div>
@@ -310,7 +428,14 @@ export default function Homepage() {
       <section className="hp-cert-section" ref={certRef}>
         <div className="hp-cert-content-inner">
           <div className="hp-cert-left">
-            <div className="hp-cert-subtitle">- WHERE WE OPERATE -</div>
+            <div className="hp-dist-subtitle" aria-label="Where we operate">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+                <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
+              </div>
+            </div>
             <h2>Certification<br />& Approvals</h2>
             <div className="hp-cert-btn-container">
               <Link href="/certifications" className="hp-btn-orange-rect">View All Certificates</Link>
@@ -325,7 +450,7 @@ export default function Homepage() {
                   key={`${cert.src}-${idx}`}
                   ref={(node) => { certCardsRef.current[idx] = node; }}
                 >
-                  <Image src={cert.src} alt={cert.alt} fill style={{ objectFit: "contain", padding: "12px" }} />
+                  <Image src={cert.src} alt={cert.alt} fill sizes="(max-width: 768px) 84vw, 315px" style={{ objectFit: "contain", padding: "12px" }} />
                 </div>
               ))}
             </div>
@@ -344,15 +469,23 @@ export default function Homepage() {
               { src: "Rectangle 11 (1).png", alt: "Occidental of Oman Inc." },
               { src: "Rectangle 12 (1).png", alt: "Danieli" },
               { src: "Rectangle 22.png", alt: "Emirates Global Aluminium" },
+              { src: "elsewedy electric.svg", alt: "Elsewedy Electric" },
+              { src: "sidem viola.svg", alt: "Sidem Veolia" },
+              { src: "baker hughes.svg", alt: "Baker Hughes" },
               { src: "Rectangle 20.png", alt: "Dragon Oil" },
               { src: "Rectangle 21.png", alt: "Sharjah Electricity and Water Authority" },
               { src: "Rectangle 16.png", alt: "Energy China" },
+              { src: "enerflex.svg", alt: "Enerflex" },
+              { src: "sembcorp.svg", alt: "Sembcorp" },
+              { src: "six construct.svg", alt: "Six Construct" },
               { src: "Rectangle 17.png", alt: "Port of Salalah" },
               { src: "Rectangle 18.png", alt: "Julphar Gulf Pharmaceutical Industries" },
               { src: "Rectangle 19.png", alt: "DP World" },
+              { src: "voltas.svg", alt: "Voltas" },
+              { src: "capriole construction.svg", alt: "Capriole Construction" },
             ].map((client) => (
               <div className="hp-trusted-logo-box" key={client.src}>
-                <Image src={`/Images/Home/${client.src}`} alt={client.alt} fill style={{ objectFit: "contain" }} />
+                <Image src={`/Images/Home/${client.src}`} alt={client.alt} fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px" style={{ objectFit: "contain" }} />
               </div>
             ))}
           </div>
@@ -361,15 +494,22 @@ export default function Homepage() {
       </section>
 
       {/* PROJECTS */}
-      <section className="hp-projects-section-new">
-        <div className="hp-projects-sticky">
-          <div className="hp-projects-top-fixed">
-            <div className="hp-projects-subtitle">- OUR PROJECTS -</div>
+      <section className="hp-projects-section-new" ref={projectsRef}>
+        <div className="hp-projects-sticky" ref={projectsStickyRef}>
+          <div className="hp-projects-top-fixed" ref={projectsTopRef}>
+            <div className="hp-dist-subtitle" aria-label="Our projects">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- OUR\u00A0PROJECTS -"}</span>
+                <span>{"- OUR\u00A0PROJECTS -"}</span>
+                <span>{"- OUR\u00A0PROJECTS -"}</span>
+                <span>{"- OUR\u00A0PROJECTS -"}</span>
+              </div>
+            </div>
             <h2>Projects We've Supplied</h2>
           </div>
-          <div className="hp-projects-viewport">
-            <div className="hp-projects-track">
-              {suppliedProjects.map((project, index) => (
+          <div className="hp-projects-viewport" ref={projectsViewportRef}>
+            <div className="hp-projects-track" ref={projectsTrackRef}>
+              {suppliedProjects.map((project) => (
                 <div className="hp-project-card" key={project.title}>
                   <Image
                     src={`/Images/Our Projects/${project.image}`}
@@ -379,15 +519,13 @@ export default function Homepage() {
                     style={{ objectFit: "cover", objectPosition: project.position }}
                   />
                   <span className="hp-project-label">{project.title}</span>
-                  {index === 0 && (
-                    <Link href="/projects" className="hp-projects-link" aria-label="View all projects">
-                      View All Projects
-                    </Link>
-                  )}
                 </div>
               ))}
             </div>
           </div>
+          <Link href="/projects" className="hp-projects-link" ref={cursorLinkRef} aria-label="View all projects">
+            View All Projects
+          </Link>
         </div>
       </section>
 
@@ -395,9 +533,16 @@ export default function Homepage() {
       <section className="hp-quote-banner-new">
         <div className="hp-leadership-card">
           <div className="hp-leadership-left">
-            <div className="hp-leadership-eyebrow">- LEADERSHIP MESSAGE -</div>
-            <h3>Madhusudan<br />Mathilakath</h3>
-            <p>(CEO)</p>
+            <div className="hp-dist-subtitle" aria-label="Leadership message">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
+                <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
+                <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
+                <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
+              </div>
+            </div>
+            <h3 style={{ fontSize: "64px", lineHeight: "1.1" }}>Madhusudan<br />Mathilakath</h3>
+            <p style={{ fontWeight: "normal", fontSize: "40px" }}>(CEO)</p>
           </div>
           <div className="hp-leadership-copy">
             <p className="hp-leadership-main">
@@ -414,26 +559,25 @@ export default function Homepage() {
           alt=""
           width={271}
           height={200}
-          className="hp-leadership-quote hp-leadership-quote-glow"
-          aria-hidden="true"
-        />
-        <Image
-          src="/Images/Our Projects/quote2.svg"
-          alt=""
-          width={271}
-          height={200}
           className="hp-leadership-quote"
           aria-hidden="true"
         />
       </section>
 
       {/* NEWS */}
-      <section className="hp-news-section-new" id="useful-information">
-        <div className="hp-news-inner">
+      <section className="hp-news-section-new" id="useful-information" style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div className="hp-news-inner" style={{ maxWidth: "100%", width: "100%", gridTemplateColumns: "minmax(0, 2fr) minmax(600px, 1fr)", gap: "60px", padding: "0 80px" }}>
           <div className="hp-news-feature">
-            <div className="hp-news-eyebrow">- INSIGHTS -</div>
+            <div className="hp-dist-subtitle" aria-label="Insights">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- INSIGHTS -"}</span>
+                <span>{"- INSIGHTS -"}</span>
+                <span>{"- INSIGHTS -"}</span>
+                <span>{"- INSIGHTS -"}</span>
+              </div>
+            </div>
             <h2>Latest News &amp; Industry Updates</h2>
-            <article className="hp-news-feature-card">
+            <article className="hp-news-feature-card" style={{ position: "relative" }}>
               <Image
                 src={`/Images/Our Projects/${featuredNews.image}`}
                 alt={featuredNews.alt}
@@ -445,7 +589,6 @@ export default function Homepage() {
               <div className="hp-news-feature-info">
                 <span className="hp-news-pill"><span></span>Industry News</span>
                 <h3>{featuredNews.title}</h3>
-                <p>{featuredNews.meta}</p>
               </div>
             </article>
           </div>
@@ -453,18 +596,17 @@ export default function Homepage() {
             <h3>Latest Posts</h3>
             <div className="hp-latest-list">
               {latestPosts.map((post) => (
-                <button
+                <div
                   className="hp-latest-item"
                   key={post.title}
-                  type="button"
-                  onClick={() => setActiveNewsIndex(newsItems.findIndex((item) => item.title === post.title))}
+                  style={{ gridTemplateColumns: "180px 1fr", display: "grid", gap: "20px", cursor: "pointer" }}
                 >
-                  <div className="hp-latest-thumb">
+                  <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px" }}>
                     <Image
                       src={`/Images/Our Projects/${post.image}`}
                       alt={post.alt}
                       fill
-                      sizes="100px"
+                      sizes="180px"
                       style={{ objectFit: "cover" }}
                     />
                   </div>
@@ -472,7 +614,7 @@ export default function Homepage() {
                     <h4>{post.title}</h4>
                     <p>{post.meta}</p>
                   </div>
-                </button>
+                </div>
               ))}
             </div>
           </aside>
@@ -481,9 +623,16 @@ export default function Homepage() {
 
       {/* CONTACT BANNER */}
       <section className="hp-contact-banner-new" id="contact">
-        <Image src="/Images/Our Projects/nextpr.png" alt="" fill sizes="100vw" className="hp-contact-bg-img" />
+        <Image src="/Images/Home/bg4.svg" alt="" fill sizes="100vw" className="hp-contact-bg-img" />
         <div className="hp-contact-card">
-          <div className="hp-contact-kicker">- BOOK A CALL -</div>
+            <div className="hp-dist-subtitle" aria-label="Book a call">
+              <div className="hp-dist-subtitle-track" aria-hidden="true">
+                <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
+                <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
+                <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
+                <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
+              </div>
+            </div>
           <h2>READY TO POWER<br />YOUR NEXT PROJECT?</h2>
           <p>Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.</p>
           <div className="hp-contact-action">

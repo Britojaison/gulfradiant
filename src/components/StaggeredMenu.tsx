@@ -79,11 +79,9 @@ export default function StaggeredMenu({
     const ctx = gsap.context(() => {
       const panel = panelRef.current;
       const preContainer = preLayersRef.current;
-      const plusH = plusHRef.current;
-      const plusV = plusVRef.current;
       const icon = iconRef.current;
       const textInner = textInnerRef.current;
-      if (!panel || !plusH || !plusV || !icon || !textInner) return;
+      if (!panel || !icon || !textInner) return;
 
       const preLayers = preContainer
         ? Array.from(preContainer.querySelectorAll<HTMLElement>(".sm-prelayer"))
@@ -93,8 +91,6 @@ export default function StaggeredMenu({
       const offscreen = position === "left" ? -100 : 100;
       gsap.set([panel, ...preLayers], { xPercent: offscreen, opacity: 1 });
       if (preContainer) gsap.set(preContainer, { xPercent: 0, opacity: 1 });
-      gsap.set(plusH, { transformOrigin: "50% 50%", rotate: 0 });
-      gsap.set(plusV, { transformOrigin: "50% 50%", rotate: 90 });
       gsap.set(icon, { rotate: 0, transformOrigin: "50% 50%" });
       gsap.set(textInner, { yPercent: 0 });
       if (toggleBtnRef.current) gsap.set(toggleBtnRef.current, { color: menuButtonColor });
@@ -350,8 +346,7 @@ export default function StaggeredMenu({
             </span>
           </span>
           <span ref={iconRef} className="sm-icon" aria-hidden="true">
-            <span ref={plusHRef} className="sm-icon-line" />
-            <span ref={plusVRef} className="sm-icon-line sm-icon-line-v" />
+            <img src="/Images/Home/hamburger.svg" alt="Menu" width={45} height={45} />
           </span>
         </button>
       </header>

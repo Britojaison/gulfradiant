@@ -43,6 +43,7 @@ export default function ProductPage() {
           src="/Images/product/close-up-electric-router-spindle-moulder-furniture-assembly-shop 1.png"
           alt="Industrial products"
           fill
+          sizes="100vw"
           style={{ objectFit: "cover" }}
           priority
         />
@@ -76,6 +77,7 @@ export default function ProductPage() {
                     src={logo.src}
                     alt={logo.brand}
                     fill
+                    sizes="(max-width: 768px) 50vw, 300px"
                     style={{
                       objectFit: "contain",
                       transform: logo.scale ? `scale(${logo.scale})` : undefined,

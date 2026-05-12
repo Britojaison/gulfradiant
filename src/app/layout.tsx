@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import "@/components/StaggeredMenu.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
   variable: "--font-geist-mono-real",
-  subsets: ["latin"],
-  weight: ["500"],
+  src: "../../public/fonts/Geist_Mono,Manrope/Geist_Mono/GeistMono-VariableFont_wght.ttf",
+  weight: "100 900",
 });
 
 const degular = localFont({
@@ -48,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (    
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} ${degular.variable} ${neutiva.variable}`}>
-      <body>
+    <html lang="en" className={`${geistMono.variable} ${degular.variable} ${neutiva.variable}`}>
+      <body suppressHydrationWarning>
         <Navbar />
         <div className="page-content-wrapper">
           {children}

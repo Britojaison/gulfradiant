@@ -69,6 +69,7 @@ export default function AboutPage() {
           src="/Images/About/aboutimg.jpg" 
           alt="Engineering Reliability" 
           fill 
+          sizes="100vw"
           style={{ objectFit: "cover" }} 
           priority 
         />
@@ -363,13 +364,13 @@ export default function AboutPage() {
             <div className="hp-dist-logos">
               {productLogos.map((logo, i) => (
                 <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
                 </div>
               ))}
               {/* Duplicate for infinite scroll effect */}
               {productLogos.map((logo, i) => (
                 <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill style={{ objectFit: "contain" }} />
+                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
                 </div>
               ))}
             </div>

@@ -65,8 +65,8 @@ export default function Footer() {
       </div>
       <div className="hp-footer-marquee" aria-hidden="true">
         <div className="hp-footer-marquee-track">
-          <span>Gulf Radiant · Gulf Radiant · Gulf Radiant ·</span>
-          <span>Gulf Radiant · Gulf Radiant · Gulf Radiant ·</span>
+          <span>Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span></span>
+          <span>Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span></span>
         </div>
       </div>
     </footer>
