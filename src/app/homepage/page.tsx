@@ -55,12 +55,8 @@ export default function Homepage() {
   const certImages = [
     { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Kumwell - DEWA APPROVAL" },
     { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR AD ICV Certificate" },
-    { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR ICV Certificate" },
-    { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Palazzoli - DEWA APPROVAL" },
     { src: "/Images/Certificates/cert-jsrs-logo.jpg", alt: "JSRS CERTIFICATE" },
     { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "PITTAS - ADDC Pre-Qualification" },
-    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "KUMWELL - ADDC Pre-Qualification" },
-    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "Gulf Radiant Electricals - ADDC Pre-Qualification" },
   ];
   useEffect(() => {
     let rafId = 0;
@@ -483,6 +479,7 @@ export default function Homepage() {
               { src: "Rectangle 19.png", alt: "DP World" },
               { src: "voltas.svg", alt: "Voltas" },
               { src: "capriole construction.svg", alt: "Capriole Construction" },
+              { src: "alex.png", alt: "Alex" },
             ].map((client) => (
               <div className="hp-trusted-logo-box" key={client.src}>
                 <Image src={`/Images/Home/${client.src}`} alt={client.alt} fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px" style={{ objectFit: "contain" }} />
