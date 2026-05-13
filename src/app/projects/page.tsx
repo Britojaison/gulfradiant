@@ -8,42 +8,42 @@ export default function ProjectsPage() {
       title: "Dubai Uptown Tower",
       location: "Dubai, UAE",
       description: "Electrical supply solutions for a high-rise commercial development, delivering reliable power distribution, safety systems, and efficient performance across all operational requirements.",
-      img: "Rectangle 23.jpg"
+      img: "img1.svg"
     },
     {
       category: "Transportation Infrastructure",
       title: "Etihad Rail",
       location: "Dubai, UAE",
       description: "Delivering electrical supply solutions for a large-scale rail infrastructure project, ensuring reliable power systems, enhanced safety measures, and seamless operations across transport networks with a focus on long-term efficiency.",
-      img: "Rectangle 24.jpg"
+      img: "img2.svg"
     },
     {
       category: "Energy & Utilities",
       title: "Dubai Waste to Energy",
       location: "Dubai, UAE",
       description: "Electrical supply solutions for a large-scale waste-to-energy facility, supporting reliable power distribution, advanced safety systems, and efficient energy conversion operations with a focus on sustainability and performance.",
-      img: "Rectangle 72.jpg"
+      img: "img3.svg"
     },
     {
       category: "Energy & Utilities",
       title: "Aldhafra PV2 Solar Power Plant",
       location: "Dubai, UAE",
       description: "Electrical supply solutions for one of the world’s largest solar power projects, supporting reliable power distribution, advanced safety systems, and efficient renewable energy generation with long-term operational performance.",
-      img: "Rectangle 73.jpg"
+      img: "img4.svg"
     },
     {
       category: "Commercial Infrastructure",
       title: "SeaWorld Abu Dhabi",
       location: "Dubai, UAE",
       description: "Electrical supply solutions for a large-scale entertainment destination, supporting reliable power distribution, advanced safety systems, and efficient operations across complex commercial infrastructure.",
-      img: "Rectangle 74.jpg"
+      img: "img5.svg"
     },
     {
       category: "Residential Infrastructure",
       title: "Aykon Tower",
       location: "Dubai, UAE",
       description: "Electrical supply solutions for a high-rise mixed-use development, supporting reliable power distribution, advanced safety systems, and efficient operations across residential and commercial spaces.",
-      img: "Rectangle 23 (1).png"
+      img: "img6.svg"
     }
   ];
 
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
       <main className="projects-page-wrapper">
         <div className="projects-hero">
           <Image 
-            src="/Images/Our Projects/image 40.jpg" 
+            src="/Images/our_projects/img7.svg" 
             alt="Our Projects Banner" 
             fill 
             style={{ objectFit: "cover" }} 
@@ -65,21 +65,28 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        <div className="projects-trusted-bar">
-          <div className="projects-trusted-subtitle"><span className="projects-dot"></span> CERTIFIED QUALITY</div>
-          <h2><span style={{color: "var(--orange)"}}>Trusted</span> by Clients Across Industries</h2>
+        <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "60px 0" }}>
+          <div className="hp-dist-subtitle">
+            <div className="hp-dist-subtitle-track">
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+              <span style={{ color: "#000000" }}>{"PERFORMANCE\u00A0TRUST\u00A0"}</span>
+            </div>
+          </div>
+          <h2>Trusted by Clients Across Industries</h2>
         </div>
 
         <div className="projects-grid-container">
           {projects.map((project, index) => (
             <div className="project-detail-card" key={index}>
               <div className="project-card-image">
-                <span className="project-category-tag">{project.category}</span>
-                <Image 
-                  src={`/Images/Our Projects/${project.img}`} 
+                <img 
+                  src={`/Images/our_projects/${project.img}`} 
                   alt={project.title} 
-                  fill 
-                  style={{ objectFit: "cover" }} 
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }} 
                 />
               </div>
               <div className="project-card-info">

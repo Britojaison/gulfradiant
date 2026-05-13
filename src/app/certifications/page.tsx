@@ -24,60 +24,18 @@ export default function CertificationsPage() {
   }, [viewingCert]);
 
   const certs = [
-    {
-      image: "cert-dewa-logo.jpg",
-      title: "Kumwell - DEWA APPROVAL",
-      doc: "dewa-approval-kumwell.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-icv-logo.jpg",
-      title: "GR AD ICV Certificate",
-      doc: "gr-auh-icv-certificate.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-icv-logo.jpg",
-      title: "GR ICV Certificate",
-      doc: "gr-dxb-icv-certificate.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-dewa-logo.jpg",
-      title: "Palazzoli - DEWA APPROVAL",
-      doc: "dewa-approval-palazzoli.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-jsrs-logo.jpg",
-      title: "JSRS CERTIFICATE",
-      doc: "gr-jsrs-certificate.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "GR-iso.jpg",
-      title: "GR ISO 9001:2015 Certificate",
-      doc: "gr-iso-9001-2015.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-addc-logo.jpg",
-      title: "PITTAS - ADDC Pre-Qualification",
-      doc: "pittas-addc-taqa-approval.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-addc-logo.jpg",
-      title: "KUMWELL - ADDC Pre-Qualification",
-      doc: "kumwell-addc-taqa-approval.pdf",
-      type: "pdf" as const,
-    },
-    {
-      image: "cert-addc-logo.jpg",
-      title: "Gulf Radiant Electricals - ADDC Pre-Qualification",
-      doc: "gulf-radiant-addc-taqa-approval.pdf",
-      type: "pdf" as const,
-    },
+    { image: "img1.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img2.svg", title: "Palazzoli - DEWA APPROVAL", doc: "#", type: "pdf" as const },
+    { image: "img3.svg", title: "Sharjah Electricity & Water Authority", doc: "#", type: "pdf" as const },
+    { image: "img4.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img5.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img6.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img2.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img8.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img8.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
   ];
 
   const getDocPath = (doc: string) => `/Images/Certificates/${doc}`;
@@ -86,13 +44,6 @@ export default function CertificationsPage() {
     <>
       {/* HERO SECTION */}
       <section className="certs-hero">
-        <Image
-          src="/Images/Certificates/image 38.png"
-          alt="Worker verifying electrical certifications"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
-          priority
-        />
         <div className="certs-hero-overlay"></div>
         <div className="certs-hero-content">
           <h1 className="certs-hero-title">Our Certifications</h1>
@@ -105,12 +56,17 @@ export default function CertificationsPage() {
 
       {/* CERTIFICATIONS GRID SECTION */}
       <section className="certs-section-bg">
-        <div className="certs-header">
-          <div className="certs-section-label">
-            <span className="certs-orange-square"></span> CERTIFIED QUALITY
+        <div className="certs-header" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div className="hp-dist-subtitle">
+            <div className="hp-dist-subtitle-track">
+              <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
+              <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
+              <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
+              <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
+            </div>
           </div>
-          <h2 className="certs-title-inline">
-            Industry <span>Certifications & Approvals</span>
+          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "48px", fontWeight: "600", textAlign: "center", margin: "20px auto", color: "#ffffff", width: "100%" }}>
+            Industry Certifications & Approvals
           </h2>
         </div>
 
@@ -122,8 +78,8 @@ export default function CertificationsPage() {
                   <Image
                     src={`/Images/Certificates/${cert.image}`}
                     alt={cert.title}
-                    width={140}
-                    height={140}
+                    width={170}
+                    height={170}
                     style={{ objectFit: "contain" }}
                   />
                 </div>

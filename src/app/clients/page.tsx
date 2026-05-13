@@ -32,34 +32,32 @@ export default function ClientsPage() {
           <div className="clients-hero-text-wrapper">
             <h1 className="clients-hero-subtitle">Trusted Partners</h1>
             <h2 className="clients-hero-subheading">Working with Industry-Leading Brands</h2>
-
+            <p className="clients-hero-description">We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.</p>
           </div>
         </div>
       </section>
 
       {/* BRANDS SECTION */}
       <section className="clients-brands-section">
-        <div className="clients-brands-header">
-          <div className="section-label">
-            <span className="orange-square"></span> PARTNER NETWORK
+        <div className="clients-brands-header" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div className="hp-dist-subtitle">
+            <div className="hp-dist-subtitle-track">
+              <span>PARTNER NETWORK • </span>
+              <span>PARTNER NETWORK • </span>
+              <span>PARTNER NETWORK • </span>
+              <span>PARTNER NETWORK • </span>
+            </div>
           </div>
-          <h2 className="section-title-inline">
-            Our <span>Partnered Brands</span>
+          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "96px", fontWeight: "600", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
+            Our Partnered Brands
           </h2>
         </div>
 
         <div className="clients-grid">
           {brandLogos.map((logo, i) => {
-            // Checkerboard logic for 4 columns:
-            // Row 0 (0-3): gray, white, gray, white
-            // Row 1 (4-7): white, gray, white, gray
-            const rowIndex = Math.floor(i / 4);
-            const colIndex = i % 4;
-            const isGray = (rowIndex + colIndex) % 2 === 0;
-
             return (
               <div 
-                className={`client-card ${isGray ? 'bg-gray' : 'bg-white'}`} 
+                className="client-card" 
                 key={i}
               >
                 <div className="client-logo-wrapper">
@@ -92,7 +90,7 @@ export default function ClientsPage() {
         .clients-hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 100%);
+          background: rgba(0, 0, 0, 0.6) !important;
           z-index: 1;
         }
         .clients-hero-content {
@@ -105,26 +103,30 @@ export default function ClientsPage() {
           padding: 0 80px;
         }
         .clients-hero-text-wrapper {
-          max-width: 700px;
+          max-width: 1200px;
         }
         .clients-hero-subheading {
-          font-size: 32px;
+          font-size: 36px;
           font-weight: 500;
           margin-bottom: 25px;
           color: #eee;
+          font-family: var(--font-degular), sans-serif;
+          white-space: nowrap;
         }
         .clients-hero-subtitle {
-          font-size: 72px;
+          font-size: 80px;
           font-weight: 600;
           margin-bottom: 5px;
           line-height: 1.1;
-          letter-spacing: 1px;
+          font-family: var(--font-degular), sans-serif;
+          white-space: nowrap;
         }
         .clients-hero-description {
           font-size: 15px;
           line-height: 1.6;
           color: #ddd;
           max-width: 90%;
+          font-family: var(--font-neutiva), sans-serif;
         }
 
         /* CLIENTS BRANDS SECTION */
@@ -138,20 +140,13 @@ export default function ClientsPage() {
           margin-bottom: 60px;
           padding: 0 80px;
         }
-        .section-label {
+        .clients-brands-header {
+          text-align: center;
+          margin-bottom: 60px;
+          padding: 0 80px;
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          gap: 8px;
-          font-family: var(--font-geist-mono), monospace;
-          font-size: 12px;
-          font-weight: 500;
-          color: #000000;
-          text-transform: uppercase;
-          letter-spacing: 0%;
-          line-height: 100%;
-          margin-bottom: 5px;
-          vertical-align: middle;
         }
         .section-title-inline {
           font-family: var(--font-inter-tight), sans-serif;
@@ -175,7 +170,8 @@ export default function ClientsPage() {
         .clients-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 0;
+          border-top: 1px solid #000000;
+          border-left: 1px solid #000000;
         }
         .client-card {
           aspect-ratio: 16/9;
@@ -183,24 +179,25 @@ export default function ClientsPage() {
           align-items: center;
           justify-content: center;
           padding: 30px;
-          transition: transform 0.3s ease;
+          background-color: #ffffff;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-bottom: 1px solid #000000;
+          border-right: 1px solid #000000;
         }
         .client-card:hover {
-          transform: scale(1.05);
+          transform: scale(1.02);
           z-index: 10;
-          background: #fff !important;
           box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .client-card.bg-gray {
-          background-color: #f7f7f7;
-        }
-        .client-card.bg-white {
-          background-color: #ffffff;
+        .client-card:hover .client-logo-wrapper {
+          filter: grayscale(0%) !important;
         }
         .client-logo-wrapper {
           position: relative;
           width: 75%;
           height: 75%;
+          filter: grayscale(100%);
+          transition: filter 0.3s ease;
         }
 
         @media (max-width: 1024px) {

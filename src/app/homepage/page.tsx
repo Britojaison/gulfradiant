@@ -531,7 +531,17 @@ export default function Homepage() {
 
       {/* QUOTE BANNER */}
       <section className="hp-quote-banner-new">
-        <div className="hp-leadership-card">
+        {/* GIANT ORANGE QUOTES (BEHIND CARD) */}
+        <div style={{ position: "absolute", bottom: "50px", right: "calc(50% - 750px)", zIndex: 1 }}>
+          <Image
+            src="/Images/Home/comma.svg"
+            alt="Quotes"
+            width={378}
+            height={436}
+            style={{ pointerEvents: "none" }}
+          />
+        </div>
+        <div className="hp-leadership-card" style={{ position: "relative", zIndex: 2 }}>
           <div className="hp-leadership-left">
             <div className="hp-dist-subtitle" aria-label="Leadership message">
               <div className="hp-dist-subtitle-track" aria-hidden="true">
@@ -554,14 +564,6 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-        <Image
-          src="/Images/Our Projects/quote2.svg"
-          alt=""
-          width={271}
-          height={200}
-          className="hp-leadership-quote"
-          aria-hidden="true"
-        />
       </section>
 
       {/* NEWS */}

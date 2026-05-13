@@ -409,10 +409,15 @@ h6,
 }
 
 .kumwell-product-card {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   overflow: visible;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .kumwell-product-card-image {
@@ -2787,7 +2792,7 @@ h6,
 
 .hp-footer-marquee-track span {
   display: inline-block;
-  font-family: var(--font-geist-mono-real), monospace !important;
+  font-family: var(--font-degular), sans-serif !important;
   font-size: clamp(92px, 13vw, 210px);
   font-weight: 800;
   letter-spacing: 0;
@@ -2836,7 +2841,7 @@ h6,
 }
 
 .projects-hero-content h1 {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-degular), sans-serif !important;
   font-weight: 500;
   font-size: 80px;
   line-height: 100%;
@@ -2846,7 +2851,7 @@ h6,
 }
 
 .projects-hero-content p {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-neutiva), sans-serif !important;
   font-weight: 500;
   font-size: 15px;
   line-height: 160%;
@@ -2884,73 +2889,71 @@ h6,
 }
 
 .projects-trusted-bar h2 {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-degular), sans-serif !important;
   color: #222;
   font-size: 48px;
   font-weight: 600;
-  margin: 0;
+  margin: 20px 0 0;
   letter-spacing: 0%;
   line-height: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .projects-grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px 24px;
-  padding: 0 80px 80px;
-  max-width: 100%;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 80px 0;
+  width: 100%;
+  background: white;
 }
 
 .project-detail-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  width: 100%;
   background: white;
 }
 
-.project-card-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 630 / 620;
-  overflow: hidden;
-  border-radius: 4px;
+.project-detail-card:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.project-category-tag {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  background: #FF5B05;
-  color: white;
-  padding: 10px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  z-index: 2;
-  clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
-  padding-right: 36px;
-  font-family: var(--font-geist-mono), monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.project-card-image {
+  flex: 1.5;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.project-detail-card:nth-child(odd) .project-card-image {
+  border-radius: 0 20px 20px 0;
+}
+
+.project-detail-card:nth-child(even) .project-card-image {
+  border-radius: 20px 0 0 20px;
 }
 
 .project-card-info {
-  padding: 24px 0;
+  flex: 1;
+  padding: 0 120px;
 }
 
 .project-card-info h3 {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-degular), sans-serif !important;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: 40px;
+  line-height: 120%;
   letter-spacing: 0;
   color: #000000;
   vertical-align: middle;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
 .project-location {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-neutiva), sans-serif !important;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
@@ -2961,7 +2964,7 @@ h6,
 }
 
 .project-desc {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-neutiva), sans-serif !important;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
@@ -3082,6 +3085,7 @@ h6,
   position: relative;
   width: 100%;
   height: 100vh;
+  background: url('/Images/Certificates/bg8.svg') center/cover no-repeat;
 }
 
 .certs-hero-overlay {
@@ -3094,7 +3098,7 @@ h6,
 .certs-hero-content {
   position: absolute;
   z-index: 2;
-  top: 55%;
+  top: 45%;
   left: 80px;
   transform: translateY(-50%);
   max-width: 700px;
@@ -3103,21 +3107,20 @@ h6,
 }
 
 .certs-hero-title {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: var(--font-degular), sans-serif !important;
   font-size: 80px;
   font-weight: 500;
   color: var(--white);
   line-height: 100%;
   margin-bottom: 20px;
   letter-spacing: 0%;
-  vertical-align: middle;
   text-align: left;
 }
 
 .certs-hero-subtitle {
-  font-family: var(--font-inter-tight), sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 15px;
+  font-weight: 400;
   color: #fff;
   line-height: 1.6;
   text-align: left;
@@ -3126,17 +3129,19 @@ h6,
 /* Page Background */
 .certs-section-bg {
   padding: 80px 0 100px 0;
-  background: linear-gradient(180deg, #ffffff 0%, #ffe4d6 20%, #ff976a 50%, #ff5b05 100%);
+  background: url('/Images/Certificates/bg9.svg') center/cover no-repeat;
   text-align: left;
 }
 
 .certs-header {
   margin-bottom: 60px;
-  padding-left: 80px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+}
+.certs-header .hp-dist-subtitle span {
+  color: #ffffff !important;
 }
 
 .certs-section-label {
@@ -3207,12 +3212,13 @@ h6,
 
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 413px);
   gap: 30px;
+  justify-content: center;
 }
 
 .cert-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.8) !important;
   border-radius: 12px;
   padding: 40px 20px 30px 20px;
   display: flex;
@@ -3220,24 +3226,26 @@ h6,
   align-items: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 413px;
+  height: 324px;
 }
 
-.cert-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
+
 
 .cert-logo-circle {
   width: 170px;
   height: 170px;
-  background: #F8F8F8;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
+}
+
+.cert-logo-circle img {
+  mix-blend-mode: multiply;
+  filter: brightness(1.2) contrast(1.1);
 }
 
 .cert-card-title {
@@ -5210,4 +5218,184 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 /* White color for scrolling subtitle in contact section */
 .hp-contact-card .hp-dist-subtitle span {
   color: #ffffff !important;
+}
+
+/* New Product Page Styles */
+.new-prod-page-active {
+}
+
+.new-prod-page-active .page-content-wrapper > .hp-footer {
+  display: none !important;
+}
+
+.new-prod-page {
+  position: relative;
+  width: 100%;
+}
+
+.new-prod-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #000000;
+}
+
+.new-prod-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.new-prod-scroll-track {
+  position: relative;
+  width: 100%;
+}
+
+.new-prod-content {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 140px 80px 40px;
+}
+
+.new-prod-title {
+  font-family: var(--font-degular), sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+  flex-shrink: 0;
+}
+
+.new-prod-cards-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+}
+
+.new-prod-set {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.new-prod-set.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.new-prod-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.new-prod-card {
+  background: #ffffff !important;
+  border-radius: 16px;
+  width: 280px;
+  height: 239px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+/* Footer override for product page */
+.new-prod-page .hp-footer {
+  background-color: #000000 !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 10;
+}
+
+.new-prod-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.new-prod-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.new-prod-card-logo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Kumwell Hero Scoped Styles (Moved to end for higher specificity) */
+.kumwell-hero .hero-title {
+  font-family: var(--font-degular), sans-serif !important;
+  font-size: 96px !important;
+}
+
+.kumwell-hero .hero-subtitle {
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 24px !important;
+}
+
+.kumwell-hero .hero-description {
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 22px !important;
+}
+
+.kumwell-hero .btn-primary,
+.kumwell-hero .btn-outline {
+  border-radius: 12px !important;
+  width: 216px !important;
+  height: 58px !important;
+  font-size: 20px !important;
+}
+
+/* Kumwell Product Card Overrides */
+.kumwell-product-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 379px !important;
+  height: 385px !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+}
+
+/* Kumwell Certified Logo Overrides */
+.certified-logo {
+  height: 90px !important;
+  width: auto !important;
+  opacity: 1 !important;
+}
+
+.certified-logos {
+  gap: 100px !important;
 }
