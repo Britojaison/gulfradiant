@@ -128,6 +128,20 @@
   top: 75%;
 }
 
+.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(1) {
+  top: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(2) {
+  opacity: 0;
+}
+
+.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(3) {
+  top: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
 .staggered-menu-panel {
   position: absolute;
   top: 0;

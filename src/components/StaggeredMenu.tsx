@@ -216,7 +216,7 @@ export default function StaggeredMenu({
     if (!icon) return;
     spinTweenRef.current?.kill();
     spinTweenRef.current = gsap.to(icon, {
-      rotate: opening ? 225 : 0,
+      rotate: opening ? 180 : 0,
       duration: opening ? 0.8 : 0.35,
       ease: opening ? "power4.out" : "power3.inOut",
       overwrite: "auto",
@@ -346,7 +346,9 @@ export default function StaggeredMenu({
             </span>
           </span>
           <span ref={iconRef} className="sm-icon" aria-hidden="true">
-            <img src="/Images/Home/hamburger.svg" alt="Menu" width={45} height={45} />
+            <span className="sm-icon-line"></span>
+            <span className="sm-icon-line"></span>
+            <span className="sm-icon-line"></span>
           </span>
         </button>
       </header>

@@ -621,7 +621,7 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new" id="contact">
+      <section className="hp-contact-banner-new">
         <Image src="/Images/Home/bg4.svg" alt="" fill sizes="100vw" className="hp-contact-bg-img" />
         <div className="hp-contact-card">
             <div className="hp-dist-subtitle" aria-label="Book a call">
@@ -632,13 +632,132 @@ export default function Homepage() {
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
               </div>
             </div>
-          <h2>READY TO POWER<br />YOUR NEXT PROJECT?</h2>
+          <h2>Ready to Power<br />Your Next Project?</h2>
           <p>Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.</p>
           <div className="hp-contact-action">
             <Link href="mailto:info@gulfradiant.com" className="hp-contact-quote-btn">Request a quote</Link>
           </div>
         </div>
       </section>
+
+      {/* GET IN TOUCH */}
+      <section className="hp-get-in-touch" id="contact" style={{ backgroundImage: 'url(/Images/Home/bg9.png)' }}>
+        <div className="hp-git-inner">
+          {/* LEFT */}
+          <div className="hp-git-left">
+            <h2 style={{ fontWeight: 600 }}>
+              Ready to Power Your Next Project?
+              <span style={{ display: 'block' }}>With Reliable Electrical Solutions</span>
+            </h2>
+            <p>
+              Explore our range of trusted electrical products and solutions designed for infrastructure, industrial, and commercial projects.
+            </p>
+            <Link href="mailto:info@gulfradiant.com" className="hp-git-quote-btn">
+              Request a Quote
+            </Link>
+            <div className="hp-git-maps-container" style={{ display: 'flex', flexDirection: 'row', gap: '16px', flexWrap: 'nowrap', marginTop: '40px', alignItems: 'flex-start' }}>
+              <div className="hp-git-map-block">
+                <div className="hp-git-map">
+                  <iframe
+                    src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Gulf Radiant Abu Dhabi location"
+                  />
+                </div>
+                <div className="hp-git-address" style={{ lineHeight: '1.2', fontSize: '12px' }}>
+                  <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: '#ff5b05' }}>Abu Dhabi</h4>
+                  <p style={{ margin: 0 }}><strong>GULF RADIANT ELECTRICALS L.L.C</strong></p>
+                  <p style={{ margin: 0 }}>P.O. Box: 91366, M-9,</p>
+                  <p style={{ margin: 0 }}>Abu Dhabi, U.A.E</p>
+                  <p style={{ margin: 0 }}>Email: infoabu@gulfradiant.com</p>
+                  <p style={{ margin: 0 }}>Contact Number +971 2 4488449</p>
+                  <p style={{ margin: 0 }}>Mobile +971 50 6409192</p>
+                </div>
+              </div>
+              <div className="hp-git-map-block">
+                <div className="hp-git-map">
+                  <iframe
+                    src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Gulf Radiant Dubai location"
+                  />
+                </div>
+                <div className="hp-git-address" style={{ lineHeight: '1.2', fontSize: '12px' }}>
+                  <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: '#ff5b05' }}>Dubai</h4>
+                  <p style={{ margin: 0 }}><strong>GULF RADIANT L.L.C</strong></p>
+                  <p style={{ margin: 0 }}>P.O. Box: 26426, Amman Street,</p>
+                  <p style={{ margin: 0 }}>Al Qusais Industrial Area - 3,</p>
+                  <p style={{ margin: 0 }}>Dubai, United Arab Emirates</p>
+                  <p style={{ margin: 0 }}>Email: info@gulfradiant.com</p>
+                  <p style={{ margin: 0 }}>Phone: +971 4 2671662 / 882</p>
+                  <p style={{ margin: 0 }}>Fax: +971 4 2671883</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT – FORM CARD */}
+          <div 
+            className="hp-git-form-card" 
+            style={{ 
+              background: "rgba(255, 255, 255, 0.2)", 
+              backdropFilter: "blur(20px)", 
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              borderRadius: "24px"
+            }}
+          >
+            <h3 style={{ color: "#ffffff" }}>Get in touch</h3>
+            <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="hp-git-field">
+                <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
+                <input id="git-company" type="text" placeholder="Jhon Smith" />
+              </div>
+              <div className="hp-git-field">
+                <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
+                <input id="git-fullname" type="text" placeholder="Jhon Smith" />
+              </div>
+              <div className="hp-git-row">
+                <div className="hp-git-field">
+                  <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
+                  <input id="git-email" type="email" placeholder="john@email.com" />
+                </div>
+                <div className="hp-git-field">
+                  <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
+                  <input id="git-phone" type="tel" placeholder="+91 XXXXXXXXX" />
+                </div>
+              </div>
+              <div className="hp-git-field">
+                <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
+                <div className="hp-git-select-wrap">
+                  <select id="git-industry" defaultValue="">
+                    <option value="" disabled>- None -</option>
+                    <option value="infrastructure">Infrastructure</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="energy">Energy</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div className="hp-git-field">
+                <label htmlFor="git-details">Project Details (Optional)</label>
+                <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
+              </div>
+              <button type="submit" className="hp-git-submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
 
     </div>
   );
