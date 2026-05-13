@@ -127,7 +127,7 @@ export default function Homepage() {
 
         card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
         card.style.opacity = `${opacity}`;
-        card.style.zIndex = Math.round((1 - Math.abs(d)) * 10);
+        card.style.zIndex = String(Math.round((1 - Math.abs(d)) * 10));
       });
     };
 
@@ -339,7 +339,7 @@ export default function Homepage() {
             <span style={{ whiteSpace: "nowrap" }}>Powering Infrastructure</span><br />That Delivers
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
-            <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} />
+            <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
           </a>
         </div>
       </section>
@@ -509,7 +509,7 @@ export default function Homepage() {
               {suppliedProjects.map((project) => (
                 <div className="hp-project-card" key={project.title}>
                   <Image
-                    src={`/Images/Our Projects/${project.image}`}
+                    src={`/Images/our_projects/${project.image}`}
                     alt={project.alt}
                     fill
                     sizes="(max-width: 767px) 82vw, (max-width: 1199px) 44vw, 520px"
@@ -535,7 +535,7 @@ export default function Homepage() {
             alt="Quotes"
             width={378}
             height={436}
-            style={{ pointerEvents: "none" }}
+            style={{ pointerEvents: "none", height: "auto" }}
           />
         </div>
         <div className="hp-leadership-card" style={{ position: "relative", zIndex: 2 }}>
@@ -578,7 +578,7 @@ export default function Homepage() {
             <h2>Latest News &amp; Industry Updates</h2>
             <article className="hp-news-feature-card" style={{ position: "relative" }}>
               <Image
-                src={`/Images/Our Projects/${featuredNews.image}`}
+                src={`/Images/our_projects/${featuredNews.image}`}
                 alt={featuredNews.alt}
                 key={featuredNews.image}
                 fill
@@ -602,7 +602,7 @@ export default function Homepage() {
                 >
                   <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px" }}>
                     <Image
-                      src={`/Images/Our Projects/${post.image}`}
+                      src={`/Images/our_projects/${post.image}`}
                       alt={post.alt}
                       fill
                       sizes="180px"
