@@ -66,11 +66,18 @@ export default function ProductKumwellPage() {
 
       <section className="certified-section" style={{ padding: "80px 0", background: "#ffffff" }}>
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: "60px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>Certified & Approved</h2>
-        <div className="certified-logos" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "100px", flexWrap: "wrap" }}>
-          <Image className="certified-logo" src="/Images/kumwell/image 33.png" alt="Etihad WE" width={280} height={90} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/kumwell/image 34.png" alt="RTA" width={280} height={90} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/kumwell/image 35.png" alt="TAQA" width={280} height={90} style={{ objectFit: "contain" }} />
-          <Image className="certified-logo" src="/Images/kumwell/image 36.png" alt="IEEE" width={280} height={90} style={{ objectFit: "contain" }} />
+        <div className="certified-logos-wrapper" style={{ overflow: "hidden", width: "calc(100% - 500px)", margin: "0 auto" }}>
+          <div className="certified-logos-track" style={{ display: "flex", width: "max-content", gap: "100px", animation: "scrollMarquee 20s linear infinite" }}>
+            <Image className="certified-logo" src="/Images/kumwell/image 33.png" alt="Etihad WE" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 34.png" alt="RTA" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 35.png" alt="TAQA" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 36.png" alt="IEEE" width={280} height={90} style={{ objectFit: "contain" }} />
+            {/* Duplicate for infinite scroll */}
+            <Image className="certified-logo" src="/Images/kumwell/image 33.png" alt="Etihad WE" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 34.png" alt="RTA" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 35.png" alt="TAQA" width={280} height={90} style={{ objectFit: "contain" }} />
+            <Image className="certified-logo" src="/Images/kumwell/image 36.png" alt="IEEE" width={280} height={90} style={{ objectFit: "contain" }} />
+          </div>
         </div>
       </section>
 

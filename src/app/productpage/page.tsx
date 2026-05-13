@@ -24,7 +24,7 @@ export default function ProductPage() {
     { src: "/Images/product/Products/TEKAB CABLES.png", brand: "Tekab Cables" },
     { src: "/Images/product/Products/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables" },
     { src: "/Images/product/Products/PSI LOGO.png", brand: "PSI" },
-    { src: "/Images/product/Products/EMI LOGO.png", brand: "EMI", dark: true },
+    { src: "/Images/product/Products/EMI LOGO.png", brand: "EMI" },
     { src: "/Images/product/Products/LITETECH LOGO.webp", brand: "Litetech" },
     { src: "/Images/product/Products/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik" },
     { src: "/Images/product/Products/CCG Logo.png", brand: "CCG" },

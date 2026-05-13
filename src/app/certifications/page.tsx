@@ -172,6 +172,14 @@ export default function CertificationsPage() {
       )}
 
       <style jsx global>{`
+        /* HERO FONT SIZES */
+        .certs-hero-title {
+          font-size: 96px !important;
+        }
+        .certs-hero-subtitle {
+          font-size: 18px !important;
+        }
+
         /* CERTIFICATE MODAL */
         .cert-modal-overlay {
           position: fixed;

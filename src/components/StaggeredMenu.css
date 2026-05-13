@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 40px;
   background: #21212159;
   border: 1px solid #2121211A;
   -webkit-backdrop-filter: blur(21.6px);
@@ -50,6 +50,7 @@
   width: 340px;
   height: 110px;
   object-fit: contain;
+  object-position: left center;
 }
 
 .sm-toggle {
@@ -57,8 +58,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  min-width: 84px;
+  min-width: auto;
   height: 44px;
+  margin-right: 35px;
   background: transparent;
   border: none;
   cursor: pointer;

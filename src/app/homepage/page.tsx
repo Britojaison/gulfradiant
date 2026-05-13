@@ -339,7 +339,7 @@ export default function Homepage() {
             <span style={{ whiteSpace: "nowrap" }}>Powering Infrastructure</span><br />That Delivers
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
-            <span></span>
+            <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} />
           </a>
         </div>
       </section>

@@ -75,6 +75,14 @@ export default function ClientsPage() {
       </section>
 
       <style jsx global>{`
+        /* HERO FONT SIZES */
+        .clients-hero-subtitle {
+          font-size: 96px !important;
+        }
+        .clients-hero-description {
+          font-size: 18px !important;
+        }
+
         /* CLIENTS HERO */
         .clients-hero {
           position: relative;
@@ -180,24 +188,40 @@ export default function ClientsPage() {
           justify-content: center;
           padding: 30px;
           background-color: #ffffff;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
           border-bottom: 1px solid #000000;
           border-right: 1px solid #000000;
+          position: relative;
+          overflow: hidden;
+        }
+        .client-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: -100%;
+          width: 100%; height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255, 91, 5, 0.05), transparent);
+          transition: left 0.6s ease;
+          z-index: 1;
+        }
+        .client-card:hover::before {
+          left: 100%;
         }
         .client-card:hover {
-          transform: scale(1.02);
+          transform: translateY(-5px) scale(1.03);
           z-index: 10;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         .client-card:hover .client-logo-wrapper {
           filter: grayscale(0%) !important;
+          transform: scale(1.05);
         }
         .client-logo-wrapper {
           position: relative;
           width: 75%;
           height: 75%;
           filter: grayscale(100%);
-          transition: filter 0.3s ease;
+          transition: filter 0.4s ease, transform 0.4s ease;
+          z-index: 2;
         }
 
         @media (max-width: 1024px) {

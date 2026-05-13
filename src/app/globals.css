@@ -202,7 +202,7 @@ h6,
   position: absolute;
   z-index: 2;
   top: 50%;
-  left: 80px;
+  left: 40px;
   transform: translateY(-50%);
   max-width: 560px;
 }
@@ -344,7 +344,7 @@ h6,
 /* PRODUCT RANGE SECTION          */
 /* ============================== */
 .product-range {
-  padding: 70px 80px;
+  padding: 70px 40px;
   background: var(--light-bg);
   text-align: center;
 }
@@ -431,7 +431,7 @@ h6,
 /* CERTIFIED SECTION              */
 /* ============================== */
 .certified-section {
-  padding: 100px 80px;
+  padding: 100px 40px;
   background: var(--white);
   text-align: center;
 }
@@ -463,7 +463,7 @@ h6,
 /* ABOUT KUMWELL SECTION          */
 /* ============================== */
 .about-section {
-  padding: 100px 80px;
+  padding: 100px 40px;
   background: var(--light-bg);
 }
 
@@ -719,7 +719,7 @@ h6,
   min-height: 500px;
   display: flex;
   align-items: center;
-  padding: 0 80px;
+  padding: 0 40px;
 }
 
 .prod-hero-overlay {
@@ -1307,41 +1307,33 @@ h6,
   left: 50%;
   top: calc(50% + min(25vh, 265px));
   transform: translateX(-50%);
-  width: 34px;
-  height: 64px;
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
   text-decoration: none;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
-.hp-hero-scroll span {
-  width: 14px;
-  height: 14px;
-  border-right: 1.7px solid currentColor;
-  border-bottom: 1.7px solid currentColor;
-  transform: translateY(-4px) rotate(45deg);
-  animation: hpScrollArrow 1.4s ease-in-out infinite;
+.hp-hero-scroll img {
+  animation: hpScrollPoint 1.5s ease-in-out infinite;
 }
 
 .hp-hero-scroll:hover {
-  border-color: #FF5B05;
-  background: rgba(255, 91, 5, 0.16);
   transform: translateX(-50%) translateY(3px);
 }
 
-@keyframes hpScrollArrow {
+@keyframes hpScrollPoint {
   0%, 100% {
-    opacity: 0.45;
-    transform: translateY(-6px) rotate(45deg);
+    transform: translateY(0);
   }
-  50% {
-    opacity: 1;
-    transform: translateY(5px) rotate(45deg);
+  30% {
+    transform: translateY(15px);
+  }
+  45% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(15px);
   }
 }
 
@@ -1397,7 +1389,7 @@ h6,
 
 /* PRODUCTS WE DISTRIBUTE */
 .hp-products-dist {
-  padding: 88px 80px 0 80px;
+  padding: 88px 40px 0 40px;
   text-align: center;
   overflow: hidden;
   width: 100%;
@@ -1812,7 +1804,7 @@ h6,
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  padding: 0 80px;
+  padding: 0 75px;
   overflow: visible;
   z-index: 1;
   background: #FF5B05 url('/Images/Home/bg3.svg') no-repeat center center fixed;
@@ -1955,7 +1947,7 @@ h6,
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 0 80px;
+  padding: 0 40px;
   gap: 60px;
   align-items: center;
 }
@@ -2037,7 +2029,7 @@ h6,
 .hp-projects-top-fixed {
   margin: 0 auto 34px;
   text-align: center;
-  padding: 0 80px;
+  padding: 0 40px;
 }
 
 .hp-projects-subtitle {
@@ -2153,7 +2145,7 @@ h6,
   background: #000000;
   color: #ffffff;
   overflow: hidden;
-  padding: 42px 80px 72px;
+  padding: 42px 40px 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2293,7 +2285,7 @@ h6,
   margin: 0;
   max-width: 100%;
   height: 150vh;
-  padding: 40px 80px;
+  padding: 40px 40px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -2481,7 +2473,7 @@ h6,
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 50px 80px;
+  padding: 50px 40px;
   background: #ffffff;
 }
 
@@ -2835,7 +2827,7 @@ h6,
   position: absolute;
   z-index: 2;
   top: 50%;
-  left: 80px;
+  left: 40px;
   transform: translateY(-50%);
   color: white;
   max-width: 700px;
@@ -2844,7 +2836,7 @@ h6,
 .projects-hero-content h1 {
   font-family: var(--font-degular), sans-serif !important;
   font-weight: 500;
-  font-size: 80px;
+  font-size: 96px !important;
   line-height: 100%;
   letter-spacing: 1px;
   vertical-align: middle;
@@ -2854,7 +2846,7 @@ h6,
 .projects-hero-content p {
   font-family: var(--font-neutiva), sans-serif !important;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 18px !important;
   line-height: 160%;
   letter-spacing: 0%;
   vertical-align: middle;
@@ -2865,7 +2857,7 @@ h6,
 
 .projects-trusted-bar {
   position: relative;
-  padding: 60px 80px;
+  padding: 60px 40px;
   background: #fff;
 }
 
@@ -2920,6 +2912,74 @@ h6,
 
 .project-detail-card:nth-child(even) {
   flex-direction: row-reverse;
+}
+
+.project-detail-card:nth-child(odd) .project-card-image {
+  animation: tiltInFromLeft linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+.project-detail-card:nth-child(odd) .project-card-info {
+  animation: slideInFromRight linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+.project-detail-card:nth-child(even) .project-card-image {
+  animation: tiltInFromRight linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+.project-detail-card:nth-child(even) .project-card-info {
+  animation: slideInFromLeft linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+@keyframes tiltInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-300px) rotate(-25deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes tiltInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px) rotate(25deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .project-card-image {
@@ -2997,9 +3057,9 @@ h6,
   position: absolute;
   z-index: 2;
   top: 50%;
-  left: 80px;
+  left: 40px;
   transform: translateY(-50%);
-  max-width: 650px;
+  max-width: 900px;
   padding-top: 40px;
   text-align: left;
 }
@@ -3015,15 +3075,26 @@ h6,
 }
 
 .clients-hero-subtitle {
-  font-family: var(--font-inter-tight), sans-serif;
-  font-size: 28px;
+  font-family: var(--font-degular), sans-serif !important;
+  font-size: 96px !important;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.clients-hero-subheading {
+  font-family: var(--font-subject), sans-serif !important;
+  font-size: 32px !important;
   font-weight: 400;
   color: #fff;
   margin-bottom: 24px;
 }
 
 .clients-hero-description {
-  font-size: 16px;
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 18px !important;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
@@ -3100,7 +3171,7 @@ h6,
   position: absolute;
   z-index: 2;
   top: 45%;
-  left: 80px;
+  left: 120px;
   transform: translateY(-50%);
   max-width: 700px;
   padding-top: 40px;
@@ -3208,7 +3279,7 @@ h6,
 .certs-container {
   max-width: 100%;
   margin: 0;
-  padding: 0 80px;
+  padding: 0 40px;
 }
 
 .certs-grid {
@@ -3226,9 +3297,15 @@ h6,
   flex-direction: column;
   align-items: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
   width: 413px;
   height: 324px;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 
 
@@ -3242,6 +3319,11 @@ h6,
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-logo-circle {
+  transform: scale(0.95);
 }
 
 .cert-logo-circle img {
@@ -5308,11 +5390,15 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   pointer-events: auto;
 }
 
+.new-prod-set:last-child {
+  top: 42%;
+}
+
 .new-prod-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 280px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -5353,6 +5439,12 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   height: 100%;
   position: relative;
 }
+
+.new-prod-card-logo img {
+  mix-blend-mode: multiply;
+}
+
+
 
 /* Kumwell Hero Scoped Styles (Moved to end for higher specificity) */
 .kumwell-hero .hero-title {
@@ -5399,4 +5491,21 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .certified-logos {
   gap: 100px !important;
+}
+
+/* Force Hero Font Sizes Across Pages */
+.projects-hero-content h1,
+.clients-hero-subtitle,
+.certs-hero-title {
+  font-family: var(--font-degular), sans-serif !important;
+  font-size: 96px !important;
+  line-height: 100% !important;
+}
+
+.projects-hero-content p,
+.clients-hero-description,
+.certs-hero-subtitle {
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 18px !important;
+  line-height: 160% !important;
 }
