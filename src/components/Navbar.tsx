@@ -7,7 +7,7 @@ const navLinks = [
   { link: "/homepage", label: "Home", ariaLabel: "Go to home page" },
   { link: "/about", label: "About", ariaLabel: "Learn about Gulf Radiant" },
   { link: "/productpage", label: "Products", ariaLabel: "View products" },
-  { link: "/homepage#useful-information", label: "Useful Information", ariaLabel: "View useful information" },
+  { link: "/information", label: "Useful Information", ariaLabel: "View useful information" },
   { link: "/projects", label: "Projects", ariaLabel: "View projects" },
   { link: "/clients", label: "Clients", ariaLabel: "View clients" },
   { link: "/certifications", label: "Our Certifications", ariaLabel: "View certifications" },
