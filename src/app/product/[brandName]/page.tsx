@@ -170,7 +170,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Advanced solar, marine, rolling stock, and heat-resistant industrial cables engineered to withstand extreme environment stresses.",
     website: "https://www.siechem.com/",
     productRange: [
-      { image: "/Images/Siechem/Wires and Cables.png", caption: "Wires and Cables" }
+      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
+      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
+      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
+      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
     ],
     certifiedLogos: [
     ],
@@ -186,7 +189,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Flexible control cables, drag-chain cables, data networking lines, and plug-and-play customized cable assembly systems.",
     website: "https://www.helukabel.com/",
     productRange: [
-      { image: "/Images/Siechem/Wires and Cables.png", caption: "Wires and Cables" }
+      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
+      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
+      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
+      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
     ],
     certifiedLogos: [
     ],
@@ -747,7 +753,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High, medium, and low-voltage cables and wires manufactured to international standards for power grids and infrastructure.",
     website: "https://www.bahra-cables.com/",
     productRange: [
-      { image: "/Images/Siechem/Wires and Cables.png", caption: "Wires and Cables" }
+      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
+      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
+      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
+      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
     ],
     certifiedLogos: [
     ],
@@ -763,7 +772,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Instrumentation, control, and specialty cables designed for optimal signal transmission and safety under heavy industrial conditions.",
     website: "http://www.tekabcables.com/",
     productRange: [
-      { image: "/Images/Siechem/Wires and Cables.png", caption: "Wires and Cables" }
+      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
+      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
+      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
+      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
     ],
     certifiedLogos: [
     ],
@@ -779,7 +791,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-performance low voltage cables, building wires, and specialty conductors designed for efficiency and safety.",
     website: "http://neelkanthcables.com/",
     productRange: [
-      { image: "/Images/Siechem/Wires and Cables.png", caption: "Wires and Cables" }
+      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
+      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
+      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
+      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
     ],
     certifiedLogos: [
     ],
@@ -827,7 +842,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-quality armoured and unarmoured cable glands designed for diverse and demanding global environments.",
     website: "https://www.ccgcablegland.co.za/",
     productRange: [
-      { image: "/Images/product/CCG Logo.png", caption: "CCG Logo" }
+      { image: "/Images/ccg/industrial cable glands .png", caption: "industrial cable glands .png" },
+      { image: "/Images/ccg/hazardous-area-cable-glands.jpg", caption: "hazardous-area-cable-glands.jpg" },
+      { image: "/Images/ccg/industrial junction box.png", caption: "industrial junction box.png" },
+      { image: "/Images/ccg/hazardous-areas-junction-boxes.jpg", caption: "hazardous-areas-junction-boxes.jpg" },
+      { image: "/Images/ccg/cable-cleats.jpg", caption: "cable-cleats.jpg" },
+      { image: "/Images/ccg/thread-converters-and-plugs.png", caption: "thread-converters-and-plugs.png" },
+      { image: "/Images/ccg/north-american-nec-cec.jpg", caption: "north-american-nec-cec.jpg" },
+      { image: "/Images/ccg/Accessories.png", caption: "Accessories.png" }
     ],
     certifiedLogos: [
     ],
@@ -835,6 +857,53 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     aboutP2: "Our range of armoured and compression cable glands are designed for installation in diverse and demanding environments such as those found in the power generation, mining, industrial, construction, rail, defence and marine industries.",
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Armoured & Compression Glands"
+  },
+  nventcaddy: {
+    name: "nVent CADDY",
+    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    subtitle: "Fixing, Fastening & Support Solutions",
+    description: "Premium fixing, fastening and support products for electrical installation, seismic bracing, conduit and cable support, and beam clamps.",
+    website: "https://www.nvent.com/en-us/caddy",
+    productRange: [
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.20 PM.png", caption: "Screenshot 2026-05-19 at 3.09.20 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.26 PM.png", caption: "Screenshot 2026-05-19 at 3.09.26 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.31 PM.png", caption: "Screenshot 2026-05-19 at 3.09.31 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.41 PM.png", caption: "Screenshot 2026-05-19 at 3.09.41 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.54 PM.png", caption: "Screenshot 2026-05-19 at 3.09.54 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.15 PM.png", caption: "Screenshot 2026-05-19 at 3.10.15 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.21 PM.png", caption: "Screenshot 2026-05-19 at 3.10.21 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.51 PM.png", caption: "Screenshot 2026-05-19 at 3.10.51 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.55 PM.png", caption: "Screenshot 2026-05-19 at 3.10.55 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.17 PM.png", caption: "Screenshot 2026-05-19 at 3.11.17 PM.png" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.39 PM.png", caption: "Screenshot 2026-05-19 at 3.11.39 PM.png" }
+    ],
+    certifiedLogos: [
+    ],
+    aboutP1: "nVent CADDY brand offers premium fixing, fastening and support products for electrical installation, seismic bracing, conduit and cable support, beam clamps, and hangers.",
+    aboutP2: "Designed to help contractors install systems faster and more efficiently, nVent CADDY products are trusted worldwide for commercial, industrial, and utility infrastructure applications.",
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Fast, Safe & Reliable Fastening"
+  },
+  rose: {
+    name: "Rose",
+    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    subtitle: "Industrial Enclosures & Console Systems",
+    description: "High-quality industrial enclosures made of aluminium, stainless steel, polyester, and plastics for demanding environmental conditions.",
+    website: "https://www.rose-systemtechnik.com/en/",
+    productRange: [
+      { image: "/Images/Rose/ABS Enclosures.png", caption: "ABS Enclosures.png" },
+      { image: "/Images/Rose/Aluminium Enclosures.png", caption: "Aluminium Enclosures.png" },
+      { image: "/Images/Rose/Compact Enclosures ECO : PCI.png", caption: "Compact Enclosures ECO : PCI.png" },
+      { image: "/Images/Rose/Polycarbonate Enclosures.png", caption: "Polycarbonate Enclosures.png" },
+      { image: "/Images/Rose/Polyester Enclosures.png", caption: "Polyester Enclosures.png" },
+      { image: "/Images/Rose/Stainless Steel Enclosures.png", caption: "Stainless Steel Enclosures.png" }
+    ],
+    certifiedLogos: [
+    ],
+    aboutP1: "Rose is a global leader in the development and manufacture of high-quality industrial enclosures and system solutions.",
+    aboutP2: "Our enclosures are designed to protect sensitive components in automation, mechanical engineering, environmental technology, and hazardous explosive areas.",
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Robust Enclosure Technology"
   }
 };
 
@@ -856,7 +925,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
     <>
       <section className="hero kumwell-hero">
         <Image
-          src={brandData.heroBg}
+          src="/Images/kumwell/H1.png"
           alt={`${brandData.name} Hero`}
           fill
           style={{ objectFit: "cover" }}

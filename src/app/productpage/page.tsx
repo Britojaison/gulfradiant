@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 
 const CATEGORIES = [
@@ -20,114 +20,50 @@ const CATEGORY_MAP = [
   {
     id: "All",
     label: "All Products",
-    desc: "View our entire premium engineering catalogue",
-    division: "Overview",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7"></rect>
-        <rect x="14" y="3" width="7" height="7"></rect>
-        <rect x="14" y="14" width="7" height="7"></rect>
-        <rect x="3" y="14" width="7" height="7"></rect>
-      </svg>
-    )
+    image: "/Images/product/all.png",
+    desc: "View our entire premium engineering catalogue"
   },
   {
     id: "Earthing Lightning & Surge Protection Systems",
-    label: "Earthing & Surge Protection",
-    desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-      </svg>
-    )
+    label: "Earthing Lightning & Surge Protection Systems",
+    image: "/Images/product/earthing.png",
+    desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },
   {
     id: "Lighting aircraft warning lights/signal lights",
-    label: "Lighting & Signal Lights",
-    desc: "Industrial lights, hazard signaling, & visual beacon indicators",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-    )
-  },
-  {
-    id: "Obstruction lights/aircraft warning lights",
-    label: "Obstruction Lights",
-    desc: "Safety tower hazard lighting & structural aircraft warning lights",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-        <line x1="12" y1="9" x2="12" y2="13"></line>
-        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-      </svg>
-    )
+    label: "Lighting aircraft warning lights/signal lights",
+    image: "/Images/product/lighting.png",
+    desc: "Industrial lights, hazard signaling, & visual beacon indicators"
   },
   {
     id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control & Switch Devices",
-    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-        <line x1="6" y1="6" x2="6.01" y2="6"></line>
-        <line x1="6" y1="18" x2="6.01" y2="18"></line>
-        <line x1="18" y1="6" x2="18.01" y2="6"></line>
-        <line x1="18" y1="18" x2="18.01" y2="18"></line>
-      </svg>
-    )
+    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    image: "/Images/product/control devices.png",
+    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
+  },
+  {
+    id: "Obstruction lights/aircraft warning lights",
+    label: "Obstruction lights / Aircraft warning lights",
+    image: "/Images/product/obstruction.png",
+    desc: "Safety tower hazard lighting & structural aircraft warning lights"
   },
   {
     id: "Cables",
-    label: "Cables & Wiring",
-    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 10h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"></path>
-        <path d="M12 2v8"></path>
-        <path d="M12 18v4"></path>
-      </svg>
-    )
+    label: "Cables",
+    image: "/Images/product/cables.png",
+    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables"
   },
   {
     id: "Other products",
-    label: "Engineering Products",
-    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories",
-    division: "Electrical Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="8" x2="12" y2="16"></line>
-        <line x1="8" y1="12" x2="16" y2="12"></line>
-      </svg>
-    )
+    label: "Other products",
+    image: "/Images/product/other.png",
+    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories"
   },
   {
     id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial, Oil & Gas",
-    desc: "Bulk materials, pipelines, refinery supply, & gas process equipment",
-    division: "Industrial Division",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 7L13.5 2L5 7L13.5 12L22 7Z"></path>
-        <path d="M5 17L13.5 22L22 17"></path>
-        <path d="M5 12L13.5 17L22 12"></path>
-      </svg>
-    )
+    label: "Industrial products/bulk material/oil and gas equipment",
+    image: "/Images/product/industrial.png",
+    desc: "Bulk materials, pipelines, refinery supply, & gas process equipment"
   }
 ];
 
@@ -140,7 +76,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof", "Other products"] },
   { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
   { src: "/Images/product/CRAIG AND DERRICOTT LOGO.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", categories: ["Other products"] },
+  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Other products"] },
   { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Other products"] },
   { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables"] },
@@ -157,12 +93,22 @@ const ALL_LOGOS = [
   { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
   { src: "/Images/product/cabex.png", brand: "Cabex", categories: ["Other products"] },
   { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
-  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", categories: ["Other products"] },
+  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Other products"] },
   { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights"] },
   { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
+  // Industrial Category Images
+  { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Flanges.png", brand: "Flanges", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Gaskets.png", brand: "Gaskets", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Instrumentation and Bulk material.png", brand: "Instrumentation & Bulk Material", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Pipes.png", brand: "Pipes", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Structural Steel.png", brand: "Structural Steel", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Tubes.png", brand: "Tubes", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/Valves.png", brand: "Valves", categories: ["Industrial products/bulk material/oil and gas equipment"] },
 ];
 
 function ProductPageContent() {
@@ -170,18 +116,40 @@ function ProductPageContent() {
   const initialCategory = searchParams.get("category") || "All";
 
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [currentPage, setCurrentPage] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isTransitioningRef = useRef(false);
 
   // Update category if URL param changes
   useEffect(() => {
     const cat = searchParams.get("category");
     if (cat && CATEGORIES.includes(cat)) {
       setSelectedCategory(cat);
+      setCurrentPage(0);
     }
   }, [searchParams]);
 
   const filteredLogos = selectedCategory === "All" 
-    ? ALL_LOGOS 
+    ? ALL_LOGOS.filter(logo => !logo.categories.includes("Industrial products/bulk material/oil and gas equipment"))
     : ALL_LOGOS.filter(logo => logo.categories.includes(selectedCategory));
+
+  const isIndustrial = selectedCategory === "Industrial products/bulk material/oil and gas equipment";
+
+  // Group filtered logos into pages of 8 cards
+  const chunkSize = 8;
+  const logoPages: (typeof ALL_LOGOS)[] = [];
+  for (let i = 0; i < filteredLogos.length; i += chunkSize) {
+    logoPages.push(filteredLogos.slice(i, i + chunkSize));
+  }
+
+  const totalPages = Math.max(1, logoPages.length);
+
+  useEffect(() => {
+    if (currentPage >= totalPages) {
+      setCurrentPage(Math.max(0, totalPages - 1));
+    }
+  }, [totalPages, currentPage]);
 
   useEffect(() => {
     document.documentElement.classList.add("new-prod-page-active");
@@ -192,106 +160,220 @@ function ProductPageContent() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentPage(0);
   }, [selectedCategory]);
 
   const handleCategorySelect = (cat: string) => {
     setSelectedCategory(cat);
+    setCurrentPage(0);
     const url = new URL(window.location.href);
     url.searchParams.set("category", cat);
     window.history.pushState({}, "", url.toString());
   };
 
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = window.scrollY + rect.top;
+
+      // Section 2 occupies the middle of the screen
+      const isOccupyingCenter = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+
+      if (!isOccupyingCenter) {
+        return;
+      }
+
+      const scrollingDown = e.deltaY > 0;
+      const scrollingUp = e.deltaY < 0;
+
+      const shouldPin = 
+        (scrollingDown && currentPage < totalPages - 1) ||
+        (scrollingUp && currentPage > 0);
+
+      if (shouldPin) {
+        e.preventDefault();
+
+        if (isTransitioningRef.current) return;
+        isTransitioningRef.current = true;
+
+        window.scrollTo({ top: sectionTop, behavior: 'instant' });
+
+        if (scrollingDown) {
+          setCurrentPage(prev => prev + 1);
+        } else {
+          setCurrentPage(prev => prev - 1);
+        }
+
+        setTimeout(() => {
+          isTransitioningRef.current = false;
+        }, 2200);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [currentPage, totalPages]);
+
   const activeCategoryData = CATEGORY_MAP.find(c => c.id === selectedCategory);
 
   return (
     <div className="new-prod-page">
-      {/* FIXED BACKGROUND */}
-      <div className="new-prod-bg">
-        <Image
-          src="/Images/Home/bg6.svg"
-          alt="Background"
-          fill
-          style={{ objectFit: "cover", filter: "brightness(0.65) contrast(1.1)" }}
-          priority
-        />
-        <div className="new-prod-overlay" />
-      </div>
-
-      <div className="new-prod-content">
-        <div className="new-prod-header-section">
-          <h1 className="new-prod-title">Our Product Range</h1>
+      {/* 1ST SECTION: HERO & CATEGORIES */}
+      <section className="new-prod-hero-section">
+        <div className="new-prod-section-bg">
+          <Image
+            src="/Images/product/img1.svg"
+            alt="Hero Background"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div className="new-prod-overlay" />
         </div>
 
-        {/* CATEGORY SQUARE CARDS */}
-        <div className="new-prod-cat-grid">
-          {CATEGORY_MAP.map((cat) => {
-            const isActive = selectedCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                className={`new-prod-cat-card ${isActive ? "active" : ""}`}
-                onClick={() => handleCategorySelect(cat.id)}
-              >
-                <div className="new-prod-cat-icon">{cat.icon}</div>
-                <div className="new-prod-cat-info">
-                  <span className="new-prod-cat-division">{cat.division}</span>
-                  <h3 className="new-prod-cat-label">{cat.label}</h3>
-                  <p className="new-prod-cat-desc">{cat.desc}</p>
-                </div>
+        <div className="new-prod-section-inner">
+          <div className="new-prod-header-row">
+            <h1 className="new-prod-title">Our Product Range</h1>
+            <div className="new-prod-carousel-controls">
+              <button onClick={scrollLeft} className="carousel-control-btn" aria-label="Scroll left">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6"></path>
+                </svg>
               </button>
-            );
-          })}
+              <button onClick={scrollRight} className="carousel-control-btn" aria-label="Scroll right">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 5l6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* CATEGORY CAROUSEL */}
+          <div className="new-prod-cat-grid" ref={carouselRef}>
+            {CATEGORY_MAP.map((cat) => {
+              const isActive = selectedCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  className={`new-prod-cat-card ${isActive ? "active" : ""}`}
+                  onClick={() => handleCategorySelect(cat.id)}
+                >
+                  <div className="new-prod-cat-card-img-wrapper">
+                    <Image
+                      src={cat.image}
+                      alt={cat.label}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="260px"
+                    />
+                  </div>
+                  <div className="new-prod-cat-card-overlay" />
+                  <div className="new-prod-cat-card-content">
+                    <h3 className="new-prod-cat-card-title">{cat.label}</h3>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}
+      <section className="new-prod-brands-section" ref={sectionRef}>
+        <div className="new-prod-section-bg">
+          <Image
+            src="/Images/product/img2.svg"
+            alt="Brands Background"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div className="new-prod-overlay" />
         </div>
 
-        {/* ACTIVE CATEGORY HEADER */}
-        <div className="new-prod-section-header">
-          <h2 className="new-prod-section-title">
-            {activeCategoryData ? activeCategoryData.label : selectedCategory}
-          </h2>
-          <p className="new-prod-section-desc">
-            {activeCategoryData ? activeCategoryData.desc : ""}
-          </p>
-        </div>
+        <div className="new-prod-section-inner-wide">
+          {/* ACTIVE CATEGORY HEADER - REMAIN STICKY / FIXED AT TOP */}
+          <div className="new-prod-section-header">
+            <h2 className="new-prod-section-title">
+              {activeCategoryData ? activeCategoryData.label : selectedCategory}
+            </h2>
+          </div>
 
-        <div className="new-prod-cards-container">
-          {filteredLogos.length > 0 ? (
-            <div className="new-prod-grid">
-              {filteredLogos.map((logo, i) => {
-                const cardContent = (
-                  <div className="new-prod-card-inner">
-                    <div className="new-prod-card-logo">
-                      <Image
-                        src={logo.src}
-                        alt={logo.brand}
-                        fill
-                        sizes="(max-width: 768px) 50vw, 250px"
-                        style={{ objectFit: "contain" }}
-                      />
+          <div className="new-prod-cards-container">
+            {filteredLogos.length > 0 ? (
+              <div className={`new-prod-brands-scroll-container ${isIndustrial ? "is-industrial" : ""}`}>
+                <div 
+                  className="new-prod-brands-track"
+                  style={{ 
+                    transform: `translateY(calc(-1 * ${currentPage} * (var(--brands-page-height) + var(--brands-page-gap))))`
+                  }}
+                >
+                  {logoPages.map((pageLogos, pageIdx) => (
+                    <div className={`new-prod-brands-page ${isIndustrial ? "is-industrial" : ""}`} key={pageIdx}>
+                      {pageLogos.map((logo, i) => {
+                        const cardContent = (
+                          <div className="new-prod-card-inner">
+                            <div className="new-prod-card-logo">
+                              <Image
+                                src={logo.src}
+                                alt={logo.brand}
+                                fill
+                                sizes="(max-width: 768px) 50vw, 250px"
+                                style={{
+                                  objectFit: "contain",
+                                  filter: logo.brand === "EMI" ? "invert(1)" : "none"
+                                }}
+                              />
+                            </div>
+                            {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && (
+                              <div className="new-prod-card-caption">
+                                {logo.brand}
+                              </div>
+                            )}
+                          </div>
+                        );
+
+                        return logo.link ? (
+                          <Link href={logo.link} className="new-prod-card" key={i}>
+                            {cardContent}
+                          </Link>
+                        ) : (
+                          <div className="new-prod-card" key={i}>
+                            {cardContent}
+                          </div>
+                        );
+                      })}
                     </div>
-                  </div>
-                );
-
-                return logo.link ? (
-                  <Link href={logo.link} className="new-prod-card" key={i}>
-                    {cardContent}
-                  </Link>
-                ) : (
-                  <div className="new-prod-card" key={i}>
-                    {cardContent}
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="new-prod-set active">
-              <div className="new-prod-no-results">
-                <p style={{ color: '#fff', fontSize: '20px', opacity: 0.7 }}>No products found in this category.</p>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="new-prod-set active">
+                <div className="new-prod-no-results">
+                  <p style={{ color: '#fff', fontSize: '20px', opacity: 0.7 }}>No products found in this category.</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-
+      </section>
     </div>
   );
 }
