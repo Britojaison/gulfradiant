@@ -53,7 +53,7 @@ export default function AboutPage() {
     "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.png",
     "PALAZZOLI GROUP LOGO.png", "PSI LOGO.png", "ROSE LOGO.png",
     "SIRENA LOGO.png", "TEKAB CABLES.png", "TIGO LOGO.png",
-    "TUBIFOR LOGO.png", "WALLMAX LOGO.png"
+    "TUBIFOR LOGO.png", "WALLMAX LOGO.png", "HVTI.png"
   ];
 
   const certificates = [

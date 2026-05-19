@@ -280,7 +280,7 @@ export default function Homepage() {
     "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.png",
     "PALAZZOLI GROUP LOGO.png", "PSI LOGO.png", "ROSE LOGO.png",
     "SIRENA LOGO.png", "TEKAB CABLES.png", "TIGO LOGO.png",
-    "TUBIFOR LOGO.png", "WALLMAX LOGO.png"
+    "TUBIFOR LOGO.png", "WALLMAX LOGO.png", "HVTI.png"
   ];
 
   const suppliedProjects = [
@@ -344,8 +344,95 @@ export default function Homepage() {
         </div>
       </section>
 
+      {/* PRODUCT DIVISIONS - FORCE REBUILD */}
+      <section className="hp-divisions-section">
+        <div className="hp-divisions-inner">
+          <div className="hp-dist-subtitle" aria-label="Our Expertise">
+            <div className="hp-dist-subtitle-track" aria-hidden="true">
+              <span>{"- OUR EXPERTISE -"}</span>
+              <span>{"- OUR EXPERTISE -"}</span>
+              <span>{"- OUR EXPERTISE -"}</span>
+              <span>{"- OUR EXPERTISE -"}</span>
+            </div>
+          </div>
+          <h2 className="hp-divisions-main-title">Product Divisions</h2>
+
+          <div className="hp-divisions-grid">
+            {/* ELECTRICAL DIVISION */}
+            <div className="hp-division-card hp-electrical">
+              <div className="hp-division-header">
+                <h3>Electrical Division</h3>
+                <div className="hp-division-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="hp-division-categories">
+                {[
+                  "Earthing Lightning & Surge Protection Systems",
+                  "Lighting aircraft warning lights/signal lights",
+                  "Obstruction lights/aircraft warning lights",
+                  "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+                  "Cables",
+                  "Other products"
+                ].map((cat) => (
+                  <Link 
+                    key={cat} 
+                    href={`/productpage?category=${encodeURIComponent(cat)}`}
+                    className={`hp-category-link ${cat === "Obstruction lights/aircraft warning lights" ? "hp-is-subcategory" : ""}`}
+                  >
+                    <span>{cat === "Obstruction lights/aircraft warning lights" ? "— " + cat : cat}</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* INDUSTRIAL DIVISION */}
+            <div className="hp-division-card hp-industrial">
+              <div className="hp-division-header">
+                <h3>Industrial Division</h3>
+                <div className="hp-division-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 7L13.5 2L5 7L13.5 12L22 7Z"/>
+                    <path d="M5 17L13.5 22L22 17"/>
+                    <path d="M5 12L13.5 17L22 12"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="hp-division-categories">
+                {[
+                  "Industrial products/bulk material/oil and gas equipment"
+                ].map((cat) => (
+                  <Link 
+                    key={cat} 
+                    href={`/productpage?category=${encodeURIComponent(cat)}`}
+                    className="hp-category-link"
+                  >
+                    <span>{cat}</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                ))}
+              </div>
+              <div className="hp-division-footer">
+                <p>Specialized solutions for oil, gas, and heavy industrial infrastructure.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* PRODUCTS & STATS (FULL SCROLL) */}
       <div className="hp-full-scroll-section">
+
         <section className="hp-products-dist" id="products-distribute">
           <div className="hp-dist-header">
             <div className="hp-dist-subtitle" aria-label="Where we operate">
