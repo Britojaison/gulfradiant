@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const CATEGORIES = [
@@ -132,40 +132,40 @@ const CATEGORY_MAP = [
 ];
 
 const ALL_LOGOS = [
-  { src: "/Images/product/Products/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/Products/pittas.jpg", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/Products/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/Products/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights"] },
-  { src: "/Images/product/Products/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/Products/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/palazolliLewden", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof", "Other products"] },
-  { src: "/Images/product/Products/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
+  { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
+  { src: "/Images/product/pittas.jpg", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
+  { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
+  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights"] },
+  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
+  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof", "Other products"] },
+  { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
   { src: "/Images/product/CRAIG AND DERRICOTT LOGO.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/Products/NVENT CADDY LOGO.svg", brand: "nVent Caddy", categories: ["Other products"] },
-  { src: "/Images/product/Products/NVENT ERICO LOGO.svg", brand: "nVent Erico", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/Products/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Other products"] },
+  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", categories: ["Other products"] },
+  { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", categories: ["Earthing Lightning & Surge Protection Systems"] },
+  { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Other products"] },
   { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables"] },
-  { src: "/Images/product/Products/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Other products"] },
+  { src: "/Images/product/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Other products"] },
   { src: "/Images/product/dietzel.png", brand: "Dietzel", link: "/product/dietzelunivolt", categories: ["Other products"] },
-  { src: "/Images/product/Products/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables"] },
-  { src: "/Images/product/Products/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables"] },
-  { src: "/Images/product/Products/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables"] },
+  { src: "/Images/product/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables"] },
+  { src: "/Images/product/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables"] },
+  { src: "/Images/product/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables"] },
   { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables"] },
-  { src: "/Images/product/Products/PSI LOGO.png", brand: "PSI", categories: ["Other products"] },
-  { src: "/Images/product/Products/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Other products"] },
-  { src: "/Images/product/Products/LITETECH LOGO.webp", brand: "Litetech", link: "/litetech", categories: ["Lighting aircraft warning lights/signal lights"] },
-  { src: "/Images/product/Products/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
-  { src: "/Images/product/Products/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
+  { src: "/Images/product/PSI LOGO.png", brand: "PSI", categories: ["Other products"] },
+  { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Other products"] },
+  { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
+  { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
   { src: "/Images/product/cabex.png", brand: "Cabex", categories: ["Other products"] },
   { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
-  { src: "/Images/product/Products/ROSE LOGO.png", brand: "Rose", categories: ["Other products"] },
-  { src: "/Images/product/Products/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights"] },
-  { src: "/Images/product/Products/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting aircraft warning lights/signal lights"] },
-  { src: "/Images/product/Products/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
-  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
+  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", categories: ["Other products"] },
+  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights"] },
+  { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
+  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
 ];
 
-export default function ProductPage() {
+function ProductPageContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "All";
 
@@ -293,5 +293,17 @@ export default function ProductPage() {
       </div>
 
     </div>
+  );
+}
+
+export default function ProductPage() {
+  return (
+    <Suspense fallback={
+      <div className="new-prod-page" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: '#fff' }}>
+        <p style={{ fontSize: '20px', opacity: 0.7 }}>Loading Products...</p>
+      </div>
+    }>
+      <ProductPageContent />
+    </Suspense>
   );
 }
