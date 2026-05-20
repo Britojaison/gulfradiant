@@ -19,7 +19,7 @@ const CATEGORIES = [
 const CATEGORY_MAP = [
   {
     id: "All",
-    label: "All Products",
+    label: "All products",
     image: "/Images/product/all.png",
     desc: "View our entire premium engineering catalogue"
   },
@@ -69,13 +69,13 @@ const CATEGORY_MAP = [
 
 const ALL_LOGOS = [
   { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/pittas.jpg", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
+  { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights"] },
   { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Lighting aircraft warning lights/signal lights", "Control devices plugs, receptacles, switching accessories, isolators, explosion proof", "Other products"] },
   { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
-  { src: "/Images/product/CRAIG AND DERRICOTT LOGO.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
+  { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Other products"] },
   { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Other products"] },
@@ -99,6 +99,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
+  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
   // Industrial Category Images
   { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
   { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
@@ -116,17 +117,13 @@ function ProductPageContent() {
   const initialCategory = searchParams.get("category") || "All";
 
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [currentPage, setCurrentPage] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isTransitioningRef = useRef(false);
 
   // Update category if URL param changes
   useEffect(() => {
     const cat = searchParams.get("category");
     if (cat && CATEGORIES.includes(cat)) {
       setSelectedCategory(cat);
-      setCurrentPage(0);
     }
   }, [searchParams]);
 
@@ -136,20 +133,7 @@ function ProductPageContent() {
 
   const isIndustrial = selectedCategory === "Industrial products/bulk material/oil and gas equipment";
 
-  // Group filtered logos into pages of 8 cards
-  const chunkSize = 8;
-  const logoPages: (typeof ALL_LOGOS)[] = [];
-  for (let i = 0; i < filteredLogos.length; i += chunkSize) {
-    logoPages.push(filteredLogos.slice(i, i + chunkSize));
-  }
 
-  const totalPages = Math.max(1, logoPages.length);
-
-  useEffect(() => {
-    if (currentPage >= totalPages) {
-      setCurrentPage(Math.max(0, totalPages - 1));
-    }
-  }, [totalPages, currentPage]);
 
   useEffect(() => {
     document.documentElement.classList.add("new-prod-page-active");
@@ -160,12 +144,10 @@ function ProductPageContent() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setCurrentPage(0);
   }, [selectedCategory]);
 
   const handleCategorySelect = (cat: string) => {
     setSelectedCategory(cat);
-    setCurrentPage(0);
     const url = new URL(window.location.href);
     url.searchParams.set("category", cat);
     window.history.pushState({}, "", url.toString());
@@ -183,53 +165,7 @@ function ProductPageContent() {
     }
   };
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      const rect = section.getBoundingClientRect();
-      const sectionTop = window.scrollY + rect.top;
-
-      // Section 2 occupies the middle of the screen
-      const isOccupyingCenter = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
-
-      if (!isOccupyingCenter) {
-        return;
-      }
-
-      const scrollingDown = e.deltaY > 0;
-      const scrollingUp = e.deltaY < 0;
-
-      const shouldPin = 
-        (scrollingDown && currentPage < totalPages - 1) ||
-        (scrollingUp && currentPage > 0);
-
-      if (shouldPin) {
-        e.preventDefault();
-
-        if (isTransitioningRef.current) return;
-        isTransitioningRef.current = true;
-
-        window.scrollTo({ top: sectionTop, behavior: 'instant' });
-
-        if (scrollingDown) {
-          setCurrentPage(prev => prev + 1);
-        } else {
-          setCurrentPage(prev => prev - 1);
-        }
-
-        setTimeout(() => {
-          isTransitioningRef.current = false;
-        }, 2200);
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, [currentPage, totalPages]);
 
   const activeCategoryData = CATEGORY_MAP.find(c => c.id === selectedCategory);
 
@@ -296,7 +232,7 @@ function ProductPageContent() {
       </section>
 
       {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}
-      <section className="new-prod-brands-section" ref={sectionRef}>
+      <section className="new-prod-brands-section">
         <div className="new-prod-section-bg">
           <Image
             src="/Images/product/img2.svg"
@@ -318,51 +254,41 @@ function ProductPageContent() {
 
           <div className="new-prod-cards-container">
             {filteredLogos.length > 0 ? (
-              <div className={`new-prod-brands-scroll-container ${isIndustrial ? "is-industrial" : ""}`}>
-                <div 
-                  className="new-prod-brands-track"
-                  style={{ 
-                    transform: `translateY(calc(-1 * ${currentPage} * (var(--brands-page-height) + var(--brands-page-gap))))`
-                  }}
-                >
-                  {logoPages.map((pageLogos, pageIdx) => (
-                    <div className={`new-prod-brands-page ${isIndustrial ? "is-industrial" : ""}`} key={pageIdx}>
-                      {pageLogos.map((logo, i) => {
-                        const cardContent = (
-                          <div className="new-prod-card-inner">
-                            <div className="new-prod-card-logo">
-                              <Image
-                                src={logo.src}
-                                alt={logo.brand}
-                                fill
-                                sizes="(max-width: 768px) 50vw, 250px"
-                                style={{
-                                  objectFit: "contain",
-                                  filter: logo.brand === "EMI" ? "invert(1)" : "none"
-                                }}
-                              />
-                            </div>
-                            {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && (
-                              <div className="new-prod-card-caption">
-                                {logo.brand}
-                              </div>
-                            )}
-                          </div>
-                        );
-
-                        return logo.link ? (
-                          <Link href={logo.link} className="new-prod-card" key={i}>
-                            {cardContent}
-                          </Link>
-                        ) : (
-                          <div className="new-prod-card" key={i}>
-                            {cardContent}
-                          </div>
-                        );
-                      })}
+              <div className={`new-prod-brands-page ${isIndustrial ? "is-industrial" : ""}`}>
+                {filteredLogos.map((logo, i) => {
+                  const cardContent = (
+                    <div className="new-prod-card-inner">
+                      <div className="new-prod-card-logo">
+                        <Image
+                          src={logo.src}
+                          alt={logo.brand}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 250px"
+                          unoptimized={true}
+                          style={{
+                            objectFit: "contain",
+                            filter: logo.brand === "EMI" ? "invert(1)" : "none"
+                          }}
+                        />
+                      </div>
+                      {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && (
+                        <div className="new-prod-card-caption">
+                          {logo.brand}
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                  );
+
+                  return logo.link ? (
+                    <Link href={logo.link} className="new-prod-card" key={i}>
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    <div className="new-prod-card" key={i}>
+                      {cardContent}
+                    </div>
+                  );
+                })}
               </div>
             ) : (
               <div className="new-prod-set active">

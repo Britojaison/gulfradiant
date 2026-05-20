@@ -5588,11 +5588,11 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .new-prod-hero-section {
   position: relative !important;
-  height: 100vh !important;
+  height: 80vh !important;
   min-height: 540px !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 80px 40px 20px 40px !important;
+  padding: 40px 40px 20px 40px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -5614,15 +5614,14 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .new-prod-brands-section {
   position: relative !important;
-  height: 100vh !important;
+  height: auto !important;
   min-height: 100vh !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 80px 40px 80px 40px !important;
+  padding: 60px 40px 40px 40px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
-  overflow: hidden !important;
+  justify-content: flex-start !important;
 }
 
 .new-prod-brands-section .new-prod-section-inner-wide {
@@ -5684,12 +5683,12 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 .new-prod-section-inner-wide {
-  max-width: 1440px !important;
+  max-width: 1150px !important;
 }
 
 .new-prod-title {
   font-family: var(--font-degular), sans-serif;
-  font-size: clamp(48px, 6vw, 80px) !important;
+  font-size: 67px !important;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 0;
@@ -5703,6 +5702,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
+  height: 80px !important;
   margin-bottom: 40px !important;
 }
 
@@ -5762,8 +5762,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .new-prod-cat-card {
   position: relative !important;
-  flex: 0 0 calc((100% - 72px) / 4) !important;
-  width: calc((100% - 72px) / 4) !important;
+  flex: 0 0 calc((100% - 96px) / 4.5) !important;
+  width: calc((100% - 96px) / 4.5) !important;
   aspect-ratio: 246 / 301 !important;
   height: auto !important;
   border-radius: 24px !important;
@@ -5837,8 +5837,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 /* Dynamic Active Category Header Section */
 .new-prod-section-header {
   width: 100% !important;
-  margin-top: 20px !important;
-  margin-bottom: 60px !important;
+  margin-top: 0 !important;
+  margin-bottom: 40px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -5852,13 +5852,14 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   font-weight: 700 !important;
   color: #ffffff !important;
   margin: 0 !important;
-  text-transform: capitalize !important;
 }
 
 /* Logos & Companies Grid */
 .new-prod-cards-container {
   position: relative;
   width: 100%;
+  --brands-row-height: 220px;
+  --brands-row-gap: 24px;
 }
 
 .new-prod-brands-scroll-container {
@@ -5884,7 +5885,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .new-prod-brands-page {
   width: 100% !important;
-  height: var(--brands-page-height) !important;
+  height: auto !important;
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
   grid-auto-rows: var(--brands-row-height) !important;
@@ -5899,7 +5900,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 .new-prod-card {
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
   border-radius: 20px !important;
   height: 100% !important;
   display: flex !important;
@@ -5907,8 +5910,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   justify-content: center !important;
   padding: 25px !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   text-decoration: none !important;
 }
 
@@ -5936,7 +5939,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 .new-prod-card-logo img {
-  mix-blend-mode: multiply;
+  /* mix-blend-mode removed so transparent PNGs work cleanly over glassmorphism */
 }
 
 .new-prod-card-caption {
@@ -6024,17 +6027,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     font-size: 40px !important;
   }
 
-  .new-prod-brands-scroll-container {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 10px 0 !important;
-    --brands-row-height: clamp(110px, 14vh, 140px);
+  .new-prod-cards-container {
+    --brands-row-height: 160px;
     --brands-row-gap: 16px;
-    --brands-page-gap: 60px;
-    --brands-page-height: calc(4 * var(--brands-row-height) + 3 * var(--brands-row-gap));
-    height: calc(4.5 * var(--brands-row-height) + 3 * var(--brands-row-gap) + var(--brands-page-gap) + 20px) !important;
-    overflow: hidden !important;
   }
 
   .new-prod-brands-track {
@@ -6046,7 +6041,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     grid-template-columns: repeat(2, 1fr) !important;
     grid-auto-rows: var(--brands-row-height) !important;
     gap: var(--brands-row-gap) !important;
-    height: var(--brands-page-height) !important;
+    height: auto !important;
   }
 
   .new-prod-brands-page.is-industrial {
