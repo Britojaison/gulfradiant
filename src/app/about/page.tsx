@@ -57,8 +57,7 @@ export default function AboutPage() {
   ];
 
   const certificates = [
-    "image 82.png", "image 85.png", "image 86.png", "image 88.png", "image 89.png",
-    "Rectangle 10.png", "Rectangle 11.png", "Rectangle 12.png"
+    "dewa.jpg", "cert-addc-logo.jpg", "cert-sewa-logo.jpg", "cert-rta-logo.jpg", "cert-icv-logo.jpg", "cert-jsrs-logo.jpg"
   ];
 
   return (
@@ -75,84 +74,67 @@ export default function AboutPage() {
         />
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content">
-          <div className="about-tag">
-            <span className="orange-square"></span>
-            ABOUT THE COMPANY
-          </div>
           <h1>Engineering <br />Reliability. <br />Delivering Scale.</h1>
-
+          <p>
+            One-stop solution provider for electrical, electro-mechanical, and<br />
+            industrial engineering &mdash; since 2001.
+          </p>
         </div>
       </section>
 
       {/* ABOUT GULF RADIANT SECTION */}
-      <section className="about-main-info">
-        <div className="about-info-container">
-          <div className="about-image-side">
-            <Image 
-              src="/Images/About/about-facility 1.jpg" 
-              alt="Facility" 
-              width={600} 
-              height={550} 
-              className="about-facility-img"
-              style={{ objectFit: "cover", borderRadius: "2px" }}
-            />
+      <section className="about-main-info-new">
+        <Image 
+          src="/Images/About/img2.jpg" 
+          alt="About Gulf Radiant" 
+          fill 
+          sizes="100vw"
+          style={{ objectFit: "cover" }} 
+        />
+        <div className="about-main-overlay"></div>
+        <div className="about-main-content-new">
+          <div className="about-main-text">
+            <h2>About Gulf Radiant</h2>
+            <p>
+              Since 2001, Gulf Radiant has built a reputation of professionalism and trust as a one-stop solution provider for electrical, electro-mechanical, building material, oil field, industrial and allied technical engineering products.
+            </p>
           </div>
-          <div className="about-text-side">
-            <div className="section-subtitle">
-              <span className="orange-square"></span> WHO WE ARE
+          <div className="about-main-carousel">
+            <div className="carousel-numbers">
+              <span className="active">01</span>
+              <span>02</span>
+              <span>03</span>
+              <span>04</span>
             </div>
-            
-            <h2 className="about-main-title">
-              ABOUT <span className="text-orange">GULF RADIANT</span>
-            </h2>
-
-            <div className="info-blocks-wrapper">
-              <div className="info-block">
-                <h3>Our Identity</h3>
-                <p>
-                  Since 2001, Gulf Radiant has built a reputation of professionalism and trust as a one-stop solution provider for electrical, electro-mechanical, building material, oil field, industrial and allied technical engineering products.
-                </p>
-              </div>
-
-              <div className="info-block">
-                <h3>Where We Operate</h3>
-                <p>
-                  Based in UAE (Dubai & Abu Dhabi), we cater to the GCC, Middle East, Africa, Indian Sub-continent and other emerging markets across 15+ countries.
-                </p>
-              </div>
-
-              <div className="info-block">
-                <h3>Our Strength</h3>
-                <p>
-                  Dedicated & qualified engineers with in-depth product knowledge and vast experience in providing prompt solutions to all our clientele.
-                </p>
-              </div>
+            <div className="carousel-bar">
+              <div className="carousel-progress" style={{ width: '25%' }}></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* DIVISIONS SECTION */}
-      <section className="divisions-section">
-        <div className="container">
-          <div className="division-card">
-            <div className="div-header">
-              <div className="div-icon">
-                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 22L12 2l4 20"/><path d="M3 14h18"/><path d="M5 9h14"/><path d="M10 22l-2-8"/><path d="M14 22l2-8"/><circle cx="3" cy="14" r="1"/><circle cx="21" cy="14" r="1"/><circle cx="5" cy="9" r="1"/><circle cx="19" cy="9" r="1"/></svg>
-              </div>
-              <h3>Electrical Division</h3>
-            </div>
-            <p>We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently..</p>
+      <section className="divisions-section-new">
+        <Image 
+          src="/Images/About/img3.jpg" 
+          alt="Divisions" 
+          fill 
+          sizes="100vw"
+          style={{ objectFit: "cover" }} 
+        />
+        <div className="divisions-overlay"></div>
+        <div className="divisions-content-wrapper">
+          <div className="division-block-left">
+            <h2>Electrical Division</h2>
+            <p>
+              We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
+            </p>
           </div>
-          
-          <div className="division-card">
-            <div className="div-header">
-              <div className="div-icon">
-                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 22H2"/><path d="M4 22V10l3 2V8l4 3V6l4 3V4h3v18"/><path d="M16 14h2"/><path d="M16 18h2"/><path d="M10 18h2"/><path d="M6 3c.5 0 2-2 3-2"/></svg>
-              </div>
-              <h3>Industrial Division</h3>
-            </div>
-            <p>The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...</p>
+          <div className="division-block-right">
+            <h2>Industrial Division</h2>
+            <p>
+              The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...
+            </p>
           </div>
         </div>
       </section>
@@ -160,75 +142,82 @@ export default function AboutPage() {
       {/* WHY GULF RADIANT SECTION */}
       <section className="why-gr">
         <div className="container">
-          <div className="section-header">
-            <div className="section-subtitle">
-              <span className="orange-square"></span> WHY CHOOSE US
+          <div className="section-header why-gr-header">
+            <div className="hp-dist-subtitle" aria-label="Why Choose Us" style={{ maxWidth: "300px", margin: "0 auto 15px auto" }}>
+              <div className="hp-dist-subtitle-track" aria-hidden="true" style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#000" }}>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+              </div>
             </div>
-            <h2>Why <span className="text-orange">Gulf Radiant?</span></h2>
+            <h2>Why Gulf Radiant?</h2>
           </div>
 
           <div className="why-gr-grid">
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <Image src="/Images/About/lightning.svg" alt="Total MEP Solutions" width={28} height={28} />
               </div>
               <h4>Total MEP Solutions</h4>
-              <p>Complete electrical, mechanical & plumbing from one source</p>
+              <p>Complete electrical & plumbing<br />from one source</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <Image src="/Images/About/time.svg" alt="Fast Response Time" width={28} height={28} />
               </div>
               <h4>Fast Response Time</h4>
-              <p>Prompt delivery meeting the tightest project deadlines</p>
+              <p>Prompt delivery meeting the<br />tightest project deadlines</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+                <Image src="/Images/About/precision.svg" alt="Precision Execution" width={28} height={28} />
               </div>
               <h4>Precision Execution</h4>
-              <p>Quality-first approach on every single project</p>
+              <p>Quality-first approach on every<br />single project</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <Image src="/Images/About/badge.svg" alt="Certified Quality" width={28} height={28} />
               </div>
               <h4>Certified Quality</h4>
-              <p>ISO certified with international standards compliance</p>
+              <p>ISO certified with international<br />standards compliance</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <Image src="/Images/About/tool.svg" alt="Technical Expertise" width={28} height={28} />
               </div>
               <h4>Technical Expertise</h4>
-              <p>20+ years of specialized engineering knowledge</p>
+              <p>20+ years of specialized<br />engineering knowledge</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5B05" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <Image src="/Images/About/globe.svg" alt="Regional Reach" width={28} height={28} />
               </div>
               <h4>Regional Reach</h4>
-              <p>Quality-first approach on every single project</p>
+              <p>Quality-first approach on every<br />single project</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* COMPANY CAPABILITIES */}
-      <section className="capabilities">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-subtitle">
-              <span className="orange-square"></span> What We Handle
-            </div>
-            <h2>Company <span className="text-orange">Capabilities</span></h2>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="cap-column">
-              <div className="cap-num">01</div>
+      <section className="capabilities-new">
+        <Image 
+          src="/Images/About/img4.jpg" 
+          alt="Company Capabilities Background" 
+          fill 
+          sizes="100vw"
+          style={{ objectFit: "cover" }} 
+          className="capabilities-bg"
+        />
+        <div className="capabilities-overlay"></div>
+        
+        <div className="capabilities-content">
+          {/* Left Column */}
+          <div className="cap-column-side">
+            <div className="cap-glass-card">
               <h4>Electrical</h4>
-              <div className="cap-line"></div>
               <ul>
                 <li>LV/MV Switchgear & Panels</li>
                 <li>Power & Distribution Transformers</li>
@@ -236,21 +225,8 @@ export default function AboutPage() {
                 <li>Lighting & Emergency Systems</li>
               </ul>
             </div>
-            <div className="cap-column">
-              <div className="cap-num">02</div>
-              <h4>Instrumentation</h4>
-              <div className="cap-line"></div>
-              <ul>
-                <li>Process Control Instruments</li>
-                <li>Flow & Level Measurement</li>
-                <li>Pressure & Temperature Gauges</li>
-                <li>Calibration Equipment</li>
-              </ul>
-            </div>
-            <div className="cap-column">
-              <div className="cap-num">03</div>
+            <div className="cap-glass-card">
               <h4>Automation</h4>
-              <div className="cap-line"></div>
               <ul>
                 <li>PLC & SCADA Systems</li>
                 <li>Variable Frequency Drives</li>
@@ -258,10 +234,26 @@ export default function AboutPage() {
                 <li>Building Management Systems</li>
               </ul>
             </div>
-            <div className="cap-column">
-              <div className="cap-num">04</div>
+          </div>
+
+          {/* Center Title */}
+          <div className="capabilities-center-text">
+            <h2>Company<br />Capabilities</h2>
+          </div>
+
+          {/* Right Column */}
+          <div className="cap-column-side">
+            <div className="cap-glass-card">
+              <h4>Instrumentation</h4>
+              <ul>
+                <li>Process Control Instruments</li>
+                <li>Flow & Level Measurement</li>
+                <li>Pressure & Temperature Gauges</li>
+                <li>Calibration Equipment</li>
+              </ul>
+            </div>
+            <div className="cap-glass-card">
               <h4>Mechanical Supply</h4>
-              <div className="cap-line"></div>
               <ul>
                 <li>Valves & Actuators</li>
                 <li>Pumps & Compressors</li>
@@ -272,121 +264,89 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* TIMELINE SECTION */}
-      <section className="timeline-section">
-        <div className="container">
-          <div className="section-subtitle">
-            <span className="orange-square"></span> Our Journey
-          </div>
-          <h2 className="timeline-title">Since 2001 &rarr; <span className="text-orange">Today</span></h2>
+      <section className="timeline-section-new">
+        <Image 
+          src="/Images/About/img6.jpg" 
+          alt="Timeline Background" 
+          fill 
+          sizes="100vw"
+          style={{ objectFit: "cover" }} 
+        />
+        <div className="timeline-overlay"></div>
+        
+        <div className="timeline-content">
+          <h2 className="timeline-title-new">Since 2001 &rarr; Today</h2>
 
-          <div className="timeline-labels">
-            <div className="timeline-line"></div>
-            <div className="timeline-item">
-              <div className="time-dot"></div>
-              <div className="time-year">2001</div>
+          <div className="timeline-labels-new">
+            <div className="timeline-line-new"></div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2001</div>
               <h4>Founded</h4>
-              <p>Established in Dubai, UAE</p>
+              <p>Established in Dubai,<br />UAE</p>
             </div>
-            <div className="timeline-item">
-              <div className="time-dot"></div>
-              <div className="time-year">2006</div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2006</div>
               <h4>Regional Expansion</h4>
-              <p>Extended operations across GCC</p>
+              <p>Extended operations across<br />GCC</p>
             </div>
-            <div className="timeline-item">
-              <div className="time-dot"></div>
-              <div className="time-year">2012</div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2012</div>
               <h4>500+ Projects</h4>
-              <p>Major milestone in project delivery</p>
+              <p>Major milestone in<br />project delivery</p>
             </div>
-            <div className="timeline-item">
-              <div className="time-dot"></div>
-              <div className="time-year">2018</div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2018</div>
               <h4>ISO Certified</h4>
-              <p>Achieved international quality standards</p>
+              <p>Achieved international<br />quality standards</p>
             </div>
-            <div className="timeline-item">
-              <div className="time-dot"></div>
-              <div className="time-year">Today</div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">Today</div>
               <h4>15+ Countries</h4>
-              <p>Serving clients across the globe</p>
+              <p>Serving clients across the<br />globe</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CLIENTELE SECTION */}
-      <section className="clientele">
+      {/* TRUSTED & CERTIFIED SECTION */}
+      <section className="trusted-cert-section">
         <div className="container">
-          <div className="section-header">
-            <div className="section-subtitle">
-              <span className="orange-square"></span> Our Reach
-            </div>
-            <h2>Clientele & <span className="text-orange">Target Segments</span></h2>
-          </div>
-
-          <div className="clientele-content">
-            <div className="clientele-tabs">
-              {Object.keys(segmentsData).map((tab) => (
-                <button 
-                  key={tab}
-                  className={`segment-tab ${activeTab === tab ? "active" : ""}`}
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-            <div className="clientele-info-side">
-              <div className="info-box">
-                <h4>{activeTab}</h4>
-                <ul>
-                  {segmentsData[activeTab].map((item, idx) => (
-                    <li key={idx}>
-                      <span className="orange-dash">&mdash;</span> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUSTED BY LEADERS */}
-      <section className="trusted-leaders">
-        <div className="container">
-          <h2 className="trusted-title">Trusted by <span className="text-orange">Industry Leaders</span></h2>
-          
-          <div className="hp-dist-marquee-wrapper" style={{ marginTop: "30px", overflow: "hidden", display: "flex", width: "100%" }}>
-            <div className="hp-dist-logos">
+          <h2 className="trusted-cert-title">Trusted by Industry Leaders</h2>
+          <div className="marquee-wrapper">
+            <div className="marquee-track" style={{ animationDuration: "160s" }}>
               {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
+                <div className="logo-item" key={`product-1-${i}`}>
+                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
                 </div>
               ))}
-              {/* Duplicate for infinite scroll effect */}
               {productLogos.map((logo, i) => (
-                <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                   <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
+                <div className="logo-item" key={`product-2-${i}`}>
+                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-
-
-      {/* CTA SECTION */}
-      <section className="cta-section">
-        <div className="container">
-          <h2>Let's Build Your <br /><span className="text-orange">Next Project</span></h2>
-          <div className="cta-btns">
-            <Link href="/homepage#contact" className="btn-orange">Contact </Link>
-            <Link href="#" className="btn-outline-dark">Download Profile</Link>
+          <h2 className="trusted-cert-title" style={{ marginTop: "100px" }}>Certified &amp; Approved</h2>
+          <div className="marquee-wrapper">
+            <div className="marquee-track" style={{ animationDuration: "40s" }}>
+              {certificates.map((cert, i) => (
+                <div className="logo-item" key={`cert-1-${i}`}>
+                  <Image src={`/Images/Certificates/${cert}`} alt="Certificate Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
+                </div>
+              ))}
+              {certificates.map((cert, i) => (
+                <div className="logo-item" key={`cert-2-${i}`}>
+                  <Image src={`/Images/Certificates/${cert}`} alt="Certificate Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -445,7 +405,7 @@ export default function AboutPage() {
         .about-hero-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(0,0,0,0.25) !important;
+          background: rgba(0,0,0,0.4) !important;
           z-index: 1;
         }
         .about-hero-content {
@@ -476,111 +436,170 @@ export default function AboutPage() {
         }
         .about-hero-content p {
           color: rgba(255,255,255,0.9);
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.6;
         }
 
-        /* MAIN INFO */
-        .about-main-info { padding: 100px 0 0px; background: #fff; }
-        .about-info-container {
-          max-width: 100%;
-          margin: 0;
-          display: flex;
-          gap: 80px;
-          align-items: flex-start;
-          padding: 0 80px;
-        }
-        .about-image-side { 
-          flex: 0 0 600px; 
+        /* ABOUT MAIN INFO NEW */
+        .about-main-info-new {
           position: relative;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: flex-end;
+          padding: 80px 80px 140px;
         }
-        .about-facility-img { 
-          object-fit: cover; 
-          border-radius: 2px;
+        .about-main-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+          z-index: 1;
         }
-        .about-text-side { flex: 1; padding-top: 20px; }
-        .about-main-title {
+        .about-main-content-new {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 100%;
+        }
+        .about-main-text {
+          max-width: 600px;
+        }
+        .about-main-text h2 {
           font-family: var(--font-inter-tight), sans-serif;
-          font-size: 48px;
+          font-size: 80px;
           font-weight: 600;
-          line-height: 100%;
-          margin-bottom: 50px;
-          letter-spacing: 0%;
-          color: #000000;
-          vertical-align: middle;
+          color: #ffffff;
+          margin-bottom: 24px;
+          line-height: 1.1;
         }
-        .info-blocks-wrapper {
+        .about-main-text p {
+          font-family: var(--font-neutiva), sans-serif;
+          font-size: 17px;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 140%;
+        }
+        .about-main-carousel {
           display: flex;
           flex-direction: column;
-          gap: 40px;
+          gap: 15px;
+          align-items: flex-end;
+          padding-bottom: 5px;
         }
-        .info-block { 
-          border-left: 2px solid #FF5B05;
-          padding-left: 30px;
+        .carousel-numbers {
+          display: flex;
+          gap: 20px;
         }
-        .info-block h3 { 
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 30px; 
-          font-weight: 500; 
-          margin-bottom: 12px; 
-          color: #1a1a1a; 
-          line-height: 100%;
-          letter-spacing: 0%;
+        .carousel-numbers span {
+          font-family: var(--font-geist-mono), monospace;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+          font-weight: 500;
+          cursor: pointer;
+          transition: color 0.3s;
         }
-        .info-block p { 
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 17px; 
-          color: #555; 
-          line-height: 100%; 
-          font-weight: 400;
-          letter-spacing: 0%;
+        .carousel-numbers span.active, .carousel-numbers span:hover {
+          color: #ffffff;
+        }
+        .carousel-bar {
+          width: 140px;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.3);
+          position: relative;
+        }
+        .carousel-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: #FF5B05;
+          transition: width 0.3s ease;
         }
 
-        /* DIVISIONS CONTENT */
-        .divisions-section { padding: 80px 0 60px; background: #fff; }
-        .divisions-section .container { display: flex; gap: 40px; }
-        .division-card {
-          flex: 1;
-          background: white;
-          border: 1px solid #FF5B05;
-          border-radius: 6px;
-          padding: 60px 50px;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-          transition: transform 0.3s;
-          min-height: 420px;
+        /* DIVISIONS CONTENT NEW */
+        .divisions-section-new {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
         }
-        .division-card:hover { transform: translateY(-5px); }
-        .div-header { display: flex; align-items: center; margin-bottom: 30px; gap: 20px; }
-        .div-icon { flex-shrink: 0; }
-        .div-header h3 { 
-          font-family: var(--font-inter-tight), sans-serif; 
-          font-size: 34px; 
-          font-weight: 600; 
-          color: #FF5B05; 
-          margin: 0; 
+        .divisions-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0,0,0,0.3); /* Slight darkening for readability */
+          z-index: 1;
         }
-        .division-card p { 
-          font-family: var(--font-inter-tight), sans-serif; 
-          font-weight: 400;
-          font-style: normal;
-          font-size: 20px; 
-          line-height: 1.6; 
-          letter-spacing: 0.5px;
-          vertical-align: middle;
-          color: #555; 
-          margin: 0; 
+        .divisions-content-wrapper {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          padding: 80px;
+          display: flex;
+          justify-content: space-between;
+        }
+        .division-block-left {
+          max-width: 586px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-bottom: 160px;
+        }
+        .division-block-right {
+          max-width: 750px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          text-align: right;
+          padding-bottom: 160px;
+        }
+        .division-block-left h2, .division-block-right h2 {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 40px;
+          font-weight: 600;
+          color: #ffffff;
+          margin-bottom: 20px;
+        }
+        .division-block-left p, .division-block-right p {
+          font-family: var(--font-neutiva), sans-serif;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.6;
         }
 
         /* WHY GR NEW */
-        .why-gr { padding: 0px 0 80px; background: #fff; }
+        .why-gr { 
+          min-height: 100vh;
+          padding: 100px 0 80px; 
+          background: #fff; 
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .why-gr-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 60px;
+        }
+        .why-gr-header h2 {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 80px;
+          font-weight: 600;
+          color: #000;
+        }
         .why-gr-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           position: relative;
           background-image: 
-            linear-gradient(to bottom, rgba(0,0,0,0) 2%, #cccccc 15%, #cccccc 85%, rgba(0,0,0,0) 98%),
-            linear-gradient(to bottom, rgba(0,0,0,0) 2%, #cccccc 15%, #cccccc 85%, rgba(0,0,0,0) 98%),
-            linear-gradient(to right, rgba(0,0,0,0) 2%, #cccccc 15%, #cccccc 85%, rgba(0,0,0,0) 98%);
+            linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+            linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+            linear-gradient(to right, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%);
           background-size: 
             1px 100%, 
             1px 100%, 
@@ -590,210 +609,200 @@ export default function AboutPage() {
             66.666% 0, 
             0 50%;
           background-repeat: no-repeat;
-          margin-top: 50px;
         }
         .why-gr-item {
           padding: 50px 40px;
-          border: none;
-          transition: all 0.4s ease;
           position: relative;
           background: transparent;
-          border-radius: 4px;
+          transition: all 0.3s ease;
         }
         .why-gr-item:hover {
+          background: #fff;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.05);
           z-index: 5;
-          background: #FF5B05;
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(255, 91, 5, 0.25);
-          border-color: transparent;
         }
-        .why-gr-item:hover h4, 
-        .why-gr-item:hover p {
-          color: white;
-        }
-        .why-gr-item:hover .feature-icon svg {
-          stroke: white;
-        }
-        .why-gr-item .feature-icon { margin-bottom: 30px; }
+        .why-gr-item .feature-icon { margin-bottom: 25px; }
         .why-gr-item h4 { 
           font-family: var(--font-inter-tight), sans-serif;
-          font-size: 26px; 
+          font-size: 28px; 
           font-weight: 500; 
-          margin-bottom: 15px; 
-          letter-spacing: 0%; 
-          line-height: 100%;
-          vertical-align: middle;
+          color: #000;
+          margin-bottom: 12px; 
         }
         .why-gr-item p { 
-          font-family: var(--font-inter-tight), sans-serif;
+          font-family: var(--font-neutiva), sans-serif;
           font-size: 20px; 
-          color: #777; 
-          line-height: 100%; 
-          font-weight: 400;
-          letter-spacing: 0%;
-          vertical-align: middle;
+          color: #666; 
+          line-height: 1.5; 
         }
-
-        /* CAPABILITIES */
-        .capabilities { padding: 80px 0; background: #fff; }
-        .capabilities .container { max-width: 100%; }
-        .capabilities .section-header h2 { font-size: 52px; font-weight: 600; letter-spacing: -1.5px; }
-        .capabilities-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          margin: 40px 0 0;
-          width: 100%;
-          max-width: 100%;
-          height: 308px;
-          border: 1px solid #eeeeee;
-          border-right: none;
-        }
-        .cap-column {
-          padding: 40px 30px;
-          height: 100%;
-          border-right: 1px solid #eeeeee;
-          background: white;
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-        .cap-column:hover {
-          background: #000000;
-          border-right-color: #000000;
-        }
-        .cap-num {
-          font-size: 11px;
-          font-family: monospace;
-          color: #999;
-          margin-bottom: 20px;
-          font-weight: 600;
-        }
-        .cap-column h4 { 
-          font-size: 20px; 
-          font-weight: 500; 
-          color: #1a1a1a;
-          margin-bottom: 18px;
-          transition: color 0.3s;
-        }
-        .cap-column:hover h4 {
-          color: #FF5B05;
-        }
-        .cap-line {
-          width: 35px;
-          height: 2px;
-          background: #FF5B05;
-          margin-bottom: 26px;
-        }
-        .cap-column ul { list-style: none; }
-        .cap-column ul li {
-          font-size: 15px;
-          color: #777;
-          margin-bottom: 14px;
-          padding-left: 16px;
+        /* CAPABILITIES NEW */
+        .capabilities-new { 
           position: relative;
-          transition: color 0.3s;
-          white-space: nowrap;
+          height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          z-index: 1;
         }
-        .cap-column:hover ul li {
-          color: #999;
+        .capabilities-bg {
+          /* Relies on DOM order */
         }
-        .cap-column ul li::before {
-          content: '';
-          width: 4px;
-          height: 4px;
-          background: #FF5B05;
+        .capabilities-overlay {
           position: absolute;
-          left: 0;
-          top: 7px;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.2);
         }
-
-        /* TIMELINE */
-        .timeline-section { padding: 100px 0; background: #fff; }
-        .timeline-title { font-size: 48px; letter-spacing: -1px; margin-bottom: 60px; }
-        .timeline-labels {
+        .capabilities-content {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding: 60px 80px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .capabilities-center-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+        .capabilities-center-text h2 {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 80px;
+          font-weight: 600;
+          color: #ffffff;
+          line-height: 1.1;
+          letter-spacing: -1px;
+        }
+        .cap-column-side {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          width: 460px;
+          gap: 80px;
+        }
+        .cap-glass-card {
+          width: 460px;
+          height: 340px;
+          background: rgba(171, 171, 171, 0.15);
+          backdrop-filter: blur(80px) saturate(180%);
+          -webkit-backdrop-filter: blur(80px) saturate(180%);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-top: 1px solid rgba(255, 255, 255, 0.5);
+          border-left: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 20px;
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-shadow: 
+            0 8px 32px 0 rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        .cap-glass-card h4 {
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 40px;
+          font-weight: 500;
+          color: #ffffff;
+          margin-bottom: 25px;
+        }
+        .cap-glass-card ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .cap-glass-card ul li {
+          font-family: var(--font-neutiva), sans-serif;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 12px;
+          line-height: 1.5;
+        }
+        /* TIMELINE NEW */
+        .timeline-section-new { 
+          position: relative;
+          height: 100vh;
+          width: 100%;
+          overflow: hidden;
+        }
+        .timeline-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.85);
+        }
+        .timeline-content {
+          position: relative;
+          z-index: 1;
+          height: 100%;
+          width: 100%;
+          padding: 80px 10%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .timeline-title-new { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 80px; 
+          font-weight: 600; 
+          color: #ffffff;
+          letter-spacing: -1px; 
+          margin-bottom: 120px; 
+          text-align: center;
+        }
+        .timeline-labels-new {
+          width: 100%;
           display: flex;
           justify-content: space-between;
           position: relative;
-          padding-top: 25px;
+          padding-top: 30px;
         }
-        .timeline-line {
+        .timeline-line-new {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           height: 1px;
-          background: #e0e0e0;
+          background: rgba(255, 255, 255, 0.3);
           z-index: 1;
         }
-        .timeline-item {
+        .timeline-item-new {
           flex: 1;
           position: relative;
           z-index: 2;
           text-align: left;
-          padding-right: 30px;
+          padding-right: 20px;
         }
-        .time-dot {
-          width: 8px;
-          height: 8px;
+        .time-dot-new {
+          width: 10px;
+          height: 10px;
           background: #FF5B05;
           position: absolute;
-          top: -38px;
+          top: -65px;
           left: 0;
         }
-        .time-year { font-size: 24px; font-weight: 600; color: #FF5B05; margin-bottom: 10px; }
-        .timeline-item h4 { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: #1a1a1a; }
-        .timeline-item p { font-size: 14px; color: #777; line-height: 1.5; margin: 0; }
-
-        /* CLIENTELE */
-        .clientele { padding: 100px 0; background: #fff; }
-        .clientele-content {
-          display: flex;
-          margin: 60px 0 0;
-          width: 100%;
-          max-width: 100%;
-          height: 321px;
-          border: 1px solid #eeeeee;
+        .time-year-new { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 30px; 
+          font-weight: 800; 
+          color: #FF5B05; 
+          margin-bottom: 10px; 
         }
-        .clientele-tabs { 
-          flex: 0 0 35%;
-          border-right: 1px solid #eeeeee;
-          display: flex;
-          flex-direction: column;
+        .timeline-item-new h4 { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 24px; 
+          font-weight: 500; 
+          margin-bottom: 2px; 
+          color: #ffffff; 
         }
-        .segment-tab {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          background: #fff;
-          color: #000;
-          padding: 0;
-          border: none;
-          border-bottom: 1px solid #eeeeee;
-          font-weight: 500;
-          font-size: 18px;
-          cursor: pointer;
-          transition: all 0.3s;
-        }
-        .segment-tab:last-child {
-          border-bottom: none;
-        }
-        .segment-tab:hover {
-          background: #fdfdfd;
-        }
-        .segment-tab.active {
-          background: #000;
-          color: #fff;
-        }
-        .clientele-info-side { 
-          flex: 1; 
-          background: #fff;
-        }
-        .info-box {
-          padding: 50px 80px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
+        .timeline-item-new p { 
+          font-family: var(--font-neutiva), sans-serif;
+          font-size: 16px; 
+          color: rgba(255, 255, 255, 0.8); 
+          line-height: 1.5; 
+          margin: 0; 
           justify-content: flex-start;
         }
         .info-box h4 { font-size: 20px; font-weight: 500; margin-bottom: 30px; color: #000; }
@@ -811,95 +820,46 @@ export default function AboutPage() {
           left: 0;
         }
 
-        /* TRUSTED */
-        .trusted-leaders { padding: 60px 0; background: #fff; overflow: hidden; }
-        .trusted-title { font-size: 48px; letter-spacing: -1px; text-align: left; margin-bottom: 0px; }
-        
-        .hp-dist-marquee-wrapper {
+        /* TRUSTED & CERTIFIED */
+        .trusted-cert-section { 
+          padding: 100px 0 150px 0; 
+          background: #ffffff; 
+        }
+        .trusted-cert-title { 
+          font-family: var(--font-inter-tight), sans-serif;
+          font-size: 48px; 
+          font-weight: 600; 
+          color: #000000;
+          text-align: center;
+          margin-bottom: 60px;
+          letter-spacing: -1px;
+        }
+        .marquee-wrapper {
           display: flex;
           overflow: hidden;
           width: 100%;
         }
-        .hp-dist-logos {
+        .marquee-track {
           display: flex;
           align-items: center;
-          gap: 35px;
-          animation: marquee 80s linear infinite;
-          padding-right: 35px;
+          gap: 140px;
+          animation: marquee 40s linear infinite;
+          padding-right: 140px;
           width: max-content;
         }
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .hp-dist-logo-item {
+        .logo-item {
           position: relative;
-          width: 150px;
-          height: 65px;
+          width: 200px;
+          height: 100px;
+          display: flex;
           flex-shrink: 0;
-          opacity: 0.8;
-          transition: 0.3s;
-        }
-        .hp-dist-logo-item:hover {
-          opacity: 1;
-        }
-
-
-
-        /* CTA */
-        .cta-section {
-          padding: 100px 0;
-          background: #fff;
-          text-align: center;
-        }
-        .cta-section h2 { font-size: 56px; margin-bottom: 40px; line-height: 1.1; letter-spacing: -2px; }
-        .cta-btns { display: flex; justify-content: center; gap: 20px; }
-        .btn-orange {
-          width: 184px;
-          height: 66px;
-          display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
-          padding: 18px 30px;
-          background: #FF5B05;
-          color: white;
-          border-radius: 0;
-          border: 1px solid #FF5B05;
-          font-family: var(--font-inter-tight), sans-serif;
-          font-weight: 500;
-          font-size: 25px;
-          line-height: 100%;
-          letter-spacing: 0;
-          text-align: center;
-          text-decoration: none;
-          opacity: 1;
-          box-sizing: border-box;
-          transition: background 0.3s;
         }
-        .btn-orange:hover { background: #d05303; border-color: #d05303; }
-        .btn-outline-dark {
-          height: 66px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 18px 30px;
-          background: white;
-          color: #000;
-          border-radius: 0;
-          font-family: var(--font-inter-tight), sans-serif;
-          font-weight: 500;
-          font-size: 25px;
-          line-height: 100%;
-          letter-spacing: 0;
-          text-align: center;
-          text-decoration: none;
-          border: 1px solid #000;
-          box-sizing: border-box;
-          transition: all 0.3s;
-        }
-        .btn-outline-dark:hover { background: #000; color: #fff; }
 
         @media (max-width: 1024px) {
           .container { padding: 0 40px; }
