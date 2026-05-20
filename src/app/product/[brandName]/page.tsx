@@ -542,8 +542,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       { image: "/Images/Litetech/led indoor/med-eco.webp", caption: "Med Eco LED" },
       { image: "/Images/Litetech/led indoor/medica-500-1.webp", caption: "Medica 500" },
       { image: "/Images/Litetech/led indoor/simoled-500x500.webp", caption: "Simoled 500x500" },
-      { image: "/Images/Litetech/led indoor/med-eco.webp", caption: "Snowplan 1" },
+      { image: "/Images/Litetech/led indoor/snowplan1.webp", caption: "Snowplan 1" },
       { image: "/Images/Litetech/led indoor/snowpro-500.webp", caption: "Snowpro 500" },
+
       // led roadlight
       { image: "/Images/Litetech/led roadlight/roadstar-ld5.webp", caption: "Roadstar LD5" },
       { image: "/Images/Litetech/led roadlight/streetstar.webp", caption: "Streetstar" },
@@ -568,8 +569,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Premium visual beacons, industrial warning sirens, and state-of-the-art signaling systems for industrial safety and automation.",
     website: "https://www.sirena.it/en/",
     productRange: [
-      { image: "/Images/Sierna/Luxor.png", caption: "Luxor Warning Beacon" },
-      { image: "/Images/Sierna/TWS range.png", caption: "TWS Modular Signal Tower" }
+      { image: "/Images/Sierna/INDUSTRIA-Segnalatori-acustici-350x350.jpg", caption: "Acoustic Signalers" },
+      { image: "/Images/Sierna/INDUSTRIA-Segnalatori-acustico-luminosi-350x350.jpg", caption: "Acoustic & Luminous Signalers" },
+      { image: "/Images/Sierna/INDUSTRIA-Segnalatori-luminosi-350x350.jpg", caption: "Luminous Signalers" },
+      { image: "/Images/Sierna/INDUSTRIA_Basi-Ricambi-e-accessori-350x350.jpg", caption: "Bases & Accessories" },
+      { image: "/Images/Sierna/INDUSTRIA_Colonne-di-segnalazione-350x350.jpg", caption: "Signaling Columns" }
     ],
     certifiedLogos: [
     ],
@@ -810,7 +814,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Premium electrical enclosures, distribution boards, and sheet metal fabrication engineered for civil and industrial power systems.",
     website: "https://www.emi.ae/",
     productRange: [
-      { image: "/Images/EMI/Product.png", caption: "Product" }
+      { image: "/Images/EMI/Cable-Ladder-Fittings.png", caption: "Cable Ladder Fittings" },
+      { image: "/Images/EMI/Cable-Trunking-Fittings.png", caption: "Cable Trunking Fittings" },
+      { image: "/Images/EMI/cable-trays-Fitting-.jpg", caption: "Cable Trays Fitting" }
     ],
     certifiedLogos: [
     ],
@@ -904,6 +910,41 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     aboutP2: "Our enclosures are designed to protect sensitive components in automation, mechanical engineering, environmental technology, and hazardous explosive areas.",
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Robust Enclosure Technology"
+  },
+  avaids: {
+    name: "Avaids",
+    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    subtitle: "Aviation Obstruction Lighting",
+    description: "High-quality aviation obstruction lights and warning systems for tall structures and infrastructure.",
+    website: "https://www.avaids.com/",
+    productRange: [
+      { image: "/Images/product/AVAIDS.png", caption: "Aviation Warning Light" }
+    ],
+    certifiedLogos: [],
+    aboutP1: "Avaids Technovators is a renowned manufacturer of professional aviation obstruction lights and warning systems, ensuring air traffic safety around high-rise buildings and towers.",
+    aboutP2: "",
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Aviation Safety Systems"
+  },
+  psi: {
+    name: "PSI",
+    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    subtitle: "Cable Management Systems",
+    description: "High-quality cable management solutions including cable trays, ladders, and trunking systems.",
+    website: "https://www.psi-me.com/",
+    productRange: [
+      { image: "/Images/PSI/Cable-Tray-Sysyem.jpg", caption: "Cable Tray System" },
+      { image: "/Images/PSI/Cable_Ladder_Systems_resizedFile.jpg", caption: "Cable Ladder Systems" },
+      { image: "/Images/PSI/Cable_Trunking_Systems_resizedFile.jpg-copy.jpg", caption: "Cable Trunking Systems" },
+      { image: "/Images/PSI/Floor Trunking Systems.jpg", caption: "Floor Trunking Systems" },
+      { image: "/Images/PSI/GRP-Cable-Management-Systems.jpg", caption: "GRP Cable Management Systems" },
+      { image: "/Images/PSI/Strut_Metal_Framing_Systems.jpg", caption: "Strut Metal Framing Systems" }
+    ],
+    certifiedLogos: [],
+    aboutP1: "Power Solution Industries (PSI) is a renowned manufacturer of comprehensive cable management systems.",
+    aboutP2: "We specialize in delivering robust metallic and non-metallic cable containment solutions for industrial and commercial projects.",
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Advanced Cable Containment"
   }
 };
 

@@ -32,29 +32,34 @@ export default function InformationPage() {
       file: "/Images/information/OneDrive_3_13-05-2026/4-OBSTA -Air-Craft Warning Obstruction Lights- Selection guide.pdf",
     },
     {
-      brand: "Kumwell",
+      brand: "Gulf",
       title: "Impact Resistance Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/5-Impact Resistance Chart.pdf",
     },
     {
-      brand: "Kumwell",
+      brand: "Gulf",
       title: "Cables Cross Section AWG to SQMM Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/6-Cables Cross Section AWG_to_SQMM chart.pdf",
     },
     {
-      brand: "Kumwell",
+      brand: "Gulf",
       title: "Hazardous Area Classification Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/7-Hazardous Area Classification Chart.pdf",
     },
     {
-      brand: "Kumwell",
+      brand: "Gulf",
       title: "Ingress Protection and Corrosivity Categories Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/8-Ingress Protection and Corrosivity Categories Chart.pdf",
     },
     {
-      brand: "Kumwell",
+      brand: "Gulf",
       title: "Lux - Color Temperature Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/9-Lux - Color Temperature chart.pdf",
+    },
+    {
+      brand: "Gulf",
+      title: "IEEE Guide - Types of EARTHING SYSTEMS",
+      file: "/Images/information/OneDrive_3_13-05-2026/10-IEEE Guide - Types of EARTHING SYSTEMS.pdf",
     },
   ];
 
