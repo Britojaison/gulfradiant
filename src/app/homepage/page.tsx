@@ -273,7 +273,7 @@ export default function Homepage() {
   }, []);
 
   const productLogos = [
-    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png", "cabex.png",
+    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png",
     "BAHRA CABLES.svg", "CCG Logo.png", "CITEL LOGO.png", "COSMOPLAST LOGO.avif",
     "FRATER1-LOGO.webp",
     "HAUFF TECHNIK LOGO.png", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.png",
@@ -549,27 +549,27 @@ export default function Homepage() {
           </div>
           <div className="hp-trusted-grid-inner">
             {[
-              { src: "Rectangle 11 (1).png", alt: "Occidental of Oman Inc." },
-              { src: "Rectangle 12 (1).png", alt: "Danieli" },
-              { src: "Rectangle 22.png", alt: "Emirates Global Aluminium" },
-              { src: "elsewedy electric.svg", alt: "Elsewedy Electric" },
-              { src: "sidem viola.svg", alt: "Sidem Veolia" },
-              { src: "baker hughes.svg", alt: "Baker Hughes" },
-              { src: "Rectangle 20.png", alt: "Dragon Oil" },
-              { src: "Rectangle 21.png", alt: "Sharjah Electricity and Water Authority" },
-              { src: "Rectangle 16.png", alt: "Energy China" },
-              { src: "enerflex.svg", alt: "Enerflex" },
-              { src: "sembcorp.svg", alt: "Sembcorp" },
-              { src: "six construct.svg", alt: "Six Construct" },
-              { src: "Rectangle 17.png", alt: "Port of Salalah" },
-              { src: "Rectangle 18.png", alt: "Julphar Gulf Pharmaceutical Industries" },
-              { src: "Rectangle 19.png", alt: "DP World" },
-              { src: "voltas.svg", alt: "Voltas" },
-              { src: "capriole construction.svg", alt: "Capriole Construction" },
-              { src: "alex.png", alt: "Alex" },
+              { src: "Rectangle 11 (1).png", alt: "Occidental of Oman Inc.", folder: "Home" },
+              { src: "Rectangle 12 (1).png", alt: "Danieli", folder: "Home" },
+              { src: "Rectangle 22.png", alt: "Emirates Global Aluminium", folder: "Home" },
+              { src: "sidem viola.svg", alt: "Sidem Veolia", folder: "Home" },
+              { src: "drydock.png", alt: "Drydocks World", folder: "Brand_partners" },
+              { src: "voltas.svg", alt: "Voltas", folder: "Home" },
+              { src: "Rectangle 20.png", alt: "Dragon Oil", folder: "Home" },
+              { src: "Rectangle 21.png", alt: "Sharjah Electricity and Water Authority", folder: "Home" },
+              { src: "Rectangle 16.png", alt: "Energy China", folder: "Home" },
+              { src: "Rectangle 17.png", alt: "Port of Salalah", folder: "Home" },
+              { src: "Rectangle 19.png", alt: "DP World", folder: "Home" },
+              { src: "dewa.png", alt: "DEWA", folder: "Brand_partners" },
+              { src: "sewa.png", alt: "SEWA", folder: "Brand_partners" },
+              { src: "dpworld.png", alt: "DP World", folder: "Brand_partners" },
+              { src: "petrofac.png", alt: "Petrofac", folder: "Brand_partners" },
+              { src: "technip.png", alt: "Technip", folder: "Brand_partners" },
+              { src: "Saipem.png", alt: "Saipem", folder: "Brand_partners" },
+              { src: "L&T.png", alt: "L&T", folder: "Brand_partners" },
             ].map((client) => (
               <div className="hp-trusted-logo-box" key={client.src}>
-                <Image src={`/Images/Home/${client.src}`} alt={client.alt} fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px" style={{ objectFit: "contain" }} />
+                <Image src={`/Images/${client.folder}/${client.src}`} alt={client.alt} fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px" style={{ objectFit: "contain" }} />
               </div>
             ))}
           </div>

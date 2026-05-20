@@ -2,10 +2,45 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Oil & Gas");
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      src: "/Images/About/aboutimg.jpg",
+      alt: "Engineering Reliability",
+      heading: <>Engineering <br />Reliability. <br />Delivering Scale.</>,
+      sub: "One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001."
+    },
+    {
+      src: "/Images/About/img2.jpg",
+      alt: "Our Identity",
+      heading: <>Our <br />Identity.</>,
+      sub: "Since 2001, Gulf Radiant has built a reputation of professionalism and trust as a one-stop solution provider for electrical, electro-mechanical, building material, oil field, industrial and allied technical engineering products."
+    },
+    {
+      src: "/Images/About/img7.jpg",
+      alt: "Where We Operate",
+      heading: <>Where We <br />Operate.</>,
+      sub: "Based in UAE (Dubai & Abu Dhabi), we cater to the GCC, Middle East, Africa, Indian Sub-continent and other emerging markets across 15+ countries."
+    },
+    {
+      src: "/Images/About/img8.jpg",
+      alt: "Our Strength",
+      heading: <>Our <br />Strength.</>,
+      sub: "Dedicated & qualified engineers with in-depth product knowledge and vast experience in providing prompt solutions to all our clientele."
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroSlide(prev => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const segmentsData: { [key: string]: string[] } = {
     "Oil & Gas": [
@@ -62,54 +97,36 @@ export default function AboutPage() {
 
   return (
     <div className="about-page-wrapper">
-      {/* HERO SECTION */}
+      {/* HERO SECTION - CAROUSEL */}
       <section className="about-hero">
-        <Image 
-          src="/Images/About/aboutimg.jpg" 
-          alt="Engineering Reliability" 
-          fill 
-          sizes="100vw"
-          style={{ objectFit: "cover" }} 
-          priority 
-        />
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className={`about-hero-slide ${heroSlide === i ? "active" : ""}`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+              priority={i === 0}
+            />
+          </div>
+        ))}
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content">
-          <h1>Engineering <br />Reliability. <br />Delivering Scale.</h1>
-          <p>
-            One-stop solution provider for electrical, electro-mechanical, and<br />
-            industrial engineering &mdash; since 2001.
-          </p>
+          <h1 key={heroSlide} className="hero-slide-heading">{heroSlides[heroSlide].heading}</h1>
+          <p key={`p-${heroSlide}`} className="hero-slide-sub">{heroSlides[heroSlide].sub}</p>
         </div>
-      </section>
-
-      {/* ABOUT GULF RADIANT SECTION */}
-      <section className="about-main-info-new">
-        <Image 
-          src="/Images/About/img2.jpg" 
-          alt="About Gulf Radiant" 
-          fill 
-          sizes="100vw"
-          style={{ objectFit: "cover" }} 
-        />
-        <div className="about-main-overlay"></div>
-        <div className="about-main-content-new">
-          <div className="about-main-text">
-            <h2>About Gulf Radiant</h2>
-            <p>
-              Since 2001, Gulf Radiant has built a reputation of professionalism and trust as a one-stop solution provider for electrical, electro-mechanical, building material, oil field, industrial and allied technical engineering products.
-            </p>
-          </div>
-          <div className="about-main-carousel">
-            <div className="carousel-numbers">
-              <span className="active">01</span>
-              <span>02</span>
-              <span>03</span>
-              <span>04</span>
-            </div>
-            <div className="carousel-bar">
-              <div className="carousel-progress" style={{ width: '25%' }}></div>
-            </div>
-          </div>
+        <div className="about-hero-dots">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              className={`about-hero-dot ${heroSlide === i ? "active" : ""}`}
+              onClick={() => setHeroSlide(i)}
+            />
+          ))}
         </div>
       </section>
 
@@ -408,11 +425,55 @@ export default function AboutPage() {
           background: rgba(0,0,0,0.4) !important;
           z-index: 1;
         }
+        .about-hero-slide {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          z-index: 0;
+        }
+        .about-hero-slide.active {
+          opacity: 1;
+        }
+        .about-hero-dots {
+          position: absolute;
+          bottom: 32px;
+          left: 80px;
+          display: flex;
+          gap: 10px;
+          z-index: 3;
+        }
+        .about-hero-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.4);
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s, transform 0.3s;
+          padding: 0;
+        }
+        .about-hero-dot.active {
+          background: #FF5B05;
+          transform: scale(1.3);
+        }
         .about-hero-content {
           position: relative;
           z-index: 2;
           color: white;
           max-width: 700px;
+        }
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-slide-heading {
+          animation: heroFadeUp 0.7s ease forwards;
+        }
+        .hero-slide-sub {
+          animation: heroFadeUp 0.7s ease 0.15s forwards;
+          opacity: 0;
+          animation-fill-mode: forwards;
         }
         .about-tag {
           font-family: var(--font-geist-mono), monospace;
@@ -436,8 +497,8 @@ export default function AboutPage() {
         }
         .about-hero-content p {
           color: rgba(255,255,255,0.9);
-          font-size: 15px;
-          line-height: 1.6;
+          font-size: 20px;
+          line-height: 1.5;
         }
 
         /* ABOUT MAIN INFO NEW */

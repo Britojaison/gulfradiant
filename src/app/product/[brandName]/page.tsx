@@ -890,6 +890,27 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Fast, Safe & Reliable Fastening"
   },
+  nventerico: {
+    name: "nVent ERICO",
+    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    subtitle: "Grounding & Lightning Protection Systems",
+    description: "Premium electrical protection solutions, including grounding, bonding, and lightning protection systems for infrastructure.",
+    website: "https://www.nvent.com/en-us/erico",
+    productRange: [
+      { image: "/Images/nventerico/nvent/GEM Ground Enhancement Material.png.webp", caption: "GEM Ground Enhancement Material" },
+      { image: "/Images/nventerico/nvent/Grounding Busbar.png.webp", caption: "Grounding Busbar" },
+      { image: "/Images/nventerico/nvent/High Amperage Plugs & Sockets Project.webp", caption: "High Amperage Plugs & Sockets Project" },
+      { image: "/Images/nventerico/nvent/erico_system3000.png.webp", caption: "ERICO System 3000" },
+      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Plus Impulse Exothermic Welding Control Unit.png.webp", caption: "Cadweld Exothermic Welding Unit" },
+      { image: "/Images/nventerico/nvent/nVent ERICO Hammerlock Ground Clamp.png.webp", caption: "Hammerlock Ground Clamp" }
+    ],
+    certifiedLogos: [
+    ],
+    aboutP1: "nVent ERICO offers a comprehensive range of grounding, equipotential bonding, surge protection, and lightning protection solutions.",
+    aboutP2: "Our products ensure personnel safety and equipment reliability, designed to meet or exceed international electrical safety standards across commercial and industrial infrastructure.",
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Advanced Electrical Protection"
+  },
   rose: {
     name: "Rose",
     heroBg: "/Images/Home/Rectangle 23 (1).png",
