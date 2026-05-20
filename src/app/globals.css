@@ -5900,9 +5900,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 .new-prod-card {
-  background: rgba(255, 255, 255, 0.6) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 20px !important;
   height: 100% !important;
   display: flex !important;
@@ -5910,8 +5910,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   justify-content: center !important;
   padding: 25px !important;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   text-decoration: none !important;
 }
 

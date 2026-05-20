@@ -36,16 +36,16 @@ const CATEGORY_MAP = [
     desc: "Industrial lights, hazard signaling, & visual beacon indicators"
   },
   {
-    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    image: "/Images/product/control devices.png",
-    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
-  },
-  {
     id: "Obstruction lights/aircraft warning lights",
     label: "Obstruction lights / Aircraft warning lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting & structural aircraft warning lights"
+  },
+  {
+    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    image: "/Images/product/control devices.png",
+    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
   {
     id: "Cables",
@@ -71,7 +71,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights"] },
+  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
@@ -91,15 +91,14 @@ const ALL_LOGOS = [
   { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
   { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
-  { src: "/Images/product/cabex.png", brand: "Cabex", categories: ["Other products"] },
   { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
   { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Other products"] },
-  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights"] },
+  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
-  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Obstruction lights/aircraft warning lights"] },
+  { src: "/Images/product/AVAIDS.png", brand: "Avaids", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
   // Industrial Category Images
   { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
   { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
