@@ -5,15 +5,16 @@ import Link from "next/link";
 
 export default function ClientsPage() {
   const brandLogos = [
-    "image 48.png", "image 49.png", "image 50.png", "image 51.png",
-    "image 52.png", "image 53.png", "image 54.png", "image 55.png",
-    "image 56.png", "image 57.png", "image 58.png", "image 59.png",
-    "image 60.png", "image 61.png", "image 62.png", "image 63.png",
-    "image 64.png", "image 65.png", "image 66.png", "image 67.png",
-    "image 68.png", "image 69.png", "image 70.png", "image 71.png",
-    "image 72.png", "image 73.png", "image 74.png", "image 75.png",
-    "image 76.png", "image 77.png", "image 78.png", "image 79.png",
-    "image 80.png", "image 81.png"
+    "oxy.png", "danieli.png", "ega.png", "dragon oil.png",
+    "dewa.png", "sewa.png", "dpworld.png", "drydock.png",
+    "L&T.png", "Saipem.png", "petrofac.png", "technicas.png",
+    "technimont.png", "technip.png", "samsung.png", "CSCEC.png",
+    "Enppi.png", "INIMA.png", "Orascom.png", "ARCHIRODON.png",
+    "ABENGOA.jpg", "BONATTI.webp", "ROBSTONE.png", "NCC .jpg",
+    "cdcc.png", "danway.png", "descon.jpg", "galfar.png",
+    "nmdc.png", "eppm.png", "sidem.webp", "voltas.png",
+    "emirates gas.png", "port of fujarah.png", "port of salah.png",
+    "tatasteel.png", "petrojet.png", "target1.png"
   ];
 
   return (
@@ -56,8 +57,8 @@ export default function ClientsPage() {
         <div className="clients-grid">
           {brandLogos.map((logo, i) => {
             return (
-              <div 
-                className="client-card" 
+              <div
+                className="client-card"
                 key={i}
               >
                 <div className="client-logo-wrapper">

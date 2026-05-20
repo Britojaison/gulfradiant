@@ -91,6 +91,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting aircraft warning lights/signal lights"] },
   { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
   { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
+  { src: "/Images/product/cabex.png", brand: "Cabex", categories: ["Other products"] },
   { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
   { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Other products"] },
   { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
@@ -98,7 +99,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
-  { src: "/Images/product/AVAIDS.png", brand: "Avaids", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
   // Industrial Category Images
   { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
   { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
@@ -126,7 +127,7 @@ function ProductPageContent() {
     }
   }, [searchParams]);
 
-  const filteredLogos = selectedCategory === "All" 
+  const filteredLogos = selectedCategory === "All"
     ? ALL_LOGOS.filter(logo => !logo.categories.includes("Industrial products/bulk material/oil and gas equipment"))
     : ALL_LOGOS.filter(logo => logo.categories.includes(selectedCategory));
 
