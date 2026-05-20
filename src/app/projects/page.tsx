@@ -285,67 +285,231 @@ function ProjectsPageContent() {
               80%  { transform: perspective(600px) rotateY(-4deg) scale(0.99); }
               100% { opacity: 1; transform: perspective(600px) rotateY(0deg) scale(1); }
             }
+            .flip-card {
+              background-color: transparent;
+              perspective: 1200px;
+              height: 340px;
+              cursor: pointer;
+            }
+            .flip-card-inner {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+              transform-style: preserve-3d;
+            }
+            .flip-card:hover .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+              border-radius: 28px;
+              padding: 36px 36px 32px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            }
+            .flip-card-front {
+              background-color: #eaecef;
+              color: #222222;
+            }
+            .flip-card-back {
+              background-color: #1a1a1a;
+              color: #ffffff;
+              transform: rotateY(180deg);
+            }
           `}</style>
           <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
             {/* Project cards grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "20px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "24px" }}>
               {PALAZZOLI_PROJECTS.map((item, idx) => (
                 <div
                   key={idx}
+                  className="flip-card"
                   style={{
-                    background: "#ffffff",
-                    border: "1px solid #eaeaea",
-                    borderRadius: "16px",
-                    padding: "28px 28px 24px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                    position: "relative",
-                    overflow: "hidden",
                     animation: "cardFlipIn 0.55s cubic-bezier(0.23,1,0.32,1) both",
-                    animationDelay: `${idx * 50}ms`,
-                    transition: "box-shadow 0.25s ease, border-color 0.25s ease"
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLDivElement;
-                    el.style.boxShadow = "0 12px 40px rgba(249,85,5,0.12)";
-                    el.style.transform = "translateY(-4px)";
-                    el.style.borderColor = "#ff5b05";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLDivElement;
-                    el.style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)";
-                    el.style.transform = "translateY(0)";
-                    el.style.borderColor = "#eaeaea";
+                    animationDelay: `${idx * 50}ms`
                   }}
                 >
-                  {/* Index number accent */}
-                  <div style={{ position: "absolute", top: "20px", right: "22px", fontFamily: "var(--font-degular), sans-serif", fontSize: "13px", fontWeight: "700", color: "#ff5b05", opacity: 0.5 }}>
-                    {String(idx + 1).padStart(2, "0")}
-                  </div>
+                  <div className="flip-card-inner">
+                    {/* Front Face */}
+                    <div className="flip-card-front">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                        {/* Country Badge */}
+                        <div style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          background: "#ffffff",
+                          padding: "6px 20px 6px 14px",
+                          borderRadius: "30px",
+                          boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
+                        }}>
+                          <span style={{
+                            width: "16px",
+                            height: "16px",
+                            borderRadius: "50%",
+                            background: "#ff5b05",
+                            display: "inline-block",
+                            flexShrink: 0
+                          }} />
+                          <span style={{
+                            fontFamily: "var(--font-degular), sans-serif",
+                            fontSize: "18px",
+                            fontWeight: "700",
+                            color: "#222222",
+                            letterSpacing: "0.5px"
+                          }}>{item.country}</span>
+                        </div>
 
-                  {/* Country badge */}
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", width: "fit-content" }}>
-                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#ff5b05", display: "inline-block", flexShrink: 0 }} />
-                    <span style={{ fontFamily: "var(--font-neutiva), sans-serif", fontSize: "11px", fontWeight: "700", color: "#ff5b05", textTransform: "uppercase", letterSpacing: "1.2px" }}>{item.country}</span>
-                  </div>
+                        {/* Index Badge */}
+                        <div style={{
+                          width: "44px",
+                          height: "44px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background: "#ffffff",
+                          borderRadius: "50%",
+                          boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "18px",
+                          fontWeight: "700",
+                          color: "#222222"
+                        }}>
+                          {String(idx + 1).padStart(2, "0")}
+                        </div>
+                      </div>
 
-                  {/* Project name */}
-                  <h3 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "18px", fontWeight: "600", color: "#0a0a0a", lineHeight: "1.3", margin: 0, paddingRight: "28px" }}>
-                    {item.project}
-                  </h3>
+                      {/* Client Name as Title on Front */}
+                      <h3 style={{
+                        fontFamily: "var(--font-degular), sans-serif",
+                        fontSize: "28px",
+                        fontWeight: "700",
+                        color: "#222222",
+                        lineHeight: "1.25",
+                        margin: "12px 0 8px 0",
+                        textAlign: "left"
+                      }}>
+                        {item.client}
+                      </h3>
 
-                  {/* Divider */}
-                  <div style={{ height: "1px", background: "#f0f0f0", margin: "4px 0" }} />
+                      {/* Hint Footer */}
+                      <div style={{
+                        fontFamily: "var(--font-neutiva), sans-serif",
+                        fontSize: "12px",
+                        color: "#888c91",
+                        textAlign: "left",
+                        letterSpacing: "0.5px",
+                        textTransform: "uppercase",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px"
+                      }}>
+                        <span>Hover to view project details</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </div>
+                    </div>
 
-                  {/* Client */}
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "2px", flexShrink: 0 }}>
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                      <circle cx="12" cy="7" r="4"/>
-                    </svg>
-                    <span style={{ fontFamily: "var(--font-neutiva), sans-serif", fontSize: "13px", color: "#777", lineHeight: "1.4" }}>{item.client}</span>
+                    {/* Back Face */}
+                    <div className="flip-card-back">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                        {/* Country Badge */}
+                        <div style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          background: "rgba(255, 255, 255, 0.08)",
+                          padding: "6px 20px 6px 14px",
+                          borderRadius: "30px",
+                          border: "1px solid rgba(255, 255, 255, 0.1)"
+                        }}>
+                          <span style={{
+                            width: "16px",
+                            height: "16px",
+                            borderRadius: "50%",
+                            background: "#ff5b05",
+                            display: "inline-block",
+                            flexShrink: 0
+                          }} />
+                          <span style={{
+                            fontFamily: "var(--font-degular), sans-serif",
+                            fontSize: "18px",
+                            fontWeight: "700",
+                            color: "#ffffff",
+                            letterSpacing: "0.5px"
+                          }}>{item.country}</span>
+                        </div>
+
+                        {/* Index Badge */}
+                        <div style={{
+                          width: "44px",
+                          height: "44px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background: "#ff5b05",
+                          borderRadius: "50%",
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "18px",
+                          fontWeight: "700",
+                          color: "#ffffff"
+                        }}>
+                          {String(idx + 1).padStart(2, "0")}
+                        </div>
+                      </div>
+
+                      {/* Project Details as Title on Back */}
+                      <div style={{ textAlign: "left", display: "flex", flexDirection: "column", gap: "8px", margin: "10px 0" }}>
+                        <span style={{
+                          fontFamily: "var(--font-neutiva), sans-serif",
+                          fontSize: "11px",
+                          fontWeight: "700",
+                          color: "#ff5b05",
+                          textTransform: "uppercase",
+                          letterSpacing: "1.5px"
+                        }}>PROJECT NAME</span>
+                        <h3 style={{
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "24px",
+                          fontWeight: "700",
+                          color: "#ffffff",
+                          lineHeight: "1.25",
+                          margin: "0"
+                        }}>
+                          {item.project}
+                        </h3>
+                      </div>
+
+                      {/* Card Bottom Branding */}
+                      <div style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+                        paddingTop: "16px"
+                      }}>
+                        <span style={{
+                          fontFamily: "var(--font-neutiva), sans-serif",
+                          fontSize: "12px",
+                          color: "#888c91"
+                        }}>High Amperage Project</span>
+                        <span style={{
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "12px",
+                          fontWeight: "700",
+                          color: "#ff5b05"
+                        }}>PALAZZOLI</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
