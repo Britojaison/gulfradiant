@@ -22,8 +22,8 @@ export default function ClientsPage() {
       {/* HERO SECTION */}
       <section className="clients-hero">
         <Image
-          src="/Images/Brand_partners/oil-refinery-evening 2.png"
-          alt="Refinery at twilight"
+          src="/Images/image.png"
+          alt="Client Partners Background"
           fill
           style={{ objectFit: "cover" }}
           priority
@@ -49,7 +49,7 @@ export default function ClientsPage() {
               <span>PARTNER NETWORK • </span>
             </div>
           </div>
-          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "96px", fontWeight: "600", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
+          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
             Our Partnered Brands
           </h2>
         </div>
@@ -66,7 +66,10 @@ export default function ClientsPage() {
                     src={`/Images/Brand_partners/${logo}`}
                     alt={`Partner Brand ${i + 1}`}
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{ 
+                      objectFit: "contain",
+                      filter: logo.toLowerCase() === "enppi.png" ? "invert(1)" : "none"
+                    }}
                   />
                 </div>
               </div>
@@ -78,7 +81,9 @@ export default function ClientsPage() {
       <style jsx global>{`
         /* HERO FONT SIZES */
         .clients-hero-subtitle {
-          font-size: 96px !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
+          font-family: var(--font-degular), sans-serif !important;
         }
         .clients-hero-description {
           font-size: 18px !important;
@@ -123,8 +128,8 @@ export default function ClientsPage() {
           white-space: nowrap;
         }
         .clients-hero-subtitle {
-          font-size: 80px;
-          font-weight: 600;
+          font-size: 70px;
+          font-weight: 500;
           margin-bottom: 5px;
           line-height: 1.1;
           font-family: var(--font-degular), sans-serif;

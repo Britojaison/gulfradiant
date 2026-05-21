@@ -19,7 +19,7 @@ const CATEGORIES = [
 const CATEGORY_MAP = [
   {
     id: "All",
-    label: "All products",
+    label: "All Products",
     image: "/Images/product/all.png",
     desc: "View our entire premium engineering catalogue"
   },
@@ -31,19 +31,19 @@ const CATEGORY_MAP = [
   },
   {
     id: "Lighting aircraft warning lights/signal lights",
-    label: "Lighting aircraft warning lights/signal lights",
+    label: "Lighting Aircraft Warning Lights / Signal Lights",
     image: "/Images/product/lighting.png",
     desc: "Industrial lights, hazard signaling, & visual beacon indicators"
   },
   {
     id: "Obstruction lights/aircraft warning lights",
-    label: "Obstruction lights / Aircraft warning lights",
+    label: "Obstruction Lights / Aircraft Warning Lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting & structural aircraft warning lights"
   },
   {
     id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    label: "Control Devices Plugs, Receptacles, Switching Accessories, Isolators, Explosion Proof",
     image: "/Images/product/control devices.png",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
@@ -55,13 +55,13 @@ const CATEGORY_MAP = [
   },
   {
     id: "Other products",
-    label: "Other products",
+    label: "Other Products",
     image: "/Images/product/other.png",
     desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories"
   },
   {
     id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial products/bulk material/oil and gas equipment",
+    label: "Industrial Products / Bulk Material / Oil And Gas Equipment",
     image: "/Images/product/industrial.png",
     desc: "Bulk materials, pipelines, refinery supply, & gas process equipment"
   }
@@ -174,7 +174,7 @@ function ProductPageContent() {
       <section className="new-prod-hero-section">
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title">Our Product Range</h1>
+            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Product Range</h1>
             <div className="new-prod-carousel-controls">
               <button onClick={scrollLeft} className="carousel-control-btn" aria-label="Scroll left">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -233,7 +233,7 @@ function ProductPageContent() {
                 <span>PRODUCT RANGE • </span>
               </div>
             </div>
-            <h2 className="new-prod-section-title">
+            <h2 className="new-prod-section-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>
               {activeCategoryData ? activeCategoryData.label : selectedCategory}
             </h2>
           </div>

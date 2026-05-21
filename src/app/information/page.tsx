@@ -13,22 +13,22 @@ export default function InformationPage() {
   const downloads = [
     {
       brand: "Kumwell",
-      title: "KUMWELL Exothermic Welding Selection Chart",
+      title: "Kumwell Exothermic Welding Selection Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/1-KUMWELL Exothermic Welding  Selection Chart.pdf",
     },
     {
       brand: "CITEL",
-      title: "CITEL AC DC DEVICES TRANSIENT OVERVOLTAGES PROTECTION",
+      title: "Citel AC DC Devices Transient Overvoltages Protection",
       file: "/Images/information/OneDrive_3_13-05-2026/2-CITEL_AC_DC_DEVICES_ TRANSIENT OVERVOLTAGES PROTECTION.pdf",
     },
     {
       brand: "CITEL",
-      title: "CITEL SURGE PROTECTION for RESIDENTIAL BUILDINGS",
+      title: "Citel Surge Protection For Residential Buildings",
       file: "/Images/information/OneDrive_3_13-05-2026/3-CITEL_SURGE PROTECTION for RESIDENTIAL BUILDINGS.pdf",
     },
     {
       brand: "Obsta",
-      title: "OBSTA - Air-Craft Warning Obstruction Lights - Selection Guide",
+      title: "Obsta - Air-Craft Warning Obstruction Lights - Selection Guide",
       file: "/Images/information/OneDrive_3_13-05-2026/4-OBSTA -Air-Craft Warning Obstruction Lights- Selection guide.pdf",
     },
     {
@@ -38,7 +38,7 @@ export default function InformationPage() {
     },
     {
       brand: "Gulf",
-      title: "Cables Cross Section AWG to SQMM Chart",
+      title: "Cables Cross Section AWG To SQMM Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/6-Cables Cross Section AWG_to_SQMM chart.pdf",
     },
     {
@@ -48,7 +48,7 @@ export default function InformationPage() {
     },
     {
       brand: "Gulf",
-      title: "Ingress Protection and Corrosivity Categories Chart",
+      title: "Ingress Protection And Corrosivity Categories Chart",
       file: "/Images/information/OneDrive_3_13-05-2026/8-Ingress Protection and Corrosivity Categories Chart.pdf",
     },
     {
@@ -58,7 +58,7 @@ export default function InformationPage() {
     },
     {
       brand: "Gulf",
-      title: "IEEE Guide - Types of EARTHING SYSTEMS",
+      title: "IEEE Guide - Types Of Earthing Systems",
       file: "/Images/information/OneDrive_3_13-05-2026/10-IEEE Guide - Types of EARTHING SYSTEMS.pdf",
     },
   ];
@@ -211,11 +211,12 @@ export default function InformationPage() {
           max-width: 800px;
         }
         .info-hero-content h1 {
-          font-size: 96px;
-          font-weight: 500;
-          line-height: 0.95;
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
+          line-height: 1.1;
           margin-bottom: 32px;
-          letter-spacing: -2px;
+          letter-spacing: -1px;
           text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -236,6 +237,9 @@ export default function InformationPage() {
           padding: 120px 0;
           position: relative;
           min-height: 100vh;
+          background-image: url('/Images/Certifications/bg.png');
+          background-size: cover;
+          background-position: center;
         }
 
         .section-header-figma-centered {
@@ -255,17 +259,17 @@ export default function InformationPage() {
         }
 
         .section-header-figma-centered h2 {
-          font-family: var(--font-degular), sans-serif;
-          font-size: 80px;
-          font-weight: 600;
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
           margin-bottom: 24px;
-          letter-spacing: -2px;
-          line-height: 1;
+          letter-spacing: -1px;
+          line-height: 1.1;
         }
 
         .section-description-centered {
           font-family: var(--font-neutiva), sans-serif;
-          font-size: 16px;
+          font-size: 20px !important;
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.5;
           max-width: 800px;

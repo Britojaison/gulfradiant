@@ -222,7 +222,7 @@
   cursor: pointer;
   line-height: 0.95;
   letter-spacing: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
   display: inline-block;
   text-decoration: none;
   transition: color 0.25s ease;

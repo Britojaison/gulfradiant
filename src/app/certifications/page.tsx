@@ -1,4 +1,5 @@
 "use client";
+// Force rebuild to fix Next.js HMR mismatch
 
 import Image from "next/image";
 import Link from "next/link";
@@ -42,6 +43,15 @@ export default function CertificationsPage() {
 
   const getDocPath = (doc: string) => `/Images/${doc}`;
 
+  const formatTitle = (title: string) => {
+    return title
+      .replace(/[_-]+/g, ' ')
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   return (
     <>
       {/* HERO SECTION */}
@@ -84,7 +94,7 @@ export default function CertificationsPage() {
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
-                <h3 className="cert-card-title">{cert.title}</h3>
+                <h3 className="cert-card-title" style={{ textTransform: "capitalize" }}>{formatTitle(cert.title)}</h3>
                 <div className="cert-card-actions">
                   <button
                     className="cert-view-link"
@@ -347,7 +357,7 @@ export default function CertificationsPage() {
         .cert-view-link {
           background: none;
           border: none;
-          color: #FF5B05;
+          color: #000000;
           font-size: 16px;
           font-weight: 500;
           cursor: pointer;
@@ -358,7 +368,7 @@ export default function CertificationsPage() {
         }
 
         .cert-view-link:hover {
-          color: #e04f00;
+          color: #FF5B05;
         }
 
         @media (max-width: 768px) {

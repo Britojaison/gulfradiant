@@ -3539,13 +3539,13 @@ h6,
 .certs-container {
   max-width: 100%;
   margin: 0;
-  padding: 0 40px;
+  padding: 0 40px !important;
 }
 
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 413px);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 40px;
   justify-content: center;
 }
 
@@ -3558,8 +3558,9 @@ h6,
   align-items: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
-  width: 413px;
-  height: 324px;
+  width: 100%;
+  height: auto;
+  min-height: 324px;
 }
 
 .cert-card:hover {
@@ -5824,8 +5825,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 .new-prod-section-title {
   font-family: var(--font-degular), sans-serif !important;
-  font-size: 96px !important;
-  font-weight: 600 !important;
+  font-size: 70px !important;
+  font-weight: 500 !important;
   text-align: center !important;
   margin: 20px 0 0 0 !important;
   line-height: 100% !important;

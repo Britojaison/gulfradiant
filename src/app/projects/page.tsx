@@ -193,33 +193,11 @@ function ProjectsPageContent() {
   return (
     <main className="projects-page-wrapper">
       {/* 1ST SECTION: HERO & CATEGORIES */}
-      <section className="new-prod-hero-section">
-        <div className="new-prod-section-bg">
-          <Image
-            src="/Images/our_projects/img7.svg"
-            alt="Hero Background"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className="new-prod-overlay" />
-        </div>
+      <section className="new-prod-hero-section" style={{ backgroundImage: "url('/Images/Certifications/bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title">Our Projects</h1>
-            <div className="new-prod-carousel-controls">
-              <button onClick={scrollLeft} className="carousel-control-btn" aria-label="Scroll left">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 18l-6-6 6-6"></path>
-                </svg>
-              </button>
-              <button onClick={scrollRight} className="carousel-control-btn" aria-label="Scroll right">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 5l6 6-6 6"></path>
-                </svg>
-              </button>
-            </div>
+            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Projects</h1>
           </div>
 
           {/* CATEGORY CAROUSEL */}
@@ -264,15 +242,15 @@ function ProjectsPageContent() {
             padding-right: 0 !important;
           }
           .new-prod-cat-card {
-            flex: 0 0 280px !important;
-            width: 280px !important;
+            flex: 0 0 320px !important;
+            width: 320px !important;
           }
         }
       `}</style>
 
       {/* TRUSTED BAR */}
       <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 0 40px 0", background: "#ffffff" }}>
-        <h2 style={{ color: "#000000", margin: "0" }}>Trusted by Clients Across Industries</h2>
+        <h2 style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Trusted by Clients Across Industries</h2>
       </div>
 
       {/* 2ND SECTION: PROJECTS GRID / TEXT TABLE */}
