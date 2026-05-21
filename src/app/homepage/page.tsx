@@ -38,6 +38,51 @@ const newsItems = [
   },
 ];
 
+const ELECTRICAL_CATEGORIES = [
+  {
+    id: "Earthing Lightning & Surge Protection Systems",
+    label: "Earthing Lightning & Surge Protection Systems",
+    desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
+    tag: "Earthing & Surge",
+    image: "/Images/product/earthing.png"
+  },
+  {
+    id: "Lighting aircraft warning lights/signal lights",
+    label: "Lighting aircraft warning lights/signal lights",
+    desc: "Industrial lights, hazard signaling, & visual beacon indicators",
+    tag: "Industrial Lighting",
+    image: "/Images/product/lighting.png"
+  },
+  {
+    id: "Obstruction lights/aircraft warning lights",
+    label: "Obstruction lights/aircraft warning lights",
+    desc: "Safety tower hazard lighting & structural aircraft warning lights",
+    tag: "Obstruction Lights",
+    image: "/Images/product/obstruction.png"
+  },
+  {
+    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
+    tag: "Control Devices",
+    image: "/Images/product/control devices.png"
+  },
+  {
+    id: "Cables",
+    label: "Cables",
+    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables",
+    tag: "Power Cables",
+    image: "/Images/product/cables.png"
+  },
+  {
+    id: "Other products",
+    label: "Other products",
+    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories",
+    tag: "Special Sealing",
+    image: "/Images/product/other.png"
+  }
+];
+
 export default function Homepage() {
   const router = useRouter();
   const statsRef = useRef<HTMLElement | null>(null);
@@ -81,7 +126,7 @@ export default function Homepage() {
 
       // card 1 at 0.25 (just pinned), card 2 at 0.50, card 3 at 0.75
       const thresholds = [0.25, 0.50, 0.75];
-      const durations  = [0.05, 0.12, 0.12]; // card 1 snaps in fast
+      const durations = [0.05, 0.12, 0.12]; // card 1 snaps in fast
 
       statCardsRef.current.forEach((card, index) => {
         if (!card) return;
@@ -109,19 +154,19 @@ export default function Homepage() {
         // Map progress to allow all cards to pass through center
         const centerIndex = progress * (count - 1);
         const d = centerIndex - index;
-        
+
         // Angle step: PI/2 gives a full semi-circle for 3 cards
         const theta = d * (Math.PI / 2);
-        
+
         const radiusY = viewport * 0.45; // Move to edges
         const radiusX = 500; // Stronger bulge
-        
+
         const translateX = radiusX * Math.cos(theta) - 750;
         const translateY = radiusY * Math.sin(theta);
-        
+
         // Show only one card at a time (fully visible at center)
         const opacity = Math.max(0, 1 - Math.abs(d));
-        
+
         // Scale effect: slightly smaller when not in center
         const scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
 
@@ -184,13 +229,13 @@ export default function Homepage() {
         updateStatsCards();
         updateCertCards();
         updateProjects();
-        
+
         // Check mouse position relative to projects viewport on scroll
         const viewport = projectsViewportRef.current;
         if (viewport && cursorLinkRef.current) {
           const rect = viewport.getBoundingClientRect();
-          if (lastMouseX >= rect.left && lastMouseX <= rect.right && 
-              lastMouseY >= rect.top && lastMouseY <= rect.bottom) {
+          if (lastMouseX >= rect.left && lastMouseX <= rect.right &&
+            lastMouseY >= rect.top && lastMouseY <= rect.bottom) {
             cursorLinkRef.current.style.opacity = '1';
             cursorLinkRef.current.style.visibility = 'visible';
             cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
@@ -206,14 +251,14 @@ export default function Homepage() {
       if (!cursorLinkRef.current) return;
       cursorLinkRef.current.style.left = `${e.clientX}px`;
       cursorLinkRef.current.style.top = `${e.clientY}px`;
-      
+
       lastMouseX = e.clientX;
       lastMouseY = e.clientY;
 
       const viewport = projectsViewportRef.current;
       if (viewport) {
         const rect = viewport.getBoundingClientRect();
-        
+
         // If section is scrolled out of view, hide circle
         if (rect.top > window.innerHeight || rect.bottom < 0) {
           cursorLinkRef.current.style.opacity = '0';
@@ -222,8 +267,8 @@ export default function Homepage() {
         }
 
         // Check if mouse is inside the horizontal slider viewport
-        if (e.clientX >= rect.left && e.clientX <= rect.right && 
-            e.clientY >= rect.top && e.clientY <= rect.bottom) {
+        if (e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom) {
           cursorLinkRef.current.style.opacity = '1';
           cursorLinkRef.current.style.visibility = 'visible';
           cursorLinkRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
@@ -378,77 +423,30 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Product Divisions</h2>
+          <h2 className="hp-divisions-main-title">Pioneers of Lighting and Electrical Systems</h2>
 
-          <div className="hp-divisions-grid">
-            {/* ELECTRICAL DIVISION */}
-            <div className="hp-division-card hp-electrical">
-              <div className="hp-division-header">
-                <h3>Electrical Division</h3>
-                <div className="hp-division-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                  </svg>
+          <div className="hp-divisions-grid-new">
+            {ELECTRICAL_CATEGORIES.map((cat) => (
+              <Link
+                key={cat.id}
+                href={`/productpage?category=${encodeURIComponent(cat.id)}`}
+                className="hp-cat-card"
+              >
+                <div className="hp-cat-card-img-wrapper">
+                  <Image
+                    src={cat.image}
+                    alt={cat.label}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
                 </div>
-              </div>
-              <div className="hp-division-categories">
-                {[
-                  "Earthing Lightning & Surge Protection Systems",
-                  "Lighting aircraft warning lights/signal lights",
-                  "Obstruction lights/aircraft warning lights",
-                  "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-                  "Cables",
-                  "Other products"
-                ].map((cat) => (
-                  <Link 
-                    key={cat} 
-                    href={`/productpage?category=${encodeURIComponent(cat)}`}
-                    className="hp-category-link"
-                  >
-                    <span>{cat}</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* INDUSTRIAL DIVISION */}
-            <div className="hp-division-card hp-industrial">
-              <div className="hp-division-header">
-                <h3>Industrial Division</h3>
-                <div className="hp-division-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 7L13.5 2L5 7L13.5 12L22 7Z"/>
-                    <path d="M5 17L13.5 22L22 17"/>
-                    <path d="M5 12L13.5 17L22 12"/>
-                  </svg>
+                <div className="hp-cat-card-overlay" />
+                <div className="hp-cat-card-content">
+                  <h3 className="hp-cat-card-title">{cat.label}</h3>
                 </div>
-              </div>
-              <div className="hp-division-categories">
-                {[
-                  "Industrial products/bulk material/oil and gas equipment"
-                ].map((cat) => (
-                  <Link 
-                    key={cat} 
-                    href={`/productpage?category=${encodeURIComponent(cat)}`}
-                    className="hp-category-link"
-                  >
-                    <span>{cat}</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                ))}
-              </div>
-              <div className="hp-division-footer">
-                <p>Specialized solutions for oil, gas, and heavy industrial infrastructure.</p>
-              </div>
-            </div>
-
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -474,13 +472,15 @@ export default function Homepage() {
               <div className="hp-dist-logos">
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
-                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" />
                   </div>
                 ))}
                 {/* Duplicate for infinite scroll effect */}
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
-                    <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 210px, 280px" style={{ objectFit: "contain" }} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" />
                   </div>
                 ))}
               </div>
@@ -497,6 +497,7 @@ export default function Homepage() {
         {/* STATS */}
         <section className="hp-stats-container" ref={statsRef}>
           <div className="hp-stats-stage">
+            <h2 className="hp-stats-main-title">Give Your Projects the Right Connection</h2>
             <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
             <div className="hp-stat-block hp-stat-card-one" ref={(node) => { statCardsRef.current[0] = node; }}>
               <h3>25<span>+</span></h3>
@@ -756,7 +757,7 @@ export default function Homepage() {
               {latestPosts.map((post) => (
                 <div
                   className="hp-latest-item"
-                  key={post.title}
+                  key={post.image}
                   style={{ gridTemplateColumns: "180px 1fr", display: "grid", gap: "20px", cursor: "pointer" }}
                 >
                   <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px" }}>
@@ -780,8 +781,8 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new" style={{ background: "#000000", padding: "120px 40px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", margin: "0 auto", maxWidth: "1600px", width: "100%", gap: "60px" }}>
+      <section className="hp-contact-banner-new" style={{ padding: "120px 60px" }}>
+        <div className="hp-contact-inner-new">
           {/* LEFT - TEXT */}
           <div style={{ maxWidth: "800px", width: "100%", position: "relative", zIndex: 2 }}>
             <div className="hp-dist-subtitle" aria-label="Book a call" style={{ marginBottom: "20px" }}>
@@ -799,11 +800,11 @@ export default function Homepage() {
           </div>
 
           {/* RIGHT - FORM */}
-          <div 
-            className="hp-git-form-card" 
-            style={{ 
-              background: "rgba(255, 255, 255, 0.05)", 
-              backdropFilter: "blur(20px)", 
+          <div
+            className="hp-git-form-card"
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               borderRadius: "24px",
@@ -814,46 +815,46 @@ export default function Homepage() {
               zIndex: 2
             }}
           >
-          <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Get in touch</h3>
-          <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
-            <div className="hp-git-field">
-              <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
-              <input id="git-company" type="text" placeholder="Jhon Smith" />
-            </div>
-            <div className="hp-git-field">
-              <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
-              <input id="git-fullname" type="text" placeholder="Jhon Smith" />
-            </div>
-            <div className="hp-git-row">
+            <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Get in touch</h3>
+            <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
               <div className="hp-git-field">
-                <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
-                <input id="git-email" type="email" placeholder="john@email.com" />
+                <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
+                <input id="git-company" type="text" placeholder="Jhon Smith" />
               </div>
               <div className="hp-git-field">
-                <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
-                <input id="git-phone" type="tel" placeholder="+91 XXXXXXXXX" />
+                <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
+                <input id="git-fullname" type="text" placeholder="Jhon Smith Comapny" />
               </div>
-            </div>
-            <div className="hp-git-field">
-              <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
-              <div className="hp-git-select-wrap">
-                <select id="git-industry" defaultValue="">
-                  <option value="" disabled>- None -</option>
-                  <option value="infrastructure">Infrastructure</option>
-                  <option value="industrial">Industrial</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="energy">Energy</option>
-                  <option value="other">Other</option>
-                </select>
+              <div className="hp-git-row">
+                <div className="hp-git-field">
+                  <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
+                  <input id="git-email" type="email" placeholder="john@email.com" />
+                </div>
+                <div className="hp-git-field">
+                  <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
+                  <input id="git-phone" type="tel" placeholder="+XX XXXXXXXXX" />
+                </div>
               </div>
-            </div>
-            <div className="hp-git-field">
-              <label htmlFor="git-details">Project Details (Optional)</label>
-              <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
-            </div>
-            <button type="submit" className="hp-git-submit-btn">Send Message</button>
-          </form>
-        </div>
+              <div className="hp-git-field">
+                <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
+                <div className="hp-git-select-wrap">
+                  <select id="git-industry" defaultValue="">
+                    <option value="" disabled>- None -</option>
+                    <option value="infrastructure">Infrastructure</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="energy">Energy</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div className="hp-git-field">
+                <label htmlFor="git-details">Project Details (Optional)</label>
+                <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
+              </div>
+              <button type="submit" className="hp-git-submit-btn">Send Message</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
