@@ -742,7 +742,7 @@ export default function Homepage() {
             <Link href="mailto:info@gulfradiant.com" className="hp-git-quote-btn">
               Request a Quote
             </Link>
-            <div className="hp-git-maps-container" style={{ display: 'flex', flexDirection: 'row', gap: '16px', flexWrap: 'nowrap', marginTop: '40px', alignItems: 'flex-start' }}>
+            <div className="hp-git-maps-container">
               <div className="hp-git-map-block">
                 <div className="hp-git-map">
                   <iframe
@@ -755,8 +755,8 @@ export default function Homepage() {
                     title="Gulf Radiant Abu Dhabi location"
                   />
                 </div>
-                <div className="hp-git-address" style={{ lineHeight: '1.2', fontSize: '12px' }}>
-                  <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: '#ff5b05' }}>Abu Dhabi</h4>
+                <div className="hp-git-address">
+                  <h4>Abu Dhabi</h4>
                   <p style={{ margin: 0 }}><strong>GULF RADIANT ELECTRICALS L.L.C</strong></p>
                   <p style={{ margin: 0 }}>P.O. Box: 91366, M-9,</p>
                   <p style={{ margin: 0 }}>Abu Dhabi, U.A.E</p>
@@ -777,8 +777,8 @@ export default function Homepage() {
                     title="Gulf Radiant Dubai location"
                   />
                 </div>
-                <div className="hp-git-address" style={{ lineHeight: '1.2', fontSize: '12px' }}>
-                  <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: '#ff5b05' }}>Dubai</h4>
+                <div className="hp-git-address">
+                  <h4>Dubai</h4>
                   <p style={{ margin: 0 }}><strong>GULF RADIANT L.L.C</strong></p>
                   <p style={{ margin: 0 }}>P.O. Box: 26426, Amman Street,</p>
                   <p style={{ margin: 0 }}>Al Qusais Industrial Area - 3,</p>
