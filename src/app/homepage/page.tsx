@@ -38,6 +38,45 @@ const newsItems = [
   },
 ];
 
+const ELECTRICAL_CATEGORIES = [
+  {
+    id: "Earthing Lightning & Surge Protection Systems",
+    label: "Earthing Lightning & Surge Protection Systems",
+    desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
+    tag: "Earthing & Surge"
+  },
+  {
+    id: "Lighting aircraft warning lights/signal lights",
+    label: "Lighting aircraft warning lights/signal lights",
+    desc: "Industrial lights, hazard signaling, & visual beacon indicators",
+    tag: "Industrial Lighting"
+  },
+  {
+    id: "Obstruction lights/aircraft warning lights",
+    label: "Obstruction lights/aircraft warning lights",
+    desc: "Safety tower hazard lighting & structural aircraft warning lights",
+    tag: "Obstruction Lights"
+  },
+  {
+    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
+    tag: "Control Devices"
+  },
+  {
+    id: "Cables",
+    label: "Cables",
+    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables",
+    tag: "Power Cables"
+  },
+  {
+    id: "Other products",
+    label: "Other products",
+    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories",
+    tag: "Special Sealing"
+  }
+];
+
 export default function Homepage() {
   const router = useRouter();
   const statsRef = useRef<HTMLElement | null>(null);
@@ -378,77 +417,192 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Product Divisions</h2>
+          <h2 className="hp-divisions-main-title">Pioneers of Lighting and Electrical Systems</h2>
 
-          <div className="hp-divisions-grid">
-            {/* ELECTRICAL DIVISION */}
-            <div className="hp-division-card hp-electrical">
-              <div className="hp-division-header">
-                <h3>Electrical Division</h3>
-                <div className="hp-division-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                  </svg>
+          <div className="hp-divisions-grid-new">
+            {ELECTRICAL_CATEGORIES.map((cat, idx) => (
+              <Link 
+                key={cat.id} 
+                href={`/productpage?category=${encodeURIComponent(cat.id)}`}
+                className="hp-flip-card"
+              >
+                <div className="hp-flip-card-inner">
+                  {/* Front Face */}
+                  <div className="hp-flip-card-front">
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                      {/* Tag Badge */}
+                      <div style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        background: "#ffffff",
+                        padding: "6px 20px 6px 14px",
+                        borderRadius: "30px",
+                        boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
+                      }}>
+                        <span style={{
+                          width: "16px",
+                          height: "16px",
+                          borderRadius: "50%",
+                          background: "#ff5b05",
+                          display: "inline-block",
+                          flexShrink: 0
+                        }} />
+                        <span style={{
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "18px",
+                          fontWeight: "700",
+                          color: "#222222",
+                          letterSpacing: "0.5px"
+                        }}>{cat.tag}</span>
+                      </div>
+
+                      {/* Index Badge */}
+                      <div style={{
+                        width: "44px",
+                        height: "44px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#ffffff",
+                        borderRadius: "50%",
+                        boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+                        fontFamily: "var(--font-degular), sans-serif",
+                        fontSize: "18px",
+                        fontWeight: "700",
+                        color: "#222222"
+                      }}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+
+                    {/* Category Label */}
+                    <h3 style={{
+                      fontFamily: "var(--font-degular), sans-serif",
+                      fontSize: "22px",
+                      fontWeight: "700",
+                      color: "#222222",
+                      lineHeight: "1.25",
+                      margin: "24px 0 12px 0",
+                      textAlign: "left"
+                    }}>
+                      {cat.label}
+                    </h3>
+
+                    {/* Hover Hint */}
+                    <div style={{
+                      fontFamily: "var(--font-neutiva), sans-serif",
+                      fontSize: "12px",
+                      color: "#888c91",
+                      textAlign: "left",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px"
+                    }}>
+                      <span>Hover to view details</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div className="hp-flip-card-back">
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                      {/* Tag Badge */}
+                      <div style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        background: "rgba(255, 255, 255, 0.08)",
+                        padding: "6px 20px 6px 14px",
+                        borderRadius: "30px",
+                        border: "1px solid rgba(255, 255, 255, 0.1)"
+                      }}>
+                        <span style={{
+                          width: "16px",
+                          height: "16px",
+                          borderRadius: "50%",
+                          background: "#ff5b05",
+                          display: "inline-block",
+                          flexShrink: 0
+                        }} />
+                        <span style={{
+                          fontFamily: "var(--font-degular), sans-serif",
+                          fontSize: "18px",
+                          fontWeight: "700",
+                          color: "#ffffff",
+                          letterSpacing: "0.5px"
+                        }}>{cat.tag}</span>
+                      </div>
+
+                      {/* Index Badge */}
+                      <div style={{
+                        width: "44px",
+                        height: "44px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#ff5b05",
+                        borderRadius: "50%",
+                        fontFamily: "var(--font-degular), sans-serif",
+                        fontSize: "18px",
+                        fontWeight: "700",
+                        color: "#ffffff"
+                      }}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <div style={{ textAlign: "left", display: "flex", flexDirection: "column", gap: "8px", margin: "20px 0" }}>
+                      <span style={{
+                        fontFamily: "var(--font-neutiva), sans-serif",
+                        fontSize: "11px",
+                        fontWeight: "700",
+                        color: "#ff5b05",
+                        textTransform: "uppercase",
+                        letterSpacing: "1.5px"
+                      }}>DIVISION DETAILS</span>
+                      <p style={{
+                        fontFamily: "var(--font-degular), sans-serif",
+                        fontSize: "18px",
+                        fontWeight: "500",
+                        color: "#ffffff",
+                        lineHeight: "1.35",
+                        margin: "0"
+                      }}>
+                        {cat.desc}
+                      </p>
+                    </div>
+
+                    {/* Bottom branding */}
+                    <div style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+                      paddingTop: "16px"
+                    }}>
+                      <span style={{
+                        fontFamily: "var(--font-neutiva), sans-serif",
+                        fontSize: "12px",
+                        color: "#888c91"
+                      }}>Electrical Systems</span>
+                      <span style={{
+                        fontFamily: "var(--font-degular), sans-serif",
+                        fontSize: "12px",
+                        fontWeight: "700",
+                        color: "#ff5b05",
+                        textTransform: "uppercase"
+                      }}>EXPLORE</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="hp-division-categories">
-                {[
-                  "Earthing Lightning & Surge Protection Systems",
-                  "Lighting aircraft warning lights/signal lights",
-                  "Obstruction lights/aircraft warning lights",
-                  "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-                  "Cables",
-                  "Other products"
-                ].map((cat) => (
-                  <Link 
-                    key={cat} 
-                    href={`/productpage?category=${encodeURIComponent(cat)}`}
-                    className="hp-category-link"
-                  >
-                    <span>{cat}</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* INDUSTRIAL DIVISION */}
-            <div className="hp-division-card hp-industrial">
-              <div className="hp-division-header">
-                <h3>Industrial Division</h3>
-                <div className="hp-division-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f95505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 7L13.5 2L5 7L13.5 12L22 7Z"/>
-                    <path d="M5 17L13.5 22L22 17"/>
-                    <path d="M5 12L13.5 17L22 12"/>
-                  </svg>
-                </div>
-              </div>
-              <div className="hp-division-categories">
-                {[
-                  "Industrial products/bulk material/oil and gas equipment"
-                ].map((cat) => (
-                  <Link 
-                    key={cat} 
-                    href={`/productpage?category=${encodeURIComponent(cat)}`}
-                    className="hp-category-link"
-                  >
-                    <span>{cat}</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                ))}
-              </div>
-              <div className="hp-division-footer">
-                <p>Specialized solutions for oil, gas, and heavy industrial infrastructure.</p>
-              </div>
-            </div>
-
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -756,7 +910,7 @@ export default function Homepage() {
               {latestPosts.map((post) => (
                 <div
                   className="hp-latest-item"
-                  key={post.title}
+                  key={post.image}
                   style={{ gridTemplateColumns: "180px 1fr", display: "grid", gap: "20px", cursor: "pointer" }}
                 >
                   <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px" }}>

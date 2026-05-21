@@ -6196,7 +6196,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 /* Product Divisions Section */
 .hp-divisions-section {
   background-color: #000000;
-  height: 100vh;
+  height: auto;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -6204,8 +6204,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   position: relative;
   z-index: 5;
   box-sizing: border-box;
-  overflow: hidden;
-  padding: 0 80px;
+  padding: 120px 80px;
 }
 
 .hp-divisions-section .hp-dist-subtitle {
@@ -6235,220 +6234,96 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   text-align: center;
 }
 
-.hp-divisions-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+/* NEW 3D FLIP CARD GRID STYLES */
+.hp-divisions-grid-new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   width: 100%;
-  flex-wrap: nowrap;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.hp-division-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 48px 54px;
-  display: flex;
-  flex-direction: column;
-  width: 760px;
-  height: 540px;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-  z-index: 1;
-  box-sizing: border-box;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.hp-division-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  opacity: 1 !important;
-  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hp-division-card.hp-electrical::before {
-  background-image: url("/Images/Home/bg7.svg");
-}
-
-.hp-division-card.hp-industrial::before {
-  background-image: url("/Images/Home/bg8.svg");
-}
-
-.hp-division-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
-  transition: background 0.4s ease;
-}
-
-.hp-division-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-}
-
-.hp-division-card:hover::before {
-  transform: scale(1.05);
-}
-
-.hp-division-card:hover::after {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-.hp-division-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-.hp-division-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 28px;
-}
-
-.hp-division-header h3 {
-  font-family: var(--font-degular), sans-serif;
-  font-size: 38px;
-  font-weight: 500;
-  color: #ffffff;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.hp-division-icon {
-  display: none !important;
-}
-
-.hp-division-categories {
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.48) !important;
-  backdrop-filter: blur(25px) saturate(140%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(140%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.4) !important;
-  overflow: hidden;
-  padding: 8px 0 !important;
-  width: 100%;
-}
-
-.hp-category-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 13px 28px !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  color: #ffffff !important;
+.hp-flip-card {
+  background-color: transparent;
+  perspective: 1200px;
+  height: 340px;
+  cursor: pointer;
   text-decoration: none;
-  font-family: var(--font-neutiva), sans-serif;
-  font-size: 18px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
+  display: block;
 }
 
-.hp-category-link:not(:last-child) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+.hp-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
 }
 
-.hp-category-link:hover {
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: var(--orange) !important;
-  padding-left: 36px !important;
+.hp-flip-card:hover .hp-flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-
-.hp-division-footer {
-  display: none !important;
+.hp-flip-card-front,
+.hp-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 28px;
+  padding: 36px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  box-sizing: border-box;
 }
 
-@media (max-width: 1640px) {
-  .hp-divisions-grid {
-    gap: 24px;
-  }
-  .hp-division-card {
-    width: 680px;
-    height: 510px;
-  }
+.hp-flip-card-front {
+  background-color: #eaecef;
+  color: #222222;
 }
 
-@media (max-width: 1440px) {
-  .hp-division-card {
-    width: 600px;
-    height: 490px;
-  }
+.hp-flip-card-back {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transform: rotateY(180deg);
 }
 
+/* Responsive Overrides */
 @media (max-width: 1280px) {
   .hp-divisions-section {
-    padding: 120px 40px;
-  }
-  .hp-division-card {
-    width: 540px;
-    height: 470px;
-  }
-}
-
-@media (max-width: 1150px) {
-  .hp-divisions-section {
-    height: auto;
-    min-height: 100vh;
     padding: 100px 40px;
   }
-  .hp-divisions-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  .hp-division-card {
-    width: 100%;
-    max-width: 760px;
-    height: 540px;
+  .hp-divisions-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
   }
 }
 
 @media (max-width: 768px) {
   .hp-divisions-main-title {
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 40px;
+    margin-bottom: 36px;
+    padding: 0 20px;
   }
-  
-  .hp-division-card {
-    width: 100%;
-    max-width: 760px;
-    height: auto;
-    min-height: 434px;
-    padding: 24px;
+  .hp-divisions-grid-new {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    gap: 20px;
   }
-  
-  .hp-division-header h3 {
-    font-size: 28px;
+  .hp-flip-card {
+    height: 320px;
   }
-  
-  .hp-category-link {
-    padding: 8px 16px;
-    font-size: 16px;
+  .hp-flip-card-front,
+  .hp-flip-card-back {
+    padding: 28px 28px 24px;
   }
 }
+
 
 /* WHY GR NEW */
 .why-gr { 
