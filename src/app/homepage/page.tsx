@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const newsItems = [
   {
-    title: "Delivering Reliable Electrical Solutions Across Infrastructure & Industrial Projects",
+    title: <><span style={{ whiteSpace: "nowrap" }}>Delivering Reliable Electrical Solutions Across</span><br /><span style={{ whiteSpace: "nowrap" }}>Infrastructure & Industrial Projects</span></>,
     meta: "Aug 10 · 6 min read",
     image: "news1.jpg",
     alt: "Industrial facility campus",
@@ -358,7 +358,7 @@ export default function Homepage() {
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
-          <h1 style={{ fontSize: "128px", lineHeight: "1.1" }}>
+          <h1 style={{ fontSize: "100px", lineHeight: "0.95", marginTop: "-50px" }}>
             <span style={{ whiteSpace: "nowrap" }}>Powering Infrastructure</span><br />That Delivers
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
@@ -500,34 +500,83 @@ export default function Homepage() {
             <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
             <div className="hp-stat-block hp-stat-card-one" ref={(node) => { statCardsRef.current[0] = node; }}>
               <h3>25<span>+</span></h3>
-              <h4>Years of professionalism</h4>
+              <h4>Years of Professionalism</h4>
               <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
             </div>
             <div className="hp-stat-block hp-stat-card-two" ref={(node) => { statCardsRef.current[1] = node; }}>
               <h3>30<span>+</span></h3>
-              <h4>Countries served worldwide</h4>
+              <h4>Countries Served Worldwide</h4>
               <p>Supporting projects across global<br />markets with a strong supply network</p>
             </div>
             <div className="hp-stat-block hp-stat-card-three" ref={(node) => { statCardsRef.current[2] = node; }}>
               <h3>100<span>+</span></h3>
-              <h4>Product categories</h4>
+              <h4>Product Categories</h4>
               <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
             </div>
           </div>
         </section>
       </div>
 
-      {/* VIDEO BANNER */}
-      <section className="hp-video-banner">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="hp-video-element"
-        >
-          <source src="/Images/Home/video.mp4" type="video/mp4" />
-        </video>
+      {/* WHY GULF RADIANT SECTION */}
+      <section className="why-gr">
+        <div className="container">
+          <div className="section-header why-gr-header">
+            <div className="hp-dist-subtitle" aria-label="Why Choose Us" style={{ maxWidth: "300px", margin: "0 auto 15px auto" }}>
+              <div className="hp-dist-subtitle-track" aria-hidden="true" style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#000" }}>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+                <span>WHY CHOOSE US &bull;&nbsp;</span>
+              </div>
+            </div>
+            <h2>Why Gulf Radiant?</h2>
+          </div>
+
+          <div className="why-gr-grid">
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/lightning.svg" alt="Total MEP Solutions" width={28} height={28} />
+              </div>
+              <h4>Total MEP Solutions</h4>
+              <p>Complete electrical & plumbing<br />from one source</p>
+            </div>
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/time.svg" alt="Fast Response Time" width={28} height={28} />
+              </div>
+              <h4>Fast Response Time</h4>
+              <p>Prompt delivery meeting the<br />tightest project deadlines</p>
+            </div>
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/precision.svg" alt="Precision Execution" width={28} height={28} />
+              </div>
+              <h4>Precision Execution</h4>
+              <p>Quality-first approach on every<br />single project</p>
+            </div>
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/badge.svg" alt="Certified Quality" width={28} height={28} />
+              </div>
+              <h4>Certified Quality</h4>
+              <p>ISO certified with international<br />standards compliance</p>
+            </div>
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/tool.svg" alt="Technical Expertise" width={28} height={28} />
+              </div>
+              <h4>Technical Expertise</h4>
+              <p>20+ years of specialized<br />engineering knowledge</p>
+            </div>
+            <div className="why-gr-item">
+              <div className="feature-icon">
+                <Image src="/Images/About/globe.svg" alt="Regional Reach" width={28} height={28} />
+              </div>
+              <h4>Regional Reach</h4>
+              <p>Quality-first approach on every<br />single project</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* CERTIFICATION */}
@@ -659,7 +708,7 @@ export default function Homepage() {
               </div>
             </div>
             <h3 style={{ fontSize: "64px", lineHeight: "1.1" }}>Madhusudan<br />Mathilakath</h3>
-            <p style={{ fontWeight: "normal", fontSize: "40px" }}>(CEO)</p>
+            <p style={{ fontWeight: "normal", fontSize: "40px" }}>CEO</p>
           </div>
           <div className="hp-leadership-copy">
             <p className="hp-leadership-main">
@@ -702,8 +751,8 @@ export default function Homepage() {
             </article>
           </div>
           <aside className="hp-latest-posts" aria-label="Latest posts">
-            <h3>Latest Posts</h3>
-            <div className="hp-latest-list">
+            <h3 style={{ fontWeight: 500 }}>Latest Posts</h3>
+            <div className="hp-latest-list" style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
               {latestPosts.map((post) => (
                 <div
                   className="hp-latest-item"
@@ -731,10 +780,11 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new">
-        <Image src="/Images/Home/bg4.svg" alt="" fill sizes="100vw" className="hp-contact-bg-img" />
-        <div className="hp-contact-card">
-            <div className="hp-dist-subtitle" aria-label="Book a call">
+      <section className="hp-contact-banner-new" style={{ background: "#000000", padding: "120px 40px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", margin: "0 auto", maxWidth: "1600px", width: "100%", gap: "60px" }}>
+          {/* LEFT - TEXT */}
+          <div style={{ maxWidth: "800px", width: "100%", position: "relative", zIndex: 2 }}>
+            <div className="hp-dist-subtitle" aria-label="Book a call" style={{ marginBottom: "20px" }}>
               <div className="hp-dist-subtitle-track" aria-hidden="true">
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
@@ -742,133 +792,70 @@ export default function Homepage() {
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
               </div>
             </div>
-          <h2>Ready to Power<br />Your Next Project?</h2>
-          <p>Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.</p>
-          <div className="hp-contact-action">
-            <Link href="mailto:info@gulfradiant.com" className="hp-contact-quote-btn">Request a quote</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* GET IN TOUCH */}
-      <section className="hp-get-in-touch" id="contact" style={{ backgroundImage: 'url(/Images/Home/bg9.png)' }}>
-        <div className="hp-git-inner">
-          {/* LEFT */}
-          <div className="hp-git-left">
-            <h2 style={{ fontWeight: 600 }}>
-              Ready to Power Your Next Project?
-              <span style={{ display: 'block' }}>With Reliable Electrical Solutions</span>
-            </h2>
-            <p>
-              Explore our range of trusted electrical products and solutions designed for infrastructure, industrial, and commercial projects.
+            <h2 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "70px", lineHeight: "1.1" }}>Ready to Power<br />Your Next Project?</h2>
+            <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "20px", lineHeight: "1.6", maxWidth: "600px" }}>
+              Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.
             </p>
-            <Link href="mailto:info@gulfradiant.com" className="hp-git-quote-btn">
-              Request a Quote
-            </Link>
-            <div className="hp-git-maps-container">
-              <div className="hp-git-map-block">
-                <div className="hp-git-map">
-                  <iframe
-                    src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Gulf Radiant Abu Dhabi location"
-                  />
-                </div>
-                <div className="hp-git-address">
-                  <h4>Abu Dhabi</h4>
-                  <p style={{ margin: 0 }}><strong>GULF RADIANT ELECTRICALS L.L.C</strong></p>
-                  <p style={{ margin: 0 }}>P.O. Box: 91366, M-9,</p>
-                  <p style={{ margin: 0 }}>Abu Dhabi, U.A.E</p>
-                  <p style={{ margin: 0 }}>Email: infoabu@gulfradiant.com</p>
-                  <p style={{ margin: 0 }}>Contact Number +971 2 4488449</p>
-                  <p style={{ margin: 0 }}>Mobile +971 50 6409192</p>
-                </div>
-              </div>
-              <div className="hp-git-map-block">
-                <div className="hp-git-map">
-                  <iframe
-                    src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Gulf Radiant Dubai location"
-                  />
-                </div>
-                <div className="hp-git-address">
-                  <h4>Dubai</h4>
-                  <p style={{ margin: 0 }}><strong>GULF RADIANT L.L.C</strong></p>
-                  <p style={{ margin: 0 }}>P.O. Box: 26426, Amman Street,</p>
-                  <p style={{ margin: 0 }}>Al Qusais Industrial Area - 3,</p>
-                  <p style={{ margin: 0 }}>Dubai, United Arab Emirates</p>
-                  <p style={{ margin: 0 }}>Email: info@gulfradiant.com</p>
-                  <p style={{ margin: 0 }}>Phone: +971 4 2671662 / 882</p>
-                  <p style={{ margin: 0 }}>Fax: +971 4 2671883</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* RIGHT – FORM CARD */}
+          {/* RIGHT - FORM */}
           <div 
             className="hp-git-form-card" 
             style={{ 
-              background: "rgba(255, 255, 255, 0.2)", 
+              background: "rgba(255, 255, 255, 0.05)", 
               backdropFilter: "blur(20px)", 
               WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              borderRadius: "24px"
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "24px",
+              padding: "50px",
+              width: "100%",
+              maxWidth: "600px",
+              position: "relative",
+              zIndex: 2
             }}
           >
-            <h3 style={{ color: "#ffffff" }}>Get in touch</h3>
-            <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
+          <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Get in touch</h3>
+          <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
+            <div className="hp-git-field">
+              <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
+              <input id="git-company" type="text" placeholder="Jhon Smith" />
+            </div>
+            <div className="hp-git-field">
+              <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
+              <input id="git-fullname" type="text" placeholder="Jhon Smith" />
+            </div>
+            <div className="hp-git-row">
               <div className="hp-git-field">
-                <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
-                <input id="git-company" type="text" placeholder="Jhon Smith" />
-              </div>
-              <div className="hp-git-field">
-                <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
-                <input id="git-fullname" type="text" placeholder="Jhon Smith" />
-              </div>
-              <div className="hp-git-row">
-                <div className="hp-git-field">
-                  <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
-                  <input id="git-email" type="email" placeholder="john@email.com" />
-                </div>
-                <div className="hp-git-field">
-                  <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
-                  <input id="git-phone" type="tel" placeholder="+91 XXXXXXXXX" />
-                </div>
+                <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
+                <input id="git-email" type="email" placeholder="john@email.com" />
               </div>
               <div className="hp-git-field">
-                <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
-                <div className="hp-git-select-wrap">
-                  <select id="git-industry" defaultValue="">
-                    <option value="" disabled>- None -</option>
-                    <option value="infrastructure">Infrastructure</option>
-                    <option value="industrial">Industrial</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="energy">Energy</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+                <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
+                <input id="git-phone" type="tel" placeholder="+91 XXXXXXXXX" />
               </div>
-              <div className="hp-git-field">
-                <label htmlFor="git-details">Project Details (Optional)</label>
-                <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
+            </div>
+            <div className="hp-git-field">
+              <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
+              <div className="hp-git-select-wrap">
+                <select id="git-industry" defaultValue="">
+                  <option value="" disabled>- None -</option>
+                  <option value="infrastructure">Infrastructure</option>
+                  <option value="industrial">Industrial</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="energy">Energy</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
-              <button type="submit" className="hp-git-submit-btn">Send Message</button>
-            </form>
-          </div>
+            </div>
+            <div className="hp-git-field">
+              <label htmlFor="git-details">Project Details (Optional)</label>
+              <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
+            </div>
+            <button type="submit" className="hp-git-submit-btn">Send Message</button>
+          </form>
+        </div>
         </div>
       </section>
-
-
     </div>
   );
 }

@@ -1413,6 +1413,7 @@ h6,
 }
 
 .hp-dist-subtitle {
+  display: none !important;
   width: 182px;
   height: 16px;
   font-family: var(--font-geist-mono-real), monospace !important;
@@ -1471,7 +1472,7 @@ h6,
 
 .hp-products-dist h2 {
   font-family: var(--font-inter-tight), sans-serif;
-  width: 371px;
+  width: auto;
   max-width: 100%;
   min-height: 31px;
   font-size: 40px;
@@ -2162,29 +2163,11 @@ h6,
 }
 
 .hp-quote-banner-new::before {
-  content: "";
-  position: absolute;
-  left: max(-260px, calc(50% - 940px));
-  bottom: -38px;
-  width: 1040px;
-  height: 1040px;
-  border-radius: 50%;
-  background:
-    conic-gradient(from 210deg, transparent 0deg, transparent 190deg, rgba(255, 91, 5, 0.08) 205deg, rgba(255, 91, 5, 0.88) 220deg, rgba(255, 198, 41, 0.98) 226deg, rgba(255, 91, 5, 0.62) 235deg, transparent 252deg, transparent 360deg);
-  filter: blur(1px);
-  pointer-events: none;
-  transform: rotate(-8deg);
-  z-index: 0;
+  display: none;
 }
 
 .hp-quote-banner-new::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 220px;
-  background: radial-gradient(ellipse at 42% 96%, rgba(255, 91, 5, 0.34) 0%, rgba(255, 91, 5, 0.12) 28%, rgba(255, 91, 5, 0) 68%);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .hp-leadership-card {
@@ -2760,11 +2743,8 @@ h6,
 }
 
 .hp-contact-banner-new::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.08);
+  display: none;
+  pointer-events: none;
 }
 
 .hp-contact-card {
@@ -5409,7 +5389,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 .hp-latest-copy h4 {
-  font-size: 26px !important;
+  font-size: 20px !important;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -5511,12 +5491,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   padding-right: 30px !important;
 }
 
-/* Background override for leadership section */
-.hp-quote-banner-new {
-  background-image: url("/Images/Home/bg5.svg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
+
 
 /* Leadership card size and quote position overrides */
 .hp-leadership-card {
@@ -6183,10 +6158,6 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 /* Product Divisions Section */
 .hp-divisions-section {
   background-color: #000000;
-  background-image: url("/Images/Home/bg9.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100vh;
   min-height: 100vh;
   display: flex;
@@ -6315,7 +6286,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 .hp-division-header h3 {
   font-family: var(--font-degular), sans-serif;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.1;
   margin: 0;
@@ -6441,4 +6412,82 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 }
 
+/* WHY GR NEW */
+.why-gr { 
+  min-height: 100vh;
+  padding: 100px 0 80px; 
+  background: #fff; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.why-gr .container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  width: 100%;
+}
+.why-gr-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.why-gr-header h2 {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 80px;
+  font-weight: 600;
+  color: #000;
+}
+.why-gr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  background-image: 
+    linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+    linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+    linear-gradient(to right, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%);
+  background-size: 
+    1px 100%, 
+    1px 100%, 
+    100% 1px;
+  background-position: 
+    33.333% 0, 
+    66.666% 0, 
+    0 50%;
+  background-repeat: no-repeat;
+}
+.why-gr-item {
+  padding: 50px 40px;
+  position: relative;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.why-gr-item:hover {
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  z-index: 5;
+}
+.why-gr-item .feature-icon { margin-bottom: 25px; }
+.why-gr-item h4 { 
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 28px; 
+  font-weight: 500; 
+  color: #000;
+  margin-bottom: 12px; 
+}
+.why-gr-item p { 
+  font-family: var(--font-neutiva), sans-serif;
+  font-size: 20px; 
+  color: #666; 
+  line-height: 1.5; 
+}
 
+/* Global Heading Overrides */
+h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-header h2, .hp-products-dist h2, .hp-cert-left h2, .hp-trusted-header h2, .hp-projects-top-fixed h2, .hp-news-feature h2, .hp-git-left h2, .hp-contact-card h2, .projects-trusted-bar h2 {
+  font-family: var(--font-degular), sans-serif !important;
+  font-size: 70px !important;
+  font-weight: 500 !important;
+  line-height: 1.1 !important;
+}

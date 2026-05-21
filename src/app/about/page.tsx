@@ -169,67 +169,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* WHY GULF RADIANT SECTION */}
-      <section className="why-gr">
-        <div className="container">
-          <div className="section-header why-gr-header">
-            <div className="hp-dist-subtitle" aria-label="Why Choose Us" style={{ maxWidth: "300px", margin: "0 auto 15px auto" }}>
-              <div className="hp-dist-subtitle-track" aria-hidden="true" style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#000" }}>
-                <span>WHY CHOOSE US &bull;&nbsp;</span>
-                <span>WHY CHOOSE US &bull;&nbsp;</span>
-                <span>WHY CHOOSE US &bull;&nbsp;</span>
-                <span>WHY CHOOSE US &bull;&nbsp;</span>
-              </div>
-            </div>
-            <h2>Why Gulf Radiant?</h2>
-          </div>
 
-          <div className="why-gr-grid">
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/lightning.svg" alt="Total MEP Solutions" width={28} height={28} />
-              </div>
-              <h4>Total MEP Solutions</h4>
-              <p>Complete electrical & plumbing<br />from one source</p>
-            </div>
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/time.svg" alt="Fast Response Time" width={28} height={28} />
-              </div>
-              <h4>Fast Response Time</h4>
-              <p>Prompt delivery meeting the<br />tightest project deadlines</p>
-            </div>
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/precision.svg" alt="Precision Execution" width={28} height={28} />
-              </div>
-              <h4>Precision Execution</h4>
-              <p>Quality-first approach on every<br />single project</p>
-            </div>
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/badge.svg" alt="Certified Quality" width={28} height={28} />
-              </div>
-              <h4>Certified Quality</h4>
-              <p>ISO certified with international<br />standards compliance</p>
-            </div>
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/tool.svg" alt="Technical Expertise" width={28} height={28} />
-              </div>
-              <h4>Technical Expertise</h4>
-              <p>20+ years of specialized<br />engineering knowledge</p>
-            </div>
-            <div className="why-gr-item">
-              <div className="feature-icon">
-                <Image src="/Images/About/globe.svg" alt="Regional Reach" width={28} height={28} />
-              </div>
-              <h4>Regional Reach</h4>
-              <p>Quality-first approach on every<br />single project</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* COMPANY CAPABILITIES */}
       <section className="capabilities-new">
@@ -651,71 +591,7 @@ export default function AboutPage() {
           line-height: 1.6;
         }
 
-        /* WHY GR NEW */
-        .why-gr { 
-          min-height: 100vh;
-          padding: 100px 0 80px; 
-          background: #fff; 
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        .why-gr-header {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          margin-bottom: 60px;
-        }
-        .why-gr-header h2 {
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 80px;
-          font-weight: 600;
-          color: #000;
-        }
-        .why-gr-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          position: relative;
-          background-image: 
-            linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
-            linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
-            linear-gradient(to right, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%);
-          background-size: 
-            1px 100%, 
-            1px 100%, 
-            100% 1px;
-          background-position: 
-            33.333% 0, 
-            66.666% 0, 
-            0 50%;
-          background-repeat: no-repeat;
-        }
-        .why-gr-item {
-          padding: 50px 40px;
-          position: relative;
-          background: transparent;
-          transition: all 0.3s ease;
-        }
-        .why-gr-item:hover {
-          background: #fff;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-          z-index: 5;
-        }
-        .why-gr-item .feature-icon { margin-bottom: 25px; }
-        .why-gr-item h4 { 
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 28px; 
-          font-weight: 500; 
-          color: #000;
-          margin-bottom: 12px; 
-        }
-        .why-gr-item p { 
-          font-family: var(--font-neutiva), sans-serif;
-          font-size: 20px; 
-          color: #666; 
-          line-height: 1.5; 
-        }
+
         /* CAPABILITIES NEW */
         .capabilities-new { 
           position: relative;

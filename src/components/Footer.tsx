@@ -38,23 +38,47 @@ export default function Footer() {
               <li><a href="/homepage#contact">Leadership Message</a></li>
             </ul>
           </div>
-          <div className="hp-footer-col">
-            <h4>Contact</h4>
-            <div className="hp-footer-map">
-              <iframe
-                src="https://www.google.com/maps?q=25.297965,55.385053&z=13&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Gulf Radiant Dubai location"
-              ></iframe>
+          <div className="hp-footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div>
+              <h4 style={{ marginBottom: '16px' }}>Dubai</h4>
+              <div className="hp-footer-map" style={{ marginBottom: '16px', height: '100px' }}>
+                <iframe
+                  src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gulf Radiant Dubai location"
+                ></iframe>
+              </div>
+              <p style={{ margin: '0 0 8px 0', color: '#fff' }}><strong>GULF RADIANT L.L.C</strong></p>
+              <p style={{ margin: '0 0 4px 0', fontSize: '14px', lineHeight: '1.4' }}>P.O. Box: 26426, Amman Street,<br/>Al Qusais Industrial Area - 3, Dubai, U.A.E</p>
+              <div className="hp-footer-contact-line">
+                <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
+                <a href="tel:+97142671662">+971 4 2671662</a>
+              </div>
             </div>
-            <p>Gulf Radiant L.L.C Dubai, United Arab Emirates</p>
-            <div className="hp-footer-contact-line">
-              <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
-              <a href="tel:+97142671662">+971 4 2671662</a>
+
+            <div>
+              <h4 style={{ marginBottom: '16px' }}>Abu Dhabi</h4>
+              <div className="hp-footer-map" style={{ marginBottom: '16px', height: '100px' }}>
+                <iframe
+                  src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gulf Radiant Abu Dhabi location"
+                ></iframe>
+              </div>
+              <p style={{ margin: '0 0 8px 0', color: '#fff' }}><strong>GULF RADIANT ELECTRICALS L.L.C</strong></p>
+              <p style={{ margin: '0 0 4px 0', fontSize: '14px', lineHeight: '1.4' }}>P.O. Box: 91366, M-9, Abu Dhabi, U.A.E</p>
+              <div className="hp-footer-contact-line">
+                <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
+                <a href="tel:+97124488449">+971 2 4488449</a>
+              </div>
             </div>
           </div>
         </div>
@@ -75,12 +99,6 @@ export default function Footer() {
             </a>
             <Link href="/privacy">Privacy Policy</Link>
           </div>
-        </div>
-      </div>
-      <div className="hp-footer-marquee" aria-hidden="true">
-        <div className="hp-footer-marquee-track">
-          <span>Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span></span>
-          <span>Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span> Gulf Radiant <span style={{ fontSize: "0.6em", verticalAlign: "middle" }}>▪</span></span>
         </div>
       </div>
     </footer>
