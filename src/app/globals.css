@@ -2843,33 +2843,34 @@ h6,
   background: #000000;
   color: #ffffff;
   overflow: hidden;
-  padding: 58px 0 0;
+  padding: 40px 0 0;
 }
 
 .hp-footer-content {
-  max-width: 1224px;
-  margin: 0 auto;
-  padding: 0 32px;
+  width: 100%;
+  margin: 0;
+  padding: 0 80px;
 }
 
 .hp-footer-grid {
   display: grid;
   grid-template-columns: minmax(320px, 1.4fr) minmax(130px, 0.55fr) minmax(210px, 0.9fr) minmax(260px, 1fr);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 52px;
+  padding-bottom: 0;
   gap: 58px;
 }
 
 .hp-footer-brand {
-  max-width: 410px;
+  max-width: 500px;
 }
 
 .hp-footer-brand h2 {
   color: #ffffff;
-  font-size: 32px;
+  font-size: 60px !important;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.2;
   margin: 0 0 26px;
+  white-space: nowrap !important;
 }
 
 .hp-footer-brand p {
@@ -2981,7 +2982,7 @@ h6,
   justify-content: space-between;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.72);
-  padding: 18px 0 34px;
+  padding: 16px 0 20px;
 }
 
 .hp-footer-bottom a {
@@ -5482,8 +5483,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 /* Align all major sections to 1600px max-width */
 .hp-leadership-content,
-.hp-news-inner,
-.hp-footer-content {
+.hp-news-inner {
   max-width: 1600px !important;
   margin-left: auto !important;
   margin-right: auto !important;

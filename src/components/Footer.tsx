@@ -16,6 +16,15 @@ export default function Footer() {
                 <button type="button" aria-label="Subscribe">→</button>
               </div>
             </div>
+            <div style={{ marginTop: "0px", marginLeft: "-28px" }}>
+              <Image 
+                src="/Images/Brand_partners/Frame 76.png" 
+                alt="Gulf Radiant Logo" 
+                width={260} 
+                height={82} 
+                style={{ objectFit: "contain", objectPosition: "left" }}
+              />
+            </div>
           </div>
           <div className="hp-footer-col">
             <h4>Quick Links</h4>

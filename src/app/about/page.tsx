@@ -21,7 +21,7 @@ export default function AboutPage() {
     {
       src: "/Images/About/aboutimg.jpg",
       alt: "Engineering Reliability",
-      heading: <>Engineering <br />Reliability. <br />Delivering Scale.</>,
+      heading: <>Engineering Reliability.<br />Delivering Strength.</>,
       sub: "One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001."
     },
     {
@@ -90,7 +90,7 @@ export default function AboutPage() {
   ];
 
   const productLogos = [
-    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png", "cabex.png",
+    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png",
     "BAHRA CABLES.svg", "CCG Logo.png", "CITEL LOGO.png", "COSMOPLAST LOGO.avif",
     "FRATER1-LOGO.webp",
     "HAUFF TECHNIK LOGO.png", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.png",
@@ -143,10 +143,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* TRUSTED & CERTIFIED SECTION */}
+      <section className="trusted-cert-section">
+        <div className="container">
+          <h2 className="trusted-cert-title">Trusted by Industry Leaders</h2>
+          <div className="marquee-wrapper">
+            <div className="marquee-track" style={{ animationDuration: "160s" }}>
+              {productLogos.map((logo, i) => (
+                <div className="logo-item" key={`product-1-${i}`}>
+                  <img src={`/Images/product/${logo}`} alt="Brand Logo" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
+                </div>
+              ))}
+              {productLogos.map((logo, i) => (
+                <div className="logo-item" key={`product-2-${i}`}>
+                  <img src={`/Images/product/${logo}`} alt="Brand Logo" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* DIVISIONS SECTION */}
       <section className="divisions-section-new">
         <Image 
-          src="/Images/About/img3.jpg" 
+          src="/Images/About/bg.png" 
           alt="Divisions" 
           fill 
           sizes="100vw"
@@ -208,7 +230,7 @@ export default function AboutPage() {
 
           {/* Center Title */}
           <div className="capabilities-center-text">
-            <h2>Company<br />Capabilities</h2>
+            <h2>Our<br />Capabilities</h2>
           </div>
 
           {/* Right Column */}
@@ -284,36 +306,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TRUSTED & CERTIFIED SECTION */}
+      {/* CERTIFIED & APPROVED SECTION */}
       <section className="trusted-cert-section">
         <div className="container">
-          <h2 className="trusted-cert-title">Trusted by Industry Leaders</h2>
-          <div className="marquee-wrapper">
-            <div className="marquee-track" style={{ animationDuration: "160s" }}>
-              {productLogos.map((logo, i) => (
-                <div className="logo-item" key={`product-1-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
-                </div>
-              ))}
-              {productLogos.map((logo, i) => (
-                <div className="logo-item" key={`product-2-${i}`}>
-                  <Image src={`/Images/product/${logo}`} alt="Brand Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <h2 className="trusted-cert-title" style={{ marginTop: "100px" }}>Certified &amp; Approved</h2>
+          <h2 className="trusted-cert-title">Certified &amp; Approved</h2>
           <div className="marquee-wrapper">
             <div className="marquee-track" style={{ animationDuration: "40s" }}>
               {certificates.map((cert, i) => (
                 <div className="logo-item" key={`cert-1-${i}`}>
-                  <Image src={`/Images/Certificates/${cert}`} alt="Certificate Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
+                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
                 </div>
               ))}
               {certificates.map((cert, i) => (
                 <div className="logo-item" key={`cert-2-${i}`}>
-                  <Image src={`/Images/Certificates/${cert}`} alt="Certificate Logo" fill sizes="(max-width: 768px) 150px, 200px" style={{ objectFit: "contain" }} />
+                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
                 </div>
               ))}
             </div>
@@ -448,9 +454,9 @@ export default function AboutPage() {
           vertical-align: middle;
         }
         .about-hero-content h1 {
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 80px;
-          font-weight: 500;
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
           line-height: 100%;
           margin-bottom: 32px;
           letter-spacing: 1px;
@@ -545,50 +551,58 @@ export default function AboutPage() {
           width: 100%;
           height: 100vh;
           overflow: hidden;
+          background: #000;
         }
         .divisions-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(0,0,0,0.3); /* Slight darkening for readability */
+          background: rgba(0, 0, 0, 0.1); 
           z-index: 1;
         }
         .divisions-content-wrapper {
           position: relative;
           z-index: 2;
           width: 100%;
-          height: 100%;
-          padding: 80px;
-          display: flex;
-          justify-content: space-between;
-        }
-        .division-block-left {
-          max-width: 586px;
+          height: 100vh;
+          padding: 0 80px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding-bottom: 160px;
+          gap: 40px;
         }
-        .division-block-right {
-          max-width: 750px;
+        .division-block-left, .division-block-right {
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 24px;
+          padding: 40px;
+          width: 746px;
+          height: 285px;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
-          align-items: flex-end;
+          justify-content: center;
+        }
+        .division-block-left {
+          align-self: flex-start;
+          text-align: left;
+        }
+        .division-block-right {
+          align-self: flex-end;
           text-align: right;
-          padding-bottom: 160px;
         }
         .division-block-left h2, .division-block-right h2 {
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 56px;
-          font-weight: 600;
+          font-family: inherit;
+          font-size: 36px;
+          font-weight: 500;
           color: #ffffff;
           margin-bottom: 20px;
         }
         .division-block-left p, .division-block-right p {
-          font-family: var(--font-neutiva), sans-serif;
-          font-size: 20px;
-          color: rgba(255, 255, 255, 0.9);
+          font-size: 16px;
           line-height: 1.6;
+          color: rgba(255, 255, 255, 0.9);
+          margin: 0;
         }
 
 
@@ -625,9 +639,9 @@ export default function AboutPage() {
           text-align: center;
         }
         .capabilities-center-text h2 {
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 80px;
-          font-weight: 600;
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
           color: #ffffff;
           line-height: 1.1;
           letter-spacing: -1px;
@@ -643,20 +657,20 @@ export default function AboutPage() {
         .cap-glass-card {
           width: 460px;
           height: 340px;
-          background: rgba(171, 171, 171, 0.15);
-          backdrop-filter: blur(80px) saturate(180%);
-          -webkit-backdrop-filter: blur(80px) saturate(180%);
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          border-top: 1px solid rgba(255, 255, 255, 0.5);
-          border-left: 1px solid rgba(255, 255, 255, 0.5);
+          background: rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(40px) saturate(150%);
+          -webkit-backdrop-filter: blur(40px) saturate(150%);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-top: 1px solid rgba(255, 255, 255, 0.25);
+          border-left: 1px solid rgba(255, 255, 255, 0.25);
           border-radius: 20px;
           padding: 40px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           box-shadow: 
-            0 8px 32px 0 rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            0 8px 32px 0 rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         .cap-glass-card h4 {
           font-family: var(--font-inter-tight), sans-serif;
@@ -701,9 +715,9 @@ export default function AboutPage() {
           align-items: center;
         }
         .timeline-title-new { 
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 80px; 
-          font-weight: 600; 
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important; 
+          font-weight: 500 !important; 
           color: #ffffff;
           letter-spacing: -1px; 
           margin-bottom: 120px; 
@@ -783,9 +797,9 @@ export default function AboutPage() {
           background: #ffffff; 
         }
         .trusted-cert-title { 
-          font-family: var(--font-inter-tight), sans-serif;
-          font-size: 48px; 
-          font-weight: 600; 
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important; 
+          font-weight: 500 !important; 
           color: #000000;
           text-align: center;
           margin-bottom: 60px;
@@ -810,8 +824,6 @@ export default function AboutPage() {
         }
         .logo-item {
           position: relative;
-          width: 200px;
-          height: 100px;
           display: flex;
           flex-shrink: 0;
           align-items: center;
