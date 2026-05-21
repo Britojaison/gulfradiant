@@ -218,14 +218,13 @@
   color: #101010;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(2.45rem, 4.2vw, 4.5rem);
+  font-size: clamp(2rem, 3.5vw, 4rem);
   cursor: pointer;
   line-height: 0.95;
   letter-spacing: 0;
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-  padding-right: 1.35em;
   transition: color 0.25s ease;
 }
 
@@ -239,16 +238,11 @@
   color: var(--sm-accent, #FF5B05);
 }
 
-.sm-panel-list[data-numbering] {
-  counter-reset: smItem;
-}
-
-.sm-panel-list[data-numbering] .sm-panel-item::after {
-  counter-increment: smItem;
-  content: counter(smItem, decimal-leading-zero);
-  position: absolute;
-  top: 0.1em;
-  right: 0;
+.sm-item-number {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.3em;
+  margin-left: 12px;
   font-family: var(--font-subject);
   font-size: 16px;
   font-weight: 700;
@@ -256,7 +250,7 @@
   letter-spacing: 0;
   pointer-events: none;
   user-select: none;
-  opacity: var(--sm-num-opacity, 0);
+  transition: opacity 0.6s ease;
 }
 
 .sm-socials {

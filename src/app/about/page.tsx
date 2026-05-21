@@ -619,14 +619,14 @@ export default function AboutPage() {
         }
         .division-block-left h2, .division-block-right h2 {
           font-family: var(--font-inter-tight), sans-serif;
-          font-size: 40px;
+          font-size: 56px;
           font-weight: 600;
           color: #ffffff;
           margin-bottom: 20px;
         }
         .division-block-left p, .division-block-right p {
           font-family: var(--font-neutiva), sans-serif;
-          font-size: 16px;
+          font-size: 20px;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.6;
         }

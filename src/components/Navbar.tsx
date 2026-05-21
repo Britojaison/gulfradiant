@@ -42,7 +42,7 @@ export default function Navbar() {
       socialItems={socialItems}
       displaySocials
       displayItemNumbering
-      closeOnClickAway={false}
+      closeOnClickAway={true}
       colors={["#151923", "#FF5B05"]}
       logoUrl="/Images/Brand_partners/Frame 76.png"
       logoHref="/homepage#home-hero"

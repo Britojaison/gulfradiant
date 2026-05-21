@@ -356,13 +356,32 @@ export default function StaggeredMenu({
       <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>
         <div className="sm-panel-inner">
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
-            {items.length ? items.map((item, index) => (
-              <li className="sm-panel-itemWrap" key={`${item.label}-${index}`}>
-                <a className="sm-panel-item" href={item.link} aria-label={item.ariaLabel} data-index={index + 1}>
-                  <span className="sm-panel-itemLabel">{item.label}</span>
-                </a>
-              </li>
-            )) : (
+            {items.length ? items.map((item, index) => {
+              const words = item.label.split(' ');
+              const firstWord = words[0];
+              const restWords = words.slice(1).join(' ');
+
+              return (
+                <li className="sm-panel-itemWrap" key={`${item.label}-${index}`}>
+                  <a className="sm-panel-item" href={item.link} aria-label={item.ariaLabel} data-index={index + 1}>
+                    <span className="sm-panel-itemLabel">
+                      {firstWord}
+                      {displayItemNumbering && (
+                        <span className="sm-item-number" style={{ opacity: "var(--sm-num-opacity, 0)" }}>
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      )}
+                      {restWords && (
+                        <>
+                          <br />
+                          {restWords}
+                        </>
+                      )}
+                    </span>
+                  </a>
+                </li>
+              );
+            }) : (
               <li className="sm-panel-itemWrap" aria-hidden="true">
                 <span className="sm-panel-item">
                   <span className="sm-panel-itemLabel">No items</span>

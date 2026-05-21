@@ -1721,7 +1721,7 @@ h6,
 
 .hp-stat-block h4 {
   font-family: var(--font-subject) !important;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   color: #ffffff;
   margin: 0;
@@ -1731,10 +1731,10 @@ h6,
 
 .hp-stat-block p {
   font-family: var(--font-inter-tight), sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.74);
-  line-height: 130%;
+  line-height: 140%;
   letter-spacing: 0;
   text-align: center;
 }
@@ -2599,6 +2599,7 @@ h6,
 
 .hp-git-address p {
   margin: 0;
+  white-space: nowrap;
 }
 
 /* RIGHT – FORM CARD */
@@ -4469,11 +4470,11 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-stat-block h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .hp-stat-block p {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   /* ---- VIDEO BANNER ---- */
@@ -6340,7 +6341,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   color: #ffffff !important;
   text-decoration: none;
   font-family: var(--font-neutiva), sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -6357,15 +6358,6 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   padding-left: 36px !important;
 }
 
-.hp-category-link.hp-is-subcategory {
-  padding-left: 48px !important;
-  opacity: 0.85;
-  font-size: 13.5px !important;
-}
-
-.hp-category-link.hp-is-subcategory:hover {
-  padding-left: 56px !important;
-}
 
 .hp-division-footer {
   display: none !important;
@@ -6436,7 +6428,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   
   .hp-category-link {
     padding: 8px 16px;
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
