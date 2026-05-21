@@ -24,21 +24,23 @@ export default function CertificationsPage() {
   }, [viewingCert]);
 
   const certs = [
-    { image: "img1.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img2.svg", title: "Palazzoli - DEWA APPROVAL", doc: "#", type: "pdf" as const },
-    { image: "img3.svg", title: "Sharjah Electricity & Water Authority", doc: "#", type: "pdf" as const },
-    { image: "img4.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img5.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img6.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img2.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img8.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img8.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
-    { image: "img7.svg", title: "Gulf Radiant - ISO 9001-2015", doc: "#", type: "pdf" as const },
+    { image: "GR-iso.jpg", title: "GR ISO 9001-2015", doc: "Certifications/OneDrive_1_20-05-2026/GR ISO 9001-2015.pdf", type: "pdf" as const },
+    { image: "dewa.jpg", title: "DEWA-Approval-Palazzoli", doc: "Certifications/OneDrive_1_20-05-2026/DEWA-Approval-Palazzoli.pdf", type: "pdf" as const },
+    { image: "dewa.jpg", title: "DEWA-Approval-Kumwell", doc: "Certifications/OneDrive_1_20-05-2026/DEWA-Approval-Kumwell.pdf", type: "pdf" as const },
+    { image: "civil aviation.jpg", title: "Dubai Civil Aviation Authority Certificate", doc: "Certifications/OneDrive_1_20-05-2026/Dubai Civil Aviation Authority Certificate.pdf", type: "pdf" as const },
+    { image: "cert-jsrs-logo.jpg", title: "GR_JSRS AE100307 - Certificate _ 2029", doc: "Certifications/OneDrive_1_20-05-2026/GR_JSRS AE100307 - Certificate _ 2029.pdf", type: "pdf" as const },
+    { image: "cert-icv-logo.jpg", title: "GR AUH - ICV CERTIFICATE 2025-2026", doc: "Certifications/OneDrive_1_20-05-2026/GR AUH - ICV CERTIFICATE 2025-2026.pdf", type: "pdf" as const },
+    { image: "cert-icv-logo.jpg", title: "GR DXB ICV 2026", doc: "Certifications/OneDrive_1_20-05-2026/GR DXB ICV 2026.pdf", type: "pdf" as const },
+    { image: "adnoc logo.svg", title: "ADNOC APPROVAL _ KUMWELL ID - 20032385", doc: "Certifications/OneDrive_1_20-05-2026/ADNOC APPROVAL _ KUMWELL ID - 20032385.pdf", type: "pdf" as const },
+    { image: "cert-addc-logo.jpg", title: "GULF RADIANT APPROVAL_ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/GULF RADIANT APPROVAL_ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
+    { image: "cert-addc-logo.jpg", title: "KUMWELL APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/KUMWELL APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
+    { image: "cert-addc-logo.jpg", title: "PITTAS APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/PITTAS APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
+    { image: "etihad we.png", title: "ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL.pdf", type: "pdf" as const },
+    { image: "etihad we.png", title: "ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL.pdf", type: "pdf" as const },
+    { image: "etihad we.png", title: "GR _FEWA REG CARD 2026-27", doc: "Certifications/OneDrive_1_20-05-2026/GR _FEWA REG CARD 2026-27.jpg", type: "image" as const },
   ];
 
-  const getDocPath = (doc: string) => `/Images/Certificates/${doc}`;
+  const getDocPath = (doc: string) => `/Images/${doc}`;
 
   return (
     <>
@@ -75,12 +77,11 @@ export default function CertificationsPage() {
             {certs.map((cert, i) => (
               <div className="cert-card" key={i}>
                 <div className="cert-logo-circle">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={`/Images/Certificates/${cert.image}`}
                     alt={cert.title}
-                    width={170}
-                    height={170}
-                    style={{ objectFit: "contain" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
                 <h3 className="cert-card-title">{cert.title}</h3>
@@ -347,7 +348,7 @@ export default function CertificationsPage() {
           background: none;
           border: none;
           color: #FF5B05;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
           cursor: pointer;
           padding: 0;

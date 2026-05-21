@@ -3591,9 +3591,6 @@ h6,
   transition: transform 0.3s ease;
 }
 
-.cert-card:hover .cert-logo-circle {
-  transform: scale(0.95);
-}
 
 .cert-logo-circle img {
   mix-blend-mode: multiply;
