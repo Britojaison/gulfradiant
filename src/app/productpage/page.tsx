@@ -172,17 +172,6 @@ function ProductPageContent() {
     <div className="new-prod-page">
       {/* 1ST SECTION: HERO & CATEGORIES */}
       <section className="new-prod-hero-section">
-        <div className="new-prod-section-bg">
-          <Image
-            src="/Images/product/img1.svg"
-            alt="Hero Background"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className="new-prod-overlay" />
-        </div>
-
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
             <h1 className="new-prod-title">Our Product Range</h1>
@@ -217,6 +206,7 @@ function ProductPageContent() {
                       fill
                       style={{ objectFit: "cover" }}
                       sizes="260px"
+                      priority={CATEGORY_MAP.indexOf(cat) < 4}
                     />
                   </div>
                   <div className="new-prod-cat-card-overlay" />
@@ -232,20 +222,17 @@ function ProductPageContent() {
 
       {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}
       <section className="new-prod-brands-section">
-        <div className="new-prod-section-bg">
-          <Image
-            src="/Images/product/img2.svg"
-            alt="Brands Background"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className="new-prod-overlay" />
-        </div>
-
         <div className="new-prod-section-inner-wide">
           {/* ACTIVE CATEGORY HEADER - REMAIN STICKY / FIXED AT TOP */}
           <div className="new-prod-section-header">
+            <div className="hp-dist-subtitle">
+              <div className="hp-dist-subtitle-track">
+                <span>PRODUCT RANGE • </span>
+                <span>PRODUCT RANGE • </span>
+                <span>PRODUCT RANGE • </span>
+                <span>PRODUCT RANGE • </span>
+              </div>
+            </div>
             <h2 className="new-prod-section-title">
               {activeCategoryData ? activeCategoryData.label : selectedCategory}
             </h2>
@@ -263,10 +250,9 @@ function ProductPageContent() {
                           alt={logo.brand}
                           fill
                           sizes="(max-width: 768px) 50vw, 250px"
-                          unoptimized={true}
                           style={{
                             objectFit: "contain",
-                            filter: logo.brand === "EMI" ? "invert(1)" : "none"
+                            filter: (logo.brand === "EMI" || logo.brand === "Avaids") ? "invert(1)" : "none"
                           }}
                         />
                       </div>
