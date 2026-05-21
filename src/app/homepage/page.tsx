@@ -265,6 +265,29 @@ export default function Homepage() {
   }, []);
 
   useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          // 800ms delay gives GSAP and other dynamic layout resizing time to stabilize page height
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 800);
+        }
+      }
+    };
+
+    handleHashScroll();
+
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => {
+      window.removeEventListener("hashchange", handleHashScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveNewsIndex((index) => (index + 1) % newsItems.length);
     }, 3500);

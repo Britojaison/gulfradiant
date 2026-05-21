@@ -2605,6 +2605,7 @@ h6,
 
 /* RIGHT – FORM CARD */
 .hp-git-form-card {
+  width: 100%;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -2627,6 +2628,7 @@ h6,
 }
 
 .hp-git-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -2642,6 +2644,7 @@ h6,
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .hp-git-field label {
@@ -2653,6 +2656,7 @@ h6,
 
 .hp-git-field input,
 .hp-git-field textarea {
+  width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 10px 14px;
@@ -2937,10 +2941,10 @@ h6,
 }
 
 .hp-footer-col h4 {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   margin: 0 0 18px;
-  color: rgba(255, 255, 255, 0.48);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .hp-footer-col ul {
@@ -2952,10 +2956,11 @@ h6,
 }
 
 .hp-footer-col a {
+  font-family: var(--font-neutiva), sans-serif !important;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400 !important;
   transition: color 0.3s;
 }
 
@@ -2972,8 +2977,10 @@ h6,
 }
 
 .hp-footer-col p {
+  font-family: var(--font-neutiva), sans-serif !important;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 400 !important;
   line-height: 1.4;
   margin: 0 0 10px;
 }
@@ -2984,8 +2991,9 @@ h6,
 }
 
 .hp-footer-contact-line a {
-  font-size: 12px;
-  font-weight: 400;
+  font-family: var(--font-neutiva), sans-serif !important;
+  font-size: 14px;
+  font-weight: 400 !important;
 }
 
 .hp-footer-bottom {

@@ -3,10 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import AboutLoading from "./loading";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Oil & Gas");
   const [heroSlide, setHeroSlide] = useState(0);
+  const [isPageReady, setIsPageReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPageReady(true);
+    }, 700); // Deliberate delay to allow initial layout setup and preloading
+    return () => clearTimeout(timer);
+  }, []);
 
   const heroSlides = [
     {
@@ -95,8 +104,12 @@ export default function AboutPage() {
     "dewa.jpg", "cert-addc-logo.jpg", "cert-sewa-logo.jpg", "cert-rta-logo.jpg", "cert-icv-logo.jpg", "cert-jsrs-logo.jpg"
   ];
 
+  if (!isPageReady) {
+    return <AboutLoading />;
+  }
+
   return (
-    <div className="about-page-wrapper">
+    <div className="about-page-wrapper page-fade-in">
       {/* HERO SECTION - CAROUSEL */}
       <section className="about-hero">
         {heroSlides.map((slide, i) => (
@@ -369,6 +382,13 @@ export default function AboutPage() {
       </section>
 
       <style jsx global>{`
+        @keyframes pageFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .page-fade-in {
+          animation: pageFadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
         .about-page-wrapper {
           font-family: 'Inter', sans-serif;
           color: #1a1a1a;
