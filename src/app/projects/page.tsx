@@ -197,7 +197,7 @@ function ProjectsPageContent() {
 
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Projects</h1>
+            <h1 className="new-prod-title projects-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Our Projects</h1>
           </div>
 
           {/* CATEGORY CAROUSEL */}
@@ -250,7 +250,7 @@ function ProjectsPageContent() {
 
       {/* TRUSTED BAR */}
       <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 0 40px 0", background: "#ffffff" }}>
-        <h2 style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Trusted by Clients Across Industries</h2>
+        <h2 className="projects-main-heading" style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Trusted by Clients Across Industries</h2>
       </div>
 
       {/* 2ND SECTION: PROJECTS GRID / TEXT TABLE */}
@@ -305,7 +305,7 @@ function ProjectsPageContent() {
           `}</style>
           <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
             {/* Project cards grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "24px" }}>
+            <div className="palazzoli-project-grid">
               {PALAZZOLI_PROJECTS.map((item, idx) => (
                 <div
                   key={idx}

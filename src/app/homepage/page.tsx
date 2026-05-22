@@ -98,7 +98,7 @@ export default function Homepage() {
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
 
   const certImages = [
-    { src: "/Images/Certificates/cert-dewa-logo.jpg", alt: "Kumwell - DEWA APPROVAL" },
+    { src: "/Images/Certificates/dewa.jpg", alt: "Kumwell - DEWA APPROVAL" },
     { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR AD ICV Certificate" },
     { src: "/Images/Certificates/cert-jsrs-logo.jpg", alt: "JSRS CERTIFICATE" },
     { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "PITTAS - ADDC Pre-Qualification" },
@@ -151,24 +151,28 @@ export default function Homepage() {
       certCardsRef.current.forEach((card, index) => {
         if (!card) return;
 
-        // Map progress to allow all cards to pass through center
-        const centerIndex = progress * (count - 1);
+        const isMobile = window.innerWidth <= 1024;
+        let centerIndex = progress * (count - 1);
         const d = centerIndex - index;
-
-        // Angle step: PI/2 gives a full semi-circle for 3 cards
         const theta = d * (Math.PI / 2);
 
-        const radiusY = viewport * 0.45; // Move to edges
-        const radiusX = 500; // Stronger bulge
+        let translateX, translateY, scale, opacity;
 
-        const translateX = radiusX * Math.cos(theta) - 750;
-        const translateY = radiusY * Math.sin(theta);
-
-        // Show only one card at a time (fully visible at center)
-        const opacity = Math.max(0, 1 - Math.abs(d));
-
-        // Scale effect: slightly smaller when not in center
-        const scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
+        if (isMobile) {
+          // Horizontal slide for tablet and mobile
+          translateX = -d * (window.innerWidth * 0.85);
+          translateY = 0;
+          scale = Math.max(0.85, 1 - Math.abs(d) * 0.15);
+          opacity = Math.max(0, 1 - Math.abs(d) * 0.8);
+        } else {
+          // Desktop animation
+          const radiusY = viewport * 0.45;
+          const radiusX = 500;
+          translateX = radiusX * Math.cos(theta) - 750;
+          translateY = radiusY * Math.sin(theta);
+          scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
+          opacity = Math.max(0, 1 - Math.abs(d));
+        }
 
         card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
         card.style.opacity = `${opacity}`;
@@ -403,8 +407,8 @@ export default function Homepage() {
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
-          <h1 style={{ fontSize: "100px", lineHeight: "0.95", marginTop: "-50px" }}>
-            <span style={{ whiteSpace: "nowrap" }}>Powering Infrastructure</span><br />That Delivers
+          <h1 className="hp-hero-title-desktop">
+            <span className="hp-hero-title-nowrap">Powering Infrastructure</span><br />That Delivers
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
             <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
@@ -689,7 +693,7 @@ export default function Homepage() {
       {/* QUOTE BANNER */}
       <section className="hp-quote-banner-new">
         {/* GIANT ORANGE QUOTES (BEHIND CARD) */}
-        <div style={{ position: "absolute", bottom: "50px", right: "calc(50% - 750px)", zIndex: 1 }}>
+        <div className="hp-leadership-comma-wrapper">
           <Image
             src="/Images/Home/comma.svg"
             alt="Quotes"
@@ -708,8 +712,8 @@ export default function Homepage() {
                 <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
               </div>
             </div>
-            <h3 style={{ fontSize: "64px", lineHeight: "1.1" }}>Madhusudan<br />Mathilakath</h3>
-            <p style={{ fontWeight: "normal", fontSize: "40px" }}>CEO</p>
+            <h3>Madhusudan<br />Mathilakath</h3>
+            <p>CEO</p>
           </div>
           <div className="hp-leadership-copy">
             <p className="hp-leadership-main">
@@ -724,8 +728,8 @@ export default function Homepage() {
       </section>
 
       {/* NEWS */}
-      <section className="hp-news-section-new" id="useful-information" style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div className="hp-news-inner" style={{ maxWidth: "100%", width: "100%", gridTemplateColumns: "minmax(0, 2fr) minmax(600px, 1fr)", gap: "60px", padding: "0 80px" }}>
+      <section className="hp-news-section-new" id="useful-information">
+        <div className="hp-news-inner">
           <div className="hp-news-feature">
             <div className="hp-dist-subtitle" aria-label="Insights">
               <div className="hp-dist-subtitle-track" aria-hidden="true">
@@ -781,7 +785,7 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new" style={{ padding: "120px 60px" }}>
+      <section className="hp-contact-banner-new">
         <div className="hp-contact-inner-new">
           {/* LEFT - TEXT */}
           <div style={{ maxWidth: "800px", width: "100%", position: "relative", zIndex: 2 }}>
@@ -793,7 +797,7 @@ export default function Homepage() {
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
               </div>
             </div>
-            <h2 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "70px", lineHeight: "1.1" }}>Ready to Power<br />Your Next Project?</h2>
+            <h2 style={{ color: "#ffffff", marginBottom: "30px", lineHeight: "1.1" }}>Ready to Power<br />Your Next Project?</h2>
             <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "20px", lineHeight: "1.6", maxWidth: "600px" }}>
               Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.
             </p>
@@ -808,7 +812,6 @@ export default function Homepage() {
               WebkitBackdropFilter: "blur(20px)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               borderRadius: "24px",
-              padding: "50px",
               width: "100%",
               maxWidth: "600px",
               position: "relative",

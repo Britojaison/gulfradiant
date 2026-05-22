@@ -49,7 +49,7 @@ export default function ClientsPage() {
               <span>PARTNER NETWORK • </span>
             </div>
           </div>
-          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
+          <h2 className="clients-section-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
             Our Partnered Brands
           </h2>
         </div>
