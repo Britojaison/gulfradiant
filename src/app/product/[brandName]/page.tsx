@@ -131,10 +131,10 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-conductive earthing accessories, copper tapes, and premium grounding conductors certified to absolute international standards.",
     website: "https://www.pittas.com/",
     productRange: [
-      { image: "/Images/pittas/Screenshot from 2026-05-18 13-16-35.png", caption: "Tape conductor hot dip galvanized steel (St/tZn)" },
-      { image: "/Images/pittas/Screenshot from 2026-05-18 12-49-35.png", caption: "Connectors/clamps/fasteners in various materials (St/tZn, Cu, Cu/eSn, Stainless Steel) and sizes" },
-      { image: "/Images/pittas/TESLA-S (1).jpg", caption: "Lightning conductor E.S.E. TESLA-S" },
-      { image: "/Images/pittas/DSC_5628cx - Copy.jpg", caption: "" },
+      { image: "/Images/pittas/Tape Conductor hot dip galvanized steel.png", caption: "Tape conductor hot dip galvanized steel (St/tZn)" },
+      { image: "/Images/pittas/Connectors,clamps,fasteners in various materials .png", caption: "Connectors/clamps/fasteners in various materials (St/tZn, Cu, Cu/eSn, Stainless Steel) and sizes" },
+      { image: "/Images/pittas/Lightning conductor E.S.E. TESLA-S.jpg", caption: "Lightning conductor E.S.E. TESLA-S" },
+      { image: "/Images/pittas/DSC_5628cx .jpg", caption: "" },
       { image: "/Images/pittas/Screenshot from 2026-05-18 12-54-44.png", caption: "" }
     ],
     certifiedLogos: [
