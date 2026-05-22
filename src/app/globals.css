@@ -2193,6 +2193,18 @@ h6,
   display: none;
 }
 
+.hp-leadership-comma-wrapper {
+  position: absolute;
+  bottom: 50px;
+  right: calc(50% - 750px);
+  z-index: 1;
+}
+
+.hp-leadership-section {
+  background: #000;
+  padding: 120px 40px;
+}
+
 .hp-leadership-card {
   background: rgba(98, 98, 98, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -4113,9 +4125,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .hp-cert-content-inner {
     padding: 0 40px;
-    flex-direction: column;
     gap: 30px;
-    text-align: center;
   }
 
   .hp-cert-left h2 {
@@ -4123,7 +4133,6 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-cert-btn-container {
-    justify-content: center;
     padding-right: 0;
   }
 
@@ -4134,7 +4143,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-trusted-grid-inner {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 14px;
   }
 
@@ -4162,6 +4171,14 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .hp-quote-banner-new {
     padding: 40px 40px 84px;
+  }
+
+  .hp-leadership-comma-wrapper {
+    right: 20px;
+    bottom: 20px;
+    opacity: 0.3;
+    transform: scale(0.6);
+    transform-origin: bottom right;
   }
 
   .hp-leadership-card {
@@ -4606,7 +4623,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .hp-trusted-grid-inner {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 12px !important;
   }
 
@@ -4661,7 +4678,11 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   /* ---- QUOTE BANNER ---- */
   .hp-quote-banner-new {
-    padding: 36px 20px 82px;
+    padding: 36px 0px 82px;
+  }
+
+  .hp-leadership-section {
+    padding: 60px 15px;
   }
 
   .hp-leadership-card {
@@ -4669,7 +4690,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     gap: 36px;
     height: auto;
     min-height: auto;
-    padding: 54px 28px 110px;
+    padding: 40px 12px 90px;
+    border-radius: 0;
   }
 
   .hp-leadership-quote {
@@ -4684,8 +4706,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-leadership-left h3 {
-    font-size: 42px;
-    margin-bottom: 18px;
+    font-size: clamp(32px, 8vw, 42px);
+    margin-bottom: 12px;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .hp-leadership-left p {
@@ -4704,6 +4728,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     font-size: 18px;
     margin-bottom: 32px !important;
   }
+  .hp-leadership-comma-wrapper {
+    display: none;
+  }
+
 
   /* ---- NEWS SECTION ---- */
   .hp-news-section-new {
@@ -5372,7 +5400,11 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .hp-trusted-grid-inner {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hp-trusted-grid-inner > div:nth-child(n+9) {
+    display: none !important;
   }
 
   .hp-trusted-header h2 {
@@ -6541,12 +6573,29 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 @media (max-width: 1024px) {
   .hp-divisions-section {
-    padding: 60px 30px;
+    padding: 60px 0;
+  }
+  .hp-divisions-main-title {
+    padding: 0 30px;
   }
   .hp-divisions-grid-new {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    max-width: 100%;
     gap: 16px;
+    padding: 0 30px 20px 30px !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+  }
+  .hp-divisions-grid-new::-webkit-scrollbar {
+    display: none !important;
+  }
+  .hp-divisions-grid-new .hp-cat-card {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    scroll-snap-align: center !important;
   }
   .hp-cat-card-title {
     font-size: 16px !important;
@@ -6558,7 +6607,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
 @media (max-width: 768px) {
   .hp-divisions-section {
-    padding: 50px 20px;
+    padding: 50px 0;
   }
   .hp-divisions-main-title {
     font-size: 40px;
@@ -6566,9 +6615,12 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     padding: 0 20px;
   }
   .hp-divisions-grid-new {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 580px;
     gap: 12px;
+    padding: 0 20px 20px 20px !important;
+  }
+  .hp-divisions-grid-new .hp-cat-card {
+    flex: 0 0 280px !important;
+    width: 280px !important;
   }
   .hp-cat-card-title {
     font-size: 14px !important;
@@ -6579,12 +6631,12 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 @media (max-width: 480px) {
-  .hp-divisions-grid-new {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    gap: 16px;
+  .hp-divisions-grid-new .hp-cat-card {
+    flex: 0 0 260px !important;
+    width: 260px !important;
   }
 }
+
 
 
 /* WHY GR NEW */
@@ -6618,6 +6670,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 .why-gr-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   position: relative;
   background-image: 
     linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
@@ -6923,5 +6976,786 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     font-size: 13px !important;
     padding: 8px 16px !important;
     flex-wrap: wrap !important;
+  }
+}
+
+/* Certifications main heading base size */
+.certs-main-heading {
+  font-size: 48px;
+}
+
+/* Clients section heading base size */
+.clients-section-heading {
+  font-size: 70px;
+}
+
+/* Palazzoli project cards grid */
+.palazzoli-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+/* Projects heading base size */
+.projects-main-heading {
+  font-size: 70px;
+}
+
+/* ============================================================ */
+/* RESPONSIVE: TABLET (769px – 1024px)                          */
+/* ============================================================ */
+@media (max-width: 1024px) and (min-width: 769px) {
+
+  /* --- Global Headings --- */
+  h2, .hp-divisions-main-title, .about-header h2, .cta-section h2,
+  .prod-grid-header h2, .hp-products-dist h2, .hp-cert-left h2,
+  .hp-trusted-header h2, .hp-projects-top-fixed h2, .hp-news-feature h2,
+  .hp-git-left h2, .hp-contact-card h2, .projects-trusted-bar h2 {
+    font-size: 52px !important;
+  }
+
+  /* --- Certifications Page --- */
+  .certs-hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+  .certs-hero-title {
+    font-size: 56px !important;
+  }
+  .certs-main-heading {
+    font-size: 36px !important;
+  }
+  .certs-container {
+    padding: 0 30px !important;
+  }
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+  }
+  .cert-card {
+    min-height: 280px;
+  }
+
+  /* --- Clients Page --- */
+  .clients-hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+  .clients-hero-content {
+    padding: 0 40px;
+  }
+  .clients-hero-subtitle {
+    font-size: 52px !important;
+    white-space: normal !important;
+  }
+  .clients-hero-subheading {
+    font-size: 26px !important;
+    white-space: normal !important;
+  }
+  .clients-brands-header {
+    padding: 0 40px;
+  }
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .clients-section-heading {
+    font-size: 48px !important;
+  }
+
+  /* --- Projects Page --- */
+  .projects-page-wrapper .new-prod-title {
+    font-size: 52px !important;
+  }
+  .projects-trusted-bar h2 {
+    font-size: 40px !important;
+  }
+  .projects-grid-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 0 40px 60px !important;
+    gap: 24px;
+  }
+  .projects-main-heading {
+    font-size: 48px !important;
+  }
+  .palazzoli-project-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* --- Information Page --- */
+  .info-hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+  .info-hero-content h1 {
+    font-size: 52px !important;
+  }
+  .info-grid-figma-tight {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+  .info-card-figma-exact {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 260px;
+  }
+  .info-card-inner-exact {
+    padding: 24px;
+  }
+  .section-header-figma-centered h2 {
+    font-size: 48px !important;
+  }
+  .section-description-centered {
+    font-size: 16px !important;
+  }
+  .info-download-all-btn-figma {
+    width: 220px;
+    font-size: 16px;
+  }
+
+  /* --- Product Page --- */
+  .new-prod-title {
+    font-size: 52px !important;
+  }
+  .new-prod-section-title {
+    font-size: 48px !important;
+  }
+}
+
+
+/* ============================================================ */
+/* RESPONSIVE: MOBILE (≤768px)                                   */
+/* ============================================================ */
+@media (max-width: 768px) {
+
+  /* --- Global Headings --- */
+  h2, .hp-divisions-main-title, .about-header h2, .cta-section h2,
+  .prod-grid-header h2, .hp-products-dist h2, .hp-cert-left h2,
+  .hp-trusted-header h2, .hp-projects-top-fixed h2, .hp-news-feature h2,
+  .hp-git-left h2, .hp-contact-card h2, .projects-trusted-bar h2 {
+    font-size: 32px !important;
+  }
+
+  /* --- Certifications Page --- */
+  .certs-hero {
+    height: 50vh;
+    min-height: 280px;
+  }
+  .certs-hero-content {
+    left: 20px;
+    right: 20px;
+    padding-top: 0;
+  }
+  .certs-hero-title {
+    font-size: 32px !important;
+  }
+  .certs-hero-subtitle {
+    font-size: 14px !important;
+  }
+  .certs-section-bg {
+    padding: 40px 0 50px;
+  }
+  .certs-main-heading {
+    font-size: 28px !important;
+  }
+  .certs-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 24px;
+  }
+  .certs-container {
+    padding: 0 16px !important;
+  }
+  .certs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .cert-card {
+    min-height: auto;
+    padding: 24px 16px 20px;
+  }
+  .cert-logo-circle {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+  .cert-card-title {
+    font-size: 14px !important;
+  }
+  .cert-card-actions {
+    gap: 10px;
+  }
+  .cert-view-link {
+    font-size: 14px !important;
+  }
+  .cert-download-btn {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+  }
+
+  /* --- Clients Page --- */
+  .clients-hero {
+    height: 50vh;
+    min-height: 280px;
+  }
+  .clients-hero-content {
+    padding: 0 20px;
+  }
+  .clients-hero-subtitle {
+    font-size: 36px !important;
+    white-space: normal !important;
+  }
+  .clients-hero-subheading {
+    font-size: 18px !important;
+    white-space: normal !important;
+    margin-bottom: 16px;
+  }
+  .clients-hero-description {
+    font-size: 14px !important;
+    max-width: 100%;
+  }
+  .clients-brands-section {
+    padding: 40px 0 0;
+  }
+  .clients-brands-header {
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .client-card {
+    padding: 16px;
+  }
+  .clients-section-heading {
+    font-size: 32px !important;
+  }
+
+  /* --- Projects Page --- */
+  .projects-page-wrapper .new-prod-hero-section {
+    padding: 80px 20px 20px !important;
+  }
+  .projects-page-wrapper .new-prod-title {
+    font-size: 36px !important;
+    text-align: center;
+  }
+  .projects-page-wrapper .new-prod-cat-card {
+    flex: 0 0 200px !important;
+    width: 200px !important;
+  }
+  .projects-trusted-bar {
+    padding: 30px 20px !important;
+  }
+  .projects-trusted-bar h2 {
+    font-size: 28px !important;
+  }
+  .projects-grid-container {
+    grid-template-columns: 1fr !important;
+    padding: 0 20px 50px !important;
+    gap: 30px;
+  }
+  .projects-main-heading {
+    font-size: 32px !important;
+  }
+  .project-detail-card {
+    border-radius: 12px !important;
+  }
+  .project-card-image {
+    height: 220px !important;
+  }
+  .project-card-info h3 {
+    font-size: 20px !important;
+  }
+  .project-card-info .project-desc {
+    font-size: 14px !important;
+  }
+
+  /* Flip cards for Palazzoli projects */
+  .palazzoli-project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .flip-card {
+    height: 280px !important;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    padding: 24px 20px 20px !important;
+    border-radius: 20px !important;
+  }
+
+  /* --- Information Page --- */
+  .info-hero {
+    height: 50vh;
+    min-height: 280px;
+    padding: 0 20px;
+  }
+  .info-hero-content h1 {
+    font-size: 36px !important;
+    margin-bottom: 20px;
+  }
+  .info-main-section {
+    padding: 60px 0;
+  }
+  .container-full {
+    padding: 0 20px;
+  }
+  .section-header-figma-centered h2 {
+    font-size: 32px !important;
+  }
+  .section-description-centered {
+    font-size: 14px !important;
+    margin: 0 auto 24px;
+  }
+  .download-all-right-wrapper {
+    justify-content: center;
+  }
+  .info-download-all-btn-figma {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    height: 42px;
+  }
+  .info-grid-figma-tight {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .info-card-figma-exact {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250px;
+  }
+  .info-card-inner-exact {
+    padding: 20px;
+  }
+  .info-card-download-btn-exact {
+    width: 100% !important;
+    font-size: 18px;
+    height: 42px;
+  }
+
+  /* --- Product Page --- */
+  .new-prod-title {
+    font-size: 36px !important;
+  }
+  .new-prod-section-title {
+    font-size: 28px !important;
+  }
+}
+
+
+/* ============================================================ */
+/* RESPONSIVE: SMALL MOBILE (≤480px)                             */
+/* ============================================================ */
+@media (max-width: 480px) {
+
+  /* --- Global headings --- */
+  h2, .hp-divisions-main-title, .about-header h2, .cta-section h2,
+  .prod-grid-header h2, .hp-products-dist h2, .hp-cert-left h2,
+  .hp-trusted-header h2, .hp-projects-top-fixed h2, .hp-news-feature h2,
+  .hp-git-left h2, .hp-contact-card h2, .projects-trusted-bar h2 {
+    font-size: 26px !important;
+  }
+
+  /* --- Certifications --- */
+  .certs-hero-title {
+    font-size: 26px !important;
+  }
+  .certs-main-heading {
+    font-size: 24px !important;
+  }
+
+  /* --- Clients --- */
+  .clients-hero-subtitle {
+    font-size: 28px !important;
+  }
+  .clients-hero-subheading {
+    font-size: 16px !important;
+  }
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .clients-section-heading {
+    font-size: 24px !important;
+  }
+
+  /* --- Projects --- */
+  .projects-page-wrapper .new-prod-title {
+    font-size: 28px !important;
+  }
+  .projects-trusted-bar h2 {
+    font-size: 24px !important;
+  }
+  .projects-main-heading {
+    font-size: 24px !important;
+  }
+  .project-card-image {
+    height: 180px !important;
+  }
+  .flip-card {
+    height: 260px !important;
+  }
+
+  /* --- Information --- */
+  .info-hero-content h1 {
+    font-size: 28px !important;
+  }
+  .section-header-figma-centered h2 {
+    font-size: 26px !important;
+  }
+  .info-card-title-figma-exact {
+    font-size: 15px;
+  }
+  .brand-header-figma-exact {
+    width: 120px !important;
+    height: 40px !important;
+  }
+
+  /* --- Product Page --- */
+  .new-prod-title {
+    font-size: 28px !important;
+  }
+  .new-prod-section-title {
+    font-size: 24px !important;
+  }
+}
+
+/* --- Hero Responsiveness Fix --- */
+.hp-hero-title-desktop {
+  font-size: 100px;
+  line-height: 0.95;
+  margin-top: -50px;
+}
+
+.hp-hero-title-nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .hp-hero-title-desktop {
+    font-size: clamp(46px, 8vw, 76px) !important;
+    margin-top: 0 !important;
+    line-height: 1.1 !important;
+  }
+  .hp-hero-title-nowrap {
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-hero-title-desktop {
+    font-size: clamp(36px, 10vw, 46px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-hero-title-desktop {
+    font-size: 32px !important;
+  }
+}
+
+/* --- Stats Background Fix for Mobile & Tablet --- */
+@media (max-width: 1024px) {
+  .hp-stats-container {
+    background: #1A1A1A url('/Images/Home/bg2.svg?v=1') no-repeat center center !important;
+    background-size: cover !important;
+  }
+  .hp-stats-stage {
+    background: transparent !important;
+  }
+  .hp-stats-stage::before,
+  .hp-stats-stage::after,
+  .hp-stats-bg {
+    display: none !important;
+  }
+}
+
+/* --- Why Gulf Radiant Mobile & Tablet Fix --- */
+@media (max-width: 1024px) {
+  .why-gr .container {
+    padding: 0 40px !important;
+  }
+  .why-gr-item {
+    border: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-gr .container {
+    padding: 0 20px !important;
+  }
+  .why-gr-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 1fr !important;
+    background-image: 
+      linear-gradient(to bottom, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+      linear-gradient(to right, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%),
+      linear-gradient(to right, rgba(26,26,26,0) 2%, #1a1a1a 15%, #1a1a1a 85%, rgba(26,26,26,0) 98%) !important;
+    background-size: 
+      1px 100%, 
+      100% 1px, 
+      100% 1px !important;
+    background-position: 
+      50% 0, 
+      0 33.333%, 
+      0 66.666% !important;
+  }
+  .why-gr-item {
+    padding: 30px 15px !important;
+    text-align: center;
+    border: none !important;
+  }
+  .why-gr-item h4 {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+  }
+  .why-gr-item p {
+    font-size: 14px !important;
+  }
+  .why-gr-item .feature-icon {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* --- Certification Layout Fix --- */
+@media (max-width: 1024px) {
+  .hp-cert-btn-container {
+    justify-content: flex-start !important;
+  }
+  .hp-cert-section {
+    height: 160vh !important;
+    min-height: auto !important;
+  }
+  .hp-cert-right-container, .hp-cert-scroll-window {
+    min-height: 250px !important;
+    height: 250px !important;
+  }
+}
+
+/* --- Absolute Overrides for Trusted Grid --- */
+@media (max-width: 1024px) {
+  .hp-trusted-section .hp-trusted-grid-inner {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .hp-trusted-section .hp-trusted-grid-inner > div {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-trusted-section .hp-trusted-grid-inner {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .hp-trusted-section .hp-trusted-grid-inner > div:nth-child(n+9) {
+    display: none !important;
+  }
+}
+/* --- Leadership Card Mobile Fix --- */
+@media (max-width: 1024px) {
+  .hp-quote-banner-new {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .hp-leadership-card {
+    width: calc(100% - 64px) !important; /* 32px margin on each side for tablet */
+    border-radius: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-leadership-card {
+    width: calc(100% - 48px) !important; /* 24px margin on each side for mobile */
+  }
+}
+
+/* --- News Section Mobile/Tablet Fix --- */
+@media (max-width: 1024px) {
+  .hp-news-section-new {
+    height: auto !important;
+    padding: 60px 24px !important;
+  }
+
+  .hp-news-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    grid-template-columns: unset !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .hp-news-feature {
+    width: 100% !important;
+  }
+
+  .hp-latest-posts {
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  .hp-latest-item {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .hp-latest-thumb {
+    width: 120px !important;
+    height: 90px !important;
+  }
+
+  .hp-latest-copy h4 {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-news-section-new {
+    padding: 40px 20px !important;
+  }
+
+  .hp-latest-item {
+    grid-template-columns: 100px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .hp-latest-thumb {
+    width: 100px !important;
+    height: 75px !important;
+  }
+}
+
+/* --- News Section overflow fix --- */
+.hp-news-section-new {
+  overflow: hidden;
+}
+
+/* --- News Latest Posts Mobile Polish --- */
+@media (max-width: 768px) {
+  .hp-latest-item {
+    align-items: flex-start !important;
+  }
+
+  .hp-latest-thumb {
+    flex-shrink: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  .hp-latest-copy h4 {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .hp-latest-copy .hp-latest-meta {
+    font-size: 11px !important;
+  }
+
+  .hp-latest-list {
+    gap: 20px !important;
+  }
+}
+
+/* --- Featured news card title size fix for mobile --- */
+@media (max-width: 768px) {
+  .hp-news-feature-info h3 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* --- Featured card overlay compact fix for mobile --- */
+@media (max-width: 768px) {
+  .hp-news-feature-info {
+    padding: 10px 14px !important;
+    gap: 6px !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  .hp-news-pill {
+    font-size: 11px !important;
+    height: 24px !important;
+    padding: 0 10px !important;
+    gap: 6px !important;
+  }
+
+  .hp-news-pill span {
+    height: 8px !important;
+    width: 8px !important;
+  }
+}
+
+/* --- Featured card height & overlay max-height fix for mobile --- */
+@media (max-width: 768px) {
+  .hp-news-feature-card {
+    aspect-ratio: unset !important;
+    height: 260px !important;
+  }
+
+  .hp-news-feature-info {
+    max-height: 90px !important;
+    overflow: hidden !important;
+  }
+}
+
+/* --- Contact Section Mobile/Tablet Fix --- */
+.hp-contact-banner-new {
+  padding: 80px 40px;
+}
+
+.hp-git-form-card {
+  padding: 40px;
+}
+
+@media (max-width: 1024px) {
+  .hp-contact-banner-new {
+    padding: 60px 24px !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .hp-contact-inner-new {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 40px !important;
+  }
+
+  .hp-git-form-card {
+    padding: 30px !important;
+    max-width: 100% !important;
+  }
+
+  .hp-git-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-contact-banner-new {
+    padding: 50px 20px !important;
+  }
+
+  .hp-git-form-card {
+    padding: 24px !important;
+  }
+}
+
+/* --- Contact Banner overflow/clip fix for mobile & tablet --- */
+@media (max-width: 1024px) {
+  .hp-contact-banner-new {
+    overflow: visible !important;
+    min-height: unset !important;
+    height: auto !important;
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hp-contact-bg-img {
+    position: fixed !important;
+    clip-path: inset(0) !important;
   }
 }

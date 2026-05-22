@@ -77,7 +77,7 @@ export default function CertificationsPage() {
               <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
             </div>
           </div>
-          <h2 className="certs-section-title">
+          <h2 className="certs-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "600", textAlign: "center", margin: "20px auto", color: "#ffffff", width: "100%" }}>
             Industry Certifications & Approvals
           </h2>
         </div>
