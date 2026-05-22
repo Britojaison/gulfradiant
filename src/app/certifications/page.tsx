@@ -77,7 +77,7 @@ export default function CertificationsPage() {
               <span style={{ color: "#ffffff" }}>QUALITY - CERTIFIED • </span>
             </div>
           </div>
-          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "48px", fontWeight: "600", textAlign: "center", margin: "20px auto", color: "#ffffff", width: "100%" }}>
+          <h2 className="certs-section-title">
             Industry Certifications & Approvals
           </h2>
         </div>
@@ -183,12 +183,111 @@ export default function CertificationsPage() {
       )}
 
       <style jsx global>{`
+        /* GRID & CARDS LAYOUT */
+        .certs-grid {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 40px !important;
+          justify-content: center !important;
+        }
+
         /* HERO FONT SIZES */
         .certs-hero-title {
           font-size: 96px !important;
         }
         .certs-hero-subtitle {
           font-size: 18px !important;
+        }
+        .certs-section-title {
+          font-family: var(--font-degular), sans-serif;
+          font-size: 48px !important;
+          font-weight: 600;
+          text-align: center;
+          margin: 20px auto;
+          color: #ffffff;
+          width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+          .certs-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 30px !important;
+          }
+          .certs-hero {
+            height: auto !important;
+            min-height: 50vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
+          }
+          .certs-hero-content {
+            position: relative !important;
+            top: auto !important;
+            transform: none !important;
+            left: 40px !important;
+            max-width: 100% !important;
+            padding-top: 0 !important;
+          }
+          .certs-hero-title {
+            font-size: 48px !important;
+          }
+          .certs-hero-subtitle {
+            font-size: 16px !important;
+          }
+          .certs-section-title {
+            font-size: 36px !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .certs-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px !important;
+          }
+          .cert-card {
+            padding: 24px 16px !important;
+          }
+          .cert-logo-circle {
+            width: 120px !important;
+            height: 120px !important;
+            margin-bottom: 20px !important;
+          }
+          .certs-hero {
+            height: auto !important;
+            min-height: 50vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
+          }
+          .certs-hero-content {
+            position: relative !important;
+            top: auto !important;
+            transform: none !important;
+            left: 20px !important;
+            right: 20px !important;
+            max-width: 100% !important;
+            padding-top: 0 !important;
+          }
+          .certs-hero-title {
+            font-size: 28px !important;
+          }
+          .certs-hero-subtitle {
+            font-size: 14px !important;
+          }
+          .certs-section-title {
+            font-size: 28px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .certs-grid {
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+          }
         }
 
         /* CERTIFICATE MODAL */

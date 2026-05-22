@@ -3550,7 +3550,7 @@ h6,
   }
 
   .certs-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -3672,7 +3672,7 @@ h6,
 
 @media (max-width: 1024px) {
   .certs-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
@@ -5124,7 +5124,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .certs-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px;
   }
 
@@ -5362,6 +5362,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 /* SMALL MOBILE (≤480px)          */
 /* ============================== */
 @media (max-width: 480px) {
+  .certs-grid {
+    grid-template-columns: 1fr !important;
+  }
 
   .hp-hero-content h1 {
     font-size: 28px;
@@ -6379,6 +6382,29 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   font-size: 18px !important;
   line-height: 160% !important;
 }
+
+/* Responsive Overrides for Hero Fonts across Projects, Clients, and Certifications pages */
+@media (max-width: 1024px) {
+  .projects-hero-content h1,
+  .clients-hero-subtitle,
+  .certs-hero-title {
+    font-size: 48px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-hero-content h1,
+  .clients-hero-subtitle,
+  .certs-hero-title {
+    font-size: 28px !important;
+  }
+  .projects-hero-content p,
+  .clients-hero-description,
+  .certs-hero-subtitle {
+    font-size: 14px !important;
+  }
+}
+
 
 /* Product Divisions Section */
 .hp-divisions-section {

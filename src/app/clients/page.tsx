@@ -49,7 +49,7 @@ export default function ClientsPage() {
               <span>PARTNER NETWORK • </span>
             </div>
           </div>
-          <h2 style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
+          <h2 style={{ textAlign: "center", margin: "20px 0", color: "#1e1e1e", width: "100%" }}>
             Our Partnered Brands
           </h2>
         </div>
@@ -231,19 +231,47 @@ export default function ClientsPage() {
         }
 
         @media (max-width: 1024px) {
-          .clients-hero-content { padding: 0 40px; }
+          .clients-hero {
+            height: auto !important;
+            min-height: 50vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
+          }
+          .clients-hero-content {
+            position: relative !important;
+            top: auto !important;
+            transform: none !important;
+            padding: 0 40px !important;
+          }
           .clients-brands-header { padding: 0 40px; }
-          .clients-hero-subtitle { font-size: 52px; }
+          .clients-hero-subtitle { font-size: 52px !important; }
           .clients-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 768px) {
-          .clients-hero-content { padding: 0 20px; text-align: left; }
+          .clients-hero {
+            height: auto !important;
+            min-height: 50vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
+          }
+          .clients-hero-content {
+            position: relative !important;
+            top: auto !important;
+            transform: none !important;
+            padding: 0 20px !important;
+          }
           .clients-hero-text-wrapper { text-align: left; }
           .clients-brands-header { padding: 0 20px; margin-bottom: 30px; text-align: left; }
-          .clients-hero-subtitle { font-size: 40px; text-align: left; }
-          .clients-hero-subheading { font-size: 20px; text-align: left; }
-          .clients-hero-description { font-size: 14px; text-align: left; }
+          .clients-hero-subtitle { font-size: 28px !important; text-align: left; white-space: normal; }
+          .clients-hero-subheading { font-size: 20px !important; text-align: left; white-space: normal; }
+          .clients-hero-description { font-size: 14px !important; text-align: left; }
           .section-title-inline { font-size: 30px; }
           .clients-grid { grid-template-columns: repeat(2, 1fr); }
           .client-card { padding: 16px; }
