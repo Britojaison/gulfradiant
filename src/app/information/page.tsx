@@ -446,7 +446,7 @@ export default function InformationPage() {
           .container-full { padding: 0 20px; }
           .info-hero { padding-left: 20px; padding-right: 20px; }
           .info-hero-content h1 { font-size: 42px !important; }
-          .section-header-figma-centered h2 { font-size: 38px !important; }
+          .section-header-figma-centered h2 { font-size: 28px !important; }
           .section-description-centered { font-size: 16px !important; }
           .download-all-right-wrapper { justify-content: center; margin-top: 30px; }
         }

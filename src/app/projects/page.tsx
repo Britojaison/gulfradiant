@@ -197,11 +197,11 @@ function ProjectsPageContent() {
 
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Projects</h1>
+            <h1 className="new-prod-title">Our Projects</h1>
           </div>
 
           {/* CATEGORY CAROUSEL */}
-          <div className="new-prod-cat-grid" ref={carouselRef} style={{ justifyContent: "center" }}>
+          <div className="new-prod-cat-grid" ref={carouselRef}>
             {CATEGORY_MAP.map((cat) => {
               const isActive = selectedCategory === cat.id;
               return (
@@ -250,7 +250,7 @@ function ProjectsPageContent() {
 
       {/* TRUSTED BAR */}
       <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 0 40px 0", background: "#ffffff" }}>
-        <h2 style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Trusted by Clients Across Industries</h2>
+        <h2 className="projects-trusted-main-title" style={{ color: "#000000", margin: "0" }}>Trusted by Clients Across Industries</h2>
       </div>
 
       {/* 2ND SECTION: PROJECTS GRID / TEXT TABLE */}
