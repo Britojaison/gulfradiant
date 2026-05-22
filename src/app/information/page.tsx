@@ -303,14 +303,16 @@ export default function InformationPage() {
         /* GRID & CARDS FIGMA EXACT */
         .info-grid-figma-tight {
           display: grid;
-          grid-template-columns: repeat(4, 315px);
-          justify-content: space-between;
-          gap: 30px 0;
+          grid-template-columns: repeat(4, 1fr);
+          justify-content: center;
+          gap: 30px;
           width: 100%;
         }
 
         .info-card-figma-exact {
-          width: 315px;
+          width: 100%;
+          max-width: 315px;
+          margin: 0 auto;
           height: 282px;
           opacity: 0;
           transform: translateY(30px);
@@ -376,7 +378,8 @@ export default function InformationPage() {
           background: #FF5B05;
           color: #fff;
           text-decoration: none;
-          width: 255px;
+          width: 100%;
+          max-width: 255px;
           height: 39px;
           display: flex;
           align-items: center;
@@ -426,22 +429,26 @@ export default function InformationPage() {
           background: #ff742e;
         }
 
-        @media (max-width: 1200px) {
-          .info-grid-figma { grid-template-columns: repeat(3, 1fr); }
+        /* Responsive Breakpoints */
+        @media (max-width: 1300px) {
+          .info-grid-figma-tight { grid-template-columns: repeat(3, 1fr); }
         }
 
-        @media (max-width: 992px) {
-          .info-grid-figma { grid-template-columns: repeat(2, 1fr); }
-          .section-header-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-          .info-hero-content h1 { font-size: 70px; }
+        @media (max-width: 1024px) {
+          .info-grid-figma-tight { grid-template-columns: repeat(2, 1fr); }
+          .section-header-figma-centered h2 { font-size: 54px !important; }
+          .section-description-centered { font-size: 18px !important; padding: 0 20px; }
+          .info-hero-content h1 { font-size: 60px !important; }
         }
 
         @media (max-width: 600px) {
-          .info-grid-figma { grid-template-columns: 1fr; }
-          .container { padding: 0 24px; }
-          .info-hero { padding-left: 24px; }
-          .info-hero-content h1 { font-size: 50px; }
-          .info-card-figma-inner { height: auto; min-height: 280px; }
+          .info-grid-figma-tight { grid-template-columns: 1fr; }
+          .container-full { padding: 0 20px; }
+          .info-hero { padding-left: 20px; padding-right: 20px; }
+          .info-hero-content h1 { font-size: 42px !important; }
+          .section-header-figma-centered h2 { font-size: 38px !important; }
+          .section-description-centered { font-size: 16px !important; }
+          .download-all-right-wrapper { justify-content: center; margin-top: 30px; }
         }
       `}</style>
     </div>
