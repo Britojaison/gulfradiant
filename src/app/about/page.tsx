@@ -830,61 +830,249 @@ export default function AboutPage() {
           justify-content: center;
         }
 
+        /* ── TABLET (≤1024px) ── */
         @media (max-width: 1024px) {
           .container { padding: 0 40px; }
-          .hp-navbar { padding: 30px 40px; }
+
+          /* Hero */
           .about-hero { padding-left: 40px; }
-          .about-hero-content h1 { font-size: 52px; }
-          .about-info-container { flex-direction: column; gap: 50px; padding: 0 40px; }
-          .about-image-side { flex: 0 0 auto; width: 100%; aspect-ratio: 16/9; }
-          .about-text-side { padding-top: 0; }
-          .about-main-title { font-size: 38px; margin-bottom: 30px; }
-          .why-gr-grid { grid-template-columns: repeat(2, 1fr); background: none; border: 1px solid #eeeeee; }
-          .why-gr-item { border: 1px solid #eeeeee; }
-          .capabilities-grid { grid-template-columns: repeat(2, 1fr); height: auto; }
-          .cap-column { border-bottom: 1px solid #eeeeee; }
-          .clientele-content { flex-direction: column; height: auto; }
-          .clientele-tabs { flex: 0 0 auto; border-right: none; border-bottom: 1px solid #eeeeee; }
-          .segment-tab { padding: 20px; }
-          .clientele-info-side { flex: 0 0 auto; }
-          .info-box { padding: 40px; }
-          .timeline-labels { flex-direction: column; gap: 40px; padding-top: 0; padding-left: 20px; }
-          .timeline-line { width: 1px; height: 100%; left: 0; top: 0; }
-          .time-dot { top: 10px; left: -24px; }
-          .timeline-item { padding-right: 0; }
-          .trusted-title { font-size: 38px; }
-          .cta-section h2 { font-size: 42px; }
-          .btn-orange, .btn-outline-dark { font-size: 20px; height: 56px; }
+          .about-hero-dots { left: 40px; }
+          .about-hero-content h1 { font-size: 54px !important; }
+          .about-hero-content p { font-size: 17px; }
+
+          /* Divisions */
+          .divisions-content-wrapper { padding: 0 40px; gap: 28px; }
+          .division-block-left, .division-block-right {
+            width: 100%;
+            height: auto;
+            padding: 32px;
+          }
+          .division-block-right { align-self: flex-end; width: 90%; }
+
+          /* Capabilities — 2-column grid */
+          .capabilities-new { height: auto; }
+          .capabilities-content {
+            flex-direction: column !important;
+            padding: 60px 40px;
+            align-items: stretch;
+            justify-content: flex-start;
+          }
+          .capabilities-center-text {
+            position: static;
+            transform: none;
+            text-align: center;
+            order: -1;
+            margin-bottom: 24px;
+          }
+          .capabilities-center-text h2 { font-size: 52px !important; }
+          /* Stack both cap-column-sides side by side in a 2-col grid */
+          .capabilities-content .cap-column-side {
+            width: 100%;
+            height: auto;
+            display: contents;
+          }
+          .capabilities-content {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+          }
+          .capabilities-center-text {
+            grid-column: 1 / -1;
+            order: 0;
+          }
+          .cap-glass-card {
+            width: 100%;
+            height: auto;
+            padding: 28px;
+            border-radius: 16px;
+          }
+          .cap-glass-card h4 { font-size: 26px; margin-bottom: 14px; }
+          .cap-glass-card ul li { font-size: 14px; margin-bottom: 10px; }
+
+          /* Timeline — horizontal, 50vh */
+          .timeline-section-new { height: 50vh; min-height: 320px; }
+          .timeline-content {
+            padding: 40px 40px 50px;
+            justify-content: center;
+          }
+          .timeline-title-new { font-size: 42px !important; margin-bottom: 50px; }
+          .timeline-labels-new { padding-top: 20px; }
+          .time-year-new { font-size: 22px; }
+          .timeline-item-new h4 { font-size: 18px; }
+          .timeline-item-new p { font-size: 13px; }
+          .time-dot-new { top: -50px; }
+
+          /* Trusted section */
+          .trusted-cert-title { font-size: 52px !important; }
         }
 
+        /* ── MOBILE (≤768px) ── */
         @media (max-width: 768px) {
           .container { padding: 0 20px; }
-          .hp-navbar { padding: 15px 20px; }
-          .hp-navbar-logo img { width: 140px !important; height: auto !important; }
-          .about-hero { padding-left: 20px; height: 100vh; }
-          .about-hero-content { width: 100%; padding-right: 20px; }
-          .about-hero-content h1 { font-size: 32px; text-align: left; line-height: 1.2; margin-top: 10px; }
+
+          /* Hero */
+          .about-hero {
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 100svh;
+            align-items: flex-end;
+            padding-bottom: 80px;
+          }
+          .about-hero-dots { left: 20px; bottom: 24px; }
+          .about-hero-content { max-width: 100%; }
+          .about-hero-content h1 {
+            font-size: 36px !important;
+            line-height: 1.15 !important;
+            margin-bottom: 16px;
+          }
           .about-hero-content h1 br { display: none; }
-          .about-tag { margin-bottom: 5px !important; }
-          .about-info-container { padding: 0 20px; gap: 30px; }
-          .about-main-info { padding: 50px 0 20px; }
-          .about-main-title { font-size: 32px; text-align: left; }
-          .why-gr { padding: 20px 0 50px; }
-          .why-gr-grid { grid-template-columns: 1fr; margin-top: 30px; }
-          .why-gr-item { padding: 30px 20px; }
-          .capabilities { padding: 50px 0; }
-          .capabilities .section-header h2 { font-size: 32px; text-align: left; }
-          .capabilities-grid { grid-template-columns: 1fr; border-right: 1px solid #eeeeee; margin-top: 20px; }
-          .timeline-section { padding: 50px 0; }
-          .timeline-title { font-size: 30px; margin-bottom: 30px; text-align: left; }
-          .clientele { padding: 50px 0; }
-          .info-box { padding: 30px 20px; }
-          .trusted-leaders { padding: 40px 0; }
-          .trusted-title { font-size: 30px; text-align: left; }
-          .cta-section { padding: 60px 0; }
-          .cta-section h2 { font-size: 32px; text-align: center; }
-          .cta-btns { flex-direction: column; align-items: center; gap: 15px; }
-          .btn-orange, .btn-outline-dark { width: 100%; max-width: 280px; }
+          .about-hero-content p { font-size: 14px; }
+
+          /* Divisions — stack vertically */
+          .divisions-section-new { height: auto; }
+          .divisions-content-wrapper {
+            padding: 80px 20px 60px;
+            height: auto;
+            gap: 20px;
+          }
+          .division-block-left, .division-block-right {
+            width: 100% !important;
+            height: auto;
+            padding: 24px 20px;
+            align-self: auto !important;
+            text-align: left !important;
+            border-radius: 16px;
+          }
+          .division-block-left h2, .division-block-right h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+          }
+          .division-block-left p, .division-block-right p { font-size: 14px; }
+
+          /* Capabilities — stack layout */
+          .capabilities-new { height: auto; }
+          .capabilities-content {
+            flex-direction: column !important;
+            padding: 80px 20px 60px;
+            gap: 24px;
+            align-items: stretch;
+            justify-content: flex-start;
+          }
+          .capabilities-center-text {
+            position: static;
+            transform: none;
+            text-align: center;
+            order: -1;
+            margin-bottom: 8px;
+          }
+          .capabilities-center-text h2 {
+            font-size: 40px !important;
+            color: #ffffff;
+          }
+          .cap-column-side {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            gap: 16px;
+          }
+          .cap-glass-card {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            border-radius: 14px;
+          }
+          .cap-glass-card h4 { font-size: 22px; margin-bottom: 12px; }
+          .cap-glass-card ul li { font-size: 14px; margin-bottom: 8px; }
+
+          /* Timeline — stack items vertically */
+          .timeline-section-new { height: auto; }
+          .timeline-content {
+            padding: 80px 20px 60px;
+            align-items: flex-start;
+          }
+          .timeline-title-new {
+            font-size: 36px !important;
+            margin-bottom: 50px;
+            text-align: left;
+          }
+          .timeline-labels-new {
+            flex-direction: column;
+            gap: 40px;
+            padding-top: 0;
+            padding-left: 24px;
+            border-left: 1px solid rgba(255,255,255,0.3);
+          }
+          .timeline-line-new { display: none; }
+          .timeline-item-new {
+            padding-right: 0;
+            padding-top: 0;
+          }
+          .time-dot-new {
+            top: 4px;
+            left: -30px;
+            width: 8px;
+            height: 8px;
+          }
+          .time-year-new { font-size: 20px; margin-bottom: 6px; }
+          .timeline-item-new h4 { font-size: 18px; margin-bottom: 4px; }
+          .timeline-item-new p { font-size: 14px; }
+
+          /* Trusted & Certified */
+          .trusted-cert-section { padding: 60px 0 80px; }
+          .trusted-cert-title { font-size: 36px !important; margin-bottom: 40px; }
+        }
+
+        /* ── TABLET TIMELINE OVERRIDE (must come AFTER mobile to win cascade) ── */
+        @media (min-width: 600px) and (max-width: 1024px) {
+          /* Force timeline horizontal on tablet and exact same styles as laptop, just 50vh height */
+          .timeline-section-new {
+            height: 50vh !important;
+            min-height: 400px !important;
+          }
+          /* We clear out all the smaller font/padding overrides so it naturally inherits the laptop CSS */
+          .timeline-content {
+            padding: 80px 10% !important;
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          .timeline-title-new {
+            text-align: center !important;
+            margin-bottom: 120px !important;
+          }
+          .timeline-labels-new {
+            flex-direction: row !important;
+            border-left: none !important;
+            padding-left: 0 !important;
+            padding-top: 30px !important;
+            gap: 0 !important;
+          }
+          .timeline-line-new {
+            display: block !important;
+          }
+          .timeline-item-new {
+            padding-right: 20px !important;
+            padding-top: 0 !important;
+          }
+          .time-dot-new {
+            top: -65px !important;
+            left: 0 !important;
+            width: 10px !important;
+            height: 10px !important;
+          }
+          .time-year-new {
+            font-size: 24px !important;
+          }
+          .timeline-item-new h4 {
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            margin-bottom: 4px !important;
+          }
+          .timeline-item-new p {
+            font-size: 13px !important;
+            line-height: 1.4 !important;
+            font-weight: 300 !important;
+          }
         }
       `}</style>
     </div>
