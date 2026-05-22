@@ -436,9 +436,9 @@ export default function InformationPage() {
 
         @media (max-width: 1024px) {
           .info-grid-figma-tight { grid-template-columns: repeat(2, 1fr); }
-          .section-header-figma-centered h2 { font-size: 54px !important; }
+          .section-header-figma-centered h2 { font-size: 36px !important; font-weight: 500 !important; }
           .section-description-centered { font-size: 18px !important; padding: 0 20px; }
-          .info-hero-content h1 { font-size: 60px !important; }
+          .info-hero-content h1 { font-size: 36px !important; font-weight: 500 !important; }
         }
 
         @media (max-width: 600px) {

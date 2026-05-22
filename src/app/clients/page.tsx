@@ -247,7 +247,8 @@ export default function ClientsPage() {
             padding: 0 40px !important;
           }
           .clients-brands-header { padding: 0 40px; }
-          .clients-hero-subtitle { font-size: 52px !important; }
+          .clients-hero-subtitle { font-size: 36px !important; font-weight: 500 !important; }
+          .clients-section-heading { font-size: 36px !important; font-weight: 500 !important; }
           .clients-grid { grid-template-columns: repeat(3, 1fr); }
         }
 

@@ -231,13 +231,15 @@ export default function CertificationsPage() {
             padding-top: 0 !important;
           }
           .certs-hero-title {
-            font-size: 48px !important;
+            font-size: 36px !important;
+            font-weight: 500 !important;
           }
           .certs-hero-subtitle {
             font-size: 16px !important;
           }
           .certs-section-title {
             font-size: 36px !important;
+            font-weight: 500 !important;
           }
         }
 

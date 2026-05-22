@@ -4098,7 +4098,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-hero-content h1 {
-    font-size: clamp(46px, 8vw, 76px);
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .hp-products-dist {
@@ -4106,7 +4107,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-products-dist h2 {
-    font-size: 38px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .hp-stats-container {
@@ -4115,7 +4117,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-stats-main-title {
-    font-size: 48px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
     top: 60px;
   }
 
@@ -4129,7 +4132,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-cert-left h2 {
-    font-size: 34px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .hp-cert-btn-container {
@@ -4166,7 +4170,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-projects-top-fixed h2 {
-    font-size: 44px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .hp-quote-banner-new {
@@ -4207,7 +4212,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-news-feature h2 {
-    font-size: 38px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .hp-latest-copy h4 {
@@ -4242,7 +4248,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-footer-brand h2 {
-    font-size: 48px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
     white-space: normal !important;
   }
 
@@ -4252,7 +4259,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .projects-hero-content h1 {
-    font-size: 60px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .projects-grid-container {
@@ -4279,7 +4287,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .projects-trusted-bar h2 {
-    font-size: 36px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   /* Clients page */
@@ -4288,7 +4297,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .clients-hero-subtitle {
-    font-size: 52px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .clients-brands-header {
@@ -4355,7 +4365,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .prod-hero-content h1 {
-    font-size: 48px;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 }
 
@@ -5736,6 +5747,13 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   background-color: #000000 !important;
 }
 
+.new-prod-page .new-prod-hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/image 95.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 .new-prod-hero-section .new-prod-section-inner {
   max-width: 1680px !important;
 }
@@ -6752,7 +6770,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
   }
 
   .kumwell-hero .hero-title {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .kumwell-hero .hero-subtitle {
@@ -6776,7 +6795,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
   }
 
   .section-title[style] {
-    font-size: 38px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
     margin-bottom: 50px !important;
   }
 
@@ -6817,7 +6837,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
   }
 
   .about-content-card h2[style] {
-    font-size: 38px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .about-content-card p[style] {
@@ -6830,7 +6851,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
   }
 
   .certified-section h2[style] {
-    font-size: 38px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   .certified-logos {
@@ -7011,7 +7033,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
   .prod-grid-header h2, .hp-products-dist h2, .hp-cert-left h2,
   .hp-trusted-header h2, .hp-projects-top-fixed h2, .hp-news-feature h2,
   .hp-git-left h2, .hp-contact-card h2, .projects-trusted-bar h2 {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   /* --- Certifications Page --- */
@@ -7020,10 +7043,12 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     min-height: 350px;
   }
   .certs-hero-title {
-    font-size: 56px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .certs-main-heading {
     font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .certs-container {
     padding: 0 30px !important;
@@ -7045,7 +7070,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     padding: 0 40px;
   }
   .clients-hero-subtitle {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
     white-space: normal !important;
   }
   .clients-hero-subheading {
@@ -7059,15 +7085,18 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     grid-template-columns: repeat(3, 1fr);
   }
   .clients-section-heading {
-    font-size: 48px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 
   /* --- Projects Page --- */
   .projects-page-wrapper .new-prod-title {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .projects-trusted-bar h2 {
-    font-size: 40px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .projects-grid-container {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -7075,7 +7104,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     gap: 24px;
   }
   .projects-main-heading {
-    font-size: 48px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .palazzoli-project-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -7087,7 +7117,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     min-height: 350px;
   }
   .info-hero-content h1 {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .info-grid-figma-tight {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -7102,7 +7133,8 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     padding: 24px;
   }
   .section-header-figma-centered h2 {
-    font-size: 48px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .section-description-centered {
     font-size: 16px !important;
@@ -7114,10 +7146,12 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
 
   /* --- Product Page --- */
   .new-prod-title {
-    font-size: 52px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
   .new-prod-section-title {
-    font-size: 48px !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
   }
 }
 

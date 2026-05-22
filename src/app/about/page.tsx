@@ -19,7 +19,7 @@ export default function AboutPage() {
 
   const heroSlides = [
     {
-      src: "/Images/About/aboutimg.jpg",
+      src: "/Images/About/img1.jpg",
       alt: "Engineering Reliability",
       heading: <>Engineering Reliability.<br />Delivering Strength.</>,
       sub: "One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001."
@@ -837,7 +837,7 @@ export default function AboutPage() {
           /* Hero */
           .about-hero { padding-left: 40px; }
           .about-hero-dots { left: 40px; }
-          .about-hero-content h1 { font-size: 54px !important; }
+          .about-hero-content h1 { font-size: 36px !important; font-weight: 500 !important; }
           .about-hero-content p { font-size: 17px; }
 
           /* Divisions */
@@ -864,7 +864,7 @@ export default function AboutPage() {
             order: -1;
             margin-bottom: 24px;
           }
-          .capabilities-center-text h2 { font-size: 52px !important; }
+          .capabilities-center-text h2 { font-size: 36px !important; font-weight: 500 !important; }
           /* Stack both cap-column-sides side by side in a 2-col grid */
           .capabilities-content .cap-column-side {
             width: 100%;
@@ -896,7 +896,7 @@ export default function AboutPage() {
             padding: 40px 40px 50px;
             justify-content: center;
           }
-          .timeline-title-new { font-size: 42px !important; margin-bottom: 50px; }
+          .timeline-title-new { font-size: 36px !important; font-weight: 500 !important; margin-bottom: 50px; }
           .timeline-labels-new { padding-top: 20px; }
           .time-year-new { font-size: 22px; }
           .timeline-item-new h4 { font-size: 18px; }
@@ -904,7 +904,7 @@ export default function AboutPage() {
           .time-dot-new { top: -50px; }
 
           /* Trusted section */
-          .trusted-cert-title { font-size: 52px !important; }
+          .trusted-cert-title { font-size: 36px !important; font-weight: 500 !important; }
         }
 
         /* ── MOBILE (≤768px) ── */
