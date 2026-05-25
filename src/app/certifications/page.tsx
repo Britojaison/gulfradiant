@@ -58,7 +58,7 @@ export default function CertificationsPage() {
       <section className="certs-hero">
         <div className="certs-hero-overlay"></div>
         <div className="certs-hero-content">
-          <h1 className="certs-hero-title">Our Certifications</h1>
+          <h1 className="certs-hero-title">Certifications</h1>
           <p className="certs-hero-subtitle">
             Accredited by top UAE authorities — our certifications reflect two
             decades of trust, quality, and compliance excellence

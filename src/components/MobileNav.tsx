@@ -83,7 +83,7 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
     { href: "/homepage#useful-information", label: "Useful Information" },
     { href: "/projects", label: "Projects" },
     { href: "/clients", label: "Clients" },
-    { href: "/certifications", label: "Our Certifications" },
+    { href: "/certifications", label: "Certifications" },
     { href: "/homepage#contact", label: "Contact" },
   ];
 
