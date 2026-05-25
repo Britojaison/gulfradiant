@@ -91,6 +91,8 @@ export default function CertificationsPage() {
                   <img
                     src={`/Images/Certificates/${cert.image}`}
                     alt={cert.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>

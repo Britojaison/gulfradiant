@@ -83,10 +83,13 @@ const ELECTRICAL_CATEGORIES = [
   }
 ];
 
+const statTargets = [25, 30, 100];
+
 export default function Homepage() {
   const router = useRouter();
   const statsRef = useRef<HTMLElement | null>(null);
   const statCardsRef = useRef<Array<HTMLDivElement | null>>([]);
+  const statNumberRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const certRef = useRef<HTMLElement | null>(null);
   const certCardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -96,6 +99,32 @@ export default function Homepage() {
   const projectsTopRef = useRef<HTMLDivElement | null>(null);
   const projectsViewportRef = useRef<HTMLDivElement | null>(null);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeCertIndex, setActiveCertIndex] = useState(0);
+
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const diffX = touchStartX.current - touchEndX.current;
+    const threshold = 50;
+    if (diffX > threshold) {
+      setActiveCertIndex((prev) => Math.min(prev + 1, certImages.length - 1));
+    } else if (diffX < -threshold) {
+      setActiveCertIndex((prev) => Math.max(prev - 1, 0));
+    }
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
   const certImages = [
     { src: "/Images/Certificates/dewa.jpg", alt: "Kumwell - DEWA APPROVAL" },
@@ -124,55 +153,51 @@ export default function Homepage() {
       const clamp01 = (v: number) => Math.min(Math.max(v, 0), 1);
       const easeOut = (v: number) => 1 - Math.pow(1 - v, 3);
 
-      // card 1 at 0.25 (just pinned), card 2 at 0.50, card 3 at 0.75
-      const thresholds = [0.25, 0.50, 0.75];
-      const durations = [0.05, 0.12, 0.12]; // card 1 snaps in fast
+      const revealStart = 0.28;
+      const revealDuration = 0.22;
 
       statCardsRef.current.forEach((card, index) => {
         if (!card) return;
-        const t = clamp01((progress - thresholds[index]) / durations[index]);
-        const translateY = startY + (centeredY - startY) * easeOut(t);
+        const t = clamp01((progress - revealStart) / revealDuration);
+        const easedProgress = easeOut(t);
+        const translateY = startY + (centeredY - startY) * easedProgress;
         card.style.transform = `translate3d(0, ${translateY}px, 0)`;
+
+        const number = statNumberRefs.current[index];
+        if (number) {
+          number.textContent = String(Math.round(statTargets[index] * easedProgress));
+        }
       });
     };
 
     const updateCertCards = () => {
       if (!certRef.current) return;
 
+      const isMobileLocal = window.innerWidth <= 1024;
+      if (isMobileLocal) return;
+
       const rect = certRef.current.getBoundingClientRect();
       const viewport = window.innerHeight || 1;
       const scrollRange = Math.max(rect.height - viewport, 1);
       const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
       const count = certCardsRef.current.length || 1;
-      const loopProgress = progress * count;
-      const activeIndex = Math.min(Math.floor(loopProgress), count - 1);
-      const activeProgress = loopProgress - activeIndex;
 
       certCardsRef.current.forEach((card, index) => {
         if (!card) return;
 
-        const isMobile = window.innerWidth <= 1024;
         let centerIndex = progress * (count - 1);
         const d = centerIndex - index;
         const theta = d * (Math.PI / 2);
 
         let translateX, translateY, scale, opacity;
 
-        if (isMobile) {
-          // Horizontal slide for tablet and mobile
-          translateX = -d * (window.innerWidth * 0.85);
-          translateY = 0;
-          scale = Math.max(0.85, 1 - Math.abs(d) * 0.15);
-          opacity = Math.max(0, 1 - Math.abs(d) * 0.8);
-        } else {
-          // Desktop animation
-          const radiusY = viewport * 0.45;
-          const radiusX = 500;
-          translateX = radiusX * Math.cos(theta) - 750;
-          translateY = radiusY * Math.sin(theta);
-          scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
-          opacity = Math.max(0, 1 - Math.abs(d));
-        }
+        // Desktop animation
+        const radiusY = viewport * 0.45;
+        const radiusX = 500;
+        translateX = radiusX * Math.cos(theta) - 750;
+        translateY = radiusY * Math.sin(theta);
+        scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
+        opacity = Math.max(0, 1 - Math.abs(d));
 
         card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
         card.style.opacity = `${opacity}`;
@@ -314,6 +339,40 @@ export default function Homepage() {
   }, []);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const timer = setInterval(() => {
+      setActiveCertIndex((prev) => (prev + 1) % certImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isMobile, certImages.length]);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    certCardsRef.current.forEach((card, index) => {
+      if (!card) return;
+      const d = index - activeCertIndex;
+      const translateX = d * 110;
+      const opacity = index === activeCertIndex ? 1 : 0;
+      const scale = index === activeCertIndex ? 1 : 0.9;
+      const zIndex = index === activeCertIndex ? 5 : 1;
+
+      card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}%, 0, 0) scale(${scale})`;
+      card.style.opacity = `${opacity}`;
+      card.style.zIndex = `${zIndex}`;
+      card.style.pointerEvents = index === activeCertIndex ? "auto" : "none";
+    });
+  }, [activeCertIndex, isMobile]);
+
+  useEffect(() => {
     const handleHashScroll = () => {
       const hash = window.location.hash;
       if (hash) {
@@ -402,8 +461,16 @@ export default function Homepage() {
     <div className="homepage-wrapper">
       {/* HERO */}
       <section className="hp-hero-new" id="home-hero">
-        <video className="hp-hero-video" autoPlay muted loop playsInline preload="auto" aria-label="Gulf Radiant infrastructure hero video">
-          <source src="/Images/Home/hero video.mp4" type="video/mp4" />
+        <video
+          className="hp-hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Gulf Radiant infrastructure hero video"
+        >
+          <source src="/Images/Home/hero-video-optimized.mp4" type="video/mp4" />
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
@@ -477,14 +544,14 @@ export default function Homepage() {
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-1-${i}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" />
+                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" loading="lazy" decoding="async" />
                   </div>
                 ))}
                 {/* Duplicate for infinite scroll effect */}
                 {productLogos.map((logo, i) => (
                   <div className="hp-dist-logo-item" key={`logo-2-${i}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" />
+                    <img src={`/Images/product/${logo}`} alt="Brand Logo" className="hp-dist-logo-img" loading="lazy" decoding="async" />
                   </div>
                 ))}
               </div>
@@ -504,17 +571,17 @@ export default function Homepage() {
             <h2 className="hp-stats-main-title">Give Your Projects the Right Connection</h2>
             <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
             <div className="hp-stat-block hp-stat-card-one" ref={(node) => { statCardsRef.current[0] = node; }}>
-              <h3>25<span>+</span></h3>
+              <h3><span ref={(node) => { statNumberRefs.current[0] = node; }}>0</span><span>+</span></h3>
               <h4>Years of Professionalism</h4>
               <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
             </div>
             <div className="hp-stat-block hp-stat-card-two" ref={(node) => { statCardsRef.current[1] = node; }}>
-              <h3>30<span>+</span></h3>
+              <h3><span ref={(node) => { statNumberRefs.current[1] = node; }}>0</span><span>+</span></h3>
               <h4>Countries Served Worldwide</h4>
               <p>Supporting projects across global<br />markets with a strong supply network</p>
             </div>
             <div className="hp-stat-block hp-stat-card-three" ref={(node) => { statCardsRef.current[2] = node; }}>
-              <h3>100<span>+</span></h3>
+              <h3><span ref={(node) => { statNumberRefs.current[2] = node; }}>0</span><span>+</span></h3>
               <h4>Product Categories</h4>
               <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
             </div>
@@ -596,14 +663,20 @@ export default function Homepage() {
                 <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
               </div>
             </div>
-            <h2>Certification<br />& Approvals</h2>
+            <h2>Certification &amp; Approvals</h2>
             <div className="hp-cert-btn-container">
               <Link href="/certifications" className="hp-btn-orange-rect">View All Certificates</Link>
             </div>
           </div>
 
           <div className="hp-cert-right-container">
-            <div className="hp-cert-scroll-window" aria-label="Certification approvals">
+            <div
+              className="hp-cert-scroll-window"
+              aria-label="Certification approvals"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               {certImages.map((cert, idx) => (
                 <div
                   className="hp-cert-box"
@@ -614,6 +687,18 @@ export default function Homepage() {
                 </div>
               ))}
             </div>
+            {isMobile && (
+              <div className="hp-cert-carousel-dots">
+                {certImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    className={`hp-cert-carousel-dot ${activeCertIndex === idx ? "active" : ""}`}
+                    onClick={() => setActiveCertIndex(idx)}
+                    aria-label={`Go to certificate ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -712,7 +797,7 @@ export default function Homepage() {
                 <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
               </div>
             </div>
-            <h3>Madhusudan<br />Mathilakath</h3>
+            <h3>Madhusudan Mathilakath</h3>
             <p>CEO</p>
           </div>
           <div className="hp-leadership-copy">
@@ -785,7 +870,7 @@ export default function Homepage() {
       </section>
 
       {/* CONTACT BANNER */}
-      <section className="hp-contact-banner-new">
+      <section id="contact" className="hp-contact-banner-new">
         <div className="hp-contact-inner-new">
           {/* LEFT - TEXT */}
           <div style={{ maxWidth: "800px", width: "100%", position: "relative", zIndex: 2 }}>

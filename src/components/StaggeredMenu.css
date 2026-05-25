@@ -316,12 +316,23 @@
 
   .sm-logo,
   .sm-logo-img {
-    width: 180px;
-    height: 58px;
+    width: 210px;
+    height: 68px;
   }
 
   .sm-toggle {
-    min-width: 44px;
+    min-width: 32px;
+    margin-right: 0;
+  }
+
+  .sm-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  .sm-icon-line {
+    height: 2px;
   }
 
   .sm-toggle-textWrap {

@@ -363,7 +363,13 @@ export default function StaggeredMenu({
 
               return (
                 <li className="sm-panel-itemWrap" key={`${item.label}-${index}`}>
-                  <a className="sm-panel-item" href={item.link} aria-label={item.ariaLabel} data-index={index + 1}>
+                  <a
+                    className="sm-panel-item"
+                    href={item.link}
+                    aria-label={item.ariaLabel}
+                    data-index={index + 1}
+                    onClick={closeMenu}
+                  >
                     <span className="sm-panel-itemLabel">
                       {firstWord}
                       {displayItemNumbering && (

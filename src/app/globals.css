@@ -1246,6 +1246,7 @@ h6,
   height: 100vh;
   min-height: 680px;
   overflow: hidden;
+  background: #050505;
 }
 
 .hp-hero-video {
@@ -1255,6 +1256,8 @@ h6,
   width: 100%;
   height: calc(100% + 28px);
   object-fit: cover;
+  display: block;
+  background: #050505;
 }
 
 .hp-hero-overlay-new {
@@ -1552,7 +1555,7 @@ h6,
   gap: 0;
   height: 100%;
   width: max-content;
-  animation: scrollMarquee 80s linear infinite;
+  animation: scrollMarquee 50s linear infinite;
 }
 
 .hp-dist-logos:hover {
@@ -1602,8 +1605,8 @@ h6,
   max-width: none;
   margin: 0;
   width: 100%;
-  height: 400vh;
-  min-height: 2800px;
+  height: 180vh;
+  min-height: 1200px;
   overflow: visible;
   padding: 0;
   background: #FF5B05;
@@ -1837,7 +1840,7 @@ h6,
   padding: 0 75px;
   overflow: visible;
   z-index: 1;
-  background: #FF5B05 url('/Images/Home/bg3.svg') no-repeat center center fixed;
+  background: #FF5B05 url('/Images/Home/bg3-optimized.webp') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -2262,8 +2265,9 @@ h6,
   font-size: clamp(46px, 4.3vw, 64px);
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.42;
+  line-height: 1.1;
   margin: 0 0 8px;
+  white-space: nowrap;
 }
 
 .hp-leadership-left p {
@@ -2761,6 +2765,7 @@ h6,
 .hp-contact-banner-new {
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 96px;
   min-height: 645px;
   display: flex;
   align-items: flex-start;
@@ -2986,19 +2991,36 @@ h6,
 
 .hp-footer-map {
   border-radius: 4px;
-  height: 78px;
-  margin-bottom: 12px;
+  height: 100px;
+  margin-bottom: 14px;
   overflow: hidden;
   width: 276px;
 }
 
+.hp-footer-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hp-footer-location h4 {
+  margin-bottom: 16px;
+}
+
 .hp-footer-col p {
   font-family: var(--font-neutiva), sans-serif !important;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.68);
   font-size: 14px;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   line-height: 1.4;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
+}
+
+.hp-footer-office-name {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0;
+  margin-bottom: 8px !important;
 }
 
 .hp-footer-contact-line {
@@ -3009,7 +3031,8 @@ h6,
 .hp-footer-contact-line a {
   font-family: var(--font-neutiva), sans-serif !important;
   font-size: 14px;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .hp-footer-bottom {
@@ -3452,7 +3475,7 @@ h6,
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('/Images/Certificates/bg8.svg') center/cover no-repeat;
+  background: url('/Images/Certificates/bg8-optimized.webp') center/cover no-repeat;
 }
 
 .certs-hero-overlay {
@@ -4097,6 +4120,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     max-width: 900px;
   }
 
+  .hp-hero-scroll {
+    display: none;
+  }
+
   .hp-hero-content h1 {
     font-size: 36px !important;
     font-weight: 500 !important;
@@ -4253,6 +4280,21 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     white-space: normal !important;
   }
 
+  .hp-footer-locations-col {
+    grid-column: 1 / -1 !important;
+  }
+
+  .hp-footer-locations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .hp-footer-map {
+    width: 100%;
+    height: 120px;
+  }
+
   /* Projects page */
   .projects-hero-content {
     left: 40px;
@@ -4376,6 +4418,24 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 @media (max-width: 768px) {
 
   /* ---- GLOBAL ---- */
+  h2, h3,
+  .section-title,
+  .section-heading,
+  .hp-products-dist h2,
+  .hp-cert-left h2,
+  .hp-trusted-header h2,
+  .hp-projects-top-fixed h2,
+  .hp-leadership-left h3,
+  .hp-news-feature h2,
+  .hp-contact-card h2,
+  .projects-trusted-bar h2,
+  .prod-grid-header h2,
+  .prod-cta h2,
+  .about-header h2 {
+    font-size: 26px !important;
+    font-weight: 500 !important;
+  }
+
   .homepage-wrapper,
   .about-page-wrapper,
   .projects-page-wrapper,
@@ -4451,12 +4511,6 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     border-radius: 0;
   }
 
-  .hp-hero-scroll {
-    top: calc(50% + 180px);
-    width: 30px;
-    height: 54px;
-  }
-
   /* ---- PRODUCTS DISTRIBUTE ---- */
   .hp-products-dist {
     padding: 56px 20px 0;
@@ -4519,7 +4573,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     position: relative;
     top: auto;
     left: auto;
-    font-size: 32px;
+    font-size: 26px !important;
     padding: 0 10px;
     margin-bottom: 24px;
     line-height: 1.2;
@@ -4549,7 +4603,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-stat-block h3 {
-    font-size: 44px;
+    font-size: 72px !important;
+    font-weight: 600 !important;
+    min-height: 76px;
   }
 
   .hp-stat-block h4 {
@@ -4568,19 +4624,20 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   /* ---- CERTIFICATION SECTION ---- */
   .hp-cert-section {
-    height: 190vh;
-    min-height: 1040px;
+    height: auto;
+    min-height: auto;
   }
 
   .hp-cert-content-inner {
+    position: relative;
+    min-height: auto;
+    height: auto;
     flex-direction: column;
-    padding: 0 20px;
-    gap: 0;
+    padding: 60px 20px 40px;
+    gap: 30px;
     text-align: left;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: 100vh;
-    padding-top: 72px;
   }
 
   .hp-cert-left h2 {
@@ -4590,14 +4647,16 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   .hp-cert-right-container {
     width: 100%;
     align-items: center;
-    min-height: calc(100vh - 220px);
-    justify-content: flex-start;
+    min-height: auto;
+    height: auto;
+    justify-content: center;
+    margin-top: 24px;
   }
 
   .hp-cert-scroll-window {
     width: 100%;
-    height: calc(100vh - 220px);
-    min-height: 560px;
+    height: 240px;
+    min-height: 240px;
   }
 
   .hp-cert-box {
@@ -4605,6 +4664,9 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     height: 210px;
     right: 50%;
     margin-right: calc(min(84vw, 340px) / -2);
+    top: 50%;
+    left: 50%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
   }
 
   .hp-cert-box:nth-child(even) {
@@ -4717,10 +4779,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   }
 
   .hp-leadership-left h3 {
-    font-size: clamp(32px, 8vw, 42px);
+    font-size: clamp(28px, 7vw, 54px) !important;
+    line-height: 1.1 !important;
     margin-bottom: 12px;
-    word-break: break-word;
-    hyphens: auto;
+    white-space: nowrap;
   }
 
   .hp-leadership-left p {
@@ -4849,8 +4911,29 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
     white-space: normal !important;
   }
 
+  .hp-footer-locations-col {
+    grid-column: 1 / -1 !important;
+  }
+
+  .hp-footer-locations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
   .hp-footer-map {
     width: 100%;
+    height: 118px;
+  }
+
+  .hp-footer-location h4 {
+    margin-bottom: 12px;
+  }
+
+  .hp-footer-col p,
+  .hp-footer-contact-line a {
+    font-size: 13px;
+    font-weight: 300 !important;
   }
 
   .hp-footer-contact-line {
@@ -6011,6 +6094,8 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   width: 100%;
   --brands-row-height: 220px;
   --brands-row-gap: 24px;
+  padding: 0 80px;
+  box-sizing: border-box;
 }
 
 .new-prod-brands-scroll-container {
@@ -6144,6 +6229,13 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 }
 
 @media (max-width: 1024px) {
+  .project-detail-card .project-card-image,
+  .project-detail-card .project-card-info {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* Hero section — compact but not too short */
   .new-prod-hero-section {
     height: auto !important;
@@ -6157,6 +6249,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .new-prod-section-header {
     padding: 0 40px !important;
+  }
+
+  .new-prod-cards-container {
+    padding: 0 40px;
   }
 
   .new-prod-section-title {
@@ -6219,6 +6315,10 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
 
   .new-prod-brands-section {
     padding: 40px 0 !important;
+  }
+
+  .new-prod-cards-container {
+    padding: 0 20px;
   }
 
   /* Header row — keep in a single row (title left, controls right) */
@@ -6294,6 +6394,7 @@ button:not(.mobile-hamburger):not(.mobile-menu-close):active,
   .new-prod-cards-container {
     --brands-row-height: auto;
     --brands-row-gap: 0px;
+    padding: 0 20px;
   }
 
   .new-prod-brands-track {
@@ -7557,12 +7658,80 @@ h2, .hp-divisions-main-title, .about-header h2, .cta-section h2, .prod-grid-head
     justify-content: flex-start !important;
   }
   .hp-cert-section {
-    height: 160vh !important;
+    height: auto !important;
     min-height: auto !important;
   }
-  .hp-cert-right-container, .hp-cert-scroll-window {
-    min-height: 250px !important;
-    height: 250px !important;
+  .hp-cert-content-inner {
+    position: relative !important;
+    min-height: auto !important;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 60px 24px !important;
+    gap: 30px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .hp-cert-left {
+    flex: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .hp-cert-left .hp-dist-subtitle {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hp-cert-left h2 {
+    width: 100% !important;
+    min-height: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
+  }
+  .hp-cert-btn-container {
+    justify-content: center !important;
+  }
+  .hp-cert-right-container {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 30px !important;
+  }
+  .hp-cert-scroll-window {
+    width: 100% !important;
+    height: 240px !important;
+    min-height: 240px !important;
+    margin: 0 auto !important;
+  }
+  .hp-cert-box {
+    width: min(84vw, 340px) !important;
+    height: 210px !important;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease !important;
+    top: 50% !important;
+    left: 50% !important;
+  }
+  .hp-cert-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    width: 100%;
+  }
+  .hp-cert-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  .hp-cert-carousel-dot.active {
+    background: #FFFFFF;
+    transform: scale(1.2);
   }
 }
 

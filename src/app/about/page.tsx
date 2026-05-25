@@ -148,15 +148,15 @@ export default function AboutPage() {
         <div className="container">
           <h2 className="trusted-cert-title">Trusted by Industry Leaders</h2>
           <div className="marquee-wrapper">
-            <div className="marquee-track" style={{ animationDuration: "160s" }}>
+            <div className="marquee-track" style={{ animationDuration: "60s" }}>
               {productLogos.map((logo, i) => (
                 <div className="logo-item" key={`product-1-${i}`}>
-                  <img src={`/Images/product/${logo}`} alt="Brand Logo" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
+                  <img src={`/Images/product/${logo}`} alt="Brand Logo" className="trusted-brand-logo" loading="lazy" decoding="async" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
                 </div>
               ))}
               {productLogos.map((logo, i) => (
                 <div className="logo-item" key={`product-2-${i}`}>
-                  <img src={`/Images/product/${logo}`} alt="Brand Logo" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
+                  <img src={`/Images/product/${logo}`} alt="Brand Logo" className="trusted-brand-logo" loading="lazy" decoding="async" style={{ height: "80px", width: "auto", objectFit: "contain", mixBlendMode: "multiply" }} />
                 </div>
               ))}
             </div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
 
           {/* Center Title */}
           <div className="capabilities-center-text">
-            <h2>Our<br />Capabilities</h2>
+            <h2>Our <br />Capabilities</h2>
           </div>
 
           {/* Right Column */}
@@ -311,15 +311,15 @@ export default function AboutPage() {
         <div className="container">
           <h2 className="trusted-cert-title">Certified &amp; Approved</h2>
           <div className="marquee-wrapper">
-            <div className="marquee-track" style={{ animationDuration: "40s" }}>
+            <div className="marquee-track" style={{ animationDuration: "25s" }}>
               {certificates.map((cert, i) => (
                 <div className="logo-item" key={`cert-1-${i}`}>
-                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
+                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" className="trusted-cert-logo" loading="lazy" decoding="async" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
                 </div>
               ))}
               {certificates.map((cert, i) => (
                 <div className="logo-item" key={`cert-2-${i}`}>
-                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
+                  <img src={`/Images/Certificates/${cert}`} alt="Certificate Logo" className="trusted-cert-logo" loading="lazy" decoding="async" style={{ height: "100px", width: "auto", objectFit: "contain" }} />
                 </div>
               ))}
             </div>
@@ -905,6 +905,9 @@ export default function AboutPage() {
 
           /* Trusted section */
           .trusted-cert-title { font-size: 36px !important; font-weight: 500 !important; }
+          .trusted-brand-logo { height: 56px !important; }
+          .trusted-cert-logo { height: 70px !important; }
+          .marquee-track { gap: 100px !important; padding-right: 100px !important; }
         }
 
         /* ── MOBILE (≤768px) ── */
@@ -922,9 +925,10 @@ export default function AboutPage() {
           .about-hero-dots { left: 20px; bottom: 24px; }
           .about-hero-content { max-width: 100%; }
           .about-hero-content h1 {
-            font-size: 36px !important;
+            font-size: 26px !important;
             line-height: 1.15 !important;
             margin-bottom: 16px;
+            font-weight: 500 !important;
           }
           .about-hero-content h1 br { display: none; }
           .about-hero-content p { font-size: 14px; }
@@ -967,9 +971,12 @@ export default function AboutPage() {
             margin-bottom: 8px;
           }
           .capabilities-center-text h2 {
-            font-size: 40px !important;
+            font-size: 26px !important;
+            font-weight: 500 !important;
             color: #ffffff;
+            white-space: nowrap;
           }
+          .capabilities-center-text h2 br { display: none; }
           .cap-column-side {
             width: 100%;
             height: auto;
@@ -992,7 +999,8 @@ export default function AboutPage() {
             align-items: flex-start;
           }
           .timeline-title-new {
-            font-size: 36px !important;
+            font-size: 26px !important;
+            font-weight: 500 !important;
             margin-bottom: 50px;
             text-align: left;
           }
@@ -1020,7 +1028,10 @@ export default function AboutPage() {
 
           /* Trusted & Certified */
           .trusted-cert-section { padding: 60px 0 80px; }
-          .trusted-cert-title { font-size: 36px !important; margin-bottom: 40px; }
+          .trusted-cert-title { font-size: 26px !important; font-weight: 500 !important; margin-bottom: 40px; }
+          .trusted-brand-logo { height: 40px !important; }
+          .trusted-cert-logo { height: 50px !important; }
+          .marquee-track { gap: 60px !important; padding-right: 60px !important; }
         }
 
         /* ── TABLET TIMELINE OVERRIDE (must come AFTER mobile to win cascade) ── */

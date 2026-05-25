@@ -145,19 +145,19 @@ export default function ClientsPage() {
 
         /* CLIENTS BRANDS SECTION */
         .clients-brands-section {
-          padding: 80px 0;
+          padding: 80px;
           max-width: 100%;
           margin: 0;
         }
         .clients-brands-header {
           text-align: center;
           margin-bottom: 60px;
-          padding: 0 80px;
+          padding: 0;
         }
         .clients-brands-header {
           text-align: center;
           margin-bottom: 60px;
-          padding: 0 80px;
+          padding: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -246,7 +246,8 @@ export default function ClientsPage() {
             transform: none !important;
             padding: 0 40px !important;
           }
-          .clients-brands-header { padding: 0 40px; }
+          .clients-brands-section { padding: 80px 40px; }
+          .clients-brands-header { padding: 0; }
           .clients-hero-subtitle { font-size: 36px !important; font-weight: 500 !important; }
           .clients-section-heading { font-size: 36px !important; font-weight: 500 !important; }
           .clients-grid { grid-template-columns: repeat(3, 1fr); }
@@ -269,7 +270,8 @@ export default function ClientsPage() {
             padding: 0 20px !important;
           }
           .clients-hero-text-wrapper { text-align: left; }
-          .clients-brands-header { padding: 0 20px; margin-bottom: 30px; text-align: left; }
+          .clients-brands-section { padding: 60px 20px; }
+          .clients-brands-header { padding: 0; margin-bottom: 30px; text-align: left; }
           .clients-hero-subtitle { font-size: 28px !important; text-align: left; white-space: normal; }
           .clients-hero-subheading { font-size: 20px !important; text-align: left; white-space: normal; }
           .clients-hero-description { font-size: 14px !important; text-align: left; }
