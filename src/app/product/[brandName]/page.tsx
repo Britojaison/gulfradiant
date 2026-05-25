@@ -152,9 +152,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Heavy-duty electrical connections, switch disconnectors, and IEC 309 plugs and sockets engineered for safety in explosive atmospheres.",
     website: "https://www.palazzoli.com/en/",
     productRange: [
-      { image: "/Images/product/Rectangle 39.png", caption: "ATEX Explosion Proof Plugs & Sockets" },
-      { image: "/Images/product/Rectangle 39.png", caption: "Heavy Duty Industrial Switch disconnectors" },
-      { image: "/Images/product/Rectangle 39.png", caption: "IEC 309 Watertight Connector Assemblies" }
+      { image: "/Images/PalazolliLewden/ATEX/ATEX Plug.png", caption: "ATEX Explosion Proof Plugs & Sockets" },
+      { image: "/Images/PalazolliLewden/isolators and Boxes/Isolator - 292503.png", caption: "Heavy Duty Industrial Switch disconnectors" },
+      { image: "/Images/PalazolliLewden/XCEE/XCEE Plug & Socket.png", caption: "IEC 309 Watertight Connector Assemblies" }
     ],
     certifiedLogos: [
     ],
