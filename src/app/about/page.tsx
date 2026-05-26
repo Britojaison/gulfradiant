@@ -47,7 +47,7 @@ export default function AboutPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide(prev => (prev + 1) % heroSlides.length);
-    }, 4000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -298,9 +298,21 @@ export default function AboutPage() {
             </div>
             <div className="timeline-item-new">
               <div className="time-dot-new"></div>
-              <div className="time-year-new">Today</div>
-              <h4>15+ Countries</h4>
-              <p>Serving clients across the<br />globe</p>
+              <div className="time-year-new">2021</div>
+              <h4>ICV Certification</h4>
+              <p>In-Country Value<br />Achieved</p>
+            </div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2022</div>
+              <h4>Abu Dhabi Branch</h4>
+              <p>Licensed Branch<br />Office</p>
+            </div>
+            <div className="timeline-item-new">
+              <div className="time-dot-new"></div>
+              <div className="time-year-new">2026</div>
+              <h4>25 Years</h4>
+              <p>Celebrating 25 Years<br />of Excellence</p>
             </div>
           </div>
         </div>

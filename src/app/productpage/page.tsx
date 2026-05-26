@@ -8,8 +8,7 @@ import { useSearchParams } from "next/navigation";
 const CATEGORIES = [
   "All",
   "Earthing Lightning & Surge Protection Systems",
-  "Lighting aircraft warning lights/signal lights",
-  "Obstruction lights/aircraft warning lights",
+  "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
   "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
   "Cables",
   "Other products",
@@ -30,16 +29,10 @@ const CATEGORY_MAP = [
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },
   {
-    id: "Lighting aircraft warning lights/signal lights",
-    label: "Lighting Aircraft Warning Lights / Signal Lights",
-    image: "/Images/product/lighting.png",
-    desc: "Industrial lights, hazard signaling, & visual beacon indicators"
-  },
-  {
-    id: "Obstruction lights/aircraft warning lights",
-    label: "Obstruction Lights / Aircraft Warning Lights",
+    id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
+    label: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
     image: "/Images/product/obstruction.png",
-    desc: "Safety tower hazard lighting & structural aircraft warning lights"
+    desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
   {
     id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
@@ -71,9 +64,9 @@ const ALL_LOGOS = [
   { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
   { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
-  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting aircraft warning lights/signal lights"] },
-  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
+  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
+  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
+  { src: "/Images/product/lewden.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
   { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Other products"] },
@@ -88,17 +81,17 @@ const ALL_LOGOS = [
   { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables"] },
   { src: "/Images/product/PSI LOGO.png", brand: "PSI", link: "/product/psi", categories: ["Other products"] },
   { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Other products"] },
-  { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
   { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
   { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
   { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
   { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Other products"] },
-  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
-  { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
+  { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
   { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
-  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Obstruction lights/aircraft warning lights", "Lighting aircraft warning lights/signal lights"] },
+  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
   // Industrial Category Images
   { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
   { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
@@ -116,6 +109,7 @@ function ProductPageContent() {
   const initialCategory = searchParams.get("category") || "All";
 
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [activeSubcategory, setActiveSubcategory] = useState("All");
   const carouselRef = useRef<HTMLDivElement>(null);
 
   // Update category if URL param changes
@@ -126,9 +120,23 @@ function ProductPageContent() {
     }
   }, [searchParams]);
 
-  const filteredLogos = selectedCategory === "All"
+  useEffect(() => {
+    setActiveSubcategory("All");
+  }, [selectedCategory]);
+
+  let filteredLogos = selectedCategory === "All"
     ? ALL_LOGOS.filter(logo => !logo.categories.includes("Industrial products/bulk material/oil and gas equipment"))
     : ALL_LOGOS.filter(logo => logo.categories.includes(selectedCategory));
+
+  if (selectedCategory === "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights" && activeSubcategory !== "All") {
+    if (activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS") {
+      const allowedBrands = ["Obsta", "Avaids", "Sirena"];
+      filteredLogos = filteredLogos.filter(logo => allowedBrands.includes(logo.brand));
+    } else if (activeSubcategory === "LIGHTING") {
+      const allowedBrands = ["Palazzoli", "Litetech", "Frater"];
+      filteredLogos = filteredLogos.filter(logo => allowedBrands.includes(logo.brand));
+    }
+  }
 
   const isIndustrial = selectedCategory === "Industrial products/bulk material/oil and gas equipment";
 
@@ -236,6 +244,32 @@ function ProductPageContent() {
             <h2 className="new-prod-section-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>
               {activeCategoryData ? activeCategoryData.label : selectedCategory}
             </h2>
+
+            {selectedCategory === "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights" && (
+              <div className="new-prod-subcategory-tabs" style={{ display: "flex", gap: "12px", marginTop: "40px", justifyContent: "center", flexWrap: "wrap", maxWidth: "900px", margin: "40px auto 0 auto" }}>
+                <button 
+                  className={`subcat-tab ${activeSubcategory === "All" ? "active" : ""}`}
+                  onClick={() => setActiveSubcategory("All")}
+                  style={{ padding: "10px 24px", borderRadius: "30px", border: activeSubcategory === "All" ? "1px solid #FF5B05" : "1px solid rgba(0,0,0,0.15)", background: activeSubcategory === "All" ? "#FF5B05" : "transparent", color: activeSubcategory === "All" ? "#fff" : "#1a1a1a", cursor: "pointer", transition: "all 0.3s", fontSize: "15px", fontWeight: "500", fontFamily: "var(--font-inter), sans-serif" }}
+                >
+                  All
+                </button>
+                <button 
+                  className={`subcat-tab ${activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS" ? "active" : ""}`}
+                  onClick={() => setActiveSubcategory("AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS")}
+                  style={{ padding: "10px 24px", borderRadius: "30px", border: activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS" ? "1px solid #FF5B05" : "1px solid rgba(0,0,0,0.15)", background: activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS" ? "#FF5B05" : "transparent", color: activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS" ? "#fff" : "#1a1a1a", cursor: "pointer", transition: "all 0.3s", fontSize: "15px", fontWeight: "500", fontFamily: "var(--font-inter), sans-serif" }}
+                >
+                  AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS
+                </button>
+                <button 
+                  className={`subcat-tab ${activeSubcategory === "LIGHTING" ? "active" : ""}`}
+                  onClick={() => setActiveSubcategory("LIGHTING")}
+                  style={{ padding: "10px 24px", borderRadius: "30px", border: activeSubcategory === "LIGHTING" ? "1px solid #FF5B05" : "1px solid rgba(0,0,0,0.15)", background: activeSubcategory === "LIGHTING" ? "#FF5B05" : "transparent", color: activeSubcategory === "LIGHTING" ? "#fff" : "#1a1a1a", cursor: "pointer", transition: "all 0.3s", fontSize: "15px", fontWeight: "500", fontFamily: "var(--font-inter), sans-serif" }}
+                >
+                  LIGHTING
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="new-prod-cards-container">

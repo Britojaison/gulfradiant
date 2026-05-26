@@ -324,7 +324,7 @@ export default function StaggeredMenu({
 
       <header className="staggered-menu-header" aria-label="Main navigation header">
         <a href={logoHref} className="sm-logo" aria-label="Go to homepage hero section" onClick={onLogoClick}>
-          <img src={logoUrl} alt="Gulf Radiant" className="sm-logo-img" draggable={false} width={134} height={44} />
+          <img src={logoUrl} alt="Gulf Radiant" className="sm-logo-img" draggable={false} />
         </a>
 
         <button

@@ -45,11 +45,12 @@ export default function CertificationsPage() {
 
   const formatTitle = (title: string) => {
     return title
+      .replace(/\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*[-_ ]?20\d{2}\b/gi, '')
+      .replace(/\b20\d{2}(?:-\d{2,4})?\b/g, '')
       .replace(/[_-]+/g, ' ')
-      .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toUpperCase();
   };
 
   return (
@@ -96,7 +97,7 @@ export default function CertificationsPage() {
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
-                <h3 className="cert-card-title" style={{ textTransform: "capitalize" }}>{formatTitle(cert.title)}</h3>
+                <h3 className="cert-card-title" style={{ textTransform: "uppercase" }}>{formatTitle(cert.title)}</h3>
                 <div className="cert-card-actions">
                   <button
                     className="cert-view-link"

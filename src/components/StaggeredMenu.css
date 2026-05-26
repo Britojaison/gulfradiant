@@ -40,15 +40,15 @@
 .sm-logo {
   display: flex;
   align-items: center;
-  width: 340px;
-  height: 110px;
+  width: 440px;
+  height: 140px;
   user-select: none;
 }
 
 .sm-logo-img {
   display: block;
-  width: 340px;
-  height: 110px;
+  width: 440px;
+  height: 140px;
   object-fit: contain;
   object-position: left center;
 }
@@ -316,8 +316,8 @@
 
   .sm-logo,
   .sm-logo-img {
-    width: 210px;
-    height: 68px;
+    width: 260px;
+    height: 80px;
   }
 
   .sm-toggle {

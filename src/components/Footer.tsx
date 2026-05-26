@@ -51,40 +51,32 @@ export default function Footer() {
             <div className="hp-footer-locations">
               <div className="hp-footer-location">
                 <h4>Dubai</h4>
-                <div className="hp-footer-map">
-                <iframe
-                  src="https://www.google.com/maps?q=25.297965,55.385053&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Gulf Radiant Dubai location"
-                ></iframe>
-                </div>
-                <p className="hp-footer-office-name">GULF RADIANT L.L.C</p>
-                <p>P.O. Box: 26426, Amman Street,<br/>Al Qusais Industrial Area - 3, Dubai, U.A.E</p>
+                <a 
+                  href="https://www.google.com/maps?q=25.297965,55.385053" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ display: "block", marginBottom: "16px", lineHeight: "1.4" }}
+                >
+                  <div style={{ marginBottom: "4px" }}>GULF RADIANT L.L.C</div>
+                  <div>P.O. Box: 26426, Amman Street,<br/>Al Qusais Industrial Area - 3, Dubai, U.A.E</div>
+                </a>
                 <div className="hp-footer-contact-line">
                   <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
                   <a href="tel:+97142671662">+971 4 2671662</a>
                 </div>
               </div>
 
-              <div className="hp-footer-location">
+              <div className="hp-footer-location" style={{ marginTop: "32px" }}>
                 <h4>Abu Dhabi</h4>
-                <div className="hp-footer-map">
-                <iframe
-                  src="https://www.google.com/maps?q=24.380814,54.510216&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Gulf Radiant Abu Dhabi location"
-                ></iframe>
-                </div>
-                <p className="hp-footer-office-name">GULF RADIANT ELECTRICALS L.L.C</p>
-                <p>P.O. Box: 91366, M-9, Abu Dhabi, U.A.E</p>
+                <a 
+                  href="https://www.google.com/maps?q=24.380814,54.510216" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ display: "block", marginBottom: "16px", lineHeight: "1.4" }}
+                >
+                  <div style={{ marginBottom: "4px" }}>GULF RADIANT ELECTRICALS L.L.C</div>
+                  <div>P.O. Box: 91366, M-9, Abu Dhabi, U.A.E</div>
+                </a>
                 <div className="hp-footer-contact-line">
                   <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
                   <a href="tel:+97124488449">+971 2 4488449</a>

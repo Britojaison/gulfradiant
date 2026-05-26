@@ -47,17 +47,10 @@ const ELECTRICAL_CATEGORIES = [
     image: "/Images/product/earthing.png"
   },
   {
-    id: "Lighting aircraft warning lights/signal lights",
-    label: "Lighting aircraft warning lights/signal lights",
-    desc: "Industrial lights, hazard signaling, & visual beacon indicators",
-    tag: "Industrial Lighting",
-    image: "/Images/product/lighting.png"
-  },
-  {
-    id: "Obstruction lights/aircraft warning lights",
-    label: "Obstruction lights/aircraft warning lights",
-    desc: "Safety tower hazard lighting & structural aircraft warning lights",
-    tag: "Obstruction Lights",
+    id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
+    label: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
+    desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
+    tag: "Warning & Obstruction",
     image: "/Images/product/obstruction.png"
   },
   {
@@ -80,6 +73,13 @@ const ELECTRICAL_CATEGORIES = [
     desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories",
     tag: "Special Sealing",
     image: "/Images/product/other.png"
+  },
+  {
+    id: "Industrial products/bulk material/oil and gas equipment",
+    label: "Industrial / Bulk Material / HVAC / Automation / Mechanical",
+    desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
+    tag: "Industrial",
+    image: "/Images/product/industrial.png"
   }
 ];
 
@@ -211,7 +211,7 @@ export default function Homepage() {
       const trackWidth = projectsTrackRef.current.scrollWidth;
       const viewportWidth = window.innerWidth;
       const maxTranslate = Math.max(trackWidth - viewportWidth + 40, 0);
-      const scrollFactor = 2.5; // Increase this to make scrolling slower
+      const scrollFactor = 1.5; // Increase this to make scrolling slower
 
       // Set the height of the section to match the scroll distance * factor
       projectsRef.current.style.height = `${window.innerHeight + maxTranslate * scrollFactor}px`;
@@ -638,7 +638,7 @@ export default function Homepage() {
                 <Image src="/Images/About/tool.svg" alt="Technical Expertise" width={28} height={28} />
               </div>
               <h4>Technical Expertise</h4>
-              <p>20+ years of specialized<br />engineering knowledge</p>
+              <p>25+ years of specialized<br />engineering knowledge</p>
             </div>
             <div className="why-gr-item">
               <div className="feature-icon">
@@ -751,7 +751,7 @@ export default function Homepage() {
                 <span>{"- OUR\u00A0PROJECTS -"}</span>
               </div>
             </div>
-            <h2>Projects We've Supplied</h2>
+            <h2>OUR PROJECT PORTFOLIO</h2>
           </div>
           <div className="hp-projects-viewport" ref={projectsViewportRef}>
             <div className="hp-projects-track" ref={projectsTrackRef}>
@@ -797,17 +797,16 @@ export default function Homepage() {
                 <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
               </div>
             </div>
-            <h3>Madhusudan Mathilakath</h3>
-            <p>CEO</p>
+            <h3>Chief Executive Officer</h3>
           </div>
-          <div className="hp-leadership-copy">
-            <p className="hp-leadership-main">
+          <div className="hp-leadership-copy" style={{ fontSize: "clamp(18px, 1.4vw, 22px)" }}>
+            <p style={{ marginBottom: "28px" }}>
               "At Gulf Radiant, we believe that reliable engineering solutions are built through trust, quality, and long-term partnerships. For over two decades, we have proudly supported infrastructure, industrial, and energy projects across the GCC with globally trusted electrical solutions.
             </p>
-            <div>
-              <p>Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries."</p>
-              <p>Thank you.</p>
-            </div>
+            <p style={{ marginBottom: "28px" }}>
+              Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries."
+            </p>
+            <p>Thank you.</p>
           </div>
         </div>
       </section>
