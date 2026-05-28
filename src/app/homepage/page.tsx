@@ -98,6 +98,7 @@ export default function Homepage() {
   const cursorLinkRef = useRef<HTMLAnchorElement | null>(null);
   const projectsTopRef = useRef<HTMLDivElement | null>(null);
   const projectsViewportRef = useRef<HTMLDivElement | null>(null);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [activeCertIndex, setActiveCertIndex] = useState(0);
@@ -140,29 +141,19 @@ export default function Homepage() {
 
       const rect = statsRef.current.getBoundingClientRect();
       const viewport = window.innerHeight || 1;
-      const scrollRange = Math.max(rect.height - viewport, 1);
 
-      // Include entry phase: progress 0 when section first enters viewport,
-      // 0.25 when fully pinned, 1 when fully scrolled through.
-      const totalTravel = scrollRange + viewport;
-      const progress = Math.min(Math.max((viewport - rect.top) / totalTravel, 0), 1);
+      // Start animating when the top of the section enters the bottom part of the screen
+      const startTrigger = viewport * 0.65;
+      // Finish animating when the top of the section is near the top of the screen
+      const endTrigger = viewport * 0.2;
 
-      const centeredY = Math.max((viewport - 480) / 2, 0);
-      const startY = viewport + 100;
+      const progress = Math.max(0, Math.min(1, (startTrigger - rect.top) / (startTrigger - endTrigger)));
 
-      const clamp01 = (v: number) => Math.min(Math.max(v, 0), 1);
       const easeOut = (v: number) => 1 - Math.pow(1 - v, 3);
-
-      const revealStart = 0.28;
-      const revealDuration = 0.22;
+      const easedProgress = easeOut(progress);
 
       statCardsRef.current.forEach((card, index) => {
         if (!card) return;
-        const t = clamp01((progress - revealStart) / revealDuration);
-        const easedProgress = easeOut(t);
-        const translateY = startY + (centeredY - startY) * easedProgress;
-        card.style.transform = `translate3d(0, ${translateY}px, 0)`;
-
         const number = statNumberRefs.current[index];
         if (number) {
           number.textContent = String(Math.round(statTargets[index] * easedProgress));
@@ -171,82 +162,11 @@ export default function Homepage() {
     };
 
     const updateCertCards = () => {
-      if (!certRef.current) return;
-
-      const isMobileLocal = window.innerWidth <= 1024;
-      if (isMobileLocal) return;
-
-      const rect = certRef.current.getBoundingClientRect();
-      const viewport = window.innerHeight || 1;
-      const scrollRange = Math.max(rect.height - viewport, 1);
-      const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
-      const count = certCardsRef.current.length || 1;
-
-      certCardsRef.current.forEach((card, index) => {
-        if (!card) return;
-
-        let centerIndex = progress * (count - 1);
-        const d = centerIndex - index;
-        const theta = d * (Math.PI / 2);
-
-        let translateX, translateY, scale, opacity;
-
-        // Desktop animation
-        const radiusY = viewport * 0.45;
-        const radiusX = 500;
-        translateX = radiusX * Math.cos(theta) - 750;
-        translateY = radiusY * Math.sin(theta);
-        scale = Math.max(0.7, 1 - Math.abs(d) * 0.15);
-        opacity = Math.max(0, 1 - Math.abs(d));
-
-        card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
-        card.style.opacity = `${opacity}`;
-        card.style.zIndex = String(Math.round((1 - Math.abs(d)) * 10));
-      });
+      // Logic removed as desktop and mobile now share the auto-carousel via useEffect
     };
 
     const updateProjects = () => {
-      if (!projectsRef.current || !projectsTrackRef.current || !projectsStickyRef.current) return;
-
-      const trackWidth = projectsTrackRef.current.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      const maxTranslate = Math.max(trackWidth - viewportWidth + 40, 0);
-      const scrollFactor = 1.5; // Increase this to make scrolling slower
-
-      // Set the height of the section to match the scroll distance * factor
-      projectsRef.current.style.height = `${window.innerHeight + maxTranslate * scrollFactor}px`;
-
-      const rect = projectsRef.current.getBoundingClientRect();
-      const viewport = window.innerHeight || 1;
-
-      // JS Fallback for sticky behavior
-      if (rect.top <= 0 && rect.bottom >= viewport) {
-        // Active range: Make it FIXED at top
-        projectsStickyRef.current.style.position = 'fixed';
-        projectsStickyRef.current.style.top = '0';
-        projectsStickyRef.current.style.width = '100%';
-        projectsStickyRef.current.style.left = '0';
-      } else if (rect.bottom < viewport) {
-        // Scrolled past: Make it ABSOLUTE at bottom of section
-        projectsStickyRef.current.style.position = 'absolute';
-        projectsStickyRef.current.style.top = 'auto';
-        projectsStickyRef.current.style.bottom = '0';
-        projectsStickyRef.current.style.width = '100%';
-        projectsStickyRef.current.style.left = '0';
-      } else {
-        // Not reached yet: Make it ABSOLUTE at top of section
-        projectsStickyRef.current.style.position = 'absolute';
-        projectsStickyRef.current.style.top = '0';
-        projectsStickyRef.current.style.bottom = 'auto';
-        projectsStickyRef.current.style.width = '100%';
-        projectsStickyRef.current.style.left = '0';
-      }
-
-      const progress = Math.min(Math.max(-rect.top / (maxTranslate * scrollFactor), 0), 1);
-
-      const translateX = -progress * maxTranslate;
-
-      projectsTrackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      // Scroll logic removed. Carousel is now auto-played via useEffect.
     };
 
     let lastMouseX = 0;
@@ -348,18 +268,26 @@ export default function Homepage() {
   }, []);
 
   useEffect(() => {
-    if (!isMobile) return;
     const timer = setInterval(() => {
       setActiveCertIndex((prev) => (prev + 1) % certImages.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(timer);
-  }, [isMobile, certImages.length]);
+  }, [certImages.length]);
 
   useEffect(() => {
-    if (!isMobile) return;
     certCardsRef.current.forEach((card, index) => {
       if (!card) return;
-      const d = index - activeCertIndex;
+      const count = certImages.length;
+      let d = index - activeCertIndex;
+      
+      // Wrap around so items always come from the right
+      if (d < -1) {
+        d += count;
+      }
+      if (d > count - 2) {
+        d -= count;
+      }
+
       const translateX = d * 110;
       const opacity = index === activeCertIndex ? 1 : 0;
       const scale = index === activeCertIndex ? 1 : 0.9;
@@ -370,7 +298,36 @@ export default function Homepage() {
       card.style.zIndex = `${zIndex}`;
       card.style.pointerEvents = index === activeCertIndex ? "auto" : "none";
     });
-  }, [activeCertIndex, isMobile]);
+  }, [activeCertIndex]);
+
+  // --- PROJECTS AUTO-CAROUSEL ---
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveProjectIndex((prev) => {
+        if (!projectsTrackRef.current || !projectsViewportRef.current) return prev + 1;
+        const card = projectsTrackRef.current.children[0] as HTMLElement;
+        if (!card) return prev + 1;
+        const cardWidth = card.offsetWidth + 10; // including gap
+        const maxTranslate = Math.max(0, projectsTrackRef.current.scrollWidth - projectsViewportRef.current.offsetWidth);
+        const maxIndex = Math.ceil(maxTranslate / cardWidth);
+        return prev >= maxIndex ? 0 : prev + 1;
+      });
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!projectsTrackRef.current || !projectsViewportRef.current) return;
+    const card = projectsTrackRef.current.children[0] as HTMLElement;
+    if (!card) return;
+    const cardWidth = card.offsetWidth + 10; // including 10px gap
+    const maxTranslate = Math.max(0, projectsTrackRef.current.scrollWidth - projectsViewportRef.current.offsetWidth);
+    
+    // Ensure we don't translate past the end of the content (preventing empty space)
+    const translateX = -Math.min(cardWidth * activeProjectIndex, maxTranslate);
+    projectsTrackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
+  }, [activeProjectIndex]);
+  // ------------------------------
 
   useEffect(() => {
     const handleHashScroll = () => {
@@ -751,7 +708,7 @@ export default function Homepage() {
                 <span>{"- OUR\u00A0PROJECTS -"}</span>
               </div>
             </div>
-            <h2>OUR PROJECT PORTFOLIO</h2>
+            <h2>Our Project Portfolio</h2>
           </div>
           <div className="hp-projects-viewport" ref={projectsViewportRef}>
             <div className="hp-projects-track" ref={projectsTrackRef}>

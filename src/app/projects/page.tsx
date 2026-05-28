@@ -197,7 +197,7 @@ function ProjectsPageContent() {
 
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title projects-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Our Projects</h1>
+            <h1 className="new-prod-title projects-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Our Project Portfolio</h1>
           </div>
 
           {/* CATEGORY CAROUSEL */}
