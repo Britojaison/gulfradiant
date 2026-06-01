@@ -208,14 +208,16 @@ function ProductPageContent() {
                   onClick={() => handleCategorySelect(cat.id)}
                 >
                   <div className="new-prod-cat-card-img-wrapper">
-                    <Image
-                      src={cat.image}
-                      alt={cat.label}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="260px"
-                      priority={CATEGORY_MAP.indexOf(cat) < 4}
-                    />
+                    {cat.id !== "All" && (
+                      <Image
+                        src={cat.image}
+                        alt={cat.label}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="260px"
+                        priority={CATEGORY_MAP.indexOf(cat) < 4}
+                      />
+                    )}
                   </div>
                   <div className="new-prod-cat-card-overlay" />
                   <div className="new-prod-cat-card-content">

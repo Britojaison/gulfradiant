@@ -400,13 +400,13 @@ export default function Homepage() {
     {
       title: "Dubai Uptown Tower",
       alt: "Dubai Uptown Tower",
-      image: "p7.png",
+      image: "aircraft warning lights/Dubai Uptown Tower.jpg",
       position: "center center",
     },
     {
-      title: "DMCC Tower",
-      alt: "DMCC Tower",
-      image: "p8.png",
+      title: "Sky Hills Residence",
+      alt: "Sky Hills Residence",
+      image: "aircraft warning lights/SKY HILLS RESIDENCE.jpg",
       position: "center center",
     },
   ];
