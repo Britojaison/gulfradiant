@@ -16,7 +16,8 @@ const CATEGORY_MAP = [
     id: "All",
     label: "All Projects",
     image: "/Images/our_projects/img7.svg",
-    desc: "Explore all our completed projects across industries"
+    desc: "Explore all our completed projects across industries",
+    filter: "brightness(1.8)"
   },
   {
     id: "LIGHTNING & EXOTHERMIC WELDING  PROTECTION",
@@ -28,7 +29,8 @@ const CATEGORY_MAP = [
     id: "aircraft warning lights",
     label: "Aircraft Warning Lights",
     image: "/Images/our_projects/aircraft warning lights/Dubai Uptown Tower.jpg",
-    desc: "Aviation obstruction lights and warning system projects"
+    desc: "Aviation obstruction lights and warning system projects",
+    objectFit: "fill" as const
   },
   {
     id: "high ampherage pluug and sockets ",
@@ -215,7 +217,10 @@ function ProjectsPageContent() {
                       src={cat.image}
                       alt={cat.label}
                       fill
-                      style={{ objectFit: "cover" }}
+                      style={{ 
+                        objectFit: (cat as any).objectFit || "cover",
+                        filter: (cat as any).filter || "none" 
+                      }}
                       sizes="260px"
                     />
                   </div>
