@@ -48,14 +48,14 @@ const ELECTRICAL_CATEGORIES = [
   },
   {
     id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
-    label: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
+    label: "Lighting • Aircraft Warning Light • Obstruction Lights • Signal Lights",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
     tag: "Warning & Obstruction",
     image: "/Images/product/obstruction.png"
   },
   {
     id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
+    label: "Control Devices Plugs • Receptacles • Switching Accessories • Isolators • Explosion Proof",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
     tag: "Control Devices",
     image: "/Images/product/control devices.png"
@@ -76,7 +76,7 @@ const ELECTRICAL_CATEGORIES = [
   },
   {
     id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial / Bulk Material / HVAC / Automation / Mechanical",
+    label: "Industrial • Bulk Material • HVAC • Automation • Mechanical",
     desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
     tag: "Industrial",
     image: "/Images/product/industrial.png"
@@ -471,7 +471,17 @@ export default function Homepage() {
                 </div>
                 <div className="hp-cat-card-overlay" />
                 <div className="hp-cat-card-content">
-                  <h3 className="hp-cat-card-title">{cat.label}</h3>
+                  <h3 className="hp-cat-card-title">
+                    {cat.label.includes('•') ? (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', alignItems: 'flex-start' }}>
+                        {cat.label.split('•').map((item, idx) => (
+                          <span key={idx} style={{ display: 'block' }}>• {item.trim()}</span>
+                        ))}
+                      </div>
+                    ) : (
+                      cat.label
+                    )}
+                  </h3>
                 </div>
               </Link>
             ))}
@@ -754,7 +764,10 @@ export default function Homepage() {
                 <span>{"- LEADERSHIP\u00A0MESSAGE -"}</span>
               </div>
             </div>
-            <h3>Chief Executive Officer</h3>
+            <h3>
+              <span style={{ color: "#ffffff", display: "block" }}>Message from the</span>
+              <span style={{ color: "#ff5b05", display: "block" }}>CEO</span>
+            </h3>
           </div>
           <div className="hp-leadership-copy" style={{ fontSize: "clamp(18px, 1.4vw, 22px)" }}>
             <p style={{ marginBottom: "28px" }}>

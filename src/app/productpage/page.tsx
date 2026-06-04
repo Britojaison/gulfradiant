@@ -30,13 +30,13 @@ const CATEGORY_MAP = [
   },
   {
     id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
-    label: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
+    label: "Lighting • Aircraft Warning Light • Obstruction Lights • Signal Lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
   {
     id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control Devices Plugs, Receptacles, Switching Accessories, Isolators, Explosion Proof",
+    label: "Control Devices Plugs • Receptacles • Switching Accessories • Isolators • Explosion Proof",
     image: "/Images/product/control devices.png",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
@@ -54,7 +54,7 @@ const CATEGORY_MAP = [
   },
   {
     id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial Products / Bulk Material / Oil And Gas Equipment",
+    label: "Industrial Products • Bulk Material • Oil And Gas Equipment",
     image: "/Images/product/industrial.png",
     desc: "Bulk materials, pipelines, refinery supply, & gas process equipment"
   }
@@ -219,9 +219,19 @@ function ProductPageContent() {
                       />
                     )}
                   </div>
-                  <div className="new-prod-cat-card-overlay" />
+                  {cat.id !== "All" && <div className="new-prod-cat-card-overlay" />}
                   <div className="new-prod-cat-card-content">
-                    <h3 className="new-prod-cat-card-title">{cat.label}</h3>
+                    <h3 className="new-prod-cat-card-title">
+                      {cat.label.includes('•') ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', alignItems: 'flex-start' }}>
+                          {cat.label.split('•').map((item, idx) => (
+                            <span key={idx} style={{ display: 'block' }}>• {item.trim()}</span>
+                          ))}
+                        </div>
+                      ) : (
+                        cat.label
+                      )}
+                    </h3>
                   </div>
                 </button>
               );

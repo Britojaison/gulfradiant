@@ -66,7 +66,7 @@
   cursor: pointer;
   color: #ffffff;
   font-family: var(--font-subject);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
   overflow: visible;
@@ -79,7 +79,13 @@
 }
 
 .sm-toggle-textWrap {
-  display: none !important;
+  display: block;
+  overflow: hidden;
+  height: 1em;
+}
+
+.sm-toggle[aria-expanded="true"] .sm-toggle-textWrap {
+  display: none;
 }
 
 .sm-toggle-textInner {
@@ -99,10 +105,14 @@
   width: 45px;
   height: 45px;
   flex: 0 0 45px;
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   will-change: transform;
+}
+
+.sm-toggle[aria-expanded="true"] .sm-icon {
+  display: inline-flex;
 }
 
 .sm-icon-line {
@@ -128,19 +138,7 @@
   top: 75%;
 }
 
-.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(1) {
-  top: 50%;
-  transform: translateX(-50%) rotate(45deg);
-}
 
-.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(2) {
-  opacity: 0;
-}
-
-.sm-toggle[aria-expanded="true"] .sm-icon-line:nth-child(3) {
-  top: 50%;
-  transform: translateX(-50%) rotate(-45deg);
-}
 
 .staggered-menu-panel {
   position: absolute;
@@ -336,7 +334,7 @@
   }
 
   .sm-toggle-textWrap {
-    display: none;
+    /* Keep default behavior defined outside media query */
   }
 
   .staggered-menu-panel,

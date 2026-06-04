@@ -5826,7 +5826,7 @@
     min-height: 540px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    padding: 40px 40px 20px 40px !important;
+    padding: 40px 80px 20px 80px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -5976,10 +5976,10 @@
     overflow-x: auto !important;
     gap: 24px !important;
     margin-bottom: 0 !important;
-    padding: 10px 40px 20px 40px !important;
-    margin-left: -40px !important;
-    margin-right: -40px !important;
-    width: calc(100% + 80px) !important;
+    padding: 10px 80px 20px 80px !important;
+    margin-left: -80px !important;
+    margin-right: -80px !important;
+    width: calc(100% + 160px) !important;
     scroll-behavior: smooth !important;
   }
 
@@ -6005,9 +6005,9 @@
     overflow: hidden !important;
     cursor: pointer !important;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    border: 2px solid transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-    background: none !important;
+    background: transparent !important;
   }
 
   .new-prod-cat-card:hover {
@@ -6122,8 +6122,8 @@
     height: auto !important;
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    border-top: 1px solid #000000 !important;
-    border-left: 1px solid #000000 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
     gap: 0 !important;
     box-sizing: border-box !important;
     grid-auto-rows: auto !important;
@@ -6131,8 +6131,8 @@
 
   .new-prod-brands-page.is-industrial {
     grid-template-columns: repeat(4, 1fr) !important;
-    border-top: 1px solid #000000 !important;
-    border-left: 1px solid #000000 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
     gap: 0 !important;
     grid-auto-rows: auto !important;
   }
@@ -6144,10 +6144,10 @@
     align-items: center !important;
     justify-content: center !important;
     padding: 30px !important;
-    background-color: #ffffff !important;
+    background-color: transparent !important;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    border-bottom: 1px solid #000000 !important;
-    border-right: 1px solid #000000 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
     position: relative !important;
     overflow: hidden !important;
     border-radius: 0 !important;
@@ -6563,15 +6563,17 @@
   .hp-divisions-section {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/Images/image 93.png') no-repeat center center;
     background-size: cover;
-    height: auto;
-    min-height: auto;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 5;
     box-sizing: border-box;
-    padding: 80px 80px;
+    padding: 60px 80px;
   }
 
   .hp-divisions-section .hp-dist-subtitle {
@@ -6584,7 +6586,8 @@
 
   .hp-divisions-inner {
     width: 100%;
-    max-width: 1800px;
+    max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6597,25 +6600,28 @@
     font-weight: 700;
     color: #ffffff;
     margin-top: 10px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     text-align: center;
   }
 
   /* NEW CATEGORY CARD GRID STYLES */
   .hp-divisions-grid-new {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
     gap: 16px;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    flex-grow: 1;
+    min-height: 0;
   }
 
   .hp-cat-card {
     position: relative !important;
     width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    height: auto !important;
+    height: 100% !important;
+    min-height: 0 !important;
     border-radius: 24px !important;
     padding: 0 !important;
     overflow: hidden !important;
@@ -6699,29 +6705,7 @@
       padding: 0 30px;
     }
 
-    .hp-divisions-grid-new {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      overflow-x: auto !important;
-      scroll-snap-type: x mandatory !important;
-      max-width: 100%;
-      gap: 16px;
-      padding: 0 30px 20px 30px !important;
-      scrollbar-width: none !important;
-      /* Firefox */
-      -ms-overflow-style: none !important;
-      /* IE and Edge */
-    }
 
-    .hp-divisions-grid-new::-webkit-scrollbar {
-      display: none !important;
-    }
-
-    .hp-divisions-grid-new .hp-cat-card {
-      flex: 0 0 320px !important;
-      width: 320px !important;
-      scroll-snap-align: center !important;
-    }
 
     .hp-cat-card-title {
       font-size: 16px !important;
@@ -6744,13 +6728,9 @@
     }
 
     .hp-divisions-grid-new {
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       padding: 0 20px 20px 20px !important;
-    }
-
-    .hp-divisions-grid-new .hp-cat-card {
-      flex: 0 0 280px !important;
-      width: 280px !important;
     }
 
     .hp-cat-card-title {
@@ -6763,9 +6743,27 @@
   }
 
   @media (max-width: 480px) {
-    .hp-divisions-grid-new .hp-cat-card {
-      flex: 0 0 260px !important;
-      width: 260px !important;
+    .hp-divisions-section {
+      padding: 80px 0 20px 0;
+    }
+    .hp-divisions-section .hp-dist-subtitle {
+      margin-bottom: 8px !important;
+    }
+    .hp-divisions-main-title {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+    .hp-divisions-grid-new {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0 12px 12px 12px !important;
+    }
+    .hp-cat-card-title {
+      font-size: 11px !important;
+    }
+    .hp-cat-card-content {
+      padding: 8px !important;
     }
   }
 
