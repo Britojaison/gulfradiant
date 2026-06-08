@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
+import React from "react";
 
 // Brand Database Interface
 interface ProductItem {
@@ -17,7 +18,7 @@ interface BrandData {
   subtitle: string;
   description: string;
   website: string;
-  productRange: ProductItem[];
+  productRange?: ProductItem[];
   certifiedLogos: string[];
   aboutP1: string;
   aboutP2: string;
@@ -1092,7 +1093,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
 
   const activeProducts = selectedCategory 
     ? brandData.categories?.find(c => c.name === selectedCategory)?.products || []
-    : brandData.productRange;
+    : (brandData.productRange || []);
 
   return (
     <>
@@ -1293,7 +1294,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                     justifyContent: "center"
                   }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                      <Image src={category.thumbnail} alt={category.name} fill style={{ objectFit: "contain" }} />
+                      <Image src={category.thumbnail || ""} alt={category.name} fill style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                 </div>
