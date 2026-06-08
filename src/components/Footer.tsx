@@ -66,7 +66,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="hp-footer-location" style={{ marginTop: "32px" }}>
+              <div className="hp-footer-location abu-dhabi-loc">
                 <h4>Abu Dhabi</h4>
                 <a 
                   href="https://www.google.com/maps?q=24.380814,54.510216" 

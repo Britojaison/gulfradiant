@@ -1126,7 +1126,51 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: "80px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>
           {brandData.categories && !selectedCategory ? "Product Categories" : "Product Range"}
         </h2>
-        
+        <style dangerouslySetInnerHTML={{__html: `
+          .citel-tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+          }
+          @media (max-width: 1024px) {
+            .categories-grid[style] {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 20px !important;
+              padding: 0 40px !important;
+            }
+            .categories-grid .obsta-category-card {
+              height: 350px !important;
+            }
+            .citel-tabs-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+          }
+          @media (max-width: 640px) {
+            .categories-grid[style] {
+              grid-template-columns: repeat(1, 1fr) !important;
+              gap: 20px !important;
+              padding: 0 20px !important;
+            }
+            .categories-grid .obsta-category-card {
+              height: 300px !important;
+            }
+            .categories-grid .obsta-category-card > div:first-child {
+              font-size: 16px !important;
+              padding: 12px 10px !important;
+            }
+            .citel-tabs-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 12px;
+            }
+            .citel-tabs-grid button {
+              padding: 12px 8px !important;
+              font-size: 14px !important;
+            }
+          }
+        `}} />
         {brandData.categories && selectedCategory && (
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
             <button 
@@ -1153,7 +1197,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
         )}
 
         <div 
-          className="kumwell-product-grid" 
+          className={brandData.categoryStyle === "tabs" && !selectedCategory ? "" : `kumwell-product-grid ${!selectedCategory && brandData.categories ? "categories-grid" : ""}`} 
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -1161,11 +1205,12 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             justifyContent: "center",
             maxWidth: "1690px",
             margin: "0 auto",
-            padding: "0 20px"
+            padding: "0 20px",
+            width: "100%"
           }}
         >
           {brandData.categoryStyle === "tabs" && !selectedCategory ? (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "16px", maxWidth: "900px", margin: "0 auto", width: "100%" }}>
+            <div className="citel-tabs-grid">
               {brandData.categories?.map((category, index) => (
                 <button 
                   key={index}
@@ -1207,12 +1252,14 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                   display: "flex", 
                   flexDirection: "column", 
                   alignItems: "center",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  width: "100%"
                 }}
                 onClick={() => setSelectedCategory(category.name)}
               >
-                <div style={{ 
-                  width: "480px", 
+                <div className="obsta-category-card" style={{ 
+                  width: "100%",
+                  maxWidth: "480px", 
                   height: "400px", 
                   borderRadius: "16px", 
                   border: "1px solid #e0e0e0", 
@@ -1220,7 +1267,8 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                   display: "flex", 
                   flexDirection: "column", 
                   background: "#fff",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                  margin: "0 auto"
                 }}>
                   <div style={{ 
                     padding: "20px 10px", 
@@ -1307,6 +1355,20 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           )}
         </div>
       </section>
+
+      <style jsx global>{`
+        @media (min-width: 1025px) {
+          .categories-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 24px !important;
+            width: 100% !important;
+          }
+          .categories-grid .kumwell-product-item {
+            width: 100% !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

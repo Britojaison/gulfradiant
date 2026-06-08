@@ -914,6 +914,40 @@ export default function Homepage() {
           </div>
         </div>
       </section>
+
+      <style jsx global>{`
+        @media (max-width: 1024px) {
+          .hp-projects-section-new { min-height: auto !important; }
+          .hp-projects-sticky { min-height: auto !important; height: auto !important; overflow: visible !important; }
+          .hp-project-card { 
+            flex: 0 0 65vw !important;
+            width: 65vw !important;
+            height: calc(65vw * 11 / 16) !important;
+            min-height: 300px !important;
+          }
+          .hp-projects-viewport {
+            height: calc(65vw * 11 / 16) !important;
+            min-height: 300px !important;
+          }
+          .hp-projects-track { height: 100% !important; align-items: center !important; }
+        }
+
+        @media (max-width: 768px) {
+          .hp-projects-section-new { min-height: auto !important; }
+          .hp-projects-sticky { min-height: auto !important; height: auto !important; overflow: visible !important; }
+          .hp-project-card { 
+            flex: 0 0 90vw !important;
+            width: 90vw !important;
+            height: 110vw !important;
+            min-height: 400px !important;
+          }
+          .hp-projects-viewport {
+            height: 110vw !important;
+            min-height: 400px !important;
+          }
+          .hp-projects-track { height: 100% !important; align-items: center !important; }
+        }
+      `}</style>
     </div>
   );
 }
