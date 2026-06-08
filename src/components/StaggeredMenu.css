@@ -40,7 +40,7 @@
 .sm-logo {
   display: flex;
   align-items: center;
-  width: 440px;
+  width: auto;
   height: 140px;
   user-select: none;
 }
@@ -51,6 +51,22 @@
   height: 140px;
   object-fit: contain;
   object-position: left center;
+}
+
+.sm-logo-divider {
+  display: block;
+  width: 1px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: -200px;
+}
+
+.sm-secondary-logo-img {
+  display: block;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 20px;
 }
 
 .sm-toggle {
@@ -312,10 +328,24 @@
     padding: 0 20px;
   }
 
-  .sm-logo,
-  .sm-logo-img {
-    width: 260px;
+  .sm-logo {
+    width: auto;
     height: 80px;
+  }
+  
+  .sm-logo-img {
+    width: 200px;
+    height: 60px;
+  }
+
+  .sm-logo-divider {
+    height: 24px;
+    margin-left: -98px;
+  }
+
+  .sm-secondary-logo-img {
+    height: 28px;
+    margin-left: 5px;
   }
 
   .sm-toggle {

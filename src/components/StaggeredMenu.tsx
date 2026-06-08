@@ -23,6 +23,7 @@ type StaggeredMenuProps = {
   displayItemNumbering?: boolean;
   className?: string;
   logoUrl?: string;
+  secondaryLogoUrl?: string;
   logoHref?: string;
   menuButtonColor?: string;
   openMenuButtonColor?: string;
@@ -44,6 +45,7 @@ export default function StaggeredMenu({
   displayItemNumbering = true,
   className,
   logoUrl = "/Images/Brand_partners/Frame 76.png",
+  secondaryLogoUrl,
   logoHref = "/homepage#home-hero",
   menuButtonColor = "#fff",
   openMenuButtonColor = "#fff",
@@ -325,6 +327,12 @@ export default function StaggeredMenu({
       <header className="staggered-menu-header" aria-label="Main navigation header">
         <a href={logoHref} className="sm-logo" aria-label="Go to homepage hero section" onClick={onLogoClick}>
           <img src={logoUrl} alt="Gulf Radiant" className="sm-logo-img" draggable={false} />
+          {secondaryLogoUrl && (
+            <>
+              <span className="sm-logo-divider" aria-hidden="true" />
+              <img src={secondaryLogoUrl} alt="Nav Logo" className="sm-secondary-logo-img" draggable={false} />
+            </>
+          )}
         </a>
 
         <button

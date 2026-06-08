@@ -45,6 +45,7 @@ export default function Navbar() {
       closeOnClickAway={true}
       colors={["#151923", "#FF5B05"]}
       logoUrl="/Images/Brand_partners/Frame 76.png"
+      secondaryLogoUrl={`/Images/Home/nav_logo.jpg?v=${new Date().getTime()}`}
       logoHref="/homepage#home-hero"
       menuButtonColor="#ffffff"
       openMenuButtonColor="#ffffff"
