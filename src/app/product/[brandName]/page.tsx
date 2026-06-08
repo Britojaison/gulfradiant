@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useState } from "react";
 
 // Brand Database Interface
 interface ProductItem {
@@ -22,6 +23,13 @@ interface BrandData {
   aboutP2: string;
   aboutBg: string;
   aboutHighlight: string;
+  categoryStyle?: "cards" | "tabs";
+  categories?: {
+    name: string;
+    thumbnail?: string;
+    icon?: React.ReactNode;
+    products: ProductItem[];
+  }[];
 }
 
 const BRAND_DATABASE: Record<string, BrandData> = {
@@ -90,32 +98,84 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Surge Protection Solutions",
     description: "Professional surge protection devices safeguarding high-voltage power networks, solar PV installations, telecom lines, and LED lighting systems.",
     website: "https://citel.fr/en",
-    productRange: [
-      { image: "/Images/Citel/2756_DS254VG-300-G_pic.png", caption: "DS254VG-300-G" },
-      { image: "/Images/Citel/60014_P8AX25-N-FF_pic.png", caption: "P8AX25-N-FF" },
-      { image: "/Images/Citel/640211_DLA2-12D3_pic.png", caption: "DLA2-12D3" },
-      { image: "/Images/Citel/790121_LSC_A.png", caption: "LSC A" },
-      { image: "/Images/Citel/821310242_DACF15S-11-275__pic.png", caption: "DACF15S-11-275" },
-      { image: "/Images/Citel/821310244_DACF15S-31-275_pic.png", caption: "DACF15S-31-275" },
-      { image: "/Images/Citel/CXC06_pic.png", caption: "CXC06" },
-      { image: "/Images/Citel/DLA-24D3_pic.png", caption: "DLA-24D3" },
-      { image: "/Images/Citel/DPVN1-6CVGS-21Y-1200-Kamera+Kopie.png", caption: "DPVN1-6CVGS-21Y-1200" },
-      { image: "/Images/Citel/DS44S-280-G_pic.png", caption: "DS44S-280-G" },
-      { image: "/Images/Citel/DS50PVS-1000.png", caption: "DS50PVS-1000" },
-      { image: "/Images/Citel/Gamme_MJ8-POE.png-d9a204e31-shaved.png", caption: "MJ8-POE" },
-      { image: "/Images/Citel/_CWMJ8-POE-C6A_pic.png", caption: "CWMJ8-POE-C6A" },
-      { image: "/Images/Citel/_DAC1-13S-40-440_pic.png", caption: "DAC1-13S-40-440" },
-      { image: "/Images/Citel/_DAC1-13VGS-31-275_pic.png", caption: "DAC1-13VGS-31-275" },
-      { image: "/Images/Citel/_DAC50S-10-320_pic.png", caption: "DAC50S-10-320" },
-      { image: "/Images/Citel/_DAC50S-11-275_pic.png", caption: "DAC50S-11-275" },
-      { image: "/Images/Citel/_DACF15S-10_275_pic.png", caption: "DACF15S-10-275" },
-      { image: "/Images/Citel/_DACN1-25CVGS-31-320-SC_pic.png", caption: "DACN1-25CVGS-31-320-SC" },
-      { image: "/Images/Citel/_DPVN40CVGS-21Y-1200_pic.png", caption: "DPVN40CVGS-21Y-1200" },
-      { image: "/Images/Citel/_DS60VGPV-1000-G-51-pic.png", caption: "DS60VGPV-1000-G" },
-      { image: "/Images/Citel/_MLPC1-230L-R_pic.png", caption: "MLPC1-230L-R" },
-      { image: "/Images/Citel/_MLPM1-230L-R_pic.png", caption: "MLPM1-230L-R" },
-      { image: "/Images/Citel/_MLPX1-230L-W_pic.png", caption: "MLPX1-230L-W" },
-      { image: "/Images/Citel/unnamed.png", caption: "Surge Protector" }
+    categoryStyle: "tabs",
+    categories: [
+      {
+        name: "AC Power",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>,
+        products: [
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER TYPE 1+2+3-13VGS-31-275_pic.png", caption: "AC POWER TYPE 1+2+3-13VGS-31-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 (or 3)_DACF15S-10_275_pic.png", caption: "AC POWER Type 2 (or 3)_DACF15S-10_275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-10-320_pic.png", caption: "AC POWER Type 2 AC_DAC50S-10-320" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-11-275_pic.png", caption: "AC POWER Type 2 AC_DAC50S-11-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC.png", caption: "AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1+2+3 2756_DS254VG-300-G_pic.png", caption: "AC POWER _Type 1+2+3 2756_DS254VG-300-G" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310242_DACF15S-11-275__pic.png", caption: "AC POWER _Type 2 (or 3)821310242_DACF15S-11-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310244_DACF15S-31-275_pic.png", caption: "AC POWER _Type 2 (or 3)821310244_DACF15S-31-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440_pic.png", caption: "AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440" },
+          { image: "/Images/Citel/AC DC POWER SPD/DC POWER _70124042_DDCN03S-21YG-30.webp", caption: "DC POWER _70124042_DDCN03S-21YG-30" },
+          { image: "/Images/Citel/AC DC POWER SPD/DC POWER _828511563_DDC50S-21Y-1200.png", caption: "DC POWER _828511563_DDC50S-21Y-1200" },
+          { image: "/Images/Citel/AC DC POWER SPD/DC POWER _DDC20CS-20-24.webp", caption: "DC POWER _DDC20CS-20-24" }
+        ]
+      },
+      {
+        name: "Photovoltaic",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l3-12h14l-3 12H3z"/><path d="M6 15h13.5"/><path d="M9 9l-2 12"/><path d="M15 9l-2 12"/></svg>,
+        products: [
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200-Kamera+Kopie.png", caption: "PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2 DS50PVS-1000.png", caption: "PHOTOVOLTAIC _Type 2 DS50PVS-1000" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200_pic.png", caption: "PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51-pic.png", caption: "PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51" }
+        ]
+      },
+      {
+        name: "LED",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M5.6 5.6l.7.7"/><path d="M18.4 5.6l-.7.7"/><path d="M12 7a5 5 0 1 0 5 5c0 1.5-1.5 3-1.5 6h-7C8.5 15 7 13.5 7 12a5 5 0 0 1 5-5z"/></svg>,
+        products: [
+          { image: "/Images/Citel/LED/LED Type 2 (or 3)_MLPC1-230L-R_pic.png", caption: "LED Type 2 (or 3)_MLPC1-230L-R" },
+          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _MLPX1-230L-W_pic.png", caption: "LED _STANDARD SURGE PROTECTION _MLPX1-230L-W" },
+          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R_pic.png", caption: "LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R" }
+        ]
+      },
+      {
+        name: "Telecom",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+        products: [
+          { image: "/Images/Citel/TELECOM/TELECOM _DIN RAIL _ 640211_DLA2-12D3_pic.png", caption: "TELECOM _DIN RAIL _ 640211_DLA2-12D3" },
+          { image: "/Images/Citel/TELECOM/TELECOM_DIN RAIL _DLA-24D3_pic.png", caption: "TELECOM_DIN RAIL _DLA-24D3" }
+        ]
+      },
+      {
+        name: "Dataline",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="6" rx="2" ry="2"/><rect x="2" y="9" width="20" height="6" rx="2" ry="2"/><rect x="2" y="16" width="20" height="6" rx="2" ry="2"/><path d="M6 5h.01M6 12h.01M6 19h.01"/></svg>,
+        products: [
+          { image: "/Images/Citel/DATALINE/DATALINE  SPD -CRMJ8-POE-C6A.png", caption: "DATALINE  SPD -CRMJ8-POE-C6A" },
+          { image: "/Images/Citel/DATALINE/DATALINE SPD_CXC06_pic.png", caption: "DATALINE SPD_CXC06" },
+          { image: "/Images/Citel/DATALINE/DATALINE _CWMJ8-POE-C6A_pic.png", caption: "DATALINE _CWMJ8-POE-C6A" },
+          { image: "/Images/Citel/DATALINE/DATALINE_MJ8-POE.png", caption: "DATALINE_MJ8-POE" }
+        ]
+      },
+      {
+        name: "Radiocom",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12 A10 10 0 0 1 22 12"/><path d="M6 12 A6 6 0 0 1 18 12"/><path d="M10 12 A2 2 0 0 1 14 12"/><path d="M12 12 L12 22"/><path d="M10 22 L14 22"/></svg>,
+        products: [
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/RADIOCOMMUNICATION_60014_P8AX25-N-FF_pic.png", caption: "RADIOCOMMUNICATION_60014_P8AX25-N-FF" }
+        ]
+      },
+      {
+        name: "Wind Turbine",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12v10"/><path d="M9 22h6"/><path d="M12 12L12 2"/><path d="M12 12L3.3 17"/><path d="M12 12L20.7 17"/><circle cx="12" cy="12" r="2"/></svg>,
+        products: [
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/WIND TURBINE SPD_DS44S-280-G_pic.png", caption: "WIND TURBINE SPD_DS44S-280-G" }
+        ]
+      },
+      {
+        name: "Accessories",
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>,
+        products: [
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/ACCESSORIES _790121_LSC_A.png", caption: "ACCESSORIES _790121_LSC_A" }
+        ]
+      }
     ],
     certifiedLogos: [
     ],
@@ -257,31 +317,76 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Obstruction Lighting & Aircraft Warning Systems",
     description: "Professional aircraft warning lights, medium and high-intensity neon and LED obstruction beacons certified to ICAO and FAA standards.",
     website: "https://www.obsta.com/en/",
-    productRange: [
-      { image: "/Images/Obsta/113625LA (1).png", caption: "113625LA (1)" },
-      { image: "/Images/Obsta/113625LA.png", caption: "113625LA" },
-      { image: "/Images/Obsta/113905_cable.png", caption: "113905 cable" },
-      { image: "/Images/Obsta/113908-KIT.png", caption: "113908-KIT" },
-      { image: "/Images/Obsta/113912.png", caption: "113912" },
-      { image: "/Images/Obsta/113969 (1).png", caption: "113969 (1)" },
-      { image: "/Images/Obsta/114100.png", caption: "114100" },
-      { image: "/Images/Obsta/114601.png", caption: "114601" },
-      { image: "/Images/Obsta/120_integrated_cable_nu2.png", caption: "120 integrated cable nu2" },
-      { image: "/Images/Obsta/NAVILITE-IR-FAA-KIT.png", caption: "NAVILITE-IR-FAA-KIT" },
-      { image: "/Images/Obsta/Navilite_double_grande_(1).png", caption: "Navilite double grande (1)" },
-      { image: "/Images/Obsta/Navilite_double_petite.png", caption: "Navilite double petite" },
-      { image: "/Images/Obsta/OFC+rouge_redlight.png", caption: "OFC rouge redlight" },
-      { image: "/Images/Obsta/OFD.png", caption: "OFD" },
-      { image: "/Images/Obsta/balise_180°_1_etage_002b.png", caption: "balise 180° 1 etage 002b" },
-      { image: "/Images/Obsta/balise_integrée.png", caption: "balise integrée" },
-      { image: "/Images/Obsta/cellule_photoéléctrique_B.png", caption: "cellule photoéléctrique B" },
-      { image: "/Images/Obsta/coffret113176.png", caption: "coffret113176" }
+    productRange: [],
+    categories: [
+      {
+        name: "Accessories",
+        thumbnail: "/Images/Obsta/ACCESSORIES/ACCESSORIES THUMBNAIL.jpg",
+        products: [
+          { image: "/Images/Obsta/ACCESSORIES/113625LA.png", caption: "113625LA" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES - 114803-SITE MONITORING.png", caption: "114803-SITE MONITORING" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-113176 MONITORING & CONTROL BOX.png", caption: "113176 MONITORING & CONTROL BOX" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-PHOTOCELL.png", caption: "PHOTOCELL" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-POWER SUPPLY CABINET -114100.png", caption: "POWER SUPPLY CABINET -114100" }
+        ]
+      },
+      {
+        name: "Conductor Warning Light",
+        thumbnail: "/Images/Obsta/CONDUCTOR WARNING LIGHT/THUMBNAIL.jpg",
+        products: [
+          { image: "/Images/Obsta/CONDUCTOR WARNING LIGHT/BALISOR LAMP.png", caption: "BALISOR LAMP" },
+          { image: "/Images/Obsta/CONDUCTOR WARNING LIGHT/BALISOR LED SYSTEM _HV LITE 15-114600_redlight.webp", caption: "BALISOR LED SYSTEM HV LITE 15-114600 redlight" }
+        ]
+      },
+      {
+        name: "High Intensity",
+        thumbnail: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY THUMBNAIL.jpg",
+        products: [
+          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -113780U_L-856.webp", caption: "113780U L-856" },
+          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -TYPE  B-113780B.webp", caption: "TYPE B-113780B" },
+          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -TYPE A-113780B.webp", caption: "TYPE A-113780B" },
+          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY _114601.png", caption: "114601" }
+        ]
+      },
+      {
+        name: "High Voltage Day Markers",
+        thumbnail: "/Images/Obsta/HIGH VOLTAGE DAY MARKERS/THUMBNAIL.jpg",
+        products: [
+          { image: "/Images/Obsta/HIGH VOLTAGE DAY MARKERS/BIRD DIVERTERS.jpg", caption: "BIRD DIVERTERS" },
+          { image: "/Images/Obsta/HIGH VOLTAGE DAY MARKERS/WARNING SPHERES.webp", caption: "WARNING SPHERES" }
+        ]
+      },
+      {
+        name: "Low Intensity",
+        thumbnail: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY _THUMBNAIL IMAGE.jpg",
+        products: [
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY -NAVILITE-113908-KIT.png", caption: "NAVILITE-113908-KIT" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY NAVILITE-IR-FAA-KIT.png", caption: "NAVILITE-IR-FAA-KIT" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY _ 113905_cable-Red fixed low intensity type A and B.png", caption: "113905 cable-Red fixed low intensity type A and B" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-113969 (1).png", caption: "113969" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-Monitoring box-113912.png", caption: "Monitoring box-113912" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-F-120-240V-DUAL.png", caption: "NAVILITE-F-120-240V-DUAL" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-IR-048V-DUAL.png", caption: "NAVILITE-IR-048V-DUAL" }
+        ]
+      },
+      {
+        name: "Medium Intensity",
+        thumbnail: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY _THUMBNAIL IMAGE.jpg",
+        products: [
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY _ OFC-Red medium intensity.png", caption: "OFC-Red medium intensity" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_180°_1.png", caption: "Balise 180° 1" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_Integrée.png", caption: "Balise Integrée" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Dual color medium intensity NVG compatible - OFD.png", caption: "Dual color medium intensity NVG compatible - OFD" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/OBSTAFLASH120 ou 180 dual color medium intensity-113747JB.webp", caption: "OBSTAFLASH120 ou 180 dual color medium intensity-113747JB" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/OFP-180-RW-JB-113738.webp", caption: "OFP-180-RW-JB-113738" }
+        ]
+      }
     ],
     certifiedLogos: [
       "/Images/Certificates/civil aviation.jpg"
     ],
-    aboutP1: "OBSTA, a subsidiary of CITEL groupis part of an industrial group that engineers, manufactures and sells obstruction lights for transmission lines, telecom and broadcast towers and all kind of obstacle to air navigation.",
-    aboutP2: "Our obstruction lights are manufactured by us based on ICAO annex 14 chapter 6 (In",
+    aboutP1: "OBSTA, a subsidiary of CITEL group is part of an industrial group that engineers, manufactures and sells obstruction lights for transmission lines, telecom and broadcast towers and all kind of obstacle to air navigation.",
+    aboutP2: "Our obstruction lights are manufactured by us based on ICAO annex and the FAA (Federal Aviation Administration).",
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "ICAO & FAA Certified Solutions"
   },
@@ -983,6 +1088,12 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
   // Retrieve brand data, default to Kumwell as fallback
   const brandData = BRAND_DATABASE[brandKey] || BRAND_DATABASE.kumwell;
 
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const activeProducts = selectedCategory 
+    ? brandData.categories?.find(c => c.name === selectedCategory)?.products || []
+    : brandData.productRange;
+
   return (
     <>
       <section className="hero kumwell-hero">
@@ -1012,7 +1123,35 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
       </section>
 
       <section className="product-range" style={{ padding: "60px 0", background: "#ffffff", overflow: "hidden" }}>
-        <h2 className="section-title" style={{ textAlign: "center", marginBottom: "80px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>Product Range</h2>
+        <h2 className="section-title" style={{ textAlign: "center", marginBottom: "80px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>
+          {brandData.categories && !selectedCategory ? "Product Categories" : "Product Range"}
+        </h2>
+        
+        {brandData.categories && selectedCategory && (
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <button 
+              onClick={() => setSelectedCategory(null)}
+              style={{
+                background: "transparent",
+                border: "1px solid #111",
+                padding: "10px 20px",
+                borderRadius: "30px",
+                cursor: "pointer",
+                fontWeight: "600",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px"
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5"></path>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back to Categories
+            </button>
+          </div>
+        )}
+
         <div 
           className="kumwell-product-grid" 
           style={{
@@ -1025,28 +1164,117 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             padding: "0 20px"
           }}
         >
-          {brandData.productRange.map((product, index) => (
-            <div 
-              key={index} 
-              className="kumwell-product-item" 
-              style={{ 
-                display: "flex", 
-                flexDirection: "column", 
-                alignItems: "center"
-              }}
-            >
-              <div className="kumwell-product-card" style={{ width: "280px", height: "285px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderRadius: "20px" }}>
-                <div className="kumwell-product-card-image" style={{ position: "relative", width: "100%", height: "100%" }}>
-                  <Image src={product.image} alt={product.caption || `${brandData.name} Product`} fill style={{ objectFit: "contain" }} />
+          {brandData.categoryStyle === "tabs" && !selectedCategory ? (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "16px", maxWidth: "900px", margin: "0 auto", width: "100%" }}>
+              {brandData.categories?.map((category, index) => (
+                <button 
+                  key={index}
+                  onClick={() => setSelectedCategory(category.name)}
+                  style={{ 
+                    display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", 
+                    padding: "14px 20px", background: "#fff", 
+                    border: "1px solid #d1d5db", borderRadius: "12px",
+                    fontSize: "16px", fontWeight: "600", cursor: "pointer",
+                    color: "#1f2937", transition: "all 0.3s",
+                    fontFamily: "var(--font-inter), sans-serif",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                    width: "100%"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "#111";
+                    e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "#d1d5db";
+                    e.currentTarget.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
+                    e.currentTarget.style.transform = "none";
+                  }}
+                >
+                  <span style={{ color: "#4b5563", display: "flex", alignItems: "center" }}>
+                    {category.icon}
+                  </span>
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          ) : brandData.categoryStyle !== "tabs" && brandData.categories && !selectedCategory ? (
+            brandData.categories.map((category, index) => (
+              <div 
+                key={index} 
+                className="kumwell-product-item" 
+                style={{ 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  alignItems: "center",
+                  cursor: "pointer"
+                }}
+                onClick={() => setSelectedCategory(category.name)}
+              >
+                <div style={{ 
+                  width: "480px", 
+                  height: "400px", 
+                  borderRadius: "16px", 
+                  border: "1px solid #e0e0e0", 
+                  overflow: "hidden", 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  background: "#fff",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+                }}>
+                  <div style={{ 
+                    padding: "20px 10px", 
+                    textAlign: "center", 
+                    fontSize: "18px", 
+                    fontWeight: "600", 
+                    color: "#333", 
+                    background: "#fff",
+                    fontFamily: "var(--font-neutiva), sans-serif",
+                    borderBottom: "1px solid #f0f0f0",
+                    position: "relative",
+                    zIndex: 2
+                  }}>
+                    {category.name}
+                  </div>
+                  <div style={{ 
+                    flex: 1, 
+                    position: "relative", 
+                    background: "#ffffff", 
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "center"
+                  }}>
+                    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                      <Image src={category.thumbnail} alt={category.name} fill style={{ objectFit: "contain" }} />
+                    </div>
+                  </div>
                 </div>
               </div>
-              {product.caption && (
-                <p className="kumwell-product-caption" style={{ marginTop: "24px", fontSize: "16px", fontWeight: "600", color: "#111111", textAlign: "center", fontFamily: "var(--font-neutiva), sans-serif", maxWidth: "260px", lineHeight: "1.4" }}>
-                  {product.caption}
-                </p>
-              )}
-            </div>
-          ))}
+            ))
+          ) : (
+            activeProducts.map((product, index) => (
+              <div 
+                key={index} 
+                className="kumwell-product-item" 
+                style={{ 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  alignItems: "center"
+                }}
+              >
+                <div className="kumwell-product-card" style={{ width: "280px", height: "285px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderRadius: "20px", border: "1px solid #e0e0e0" }}>
+                  <div className="kumwell-product-card-image" style={{ position: "relative", width: "100%", height: "100%" }}>
+                    <Image src={product.image} alt={product.caption || `${brandData.name} Product`} fill style={{ objectFit: "contain" }} />
+                  </div>
+                </div>
+                {product.caption && (
+                  <p className="kumwell-product-caption" style={{ marginTop: "24px", fontSize: "16px", fontWeight: "600", color: "#111111", textAlign: "center", fontFamily: "var(--font-neutiva), sans-serif", maxWidth: "260px", lineHeight: "1.4" }}>
+                    {product.caption}
+                  </p>
+                )}
+              </div>
+            ))
+          )}
         </div>
       </section>
 

@@ -93,15 +93,15 @@ const ALL_LOGOS = [
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
   { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
   // Industrial Category Images
-  { src: "/Images/Industrial/Fasteners.png", brand: "Fasteners", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Fittings.png", brand: "Fittings", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Flanges.png", brand: "Flanges", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Gaskets.png", brand: "Gaskets", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Instrumentation and Bulk material.png", brand: "Instrumentation & Bulk Material", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Pipes.png", brand: "Pipes", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Structural Steel.png", brand: "Structural Steel", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Tubes.png", brand: "Tubes", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/Valves.png", brand: "Valves", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image.png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (2).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (3).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (4).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (5).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (6).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (7).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (8).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image (9).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
 ];
 
 function ProductPageContent() {
@@ -286,7 +286,48 @@ function ProductPageContent() {
 
           <div className="new-prod-cards-container">
             {filteredLogos.length > 0 ? (
-              <div className={`new-prod-brands-page ${isIndustrial ? "is-industrial" : ""}`}>
+              <div 
+                className={`new-prod-brands-page ${isIndustrial ? "is-industrial" : ""}`}
+              >
+                {isIndustrial && (
+                  <style dangerouslySetInnerHTML={{__html: `
+                    .new-prod-brands-page.is-industrial {
+                      grid-template-columns: repeat(3, 1fr) !important;
+                      border: none !important;
+                      gap: 40px !important;
+                      padding: 20px 80px !important;
+                      max-width: 1920px !important;
+                      margin: 0 auto !important;
+                    }
+                    .new-prod-brands-page.is-industrial .new-prod-card {
+                      border: none !important;
+                      padding: 0 !important;
+                      background: transparent !important;
+                    }
+                    .new-prod-brands-page.is-industrial .new-prod-card:hover {
+                      border: none !important;
+                      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+                      transform: scale(1.02) !important;
+                    }
+                    .new-prod-brands-page.is-industrial .new-prod-card::before {
+                      display: none !important;
+                    }
+                    @media (max-width: 1024px) {
+                      .new-prod-brands-page.is-industrial {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 30px !important;
+                        padding: 20px 40px !important;
+                      }
+                    }
+                    @media (max-width: 768px) {
+                      .new-prod-brands-page.is-industrial {
+                        grid-template-columns: repeat(1, 1fr) !important;
+                        gap: 20px !important;
+                        padding: 20px !important;
+                      }
+                    }
+                  `}} />
+                )}
                 {filteredLogos.map((logo, i) => {
                   const cardContent = (
                     <div className="new-prod-card-inner">
@@ -295,14 +336,15 @@ function ProductPageContent() {
                           src={logo.src}
                           alt={logo.brand}
                           fill
-                          sizes="(max-width: 768px) 50vw, 250px"
+                          quality={isIndustrial ? 100 : 75}
+                          sizes={isIndustrial ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" : "(max-width: 768px) 50vw, 250px"}
                           style={{
                             objectFit: "contain",
                             filter: (logo.brand === "EMI" || logo.brand === "Avaids") ? "invert(1)" : "none"
                           }}
                         />
                       </div>
-                      {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && (
+                      {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && logo.brand && (
                         <div className="new-prod-card-caption">
                           {logo.brand}
                         </div>
