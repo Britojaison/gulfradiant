@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const newsItems = [
   {
-    title: <><span style={{ whiteSpace: "nowrap" }}>Delivering Reliable Electrical Solutions Across</span><br /><span style={{ whiteSpace: "nowrap" }}>Infrastructure & Industrial Projects</span></>,
+    title: "Delivering Reliable Electrical Solutions Across Infrastructure & Industrial Projects",
     meta: "Aug 10 · 6 min read",
     image: "news1.jpg",
     alt: "Industrial facility campus",
@@ -765,7 +765,7 @@ export default function Homepage() {
               </div>
             </div>
             <h3>
-              <span style={{ color: "#ffffff", display: "block" }}>Message from the</span>
+              <span style={{ color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>Message from the</span>
               <span style={{ color: "#ff5b05", display: "block" }}>CEO</span>
             </h3>
           </div>
