@@ -7,12 +7,11 @@ import { useSearchParams } from "next/navigation";
 
 const CATEGORIES = [
   "All",
-  "Earthing Lightning & Surge Protection Systems",
-  "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
-  "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-  "Cables",
-  "Other products",
-  "Industrial products/bulk material/oil and gas equipment"
+  "Earthing Lightning • Surge Protection Systems",
+  "Lighting • ACWL • Signal Lights",
+  "Switching Accessories • Control Devices • Isolators",
+  "Cables & Other Products",
+  "Industrial & Bulk Materials"
 ];
 
 const CATEGORY_MAP = [
@@ -23,85 +22,79 @@ const CATEGORY_MAP = [
     desc: "View our entire premium engineering catalogue"
   },
   {
-    id: "Earthing Lightning & Surge Protection Systems",
-    label: "Earthing Lightning & Surge Protection Systems",
+    id: "Earthing Lightning • Surge Protection Systems",
+    label: "Earthing Lightning • Surge Protection Systems",
     image: "/Images/product/earthing.png",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },
   {
-    id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
-    label: "Lighting • Aircraft Warning Light • Obstruction Lights • Signal Lights",
+    id: "Lighting • ACWL • Signal Lights",
+    label: "Lighting • ACWL • Signal Lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
   {
-    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control Devices Plugs • Receptacles • Switching Accessories • Isolators • Explosion Proof",
+    id: "Switching Accessories • Control Devices • Isolators",
+    label: "Switching Accessories • Control Devices • Isolators",
     image: "/Images/product/control devices.png",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
   {
-    id: "Cables",
-    label: "Cables",
+    id: "Cables & Other Products",
+    label: "Cables & Other Products",
     image: "/Images/product/cables.png",
-    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables"
+    desc: "High-performance electrical cables and specialized sealing accessories"
   },
   {
-    id: "Other products",
-    label: "Other Products",
-    image: "/Images/product/other.png",
-    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories"
-  },
-  {
-    id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial Products • Bulk Material • Oil And Gas Equipment",
+    id: "Industrial & Bulk Materials",
+    label: "Industrial & Bulk Materials",
     image: "/Images/product/industrial.png",
     desc: "Bulk materials, pipelines, refinery supply, & gas process equipment"
   }
 ];
 
 const ALL_LOGOS = [
-  { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
-  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
-  { src: "/Images/product/lewden.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Other products"] },
-  { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Other products"] },
-  { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", link: "/product/nventerico", categories: ["Earthing Lightning & Surge Protection Systems"] },
-  { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Other products"] },
-  { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables"] },
-  { src: "/Images/product/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Other products"] },
-  { src: "/Images/product/dietzel.png", brand: "Dietzel", link: "/product/dietzelunivolt", categories: ["Other products"] },
-  { src: "/Images/product/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables"] },
-  { src: "/Images/product/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables"] },
-  { src: "/Images/product/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables"] },
-  { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables"] },
-  { src: "/Images/product/PSI LOGO.png", brand: "PSI", link: "/product/psi", categories: ["Other products"] },
-  { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Other products"] },
-  { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
-  { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Other products"] },
-  { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Other products"] },
-  { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Other products"] },
-  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Other products"] },
-  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
-  { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
-  { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Other products"] },
-  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Control devices plugs, receptacles, switching accessories, isolators, explosion proof"] },
-  { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Other products"] },
-  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights"] },
+  { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Lighting • ACWL • Signal Lights"] },
+  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting • ACWL • Signal Lights"] },
+  { src: "/Images/product/lewden.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Switching Accessories • Control Devices • Isolators"] },
+  { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Switching Accessories • Control Devices • Isolators"] },
+  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", link: "/product/nventerico", categories: ["Earthing Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/dietzel.png", brand: "Dietzel", link: "/product/dietzelunivolt", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/PSI LOGO.png", brand: "PSI", link: "/product/psi", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting • ACWL • Signal Lights"] },
+  { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Lighting • ACWL • Signal Lights"] },
+  { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting • ACWL • Signal Lights"] },
+  { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Switching Accessories • Control Devices • Isolators"] },
+  { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting • ACWL • Signal Lights"] },
   // Industrial Category Images
-  { src: "/Images/Industrial/ppt/Pasted image.png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (2).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (3).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (4).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (5).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (6).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (7).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (8).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
-  { src: "/Images/Industrial/ppt/Pasted image (9).png", brand: "", categories: ["Industrial products/bulk material/oil and gas equipment"] },
+  { src: "/Images/Industrial/ppt/Pasted image.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (2).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (3).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (4).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (5).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (6).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (7).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (8).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Pasted image (9).png", brand: "", categories: ["Industrial & Bulk Materials"] },
 ];
 
 function ProductPageContent() {
@@ -125,10 +118,10 @@ function ProductPageContent() {
   }, [selectedCategory]);
 
   let filteredLogos = selectedCategory === "All"
-    ? ALL_LOGOS.filter(logo => !logo.categories.includes("Industrial products/bulk material/oil and gas equipment"))
+    ? ALL_LOGOS.filter(logo => !logo.categories.includes("Industrial & Bulk Materials"))
     : ALL_LOGOS.filter(logo => logo.categories.includes(selectedCategory));
 
-  if (selectedCategory === "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights" && activeSubcategory !== "All") {
+  if (selectedCategory === "Lighting • ACWL • Signal Lights" && activeSubcategory !== "All") {
     if (activeSubcategory === "AIRCRAFT WARNING LIGHTS / OBSTRUCTION LIGHTS / SIGNAL LIGHTS") {
       const allowedBrands = ["Obsta", "Avaids", "Sirena"];
       filteredLogos = filteredLogos.filter(logo => allowedBrands.includes(logo.brand));
@@ -138,7 +131,7 @@ function ProductPageContent() {
     }
   }
 
-  const isIndustrial = selectedCategory === "Industrial products/bulk material/oil and gas equipment";
+  const isIndustrial = selectedCategory === "Industrial & Bulk Materials";
 
 
 
@@ -257,7 +250,7 @@ function ProductPageContent() {
               {activeCategoryData ? activeCategoryData.label : selectedCategory}
             </h2>
 
-            {selectedCategory === "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights" && (
+            {selectedCategory === "Lighting • ACWL • Signal Lights" && (
               <div className="new-prod-subcategory-tabs" style={{ display: "flex", gap: "12px", marginTop: "40px", justifyContent: "center", flexWrap: "wrap", maxWidth: "900px", margin: "40px auto 0 auto" }}>
                 <button 
                   className={`subcat-tab ${activeSubcategory === "All" ? "active" : ""}`}
@@ -344,7 +337,7 @@ function ProductPageContent() {
                           }}
                         />
                       </div>
-                      {selectedCategory === "Industrial products/bulk material/oil and gas equipment" && logo.brand && (
+                      {selectedCategory === "Industrial & Bulk Materials" && logo.brand && (
                         <div className="new-prod-card-caption">
                           {logo.brand}
                         </div>

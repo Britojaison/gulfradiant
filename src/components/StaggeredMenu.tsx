@@ -335,30 +335,41 @@ export default function StaggeredMenu({
           )}
         </a>
 
-        <button
-          ref={toggleBtnRef}
-          className="sm-toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="staggered-menu-panel"
-          onClick={toggleMenu}
-          type="button"
-        >
-          <span className="sm-toggle-textWrap" aria-hidden="true">
-            <span ref={textInnerRef} className="sm-toggle-textInner">
-              {textLines.map((line, index) => (
-                <span className="sm-toggle-line" key={`${line}-${index}`}>
-                  {line}
-                </span>
-              ))}
+        <div className="sm-header-actions">
+          <a
+            href="tel:+971561122110"
+            className="sm-phone-link"
+            aria-label="Call us"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" className="sm-phone-icon">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+          <button
+            ref={toggleBtnRef}
+            className="sm-toggle"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+            onClick={toggleMenu}
+            type="button"
+          >
+            <span className="sm-toggle-textWrap" aria-hidden="true">
+              <span ref={textInnerRef} className="sm-toggle-textInner">
+                {textLines.map((line, index) => (
+                  <span className="sm-toggle-line" key={`${line}-${index}`}>
+                    {line}
+                  </span>
+                ))}
+              </span>
             </span>
-          </span>
-          <span ref={iconRef} className="sm-icon" aria-hidden="true">
-            <span className="sm-icon-line"></span>
-            <span className="sm-icon-line"></span>
-            <span className="sm-icon-line"></span>
-          </span>
-        </button>
+            <span ref={iconRef} className="sm-icon" aria-hidden="true">
+              <span className="sm-icon-line"></span>
+              <span className="sm-icon-line"></span>
+              <span className="sm-icon-line"></span>
+            </span>
+          </button>
+        </div>
       </header>
 
       <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>

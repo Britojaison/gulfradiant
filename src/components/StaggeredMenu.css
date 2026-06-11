@@ -69,6 +69,34 @@
   margin-left: 20px;
 }
 
+.sm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  pointer-events: auto;
+}
+
+.sm-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-subject);
+  font-size: 16px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.sm-phone-link:hover {
+  opacity: 0.8;
+}
+
+.sm-phone-icon {
+  width: 22px;
+  height: 22px;
+}
+
 .sm-toggle {
   position: relative;
   display: inline-flex;
@@ -365,6 +393,10 @@
 
   .sm-toggle-textWrap {
     /* Keep default behavior defined outside media query */
+  }
+
+  .sm-phone-link {
+    gap: 0;
   }
 
   .staggered-menu-panel,

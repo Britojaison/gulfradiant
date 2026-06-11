@@ -81,6 +81,22 @@ export default function Footer() {
                   <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
                   <a href="tel:+97124488449">+971 2 4488449</a>
                 </div>
+                <div style={{ marginTop: "20px" }}>
+                  <a 
+                    href="https://portal.us.bn.cloud.ariba.com/dashboard/public/appext/company-profile#/?sourceApplication=SBN&bnoId=BNO-100000058264945" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ display: "inline-block" }}
+                  >
+                    <Image 
+                      src="/Images/footer ariba.png" 
+                      alt="SAP Ariba Business Network" 
+                      width={240} 
+                      height={60} 
+                      style={{ objectFit: "contain" }}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

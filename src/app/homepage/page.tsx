@@ -40,43 +40,36 @@ const newsItems = [
 
 const ELECTRICAL_CATEGORIES = [
   {
-    id: "Earthing Lightning & Surge Protection Systems",
-    label: "Earthing Lightning & Surge Protection Systems",
+    id: "Earthing Lightning • Surge Protection Systems",
+    label: "Earthing Lightning • Surge Protection Systems",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
     tag: "Earthing & Surge",
     image: "/Images/product/earthing.png"
   },
   {
-    id: "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights",
-    label: "Lighting • Aircraft Warning Light • Obstruction Lights • Signal Lights",
+    id: "Lighting • ACWL • Signal Lights",
+    label: "Lighting • ACWL • Signal Lights",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
     tag: "Warning & Obstruction",
     image: "/Images/product/obstruction.png"
   },
   {
-    id: "Control devices plugs, receptacles, switching accessories, isolators, explosion proof",
-    label: "Control Devices Plugs • Receptacles • Switching Accessories • Isolators • Explosion Proof",
+    id: "Switching Accessories • Control Devices • Isolators",
+    label: "Switching Accessories • Control Devices • Isolators",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
     tag: "Control Devices",
     image: "/Images/product/control devices.png"
   },
   {
-    id: "Cables",
-    label: "Cables",
-    desc: "Siechem, Tekab, Helukabel, & high-performance electrical cables",
-    tag: "Power Cables",
+    id: "Cables & Other Products",
+    label: "Cables & Other Products",
+    desc: "High-performance electrical cables and specialized sealing accessories",
+    tag: "Cables & Others",
     image: "/Images/product/cables.png"
   },
   {
-    id: "Other products",
-    label: "Other products",
-    desc: "Hauff Technik, Wallmax, Cosmoplast, & specialized sealing accessories",
-    tag: "Special Sealing",
-    image: "/Images/product/other.png"
-  },
-  {
-    id: "Industrial products/bulk material/oil and gas equipment",
-    label: "Industrial • Bulk Material • HVAC • Automation • Mechanical",
+    id: "Industrial & Bulk Materials",
+    label: "Industrial & Bulk Materials",
     desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
     tag: "Industrial",
     image: "/Images/product/industrial.png"
@@ -270,7 +263,7 @@ export default function Homepage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveCertIndex((prev) => (prev + 1) % certImages.length);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(timer);
   }, [certImages.length]);
 
@@ -300,34 +293,7 @@ export default function Homepage() {
     });
   }, [activeCertIndex]);
 
-  // --- PROJECTS AUTO-CAROUSEL ---
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveProjectIndex((prev) => {
-        if (!projectsTrackRef.current || !projectsViewportRef.current) return prev + 1;
-        const card = projectsTrackRef.current.children[0] as HTMLElement;
-        if (!card) return prev + 1;
-        const cardWidth = card.offsetWidth + 10; // including gap
-        const maxTranslate = Math.max(0, projectsTrackRef.current.scrollWidth - projectsViewportRef.current.offsetWidth);
-        const maxIndex = Math.ceil(maxTranslate / cardWidth);
-        return prev >= maxIndex ? 0 : prev + 1;
-      });
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
 
-  useEffect(() => {
-    if (!projectsTrackRef.current || !projectsViewportRef.current) return;
-    const card = projectsTrackRef.current.children[0] as HTMLElement;
-    if (!card) return;
-    const cardWidth = card.offsetWidth + 10; // including 10px gap
-    const maxTranslate = Math.max(0, projectsTrackRef.current.scrollWidth - projectsViewportRef.current.offsetWidth);
-    
-    // Ensure we don't translate past the end of the content (preventing empty space)
-    const translateX = -Math.min(cardWidth * activeProjectIndex, maxTranslate);
-    projectsTrackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
-  }, [activeProjectIndex]);
-  // ------------------------------
 
   useEffect(() => {
     const handleHashScroll = () => {
@@ -451,7 +417,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Pioneers of Lighting and Electrical Systems</h2>
+          <h2 className="hp-divisions-main-title">Pioneers of ELPS , ACWL & Allied Electrical Systems</h2>
 
           <div className="hp-divisions-grid-new">
             {ELECTRICAL_CATEGORIES.map((cat) => (
@@ -721,9 +687,21 @@ export default function Homepage() {
             <h2>Our Project Portfolio</h2>
           </div>
           <div className="hp-projects-viewport" ref={projectsViewportRef}>
-            <div className="hp-projects-track" ref={projectsTrackRef}>
-              {suppliedProjects.map((project) => (
-                <div className="hp-project-card" key={project.title}>
+            <div className="hp-projects-track hp-projects-marquee">
+              {suppliedProjects.map((project, idx) => (
+                <div className="hp-project-card" key={`proj1-${idx}`}>
+                  <Image
+                    src={`/Images/our_projects/${project.image}`}
+                    alt={project.alt}
+                    fill
+                    sizes="(max-width: 767px) 82vw, (max-width: 1199px) 44vw, 520px"
+                    style={{ objectFit: "cover", objectPosition: project.position }}
+                  />
+                  <span className="hp-project-label">{project.title}</span>
+                </div>
+              ))}
+              {suppliedProjects.map((project, idx) => (
+                <div className="hp-project-card" key={`proj2-${idx}`}>
                   <Image
                     src={`/Images/our_projects/${project.image}`}
                     alt={project.alt}
@@ -776,7 +754,7 @@ export default function Homepage() {
             <p style={{ marginBottom: "28px" }}>
               Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries."
             </p>
-            <p>Thank you.</p>
+
           </div>
         </div>
       </section>

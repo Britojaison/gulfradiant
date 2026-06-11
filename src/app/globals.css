@@ -1988,7 +1988,7 @@
     transform-style: preserve-3d;
     contain: layout paint;
     overflow: visible;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+    transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease;
   }
 
   /* TRUSTED LEADERS */
@@ -2132,9 +2132,24 @@
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 12px;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
-    transition: transform 0.8s ease;
+    width: max-content;
+  }
+
+  .hp-projects-marquee {
+    animation: scroll-projects 30s linear infinite;
+  }
+  
+  .hp-projects-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-projects {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .hp-projects-viewport {
@@ -6731,7 +6746,7 @@
   /* NEW CATEGORY CARD GRID STYLES */
   .hp-divisions-grid-new {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, minmax(0, 1fr));
     gap: 16px;
     width: 100%;
@@ -6742,6 +6757,7 @@
   }
 
   .hp-cat-card {
+    grid-column: span 2;
     position: relative !important;
     width: 100% !important;
     height: 100% !important;
@@ -6755,6 +6771,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
     background: none !important;
     display: block;
+  }
+
+  .hp-cat-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .hp-cat-card:nth-child(5) {
+    grid-column: 4 / span 2;
   }
 
   .hp-cat-card:hover {
@@ -6852,7 +6876,7 @@
     }
 
     .hp-divisions-grid-new {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 12px;
       padding: 0 20px 20px 20px !important;
     }
@@ -6882,6 +6906,11 @@
       grid-template-rows: repeat(3, minmax(0, 1fr));
       gap: 8px;
       padding: 0 12px 12px 12px !important;
+    }
+    .hp-cat-card,
+    .hp-cat-card:nth-child(4),
+    .hp-cat-card:nth-child(5) {
+      grid-column: span 1 !important;
     }
     .hp-cat-card-title {
       font-size: 11px !important;
