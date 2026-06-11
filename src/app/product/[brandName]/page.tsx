@@ -10,6 +10,7 @@ import React from "react";
 interface ProductItem {
   image: string;
   caption: string;
+  subHeading?: string;
 }
 
 interface BrandData {
@@ -24,7 +25,7 @@ interface BrandData {
   aboutP2: string;
   aboutBg: string;
   aboutHighlight: string;
-  categoryStyle?: "cards" | "tabs";
+  categoryStyle?: "cards" | "tabs" | "carousel-list";
   categories?: {
     name: string;
     thumbnail?: string;
@@ -36,51 +37,85 @@ interface BrandData {
 const BRAND_DATABASE: Record<string, BrandData> = {
   kumwell: {
     name: "Kumwell",
-    heroBg: "/Images/kumwell/H1.png",
+    heroBg: "/Images/kumwell/kumwell hero banner.jpeg",
     subtitle: "Earthing & Lightning Protection Systems",
     description: "Advanced grounding and lightning protection solutions for industrial safety and infrastructure.",
     website: "https://www.kumwell.com/en/about-us",
-    productRange: [
-      { image: "/Images/kumwell/LSQS.png", caption: "LSQS" },
-      { image: "/Images/kumwell/KTH.png", caption: "KTH" },
-      { image: "/Images/kumwell/GYATB.png", caption: "GYATB" },
-      { image: "/Images/kumwell/LCATT.png", caption: "LCATT" },
-      { image: "/Images/kumwell/LCRT.png", caption: "LCRT" },
-      { image: "/Images/kumwell/MEG.png", caption: "MEG" },
-      { image: "/Images/kumwell/KOL.png", caption: "KOL" },
-      { image: "/Images/kumwell/GXEP4.png", caption: "GXEP4" },
-      { image: "/Images/kumwell/GRTTR.png", caption: "GRTTR" },
-      { image: "/Images/kumwell/GRSC (2).png", caption: "GRSC" },
-      { image: "/Images/kumwell/GRSSCO.png", caption: "GRSSCO" },
-      { image: "/Images/kumwell/LROS.png", caption: "LROS" },
-      { image: "/Images/kumwell/GBDL.png", caption: "GBDL" },
-      { image: "/Images/kumwell/GERA 15ME.png", caption: "GERA 15ME" },
-      { image: "/Images/kumwell/LCTT.png", caption: "LCTT" },
-      { image: "/Images/kumwell/GXCT.png", caption: "GXCT" },
-      { image: "/Images/kumwell/GXC.png", caption: "GXC" },
-      { image: "/Images/kumwell/LCAS.png", caption: "LCAS" },
-      { image: "/Images/kumwell/GRDSR.png", caption: "GRDSR" },
-      { image: "/Images/kumwell/LTAS.png", caption: "LTAS" },
-      { image: "/Images/kumwell/GRBDH.png", caption: "GRBDH" },
-      { image: "/Images/kumwell/CCC(1).png", caption: "CCC(1)" },
-      { image: "/Images/kumwell/GXFIP.png", caption: "GXFIP" },
-      { image: "/Images/kumwell/GRBCO.png", caption: "GRBCO" },
-      { image: "/Images/kumwell/LTAT.png", caption: "LTAT" },
-      { image: "/Images/kumwell/GBPGSS (2).png", caption: "GBPGSS (2)" },
-      { image: "/Images/kumwell/COBCT.png", caption: "COBCT" },
-      { image: "/Images/kumwell/GXEP1.png", caption: "GXEP1" },
-      { image: "/Images/kumwell/GRSC.png", caption: "GRSC" },
-      { image: "/Images/kumwell/GBPGSS.png", caption: "GBPGSS" },
-      { image: "/Images/kumwell/GRCBUT.png", caption: "GRCBUT" },
-      { image: "/Images/kumwell/GRSDH.png", caption: "GRSDH" },
-      { image: "/Images/kumwell/GYPTB.png", caption: "GYPTB" },
-      { image: "/Images/kumwell/GRBCO (2).png", caption: "GRBCO (2)" },
-      { image: "/Images/kumwell/GXEP2.png", caption: "GXEP2" },
-      { image: "/Images/kumwell/GRSS.png", caption: "GRSS" },
-      { image: "/Images/kumwell/LTAS (2).png", caption: "LTAS (2)" },
-      { image: "/Images/kumwell/GYATB_Cover.png", caption: "GYATB Cover" },
-      { image: "/Images/kumwell/GXCIP.png", caption: "GXCIP" },
-      { image: "/Images/kumwell/KOH.png", caption: "KOH" }
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "Earthing Protection System",
+        products: [
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/COBEH2~Z.JPG", caption: "COBEH2~Z" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBDL.png", caption: "GBDL" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBPGSS.png", caption: "GBPGSS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GGC3XC~C.PNG", caption: "GGC3XC~C" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GLYZ3L~8.JPG", caption: "GLYZ3L~8" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRCBUT.png", caption: "GRCBUT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSC.png", caption: "GRSC" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSDH.png", caption: "GRSDH" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSS.png", caption: "GRSS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSSCO.png", caption: "GRSSCO" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GWV1CV~O.PNG", caption: "GWV1CV~O" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXC.png", caption: "GXC" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCIP.png", caption: "GXCIP" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCT.png", caption: "GXCT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP1.png", caption: "GXEP1" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP2.png", caption: "GXEP2" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP4.png", caption: "GXEP4" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXFIP.png", caption: "GXFIP" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYATB.png", caption: "GYATB" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYPTB.png", caption: "GYPTB" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/LCATT.png", caption: "LCATT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/MEG.png", caption: "MEG" }
+        ]
+      },
+      {
+        name: "Lightning Protection System",
+        products: [
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(1).png", caption: "CCC(1)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(2).png", caption: "CCC(2)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/COBCT.png", caption: "COBCT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOH.png", caption: "KOH" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOL.png", caption: "KOL" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KTH.png", caption: "KTH" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCAS.png", caption: "LCAS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCRT.png", caption: "LCRT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCTT.png", caption: "LCTT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LROS.png", caption: "LROS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LSQS.png", caption: "LSQS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS (2).png", caption: "LTAS (2)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS.png", caption: "LTAS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAT.png", caption: "LTAT" }
+        ]
+      },
+      {
+        name: "Exothermic Welding Systems",
+        products: [
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/2_-21-06-2023-20-23-16.png", caption: "2_-21-06-2023-20-23-16" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/EXOTHERMIC WELDING.jpg", caption: "EXOTHERMIC WELDING" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Graphite-MOuld-300x300.jpg", caption: "Graphite-MOuld-300x300" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Necessary-Tools-300x300.jpg", caption: "Necessary-Tools-300x300" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tape-conductors-3-300x300.png", caption: "tape-conductors-3-300x300" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tool-box-300x300.jpg", caption: "tool-box-300x300" }
+        ]
+      },
+      {
+        name: "Oil & Gas Products",
+        products: [
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/ISOLATING SPARK GAP.png", caption: "ISOLATING SPARK GAP" },
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/STATIC EARTH REEL -GERA 15ME.png", caption: "STATIC EARTH REEL -GERA 15ME" },
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/TOTAL SOLUTIONS.jpg", caption: "TOTAL SOLUTIONS" },
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/TRUCK GROUNDING SYSTEM.png", caption: "TRUCK GROUNDING SYSTEM" }
+        ]
+      },
+      {
+        name: "Smart Lightning Management & Warning System",
+        products: [
+          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT MANAGEMENT SYSTEM.png", caption: "SMART LIGHT MANAGEMENT SYSTEM" },
+          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT WARNING SYSTEM.png", caption: "SMART LIGHT WARNING SYSTEM" }
+        ]
+      }
     ],
     certifiedLogos: [
       "/Images/Certificates/adnoc logo.svg",
@@ -95,15 +130,15 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   citel: {
     name: "Citel",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/Citel/Citel home banner.jpg",
     subtitle: "Surge Protection Solutions",
     description: "Professional surge protection devices safeguarding high-voltage power networks, solar PV installations, telecom lines, and LED lighting systems.",
     website: "https://citel.fr/en",
-    categoryStyle: "tabs",
+    categoryStyle: "carousel-list",
     categories: [
       {
         name: "AC Power",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg>,
         products: [
           { image: "/Images/Citel/AC DC POWER SPD/AC POWER TYPE 1+2+3-13VGS-31-275_pic.png", caption: "AC POWER TYPE 1+2+3-13VGS-31-275" },
           { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 (or 3)_DACF15S-10_275_pic.png", caption: "AC POWER Type 2 (or 3)_DACF15S-10_275" },
@@ -121,7 +156,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       },
       {
         name: "Photovoltaic",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l3-12h14l-3 12H3z"/><path d="M6 15h13.5"/><path d="M9 9l-2 12"/><path d="M15 9l-2 12"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l3-12h14l-3 12H3z" /><path d="M6 15h13.5" /><path d="M9 9l-2 12" /><path d="M15 9l-2 12" /></svg>,
         products: [
           { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200-Kamera+Kopie.png", caption: "PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200" },
           { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2 DS50PVS-1000.png", caption: "PHOTOVOLTAIC _Type 2 DS50PVS-1000" },
@@ -131,7 +166,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       },
       {
         name: "LED",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M5.6 5.6l.7.7"/><path d="M18.4 5.6l-.7.7"/><path d="M12 7a5 5 0 1 0 5 5c0 1.5-1.5 3-1.5 6h-7C8.5 15 7 13.5 7 12a5 5 0 0 1 5-5z"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6" /><path d="M10 22h4" /><path d="M12 2v1" /><path d="M5.6 5.6l.7.7" /><path d="M18.4 5.6l-.7.7" /><path d="M12 7a5 5 0 1 0 5 5c0 1.5-1.5 3-1.5 6h-7C8.5 15 7 13.5 7 12a5 5 0 0 1 5-5z" /></svg>,
         products: [
           { image: "/Images/Citel/LED/LED Type 2 (or 3)_MLPC1-230L-R_pic.png", caption: "LED Type 2 (or 3)_MLPC1-230L-R" },
           { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _MLPX1-230L-W_pic.png", caption: "LED _STANDARD SURGE PROTECTION _MLPX1-230L-W" },
@@ -140,7 +175,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       },
       {
         name: "Telecom",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>,
         products: [
           { image: "/Images/Citel/TELECOM/TELECOM _DIN RAIL _ 640211_DLA2-12D3_pic.png", caption: "TELECOM _DIN RAIL _ 640211_DLA2-12D3" },
           { image: "/Images/Citel/TELECOM/TELECOM_DIN RAIL _DLA-24D3_pic.png", caption: "TELECOM_DIN RAIL _DLA-24D3" }
@@ -148,7 +183,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       },
       {
         name: "Dataline",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="6" rx="2" ry="2"/><rect x="2" y="9" width="20" height="6" rx="2" ry="2"/><rect x="2" y="16" width="20" height="6" rx="2" ry="2"/><path d="M6 5h.01M6 12h.01M6 19h.01"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="6" rx="2" ry="2" /><rect x="2" y="9" width="20" height="6" rx="2" ry="2" /><rect x="2" y="16" width="20" height="6" rx="2" ry="2" /><path d="M6 5h.01M6 12h.01M6 19h.01" /></svg>,
         products: [
           { image: "/Images/Citel/DATALINE/DATALINE  SPD -CRMJ8-POE-C6A.png", caption: "DATALINE  SPD -CRMJ8-POE-C6A" },
           { image: "/Images/Citel/DATALINE/DATALINE SPD_CXC06_pic.png", caption: "DATALINE SPD_CXC06" },
@@ -158,21 +193,21 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       },
       {
         name: "Radiocom",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12 A10 10 0 0 1 22 12"/><path d="M6 12 A6 6 0 0 1 18 12"/><path d="M10 12 A2 2 0 0 1 14 12"/><path d="M12 12 L12 22"/><path d="M10 22 L14 22"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12 A10 10 0 0 1 22 12" /><path d="M6 12 A6 6 0 0 1 18 12" /><path d="M10 12 A2 2 0 0 1 14 12" /><path d="M12 12 L12 22" /><path d="M10 22 L14 22" /></svg>,
         products: [
           { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/RADIOCOMMUNICATION_60014_P8AX25-N-FF_pic.png", caption: "RADIOCOMMUNICATION_60014_P8AX25-N-FF" }
         ]
       },
       {
         name: "Wind Turbine",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12v10"/><path d="M9 22h6"/><path d="M12 12L12 2"/><path d="M12 12L3.3 17"/><path d="M12 12L20.7 17"/><circle cx="12" cy="12" r="2"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12v10" /><path d="M9 22h6" /><path d="M12 12L12 2" /><path d="M12 12L3.3 17" /><path d="M12 12L20.7 17" /><circle cx="12" cy="12" r="2" /></svg>,
         products: [
           { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/WIND TURBINE SPD_DS44S-280-G_pic.png", caption: "WIND TURBINE SPD_DS44S-280-G" }
         ]
       },
       {
         name: "Accessories",
-        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>,
+        icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><path d="M12 11v6" /><path d="M9 14h6" /></svg>,
         products: [
           { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/ACCESSORIES _790121_LSC_A.png", caption: "ACCESSORIES _790121_LSC_A" }
         ]
@@ -314,11 +349,12 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   obsta: {
     name: "Obsta",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/Obsta/obsta hero banner.jpg",
     subtitle: "Obstruction Lighting & Aircraft Warning Systems",
     description: "Professional aircraft warning lights, medium and high-intensity neon and LED obstruction beacons certified to ICAO and FAA standards.",
     website: "https://www.obsta.com/en/",
     productRange: [],
+    categoryStyle: "carousel-list",
     categories: [
       {
         name: "Accessories",
@@ -1081,53 +1117,197 @@ interface DynamicBrandPageProps {
 
 export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProps) {
   const params = useParams();
-  
+
   // Resolve brand name from override parameter or dynamic slug
   const resolvedBrandSlug = brandOverride || (params?.brandName as string) || "";
   const brandKey = resolvedBrandSlug.toLowerCase();
-  
+
   // Retrieve brand data, default to Kumwell as fallback
   const brandData = BRAND_DATABASE[brandKey] || BRAND_DATABASE.kumwell;
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const activeProducts = selectedCategory 
+  const activeProducts = selectedCategory
     ? brandData.categories?.find(c => c.name === selectedCategory)?.products || []
     : (brandData.productRange || []);
 
   return (
     <>
-      <section className="hero kumwell-hero">
-        <Image
-          src="/Images/kumwell/H1.png"
-          alt={`${brandData.name} Hero`}
-          fill
-          style={{ objectFit: "cover" }}
-          priority
-        />
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h1 className="hero-title">{brandData.name}</h1>
-          <p className="hero-subtitle">{brandData.subtitle}</p>
-          <p className="hero-description">{brandData.description}</p>
-          <div className="hero-buttons">
-            <button className="btn-primary">Request a Quote</button>
-            <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline">
-              Visit Website 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
-                <path d="M7 17L17 7"></path>
-                <path d="M7 7h10v10"></path>
-              </svg>
-            </a>
+      {brandKey === 'citel' || brandKey === 'obsta' || brandKey === 'kumwell' ? (
+        <section style={{ width: "100%", lineHeight: 0, marginTop: "90px" }}>
+          <img
+            src={brandData.heroBg}
+            alt={`${brandData.name} Hero`}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </section>
+      ) : (
+        <section className="hero kumwell-hero">
+          <Image
+            src={brandData.heroBg}
+            alt={`${brandData.name} Hero`}
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div className="hero-overlay"></div>
+          <div className="hero-content">
+            <h1 className="hero-title">{brandData.name}</h1>
+            <p className="hero-subtitle">{brandData.subtitle}</p>
+            <p className="hero-description">{brandData.description}</p>
+            <div className="hero-buttons">
+              <button className="btn-primary">Request a Quote</button>
+              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline">
+                Visit Website
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {brandKey === 'obsta' && !selectedCategory && (
+        <section style={{ maxWidth: "1690px", margin: "0 auto", padding: "60px 40px 20px 40px" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "40px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
+            OBSTA
+          </h2>
+          <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.6", marginBottom: "20px", fontFamily: "var(--font-inter), sans-serif", maxWidth: "1330px", margin: "0 auto 20px auto", textAlign: "left" }}>
+            OBSTA is part of an industrial group that develops and manufactures obstruction lights for transmission lines, broadcasting towers and all kind of obstacles to air navigation. Its products are in compliance with International Civil Aviation Organization ICAO Annex 14 Chapter 6 Federal Aviation Administration (FAA) and the Civil Aviation Authority of Malaysia recommendations.
+          </p>
+          <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.6", marginBottom: "40px", fontFamily: "var(--font-inter), sans-serif", maxWidth: "1330px", margin: "0 auto 40px auto", textAlign: "left" }}>
+            OBSTA neon xenon and LED type lights have been developed to meet the highest standards, in respect of the customer demands and also in line with the latest ICAO and FAA international standards. Products include low intensity L-810, medium intensity L-865/L-864 and high intensity obstruction lights. The complete spectrum range makes OBSTA ideal for broadcasting towers, telecom mast, transmission lines, stacks and wind turbines.
+          </p>
+
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "40px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
+            Test Facilities
+          </h2>
+          <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.6", marginBottom: "20px", fontFamily: "var(--font-inter), sans-serif", maxWidth: "1330px", margin: "0 auto 20px auto", textAlign: "left" }}>
+            In order to test its products internally for standards compliance and to evolve toward greater reliability OBSTA has several test sites (France, USA) equipped with :
+          </p>
+          <div style={{ maxWidth: "1330px", margin: "0 auto 40px auto" }}>
+            <ul style={{ fontSize: "18px", color: "#333", lineHeight: "1.6", fontFamily: "var(--font-inter), sans-serif", paddingLeft: "20px", textAlign: "left", margin: 0 }}>
+              <li style={{ marginBottom: "5px" }}>Photometric band with visible and infrared capability</li>
+              <li style={{ marginBottom: "5px" }}>1.2/50-8/20µs hybrid wave generators up to 20 kV/10 kA</li>
+              <li style={{ marginBottom: "5px" }}>HT digital Oscilloscope fast</li>
+              <li style={{ marginBottom: "5px" }}>Material for test environment (damp heat, climate, shock)</li>
+            </ul>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", margin: "0 auto 80px auto" }}>
+            <button
+              onClick={(e) => {
+                const wrapper = e.currentTarget.parentElement?.querySelector('.test-facilities-wrapper');
+                if (wrapper) wrapper.scrollBy({ left: -450, behavior: 'smooth' });
+              }}
+              style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", transition: "all 0.2s", zIndex: 2 }}
+              aria-label="Scroll left"
+              onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+            >
+              &lt;
+            </button>
+            <div className="test-facilities-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
+              {/* Displaying posters 1 to 10 from the test facilities folder */}
+              {[...Array(10)].map((_, i) => (
+                <div key={i} style={{ flex: "0 0 auto", width: "430px", height: "591px", position: "relative" }}>
+                  <Image src={`/Images/Obsta/test facilities/${i + 1}.jpg`} alt={`Test Facility Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={(e) => {
+                const wrapper = e.currentTarget.parentElement?.querySelector('.test-facilities-wrapper');
+                if (wrapper) wrapper.scrollBy({ left: 450, behavior: 'smooth' });
+              }}
+              style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginLeft: "20px", color: "#333", fontSize: "28px", fontWeight: "300", transition: "all 0.2s", zIndex: 2 }}
+              aria-label="Scroll right"
+              onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+            >
+              &gt;
+            </button>
+          </div>
+
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "60px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
+            OBSTA Videos
+          </h2>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "30px", marginBottom: "40px" }}>
+            <div style={{ flex: "1 1 500px", minWidth: 0, maxWidth: "800px" }}>
+              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000" }}>
+                <iframe
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  src="https://www.youtube.com/embed/UiEXrWBNoPo"
+                  title="OBSTA Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "bold", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
+                OBSTA : Obstruction lighting
+              </h3>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {brandKey === 'kumwell' && !selectedCategory && (
+        <section style={{ maxWidth: "1690px", margin: "0 auto", padding: "60px 40px 20px 40px" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "40px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
+            Posters
+          </h2>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", margin: "0 auto 40px auto" }}>
+            <button
+              onClick={(e) => {
+                const wrapper = e.currentTarget.parentElement?.querySelector('.kumwell-posters-wrapper');
+                if (wrapper) wrapper.scrollBy({ left: -450, behavior: 'smooth' });
+              }}
+              style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", transition: "all 0.2s", zIndex: 2 }}
+              aria-label="Scroll left"
+              onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+            >
+              &lt;
+            </button>
+            <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
+              {[
+                { img: "1.Kumwell Exothermic Welding.png", doc: "1.Kumwell Exothermic Welding TEXT.docx" },
+                { img: "2.Kumwell Grounding Components.png", doc: "2.Kumwell Grounding Components TEXT.docx" },
+                { img: "3.Kumwell Isolating Spark Gap.png", doc: "3.Kumwell Isolating Spark Gap TEXT.docx" },
+                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.png", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx" },
+                { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx" },
+                { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx" },
+                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx" }
+              ].map((poster, i) => (
+                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 auto", width: "430px", height: "591px", position: "relative" }}>
+                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
+                </a>
+              ))}
+            </div>
+            <button
+              onClick={(e) => {
+                const wrapper = e.currentTarget.parentElement?.querySelector('.kumwell-posters-wrapper');
+                if (wrapper) wrapper.scrollBy({ left: 450, behavior: 'smooth' });
+              }}
+              style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginLeft: "20px", color: "#333", fontSize: "28px", fontWeight: "300", transition: "all 0.2s", zIndex: 2 }}
+              aria-label="Scroll right"
+              onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+            >
+              &gt;
+            </button>
+          </div>
+        </section>
+      )}
 
       <section className="product-range" style={{ padding: "60px 0", background: "#ffffff", overflow: "hidden" }}>
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: "80px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>
-          {brandData.categories && !selectedCategory ? "Product Categories" : "Product Range"}
+          {brandData.categories && !selectedCategory && brandKey !== 'citel' ? "Product Categories" : "Product Range"}
         </h2>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .citel-tabs-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1135,6 +1315,13 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             max-width: 900px;
             margin: 0 auto;
             width: 100%;
+          }
+          .citel-carousel-wrapper::-webkit-scrollbar {
+            display: none;
+          }
+          .citel-carousel-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
           }
           @media (max-width: 1024px) {
             .categories-grid[style] {
@@ -1174,7 +1361,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
         `}} />
         {brandData.categories && selectedCategory && (
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
-            <button 
+            <button
               onClick={() => setSelectedCategory(null)}
               style={{
                 background: "transparent",
@@ -1197,8 +1384,8 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           </div>
         )}
 
-        <div 
-          className={brandData.categoryStyle === "tabs" && !selectedCategory ? "" : `kumwell-product-grid ${!selectedCategory && brandData.categories ? "categories-grid" : ""}`} 
+        <div
+          className={(brandData.categoryStyle === "tabs" || brandData.categoryStyle === "carousel-list") && !selectedCategory ? "" : `kumwell-product-grid ${!selectedCategory && brandData.categories ? "categories-grid" : ""}`}
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -1210,15 +1397,92 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             width: "100%"
           }}
         >
-          {brandData.categoryStyle === "tabs" && !selectedCategory ? (
+          {brandData.categoryStyle === "carousel-list" && !selectedCategory ? (
+            <div className="citel-custom-layout" style={{ width: "100%" }}>
+              {/* Categories with Carousels */
+                (() => {
+                  const groups = brandData.name.toLowerCase() === "citel" && brandData.categories
+                    ? [
+                      [brandData.categories[0]], // AC Power
+                      [brandData.categories[1]], // PV
+                      [brandData.categories[4]], // Dataline
+                      [brandData.categories[2], brandData.categories[3]], // LED, Telecom
+                      [brandData.categories[5], brandData.categories[6], brandData.categories[7]] // Radiocom, Wind Turbine, Accessories
+                    ]
+                    : brandData.name.toLowerCase() === "obsta" && brandData.categories
+                      ? [
+                        [brandData.categories[0]], // Accessories
+                        [brandData.categories[1], brandData.categories[3]], // Conductor Warning Light, High Voltage Day Markers
+                        [brandData.categories[2]], // High Intensity
+                        [brandData.categories[4]], // Low Intensity
+                        [brandData.categories[5]]  // Medium Intensity
+                      ]
+                      : brandData.categories?.map(c => [c]) || [];
+
+                  return groups.map((group, gIdx) => (
+                    <div key={gIdx} style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "80px", width: "100%", margin: "0 auto 60px auto" }}>
+                      {group.filter(Boolean).map((cat, cIdx) => (
+                        <div key={cIdx} style={{ flex: "0 1 auto", minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                          <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "bold", marginBottom: "30px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
+                            {cat.name}
+                          </h3>
+                          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", width: "100%" }}>
+                            {cat.products.length > 5 && (
+                              <button
+                                onClick={(e) => {
+                                  const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
+                                  if (wrapper) wrapper.scrollBy({ left: -270, behavior: 'smooth' });
+                                }}
+                                style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
+                                aria-label="Scroll left"
+                                onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+                                onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+                              >
+                                &lt;
+                              </button>
+                            )}
+                            <div className="citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
+                              {cat.products.map((prod, pIdx) => (
+                                <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                  <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
+                                    <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
+                                  </div>
+                                  <p style={{ fontSize: "14px", color: "#333", fontWeight: "600", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", lineHeight: "1.4" }}>
+                                    {prod.caption}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                            {cat.products.length > 5 && (
+                              <button
+                                onClick={(e) => {
+                                  const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
+                                  if (wrapper) wrapper.scrollBy({ left: 270, behavior: 'smooth' });
+                                }}
+                                style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginLeft: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
+                                aria-label="Scroll right"
+                                onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+                                onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+                              >
+                                &gt;
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ));
+                })()}
+            </div>
+          ) : brandData.categoryStyle === "tabs" && !selectedCategory ? (
             <div className="citel-tabs-grid">
               {brandData.categories?.map((category, index) => (
-                <button 
+                <button
                   key={index}
                   onClick={() => setSelectedCategory(category.name)}
-                  style={{ 
-                    display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", 
-                    padding: "14px 20px", background: "#fff", 
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "center", gap: "10px",
+                    padding: "14px 20px", background: "#fff",
                     border: "1px solid #d1d5db", borderRadius: "12px",
                     fontSize: "16px", fontWeight: "600", cursor: "pointer",
                     color: "#1f2937", transition: "all 0.3s",
@@ -1246,37 +1510,37 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             </div>
           ) : brandData.categoryStyle !== "tabs" && brandData.categories && !selectedCategory ? (
             brandData.categories.map((category, index) => (
-              <div 
-                key={index} 
-                className="kumwell-product-item" 
-                style={{ 
-                  display: "flex", 
-                  flexDirection: "column", 
+              <div
+                key={index}
+                className="kumwell-product-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
                   alignItems: "center",
                   cursor: "pointer",
                   width: "100%"
                 }}
                 onClick={() => setSelectedCategory(category.name)}
               >
-                <div className="obsta-category-card" style={{ 
+                <div className="obsta-category-card" style={{
                   width: "100%",
-                  maxWidth: "480px", 
-                  height: "400px", 
-                  borderRadius: "16px", 
-                  border: "1px solid #e0e0e0", 
-                  overflow: "hidden", 
-                  display: "flex", 
-                  flexDirection: "column", 
+                  maxWidth: "480px",
+                  height: "400px",
+                  borderRadius: "16px",
+                  border: "1px solid #e0e0e0",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
                   background: "#fff",
                   boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
                   margin: "0 auto"
                 }}>
-                  <div style={{ 
-                    padding: "20px 10px", 
-                    textAlign: "center", 
-                    fontSize: "18px", 
-                    fontWeight: "600", 
-                    color: "#333", 
+                  <div style={{
+                    padding: "20px 10px",
+                    textAlign: "center",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    color: "#333",
                     background: "#fff",
                     fontFamily: "var(--font-neutiva), sans-serif",
                     borderBottom: "1px solid #f0f0f0",
@@ -1285,12 +1549,12 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                   }}>
                     {category.name}
                   </div>
-                  <div style={{ 
-                    flex: 1, 
-                    position: "relative", 
-                    background: "#ffffff", 
-                    display: "flex", 
-                    alignItems: "center", 
+                  <div style={{
+                    flex: 1,
+                    position: "relative",
+                    background: "#ffffff",
+                    display: "flex",
+                    alignItems: "center",
                     justifyContent: "center"
                   }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
@@ -1302,12 +1566,12 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             ))
           ) : (
             activeProducts.map((product, index) => (
-              <div 
-                key={index} 
-                className="kumwell-product-item" 
-                style={{ 
-                  display: "flex", 
-                  flexDirection: "column", 
+              <div
+                key={index}
+                className="kumwell-product-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
                   alignItems: "center"
                 }}
               >
