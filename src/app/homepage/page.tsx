@@ -516,15 +516,7 @@ export default function Homepage() {
                     {getCategoryIcon(cat.id)}
                   </div>
                   <h3 className="hp-cat-card-title">
-                    {cat.label.includes('•') ? (
-                      <div className="hp-cat-card-title-bullet-wrap">
-                        {cat.label.split('•').map((item, idx) => (
-                          <span key={idx} className="hp-cat-card-title-bullet-item">• {item.trim()}</span>
-                        ))}
-                      </div>
-                    ) : (
-                      cat.label
-                    )}
+                    {cat.tag}
                   </h3>
                   <p className="hp-cat-card-desc">{cat.desc}</p>
                 </div>
