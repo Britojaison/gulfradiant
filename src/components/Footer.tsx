@@ -93,7 +93,7 @@ export default function Footer() {
                       alt="SAP Ariba Business Network" 
                       width={240} 
                       height={60} 
-                      style={{ objectFit: "contain" }}
+                      style={{ objectFit: "contain", clipPath: "inset(5px)" }}
                     />
                   </a>
                 </div>

@@ -1255,14 +1255,11 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
 
       {brandKey === 'kumwell' && !selectedCategory && (
         <section style={{ maxWidth: "1690px", margin: "0 auto", padding: "60px 40px 20px 40px" }}>
-          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "40px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
-            Posters
-          </h2>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", margin: "0 auto 40px auto" }}>
             <button
               onClick={(e) => {
                 const wrapper = e.currentTarget.parentElement?.querySelector('.kumwell-posters-wrapper');
-                if (wrapper) wrapper.scrollBy({ left: -450, behavior: 'smooth' });
+                if (wrapper) wrapper.scrollBy({ left: -wrapper.clientWidth, behavior: 'smooth' });
               }}
               style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", transition: "all 0.2s", zIndex: 2 }}
               aria-label="Scroll left"
@@ -1271,7 +1268,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             >
               &lt;
             </button>
-            <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
+            <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", width: "100%", scrollSnapType: "x mandatory" }}>
               {[
                 { img: "1.Kumwell Exothermic Welding.png", doc: "1.Kumwell Exothermic Welding TEXT.docx" },
                 { img: "2.Kumwell Grounding Components.png", doc: "2.Kumwell Grounding Components TEXT.docx" },
@@ -1281,8 +1278,34 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                 { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx" },
                 { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx" }
               ].map((poster, i) => (
-                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 auto", width: "430px", height: "591px", position: "relative" }}>
-                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
+                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 calc((100% - 60px) / 4)", aspectRatio: "430/591", position: "relative", scrollSnapAlign: "start", overflow: "hidden", borderRadius: "12px", border: "1px solid #eaeaea" }}>
+                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "cover" }} />
+                  <div style={{
+                    position: "absolute",
+                    bottom: "20px",
+                    right: "20px",
+                    background: "#ff5b05",
+                    color: "#fff",
+                    padding: "10px 16px",
+                    borderRadius: "30px",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                    transition: "transform 0.2s"
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download
+                  </div>
                 </a>
               ))}
             </div>
