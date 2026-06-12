@@ -46,11 +46,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "Earthing Protection System",
         products: [
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/COBEH2~Z.JPG", caption: "COBEH2~Z" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBDL.png", caption: "GBDL" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBPGSS.png", caption: "GBPGSS" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GGC3XC~C.PNG", caption: "GGC3XC~C" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GLYZ3L~8.JPG", caption: "GLYZ3L~8" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRCBUT.png", caption: "GRCBUT" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSC.png", caption: "GRSC" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSDH.png", caption: "GRSDH" },
@@ -92,8 +90,6 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "Exothermic Welding Systems",
         products: [
-          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/2_-21-06-2023-20-23-16.png", caption: "2_-21-06-2023-20-23-16" },
-          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/EXOTHERMIC WELDING.jpg", caption: "EXOTHERMIC WELDING" },
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Graphite-MOuld-300x300.jpg", caption: "Graphite-MOuld-300x300" },
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Necessary-Tools-300x300.jpg", caption: "Necessary-Tools-300x300" },
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tape-conductors-3-300x300.png", caption: "tape-conductors-3-300x300" },
@@ -103,10 +99,8 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "Oil & Gas Products",
         products: [
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/ISOLATING SPARK GAP.png", caption: "ISOLATING SPARK GAP" },
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/STATIC EARTH REEL -GERA 15ME.png", caption: "STATIC EARTH REEL -GERA 15ME" },
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/TOTAL SOLUTIONS.jpg", caption: "TOTAL SOLUTIONS" },
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/TRUCK GROUNDING SYSTEM.png", caption: "TRUCK GROUNDING SYSTEM" }
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/ISOLATING  SPARK GAP.png", caption: "ISOLATING SPARK GAP" },
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/STATIC EARTH REEL -GERA 15ME.png", caption: "STATIC EARTH REEL -GERA 15ME" }
         ]
       },
       {
@@ -1276,14 +1270,17 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                 { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.png", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx" },
                 { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx" },
                 { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx" },
-                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx" }
+                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx" },
+                { img: "8.Kumwell Air Termination System.png", doc: "Kumwell Air Termination System TEXT.docx" },
+                { img: "9.Kumwell Ground Rod and Accessories.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx" },
+                { img: "10.Kumwell More Effective Grounding.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx" }
               ].map((poster, i) => (
-                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 calc((100% - 60px) / 4)", aspectRatio: "430/591", position: "relative", scrollSnapAlign: "start", overflow: "hidden", borderRadius: "12px", border: "1px solid #eaeaea" }}>
-                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "cover" }} />
+                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 calc((100% - 60px) / 4)", aspectRatio: "430/591", position: "relative", scrollSnapAlign: "start", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
+                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
                   <div style={{
                     position: "absolute",
-                    bottom: "20px",
-                    right: "20px",
+                    bottom: "12px",
+                    right: "12px",
                     background: "#ff5b05",
                     color: "#fff",
                     padding: "10px 16px",
@@ -1440,7 +1437,14 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                         [brandData.categories[4]], // Low Intensity
                         [brandData.categories[5]]  // Medium Intensity
                       ]
-                      : brandData.categories?.map(c => [c]) || [];
+                      : brandData.name.toLowerCase() === "kumwell" && brandData.categories
+                        ? [
+                          [brandData.categories[0]], // Earthing Protection System
+                          [brandData.categories[1]], // Lightning Protection System
+                          [brandData.categories[2]], // Exothermic Welding Systems
+                          [brandData.categories[3], brandData.categories[4]] // Oil & Gas Products + Smart Lightning
+                        ]
+                        : brandData.categories?.map(c => [c]) || [];
 
                   return groups.map((group, gIdx) => (
                     <div key={gIdx} style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "80px", width: "100%", margin: "0 auto 60px auto" }}>
