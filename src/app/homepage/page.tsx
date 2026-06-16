@@ -78,6 +78,57 @@ const ELECTRICAL_CATEGORIES = [
 
 const statTargets = [25, 30, 100];
 
+const getCategoryIcon = (id: string) => {
+  switch (id) {
+    case "Earthing Lightning & Surge Protection Systems":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M17 21H7M15 18H9M13 15h-2" />
+        </svg>
+      );
+    case "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v3M5 5l2.2 2.2M19 5l-2.2 2.2M2 12h3M22 12h-3" />
+          <path d="M12 16v6M9 22h6" />
+        </svg>
+      );
+    case "Control devices plugs, receptacles, switching accessories, isolators, explosion proof":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 12L16 8" />
+          <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+        </svg>
+      );
+    case "Cables":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" />
+          <path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" />
+        </svg>
+      );
+    case "Other products":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          <path d="M2 7v10M12 12v10M22 7v10" />
+        </svg>
+      );
+    case "Industrial products/bulk material/oil and gas equipment":
+      return (
+        <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
 export default function Homepage() {
   const router = useRouter();
   const statsRef = useRef<HTMLElement | null>(null);
@@ -426,28 +477,14 @@ export default function Homepage() {
                 href={`/productpage?category=${encodeURIComponent(cat.id)}`}
                 className="hp-cat-card"
               >
-                <div className="hp-cat-card-img-wrapper">
-                  <Image
-                    src={cat.image}
-                    alt={cat.label}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, 400px"
-                  />
-                </div>
-                <div className="hp-cat-card-overlay" />
-                <div className="hp-cat-card-content">
+                <div className="hp-cat-card-body">
+                  <div className="hp-cat-card-icon-wrapper">
+                    {getCategoryIcon(cat.id)}
+                  </div>
                   <h3 className="hp-cat-card-title">
-                    {cat.label.includes('•') ? (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', alignItems: 'flex-start' }}>
-                        {cat.label.split('•').map((item, idx) => (
-                          <span key={idx} style={{ display: 'block' }}>• {item.trim()}</span>
-                        ))}
-                      </div>
-                    ) : (
-                      cat.label
-                    )}
+                    {cat.tag}
                   </h3>
+                  <p className="hp-cat-card-desc">{cat.desc}</p>
                 </div>
               </Link>
             ))}
