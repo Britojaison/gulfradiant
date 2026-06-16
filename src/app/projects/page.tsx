@@ -21,7 +21,7 @@ const CATEGORY_MAP = [
   },
   {
     id: "LIGHTNING & EXOTHERMIC WELDING  PROTECTION",
-    label: "Lightning & Exothermic Welding",
+    label: "Earthing Lightning & Exothermic Welding Systems",
     image: "/Images/our_projects/LIGHTNING & EXOTHERMIC WELDING  PROTECTION/Dubai-Waste-to-Energy.webp",
     desc: "Earthing, lightning protection, and exothermic welding solutions"
   },
@@ -254,8 +254,13 @@ function ProjectsPageContent() {
       `}</style>
 
       {/* TRUSTED BAR */}
-      <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 0 40px 0", background: "#ffffff" }}>
-        <h2 className="projects-main-heading" style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Trusted by Clients Across Industries</h2>
+      <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 20px", background: "#ffffff" }}>
+        <h2 className="projects-main-heading" style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", maxWidth: "900px", lineHeight: "1.3" }}>
+          {selectedCategory === "All" && "UAE's Leading Solutions Provider for Oil & Gas, Energy, Infrastructural & Industrial Projects for Over Two Decades."}
+          {selectedCategory === "LIGHTNING & EXOTHERMIC WELDING  PROTECTION" && "The GCC's Trusted Leader in EARTHING & LIGHTNING Protection Solutions"}
+          {selectedCategory === "aircraft warning lights" && "Lighting the Skyline — Some of the UAE's Most Iconic Landmarks Trust our AIRCRAFT WARNING LIGHTS"}
+          {selectedCategory === "high ampherage pluug and sockets " && "Powering Heavy Industry with High-Amperage Switching Systems and Heavy-Duty Industrial Connectivity Solutions."}
+        </h2>
       </div>
 
       {/* 2ND SECTION: PROJECTS GRID / TEXT TABLE */}

@@ -31,6 +31,7 @@ interface BrandData {
     thumbnail?: string;
     icon?: React.ReactNode;
     products: ProductItem[];
+    catalogue?: string;
   }[];
 }
 
@@ -242,9 +243,16 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Heavy-duty electrical connections, switch disconnectors, and IEC 309 plugs and sockets engineered for safety in explosive atmospheres.",
     website: "https://www.palazzoli.com/en/",
     productRange: [
-      { image: "/Images/PalazolliLewden/ATEX/ATEX Plug.png", caption: "ATEX Explosion Proof Plugs & Sockets" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Isolator - 292503.png", caption: "Heavy Duty Industrial Switch disconnectors" },
-      { image: "/Images/PalazolliLewden/XCEE/XCEE Plug & Socket.png", caption: "IEC 309 Watertight Connector Assemblies" }
+      // Lighting
+      { image: "/Images/palazolli/Lighting/IMG_3326.png", caption: "Industrial LED Lighting" },
+      { image: "/Images/palazolli/Lighting/META Lighting.png", caption: "META Lighting" },
+      { image: "/Images/palazolli/Lighting/Rino lighting.png", caption: "Rino Lighting" },
+      { image: "/Images/palazolli/Lighting/Tigua.png", caption: "Tigua" },
+      { image: "/Images/palazolli/Lighting/Tigua_led.png", caption: "Tigua LED" },
+      { image: "/Images/palazolli/Lighting/X-Tigua.png", caption: "X-Tigua" },
+      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_suspension.jpg", caption: "X-Tigua Floodlight Suspension" },
+      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_tunnel.jpg", caption: "X-Tigua Floodlight Tunnel" },
+      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_wall_mounted.jpg", caption: "X-Tigua Floodlight Wall Mounted" }
     ],
     certifiedLogos: [
     ],
@@ -543,91 +551,103 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Industrial Electrical & Connection Solutions",
     description: "Sleek industrial-grade distribution boards, customized enclosures, lighting systems, XCEE switches, and heavy-duty plugs manufactured to supreme safety standards.",
     website: "https://www.lewden.com/",
-    productRange: [
-      // ATEX
-      { image: "/Images/PalazolliLewden/ATEX/292202EX.png", caption: "292202EX ATEX" },
-      { image: "/Images/PalazolliLewden/ATEX/463126EX.png", caption: "463126EX ATEX" },
-      { image: "/Images/PalazolliLewden/ATEX/532202EX.png", caption: "532202EX ATEX" },
-      { image: "/Images/PalazolliLewden/ATEX/ATEX Plug.png", caption: "ATEX Plug" },
-      { image: "/Images/PalazolliLewden/ATEX/MM_511913EX - Copy.png", caption: "MM 511913EX" },
-      { image: "/Images/PalazolliLewden/ATEX/Rino - 8320232.png", caption: "Rino 8320232" },
-      // Customized Application
-      { image: "/Images/PalazolliLewden/Customized application/Combination - 610606.png", caption: "Combination 610606" },
-      { image: "/Images/PalazolliLewden/Customized application/Combination - 670061.png", caption: "Combination 670061" },
-      { image: "/Images/PalazolliLewden/Customized application/Combination(interlocket socket-box) FY4C4371.png", caption: "Combination Socket Box FY4C4371" },
-      { image: "/Images/PalazolliLewden/Customized application/Janus - 634101.png", caption: "Janus 634101" },
-      { image: "/Images/PalazolliLewden/Customized application/Janus - 638040.png", caption: "Janus 638040" },
-      // Lighting
-      { image: "/Images/PalazolliLewden/Lighting/IMG_3326.png", caption: "Industrial LED Lighting" },
-      { image: "/Images/PalazolliLewden/Lighting/META Lighting.png", caption: "META Lighting" },
-      { image: "/Images/PalazolliLewden/Lighting/Rino lighting.png", caption: "Rino Lighting" },
-      { image: "/Images/PalazolliLewden/Lighting/Tigua.png", caption: "Tigua" },
-      { image: "/Images/PalazolliLewden/Lighting/Tigua_led.png", caption: "Tigua LED" },
-      { image: "/Images/PalazolliLewden/Lighting/X-Tigua.png", caption: "X-Tigua" },
-      { image: "/Images/PalazolliLewden/Lighting/X-Tigua_Floodlight_suspension.jpg", caption: "X-Tigua Floodlight Suspension" },
-      { image: "/Images/PalazolliLewden/Lighting/X-Tigua_Floodlight_tunnel.jpg", caption: "X-Tigua Floodlight Tunnel" },
-      { image: "/Images/PalazolliLewden/Lighting/X-Tigua_Floodlight_wall_mounted.jpg", caption: "X-Tigua Floodlight Wall Mounted" },
-      // XCEE
-      { image: "/Images/PalazolliLewden/XCEE/Presa - FlangiaDritta.png", caption: "Presa Flangia Dritta" },
-      { image: "/Images/PalazolliLewden/XCEE/Presa - Impugnatura.png", caption: "Presa Impugnatura" },
-      { image: "/Images/PalazolliLewden/XCEE/Presa - Scatola65.png", caption: "Presa Scatola 65" },
-      { image: "/Images/PalazolliLewden/XCEE/PresaSEZ - ScatolaFlangiaDritta.png", caption: "PresaSEZ Scatola Flangia Dritta" },
-      { image: "/Images/PalazolliLewden/XCEE/PresaSez - Scatola65.png", caption: "PresaSez Scatola 65" },
-      { image: "/Images/PalazolliLewden/XCEE/Rotor Switch.png", caption: "Rotor Switch" },
-      { image: "/Images/PalazolliLewden/XCEE/Spina - Scatola.png", caption: "Spina Scatola" },
-      { image: "/Images/PalazolliLewden/XCEE/XCEE Plug & Socket.png", caption: "XCEE Plug & Socket" },
-      { image: "/Images/PalazolliLewden/XCEE/XCEE Plug.png", caption: "XCEE Plug" },
-      // Isolators & Boxes
-      { image: "/Images/PalazolliLewden/isolators and Boxes/208162.png", caption: "208162 Box" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Isolator - 292503.png", caption: "Isolator 292503" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532006.png", caption: "Junction Box 532006" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532201.png", caption: "Junction Box 532201" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532557.png", caption: "Junction Box 532557" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Tais Cube.png", caption: "Tais Cube" },
-      { image: "/Images/PalazolliLewden/isolators and Boxes/Unibox - 520011.png", caption: "Unibox 520011" },
-      // Plugs & Sockets
-      { image: "/Images/PalazolliLewden/plugs and socket /472130 - Tais.png", caption: "Tais 472130" },
-      { image: "/Images/PalazolliLewden/plugs and socket /473112.png", caption: "473112" },
-      { image: "/Images/PalazolliLewden/plugs and socket /473951.png", caption: "473951" },
-      { image: "/Images/PalazolliLewden/plugs and socket /473971.png", caption: "473971" },
-      { image: "/Images/PalazolliLewden/plugs and socket /474843 - tais.png", caption: "Tais 474843" },
-      { image: "/Images/PalazolliLewden/plugs and socket /476102.png", caption: "476102" },
-      { image: "/Images/PalazolliLewden/plugs and socket /476207.png", caption: "476207" },
-      { image: "/Images/PalazolliLewden/plugs and socket /476413.png", caption: "476413" },
-      { image: "/Images/PalazolliLewden/plugs and socket /477002.png", caption: "477002" },
-      { image: "/Images/PalazolliLewden/plugs and socket /477003.png", caption: "477003" },
-      { image: "/Images/PalazolliLewden/plugs and socket /50A9186-1_b.png", caption: "50A9186-1 b" },
-      { image: "/Images/PalazolliLewden/plugs and socket /705126.png", caption: "705126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /710126_png_800_600_contain_70.png", caption: "710126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /710166.png", caption: "710166" },
-      { image: "/Images/PalazolliLewden/plugs and socket /720124 multi 1.png", caption: "720124 Multi 1" },
-      { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera (1).png", caption: "720124 Ghiera (1)" },
-      { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera.png", caption: "720124 Ghiera" },
-      { image: "/Images/PalazolliLewden/plugs and socket /720130.png", caption: "720130" },
-      { image: "/Images/PalazolliLewden/plugs and socket /725126.png", caption: "725126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /725126_close.png", caption: "725126 Close" },
-      { image: "/Images/PalazolliLewden/plugs and socket /753126.png", caption: "753126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /761530.png", caption: "761530" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight plug.png", caption: "Alumax Straight Plug" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight socket.png", caption: "Alumax Straight Socket" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Back Box_1.png", caption: "Back Box 1" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Back Box_2.png", caption: "Back Box 2" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Back Box_3.png", caption: "Back Box 3" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Back Box_4.png", caption: "Back Box 4" },
-      { image: "/Images/PalazolliLewden/plugs and socket /CEE plug - 477207.png", caption: "CEE Plug 477207" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Multimax plug (red).png", caption: "Multimax Plug (Red)" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Multimax socket (red).png", caption: "Multimax Socket (Red)" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Prima socket - 493126.png", caption: "Prima Socket 493126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switch socket IP55 - 481336.png", caption: "Thermoplastic Switch Socket IP55 481336" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switched socket (blue) - 491124.png", caption: "Thermoplastic Switched Socket (Blue) 491124" },
-      { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic switch socket - 492126.png", caption: "Thermoplastic Switch Socket 492126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /backbox - 579421.png", caption: "Backbox 579421" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket (blue) - 490126.png", caption: "topTER Interlocked Socket (Blue) 490126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket - 490126.png", caption: "topTER Interlocked Socket 490126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (15deg-blue) - 489126.png", caption: "topTER Socket (15deg-Blue) 489126" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (90deg-blue).png", caption: "topTER Socket (90deg-Blue)" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (red) with backbox.png", caption: "topTER Socket (Red) with Backbox" },
-      { image: "/Images/PalazolliLewden/plugs and socket /topTER socket with backbox.png", caption: "topTER Socket with Backbox" }
+    productRange: [],
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "ATEX",
+        products: [
+          { image: "/Images/PalazolliLewden/ATEX/292202EX.png", caption: "292202EX ATEX" },
+          { image: "/Images/PalazolliLewden/ATEX/463126EX.png", caption: "463126EX ATEX" },
+          { image: "/Images/PalazolliLewden/ATEX/532202EX.png", caption: "532202EX ATEX" },
+          { image: "/Images/PalazolliLewden/ATEX/ATEX Plug.png", caption: "ATEX Plug" },
+          { image: "/Images/PalazolliLewden/ATEX/MM_511913EX - Copy.png", caption: "MM 511913EX" },
+          { image: "/Images/PalazolliLewden/ATEX/Rino - 8320232.png", caption: "Rino 8320232" }
+        ]
+      },
+      {
+        name: "Customized Application",
+        products: [
+          { image: "/Images/PalazolliLewden/Customized application/Combination - 610606.png", caption: "Combination 610606" },
+          { image: "/Images/PalazolliLewden/Customized application/Combination - 670061.png", caption: "Combination 670061" },
+          { image: "/Images/PalazolliLewden/Customized application/Combination(interlocket socket-box) FY4C4371.png", caption: "Combination Socket Box FY4C4371" },
+          { image: "/Images/PalazolliLewden/Customized application/Janus - 634101.png", caption: "Janus 634101" },
+          { image: "/Images/PalazolliLewden/Customized application/Janus - 638040.png", caption: "Janus 638040" }
+        ]
+      },
+      {
+        name: "XCEE",
+        products: [
+          { image: "/Images/PalazolliLewden/XCEE/Presa - FlangiaDritta.png", caption: "Presa Flangia Dritta" },
+          { image: "/Images/PalazolliLewden/XCEE/Presa - Impugnatura.png", caption: "Presa Impugnatura" },
+          { image: "/Images/PalazolliLewden/XCEE/Presa - Scatola65.png", caption: "Presa Scatola 65" },
+          { image: "/Images/PalazolliLewden/XCEE/PresaSEZ - ScatolaFlangiaDritta.png", caption: "PresaSEZ Scatola Flangia Dritta" },
+          { image: "/Images/PalazolliLewden/XCEE/PresaSez - Scatola65.png", caption: "PresaSez Scatola 65" },
+          { image: "/Images/PalazolliLewden/XCEE/Rotor Switch.png", caption: "Rotor Switch" },
+          { image: "/Images/PalazolliLewden/XCEE/Spina - Scatola.png", caption: "Spina Scatola" },
+          { image: "/Images/PalazolliLewden/XCEE/XCEE Plug & Socket.png", caption: "XCEE Plug & Socket" },
+          { image: "/Images/PalazolliLewden/XCEE/XCEE Plug.png", caption: "XCEE Plug" }
+        ]
+      },
+      {
+        name: "Isolators & Boxes",
+        products: [
+          { image: "/Images/PalazolliLewden/isolators and Boxes/208162.png", caption: "208162 Box" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Isolator - 292503.png", caption: "Isolator 292503" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532006.png", caption: "Junction Box 532006" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532201.png", caption: "Junction Box 532201" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532557.png", caption: "Junction Box 532557" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Tais Cube.png", caption: "Tais Cube" },
+          { image: "/Images/PalazolliLewden/isolators and Boxes/Unibox - 520011.png", caption: "Unibox 520011" }
+        ]
+      },
+      {
+        name: "Plugs & Sockets",
+        products: [
+          { image: "/Images/PalazolliLewden/plugs and socket /472130 - Tais.png", caption: "Tais 472130" },
+          { image: "/Images/PalazolliLewden/plugs and socket /473112.png", caption: "473112" },
+          { image: "/Images/PalazolliLewden/plugs and socket /473951.png", caption: "473951" },
+          { image: "/Images/PalazolliLewden/plugs and socket /473971.png", caption: "473971" },
+          { image: "/Images/PalazolliLewden/plugs and socket /474843 - tais.png", caption: "Tais 474843" },
+          { image: "/Images/PalazolliLewden/plugs and socket /476102.png", caption: "476102" },
+          { image: "/Images/PalazolliLewden/plugs and socket /476207.png", caption: "476207" },
+          { image: "/Images/PalazolliLewden/plugs and socket /476413.png", caption: "476413" },
+          { image: "/Images/PalazolliLewden/plugs and socket /477002.png", caption: "477002" },
+          { image: "/Images/PalazolliLewden/plugs and socket /477003.png", caption: "477003" },
+          { image: "/Images/PalazolliLewden/plugs and socket /50A9186-1_b.png", caption: "50A9186-1 b" },
+          { image: "/Images/PalazolliLewden/plugs and socket /705126.png", caption: "705126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /710126_png_800_600_contain_70.png", caption: "710126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /710166.png", caption: "710166" },
+          { image: "/Images/PalazolliLewden/plugs and socket /720124 multi 1.png", caption: "720124 Multi 1" },
+          { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera (1).png", caption: "720124 Ghiera (1)" },
+          { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera.png", caption: "720124 Ghiera" },
+          { image: "/Images/PalazolliLewden/plugs and socket /720130.png", caption: "720130" },
+          { image: "/Images/PalazolliLewden/plugs and socket /725126.png", caption: "725126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /725126_close.png", caption: "725126 Close" },
+          { image: "/Images/PalazolliLewden/plugs and socket /753126.png", caption: "753126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /761530.png", caption: "761530" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight plug.png", caption: "Alumax Straight Plug" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight socket.png", caption: "Alumax Straight Socket" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_1.png", caption: "Back Box 1" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_2.png", caption: "Back Box 2" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_3.png", caption: "Back Box 3" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_4.png", caption: "Back Box 4" },
+          { image: "/Images/PalazolliLewden/plugs and socket /CEE plug - 477207.png", caption: "CEE Plug 477207" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Multimax plug (red).png", caption: "Multimax Plug (Red)" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Multimax socket (red).png", caption: "Multimax Socket (Red)" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Prima socket - 493126.png", caption: "Prima Socket 493126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switch socket IP55 - 481336.png", caption: "Thermoplastic Switch Socket IP55 481336" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switched socket (blue) - 491124.png", caption: "Thermoplastic Switched Socket (Blue) 491124" },
+          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic switch socket - 492126.png", caption: "Thermoplastic Switch Socket 492126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /backbox - 579421.png", caption: "Backbox 579421" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket (blue) - 490126.png", caption: "topTER Interlocked Socket (Blue) 490126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket - 490126.png", caption: "topTER Interlocked Socket 490126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (15deg-blue) - 489126.png", caption: "topTER Socket (15deg-Blue) 489126" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (90deg-blue).png", caption: "topTER Socket (90deg-Blue)" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (red) with backbox.png", caption: "topTER Socket (Red) with Backbox" },
+          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket with backbox.png", caption: "topTER Socket with Backbox" }
+        ]
+      }
     ],
     certifiedLogos: [
       "/Images/Certificates/dewa.jpg"
@@ -842,8 +862,54 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Industrial Switchgear & Safety Isolators",
     description: "High-reliability British safety isolators, rotary switches, control stations, and bespoke railway traction equipment engineered for supreme durability.",
     website: "https://www.craigandderricott.com/",
-    productRange: [
-      { image: "/Images/Craig and Derricott/Product.png", caption: "Product" }
+    productRange: [],
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "F400",
+        catalogue: "/Images/Craig and Derricott/F400/F400 Fire Rated Datasheet 2023 v12.pdf",
+        products: [
+          { image: "/Images/Craig and Derricott/F400/THUMBNAIL IMAGE _ F400 Fire Rated Switchgear-Die Cast- Sheet Steel Enclosures.png", caption: "F400 Series Overview" },
+          { image: "/Images/Craig and Derricott/F400/F400 125A Fire Rated Enclosed Assembly.png", caption: "F400 125A Fire Rated Enclosed Assembly" },
+          { image: "/Images/Craig and Derricott/F400/F400 20-25-32-40A 2P-3P-4P Fire Rated Enclosure.png", caption: "F400 20-25-32-40A Fire Rated Enclosure" }
+        ]
+      },
+      {
+        name: "EDG",
+        catalogue: "/Images/Craig and Derricott/EDG/EDG Sheet Steel Hinged Door Range 2023 v14.pdf",
+        products: [
+          { image: "/Images/Craig and Derricott/EDG/Thumbnail Image _EDG 32-1000A Sheet Steel Hinged Door Range.png", caption: "EDG Series Overview" },
+          { image: "/Images/Craig and Derricott/EDG/EDG 32A-80A.png", caption: "EDG 32A-80A" },
+          { image: "/Images/Craig and Derricott/EDG/EDG 630A-1000A.png", caption: "EDG 630A-1000A" }
+        ]
+      },
+      {
+        name: "Flush Mount & Stainless Steel Range",
+        catalogue: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/Stainless Steel SDS Range 2021 v3.pdf",
+        products: [
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/THUMBNAIL _ MERGE _Stainless Steel Enclosures.png", caption: "Stainless Steel Enclosures Overview" },
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/Flush Mounting.jpg", caption: "Flush Mounting" },
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/SDFLL80.447.png", caption: "SDFLL80.447" },
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/stainless steel enc b.png", caption: "Stainless Steel Enclosure" }
+        ]
+      },
+      {
+        name: "EDDKG",
+        catalogue: "/Images/Craig and Derricott/EDDKG/EDDKG Series Range 2026 V1.pdf",
+        products: [
+          { image: "/Images/Craig and Derricott/EDDKG/Thumbnail Image_ EDDKG Series Range Die-Cast Aluminium 20A-100A.png", caption: "EDDKG Series Overview" },
+          { image: "/Images/Craig and Derricott/EDDKG/EDDKG2.png", caption: "EDDKG2" }
+        ]
+      },
+      {
+        name: "EDMP",
+        catalogue: "/Images/Craig and Derricott/EDMP/EDMP Range 2025.pdf",
+        products: [
+          { image: "/Images/Craig and Derricott/EDMP/Thumbnail Image__EDMP 4P -25A to 100A Moulded Plastic Enclosed Isolators.png", caption: "EDMP Series Overview" },
+          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 1 LHS.558.png", caption: "EDMP Size 1 LHS" },
+          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 2 LHS.559.png", caption: "EDMP Size 2 LHS" }
+        ]
+      }
     ],
     certifiedLogos: [
     ],
@@ -1452,6 +1518,11 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                         <div key={cIdx} style={{ flex: "0 1 auto", minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
                           <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "bold", marginBottom: "30px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
                             {cat.name}
+                            {cat.catalogue && (
+                              <a href={cat.catalogue} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: "14px", marginTop: "8px", color: "#E04F35", textDecoration: "underline", fontWeight: "normal" }}>
+                                View Catalogue
+                              </a>
+                            )}
                           </h3>
                           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", width: "100%" }}>
                             {cat.products.length > 5 && (

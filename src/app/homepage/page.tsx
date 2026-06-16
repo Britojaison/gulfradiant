@@ -41,53 +41,43 @@ const newsItems = [
 const ELECTRICAL_CATEGORIES = [
   {
     id: "Earthing Lightning • Surge Protection Systems",
-    label: "Earthing Lightning • Surge Protection Systems",
-    desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
     tag: "Earthing & Surge",
-    image: "/Images/product/earthing.png"
+    desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lighting • ACWL • Signal Lights",
-    desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
     tag: "Warning & Obstruction",
-    image: "/Images/product/obstruction.png"
+    desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
   },
   {
     id: "Switching Accessories • Control Devices • Isolators",
-    label: "Switching Accessories • Control Devices • Isolators",
-    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
     tag: "Control Devices",
-    image: "/Images/product/control devices.png"
+    desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
   },
   {
     id: "Cables & Other Products",
-    label: "Cables & Other Products",
-    desc: "High-performance electrical cables and specialized sealing accessories",
-    tag: "Cables & Others",
-    image: "/Images/product/cables.png"
+    tag: "Power Cables",
+    desc: "Siechem, Tekab, Helukabel & high-performance electrical cables",
   },
   {
     id: "Industrial & Bulk Materials",
-    label: "Industrial & Bulk Materials",
-    desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
     tag: "Industrial",
-    image: "/Images/product/industrial.png"
+    desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
   }
 ];
 
 const statTargets = [25, 30, 100];
 
-const getCategoryIcon = (id: string) => {
-  switch (id) {
-    case "Earthing Lightning & Surge Protection Systems":
+const getCategoryIcon = (tag: string) => {
+  switch (tag) {
+    case "Earthing & Surge":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
           <path d="M17 21H7M15 18H9M13 15h-2" />
         </svg>
       );
-    case "Lighting / Aircraft Warning Light / Obstruction Lights / Signal Lights":
+    case "Warning & Obstruction":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />
@@ -95,7 +85,7 @@ const getCategoryIcon = (id: string) => {
           <path d="M12 16v6M9 22h6" />
         </svg>
       );
-    case "Control devices plugs, receptacles, switching accessories, isolators, explosion proof":
+    case "Control Devices":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="9" />
@@ -103,21 +93,21 @@ const getCategoryIcon = (id: string) => {
           <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
         </svg>
       );
-    case "Cables":
+    case "Power Cables":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="8" />
           <path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" />
         </svg>
       );
-    case "Other products":
+    case "Special Sealing":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           <path d="M2 7v10M12 12v10M22 7v10" />
         </svg>
       );
-    case "Industrial products/bulk material/oil and gas equipment":
+    case "Industrial":
       return (
         <svg className="hp-cat-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="3" />
@@ -468,21 +458,29 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Pioneers of ELPS , ACWL & Allied Electrical Systems</h2>
+          <h2 className="hp-divisions-main-title">Pioneers of Lighting and Electrical Systems</h2>
 
-          <div className="hp-divisions-grid-new">
+          <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
               <Link
-                key={cat.id}
+                key={cat.tag}
                 href={`/productpage?category=${encodeURIComponent(cat.id)}`}
                 className="hp-cat-card"
               >
                 <div className="hp-cat-card-body">
                   <div className="hp-cat-card-icon-wrapper">
-                    {getCategoryIcon(cat.id)}
+                    {getCategoryIcon(cat.tag)}
                   </div>
                   <h3 className="hp-cat-card-title">
-                    {cat.tag}
+                    {cat.id.includes('•') ? (
+                      <div className="hp-cat-card-title-bullet-wrap">
+                        {cat.id.split('•').map((item, idx) => (
+                          <span key={idx} className="hp-cat-card-title-bullet-item">• {item.trim()}</span>
+                        ))}
+                      </div>
+                    ) : (
+                      cat.id
+                    )}
                   </h3>
                   <p className="hp-cat-card-desc">{cat.desc}</p>
                 </div>
