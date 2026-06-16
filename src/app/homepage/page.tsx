@@ -482,7 +482,6 @@ export default function Homepage() {
                       cat.id
                     )}
                   </h3>
-                  <p className="hp-cat-card-desc">{cat.desc}</p>
                 </div>
               </Link>
             ))}
