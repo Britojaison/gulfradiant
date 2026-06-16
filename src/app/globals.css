@@ -6802,7 +6802,7 @@
 
   .hp-cat-card-title {
     font-family: var(--font-subject), sans-serif !important;
-    font-size: clamp(20px, 1.5vw, 24px) !important;
+    font-size: clamp(24px, 2vw, 32px) !important;
     font-weight: 400 !important;
     line-height: 1.2 !important;
     color: #ffffff !important;
@@ -6825,7 +6825,7 @@
 
   .hp-cat-card-desc {
     font-family: var(--font-inter-tight), sans-serif !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     font-weight: 400 !important;
     line-height: 140% !important;
     color: rgba(255, 255, 255, 0.74) !important;
@@ -6871,11 +6871,11 @@
     }
 
     .hp-cat-card-title {
-      font-size: 18px !important;
+      font-size: 24px !important;
     }
 
     .hp-cat-card-desc {
-      font-size: 13px !important;
+      font-size: 15px !important;
     }
 
     .hp-cat-card-icon-wrapper {
@@ -6914,7 +6914,7 @@
     }
 
     .hp-cat-card-title {
-      font-size: 16px !important;
+      font-size: 20px !important;
     }
   }
 
@@ -6939,10 +6939,10 @@
       padding: 16px !important;
     }
     .hp-cat-card-title {
-      font-size: 15px !important;
+      font-size: 18px !important;
     }
     .hp-cat-card-desc {
-      font-size: 12px !important;
+      font-size: 14px !important;
     }
   }
 
