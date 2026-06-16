@@ -1258,6 +1258,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", margin: "0 auto 80px auto" }}>
             <button
+              className="carousel-arrow"
               onClick={(e) => {
                 const wrapper = e.currentTarget.parentElement?.querySelector('.test-facilities-wrapper');
                 if (wrapper) wrapper.scrollBy({ left: -450, behavior: 'smooth' });
@@ -1278,6 +1279,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
               ))}
             </div>
             <button
+              className="carousel-arrow"
               onClick={(e) => {
                 const wrapper = e.currentTarget.parentElement?.querySelector('.test-facilities-wrapper');
                 if (wrapper) wrapper.scrollBy({ left: 450, behavior: 'smooth' });
@@ -1317,6 +1319,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
         <section style={{ maxWidth: "1690px", margin: "0 auto", padding: "60px 40px 20px 40px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", margin: "0 auto 40px auto" }}>
             <button
+              className="carousel-arrow"
               onClick={(e) => {
                 const wrapper = e.currentTarget.parentElement?.querySelector('.kumwell-posters-wrapper');
                 if (wrapper) wrapper.scrollBy({ left: -wrapper.clientWidth, behavior: 'smooth' });
@@ -1341,7 +1344,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                 { img: "9.Kumwell Ground Rod and Accessories.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx" },
                 { img: "10.Kumwell More Effective Grounding.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx" }
               ].map((poster, i) => (
-                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download style={{ display: "block", flex: "0 0 calc((100% - 60px) / 4)", aspectRatio: "430/591", position: "relative", scrollSnapAlign: "start", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
+                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
                   <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
                   <div style={{
                     position: "absolute",
@@ -1373,6 +1376,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
               ))}
             </div>
             <button
+              className="carousel-arrow"
               onClick={(e) => {
                 const wrapper = e.currentTarget.parentElement?.querySelector('.kumwell-posters-wrapper');
                 if (wrapper) wrapper.scrollBy({ left: 450, behavior: 'smooth' });
@@ -1402,6 +1406,10 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             margin: 0 auto;
             width: 100%;
           }
+          .kumwell-poster-item {
+            flex: 0 0 calc((100% - 60px) / 4);
+            scroll-snap-align: start;
+          }
           .citel-carousel-wrapper::-webkit-scrollbar {
             display: none;
           }
@@ -1410,6 +1418,22 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             scrollbar-width: none;
           }
           @media (max-width: 1024px) {
+            .carousel-arrow {
+              display: none !important;
+            }
+            .kumwell-poster-item {
+              flex: 0 0 calc((100% - 40px) / 3) !important;
+            }
+            .citel-carousel-wrapper {
+              justify-content: flex-start !important;
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+            }
+            .citel-carousel-wrapper > div, .citel-carousel-wrapper > a {
+              scroll-snap-align: center;
+            }
             .categories-grid[style] {
               grid-template-columns: repeat(2, 1fr) !important;
               gap: 20px !important;
@@ -1423,6 +1447,9 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             }
           }
           @media (max-width: 640px) {
+            .kumwell-poster-item {
+              flex: 0 0 100% !important;
+            }
             .categories-grid[style] {
               grid-template-columns: repeat(1, 1fr) !important;
               gap: 20px !important;
@@ -1527,6 +1554,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", width: "100%" }}>
                             {cat.products.length > 5 && (
                               <button
+                                className="carousel-arrow"
                                 onClick={(e) => {
                                   const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
                                   if (wrapper) wrapper.scrollBy({ left: -270, behavior: 'smooth' });
@@ -1553,6 +1581,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                             </div>
                             {cat.products.length > 5 && (
                               <button
+                                className="carousel-arrow"
                                 onClick={(e) => {
                                   const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
                                   if (wrapper) wrapper.scrollBy({ left: 270, behavior: 'smooth' });
