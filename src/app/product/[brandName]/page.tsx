@@ -11,6 +11,8 @@ interface ProductItem {
   image: string;
   caption: string;
   subHeading?: string;
+  download?: string;
+  link?: string;
 }
 
 interface BrandData {
@@ -52,18 +54,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GGC3XC~C.PNG", caption: "GGC3XC~C" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRCBUT.png", caption: "GRCBUT" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSC.png", caption: "GRSC" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSDH.png", caption: "GRSDH" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSS.png", caption: "GRSS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSSCO.png", caption: "GRSSCO" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GWV1CV~O.PNG", caption: "GWV1CV~O" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXC.png", caption: "GXC" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCIP.png", caption: "GXCIP" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCT.png", caption: "GXCT" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP1.png", caption: "GXEP1" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP2.png", caption: "GXEP2" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP4.png", caption: "GXEP4" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXFIP.png", caption: "GXFIP" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYATB.png", caption: "GYATB" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYPTB.png", caption: "GYPTB" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/LCATT.png", caption: "LCATT" },
           { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/MEG.png", caption: "MEG" }
@@ -116,7 +114,8 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       "/Images/Certificates/adnoc logo.svg",
       "/Images/Certificates/dewa.jpg",
       "/Images/Certificates/etihad we.png",
-      "/Images/Certificates/taqa group.png"
+      "/Images/Certificates/taqa group.png",
+      "/Images/Certificates/cert-rta-logo.jpg"
     ],
     aboutP1: "Kumwell Corporation public company Limited is a manufacturer and distributor of products in grounding systems such as grounding rods, grounding conductors, exothermic welding equipment, ground enhancement materials, inspection pits and etc. Lightning protection system compose of air terminals, lightning conductors, connectors & fasteners and etc. Surge protection system, lightning detection and warning system are compiled for international standards under Kumwell brand.",
     aboutP2: "Kumwell products export to over 40 countries around the world through our distributors. Our vision is a leader with total solution in lightning protection system and safety innovation with the strongest brand and sustainable growth.",
@@ -267,11 +266,15 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Specialty & High-Performance Cables",
     description: "Advanced solar, marine, rolling stock, and heat-resistant industrial cables engineered to withstand extreme environment stresses.",
     website: "https://www.siechem.com/",
-    productRange: [
-      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
-      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
-      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
-      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
+    productRange: [],
+    categoryStyle: "tabs",
+    categories: [
+      { name: "BUILDING WIRES", catalogue: "https://www.siechem.com/catalogue/", products: [] },
+      { name: "POWER CABLES", catalogue: "https://www.siechem.com/catalogue/", products: [] },
+      { name: "RUBBER CABLES", catalogue: "https://www.siechem.com/catalogue/", products: [] },
+      { name: "TELECOMMUNICATION CABLES", catalogue: "https://www.siechem.com/catalogue/", products: [] },
+      { name: "SOLAR CABLES", catalogue: "https://www.siechem.com/catalogue/", products: [] },
+      { name: "WELDING CABLES", catalogue: "https://www.siechem.com/catalogue/", products: [] }
     ],
     certifiedLogos: [
     ],
@@ -286,11 +289,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Industrial Wires & Control Cable Systems",
     description: "Flexible control cables, drag-chain cables, data networking lines, and plug-and-play customized cable assembly systems.",
     website: "https://www.helukabel.com/",
-    productRange: [
-      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
-      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
-      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
-      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
+    productRange: [],
+    categoryStyle: "tabs",
+    categories: [
+      { name: "CONTROL CABLE", catalogue: "https://www.helu.com/us-en/products-solutions/industrial-machine-cables/control-connection-cables/", products: [] },
+      { name: "SINGLE CONDUCTOR WIRES", catalogue: "https://www.helu.com/us-en/products-solutions/industrial-machine-cables/single-conductor-cables/", products: [] }
     ],
     certifiedLogos: [
     ],
@@ -305,42 +308,50 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Cable Management & Lightning Protection Systems",
     description: "Premium German-engineered cable trays, transient surge protectors, and connection systems for state-of-the-art building installations.",
     website: "https://www.obo-bettermann.com/en-wo/",
-    productRange: [
-      { image: "/Images/OBO/I support.jpg", caption: "I support" },
-      { image: "/Images/OBO/Junction box A8.jpg", caption: "Junction box A8" },
-      { image: "/Images/OBO/OBO anchor.jpg", caption: "OBO anchor" },
-      { image: "/Images/OBO/UP flush mounted electronic box.jpg", caption: "UP flush mounted electronic box" },
-      { image: "/Images/OBO/cap nut cable gland.jpg", caption: "cap nut cable gland" },
-      { image: "/Images/OBO/cavity wall device connection box.jpg", caption: "cavity wall device connection box" },
-      { image: "/Images/OBO/clamp clip.jpg", caption: "clamp clip" },
-      { image: "/Images/OBO/clamping lug.jpg", caption: "clamping lug" },
-      { image: "/Images/OBO/connector I support.jpg", caption: "connector I support" },
-      { image: "/Images/OBO/distribution box.jpg", caption: "distribution box" },
-      { image: "/Images/OBO/double trough.jpg", caption: "double trough" },
-      { image: "/Images/OBO/end cap.jpg", caption: "end cap" },
-      { image: "/Images/OBO/fastening clip.jpg", caption: "fastening clip" },
-      { image: "/Images/OBO/grip collection clamp.jpg", caption: "grip collection clamp" },
-      { image: "/Images/OBO/hovercube.jpg", caption: "hovercube" },
-      { image: "/Images/OBO/hovercubes.png", caption: "hovercubes" },
-      { image: "/Images/OBO/industrial pole.jpg", caption: "industrial pole" },
-      { image: "/Images/OBO/injection anchor.jpg", caption: "injection anchor" },
-      { image: "/Images/OBO/junction_boxes.png", caption: "junction boxes" },
-      { image: "/Images/OBO/knock in anchor.jpg", caption: "knock in anchor" },
-      { image: "/Images/OBO/monitor connection column.jpg", caption: "monitor connection column" },
-      { image: "/Images/OBO/mounting set.jpg", caption: "mounting set" },
-      { image: "/Images/OBO/nail finishing.jpg", caption: "nail finishing" },
-      { image: "/Images/OBO/pressing gun.jpg", caption: "pressing gun" },
-      { image: "/Images/OBO/pressure clip.jpg", caption: "pressure clip" },
-      { image: "/Images/OBO/quick clip.jpg", caption: "quick clip" },
-      { image: "/Images/OBO/screwless terminal .jpg", caption: "screwless terminal" },
-      { image: "/Images/OBO/single push fit.jpg", caption: "single push fit" },
-      { image: "/Images/OBO/slot nut.jpg", caption: "slot nut" },
-      { image: "/Images/OBO/spacer.jpg", caption: "spacer" },
-      { image: "/Images/OBO/support bracket.jpg", caption: "support bracket" },
-      { image: "/Images/OBO/surface mounted housing.jpg", caption: "surface mounted housing" },
-      { image: "/Images/OBO/tension spring.jpg", caption: "tension spring" },
-      { image: "/Images/OBO/u_clamps.png", caption: "u clamps" },
-      { image: "/Images/OBO/wall_brackets.png", caption: "wall brackets" }
+    productRange: [],
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "CONNECTION & ROUTING SYSTEMS",
+        products: [
+          { image: "/Images/OBO/CONNECTION & ROUTING SYSTEMS/DISTRIBUTORS.jpg", caption: "DISTRIBUTORS" },
+          { image: "/Images/OBO/CONNECTION & ROUTING SYSTEMS/GLANDS.jpg", caption: "GLANDS" },
+          { image: "/Images/OBO/CONNECTION & ROUTING SYSTEMS/JUNCTION BOXES.jpg", caption: "JUNCTION BOXES" },
+          { image: "/Images/OBO/CONNECTION & ROUTING SYSTEMS/SURFACE MOUNTED SYSTEMS.jpg", caption: "SURFACE MOUNTED SYSTEMS" },
+          { image: "/Images/OBO/CONNECTION & ROUTING SYSTEMS/TERMINALS.jpg", caption: "TERMINALS" }
+        ]
+      },
+      {
+        name: "U CLAMPS FOR CABLE CONNECTIONS & FASTENING MATERIALS",
+        products: [
+          { image: "/Images/OBO/U CLAMPS FOR CABLE CONNECTIONS & FASTENING MATERIALS/ANCHOR.jpg", caption: "ANCHOR" },
+          { image: "/Images/OBO/U CLAMPS FOR CABLE CONNECTIONS & FASTENING MATERIALS/CABLE & PIPE FASTENINGS.jpg", caption: "CABLE & PIPE FASTENINGS" },
+          { image: "/Images/OBO/U CLAMPS FOR CABLE CONNECTIONS & FASTENING MATERIALS/CABLE CLIPS.jpg", caption: "CABLE CLIPS" },
+          { image: "/Images/OBO/U CLAMPS FOR CABLE CONNECTIONS & FASTENING MATERIALS/QUICK PIPE CLIPS.jpg", caption: "QUICK PIPE CLIPS" }
+        ]
+      },
+      {
+        name: "Beam Clamp Systems",
+        products: [
+          { image: "/Images/OBO/Junction box A8.jpg", caption: "Junction box A8" },
+          { image: "/Images/OBO/cap nut cable gland.jpg", caption: "cap nut cable gland" },
+          { image: "/Images/OBO/clamp clip.jpg", caption: "clamp clip" },
+          { image: "/Images/OBO/clamping lug.jpg", caption: "clamping lug" },
+          { image: "/Images/OBO/distribution box.jpg", caption: "distribution box" },
+          { image: "/Images/OBO/double trough.jpg", caption: "double trough" },
+          { image: "/Images/OBO/fastening clip.jpg", caption: "fastening clip" },
+          { image: "/Images/OBO/grip collection clamp.jpg", caption: "grip collection clamp" },
+          { image: "/Images/OBO/injection anchor.jpg", caption: "injection anchor" },
+          { image: "/Images/OBO/junction_boxes.png", caption: "junction boxes" },
+          { image: "/Images/OBO/nail finishing.jpg", caption: "nail finishing" },
+          { image: "/Images/OBO/quick clip.jpg", caption: "quick clip" },
+          { image: "/Images/OBO/screwless terminal .jpg", caption: "screwless terminal" },
+          { image: "/Images/OBO/single push fit.jpg", caption: "single push fit" },
+          { image: "/Images/OBO/surface mounted housing.jpg", caption: "surface mounted housing" },
+          { image: "/Images/OBO/u_clamps.png", caption: "u clamps" },
+          { image: "/Images/OBO/wall_brackets.png", caption: "wall brackets" }
+        ]
+      }
     ],
     certifiedLogos: [
     ],
@@ -436,48 +447,6 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Premium Austrian-engineered PVC and halogen-free plastic conduits, fittings, and cable management enclosures built for heavy-duty industrial installations.",
     website: "https://www.univolt.com/",
     productRange: [
-      { image: "/Images/Dietzel/107257_J100BF AP-ABZWEIGDOSE_MD01.jpg", caption: "107257 J100BF AP-ABZWEIGDOSE MD01" },
-      { image: "/Images/Dietzel/CB1_sw_XL_MD02.jpg", caption: "CB1 sw XL MD02" },
-      { image: "/Images/Dietzel/CB2-U_sw_XL_MD02.jpg", caption: "CB2-U sw XL MD02" },
-      { image: "/Images/Dietzel/CB3Y_sw_XL_MD02.jpg", caption: "CB3Y sw XL MD02" },
-      { image: "/Images/Dietzel/CB4-H_sw_XL_MD02.jpg", caption: "CB4-H sw XL MD02" },
-      { image: "/Images/Dietzel/CBL_sw_XL_MD02.jpg", caption: "CBL sw XL MD02" },
-      { image: "/Images/Dietzel/DCX_MD02.jpg", caption: "DCX MD02" },
-      { image: "/Images/Dietzel/DSC_3-13_HG_MD01.jpg", caption: "DSC 3-13 HG MD01" },
-      { image: "/Images/Dietzel/DSD_XL_MD01.jpg", caption: "DSD XL MD01" },
-      { image: "/Images/Dietzel/DSL35_HG_MD01.jpg", caption: "DSL35 HG MD01" },
-      { image: "/Images/Dietzel/FPE_hg_XL_MD02.jpg", caption: "FPE hg XL MD02" },
-      { image: "/Images/Dietzel/FPE_sw_XL_MD02.jpg", caption: "FPE sw XL MD02" },
-      { image: "/Images/Dietzel/HFAFT_AFT_MBS_sw_XL_MD02.jpg", caption: "HFAFT AFT MBS sw XL MD02" },
-      { image: "/Images/Dietzel/HFAFT_AFT_MBS_ws_XL_MD02.jpg", caption: "HFAFT AFT MBS ws XL MD02" },
-      { image: "/Images/Dietzel/HFAMT_AMT_LN_sw_XL_MD02.jpg", caption: "HFAMT AMT LN sw XL MD02" },
-      { image: "/Images/Dietzel/HFAMT_AMT_LR_sw_XL_MD02.jpg", caption: "HFAMT AMT LR sw XL MD02" },
-      { image: "/Images/Dietzel/HFBS_Turbo_sw_XL_MD02.jpg", caption: "HFBS Turbo sw XL MD02" },
-      { image: "/Images/Dietzel/HFCB2_CB2_sw_XL_MD02.jpg", caption: "HFCB2 CB2 sw XL MD02" },
-      { image: "/Images/Dietzel/HFCB3_CB3_sw_XL_MD02.jpg", caption: "HFCB3 CB3 sw XL MD02" },
-      { image: "/Images/Dietzel/HFCB4_CB4_sw_XL_MD02.jpg", caption: "HFCB4 CB4 sw XL MD02" },
-      { image: "/Images/Dietzel/HFCBA_CBA_sw_XL_MD02.jpg", caption: "HFCBA CBA sw XL MD02" },
-      { image: "/Images/Dietzel/HFCLB_CLB_hg_XL_MD02.jpg", caption: "HFCLB CLB hg XL MD02" },
-      { image: "/Images/Dietzel/HFCLB_CLB_sw_XL_MD02.jpg", caption: "HFCLB CLB sw XL MD02" },
-      { image: "/Images/Dietzel/HFCL_CL_hg_XL_MD02.jpg", caption: "HFCL CL hg XL MD02" },
-      { image: "/Images/Dietzel/HFCL_CL_sw_XL_MD02.jpg", caption: "HFCL CL sw XL MD02" },
-      { image: "/Images/Dietzel/HFCL_CL_ws_XL_MD02.jpg", caption: "HFCL CL ws XL MD02" },
-      { image: "/Images/Dietzel/HFIE_IE_sw_XL_MD02.jpg", caption: "HFIE IE sw XL MD02" },
-      { image: "/Images/Dietzel/HFIR-Turbo_XL_MD02.jpg", caption: "HFIR-Turbo XL MD02" },
-      { image: "/Images/Dietzel/HFIRM-HFPRMTurbo-hg_XL_MD02.jpg", caption: "HFIRM-HFPRMTurbo-hg XL MD02" },
-      { image: "/Images/Dietzel/HFIT_IT_hg_MD01.jpg", caption: "HFIT IT hg MD01" },
-      { image: "/Images/Dietzel/HFIT_IT_sw_XL_MD02.jpg", caption: "HFIT IT sw XL MD02" },
-      { image: "/Images/Dietzel/HFPRM-Turbo_hg_XL_MD02.jpg", caption: "HFPRM-Turbo hg XL MD02" },
-      { image: "/Images/Dietzel/HFPRM_Turbo_sw_XL_MD02.jpg", caption: "HFPRM Turbo sw XL MD02" },
-      { image: "/Images/Dietzel/HFSB_HG_N_MD02.jpg", caption: "HFSB HG N MD02" },
-      { image: "/Images/Dietzel/HFSB_SW_N_MD02.jpg", caption: "HFSB SW N MD02" },
-      { image: "/Images/Dietzel/HFSB_WS_N_MD02.jpg", caption: "HFSB WS N MD02" },
-      { image: "/Images/Dietzel/HFSM_SM_HM_hg_XL_MD02.jpg", caption: "HFSM SM HM hg XL MD02" },
-      { image: "/Images/Dietzel/HFSM_SM_sw_XL_MD02.jpg", caption: "HFSM SM sw XL MD02" },
-      { image: "/Images/Dietzel/HFSM_SM_ws_XL_MD02.jpg", caption: "HFSM SM ws XL MD02" },
-      { image: "/Images/Dietzel/HFS_hg_XL_MD02.jpg", caption: "HFS hg XL MD02" },
-      { image: "/Images/Dietzel/HFS_sw_XL_MD02.jpg", caption: "HFS sw XL MD02" },
-      { image: "/Images/Dietzel/HFS_ws_XL_MD02.jpg", caption: "HFS ws XL MD02" },
       { image: "/Images/Dietzel/HFX-Turbo_hgrau_XL_MD02.jpg", caption: "HFX-Turbo hgrau XL MD02" },
       { image: "/Images/Dietzel/HFXP X_104830_MD02.jpg", caption: "HFXP X 104830 MD02" },
       { image: "/Images/Dietzel/HFXP-HT_sw_XL_MD02.jpg", caption: "HFXP-HT sw XL MD02" },
@@ -486,32 +455,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       { image: "/Images/Dietzel/HFXS_sw_XL_MD02.jpg", caption: "HFXS sw XL MD02" },
       { image: "/Images/Dietzel/HFXX_HFXPXpro_MD02.jpg", caption: "HFXX HFXPXpro MD02" },
       { image: "/Images/Dietzel/HFXX_XL_MD02.jpg", caption: "HFXX XL MD02" },
-      { image: "/Images/Dietzel/HFX_ws_XL_MD02.jpg", caption: "HFX ws XL MD02" },
-      { image: "/Images/Dietzel/HLN_LN_SLN_sw_XL_MD02.jpg", caption: "HLN LN SLN sw XL MD02" },
-      { image: "/Images/Dietzel/J100B_MD01.jpg", caption: "J100B MD01" },
-      { image: "/Images/Dietzel/J160B_MD01.jpg", caption: "J160B MD01" },
-      { image: "/Images/Dietzel/J200B_MD01.jpg", caption: "J200B MD01" },
-      { image: "/Images/Dietzel/J80B_MD01.jpg", caption: "J80B MD01" },
-      { image: "/Images/Dietzel/KH-2_HG_MD01.jpg", caption: "KH-2 HG MD01" },
-      { image: "/Images/Dietzel/KH_HG_XL_MD01.jpg", caption: "KH HG XL MD01" },
-      { image: "/Images/Dietzel/KM-Turbo-GR_MD02.jpg", caption: "KM-Turbo-GR MD02" },
-      { image: "/Images/Dietzel/KM-Turbo-HG_MD02.jpg", caption: "KM-Turbo-HG MD02" },
-      { image: "/Images/Dietzel/KM-Turbo-OR_MD02.jpg", caption: "KM-Turbo-OR MD02" },
-      { image: "/Images/Dietzel/KM-Turbo-SW_MD02.jpg", caption: "KM-Turbo-SW MD02" },
-      { image: "/Images/Dietzel/KSH-15GR_MD01.jpg", caption: "KSH-15GR MD01" },
-      { image: "/Images/Dietzel/KSH_30_GR_MD01.jpg", caption: "KSH 30 GR MD01" },
-      { image: "/Images/Dietzel/PKGH100OP_ws_XL_MD01.jpg", caption: "PKGH100OP ws XL MD01" },
-      { image: "/Images/Dietzel/PKGH200OP_ws_XL_MD01.jpg", caption: "PKGH200OP ws XL MD01" },
-      { image: "/Images/Dietzel/PKGH_PKG100OP_hg_XL_MD01.jpg", caption: "PKGH PKG100OP hg XL MD01" },
-      { image: "/Images/Dietzel/PKGH_PKG100OP_sw_XL_MD01.jpg", caption: "PKGH PKG100OP sw XL MD01" },
-      { image: "/Images/Dietzel/PKGH_PKG200-300OP_hg_XL_MD01.jpg", caption: "PKGH PKG200-300OP hg XL MD01" },
-      { image: "/Images/Dietzel/PKGH_PKG200OP_sw_XL_MD01.jpg", caption: "PKGH PKG200OP sw XL MD01" },
-      { image: "/Images/Dietzel/PKGH_PKG300OP_sw_XL_MD01.jpg", caption: "PKGH PKG300OP sw XL MD01" },
-      { image: "/Images/Dietzel/SBS_sw_XL_MD02.jpg", caption: "SBS sw XL MD02" },
-      { image: "/Images/Dietzel/SBS_ws_XL_MD02.jpg", caption: "SBS ws XL MD02" },
-      { image: "/Images/Dietzel/SGL_gr_XL_MD02.jpg", caption: "SGL gr XL MD02" },
-      { image: "/Images/Dietzel/SGL_sw_XL_MD02.jpg", caption: "SGL sw XL MD02" },
-      { image: "/Images/Dietzel/SLN_gr_XL_MD02.jpg", caption: "SLN gr XL MD02" }
+      { image: "/Images/Dietzel/HFX_ws_XL_MD02.jpg", caption: "HFX ws XL MD02" }
     ],
     certifiedLogos: [
     ],
@@ -845,9 +789,39 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Module-Level Power Electronics (MLPE)",
     description: "Innovative solar optimizer and rapid shutdown solutions maximizing safety and energy output of photovoltaic installations.",
     website: "https://www.tigoenergy.com/",
-    productRange: [
-      { image: "/Images/TIGO/Product 1.png", caption: "Product 1" },
-      { image: "/Images/TIGO/Product 2.png", caption: "Product 2" }
+    productRange: [],
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "TS4 Flex MLPE",
+        products: [
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-O.png", caption: "TS4-X-O" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-S.avif", caption: "TS4-X-S" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-F.avif", caption: "TS4-X-F" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-O (725W).avif", caption: "TS4-A-O (725W)" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-S (725W).avif", caption: "TS4-A-S (725W)" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-F (725W).avif", caption: "TS4-A-F (725W)" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-O.avif", caption: "TS4-A-O" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-S.avif", caption: "TS4-A-S" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-F.avif", caption: "TS4-A-F" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-2F.avif", caption: "TS4-A-2F" }
+        ]
+      },
+      {
+        name: "EI Residential",
+        products: [
+          { image: "/Images/TIGO/EI Residential/50A ATS (US).avif", caption: "50A ATS (US)" },
+          { image: "/Images/TIGO/EI Residential/EI Battery (US).avif", caption: "EI Battery (US)" },
+          { image: "/Images/TIGO/EI Residential/EI Inverter (US).avif", caption: "EI Inverter (US)" }
+        ]
+      },
+      {
+        name: "Accessories",
+        products: [
+          { image: "/Images/TIGO/Accessories/CCA (Cloud Connect Advanced).avif", caption: "CCA (Cloud Connect Advanced)" },
+          { image: "/Images/TIGO/Accessories/TAP (Tigo Access Point).avif", caption: "TAP (Tigo Access Point)" }
+        ]
+      }
     ],
     certifiedLogos: [
     ],
@@ -943,7 +917,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-quality PVC and metal conduits and cable protection systems for electrical installations in civil and industrial projects.",
     website: "https://www.tubifor.it/",
     productRange: [
-      { image: "/Images/Tubifor/Product.png", caption: "Product" }
+      {
+        image: "/Images/Tubifor/Product.png",
+        caption: "Product",
+        link: "https://www.tubifor.it/prodottiDett.asp?id=115"
+      }
     ],
     certifiedLogos: [
     ],
@@ -958,11 +936,12 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Advanced Electrical Cable Systems",
     description: "High, medium, and low-voltage cables and wires manufactured to international standards for power grids and infrastructure.",
     website: "https://www.bahra-cables.com/",
-    productRange: [
-      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
-      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
-      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
-      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
+    productRange: [],
+    categoryStyle: "tabs",
+    categories: [
+      { name: "BUILDING WIRES", catalogue: "https://bahra-electric.com/product-category/wires-and-cables/building-wires/", products: [] },
+      { name: "Fire Resistance Wires & Cables", catalogue: "https://bahra-electric.com/product-category/wires-and-cables/fire-resistance-wires-cables/", products: [] },
+      { name: "CONTROL CABLES", catalogue: "https://bahra-electric.com/products/control-cables/", products: [] }
     ],
     certifiedLogos: [
     ],
@@ -976,12 +955,13 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     heroBg: "/Images/Home/Rectangle 23 (1).png",
     subtitle: "Specialty & Control Cable Solutions",
     description: "Instrumentation, control, and specialty cables designed for optimal signal transmission and safety under heavy industrial conditions.",
-    website: "http://www.tekabcables.com/",
-    productRange: [
-      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
-      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
-      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
-      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
+    website: "https://tekab.com/",
+    productRange: [],
+    categoryStyle: "tabs",
+    categories: [
+      { name: "FLAME RETARDANT FIRE RESISTANT CABLE", catalogue: "https://tekab.com/products.php?id=674&prdtcat_id=9&subcat_id=78", products: [] },
+      { name: "PVC INSULATED SCREENED/UNSCREENED CABLE", catalogue: "https://tekab.com/products.php?id=350&prdtcat_id=1&subcat_id=10", products: [] },
+      { name: "MULTICORE CONTROL CABLE", catalogue: "https://tekab.com/products.php?id=474&prdtcat_id=4&subcat_id=34", products: [] }
     ],
     certifiedLogos: [
     ],
@@ -996,11 +976,12 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Industrial & Power Cabling",
     description: "High-performance low voltage cables, building wires, and specialty conductors designed for efficiency and safety.",
     website: "http://neelkanthcables.com/",
-    productRange: [
-      { image: "/Images/Siechem/cable1.webp", caption: "cable1" },
-      { image: "/Images/Siechem/cables2.webp", caption: "cables2" },
-      { image: "/Images/Siechem/cables3.webp", caption: "cables3" },
-      { image: "/Images/Siechem/cables4.webp", caption: "cables4" }
+    productRange: [],
+    categoryStyle: "tabs",
+    categories: [
+      { name: "LV POWER CABLE", catalogue: "https://neelkanthcables.com/products.html", products: [] },
+      { name: "MV POWER CABLES", catalogue: "https://neelkanthcables.com/products.html", products: [] },
+      { name: "NETWORKING CABLES", catalogue: "https://neelkanthcables.com/products.html", products: [] }
     ],
     certifiedLogos: [
     ],
@@ -1034,7 +1015,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-grade plastic uPVC and LSF conduits, trunking, and fittings designed to protect electrical cables in civil and industrial projects.",
     website: "https://cosmoplast.com/",
     productRange: [
-      { image: "/Images/Cosmoplast/Product.png", caption: "Product" }
+      {
+        image: "/Images/Cosmoplast/thambnail.png",
+        caption: "PE Polyethylene Pipes and Fittings for Water",
+        download: "/Images/Cosmoplast/PE-Polyethylene-Pipes-and-Fittings-for-Water-Cosmoplast-2024-18-07-2024.pdf"
+      }
     ],
     certifiedLogos: [
     ],
@@ -1099,12 +1084,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Premium electrical protection solutions, including grounding, bonding, and lightning protection systems for infrastructure.",
     website: "https://www.nvent.com/en-us/erico",
     productRange: [
+      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Plus Welding Material, F20.webp", caption: "Cadweld Plus Welding Material, F20" },
+      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Tool Kit.webp", caption: "Cadweld Tool Kit" },
+      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Welding Material, F20.webp", caption: "Cadweld Welding Material, F20" },
       { image: "/Images/nventerico/nvent/GEM Ground Enhancement Material.png.webp", caption: "GEM Ground Enhancement Material" },
       { image: "/Images/nventerico/nvent/Grounding Busbar.png.webp", caption: "Grounding Busbar" },
       { image: "/Images/nventerico/nvent/High Amperage Plugs & Sockets Project.webp", caption: "High Amperage Plugs & Sockets Project" },
       { image: "/Images/nventerico/nvent/erico_system3000.png.webp", caption: "ERICO System 3000" },
-      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Plus Impulse Exothermic Welding Control Unit.png.webp", caption: "Cadweld Exothermic Welding Unit" },
-      { image: "/Images/nventerico/nvent/nVent ERICO Hammerlock Ground Clamp.png.webp", caption: "Hammerlock Ground Clamp" }
+      { image: "/Images/nventerico/nvent/nVent ERICO Cadweld Plus Impulse Exothermic Welding Control Unit.png.webp", caption: "Cadweld Exothermic Welding Unit" }
     ],
     certifiedLogos: [
     ],
@@ -1141,7 +1128,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-quality aviation obstruction lights and warning systems for tall structures and infrastructure.",
     website: "https://www.avaids.com/",
     productRange: [
-      { image: "/Images/product/AVAIDS.png", caption: "Aviation Warning Light" }
+      {
+        image: "/Images/AVAIDS/TASS-MI-LED-DN-I_card.jpg",
+        caption: "Aviation Warning Light",
+        link: "https://www.avaids.com/aviation/li-obstruction-light.html"
+      }
     ],
     certifiedLogos: [],
     aboutP1: "Avaids Technovators is a renowned manufacturer of professional aviation obstruction lights and warning systems, ensuring air traffic safety around high-rise buildings and towers.",
@@ -1333,44 +1324,60 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             </button>
             <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", width: "100%", scrollSnapType: "x mandatory" }}>
               {[
-                { img: "1.Kumwell Exothermic Welding.png", doc: "1.Kumwell Exothermic Welding TEXT.docx" },
-                { img: "2.Kumwell Grounding Components.png", doc: "2.Kumwell Grounding Components TEXT.docx" },
-                { img: "3.Kumwell Isolating Spark Gap.png", doc: "3.Kumwell Isolating Spark Gap TEXT.docx" },
-                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.png", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx" },
-                { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx" },
-                { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx" },
-                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx" },
-                { img: "8.Kumwell Air Termination System.png", doc: "Kumwell Air Termination System TEXT.docx" },
-                { img: "9.Kumwell Ground Rod and Accessories.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx" },
-                { img: "10.Kumwell More Effective Grounding.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx" }
+                { img: "1.Kumwell Exothermic Welding.png", doc: "1.Kumwell Exothermic Welding TEXT.docx", title: "Kumwell Exothermic Welding" },
+                { img: "2.Kumwell Grounding Components.png", doc: "2.Kumwell Grounding Components TEXT.docx", title: "Kumwell Grounding Components" },
+                { img: "3.Kumwell Isolating Spark Gap.png", doc: "3.Kumwell Isolating Spark Gap TEXT.docx", title: "Kumwell Isolating Spark Gap" },
+                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.png", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx", title: "Kumwell Static Earth Reels" },
+                { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx", title: "Smart Lightning Management System" },
+                { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx", title: "Smart Lightning Warning System" },
+                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx", title: "Lightning Protection Components" },
+                { img: "8.Kumwell Air Termination System.png", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
+                { img: "9.Kumwell Ground Rod and Accessories.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
+                { img: "10.Kumwell More Effective Grounding.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
               ].map((poster, i) => (
                 <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
-                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={`Kumwell Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
+                  <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)",
+                    padding: "18px 20px 36px 20px",
+                    color: "#fff",
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    fontFamily: "var(--font-inter), sans-serif",
+                    zIndex: 2,
+                    textAlign: "center",
+                    lineHeight: "1.3"
+                  }}>
+                    {poster.title}
+                  </div>
+                  <Image src={`/Images/kumwell/Posters/${poster.img}`} alt={poster.title} fill style={{ objectFit: "contain" }} />
                   <div style={{
                     position: "absolute",
                     bottom: "12px",
                     right: "12px",
                     background: "#ff5b05",
                     color: "#fff",
-                    padding: "10px 16px",
-                    borderRadius: "30px",
-                    fontSize: "14px",
-                    fontWeight: "600",
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
-                    gap: "8px",
+                    justifyContent: "center",
                     boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                    transition: "transform 0.2s"
+                    transition: "transform 0.2s",
+                    zIndex: 2
                   }}
-                    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"}
                     onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                       <polyline points="7 10 12 15 17 10"></polyline>
                       <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    Download
                   </div>
                 </a>
               ))}
@@ -1399,12 +1406,19 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
         <style dangerouslySetInnerHTML={{
           __html: `
           .citel-tabs-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 16px;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             width: 100%;
+            padding: 0 40px;
+          }
+          .citel-tab-item {
+            flex: 0 1 280px;
+            width: 100%;
+            display: flex;
           }
           .kumwell-poster-item {
             flex: 0 0 calc((100% - 60px) / 4);
@@ -1443,7 +1457,11 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
               height: 350px !important;
             }
             .citel-tabs-grid {
-              grid-template-columns: repeat(2, minmax(0, 1fr));
+              padding: 0 40px !important;
+            }
+            .citel-tab-item {
+              flex: 1 1 calc(50% - 16px);
+              min-width: 200px;
             }
           }
           @media (max-width: 640px) {
@@ -1463,8 +1481,11 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
               padding: 12px 10px !important;
             }
             .citel-tabs-grid {
-              grid-template-columns: repeat(2, minmax(0, 1fr));
+              padding: 0 20px !important;
               gap: 12px;
+            }
+            .citel-tab-item {
+              flex: 1 1 100%;
             }
             .citel-tabs-grid button {
               padding: 12px 8px !important;
@@ -1543,7 +1564,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                     <div key={gIdx} style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "80px", width: "100%", margin: "0 auto 60px auto" }}>
                       {group.filter(Boolean).map((cat, cIdx) => (
                         <div key={cIdx} style={{ flex: "0 1 auto", minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
-                          <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "bold", marginBottom: "30px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
+                          <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "500", marginBottom: "30px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
                             {cat.name}
                             {cat.catalogue && (
                               <a href={cat.catalogue} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: "14px", marginTop: "8px", color: "#E04F35", textDecoration: "underline", fontWeight: "normal" }}>
@@ -1552,47 +1573,71 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                             )}
                           </h3>
                           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", width: "100%" }}>
-                            {cat.products.length > 5 && (
-                              <button
-                                className="carousel-arrow"
-                                onClick={(e) => {
-                                  const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
-                                  if (wrapper) wrapper.scrollBy({ left: -270, behavior: 'smooth' });
-                                }}
-                                style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
-                                aria-label="Scroll left"
-                                onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
-                                onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
-                              >
-                                &lt;
-                              </button>
-                            )}
-                            <div className="citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
-                              {cat.products.map((prod, pIdx) => (
-                                <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                  <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
-                                    <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
+                            {cat.name === "TS4 Flex MLPE" ? (
+                              <div style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                gap: "20px",
+                                justifyContent: "center",
+                                width: "100%",
+                                maxWidth: "1330px"
+                              }}>
+                                {cat.products.map((prod, pIdx) => (
+                                  <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                    <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
+                                      <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
+                                    </div>
+                                    <p style={{ fontSize: "15px", color: "#111111", fontWeight: "500", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", lineHeight: "1.4", textTransform: "uppercase" }}>
+                                      {prod.caption}
+                                    </p>
                                   </div>
-                                  <p style={{ fontSize: "14px", color: "#333", fontWeight: "600", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", lineHeight: "1.4" }}>
-                                    {prod.caption}
-                                  </p>
+                                ))}
+                              </div>
+                            ) : (
+                              <>
+                                {cat.products.length > 5 && (
+                                  <button
+                                    className="carousel-arrow"
+                                    onClick={(e) => {
+                                      const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
+                                      if (wrapper) wrapper.scrollBy({ left: -270, behavior: 'smooth' });
+                                    }}
+                                    style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginRight: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
+                                    aria-label="Scroll left"
+                                    onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+                                  >
+                                    &lt;
+                                  </button>
+                                )}
+                                <div className="citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
+                                  {cat.products.map((prod, pIdx) => (
+                                    <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                      <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
+                                        <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
+                                      </div>
+                                      <p style={{ fontSize: "15px", color: "#111111", fontWeight: "500", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", lineHeight: "1.4", textTransform: "uppercase" }}>
+                                        {prod.caption}
+                                      </p>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
-                            {cat.products.length > 5 && (
-                              <button
-                                className="carousel-arrow"
-                                onClick={(e) => {
-                                  const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
-                                  if (wrapper) wrapper.scrollBy({ left: 270, behavior: 'smooth' });
-                                }}
-                                style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginLeft: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
-                                aria-label="Scroll right"
-                                onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
-                                onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
-                              >
-                                &gt;
-                              </button>
+                                {cat.products.length > 5 && (
+                                  <button
+                                    className="carousel-arrow"
+                                    onClick={(e) => {
+                                      const wrapper = e.currentTarget.parentElement?.querySelector('.citel-carousel-wrapper');
+                                      if (wrapper) wrapper.scrollBy({ left: 270, behavior: 'smooth' });
+                                    }}
+                                    style={{ flexShrink: 0, width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginLeft: "20px", color: "#333", fontSize: "28px", fontWeight: "300", marginTop: "125px", transform: "translateY(-50%)", transition: "all 0.2s" }}
+                                    aria-label="Scroll right"
+                                    onMouseEnter={(e) => e.currentTarget.style.background = "#f9f9f9"}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = "#fff"}
+                                  >
+                                    &gt;
+                                  </button>
+                                )}
+                              </>
                             )}
                           </div>
                         </div>
@@ -1604,35 +1649,42 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           ) : brandData.categoryStyle === "tabs" && !selectedCategory ? (
             <div className="citel-tabs-grid">
               {brandData.categories?.map((category, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedCategory(category.name)}
-                  style={{
-                    display: "flex", alignItems: "center", justifyContent: "center", gap: "10px",
-                    padding: "14px 20px", background: "#fff",
-                    border: "1px solid #d1d5db", borderRadius: "12px",
-                    fontSize: "16px", fontWeight: "600", cursor: "pointer",
-                    color: "#1f2937", transition: "all 0.3s",
-                    fontFamily: "var(--font-inter), sans-serif",
-                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                    width: "100%"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "#111";
-                    e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "#d1d5db";
-                    e.currentTarget.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
-                    e.currentTarget.style.transform = "none";
-                  }}
-                >
-                  <span style={{ color: "#4b5563", display: "flex", alignItems: "center" }}>
-                    {category.icon}
-                  </span>
-                  {category.name}
-                </button>
+                <div key={index} className="citel-tab-item">
+                  <button
+                    onClick={() => {
+                      if (category.catalogue && (!category.products || category.products.length === 0)) {
+                        window.open(category.catalogue, "_blank");
+                      } else {
+                        setSelectedCategory(category.name);
+                      }
+                    }}
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: "10px",
+                      padding: "14px 20px", background: "#fff",
+                      border: "1px solid #d1d5db", borderRadius: "12px",
+                      fontSize: "16px", fontWeight: "600", cursor: "pointer",
+                      color: "#1f2937", transition: "all 0.3s",
+                      fontFamily: "var(--font-inter), sans-serif",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                      width: "100%"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "#111";
+                      e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "#d1d5db";
+                      e.currentTarget.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
+                      e.currentTarget.style.transform = "none";
+                    }}
+                  >
+                    <span style={{ color: "#4b5563", display: "flex", alignItems: "center" }}>
+                      {category.icon}
+                    </span>
+                    {category.name}
+                  </button>
+                </div>
               ))}
             </div>
           ) : brandData.categoryStyle !== "tabs" && brandData.categories && !selectedCategory ? (
@@ -1647,7 +1699,13 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                   cursor: "pointer",
                   width: "100%"
                 }}
-                onClick={() => setSelectedCategory(category.name)}
+                onClick={() => {
+                  if (category.catalogue && (!category.products || category.products.length === 0)) {
+                    window.open(category.catalogue, "_blank");
+                  } else {
+                    setSelectedCategory(category.name);
+                  }
+                }}
               >
                 <div className="obsta-category-card" style={{
                   width: "100%",
@@ -1692,28 +1750,69 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
               </div>
             ))
           ) : (
-            activeProducts.map((product, index) => (
-              <div
-                key={index}
-                className="kumwell-product-item"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center"
-                }}
-              >
-                <div className="kumwell-product-card" style={{ width: "280px", height: "285px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderRadius: "20px", border: "1px solid #e0e0e0" }}>
-                  <div className="kumwell-product-card-image" style={{ position: "relative", width: "100%", height: "100%" }}>
-                    <Image src={product.image} alt={product.caption || `${brandData.name} Product`} fill style={{ objectFit: "contain" }} />
+            activeProducts.map((product, index) => {
+              const CardContent = (
+                <>
+                  <div className="kumwell-product-card" style={{ width: "280px", height: "285px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderRadius: "20px", border: "1px solid #e0e0e0" }}>
+                    <div className="kumwell-product-card-image" style={{ position: "relative", width: "100%", height: "100%" }}>
+                      <Image src={product.image} alt={product.caption || `${brandData.name} Product`} fill style={{ objectFit: "contain" }} />
+                    </div>
                   </div>
+                  {product.caption && (
+                    <p className="kumwell-product-caption" style={{ marginTop: "24px", fontSize: "15px", fontWeight: "500", color: "#111111", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", maxWidth: "260px", lineHeight: "1.4", textTransform: "uppercase" }}>
+                      {product.caption}
+                    </p>
+                  )}
+                </>
+              );
+
+              return product.download ? (
+                <a
+                  key={index}
+                  href={product.download}
+                  download
+                  className="kumwell-product-item"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    cursor: "pointer"
+                  }}
+                >
+                  {CardContent}
+                </a>
+              ) : product.link ? (
+                <a
+                  key={index}
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="kumwell-product-item"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    cursor: "pointer"
+                  }}
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="kumwell-product-item"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center"
+                  }}
+                >
+                  {CardContent}
                 </div>
-                {product.caption && (
-                  <p className="kumwell-product-caption" style={{ marginTop: "24px", fontSize: "16px", fontWeight: "600", color: "#111111", textAlign: "center", fontFamily: "var(--font-neutiva), sans-serif", maxWidth: "260px", lineHeight: "1.4" }}>
-                    {product.caption}
-                  </p>
-                )}
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </section>
