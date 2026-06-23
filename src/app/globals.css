@@ -6310,19 +6310,15 @@
   }
 
   .new-prod-card:hover::before {
-    left: 100% !important;
+    display: none !important;
   }
 
   .new-prod-card:hover {
-    transform: translateY(-5px) scale(1.03) !important;
     z-index: 10 !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
-    border-color: #000000 !important;
   }
 
   .new-prod-card:hover .new-prod-card-logo {
     filter: grayscale(0%) !important;
-    transform: scale(1.05) !important;
   }
 
   .new-prod-card-inner {

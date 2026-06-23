@@ -1016,9 +1016,19 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     website: "https://cosmoplast.com/",
     productRange: [
       {
-        image: "/Images/Cosmoplast/thambnail.png",
+        image: "/Images/Cosmoplast/Polyethlene pipeline.png",
         caption: "PE Polyethylene Pipes and Fittings for Water",
         download: "/Images/Cosmoplast/PE-Polyethylene-Pipes-and-Fittings-for-Water-Cosmoplast-2024-18-07-2024.pdf"
+      },
+      {
+        image: "/Images/Cosmoplast/uPVC pipes .png",
+        caption: "uPVC Pressure Pipes and Fittings",
+        download: "/Images/Cosmoplast/UPVC-Pressure-Pipes-and-Fittings-Cosmoplast-18-07-2024.pdf"
+      },
+      {
+        image: "/Images/Cosmoplast/uPVC WELL Casing.png",
+        caption: "uPVC Well Casing",
+        download: "/Images/Cosmoplast/Well_Casing2016-16-04-2016.pdf"
       }
     ],
     certifiedLogos: [
@@ -1331,9 +1341,9 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                 { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx", title: "Smart Lightning Management System" },
                 { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx", title: "Smart Lightning Warning System" },
                 { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx", title: "Lightning Protection Components" },
-                { img: "8.Kumwell Air Termination System.png", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
-                { img: "9.Kumwell Ground Rod and Accessories.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
-                { img: "10.Kumwell More Effective Grounding.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
+                { img: "AI_Poster_Air_Termination_System.png", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
+                { img: "AI_Poster_Ground_Rod.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
+                { img: "AI_Poster_MEG.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
               ].map((poster, i) => (
                 <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
                   <div style={{
@@ -1614,7 +1624,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                                   {cat.products.map((prod, pIdx) => (
                                     <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
                                       <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
-                                        <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
+                                        <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: prod.caption === "ISOLATING SPARK GAP" ? "5px" : "20px" }} />
                                       </div>
                                       <p style={{ fontSize: "15px", color: "#111111", fontWeight: "500", textAlign: "center", fontFamily: "var(--font-inter), sans-serif", lineHeight: "1.4", textTransform: "uppercase" }}>
                                         {prod.caption}

@@ -18,7 +18,7 @@ const CATEGORY_MAP = [
   {
     id: "All",
     label: "All Products",
-    image: "/Images/product/all.png",
+    image: "/Images/product/all_products_dark.png",
     desc: "View our entire premium engineering catalogue"
   },
   {
@@ -86,15 +86,15 @@ const ALL_LOGOS = [
   { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Cables & Other Products"] },
   { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting • ACWL • Signal Lights"] },
   // Industrial Category Images
-  { src: "/Images/Industrial/ppt/Pasted image.png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (2).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (3).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (4).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (5).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (6).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (7).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (8).png", brand: "", categories: ["Industrial & Bulk Materials"] },
-  { src: "/Images/Industrial/ppt/Pasted image (9).png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_1.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_2.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_3.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_4.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_5.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_6.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_7.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_8.png", brand: "", categories: ["Industrial & Bulk Materials"] },
+  { src: "/Images/Industrial/ppt/Industrial_9.png", brand: "", categories: ["Industrial & Bulk Materials"] },
 ];
 
 function ProductPageContent() {
@@ -201,18 +201,19 @@ function ProductPageContent() {
                   onClick={() => handleCategorySelect(cat.id)}
                 >
                   <div className="new-prod-cat-card-img-wrapper">
-                    {cat.id !== "All" && (
-                      <Image
-                        src={cat.image}
-                        alt={cat.label}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="260px"
-                        priority={CATEGORY_MAP.indexOf(cat) < 4}
-                      />
-                    )}
+                    <Image
+                      src={cat.image}
+                      alt={cat.label}
+                      fill
+                      style={{ 
+                        objectFit: "cover",
+                        filter: (cat.id === "All" || cat.id === "Cables & Other Products") ? "brightness(1.6)" : "none"
+                      }}
+                      sizes="260px"
+                      priority={CATEGORY_MAP.indexOf(cat) < 4}
+                    />
                   </div>
-                  {cat.id !== "All" && <div className="new-prod-cat-card-overlay" />}
+                  <div className="new-prod-cat-card-overlay" />
                   <div className="new-prod-cat-card-content">
                     <h3 className="new-prod-cat-card-title">
                       {cat.label.includes('•') ? (
