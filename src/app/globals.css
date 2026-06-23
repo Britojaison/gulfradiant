@@ -8415,6 +8415,17 @@
     position: relative;
   }
 
+  .brand-custom-padding {
+    padding-top: 80px;
+    background-color: #1a1a1a;
+  }
+
+  @media (min-width: 1440px) {
+    .brand-custom-padding {
+      padding-top: 100px;
+    }
+  }
+
   .brand-custom-hero-img {
     width: 100%;
     height: auto;

@@ -1137,7 +1137,9 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
   return (
     <>
       {brandKey === 'citel' || brandKey === 'obsta' || brandKey === 'kumwell' ? (
-        <section className="brand-custom-hero-section">
+        <section 
+          className="brand-custom-hero-section brand-custom-padding"
+        >
           <img
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
