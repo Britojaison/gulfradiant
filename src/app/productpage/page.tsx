@@ -174,7 +174,7 @@ function ProductPageContent() {
       <section className="new-prod-hero-section">
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Product Range</h1>
+            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Key Brands</h1>
             <div className="new-prod-carousel-controls">
               <button onClick={scrollLeft} className="carousel-control-btn" aria-label="Scroll left">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

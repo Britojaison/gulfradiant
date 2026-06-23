@@ -1137,13 +1137,13 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
   return (
     <>
       {brandKey === 'citel' || brandKey === 'obsta' || brandKey === 'kumwell' ? (
-        <section style={{ width: "100%", lineHeight: 0, marginTop: "90px", position: "relative" }}>
+        <section className="brand-custom-hero-section">
           <img
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
-            style={{ width: "100%", height: "auto", display: "block" }}
+            className="brand-custom-hero-img"
           />
-          <div style={{ position: "absolute", bottom: "20px", left: "60px", zIndex: 10 }}>
+          <div className="brand-hero-buttons-wrapper">
             <div className="hero-buttons" style={{ pointerEvents: "auto", display: "flex", gap: "20px" }}>
               <a 
                 href={`https://wa.me/971561122110?text=${encodeURIComponent(`Hi Gulf Radiant, I'm interested in the products under your brand: ${brandData.name}.`)}`}
