@@ -219,7 +219,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     heroBg: "/Images/Home/Rectangle 24.png",
     subtitle: "Earthing & Structural Protection",
     description: "High-conductive earthing accessories, copper tapes, and premium grounding conductors certified to absolute international standards.",
-    website: "https://www.pittas.com/",
+    website: "https://pittas.gr/en/",
     productRange: [
       { image: "/Images/pittas/Tape Conductor hot dip galvanized steel.png", caption: "Tape conductor hot dip galvanized steel (St/tZn)" },
       { image: "/Images/pittas/Connectors,clamps,fasteners in various materials .png", caption: "Connectors/clamps/fasteners in various materials (St/tZn, Cu, Cu/eSn, Stainless Steel) and sizes" },
@@ -445,7 +445,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     heroBg: "/Images/Home/Rectangle 24.png",
     subtitle: "Cable Protection & Conduit Systems",
     description: "Premium Austrian-engineered PVC and halogen-free plastic conduits, fittings, and cable management enclosures built for heavy-duty industrial installations.",
-    website: "https://www.univolt.com/",
+    website: "https://www.dietzel-univolt.com/",
     productRange: [
       { image: "/Images/Dietzel/HFX-Turbo_hgrau_XL_MD02.jpg", caption: "HFX-Turbo hgrau XL MD02" },
       { image: "/Images/Dietzel/HFXP X_104830_MD02.jpg", caption: "HFXP X 104830 MD02" },
@@ -499,97 +499,39 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     categoryStyle: "carousel-list",
     categories: [
       {
-        name: "ATEX",
+        name: "ATEX - EXPLOSION PROOF PLUGS & SOCKET RANGE",
         products: [
-          { image: "/Images/PalazolliLewden/ATEX/292202EX.png", caption: "292202EX ATEX" },
-          { image: "/Images/PalazolliLewden/ATEX/463126EX.png", caption: "463126EX ATEX" },
-          { image: "/Images/PalazolliLewden/ATEX/532202EX.png", caption: "532202EX ATEX" },
-          { image: "/Images/PalazolliLewden/ATEX/ATEX Plug.png", caption: "ATEX Plug" },
-          { image: "/Images/PalazolliLewden/ATEX/MM_511913EX - Copy.png", caption: "MM 511913EX" },
-          { image: "/Images/PalazolliLewden/ATEX/Rino - 8320232.png", caption: "Rino 8320232" }
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/BOXES AND CABLE GLANDS.png", caption: "Boxes and Cable Glands", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/INTERLOCKED SOCKET OUTLET.png", caption: "Interlocked Socket Outlet", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/MOBILE PLUGS.png", caption: "Mobile Plugs", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/RESTRICTED BREATHING EQUIPMENT.png", caption: "Restricted Breathing Equipment", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/SMALL CONTROL AND SIGNALLING DEVICES.png", caption: "Small Control And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" }
         ]
       },
       {
-        name: "Customized Application",
+        name: "INDUSTRY",
         products: [
-          { image: "/Images/PalazolliLewden/Customized application/Combination - 610606.png", caption: "Combination 610606" },
-          { image: "/Images/PalazolliLewden/Customized application/Combination - 670061.png", caption: "Combination 670061" },
-          { image: "/Images/PalazolliLewden/Customized application/Combination(interlocket socket-box) FY4C4371.png", caption: "Combination Socket Box FY4C4371" },
-          { image: "/Images/PalazolliLewden/Customized application/Janus - 634101.png", caption: "Janus 634101" },
-          { image: "/Images/PalazolliLewden/Customized application/Janus - 638040.png", caption: "Janus 638040" }
+          { image: "/Images/PalazolliLewden/INDUSTRY/BOARDS & BOXES.png", caption: "Boards & Boxes", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/CONTROL AND PROTECTION.png", caption: "Control And Protection", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/INTERLOCKED SOCKET OUTLETS.png", caption: "Interlocked Socket Outlets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/PLUGS & SOCKETS.png", caption: "Plugs & Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/PRE WIRED BOARDS FOR STANDARD AND HEAVY DUTY APPLICATIONS.png", caption: "Pre Wired Boards For Standard And Heavy Duty Applications", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" }
         ]
       },
       {
-        name: "XCEE",
+        name: "INFRASTRUCTURE",
         products: [
-          { image: "/Images/PalazolliLewden/XCEE/Presa - FlangiaDritta.png", caption: "Presa Flangia Dritta" },
-          { image: "/Images/PalazolliLewden/XCEE/Presa - Impugnatura.png", caption: "Presa Impugnatura" },
-          { image: "/Images/PalazolliLewden/XCEE/Presa - Scatola65.png", caption: "Presa Scatola 65" },
-          { image: "/Images/PalazolliLewden/XCEE/PresaSEZ - ScatolaFlangiaDritta.png", caption: "PresaSEZ Scatola Flangia Dritta" },
-          { image: "/Images/PalazolliLewden/XCEE/PresaSez - Scatola65.png", caption: "PresaSez Scatola 65" },
-          { image: "/Images/PalazolliLewden/XCEE/Rotor Switch.png", caption: "Rotor Switch" },
-          { image: "/Images/PalazolliLewden/XCEE/Spina - Scatola.png", caption: "Spina Scatola" },
-          { image: "/Images/PalazolliLewden/XCEE/XCEE Plug & Socket.png", caption: "XCEE Plug & Socket" },
-          { image: "/Images/PalazolliLewden/XCEE/XCEE Plug.png", caption: "XCEE Plug" }
+          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/LIGHTING SIGN SYSTEMS.png", caption: "Lighting Sign Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" },
+          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/VENTILATION SYSTEMS.png", caption: "Ventilation Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" }
         ]
       },
       {
-        name: "Isolators & Boxes",
+        name: "MARINE",
         products: [
-          { image: "/Images/PalazolliLewden/isolators and Boxes/208162.png", caption: "208162 Box" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Isolator - 292503.png", caption: "Isolator 292503" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532006.png", caption: "Junction Box 532006" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532201.png", caption: "Junction Box 532201" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Junction Box - 532557.png", caption: "Junction Box 532557" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Tais Cube.png", caption: "Tais Cube" },
-          { image: "/Images/PalazolliLewden/isolators and Boxes/Unibox - 520011.png", caption: "Unibox 520011" }
-        ]
-      },
-      {
-        name: "Plugs & Sockets",
-        products: [
-          { image: "/Images/PalazolliLewden/plugs and socket /472130 - Tais.png", caption: "Tais 472130" },
-          { image: "/Images/PalazolliLewden/plugs and socket /473112.png", caption: "473112" },
-          { image: "/Images/PalazolliLewden/plugs and socket /473951.png", caption: "473951" },
-          { image: "/Images/PalazolliLewden/plugs and socket /473971.png", caption: "473971" },
-          { image: "/Images/PalazolliLewden/plugs and socket /474843 - tais.png", caption: "Tais 474843" },
-          { image: "/Images/PalazolliLewden/plugs and socket /476102.png", caption: "476102" },
-          { image: "/Images/PalazolliLewden/plugs and socket /476207.png", caption: "476207" },
-          { image: "/Images/PalazolliLewden/plugs and socket /476413.png", caption: "476413" },
-          { image: "/Images/PalazolliLewden/plugs and socket /477002.png", caption: "477002" },
-          { image: "/Images/PalazolliLewden/plugs and socket /477003.png", caption: "477003" },
-          { image: "/Images/PalazolliLewden/plugs and socket /50A9186-1_b.png", caption: "50A9186-1 b" },
-          { image: "/Images/PalazolliLewden/plugs and socket /705126.png", caption: "705126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /710126_png_800_600_contain_70.png", caption: "710126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /710166.png", caption: "710166" },
-          { image: "/Images/PalazolliLewden/plugs and socket /720124 multi 1.png", caption: "720124 Multi 1" },
-          { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera (1).png", caption: "720124 Ghiera (1)" },
-          { image: "/Images/PalazolliLewden/plugs and socket /720124_ghiera.png", caption: "720124 Ghiera" },
-          { image: "/Images/PalazolliLewden/plugs and socket /720130.png", caption: "720130" },
-          { image: "/Images/PalazolliLewden/plugs and socket /725126.png", caption: "725126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /725126_close.png", caption: "725126 Close" },
-          { image: "/Images/PalazolliLewden/plugs and socket /753126.png", caption: "753126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /761530.png", caption: "761530" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight plug.png", caption: "Alumax Straight Plug" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Alumax Straight socket.png", caption: "Alumax Straight Socket" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_1.png", caption: "Back Box 1" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_2.png", caption: "Back Box 2" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_3.png", caption: "Back Box 3" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Back Box_4.png", caption: "Back Box 4" },
-          { image: "/Images/PalazolliLewden/plugs and socket /CEE plug - 477207.png", caption: "CEE Plug 477207" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Multimax plug (red).png", caption: "Multimax Plug (Red)" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Multimax socket (red).png", caption: "Multimax Socket (Red)" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Prima socket - 493126.png", caption: "Prima Socket 493126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switch socket IP55 - 481336.png", caption: "Thermoplastic Switch Socket IP55 481336" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic Switched socket (blue) - 491124.png", caption: "Thermoplastic Switched Socket (Blue) 491124" },
-          { image: "/Images/PalazolliLewden/plugs and socket /Thermoplastic switch socket - 492126.png", caption: "Thermoplastic Switch Socket 492126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /backbox - 579421.png", caption: "Backbox 579421" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket (blue) - 490126.png", caption: "topTER Interlocked Socket (Blue) 490126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER interlocket socket - 490126.png", caption: "topTER Interlocked Socket 490126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (15deg-blue) - 489126.png", caption: "topTER Socket (15deg-Blue) 489126" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (90deg-blue).png", caption: "topTER Socket (90deg-Blue)" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket (red) with backbox.png", caption: "topTER Socket (Red) with Backbox" },
-          { image: "/Images/PalazolliLewden/plugs and socket /topTER socket with backbox.png", caption: "topTER Socket with Backbox" }
+          { image: "/Images/PalazolliLewden/MARINE/CONTAINER SOCKETS.png", caption: "Container Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/DISTRIBUTION TURRETS.png", caption: "Distribution Turrets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/ON BOARD SHIP CONTROL WITHDRAWAL AND SIGNALLING DEVICES.png", caption: "On Board Ship Control Withdrawal And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/UNAV CONTROL WITHDRAWAL AND SIGNALLING DEVICE.png", caption: "Unav Control Withdrawal And Signalling Device", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" }
         ]
       }
     ],
@@ -745,9 +687,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   hvti: {
     name: "HVTI",
     heroBg: "/Images/Home/Rectangle 23 (1).png",
-    subtitle: "High Voltage Testing Instruments",
-    description: "State-of-the-art diagnostic, testing, and measurement systems for electrical power systems and high-voltage equipment.",
-    website: "https://www.hvti.com/",
+    subtitle: "High Voltage Test Instruments",
+    description: "Precision-engineered safety testing equipment, high voltage probes, and robust dielectric test systems for industrial electrical verification.",
+    website: "https://hvti.in/",
     productRange: [
       { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/Accessories for Voltage detector.png", caption: "Accessories for Voltage detector" },
       { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/HV detector HOTSTICK operation-Photoroom.jpg", caption: "HV detector HOTSTICK operation-Photoroom" },
@@ -895,9 +837,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   wallmax: {
     name: "Wallmax",
     heroBg: "/Images/Home/Rectangle 23 (1).png",
-    subtitle: "Cable & Pipe Transit Systems",
-    description: "Innovative modular sealing systems for cables and pipes ensuring maximum safety and fire protection in demanding environments.",
-    website: "https://www.wallmax.com/",
+    subtitle: "Cable Trays & Supports",
+    description: "Robust metallic cable management systems, heavy-duty ladders, and integrated structural supports for intense industrial environments.",
+    website: "https://www.wallmax.it/applications/maritime-offshore/",
     productRange: [
       { image: "/Images/Wallmax/Modules.png", caption: "Modules" },
       { image: "/Images/Wallmax/Round Frames.png", caption: "Round Frames" },
@@ -993,9 +935,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   emi: {
     name: "EMI",
     heroBg: "/Images/Home/Rectangle 23 (1).png",
-    subtitle: "Industrial Enclosures & Switchgear Cabinets",
-    description: "Premium electrical enclosures, distribution boards, and sheet metal fabrication engineered for civil and industrial power systems.",
-    website: "https://www.emi.ae/",
+    subtitle: "Electrical Metallic Tubing",
+    description: "Durable EMT conduits, galvanized steel pipings, and robust structural fittings for unyielding cable protection.",
+    website: "https://emiuae.ae/",
     productRange: [
       { image: "/Images/EMI/Cable-Ladder-Fittings.png", caption: "Cable Ladder Fittings" },
       { image: "/Images/EMI/Cable-Trunking-Fittings.png", caption: "Cable Trunking Fittings" },
@@ -1013,7 +955,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     heroBg: "/Images/Home/Rectangle 23 (1).png",
     subtitle: "Industrial Plastic & Conduit Solutions",
     description: "High-grade plastic uPVC and LSF conduits, trunking, and fittings designed to protect electrical cables in civil and industrial projects.",
-    website: "https://cosmoplast.com/",
+    website: "https://shop.cosmoplast.com/",
     productRange: [
       {
         image: "/Images/Cosmoplast/Polyethlene pipeline.png",
@@ -1155,7 +1097,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     heroBg: "/Images/Home/Rectangle 23 (1).png",
     subtitle: "Cable Management Systems",
     description: "High-quality cable management solutions including cable trays, ladders, and trunking systems.",
-    website: "https://www.psi-me.com/",
+    website: "https://www.powersolutionme.com/",
     productRange: [
       { image: "/Images/PSI/Cable-Tray-Sysyem.jpg", caption: "Cable Tray System" },
       { image: "/Images/PSI/Cable_Ladder_Systems_resizedFile.jpg", caption: "Cable Ladder Systems" },
@@ -1593,7 +1535,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                                 maxWidth: "1330px"
                               }}>
                                 {cat.products.map((prod, pIdx) => (
-                                  <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                  <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center", cursor: prod.link ? "pointer" : "default" }} onClick={() => prod.link && window.open(prod.link, "_blank")}>
                                     <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
                                       <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: "20px" }} />
                                     </div>
@@ -1622,7 +1564,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                                 )}
                                 <div className="citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
                                   {cat.products.map((prod, pIdx) => (
-                                    <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                    <div key={pIdx} style={{ flex: "0 0 250px", display: "flex", flexDirection: "column", alignItems: "center", cursor: prod.link ? "pointer" : "default" }} onClick={() => prod.link && window.open(prod.link, "_blank")}>
                                       <div style={{ width: "250px", height: "250px", position: "relative", marginBottom: "20px", background: "#fff", borderRadius: "8px", border: "1px solid #e0e0e0", padding: "10px" }}>
                                         <Image src={prod.image} alt={prod.caption} fill style={{ objectFit: "contain", padding: prod.caption === "ISOLATING SPARK GAP" ? "5px" : "20px" }} />
                                       </div>

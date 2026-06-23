@@ -50,7 +50,7 @@ export default function ClientsPage() {
             </div>
           </div>
           <h2 className="clients-section-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
-            Our Partnered Brands
+            Key Clients
           </h2>
         </div>
 

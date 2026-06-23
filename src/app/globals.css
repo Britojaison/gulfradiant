@@ -2779,6 +2779,11 @@
     color: #ffffff;
   }
 
+  .hp-git-select-wrap select option {
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+
   .hp-git-select-wrap::after {
     content: "";
     position: absolute;

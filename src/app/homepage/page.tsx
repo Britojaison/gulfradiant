@@ -40,30 +40,62 @@ const newsItems = [
 
 const ELECTRICAL_CATEGORIES = [
   {
-    id: "Earthing Lightning • Surge Protection Systems",
+    id: "Earthing • Lightning • Surge Protection Systems",
+    label: "Earthing Lightning and Surge Protection Systems",
     tag: "Earthing & Surge",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
   },
   {
     id: "Lighting • ACWL • Signal Lights",
+    label: "Lightning, ACWL and Signal Lights",
     tag: "Warning & Obstruction",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
   },
   {
-    id: "Switching Accessories • Control Devices • Isolators",
+    id: "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments",
+    label: "Isolators, Switching and Control devices",
     tag: "Control Devices",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
   },
   {
-    id: "Cables & Other Products",
+    id: "Cables & Cable Management Systems",
+    label: "Cable and Cable management",
     tag: "Power Cables",
     desc: "Siechem, Tekab, Helukabel & high-performance electrical cables",
   },
   {
     id: "Industrial & Bulk Materials",
+    label: "Industrial & Bulk Materials",
     tag: "Industrial",
     desc: "Comprehensive industrial solutions including fasteners, fittings, flanges, and mechanical equipment",
   }
+];
+
+const COUNTRIES = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+  "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+  "Côte d'Ivoire", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia",
+  "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
+  "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
+  "Fiji", "Finland", "France",
+  "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
+  "Haiti", "Holy See", "Honduras", "Hungary",
+  "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+  "Jamaica", "Japan", "Jordan",
+  "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan",
+  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+  "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+  "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
+  "Oman",
+  "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
+  "Qatar",
+  "Romania", "Russia", "Rwanda",
+  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+  "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
+  "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan",
+  "Vanuatu", "Venezuela", "Vietnam",
+  "Yemen",
+  "Zambia", "Zimbabwe"
 ];
 
 const statTargets = [25, 30, 100];
@@ -176,15 +208,15 @@ export default function Homepage() {
       const rect = statsRef.current.getBoundingClientRect();
       const viewport = window.innerHeight || 1;
 
-      // Start animating when the top of the section enters the bottom part of the screen
-      const startTrigger = viewport * 0.65;
-      // Finish animating when the top of the section is near the top of the screen
-      const endTrigger = viewport * 0.2;
+      // Start animating when 50% of the section is in view
+      const startTrigger = viewport - (statsRef.current.offsetHeight * 0.5);
+      // Finish animating when 100% of the section is scrolled into view
+      const endTrigger = viewport - statsRef.current.offsetHeight;
 
       const progress = Math.max(0, Math.min(1, (startTrigger - rect.top) / (startTrigger - endTrigger)));
 
-      const easeOut = (v: number) => 1 - Math.pow(1 - v, 3);
-      const easedProgress = easeOut(progress);
+      // Use linear progress to make the counting perfectly smooth and 1:1 with scrolling
+      const easedProgress = progress;
 
       statCardsRef.current.forEach((card, index) => {
         if (!card) return;
@@ -472,15 +504,7 @@ export default function Homepage() {
                     {getCategoryIcon(cat.tag)}
                   </div>
                   <h3 className="hp-cat-card-title">
-                    {cat.id.includes('•') ? (
-                      <div className="hp-cat-card-title-bullet-wrap">
-                        {cat.id.split('•').map((item, idx) => (
-                          <span key={idx} className="hp-cat-card-title-bullet-item">• {item.trim()}</span>
-                        ))}
-                      </div>
-                    ) : (
-                      cat.id
-                    )}
+                    {cat.label}
                   </h3>
                 </div>
               </Link>
@@ -502,7 +526,7 @@ export default function Homepage() {
                 <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
               </div>
             </div>
-            <h2><span>Products</span> We Distribute</h2>
+            <h2><span>Key</span> Partners</h2>
           </div>
 
           <div className="hp-dist-content-container">
@@ -674,7 +698,7 @@ export default function Homepage() {
       <section className="hp-trusted-section">
         <div className="hp-trusted-content">
           <div className="hp-trusted-header">
-            <h2>Trusted by Industry Leaders</h2>
+            <h2>Trusted by Key Clients</h2>
           </div>
           <div className="hp-trusted-grid-inner">
             {[
@@ -718,7 +742,7 @@ export default function Homepage() {
                 <span>{"- OUR\u00A0PROJECTS -"}</span>
               </div>
             </div>
-            <h2>Our Project Portfolio</h2>
+            <h2>Project Portfolio</h2>
           </div>
           <div className="hp-projects-viewport" ref={projectsViewportRef}>
             <div className="hp-projects-track hp-projects-marquee">
@@ -904,17 +928,28 @@ export default function Homepage() {
                   <input id="git-phone" type="tel" placeholder="+XX XXXXXXXXX" />
                 </div>
               </div>
-              <div className="hp-git-field">
-                <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
-                <div className="hp-git-select-wrap">
-                  <select id="git-industry" defaultValue="">
-                    <option value="" disabled>- None -</option>
-                    <option value="infrastructure">Infrastructure</option>
-                    <option value="industrial">Industrial</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="energy">Energy</option>
-                    <option value="other">Other</option>
-                  </select>
+              <div className="hp-git-row">
+                <div className="hp-git-field">
+                  <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
+                  <div className="hp-git-select-wrap">
+                    <select id="git-industry" defaultValue="">
+                      <option value="" disabled style={{ color: "#000", backgroundColor: "#fff" }}>- None -</option>
+                      <option value="infrastructure" style={{ color: "#000", backgroundColor: "#fff" }}>Infrastructure</option>
+                      <option value="industrial" style={{ color: "#000", backgroundColor: "#fff" }}>Industrial</option>
+                      <option value="commercial" style={{ color: "#000", backgroundColor: "#fff" }}>Commercial</option>
+                      <option value="energy" style={{ color: "#000", backgroundColor: "#fff" }}>Energy</option>
+                      <option value="other" style={{ color: "#000", backgroundColor: "#fff" }}>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="hp-git-field">
+                  <label htmlFor="git-country" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Country</label>
+                  <div className="hp-git-select-wrap">
+                    <select id="git-country" defaultValue="">
+                      <option value="" disabled style={{ color: "#000", backgroundColor: "#fff" }}>- Select Country -</option>
+                      {COUNTRIES.map(c => <option key={c} value={c} style={{ color: "#000", backgroundColor: "#fff" }}>{c}</option>)}
+                    </select>
+                  </div>
                 </div>
               </div>
               <div className="hp-git-field">

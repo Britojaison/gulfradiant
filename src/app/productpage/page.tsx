@@ -7,10 +7,10 @@ import { useSearchParams } from "next/navigation";
 
 const CATEGORIES = [
   "All",
-  "Earthing Lightning • Surge Protection Systems",
+  "Earthing • Lightning • Surge Protection Systems",
   "Lighting • ACWL • Signal Lights",
-  "Switching Accessories • Control Devices • Isolators",
-  "Cables & Other Products",
+  "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments",
+  "Cables & Cable Management Systems",
   "Industrial & Bulk Materials"
 ];
 
@@ -18,30 +18,30 @@ const CATEGORY_MAP = [
   {
     id: "All",
     label: "All Products",
-    image: "/Images/product/all_products_dark.png",
+    image: "/Images/product/all_products.png",
     desc: "View our entire premium engineering catalogue"
   },
   {
-    id: "Earthing Lightning • Surge Protection Systems",
-    label: "Earthing Lightning • Surge Protection Systems",
+    id: "Earthing • Lightning • Surge Protection Systems",
+    label: "Earthing Lightning and Surge Protection Systems",
     image: "/Images/product/earthing.png",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lighting • ACWL • Signal Lights",
+    label: "Lightning, ACWL and Signal Lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
   {
-    id: "Switching Accessories • Control Devices • Isolators",
-    label: "Switching Accessories • Control Devices • Isolators",
+    id: "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments",
+    label: "Isolators, Switching and Control devices",
     image: "/Images/product/control devices.png",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
   {
-    id: "Cables & Other Products",
-    label: "Cables & Other Products",
+    id: "Cables & Cable Management Systems",
+    label: "Cable and Cable management",
     image: "/Images/product/cables.png",
     desc: "High-performance electrical cables and specialized sealing accessories"
   },
@@ -54,38 +54,37 @@ const CATEGORY_MAP = [
 ];
 
 const ALL_LOGOS = [
-  { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing Lightning • Surge Protection Systems"] },
-  { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing Lightning • Surge Protection Systems"] },
-  { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/kumwell.png", brand: "Kumwell", link: "/product/kumwell", categories: ["Earthing • Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/pittas.png", brand: "Pittas", link: "/product/pittas", categories: ["Earthing • Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/CITEL LOGO.png", brand: "Citel", link: "/product/citel", categories: ["Earthing • Lightning • Surge Protection Systems"] },
+  { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", link: "/product/nventerico", categories: ["Earthing • Lightning • Surge Protection Systems"] },
   { src: "/Images/product/OBSTA LOGO.png", brand: "Obsta", link: "/product/obsta", categories: ["Lighting • ACWL • Signal Lights"] },
-  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting • ACWL • Signal Lights"] },
-  { src: "/Images/product/lewden.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Switching Accessories • Control Devices • Isolators"] },
-  { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Switching Accessories • Control Devices • Isolators"] },
-  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/NVENT ERICO LOGO.svg", brand: "nVent Erico", link: "/product/nventerico", categories: ["Earthing Lightning • Surge Protection Systems"] },
-  { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/dietzel.png", brand: "Dietzel", link: "/product/dietzelunivolt", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/PSI LOGO.png", brand: "PSI", link: "/product/psi", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Cables & Other Products"] },
+  { src: "/Images/product/PALAZZOLI GROUP LOGO.png", brand: "Palazzoli", link: "/product/palazzoli", categories: ["Lighting • ACWL • Signal Lights", "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
   { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting • ACWL • Signal Lights"] },
-  { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Cables & Other Products"] },
   { src: "/Images/product/SIRENA LOGO.png", brand: "Sirena", link: "/product/sirena", categories: ["Lighting • ACWL • Signal Lights"] },
   { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting • ACWL • Signal Lights"] },
-  { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Cables & Other Products"] },
-  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Switching Accessories • Control Devices • Isolators"] },
-  { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Cables & Other Products"] },
   { src: "/Images/product/AVAIDS.png", brand: "Avaids", link: "/product/avaids", categories: ["Lighting • ACWL • Signal Lights"] },
-  // Industrial Category Images
+  { src: "/Images/product/lewden.png", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/product/CRAIG & DERRICOTT LOGO C & D.png", brand: "Craig & Dericott", link: "/product/craigandderricott", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/product/HVTI.png", brand: "HVTI", link: "/product/hvti", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/product/TIGO LOGO.png", brand: "Tigo", link: "/product/tigo", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/product/extras/HELUKABEL LOGO.webp", brand: "Helukabel", link: "/product/helukabel", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/NEELKANTH CABLE LOGO.png", brand: "Neelkanth Cables", link: "/product/neelkanthcables", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/TEKAB CABLES.png", brand: "Tekab Cables", link: "/product/tekabcable", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/siechem.png", brand: "Siechem", link: "/product/siechem", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/BAHRA CABLES.svg", brand: "Bahra Cables", link: "/product/bahraelectric", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/HAUFF TECHNIK LOGO.png", brand: "Hauff Technik", link: "/product/haufftechnik", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/WALLMAX LOGO.png", brand: "Wallmax", link: "/product/wallmax", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/CCG Logo.png", brand: "CCG", link: "/product/ccg", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/obo.png", brand: "OBO", link: "/product/obobettermann", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/ROSE LOGO.png", brand: "Rose", link: "/product/rose", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/PSI LOGO.png", brand: "PSI", link: "/product/psi", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/EMI LOGO.png", brand: "EMI", link: "/product/emi", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/dietzel.png", brand: "Dietzel", link: "/product/dietzelunivolt", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/TUBIFOR LOGO.png", brand: "Tubifor", link: "/product/tubifor", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/NVENT CADDY LOGO.svg", brand: "nVent Caddy", link: "/product/nventcaddy", categories: ["Cables & Cable Management Systems"] },
+  { src: "/Images/product/COSMOPLAST LOGO.avif", brand: "Cosmoplast", link: "/product/cosmoplast", categories: ["Cables & Cable Management Systems"] },
   { src: "/Images/Industrial/ppt/Industrial_1.png", brand: "", categories: ["Industrial & Bulk Materials"] },
   { src: "/Images/Industrial/ppt/Industrial_2.png", brand: "", categories: ["Industrial & Bulk Materials"] },
   { src: "/Images/Industrial/ppt/Industrial_3.png", brand: "", categories: ["Industrial & Bulk Materials"] },
@@ -207,7 +206,7 @@ function ProductPageContent() {
                       fill
                       style={{ 
                         objectFit: "cover",
-                        filter: (cat.id === "All" || cat.id === "Cables & Other Products") ? "brightness(1.6)" : "none"
+                        filter: (cat.id === "All" || cat.id === "Cables & Cable Management Systems") ? "brightness(1.6)" : "none"
                       }}
                       sizes="260px"
                       priority={CATEGORY_MAP.indexOf(cat) < 4}
@@ -216,15 +215,7 @@ function ProductPageContent() {
                   <div className="new-prod-cat-card-overlay" />
                   <div className="new-prod-cat-card-content">
                     <h3 className="new-prod-cat-card-title">
-                      {cat.label.includes('•') ? (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', alignItems: 'flex-start' }}>
-                          {cat.label.split('•').map((item, idx) => (
-                            <span key={idx} style={{ display: 'block' }}>• {item.trim()}</span>
-                          ))}
-                        </div>
-                      ) : (
-                        cat.label
-                      )}
+                      {cat.label}
                     </h3>
                   </div>
                 </button>
