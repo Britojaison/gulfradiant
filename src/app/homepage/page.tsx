@@ -829,7 +829,7 @@ export default function Homepage() {
                 <span>{"- INSIGHTS -"}</span>
               </div>
             </div>
-            <h2>Latest News &amp; Industry Updates</h2>
+            <h2>Latest News and Updates</h2>
             <article className="hp-news-feature-card" style={{ position: "relative" }}>
               <Image
                 src={`/Images/our_projects/${featuredNews.image}`}

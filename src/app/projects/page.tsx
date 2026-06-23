@@ -116,6 +116,30 @@ const PROJECTS = [
   }
 ];
 
+const UPCOMING_PROJECTS = [
+  {
+    category: "aircraft warning lights",
+    title: "Burj Binghatti",
+    location: "Dubai, UAE",
+    description: "Upcoming installation of cutting-edge aircraft warning lights and obstruction lighting systems for this ultra-luxury architectural masterpiece.",
+    img: "/Images/our_projects/aircraft warning lights/BURJ BINGHATTI.jpg"
+  },
+  {
+    category: "aircraft warning lights",
+    title: "DAMAC Aykon Safa 2",
+    location: "Dubai, UAE",
+    description: "Advanced aviation safety lighting systems to be deployed, ensuring top-tier visibility and compliance for this prestigious high-rise development.",
+    img: "/Images/our_projects/aircraft warning lights/DAMAC AYKON SAFA 2.jpg"
+  },
+  {
+    category: "aircraft warning lights",
+    title: "DAMAC Bay 1",
+    location: "Dubai, UAE",
+    description: "Future implementation of high-performance aircraft warning and obstruction lighting for this premium waterfront residential tower.",
+    img: "/Images/our_projects/aircraft warning lights/DAMAC BAY 1.jpg"
+  }
+];
+
 const PALAZZOLI_PROJECTS = [
   { client: "Samsung C&T", project: "ADNOC - HVDC Lightning Project", country: "UAE" },
   { client: "Spaceage General Contracting Co.W.L.L.", project: "2 nos of 33 kV ADDC Substation", country: "UAE" },
@@ -189,6 +213,10 @@ function ProjectsPageContent() {
   const filteredProjects = selectedCategory === "All"
     ? PROJECTS
     : PROJECTS.filter(project => project.category === selectedCategory);
+
+  const filteredUpcomingProjects = selectedCategory === "All"
+    ? UPCOMING_PROJECTS
+    : UPCOMING_PROJECTS.filter(project => project.category === selectedCategory);
 
   const activeCategoryData = CATEGORY_MAP.find(c => c.id === selectedCategory);
 
@@ -531,6 +559,33 @@ function ProjectsPageContent() {
               </div>
             ))}
           </div>
+
+          {/* Upcoming Projects Section */}
+          {filteredUpcomingProjects.length > 0 && (
+            <div style={{ padding: "40px 20px", textAlign: "left", borderTop: "1px solid #eaeaea", marginTop: "20px" }}>
+              <h2 style={{ color: "#000000", fontFamily: "var(--font-degular), sans-serif", fontWeight: "600", fontSize: "36px", marginBottom: "40px", textAlign: "center" }}>Upcoming Projects</h2>
+              <div className="projects-grid-container" style={{ background: "#ffffff", padding: "10px 0 60px 0" }}>
+                {filteredUpcomingProjects.map((project, index) => (
+                  <div className="project-detail-card" key={index} style={{ background: "#ffffff" }}>
+                    <div className="project-card-image">
+                      <img 
+                        src={project.img} 
+                        alt={project.title} 
+                        loading="lazy"
+                        decoding="async"
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+                      />
+                    </div>
+                    <div className="project-card-info" style={{ background: "#ffffff" }}>
+                      <h3 style={{ color: "#000000" }}>{project.title}</h3>
+                      <p className="project-location" style={{ color: "#ff5b05" }}>{project.location}</p>
+                      <p className="project-desc" style={{ color: "#555555" }}>{project.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </main>

@@ -2256,6 +2256,13 @@
     z-index: 1;
   }
 
+  @media (min-width: 1440px) {
+    .hp-leadership-comma-wrapper {
+      bottom: 10px;
+      right: calc(50% - 800px);
+    }
+  }
+
   .hp-leadership-section {
     background: #000;
     padding: 120px 40px;
@@ -2953,7 +2960,7 @@
     display: grid;
     grid-template-columns: minmax(500px, 2.4fr) minmax(130px, 0.6fr) minmax(210px, 1fr) minmax(320px, 1.2fr);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0;
+    padding-bottom: 40px;
     gap: 40px;
   }
 
@@ -8375,5 +8382,21 @@
   @media (max-width: 480px) {
     .hp-footer-locations {
       gap: 16px;
+    }
+  }
+
+  @media (min-width: 1440px) and (max-width: 2559px) {
+    .hp-leadership-comma-wrapper {
+      bottom: 0px !important;
+      right: calc(50% - 650px) !important;
+      transform: scale(0.75) !important;
+      transform-origin: bottom right !important;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    .hp-leadership-comma-wrapper {
+      bottom: 0px !important;
+      right: calc(50% - 1300px) !important;
     }
   }

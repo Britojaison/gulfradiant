@@ -1137,12 +1137,32 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
   return (
     <>
       {brandKey === 'citel' || brandKey === 'obsta' || brandKey === 'kumwell' ? (
-        <section style={{ width: "100%", lineHeight: 0, marginTop: "90px" }}>
+        <section style={{ width: "100%", lineHeight: 0, marginTop: "90px", position: "relative" }}>
           <img
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
             style={{ width: "100%", height: "auto", display: "block" }}
           />
+          <div style={{ position: "absolute", bottom: "20px", left: "60px", zIndex: 10 }}>
+            <div className="hero-buttons" style={{ pointerEvents: "auto", display: "flex", gap: "20px" }}>
+              <a 
+                href={`https://wa.me/971561122110?text=${encodeURIComponent(`Hi Gulf Radiant, I'm interested in the products under your brand: ${brandData.name}.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ borderRadius: "15px" }}
+              >
+                Request a Quote
+              </a>
+              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px" }}>
+                Visit Website
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
         </section>
       ) : (
         <section className="hero kumwell-hero">
@@ -1159,8 +1179,16 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             <p className="hero-subtitle">{brandData.subtitle}</p>
             <p className="hero-description">{brandData.description}</p>
             <div className="hero-buttons">
-              <button className="btn-primary">Request a Quote</button>
-              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline">
+              <a 
+                href={`https://wa.me/971561122110?text=${encodeURIComponent(`Hi Gulf Radiant, I'm interested in the products under your brand: ${brandData.name}.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ borderRadius: "15px" }}
+              >
+                Request a Quote
+              </a>
+              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px" }}>
                 Visit Website
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
                   <path d="M7 17L17 7"></path>
