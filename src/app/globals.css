@@ -7257,12 +7257,15 @@
 
     /* Hero — switch to flex + padding so content is never clipped */
     .kumwell-hero {
-      height: auto !important;
-      min-height: 100svh !important;
+      position: relative !important;
+      height: 50vh !important;
+      min-height: 50vh !important;
+      max-height: 50vh !important;
+      overflow: hidden !important;
       display: flex !important;
       align-items: center !important;
-      padding-top: 90px !important;
-      padding-bottom: 50px !important;
+      padding-top: 80px !important;
+      padding-bottom: 20px !important;
     }
 
     .kumwell-hero .hero-content {

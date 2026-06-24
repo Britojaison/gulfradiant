@@ -1172,7 +1172,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover" }} /* updated via css */
             priority
           />
           <div className="hero-overlay"></div>
@@ -1556,11 +1556,9 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
                           </h3>
                           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", width: "100%" }}>
                             {cat.name === "TS4 Flex MLPE" ? (
-                              <div style={{
+                              <div className="tigo-flex-mlpe-wrapper citel-carousel-wrapper" style={{
                                 display: "flex",
-                                flexWrap: "wrap",
                                 gap: "20px",
-                                justifyContent: "center",
                                 width: "100%",
                                 maxWidth: "1330px"
                               }}>
@@ -1839,6 +1837,32 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           }
           .categories-grid .kumwell-product-item {
             width: 100% !important;
+          }
+        }
+        @media (min-width: 769px) {
+          .tigo-flex-mlpe-wrapper {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            overflow-x: visible !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .tigo-flex-mlpe-wrapper {
+            flex-wrap: nowrap !important;
+            justify-content: flex-start !important;
+            overflow-x: auto !important;
+            padding-bottom: 20px !important;
+          }
+          .kumwell-hero {
+            position: relative !important;
+            height: 50vh !important;
+            min-height: 50vh !important;
+            max-height: 50vh !important;
+            display: flex !important;
+            align-items: center !important;
+            padding-top: 80px !important;
+            padding-bottom: 20px !important;
+            overflow: hidden !important;
           }
         }
       `}</style>
