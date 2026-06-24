@@ -496,7 +496,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Project Expertise</h2>{/* Hot reload trigger */}
+          <h2 className="hp-divisions-main-title">Pioneers in Lightning and Electrical Systems</h2>{/* Hot reload trigger */}
 
           <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
