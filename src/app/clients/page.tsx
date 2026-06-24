@@ -68,7 +68,7 @@ export default function ClientsPage() {
                     fill
                     style={{ 
                       objectFit: "contain",
-                      filter: logo.toLowerCase() === "enppi.png" ? "invert(1)" : "none"
+                      filter: logo.toLowerCase() === "enppi.webp" ? "invert(1) brightness(0)" : "none"
                     }}
                   />
                 </div>

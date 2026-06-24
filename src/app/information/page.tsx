@@ -131,11 +131,22 @@ export default function InformationPage() {
                 <div className="info-card-inner-exact">
                   <div className="brand-header-figma-exact">
                     <Image 
-                      src={`/Images/information/${item.brand.toLowerCase()}.svg`} 
+                      src={
+                        item.brand.toLowerCase() === "kumwell" ? "/Images/product/kumwell.webp" :
+                        item.brand.toLowerCase() === "citel" ? "/Images/product/CITEL LOGO.webp" :
+                        item.brand.toLowerCase() === "obsta" ? "/Images/product/OBSTA LOGO.webp" :
+                        "/Images/Brand_partners/Frame 76.webp"
+                      } 
                       alt={item.brand}
-                      width={141}
-                      height={47}
-                      style={{ objectFit: "contain" }}
+                      width={130}
+                      height={35}
+                      style={{ 
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
+                        transform: item.brand.toLowerCase() === "obsta" ? "scale(2.0) translateY(5px)" : item.brand.toLowerCase() === "gulf" ? "scale(2.2)" : item.brand.toLowerCase() === "citel" ? "scale(1.3)" : "none",
+                        filter: item.brand.toLowerCase() === "gulf" ? "invert(1) hue-rotate(180deg)" : "none"
+                      }}
                     />
                   </div>
                   
@@ -359,6 +370,7 @@ export default function InformationPage() {
           align-self: flex-start;
           height: 47px;
           width: 141px;
+          overflow: hidden;
         }
 
         .info-card-title-figma-exact {
@@ -444,7 +456,7 @@ export default function InformationPage() {
         @media (max-width: 600px) {
           .info-grid-figma-tight { grid-template-columns: 1fr !important; }
           .container-full { padding: 0 20px; }
-          .info-hero { padding-left: 20px; padding-right: 20px; }
+          .info-hero { padding-left: 20px; padding-right: 20px; height: 50vh !important; }
           .info-hero-content h1 { font-size: 42px !important; }
           .section-header-figma-centered h2 { font-size: 28px !important; }
           .section-description-centered { font-size: 16px !important; }

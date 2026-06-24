@@ -209,9 +209,14 @@ export default function Homepage() {
       const viewport = window.innerHeight || 1;
 
       // Start animating when 50% of the section is in view
-      const startTrigger = viewport - (statsRef.current.offsetHeight * 0.5);
+      let startTrigger = viewport - (statsRef.current.offsetHeight * 0.5);
       // Finish animating when 100% of the section is scrolled into view
-      const endTrigger = viewport - statsRef.current.offsetHeight;
+      let endTrigger = viewport - statsRef.current.offsetHeight;
+
+      if (window.innerWidth <= 768) {
+        startTrigger = viewport;
+        endTrigger = viewport * 0.1;
+      }
 
       const progress = Math.max(0, Math.min(1, (startTrigger - rect.top) / (startTrigger - endTrigger)));
 
@@ -714,8 +719,8 @@ export default function Homepage() {
               { src: "Rectangle 17.webp", alt: "Port of Salalah", folder: "Home" },
               { src: "Rectangle 19.webp", alt: "DP World", folder: "Home" },
               { src: "dewa.webp", alt: "DEWA", folder: "Brand_partners" },
-              { src: "sewa.webp", alt: "SEWA", folder: "Brand_partners" },
-              { src: "dpworld.webp", alt: "DP World", folder: "Brand_partners" },
+              { src: "samsung.webp", alt: "Samsung", folder: "Brand_partners" },
+              { src: "Orascom.webp", alt: "Orascom", folder: "Brand_partners" },
               { src: "petrofac.webp", alt: "Petrofac", folder: "Brand_partners" },
               { src: "technip.webp", alt: "Technip", folder: "Brand_partners" },
               { src: "Saipem.webp", alt: "Saipem", folder: "Brand_partners" },

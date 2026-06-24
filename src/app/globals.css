@@ -6634,6 +6634,12 @@
     font-size: 22px !important;
   }
 
+  @media (min-width: 769px) {
+    .other-brand-hero .hero-content {
+      padding-left: 45px !important;
+    }
+  }
+
   .kumwell-hero .btn-primary,
   .kumwell-hero .btn-outline {
     border-radius: 12px !important;
@@ -7290,7 +7296,13 @@
     }
 
     .other-brand-hero .hero-content {
-      top: 60px !important;
+      position: relative !important;
+      transform: translateY(-5px) !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      padding-left: 30px !important;
+      padding-right: 10px !important;
     }
 
     .kumwell-hero .hero-title {

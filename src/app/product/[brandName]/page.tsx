@@ -1148,7 +1148,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           <div className="brand-hero-buttons-wrapper">
             <div className="hero-buttons" style={{ pointerEvents: "auto", display: "flex", gap: "20px" }}>
               <a 
-                href={`https://wa.me/971561122110?text=${encodeURIComponent(`Hi Gulf Radiant, I'm interested in the products under your brand: ${brandData.name}.`)}`}
+                href={`https://wa.me/971561122110?text=${encodeURIComponent(`I'm interested in your product of the brand : ${brandData.name}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -1182,7 +1182,7 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             <p className="hero-description">{brandData.description}</p>
             <div className="hero-buttons">
               <a 
-                href={`https://wa.me/971561122110?text=${encodeURIComponent(`Hi Gulf Radiant, I'm interested in the products under your brand: ${brandData.name}.`)}`}
+                href={`https://wa.me/971561122110?text=${encodeURIComponent(`I'm interested in your product of the brand : ${brandData.name}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
