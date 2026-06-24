@@ -6573,6 +6573,10 @@
 
 
   /* Kumwell Hero Scoped Styles (Moved to end for higher specificity) */
+  .kumwell-hero .hero-overlay,
+  .other-brand-hero .hero-overlay {
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
   .kumwell-hero .hero-title {
     font-family: var(--font-degular), sans-serif !important;
   }
@@ -7258,14 +7262,20 @@
     /* Hero — switch to flex + padding so content is never clipped */
     .kumwell-hero {
       position: relative !important;
-      height: 50vh !important;
-      min-height: 50vh !important;
-      max-height: 50vh !important;
+      height: auto !important;
+      min-height: 100svh !important;
+      max-height: none !important;
       overflow: hidden !important;
       display: flex !important;
       align-items: center !important;
       padding-top: 80px !important;
       padding-bottom: 20px !important;
+    }
+
+    .other-brand-hero {
+      height: 50vh !important;
+      min-height: 50vh !important;
+      max-height: 50vh !important;
     }
 
     .kumwell-hero .hero-content {
@@ -7277,6 +7287,10 @@
       max-width: 100% !important;
       width: 100% !important;
       padding: 0 20px !important;
+    }
+
+    .other-brand-hero .hero-content {
+      top: 60px !important;
     }
 
     .kumwell-hero .hero-title {

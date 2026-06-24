@@ -216,7 +216,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   pittas: {
     name: "Pittas",
-    heroBg: "/Images/Home/Rectangle 24.png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Earthing & Structural Protection",
     description: "High-conductive earthing accessories, copper tapes, and premium grounding conductors certified to absolute international standards.",
     website: "https://pittas.gr/en/",
@@ -237,7 +237,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   palazzoli: {
     name: "Palazzoli",
-    heroBg: "/Images/Home/Rectangle 24 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Explosion Proof & Industrial Switchgear",
     description: "Heavy-duty electrical connections, switch disconnectors, and IEC 309 plugs and sockets engineered for safety in explosive atmospheres.",
     website: "https://www.palazzoli.com/en/",
@@ -262,7 +262,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   siechem: {
     name: "Siechem",
-    heroBg: "/Images/Home/Rectangle 23.png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Specialty & High-Performance Cables",
     description: "Advanced solar, marine, rolling stock, and heat-resistant industrial cables engineered to withstand extreme environment stresses.",
     website: "https://www.siechem.com/",
@@ -285,7 +285,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   helukabel: {
     name: "Helukabel",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Wires & Control Cable Systems",
     description: "Flexible control cables, drag-chain cables, data networking lines, and plug-and-play customized cable assembly systems.",
     website: "https://www.helukabel.com/",
@@ -304,7 +304,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   obobettermann: {
     name: "OBO Bettermann",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Cable Management & Lightning Protection Systems",
     description: "Premium German-engineered cable trays, transient surge protectors, and connection systems for state-of-the-art building installations.",
     website: "https://www.obo-bettermann.com/en-wo/",
@@ -442,7 +442,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   dietzelunivolt: {
     name: "Dietzel Univolt",
-    heroBg: "/Images/Home/Rectangle 24.png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Cable Protection & Conduit Systems",
     description: "Premium Austrian-engineered PVC and halogen-free plastic conduits, fittings, and cable management enclosures built for heavy-duty industrial installations.",
     website: "https://www.dietzel-univolt.com/",
@@ -466,7 +466,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   haufftechnik: {
     name: "Hauff Technik",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Cable & Pipe Sealing Systems",
     description: "Innovative German-engineered press seals, wall sleeves, and gas-tight entry portals for absolute safety and structural waterproofing.",
     website: "https://www.hauff-technik.de/en",
@@ -491,7 +491,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   palazzolilewden: {
     name: "Palazzoli Lewden",
-    heroBg: "/Images/Home/Rectangle 24 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Electrical & Connection Solutions",
     description: "Sleek industrial-grade distribution boards, customized enclosures, lighting systems, XCEE switches, and heavy-duty plugs manufactured to supreme safety standards.",
     website: "https://www.lewden.com/",
@@ -545,7 +545,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   litetech: {
     name: "Litetech",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Professional LED Lighting Solutions",
     description: "Innovative and high-efficiency LED indoor, street lighting, floodlights, and custom linear lighting systems designed for premium building architectural specifications.",
     website: "http://www.litetech.ae/",
@@ -606,7 +606,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   sirena: {
     name: "Sirena",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Visual & Acoustic Signaling Devices",
     description: "Premium visual beacons, industrial warning sirens, and state-of-the-art signaling systems for industrial safety and automation.",
     website: "https://www.sirena.it/en/",
@@ -626,7 +626,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   frater: {
     name: "Frater",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Professional LED & Industrial Lighting Systems",
     description: "High-efficiency LED panel lights, linear systems, highbay fixtures, and weatherproof luminaires engineered for premium building and industrial specifications.",
     website: "https://fraterlighting.com",
@@ -646,7 +646,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   bgelectric: {
     name: "BG Electrical",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Premium Wiring Accessories & Electrical Solutions",
     description: "High-performance wiring accessories, British-standard switches, junction boxes, and IP55/IP66 weatherproof fittings designed for residential, commercial, and industrial installations.",
     website: "https://www.bgelectrical.uk/",
@@ -686,7 +686,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   hvti: {
     name: "HVTI",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "High Voltage Test Instruments",
     description: "Precision-engineered safety testing equipment, high voltage probes, and robust dielectric test systems for industrial electrical verification.",
     website: "https://hvti.in/",
@@ -727,7 +727,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   tigo: {
     name: "Tigo",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Module-Level Power Electronics (MLPE)",
     description: "Innovative solar optimizer and rapid shutdown solutions maximizing safety and energy output of photovoltaic installations.",
     website: "https://www.tigoenergy.com/",
@@ -774,7 +774,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   craigandderricott: {
     name: "Craig & Derricott",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Switchgear & Safety Isolators",
     description: "High-reliability British safety isolators, rotary switches, control stations, and bespoke railway traction equipment engineered for supreme durability.",
     website: "https://www.craigandderricott.com/",
@@ -836,7 +836,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   wallmax: {
     name: "Wallmax",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Cable Trays & Supports",
     description: "Robust metallic cable management systems, heavy-duty ladders, and integrated structural supports for intense industrial environments.",
     website: "https://www.wallmax.it/applications/maritime-offshore/",
@@ -854,7 +854,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   tubifor: {
     name: "Tubifor",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Conduits & Cable Protection Systems",
     description: "High-quality PVC and metal conduits and cable protection systems for electrical installations in civil and industrial projects.",
     website: "https://www.tubifor.it/",
@@ -874,7 +874,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   bahraelectric: {
     name: "Bahra Cables",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Advanced Electrical Cable Systems",
     description: "High, medium, and low-voltage cables and wires manufactured to international standards for power grids and infrastructure.",
     website: "https://www.bahra-cables.com/",
@@ -894,7 +894,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   tekabcable: {
     name: "Tekab Cables",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Specialty & Control Cable Solutions",
     description: "Instrumentation, control, and specialty cables designed for optimal signal transmission and safety under heavy industrial conditions.",
     website: "https://tekab.com/",
@@ -914,7 +914,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   neelkanthcables: {
     name: "Neelkanth Cables",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial & Power Cabling",
     description: "High-performance low voltage cables, building wires, and specialty conductors designed for efficiency and safety.",
     website: "http://neelkanthcables.com/",
@@ -934,7 +934,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   emi: {
     name: "EMI",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Electrical Metallic Tubing",
     description: "Durable EMT conduits, galvanized steel pipings, and robust structural fittings for unyielding cable protection.",
     website: "https://emiuae.ae/",
@@ -952,7 +952,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   cosmoplast: {
     name: "Cosmoplast",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Plastic & Conduit Solutions",
     description: "High-grade plastic uPVC and LSF conduits, trunking, and fittings designed to protect electrical cables in civil and industrial projects.",
     website: "https://shop.cosmoplast.com/",
@@ -982,7 +982,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   ccg: {
     name: "CCG",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Cable Glands & Accessories",
     description: "High-quality armoured and unarmoured cable glands designed for diverse and demanding global environments.",
     website: "https://www.ccgcablegland.co.za/",
@@ -1005,7 +1005,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   nventcaddy: {
     name: "nVent CADDY",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Fixing, Fastening & Support Solutions",
     description: "Premium fixing, fastening and support products for electrical installation, seismic bracing, conduit and cable support, and beam clamps.",
     website: "https://www.nvent.com/en-us/caddy",
@@ -1031,7 +1031,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   nventerico: {
     name: "nVent ERICO",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Grounding & Lightning Protection Systems",
     description: "Premium electrical protection solutions, including grounding, bonding, and lightning protection systems for infrastructure.",
     website: "https://www.nvent.com/en-us/erico",
@@ -1054,7 +1054,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   rose: {
     name: "Rose",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Industrial Enclosures & Console Systems",
     description: "High-quality industrial enclosures made of aluminium, stainless steel, polyester, and plastics for demanding environmental conditions.",
     website: "https://www.rose-systemtechnik.com/en/",
@@ -1075,7 +1075,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   avaids: {
     name: "Avaids",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Aviation Obstruction Lighting",
     description: "High-quality aviation obstruction lights and warning systems for tall structures and infrastructure.",
     website: "https://www.avaids.com/",
@@ -1094,7 +1094,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
   },
   psi: {
     name: "PSI",
-    heroBg: "/Images/Home/Rectangle 23 (1).png",
+    heroBg: "/Images/hero_brand.jpg",
     subtitle: "Cable Management Systems",
     description: "High-quality cable management solutions including cable trays, ladders, and trunking systems.",
     website: "https://www.powersolutionme.com/",
@@ -1167,10 +1167,10 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
           </div>
         </section>
       ) : (
-        <section className="hero kumwell-hero">
+        <section className={`hero kumwell-hero ${brandKey !== 'kumwell' && brandKey !== 'citel' && brandKey !== 'obsta' ? 'other-brand-hero' : ''}`}>
           <Image
             src={brandData.heroBg}
-            alt={`${brandData.name} Hero`}
+            alt={`${brandData.name} Hero background`}
             fill
             style={{ objectFit: "cover" }} /* updated via css */
             priority
