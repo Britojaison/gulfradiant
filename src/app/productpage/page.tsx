@@ -23,25 +23,25 @@ const CATEGORY_MAP = [
   },
   {
     id: "Earthing • Lightning • Surge Protection Systems",
-    label: "Earthing Lightning and Surge Protection Systems",
+    label: "Earthing Lightning & Surge Protection Systems",
     image: "/Images/product/earthing.png",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lightning, ACWL and Signal Lights",
+    label: "Lightning, ACWL & Signal Lights",
     image: "/Images/product/obstruction.png",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
   {
     id: "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments",
-    label: "Isolators, Switching and Control devices",
+    label: "Isolators, Switching & Control devices",
     image: "/Images/product/control devices.png",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators"
   },
   {
     id: "Cables & Cable Management Systems",
-    label: "Cable and Cable management",
+    label: "Cable & Cable management",
     image: "/Images/product/cables.png",
     desc: "High-performance electrical cables and specialized sealing accessories"
   },

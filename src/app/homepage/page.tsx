@@ -41,25 +41,25 @@ const newsItems = [
 const ELECTRICAL_CATEGORIES = [
   {
     id: "Earthing • Lightning • Surge Protection Systems",
-    label: "Earthing Lightning and Surge Protection Systems",
+    label: "Earthing Lightning & Surge Protection Systems",
     tag: "Earthing & Surge",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lightning, ACWL and Signal Lights",
+    label: "Lightning, ACWL & Signal Lights",
     tag: "Warning & Obstruction",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
   },
   {
     id: "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments",
-    label: "Isolators, Switching and Control devices",
+    label: "Isolators, Switching & Control devices",
     tag: "Control Devices",
     desc: "Explosion-proof plugs, receptacles, switching accessories, & isolators",
   },
   {
     id: "Cables & Cable Management Systems",
-    label: "Cable and Cable management",
+    label: "Cable & Cable management",
     tag: "Power Cables",
     desc: "Siechem, Tekab, Helukabel & high-performance electrical cables",
   },
@@ -471,7 +471,7 @@ export default function Homepage() {
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
           <h1 className="hp-hero-title-desktop">
-            <span className="hp-hero-title-nowrap">Powering Infrastructure</span><br />That Delivers
+            <span className="hp-hero-title-nowrap">Powering circuits,</span><br /><span className="hp-hero-title-nowrap" style={{ position: "relative", left: "-15px" }}>connecting your world today</span>
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
             <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
@@ -490,7 +490,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Pioneers of Lighting and Electrical Systems</h2>
+          <h2 className="hp-divisions-main-title">Project Expertise</h2>{/* Hot reload trigger */}
 
           <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
