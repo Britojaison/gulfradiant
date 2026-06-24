@@ -471,7 +471,8 @@ export default function Homepage() {
           preload="auto"
           aria-label="Gulf Radiant infrastructure hero video"
         >
-          <source src="/Images/Home/hero-video-optimized.webm" type="video/mp4" />
+          <source src="/Images/Home/hero-video-optimized.mp4" type="video/mp4" />
+          <source src="/Images/Home/hero-video-optimized.webm" type="video/webm" />
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
