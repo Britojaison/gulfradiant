@@ -44,8 +44,8 @@ export default function Navbar() {
       displayItemNumbering
       closeOnClickAway={true}
       colors={["#151923", "#FF5B05"]}
-      logoUrl="/Images/Brand_partners/Frame 76.png"
-      secondaryLogoUrl="/Images/product/nav_logo2.png"
+      logoUrl="/Images/Brand_partners/Frame 76.webp"
+      secondaryLogoUrl="/Images/product/nav_logo2.webp"
       logoHref="/homepage#home-hero"
       menuButtonColor="#ffffff"
       openMenuButtonColor="#ffffff"

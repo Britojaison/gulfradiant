@@ -90,14 +90,14 @@ export default function AboutPage() {
   ];
 
   const productLogos = [
-    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png",
-    "BAHRA CABLES.svg", "CCG Logo.png", "CITEL LOGO.png", "COSMOPLAST LOGO.avif",
+    "kumwell.webp", "pittas.jpg", "obo.webp", "dietzel.webp", "siechem.webp",
+    "BAHRA CABLES.svg", "CCG Logo.webp", "CITEL LOGO.webp", "COSMOPLAST LOGO.avif",
     "FRATER1-LOGO.webp",
-    "HAUFF TECHNIK LOGO.png", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.png",
-    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.png",
-    "PALAZZOLI GROUP LOGO.png", "PSI LOGO.png", "ROSE LOGO.png",
-    "SIRENA LOGO.png", "TEKAB CABLES.png", "TIGO LOGO.png",
-    "TUBIFOR LOGO.png", "WALLMAX LOGO.png", "HVTI.png"
+    "HAUFF TECHNIK LOGO.webp", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.webp",
+    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.webp",
+    "PALAZZOLI GROUP LOGO.webp", "PSI LOGO.webp", "ROSE LOGO.webp",
+    "SIRENA LOGO.webp", "TEKAB CABLES.webp", "TIGO LOGO.webp",
+    "TUBIFOR LOGO.webp", "WALLMAX LOGO.webp", "HVTI.webp"
   ];
 
   const certificates = [
@@ -168,7 +168,7 @@ export default function AboutPage() {
       {/* DIVISIONS SECTION */}
       <section className="divisions-section-new">
         <Image 
-          src="/Images/About/bg.png" 
+          src="/Images/About/bg.webp" 
           alt="Divisions" 
           fill 
           sizes="100vw"

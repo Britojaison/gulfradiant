@@ -10,7 +10,7 @@ export default function Footer() {
             <div style={{ display: "grid", gridTemplateColumns: "auto auto", alignItems: "center", gap: "10px 30px", width: "fit-content" }}>
               <div style={{ marginLeft: "-28px" }}>
                 <Image 
-                  src="/Images/Brand_partners/Frame 76.png" 
+                  src="/Images/Brand_partners/Frame 76.webp" 
                   alt="Gulf Radiant Logo" 
                   width={260} 
                   height={82} 
@@ -25,7 +25,7 @@ export default function Footer() {
                   style={{ display: "inline-block" }}
                 >
                   <Image 
-                    src="/Images/footer ariba.png" 
+                    src="/Images/footer ariba.webp" 
                     alt="SAP Ariba Business Network" 
                     width={160} 
                     height={40} 

@@ -5825,7 +5825,7 @@
   .hp-contact-banner-new {
     align-items: flex-start !important;
     justify-content: center !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/Rectangle 170.png') no-repeat center center !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/Rectangle 170.webp') no-repeat center center !important;
     background-size: cover !important;
     height: auto !important;
     min-height: auto !important;
@@ -5987,7 +5987,7 @@
   }
 
   .new-prod-page .new-prod-hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/image 95.png') !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/image 95.webp') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -6718,7 +6718,7 @@
 
   /* Product Divisions Section */
   .hp-divisions-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/Rectangle%20170.png') no-repeat center center !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/Images/Rectangle%20170.webp') no-repeat center center !important;
     background-size: cover !important;
     height: calc(100vh - 250px);
     min-height: calc(100vh - 250px);

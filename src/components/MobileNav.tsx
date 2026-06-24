@@ -104,7 +104,7 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
             className="mobile-menu-logo"
           >
             <Image
-              src="/Images/Brand_partners/Frame 76.png"
+              src="/Images/Brand_partners/Frame 76.webp"
               alt="Gulf Radiant"
               width={140}
               height={40}

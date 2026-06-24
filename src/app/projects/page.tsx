@@ -35,7 +35,7 @@ const CATEGORY_MAP = [
   {
     id: "high ampherage pluug and sockets ",
     label: "High Amperage Plugs & Sockets",
-    image: "/Images/our_projects/p6.png",
+    image: "/Images/our_projects/p6.webp",
     desc: "Heavy industrial plugs, receptacles, and power sockets"
   }
 ];
@@ -223,7 +223,7 @@ function ProjectsPageContent() {
   return (
     <main className="projects-page-wrapper">
       {/* 1ST SECTION: HERO & CATEGORIES */}
-      <section className="new-prod-hero-section" style={{ backgroundImage: "url('/Images/Certifications/bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="new-prod-hero-section" style={{ backgroundImage: "url('/Images/Certifications/bg.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">

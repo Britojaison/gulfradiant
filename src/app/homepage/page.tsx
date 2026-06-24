@@ -15,25 +15,25 @@ const newsItems = [
   {
     title: "Gulf Radiant Expands Product Portfolio",
     meta: "Aug 10 · 5 min read",
-    image: "news2.png",
+    image: "news2.webp",
     alt: "Industrial product facility",
   },
   {
     title: "Participation in Industry Expo 2025",
     meta: "Aug 08 · 4 min read",
-    image: "news4.png",
+    image: "news4.webp",
     alt: "Port cranes and industrial infrastructure",
   },
   {
     title: "Successful Supply for Infrastructure Development",
     meta: "Aug 05 · 6 min read",
-    image: "news5.png",
+    image: "news5.webp",
     alt: "Industrial energy facility at sunset",
   },
   {
     title: "New Engineering Product Solutions Introduced",
     meta: "Aug 02 · 5 min read",
-    image: "news6.png",
+    image: "news6.webp",
     alt: "Urban rail infrastructure",
   },
 ];
@@ -400,39 +400,39 @@ export default function Homepage() {
   }, []);
 
   const productLogos = [
-    "kumwell.png", "pittas.jpg", "obo.png", "dietzel.png", "siechem.png",
-    "BAHRA CABLES.svg", "CCG Logo.png", "CITEL LOGO.png", "COSMOPLAST LOGO.avif",
+    "kumwell.webp", "pittas.jpg", "obo.webp", "dietzel.webp", "siechem.webp",
+    "BAHRA CABLES.svg", "CCG Logo.webp", "CITEL LOGO.webp", "COSMOPLAST LOGO.avif",
     "FRATER1-LOGO.webp",
-    "HAUFF TECHNIK LOGO.png", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.png",
-    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.png",
-    "PALAZZOLI GROUP LOGO.png", "PSI LOGO.png", "ROSE LOGO.png",
-    "SIRENA LOGO.png", "TEKAB CABLES.png", "TIGO LOGO.png",
-    "TUBIFOR LOGO.png", "WALLMAX LOGO.png", "HVTI.png"
+    "HAUFF TECHNIK LOGO.webp", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.webp",
+    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.webp",
+    "PALAZZOLI GROUP LOGO.webp", "PSI LOGO.webp", "ROSE LOGO.webp",
+    "SIRENA LOGO.webp", "TEKAB CABLES.webp", "TIGO LOGO.webp",
+    "TUBIFOR LOGO.webp", "WALLMAX LOGO.webp", "HVTI.webp"
   ];
 
   const suppliedProjects = [
     {
       title: "Sea World Abu Dhabi",
       alt: "Sea World Abu Dhabi",
-      image: "p1.png",
+      image: "p1.webp",
       position: "center bottom",
     },
     {
       title: "Aldhafra PV2 Solar Power Plant",
       alt: "Aldhafra PV2 Solar Power Plant",
-      image: "p2.png",
+      image: "p2.webp",
       position: "center center",
     },
     {
       title: "Dubai Waste to Energy",
       alt: "Dubai Waste to Energy",
-      image: "p3.png",
+      image: "p3.webp",
       position: "center center",
     },
     {
       title: "Etihad Rail",
       alt: "Etihad Rail",
-      image: "p4.png",
+      image: "p4.webp",
       position: "center center",
     },
 
@@ -466,7 +466,7 @@ export default function Homepage() {
           preload="auto"
           aria-label="Gulf Radiant infrastructure hero video"
         >
-          <source src="/Images/Home/hero-video-optimized.mp4" type="video/mp4" />
+          <source src="/Images/Home/hero-video-optimized.webm" type="video/mp4" />
         </video>
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
@@ -702,24 +702,24 @@ export default function Homepage() {
           </div>
           <div className="hp-trusted-grid-inner">
             {[
-              { src: "Rectangle 11 (1).png", alt: "Occidental of Oman Inc.", folder: "Home" },
-              { src: "Rectangle 12 (1).png", alt: "Danieli", folder: "Home" },
-              { src: "Rectangle 22.png", alt: "Emirates Global Aluminium", folder: "Home" },
+              { src: "Rectangle 11 (1).webp", alt: "Occidental of Oman Inc.", folder: "Home" },
+              { src: "Rectangle 12 (1).webp", alt: "Danieli", folder: "Home" },
+              { src: "Rectangle 22.webp", alt: "Emirates Global Aluminium", folder: "Home" },
               { src: "sidem viola.svg", alt: "Sidem Veolia", folder: "Home" },
-              { src: "drydock.png", alt: "Drydocks World", folder: "Brand_partners" },
+              { src: "drydock.webp", alt: "Drydocks World", folder: "Brand_partners" },
               { src: "voltas.svg", alt: "Voltas", folder: "Home" },
-              { src: "Rectangle 20.png", alt: "Dragon Oil", folder: "Home" },
-              { src: "Rectangle 21.png", alt: "Sharjah Electricity and Water Authority", folder: "Home" },
-              { src: "Rectangle 16.png", alt: "Energy China", folder: "Home" },
-              { src: "Rectangle 17.png", alt: "Port of Salalah", folder: "Home" },
-              { src: "Rectangle 19.png", alt: "DP World", folder: "Home" },
-              { src: "dewa.png", alt: "DEWA", folder: "Brand_partners" },
-              { src: "sewa.png", alt: "SEWA", folder: "Brand_partners" },
-              { src: "dpworld.png", alt: "DP World", folder: "Brand_partners" },
-              { src: "petrofac.png", alt: "Petrofac", folder: "Brand_partners" },
-              { src: "technip.png", alt: "Technip", folder: "Brand_partners" },
-              { src: "Saipem.png", alt: "Saipem", folder: "Brand_partners" },
-              { src: "L&T.png", alt: "L&T", folder: "Brand_partners" },
+              { src: "Rectangle 20.webp", alt: "Dragon Oil", folder: "Home" },
+              { src: "Rectangle 21.webp", alt: "Sharjah Electricity and Water Authority", folder: "Home" },
+              { src: "Rectangle 16.webp", alt: "Energy China", folder: "Home" },
+              { src: "Rectangle 17.webp", alt: "Port of Salalah", folder: "Home" },
+              { src: "Rectangle 19.webp", alt: "DP World", folder: "Home" },
+              { src: "dewa.webp", alt: "DEWA", folder: "Brand_partners" },
+              { src: "sewa.webp", alt: "SEWA", folder: "Brand_partners" },
+              { src: "dpworld.webp", alt: "DP World", folder: "Brand_partners" },
+              { src: "petrofac.webp", alt: "Petrofac", folder: "Brand_partners" },
+              { src: "technip.webp", alt: "Technip", folder: "Brand_partners" },
+              { src: "Saipem.webp", alt: "Saipem", folder: "Brand_partners" },
+              { src: "L&T.webp", alt: "L&T", folder: "Brand_partners" },
             ].map((client) => (
               <div className="hp-trusted-logo-box" key={client.src}>
                 <Image src={`/Images/${client.folder}/${client.src}`} alt={client.alt} fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px" style={{ objectFit: "contain" }} />

@@ -36,9 +36,9 @@ export default function CertificationsPage() {
     { image: "cert-addc-logo.jpg", title: "GULF RADIANT APPROVAL_ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/GULF RADIANT APPROVAL_ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
     { image: "cert-addc-logo.jpg", title: "KUMWELL APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/KUMWELL APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
     { image: "cert-addc-logo.jpg", title: "PITTAS APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA", doc: "Certifications/OneDrive_1_20-05-2026/PITTAS APPROVAL _ADDC_TAQA_ADWEA_TRANSCO_AL MIRFA.pdf", type: "pdf" as const },
-    { image: "etihad we.png", title: "ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL.pdf", type: "pdf" as const },
-    { image: "etihad we.png", title: "ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL.pdf", type: "pdf" as const },
-    { image: "etihad we.png", title: "GR _FEWA REG CARD 2026-27", doc: "Certifications/OneDrive_1_20-05-2026/GR _FEWA REG CARD 2026-27.jpg", type: "image" as const },
+    { image: "etihad we.webp", title: "ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-EARTHING PROTECTION SYSTEM-Dec 2028 -APPROVAL.pdf", type: "pdf" as const },
+    { image: "etihad we.webp", title: "ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL", doc: "Certifications/OneDrive_1_20-05-2026/ETIHAD WE-KUMWELL-LIGHTNING PROTECTION SYSTEM-Dec 2028 APPROVAL.pdf", type: "pdf" as const },
+    { image: "etihad we.webp", title: "GR _FEWA REG CARD 2026-27", doc: "Certifications/OneDrive_1_20-05-2026/GR _FEWA REG CARD 2026-27.jpg", type: "image" as const },
   ];
 
   const getDocPath = (doc: string) => `/Images/${doc}`;

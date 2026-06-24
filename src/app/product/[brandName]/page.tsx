@@ -49,41 +49,41 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "Earthing Protection System",
         products: [
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBDL.png", caption: "GBDL" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBPGSS.png", caption: "GBPGSS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GGC3XC~C.PNG", caption: "GGC3XC~C" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRCBUT.png", caption: "GRCBUT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSC.png", caption: "GRSC" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSS.png", caption: "GRSS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GWV1CV~O.PNG", caption: "GWV1CV~O" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCIP.png", caption: "GXCIP" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCT.png", caption: "GXCT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP1.png", caption: "GXEP1" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP2.png", caption: "GXEP2" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP4.png", caption: "GXEP4" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXFIP.png", caption: "GXFIP" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYPTB.png", caption: "GYPTB" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/LCATT.png", caption: "LCATT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/MEG.png", caption: "MEG" }
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBDL.webp", caption: "GBDL" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GBPGSS.webp", caption: "GBPGSS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GGC3XC~C.webp", caption: "GGC3XC~C" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRCBUT.webp", caption: "GRCBUT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSC.webp", caption: "GRSC" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GRSS.webp", caption: "GRSS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GWV1CV~O.webp", caption: "GWV1CV~O" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCIP.webp", caption: "GXCIP" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXCT.webp", caption: "GXCT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP1.webp", caption: "GXEP1" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP2.webp", caption: "GXEP2" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXEP4.webp", caption: "GXEP4" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GXFIP.webp", caption: "GXFIP" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/GYPTB.webp", caption: "GYPTB" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/LCATT.webp", caption: "LCATT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/EARTHING PROTECTION SYSTEM/MEG.webp", caption: "MEG" }
         ]
       },
       {
         name: "Lightning Protection System",
         products: [
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(1).png", caption: "CCC(1)" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(2).png", caption: "CCC(2)" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/COBCT.png", caption: "COBCT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOH.png", caption: "KOH" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOL.png", caption: "KOL" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KTH.png", caption: "KTH" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCAS.png", caption: "LCAS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCRT.png", caption: "LCRT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCTT.png", caption: "LCTT" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LROS.png", caption: "LROS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LSQS.png", caption: "LSQS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS (2).png", caption: "LTAS (2)" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS.png", caption: "LTAS" },
-          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAT.png", caption: "LTAT" }
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(1).webp", caption: "CCC(1)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/CCC(2).webp", caption: "CCC(2)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/COBCT.webp", caption: "COBCT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOH.webp", caption: "KOH" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KOL.webp", caption: "KOL" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/KTH.webp", caption: "KTH" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCAS.webp", caption: "LCAS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCRT.webp", caption: "LCRT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LCTT.webp", caption: "LCTT" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LROS.webp", caption: "LROS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LSQS.webp", caption: "LSQS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS (2).webp", caption: "LTAS (2)" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAS.webp", caption: "LTAS" },
+          { image: "/Images/kumwell/Categories/EARTHING  & LIGHTNING PROTECTION/LIGHTNING PROTECTION SYSTEM/LTAT.webp", caption: "LTAT" }
         ]
       },
       {
@@ -91,30 +91,30 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         products: [
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Graphite-MOuld-300x300.jpg", caption: "Graphite-MOuld-300x300" },
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/Necessary-Tools-300x300.jpg", caption: "Necessary-Tools-300x300" },
-          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tape-conductors-3-300x300.png", caption: "tape-conductors-3-300x300" },
+          { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tape-conductors-3-300x300.webp", caption: "tape-conductors-3-300x300" },
           { image: "/Images/kumwell/Categories/EXOTHERMIC WELDING SYSTEMS/tool-box-300x300.jpg", caption: "tool-box-300x300" }
         ]
       },
       {
         name: "Oil & Gas Products",
         products: [
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/ISOLATING  SPARK GAP.png", caption: "ISOLATING SPARK GAP" },
-          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/STATIC EARTH REEL -GERA 15ME.png", caption: "STATIC EARTH REEL -GERA 15ME" }
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/ISOLATING  SPARK GAP.webp", caption: "ISOLATING SPARK GAP" },
+          { image: "/Images/kumwell/Categories/OIL & GAS PRODUCTS/STATIC EARTH REEL -GERA 15ME.webp", caption: "STATIC EARTH REEL -GERA 15ME" }
         ]
       },
       {
         name: "Smart Lightning Management & Warning System",
         products: [
-          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT MANAGEMENT SYSTEM.png", caption: "SMART LIGHT MANAGEMENT SYSTEM" },
-          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT WARNING SYSTEM.png", caption: "SMART LIGHT WARNING SYSTEM" }
+          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT MANAGEMENT SYSTEM.webp", caption: "SMART LIGHT MANAGEMENT SYSTEM" },
+          { image: "/Images/kumwell/Categories/SMART LIGHTNING MANAGEMENT & WARNING SYSTEM/SMART LIGHT WARNING SYSTEM.webp", caption: "SMART LIGHT WARNING SYSTEM" }
         ]
       }
     ],
     certifiedLogos: [
       "/Images/Certificates/adnoc logo.svg",
       "/Images/Certificates/dewa.jpg",
-      "/Images/Certificates/etihad we.png",
-      "/Images/Certificates/taqa group.png",
+      "/Images/Certificates/etihad we.webp",
+      "/Images/Certificates/taqa group.webp",
       "/Images/Certificates/cert-rta-logo.jpg"
     ],
     aboutP1: "Kumwell Corporation public company Limited is a manufacturer and distributor of products in grounding systems such as grounding rods, grounding conductors, exothermic welding equipment, ground enhancement materials, inspection pits and etc. Lightning protection system compose of air terminals, lightning conductors, connectors & fasteners and etc. Surge protection system, lightning detection and warning system are compiled for international standards under Kumwell brand.",
@@ -134,17 +134,17 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         name: "AC Power",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg>,
         products: [
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER TYPE 1+2+3-13VGS-31-275_pic.png", caption: "AC POWER TYPE 1+2+3-13VGS-31-275" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 (or 3)_DACF15S-10_275_pic.png", caption: "AC POWER Type 2 (or 3)_DACF15S-10_275" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-10-320_pic.png", caption: "AC POWER Type 2 AC_DAC50S-10-320" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-11-275_pic.png", caption: "AC POWER Type 2 AC_DAC50S-11-275" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC.png", caption: "AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1+2+3 2756_DS254VG-300-G_pic.png", caption: "AC POWER _Type 1+2+3 2756_DS254VG-300-G" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310242_DACF15S-11-275__pic.png", caption: "AC POWER _Type 2 (or 3)821310242_DACF15S-11-275" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310244_DACF15S-31-275_pic.png", caption: "AC POWER _Type 2 (or 3)821310244_DACF15S-31-275" },
-          { image: "/Images/Citel/AC DC POWER SPD/AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440_pic.png", caption: "AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER TYPE 1+2+3-13VGS-31-275_pic.webp", caption: "AC POWER TYPE 1+2+3-13VGS-31-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 (or 3)_DACF15S-10_275_pic.webp", caption: "AC POWER Type 2 (or 3)_DACF15S-10_275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-10-320_pic.webp", caption: "AC POWER Type 2 AC_DAC50S-10-320" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER Type 2 AC_DAC50S-11-275_pic.webp", caption: "AC POWER Type 2 AC_DAC50S-11-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC.webp", caption: "AC POWER _Type 1 + 2+3 AC_DACN1-25CVGS-31-320-SC" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 1+2+3 2756_DS254VG-300-G_pic.webp", caption: "AC POWER _Type 1+2+3 2756_DS254VG-300-G" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310242_DACF15S-11-275__pic.webp", caption: "AC POWER _Type 2 (or 3)821310242_DACF15S-11-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER _Type 2 (or 3)821310244_DACF15S-31-275_pic.webp", caption: "AC POWER _Type 2 (or 3)821310244_DACF15S-31-275" },
+          { image: "/Images/Citel/AC DC POWER SPD/AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440_pic.webp", caption: "AC POWER-Type 1 + 2 AC  _DAC1-13S-40-440" },
           { image: "/Images/Citel/AC DC POWER SPD/DC POWER _70124042_DDCN03S-21YG-30.webp", caption: "DC POWER _70124042_DDCN03S-21YG-30" },
-          { image: "/Images/Citel/AC DC POWER SPD/DC POWER _828511563_DDC50S-21Y-1200.png", caption: "DC POWER _828511563_DDC50S-21Y-1200" },
+          { image: "/Images/Citel/AC DC POWER SPD/DC POWER _828511563_DDC50S-21Y-1200.webp", caption: "DC POWER _828511563_DDC50S-21Y-1200" },
           { image: "/Images/Citel/AC DC POWER SPD/DC POWER _DDC20CS-20-24.webp", caption: "DC POWER _DDC20CS-20-24" }
         ]
       },
@@ -152,58 +152,58 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         name: "Photovoltaic",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l3-12h14l-3 12H3z" /><path d="M6 15h13.5" /><path d="M9 9l-2 12" /><path d="M15 9l-2 12" /></svg>,
         products: [
-          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200-Kamera+Kopie.png", caption: "PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200" },
-          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2 DS50PVS-1000.png", caption: "PHOTOVOLTAIC _Type 2 DS50PVS-1000" },
-          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200_pic.png", caption: "PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200" },
-          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51-pic.png", caption: "PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51" }
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200-Kamera+Kopie.webp", caption: "PHOTOVOLTAIC _ DPVN1-6CVGS-21Y-1200" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2 DS50PVS-1000.webp", caption: "PHOTOVOLTAIC _Type 2 DS50PVS-1000" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200_pic.webp", caption: "PHOTOVOLTAIC _Type 2+3_DPVN40CVGS-21Y-1200" },
+          { image: "/Images/Citel/PHOTOVOLTAIC/PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51-pic.webp", caption: "PHOTOVOLTAIC_Type 1+2_DS60VGPV-1000-G-51" }
         ]
       },
       {
         name: "LED",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6" /><path d="M10 22h4" /><path d="M12 2v1" /><path d="M5.6 5.6l.7.7" /><path d="M18.4 5.6l-.7.7" /><path d="M12 7a5 5 0 1 0 5 5c0 1.5-1.5 3-1.5 6h-7C8.5 15 7 13.5 7 12a5 5 0 0 1 5-5z" /></svg>,
         products: [
-          { image: "/Images/Citel/LED/LED Type 2 (or 3)_MLPC1-230L-R_pic.png", caption: "LED Type 2 (or 3)_MLPC1-230L-R" },
-          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _MLPX1-230L-W_pic.png", caption: "LED _STANDARD SURGE PROTECTION _MLPX1-230L-W" },
-          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R_pic.png", caption: "LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R" }
+          { image: "/Images/Citel/LED/LED Type 2 (or 3)_MLPC1-230L-R_pic.webp", caption: "LED Type 2 (or 3)_MLPC1-230L-R" },
+          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _MLPX1-230L-W_pic.webp", caption: "LED _STANDARD SURGE PROTECTION _MLPX1-230L-W" },
+          { image: "/Images/Citel/LED/LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R_pic.webp", caption: "LED _STANDARD SURGE PROTECTION _Type 2 (or 3)_MLPM1-230L-R" }
         ]
       },
       {
         name: "Telecom",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>,
         products: [
-          { image: "/Images/Citel/TELECOM/TELECOM _DIN RAIL _ 640211_DLA2-12D3_pic.png", caption: "TELECOM _DIN RAIL _ 640211_DLA2-12D3" },
-          { image: "/Images/Citel/TELECOM/TELECOM_DIN RAIL _DLA-24D3_pic.png", caption: "TELECOM_DIN RAIL _DLA-24D3" }
+          { image: "/Images/Citel/TELECOM/TELECOM _DIN RAIL _ 640211_DLA2-12D3_pic.webp", caption: "TELECOM _DIN RAIL _ 640211_DLA2-12D3" },
+          { image: "/Images/Citel/TELECOM/TELECOM_DIN RAIL _DLA-24D3_pic.webp", caption: "TELECOM_DIN RAIL _DLA-24D3" }
         ]
       },
       {
         name: "Dataline",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="6" rx="2" ry="2" /><rect x="2" y="9" width="20" height="6" rx="2" ry="2" /><rect x="2" y="16" width="20" height="6" rx="2" ry="2" /><path d="M6 5h.01M6 12h.01M6 19h.01" /></svg>,
         products: [
-          { image: "/Images/Citel/DATALINE/DATALINE  SPD -CRMJ8-POE-C6A.png", caption: "DATALINE  SPD -CRMJ8-POE-C6A" },
-          { image: "/Images/Citel/DATALINE/DATALINE SPD_CXC06_pic.png", caption: "DATALINE SPD_CXC06" },
-          { image: "/Images/Citel/DATALINE/DATALINE _CWMJ8-POE-C6A_pic.png", caption: "DATALINE _CWMJ8-POE-C6A" },
-          { image: "/Images/Citel/DATALINE/DATALINE_MJ8-POE.png", caption: "DATALINE_MJ8-POE" }
+          { image: "/Images/Citel/DATALINE/DATALINE  SPD -CRMJ8-POE-C6A.webp", caption: "DATALINE  SPD -CRMJ8-POE-C6A" },
+          { image: "/Images/Citel/DATALINE/DATALINE SPD_CXC06_pic.webp", caption: "DATALINE SPD_CXC06" },
+          { image: "/Images/Citel/DATALINE/DATALINE _CWMJ8-POE-C6A_pic.webp", caption: "DATALINE _CWMJ8-POE-C6A" },
+          { image: "/Images/Citel/DATALINE/DATALINE_MJ8-POE.webp", caption: "DATALINE_MJ8-POE" }
         ]
       },
       {
         name: "Radiocom",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12 A10 10 0 0 1 22 12" /><path d="M6 12 A6 6 0 0 1 18 12" /><path d="M10 12 A2 2 0 0 1 14 12" /><path d="M12 12 L12 22" /><path d="M10 22 L14 22" /></svg>,
         products: [
-          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/RADIOCOMMUNICATION_60014_P8AX25-N-FF_pic.png", caption: "RADIOCOMMUNICATION_60014_P8AX25-N-FF" }
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/RADIOCOMMUNICATION_60014_P8AX25-N-FF_pic.webp", caption: "RADIOCOMMUNICATION_60014_P8AX25-N-FF" }
         ]
       },
       {
         name: "Wind Turbine",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12v10" /><path d="M9 22h6" /><path d="M12 12L12 2" /><path d="M12 12L3.3 17" /><path d="M12 12L20.7 17" /><circle cx="12" cy="12" r="2" /></svg>,
         products: [
-          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/WIND TURBINE SPD_DS44S-280-G_pic.png", caption: "WIND TURBINE SPD_DS44S-280-G" }
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/WIND TURBINE SPD_DS44S-280-G_pic.webp", caption: "WIND TURBINE SPD_DS44S-280-G" }
         ]
       },
       {
         name: "Accessories",
         icon: <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><path d="M12 11v6" /><path d="M9 14h6" /></svg>,
         products: [
-          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/ACCESSORIES _790121_LSC_A.png", caption: "ACCESSORIES _790121_LSC_A" }
+          { image: "/Images/Citel/ACCESSORIES & OTHER PRODUCTS/ACCESSORIES _790121_LSC_A.webp", caption: "ACCESSORIES _790121_LSC_A" }
         ]
       }
     ],
@@ -221,14 +221,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-conductive earthing accessories, copper tapes, and premium grounding conductors certified to absolute international standards.",
     website: "https://pittas.gr/en/",
     productRange: [
-      { image: "/Images/pittas/Tape Conductor hot dip galvanized steel.png", caption: "Tape conductor hot dip galvanized steel (St/tZn)" },
-      { image: "/Images/pittas/Connectors,clamps,fasteners in various materials .png", caption: "Connectors/clamps/fasteners in various materials (St/tZn, Cu, Cu/eSn, Stainless Steel) and sizes" },
+      { image: "/Images/pittas/Tape Conductor hot dip galvanized steel.webp", caption: "Tape conductor hot dip galvanized steel (St/tZn)" },
+      { image: "/Images/pittas/Connectors,clamps,fasteners in various materials .webp", caption: "Connectors/clamps/fasteners in various materials (St/tZn, Cu, Cu/eSn, Stainless Steel) and sizes" },
       { image: "/Images/pittas/Lightning conductor E.S.E. TESLA-S.jpg", caption: "Lightning conductor E.S.E. TESLA-S" },
       { image: "/Images/pittas/DSC_5628cx .jpg", caption: "" },
-      { image: "/Images/pittas/Screenshot from 2026-05-18 12-54-44.png", caption: "" }
+      { image: "/Images/pittas/Screenshot from 2026-05-18 12-54-44.webp", caption: "" }
     ],
     certifiedLogos: [
-      "/Images/Certificates/taqa group.png"
+      "/Images/Certificates/taqa group.webp"
     ],
     aboutP1: "PITTAS-DRAGNIS is a highly specialized Greek company operating for more than 30 years in the field of Lightning - Surge Protection and Grounding Systems. For every project, regardless its size, offers a quality, personalized solution. From the design and manufacturing parts to proper installation and maintenance.",
     aboutP2: "The aim of PITTAS-DRAGNIS is the excellent cooperation and the establishment of a trust relationship with their customers. The instructed staff of the company is always ready to offer support and valid information. The high quality - competitive products that offered comply with the International, European and National standards. The range of products continues to expand and includes, among others: Early Streamer Emission arrestors TESLA-S, materials and accessories of lightning - grounding system.",
@@ -243,12 +243,12 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     website: "https://www.palazzoli.com/en/",
     productRange: [
       // Lighting
-      { image: "/Images/palazolli/Lighting/IMG_3326.png", caption: "Industrial LED Lighting" },
-      { image: "/Images/palazolli/Lighting/META Lighting.png", caption: "META Lighting" },
-      { image: "/Images/palazolli/Lighting/Rino lighting.png", caption: "Rino Lighting" },
-      { image: "/Images/palazolli/Lighting/Tigua.png", caption: "Tigua" },
-      { image: "/Images/palazolli/Lighting/Tigua_led.png", caption: "Tigua LED" },
-      { image: "/Images/palazolli/Lighting/X-Tigua.png", caption: "X-Tigua" },
+      { image: "/Images/palazolli/Lighting/IMG_3326.webp", caption: "Industrial LED Lighting" },
+      { image: "/Images/palazolli/Lighting/META Lighting.webp", caption: "META Lighting" },
+      { image: "/Images/palazolli/Lighting/Rino lighting.webp", caption: "Rino Lighting" },
+      { image: "/Images/palazolli/Lighting/Tigua.webp", caption: "Tigua" },
+      { image: "/Images/palazolli/Lighting/Tigua_led.webp", caption: "Tigua LED" },
+      { image: "/Images/palazolli/Lighting/X-Tigua.webp", caption: "X-Tigua" },
       { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_suspension.jpg", caption: "X-Tigua Floodlight Suspension" },
       { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_tunnel.jpg", caption: "X-Tigua Floodlight Tunnel" },
       { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_wall_mounted.jpg", caption: "X-Tigua Floodlight Wall Mounted" }
@@ -342,14 +342,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
           { image: "/Images/OBO/fastening clip.jpg", caption: "fastening clip" },
           { image: "/Images/OBO/grip collection clamp.jpg", caption: "grip collection clamp" },
           { image: "/Images/OBO/injection anchor.jpg", caption: "injection anchor" },
-          { image: "/Images/OBO/junction_boxes.png", caption: "junction boxes" },
+          { image: "/Images/OBO/junction_boxes.webp", caption: "junction boxes" },
           { image: "/Images/OBO/nail finishing.jpg", caption: "nail finishing" },
           { image: "/Images/OBO/quick clip.jpg", caption: "quick clip" },
           { image: "/Images/OBO/screwless terminal .jpg", caption: "screwless terminal" },
           { image: "/Images/OBO/single push fit.jpg", caption: "single push fit" },
           { image: "/Images/OBO/surface mounted housing.jpg", caption: "surface mounted housing" },
-          { image: "/Images/OBO/u_clamps.png", caption: "u clamps" },
-          { image: "/Images/OBO/wall_brackets.png", caption: "wall brackets" }
+          { image: "/Images/OBO/u_clamps.webp", caption: "u clamps" },
+          { image: "/Images/OBO/wall_brackets.webp", caption: "wall brackets" }
         ]
       }
     ],
@@ -373,18 +373,18 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         name: "Accessories",
         thumbnail: "/Images/Obsta/ACCESSORIES/ACCESSORIES THUMBNAIL.jpg",
         products: [
-          { image: "/Images/Obsta/ACCESSORIES/113625LA.png", caption: "113625LA" },
-          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES - 114803-SITE MONITORING.png", caption: "114803-SITE MONITORING" },
-          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-113176 MONITORING & CONTROL BOX.png", caption: "113176 MONITORING & CONTROL BOX" },
-          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-PHOTOCELL.png", caption: "PHOTOCELL" },
-          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-POWER SUPPLY CABINET -114100.png", caption: "POWER SUPPLY CABINET -114100" }
+          { image: "/Images/Obsta/ACCESSORIES/113625LA.webp", caption: "113625LA" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES - 114803-SITE MONITORING.webp", caption: "114803-SITE MONITORING" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-113176 MONITORING & CONTROL BOX.webp", caption: "113176 MONITORING & CONTROL BOX" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-PHOTOCELL.webp", caption: "PHOTOCELL" },
+          { image: "/Images/Obsta/ACCESSORIES/ACCESSORIES-POWER SUPPLY CABINET -114100.webp", caption: "POWER SUPPLY CABINET -114100" }
         ]
       },
       {
         name: "Conductor Warning Light",
         thumbnail: "/Images/Obsta/CONDUCTOR WARNING LIGHT/THUMBNAIL.jpg",
         products: [
-          { image: "/Images/Obsta/CONDUCTOR WARNING LIGHT/BALISOR LAMP.png", caption: "BALISOR LAMP" },
+          { image: "/Images/Obsta/CONDUCTOR WARNING LIGHT/BALISOR LAMP.webp", caption: "BALISOR LAMP" },
           { image: "/Images/Obsta/CONDUCTOR WARNING LIGHT/BALISOR LED SYSTEM _HV LITE 15-114600_redlight.webp", caption: "BALISOR LED SYSTEM HV LITE 15-114600 redlight" }
         ]
       },
@@ -395,7 +395,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
           { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -113780U_L-856.webp", caption: "113780U L-856" },
           { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -TYPE  B-113780B.webp", caption: "TYPE B-113780B" },
           { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY -TYPE A-113780B.webp", caption: "TYPE A-113780B" },
-          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY _114601.png", caption: "114601" }
+          { image: "/Images/Obsta/HIGH INTENSITY/HIGH INTENSITY _114601.webp", caption: "114601" }
         ]
       },
       {
@@ -410,23 +410,23 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         name: "Low Intensity",
         thumbnail: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY _THUMBNAIL IMAGE.jpg",
         products: [
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY -NAVILITE-113908-KIT.png", caption: "NAVILITE-113908-KIT" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY NAVILITE-IR-FAA-KIT.png", caption: "NAVILITE-IR-FAA-KIT" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY _ 113905_cable-Red fixed low intensity type A and B.png", caption: "113905 cable-Red fixed low intensity type A and B" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-113969 (1).png", caption: "113969" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-Monitoring box-113912.png", caption: "Monitoring box-113912" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-F-120-240V-DUAL.png", caption: "NAVILITE-F-120-240V-DUAL" },
-          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-IR-048V-DUAL.png", caption: "NAVILITE-IR-048V-DUAL" }
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY -NAVILITE-113908-KIT.webp", caption: "NAVILITE-113908-KIT" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY NAVILITE-IR-FAA-KIT.webp", caption: "NAVILITE-IR-FAA-KIT" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY _ 113905_cable-Red fixed low intensity type A and B.webp", caption: "113905 cable-Red fixed low intensity type A and B" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-113969 (1).webp", caption: "113969" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-Monitoring box-113912.webp", caption: "Monitoring box-113912" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-F-120-240V-DUAL.webp", caption: "NAVILITE-F-120-240V-DUAL" },
+          { image: "/Images/Obsta/LOW INTENSITY/LOW INTENSITY-NAVILITE-IR-048V-DUAL.webp", caption: "NAVILITE-IR-048V-DUAL" }
         ]
       },
       {
         name: "Medium Intensity",
         thumbnail: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY _THUMBNAIL IMAGE.jpg",
         products: [
-          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY _ OFC-Red medium intensity.png", caption: "OFC-Red medium intensity" },
-          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_180°_1.png", caption: "Balise 180° 1" },
-          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_Integrée.png", caption: "Balise Integrée" },
-          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Dual color medium intensity NVG compatible - OFD.png", caption: "Dual color medium intensity NVG compatible - OFD" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY _ OFC-Red medium intensity.webp", caption: "OFC-Red medium intensity" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_180°_1.webp", caption: "Balise 180° 1" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Balise_Integrée.webp", caption: "Balise Integrée" },
+          { image: "/Images/Obsta/MEDIUM INTENSITY/MEDIUM INTENSITY-Dual color medium intensity NVG compatible - OFD.webp", caption: "Dual color medium intensity NVG compatible - OFD" },
           { image: "/Images/Obsta/MEDIUM INTENSITY/OBSTAFLASH120 ou 180 dual color medium intensity-113747JB.webp", caption: "OBSTAFLASH120 ou 180 dual color medium intensity-113747JB" },
           { image: "/Images/Obsta/MEDIUM INTENSITY/OFP-180-RW-JB-113738.webp", caption: "OFP-180-RW-JB-113738" }
         ]
@@ -501,37 +501,37 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "ATEX - EXPLOSION PROOF PLUGS & SOCKET RANGE",
         products: [
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/BOXES AND CABLE GLANDS.png", caption: "Boxes and Cable Glands", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/INTERLOCKED SOCKET OUTLET.png", caption: "Interlocked Socket Outlet", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/MOBILE PLUGS.png", caption: "Mobile Plugs", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/RESTRICTED BREATHING EQUIPMENT.png", caption: "Restricted Breathing Equipment", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/SMALL CONTROL AND SIGNALLING DEVICES.png", caption: "Small Control And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" }
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/BOXES AND CABLE GLANDS.webp", caption: "Boxes and Cable Glands", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/INTERLOCKED SOCKET OUTLET.webp", caption: "Interlocked Socket Outlet", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/MOBILE PLUGS.webp", caption: "Mobile Plugs", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/RESTRICTED BREATHING EQUIPMENT.webp", caption: "Restricted Breathing Equipment", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/SMALL CONTROL AND SIGNALLING DEVICES.webp", caption: "Small Control And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" }
         ]
       },
       {
         name: "INDUSTRY",
         products: [
-          { image: "/Images/PalazolliLewden/INDUSTRY/BOARDS & BOXES.png", caption: "Boards & Boxes", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/CONTROL AND PROTECTION.png", caption: "Control And Protection", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/INTERLOCKED SOCKET OUTLETS.png", caption: "Interlocked Socket Outlets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/PLUGS & SOCKETS.png", caption: "Plugs & Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/PRE WIRED BOARDS FOR STANDARD AND HEAVY DUTY APPLICATIONS.png", caption: "Pre Wired Boards For Standard And Heavy Duty Applications", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" }
+          { image: "/Images/PalazolliLewden/INDUSTRY/BOARDS & BOXES.webp", caption: "Boards & Boxes", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/CONTROL AND PROTECTION.webp", caption: "Control And Protection", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/INTERLOCKED SOCKET OUTLETS.webp", caption: "Interlocked Socket Outlets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/PLUGS & SOCKETS.webp", caption: "Plugs & Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/PalazolliLewden/INDUSTRY/PRE WIRED BOARDS FOR STANDARD AND HEAVY DUTY APPLICATIONS.webp", caption: "Pre Wired Boards For Standard And Heavy Duty Applications", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" }
         ]
       },
       {
         name: "INFRASTRUCTURE",
         products: [
-          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/LIGHTING SIGN SYSTEMS.png", caption: "Lighting Sign Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" },
-          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/VENTILATION SYSTEMS.png", caption: "Ventilation Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" }
+          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/LIGHTING SIGN SYSTEMS.webp", caption: "Lighting Sign Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" },
+          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/VENTILATION SYSTEMS.webp", caption: "Ventilation Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" }
         ]
       },
       {
         name: "MARINE",
         products: [
-          { image: "/Images/PalazolliLewden/MARINE/CONTAINER SOCKETS.png", caption: "Container Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/DISTRIBUTION TURRETS.png", caption: "Distribution Turrets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/ON BOARD SHIP CONTROL WITHDRAWAL AND SIGNALLING DEVICES.png", caption: "On Board Ship Control Withdrawal And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/UNAV CONTROL WITHDRAWAL AND SIGNALLING DEVICE.png", caption: "Unav Control Withdrawal And Signalling Device", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" }
+          { image: "/Images/PalazolliLewden/MARINE/CONTAINER SOCKETS.webp", caption: "Container Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/DISTRIBUTION TURRETS.webp", caption: "Distribution Turrets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/ON BOARD SHIP CONTROL WITHDRAWAL AND SIGNALLING DEVICES.webp", caption: "On Board Ship Control Withdrawal And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/PalazolliLewden/MARINE/UNAV CONTROL WITHDRAWAL AND SIGNALLING DEVICE.webp", caption: "Unav Control Withdrawal And Signalling Device", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" }
         ]
       }
     ],
@@ -631,11 +631,11 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-efficiency LED panel lights, linear systems, highbay fixtures, and weatherproof luminaires engineered for premium building and industrial specifications.",
     website: "https://fraterlighting.com",
     productRange: [
-      { image: "/Images/frater/Ceiling lights.png", caption: "Ceiling Lights" },
-      { image: "/Images/frater/Highbay lights.png", caption: "Highbay Lights" },
-      { image: "/Images/frater/Linear lights.png", caption: "Linear Lights" },
-      { image: "/Images/frater/Panel Lights.png", caption: "Panel Lights" },
-      { image: "/Images/frater/weatherproff lights.png", caption: "Weatherproof Lights" }
+      { image: "/Images/frater/Ceiling lights.webp", caption: "Ceiling Lights" },
+      { image: "/Images/frater/Highbay lights.webp", caption: "Highbay Lights" },
+      { image: "/Images/frater/Linear lights.webp", caption: "Linear Lights" },
+      { image: "/Images/frater/Panel Lights.webp", caption: "Panel Lights" },
+      { image: "/Images/frater/weatherproff lights.webp", caption: "Weatherproof Lights" }
     ],
     certifiedLogos: [
     ],
@@ -691,32 +691,32 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Precision-engineered safety testing equipment, high voltage probes, and robust dielectric test systems for industrial electrical verification.",
     website: "https://hvti.in/",
     productRange: [
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/Accessories for Voltage detector.png", caption: "Accessories for Voltage detector" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/Accessories for Voltage detector.webp", caption: "Accessories for Voltage detector" },
       { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/HV detector HOTSTICK operation-Photoroom.jpg", caption: "HV detector HOTSTICK operation-Photoroom" },
       { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/HV detector Hand operation-Photoroom.jpg", caption: "HV detector Hand operation-Photoroom" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/High Voltage live line Detectors.png", caption: "High Voltage live line Detectors" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/AE-150 Partial Discharge Pinpointing System for Large Transformers.png", caption: "AE-150 Partial Discharge Pinpointing System for Large Transformers" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Automatic Transformers Turns radio Testers.png", caption: "Automatic Transformers Turns radio Testers" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Current Transformers Testers.png", caption: "Current Transformers Testers" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/D-300 Mid Range Infrared Camera.png", caption: "D-300 Mid Range Infrared Camera" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/D600 - Advanced Level Infrared Camera.png", caption: "D600 - Advanced Level Infrared Camera" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/G-96 Professional Infrared Camers.png", caption: "G-96 Professional Infrared Camers" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Helmet Mounted Voltage Detector.png", caption: "Helmet Mounted Voltage Detector" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/High Voltage AC Testing Kits.png", caption: "High Voltage AC Testing Kits" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/High Voltage Dc Testing Kits.png", caption: "High Voltage Dc Testing Kits" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM100.png", caption: "Micro Ohm Meter MM100" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM200.png", caption: "Micro Ohm Meter MM200" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM600.png", caption: "Micro Ohm Meter MM600" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/PD Annuciator.png", caption: "PD Annuciator" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/PK80 - Entry Level Infrared Camera.png", caption: "PK80 - Entry Level Infrared Camera" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Portable Partial Discharge Detector.png", caption: "Portable Partial Discharge Detector" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Primary Current Injection Testing sets.png", caption: "Primary Current Injection Testing sets" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/SA-100 Series Advanced Circuit Breaker Analyser .png", caption: "SA-100 Series Advanced Circuit Breaker Analyser " },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Secondary Current Injecting Testing sets.png", caption: "Secondary Current Injecting Testing sets" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Test bench.png", caption: "Test bench" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Ultrasonic Corona And Arching Detector .png", caption: "Ultrasonic Corona And Arching Detector " },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/V Series- SF6 Gas Leakage Detection camera.png", caption: "V Series- SF6 Gas Leakage Detection camera" },
-      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Vaccum circuit Breaker Bottle test Sets.png", caption: "Vaccum circuit Breaker Bottle test Sets" }
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Hand Held High Voltage detector high qulaity pictures/High Voltage live line Detectors.webp", caption: "High Voltage live line Detectors" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/AE-150 Partial Discharge Pinpointing System for Large Transformers.webp", caption: "AE-150 Partial Discharge Pinpointing System for Large Transformers" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Automatic Transformers Turns radio Testers.webp", caption: "Automatic Transformers Turns radio Testers" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Current Transformers Testers.webp", caption: "Current Transformers Testers" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/D-300 Mid Range Infrared Camera.webp", caption: "D-300 Mid Range Infrared Camera" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/D600 - Advanced Level Infrared Camera.webp", caption: "D600 - Advanced Level Infrared Camera" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/G-96 Professional Infrared Camers.webp", caption: "G-96 Professional Infrared Camers" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Helmet Mounted Voltage Detector.webp", caption: "Helmet Mounted Voltage Detector" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/High Voltage AC Testing Kits.webp", caption: "High Voltage AC Testing Kits" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/High Voltage Dc Testing Kits.webp", caption: "High Voltage Dc Testing Kits" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM100.webp", caption: "Micro Ohm Meter MM100" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM200.webp", caption: "Micro Ohm Meter MM200" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Micro Ohm Meter MM600.webp", caption: "Micro Ohm Meter MM600" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/PD Annuciator.webp", caption: "PD Annuciator" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/PK80 - Entry Level Infrared Camera.webp", caption: "PK80 - Entry Level Infrared Camera" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Portable Partial Discharge Detector.webp", caption: "Portable Partial Discharge Detector" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Primary Current Injection Testing sets.webp", caption: "Primary Current Injection Testing sets" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/SA-100 Series Advanced Circuit Breaker Analyser .webp", caption: "SA-100 Series Advanced Circuit Breaker Analyser " },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Secondary Current Injecting Testing sets.webp", caption: "Secondary Current Injecting Testing sets" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Test bench.webp", caption: "Test bench" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Ultrasonic Corona And Arching Detector .webp", caption: "Ultrasonic Corona And Arching Detector " },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/V Series- SF6 Gas Leakage Detection camera.webp", caption: "V Series- SF6 Gas Leakage Detection camera" },
+      { image: "/Images/HVTI/Product Pictures-20260416T072240Z-3-001/Product Pictures/Labeled Product Catalogues/Vaccum circuit Breaker Bottle test Sets.webp", caption: "Vaccum circuit Breaker Bottle test Sets" }
     ],
     certifiedLogos: [
     ],
@@ -737,7 +737,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       {
         name: "TS4 Flex MLPE",
         products: [
-          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-O.png", caption: "TS4-X-O" },
+          { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-O.webp", caption: "TS4-X-O" },
           { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-S.avif", caption: "TS4-X-S" },
           { image: "/Images/TIGO/TS4 Flex MLPE/TS4-X-F.avif", caption: "TS4-X-F" },
           { image: "/Images/TIGO/TS4 Flex MLPE/TS4-A-O (725W).avif", caption: "TS4-A-O (725W)" },
@@ -785,45 +785,45 @@ const BRAND_DATABASE: Record<string, BrandData> = {
         name: "F400",
         catalogue: "/Images/Craig and Derricott/F400/F400 Fire Rated Datasheet 2023 v12.pdf",
         products: [
-          { image: "/Images/Craig and Derricott/F400/THUMBNAIL IMAGE _ F400 Fire Rated Switchgear-Die Cast- Sheet Steel Enclosures.png", caption: "F400 Series Overview" },
-          { image: "/Images/Craig and Derricott/F400/F400 125A Fire Rated Enclosed Assembly.png", caption: "F400 125A Fire Rated Enclosed Assembly" },
-          { image: "/Images/Craig and Derricott/F400/F400 20-25-32-40A 2P-3P-4P Fire Rated Enclosure.png", caption: "F400 20-25-32-40A Fire Rated Enclosure" }
+          { image: "/Images/Craig and Derricott/F400/THUMBNAIL IMAGE _ F400 Fire Rated Switchgear-Die Cast- Sheet Steel Enclosures.webp", caption: "F400 Series Overview" },
+          { image: "/Images/Craig and Derricott/F400/F400 125A Fire Rated Enclosed Assembly.webp", caption: "F400 125A Fire Rated Enclosed Assembly" },
+          { image: "/Images/Craig and Derricott/F400/F400 20-25-32-40A 2P-3P-4P Fire Rated Enclosure.webp", caption: "F400 20-25-32-40A Fire Rated Enclosure" }
         ]
       },
       {
         name: "EDG",
         catalogue: "/Images/Craig and Derricott/EDG/EDG Sheet Steel Hinged Door Range 2023 v14.pdf",
         products: [
-          { image: "/Images/Craig and Derricott/EDG/Thumbnail Image _EDG 32-1000A Sheet Steel Hinged Door Range.png", caption: "EDG Series Overview" },
-          { image: "/Images/Craig and Derricott/EDG/EDG 32A-80A.png", caption: "EDG 32A-80A" },
-          { image: "/Images/Craig and Derricott/EDG/EDG 630A-1000A.png", caption: "EDG 630A-1000A" }
+          { image: "/Images/Craig and Derricott/EDG/Thumbnail Image _EDG 32-1000A Sheet Steel Hinged Door Range.webp", caption: "EDG Series Overview" },
+          { image: "/Images/Craig and Derricott/EDG/EDG 32A-80A.webp", caption: "EDG 32A-80A" },
+          { image: "/Images/Craig and Derricott/EDG/EDG 630A-1000A.webp", caption: "EDG 630A-1000A" }
         ]
       },
       {
         name: "Flush Mount & Stainless Steel Range",
         catalogue: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/Stainless Steel SDS Range 2021 v3.pdf",
         products: [
-          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/THUMBNAIL _ MERGE _Stainless Steel Enclosures.png", caption: "Stainless Steel Enclosures Overview" },
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/THUMBNAIL _ MERGE _Stainless Steel Enclosures.webp", caption: "Stainless Steel Enclosures Overview" },
           { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/Flush Mounting.jpg", caption: "Flush Mounting" },
-          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/SDFLL80.447.png", caption: "SDFLL80.447" },
-          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/stainless steel enc b.png", caption: "Stainless Steel Enclosure" }
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/SDFLL80.447.webp", caption: "SDFLL80.447" },
+          { image: "/Images/Craig and Derricott/Flush Mount+  Stainless Steel Range/stainless steel enc b.webp", caption: "Stainless Steel Enclosure" }
         ]
       },
       {
         name: "EDDKG",
         catalogue: "/Images/Craig and Derricott/EDDKG/EDDKG Series Range 2026 V1.pdf",
         products: [
-          { image: "/Images/Craig and Derricott/EDDKG/Thumbnail Image_ EDDKG Series Range Die-Cast Aluminium 20A-100A.png", caption: "EDDKG Series Overview" },
-          { image: "/Images/Craig and Derricott/EDDKG/EDDKG2.png", caption: "EDDKG2" }
+          { image: "/Images/Craig and Derricott/EDDKG/Thumbnail Image_ EDDKG Series Range Die-Cast Aluminium 20A-100A.webp", caption: "EDDKG Series Overview" },
+          { image: "/Images/Craig and Derricott/EDDKG/EDDKG2.webp", caption: "EDDKG2" }
         ]
       },
       {
         name: "EDMP",
         catalogue: "/Images/Craig and Derricott/EDMP/EDMP Range 2025.pdf",
         products: [
-          { image: "/Images/Craig and Derricott/EDMP/Thumbnail Image__EDMP 4P -25A to 100A Moulded Plastic Enclosed Isolators.png", caption: "EDMP Series Overview" },
-          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 1 LHS.558.png", caption: "EDMP Size 1 LHS" },
-          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 2 LHS.559.png", caption: "EDMP Size 2 LHS" }
+          { image: "/Images/Craig and Derricott/EDMP/Thumbnail Image__EDMP 4P -25A to 100A Moulded Plastic Enclosed Isolators.webp", caption: "EDMP Series Overview" },
+          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 1 LHS.558.webp", caption: "EDMP Size 1 LHS" },
+          { image: "/Images/Craig and Derricott/EDMP/EDMP Size 2 LHS.559.webp", caption: "EDMP Size 2 LHS" }
         ]
       }
     ],
@@ -841,9 +841,9 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Robust metallic cable management systems, heavy-duty ladders, and integrated structural supports for intense industrial environments.",
     website: "https://www.wallmax.it/applications/maritime-offshore/",
     productRange: [
-      { image: "/Images/Wallmax/Modules.png", caption: "Modules" },
-      { image: "/Images/Wallmax/Round Frames.png", caption: "Round Frames" },
-      { image: "/Images/Wallmax/Wm Mini Top and Back Frames.png", caption: "Wm Mini Top and Back Frames" }
+      { image: "/Images/Wallmax/Modules.webp", caption: "Modules" },
+      { image: "/Images/Wallmax/Round Frames.webp", caption: "Round Frames" },
+      { image: "/Images/Wallmax/Wm Mini Top and Back Frames.webp", caption: "Wm Mini Top and Back Frames" }
     ],
     certifiedLogos: [
     ],
@@ -860,7 +860,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     website: "https://www.tubifor.it/",
     productRange: [
       {
-        image: "/Images/Tubifor/Product.png",
+        image: "/Images/Tubifor/Product.webp",
         caption: "Product",
         link: "https://www.tubifor.it/prodottiDett.asp?id=115"
       }
@@ -939,8 +939,8 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Durable EMT conduits, galvanized steel pipings, and robust structural fittings for unyielding cable protection.",
     website: "https://emiuae.ae/",
     productRange: [
-      { image: "/Images/EMI/Cable-Ladder-Fittings.png", caption: "Cable Ladder Fittings" },
-      { image: "/Images/EMI/Cable-Trunking-Fittings.png", caption: "Cable Trunking Fittings" },
+      { image: "/Images/EMI/Cable-Ladder-Fittings.webp", caption: "Cable Ladder Fittings" },
+      { image: "/Images/EMI/Cable-Trunking-Fittings.webp", caption: "Cable Trunking Fittings" },
       { image: "/Images/EMI/cable-trays-Fitting-.jpg", caption: "Cable Trays Fitting" }
     ],
     certifiedLogos: [
@@ -958,17 +958,17 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     website: "https://shop.cosmoplast.com/",
     productRange: [
       {
-        image: "/Images/Cosmoplast/Polyethlene pipeline.png",
+        image: "/Images/Cosmoplast/Polyethlene pipeline.webp",
         caption: "PE Polyethylene Pipes and Fittings for Water",
         download: "/Images/Cosmoplast/PE-Polyethylene-Pipes-and-Fittings-for-Water-Cosmoplast-2024-18-07-2024.pdf"
       },
       {
-        image: "/Images/Cosmoplast/uPVC pipes .png",
+        image: "/Images/Cosmoplast/uPVC pipes .webp",
         caption: "uPVC Pressure Pipes and Fittings",
         download: "/Images/Cosmoplast/UPVC-Pressure-Pipes-and-Fittings-Cosmoplast-18-07-2024.pdf"
       },
       {
-        image: "/Images/Cosmoplast/uPVC WELL Casing.png",
+        image: "/Images/Cosmoplast/uPVC WELL Casing.webp",
         caption: "uPVC Well Casing",
         download: "/Images/Cosmoplast/Well_Casing2016-16-04-2016.pdf"
       }
@@ -987,14 +987,14 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-quality armoured and unarmoured cable glands designed for diverse and demanding global environments.",
     website: "https://www.ccgcablegland.co.za/",
     productRange: [
-      { image: "/Images/ccg/industrial cable glands .png", caption: "industrial cable glands .png" },
+      { image: "/Images/ccg/industrial cable glands .webp", caption: "industrial cable glands .webp" },
       { image: "/Images/ccg/hazardous-area-cable-glands.jpg", caption: "hazardous-area-cable-glands.jpg" },
-      { image: "/Images/ccg/industrial junction box.png", caption: "industrial junction box.png" },
+      { image: "/Images/ccg/industrial junction box.webp", caption: "industrial junction box.webp" },
       { image: "/Images/ccg/hazardous-areas-junction-boxes.jpg", caption: "hazardous-areas-junction-boxes.jpg" },
       { image: "/Images/ccg/cable-cleats.jpg", caption: "cable-cleats.jpg" },
-      { image: "/Images/ccg/thread-converters-and-plugs.png", caption: "thread-converters-and-plugs.png" },
+      { image: "/Images/ccg/thread-converters-and-plugs.webp", caption: "thread-converters-and-plugs.webp" },
       { image: "/Images/ccg/north-american-nec-cec.jpg", caption: "north-american-nec-cec.jpg" },
-      { image: "/Images/ccg/Accessories.png", caption: "Accessories.png" }
+      { image: "/Images/ccg/Accessories.webp", caption: "Accessories.webp" }
     ],
     certifiedLogos: [
     ],
@@ -1010,17 +1010,17 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "Premium fixing, fastening and support products for electrical installation, seismic bracing, conduit and cable support, and beam clamps.",
     website: "https://www.nvent.com/en-us/caddy",
     productRange: [
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.20 PM.png", caption: "Screenshot 2026-05-19 at 3.09.20 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.26 PM.png", caption: "Screenshot 2026-05-19 at 3.09.26 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.31 PM.png", caption: "Screenshot 2026-05-19 at 3.09.31 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.41 PM.png", caption: "Screenshot 2026-05-19 at 3.09.41 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.54 PM.png", caption: "Screenshot 2026-05-19 at 3.09.54 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.15 PM.png", caption: "Screenshot 2026-05-19 at 3.10.15 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.21 PM.png", caption: "Screenshot 2026-05-19 at 3.10.21 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.51 PM.png", caption: "Screenshot 2026-05-19 at 3.10.51 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.55 PM.png", caption: "Screenshot 2026-05-19 at 3.10.55 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.17 PM.png", caption: "Screenshot 2026-05-19 at 3.11.17 PM.png" },
-      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.39 PM.png", caption: "Screenshot 2026-05-19 at 3.11.39 PM.png" }
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.20 PM.webp", caption: "Screenshot 2026-05-19 at 3.09.20 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.26 PM.webp", caption: "Screenshot 2026-05-19 at 3.09.26 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.31 PM.webp", caption: "Screenshot 2026-05-19 at 3.09.31 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.41 PM.webp", caption: "Screenshot 2026-05-19 at 3.09.41 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.09.54 PM.webp", caption: "Screenshot 2026-05-19 at 3.09.54 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.15 PM.webp", caption: "Screenshot 2026-05-19 at 3.10.15 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.21 PM.webp", caption: "Screenshot 2026-05-19 at 3.10.21 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.51 PM.webp", caption: "Screenshot 2026-05-19 at 3.10.51 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.10.55 PM.webp", caption: "Screenshot 2026-05-19 at 3.10.55 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.17 PM.webp", caption: "Screenshot 2026-05-19 at 3.11.17 PM.webp" },
+      { image: "/Images/nventcaddy/Screenshot 2026-05-19 at 3.11.39 PM.webp", caption: "Screenshot 2026-05-19 at 3.11.39 PM.webp" }
     ],
     certifiedLogos: [
     ],
@@ -1059,12 +1059,12 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     description: "High-quality industrial enclosures made of aluminium, stainless steel, polyester, and plastics for demanding environmental conditions.",
     website: "https://www.rose-systemtechnik.com/en/",
     productRange: [
-      { image: "/Images/Rose/ABS Enclosures.png", caption: "ABS Enclosures.png" },
-      { image: "/Images/Rose/Aluminium Enclosures.png", caption: "Aluminium Enclosures.png" },
-      { image: "/Images/Rose/Compact Enclosures ECO : PCI.png", caption: "Compact Enclosures ECO : PCI.png" },
-      { image: "/Images/Rose/Polycarbonate Enclosures.png", caption: "Polycarbonate Enclosures.png" },
-      { image: "/Images/Rose/Polyester Enclosures.png", caption: "Polyester Enclosures.png" },
-      { image: "/Images/Rose/Stainless Steel Enclosures.png", caption: "Stainless Steel Enclosures.png" }
+      { image: "/Images/Rose/ABS Enclosures.webp", caption: "ABS Enclosures.webp" },
+      { image: "/Images/Rose/Aluminium Enclosures.webp", caption: "Aluminium Enclosures.webp" },
+      { image: "/Images/Rose/Compact Enclosures ECO : PCI.webp", caption: "Compact Enclosures ECO : PCI.webp" },
+      { image: "/Images/Rose/Polycarbonate Enclosures.webp", caption: "Polycarbonate Enclosures.webp" },
+      { image: "/Images/Rose/Polyester Enclosures.webp", caption: "Polyester Enclosures.webp" },
+      { image: "/Images/Rose/Stainless Steel Enclosures.webp", caption: "Stainless Steel Enclosures.webp" }
     ],
     certifiedLogos: [
     ],
@@ -1306,16 +1306,16 @@ export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProp
             </button>
             <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", width: "100%", scrollSnapType: "x mandatory" }}>
               {[
-                { img: "1.Kumwell Exothermic Welding.png", doc: "1.Kumwell Exothermic Welding TEXT.docx", title: "Kumwell Exothermic Welding" },
-                { img: "2.Kumwell Grounding Components.png", doc: "2.Kumwell Grounding Components TEXT.docx", title: "Kumwell Grounding Components" },
-                { img: "3.Kumwell Isolating Spark Gap.png", doc: "3.Kumwell Isolating Spark Gap TEXT.docx", title: "Kumwell Isolating Spark Gap" },
-                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.png", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx", title: "Kumwell Static Earth Reels" },
-                { img: "5.Smart Lightning Management System (SLMS).png", doc: "5.Kumwell Smart Lightning Management System TEXT.docx", title: "Smart Lightning Management System" },
-                { img: "6.Smart Lightning Warning System (SLWS).png", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx", title: "Smart Lightning Warning System" },
-                { img: "7.Lightning Protection Components.png", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx", title: "Lightning Protection Components" },
-                { img: "AI_Poster_Air_Termination_System.png", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
-                { img: "AI_Poster_Ground_Rod.png", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
-                { img: "AI_Poster_MEG.png", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
+                { img: "1.Kumwell Exothermic Welding.webp", doc: "1.Kumwell Exothermic Welding TEXT.docx", title: "Kumwell Exothermic Welding" },
+                { img: "2.Kumwell Grounding Components.webp", doc: "2.Kumwell Grounding Components TEXT.docx", title: "Kumwell Grounding Components" },
+                { img: "3.Kumwell Isolating Spark Gap.webp", doc: "3.Kumwell Isolating Spark Gap TEXT.docx", title: "Kumwell Isolating Spark Gap" },
+                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.webp", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx", title: "Kumwell Static Earth Reels" },
+                { img: "5.Smart Lightning Management System (SLMS).webp", doc: "5.Kumwell Smart Lightning Management System TEXT.docx", title: "Smart Lightning Management System" },
+                { img: "6.Smart Lightning Warning System (SLWS).webp", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx", title: "Smart Lightning Warning System" },
+                { img: "7.Lightning Protection Components.webp", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx", title: "Lightning Protection Components" },
+                { img: "AI_Poster_Air_Termination_System.webp", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
+                { img: "AI_Poster_Ground_Rod.webp", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
+                { img: "AI_Poster_MEG.webp", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
               ].map((poster, i) => (
                 <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
                   <div style={{

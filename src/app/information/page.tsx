@@ -237,7 +237,7 @@ export default function InformationPage() {
           padding: 120px 0;
           position: relative;
           min-height: 100vh;
-          background-image: url('/Images/Certifications/bg.png');
+          background-image: url('/Images/Certifications/bg.webp');
           background-size: cover;
           background-position: center;
         }

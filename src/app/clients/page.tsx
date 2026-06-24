@@ -5,16 +5,16 @@ import Link from "next/link";
 
 export default function ClientsPage() {
   const brandLogos = [
-    "oxy.png", "danieli.png", "ega.png", "dragon oil.png",
-    "dewa.png", "sewa.png", "dpworld.png", "drydock.png",
-    "L&T.png", "Saipem.png", "petrofac.png", "technicas.png",
-    "technimont.png", "technip.png", "samsung.png", "CSCEC.png",
-    "Enppi.png", "INIMA.png", "Orascom.png", "ARCHIRODON.png",
-    "ABENGOA.jpg", "BONATTI.webp", "ROBSTONE.png", "NCC .jpg",
-    "cdcc.png", "danway.png", "descon.jpg", "galfar.png",
-    "nmdc.png", "eppm.png", "sidem.webp", "voltas.png",
-    "emirates gas.png", "port of fujarah.png", "port of salah.png",
-    "tatasteel.png", "petrojet.png", "target1.png"
+    "oxy.webp", "danieli.webp", "ega.webp", "dragon oil.webp",
+    "dewa.webp", "sewa.webp", "dpworld.webp", "drydock.webp",
+    "L&T.webp", "Saipem.webp", "petrofac.webp", "technicas.webp",
+    "technimont.webp", "technip.webp", "samsung.webp", "CSCEC.webp",
+    "Enppi.webp", "INIMA.webp", "Orascom.webp", "ARCHIRODON.webp",
+    "ABENGOA.jpg", "BONATTI.webp", "ROBSTONE.webp", "NCC .jpg",
+    "cdcc.webp", "danway.webp", "descon.jpg", "galfar.webp",
+    "nmdc.webp", "eppm.webp", "sidem.webp", "voltas.webp",
+    "emirates gas.webp", "port of fujarah.webp", "port of salah.webp",
+    "tatasteel.webp", "petrojet.webp", "target1.webp"
   ];
 
   return (
@@ -22,7 +22,7 @@ export default function ClientsPage() {
       {/* HERO SECTION */}
       <section className="clients-hero">
         <Image
-          src="/Images/image.png"
+          src="/Images/image.webp"
           alt="Client Partners Background"
           fill
           style={{ objectFit: "cover" }}

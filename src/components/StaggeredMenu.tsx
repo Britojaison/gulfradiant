@@ -44,7 +44,7 @@ export default function StaggeredMenu({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = "/Images/Brand_partners/Frame 76.png",
+  logoUrl = "/Images/Brand_partners/Frame 76.webp",
   secondaryLogoUrl,
   logoHref = "/homepage#home-hero",
   menuButtonColor = "#fff",
