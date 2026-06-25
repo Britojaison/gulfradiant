@@ -7,34 +7,47 @@ import { useRouter } from "next/navigation";
 
 const newsItems = [
   {
-    title: "Delivering Reliable Electrical Solutions Across Infrastructure & Industrial Projects",
-    meta: "Aug 10 · 6 min read",
-    image: "news1.jpg",
-    alt: "Industrial facility campus",
+    title: "The Surge Protector Solution",
+    meta: "Citel",
+    image: "/Images/Blogs/Citel Sureg.png",
+    link: "https://citel.fr/en/the-surge-protector-solution",
+    alt: "Citel Surge Protector Solution",
   },
   {
-    title: "Gulf Radiant Expands Product Portfolio",
-    meta: "Aug 10 · 5 min read",
-    image: "news2.webp",
-    alt: "Industrial product facility",
+    title: "Smart Lightning Warning System",
+    meta: "Kumwell",
+    image: "/Images/kumwell/Posters/6.Smart Lightning Warning System (SLWS).webp",
+    link: "https://www.kumwell.com/en/smart-lightning-warning-system",
+    alt: "Smart Lightning Warning System",
   },
   {
-    title: "Participation in Industry Expo 2025",
-    meta: "Aug 08 · 4 min read",
-    image: "news4.webp",
-    alt: "Port cranes and industrial infrastructure",
+    title: "Isolating Spark Gaps Importance",
+    meta: "Kumwell",
+    image: "/Images/kumwell/Posters/3.Kumwell Isolating Spark Gap.webp",
+    link: "https://www.kumwell.com/en/isolating-spark-gaps-importance",
+    alt: "Isolating Spark Gaps",
   },
   {
-    title: "Successful Supply for Infrastructure Development",
-    meta: "Aug 05 · 6 min read",
-    image: "news5.webp",
-    alt: "Industrial energy facility at sunset",
+    title: "ICAO Obstruction Lighting for Telecom, Broadcast Towers and Wind Masts",
+    meta: "OBSTA",
+    image: "/Images/Blogs/Obsta obstruction.png",
+    link: "https://obsta.com/en/icao-obstruction-lighting-for-telecom-broadcast-towers-and-wind-masts",
+    alt: "OBSTA ICAO Obstruction Lighting",
   },
   {
-    title: "New Engineering Product Solutions Introduced",
-    meta: "Aug 02 · 5 min read",
-    image: "news6.webp",
-    alt: "Urban rail infrastructure",
+    title: "NVENT ERIFLEX",
+    meta: "nVent",
+    image: "https://img.youtube.com/vi/hEKrymXJv2U/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=hEKrymXJv2U",
+    alt: "nVent ERIFLEX",
+    externalImage: true,
+  },
+  {
+    title: "Tigo Rapid Shutdown Solutions Brochure",
+    meta: "Tigo",
+    image: "/Images/Blogs/Tigo rapid shtdown.png",
+    link: "https://cdn.prod.website-files.com/5fad551d7419c7a0e9e4aba4/689f93119162791afb35668c_Tigo%20Rapid%20Shutdown%20Solutions%20Brochure-4pg_spread-MG-2025.pdf",
+    alt: "Tigo Rapid Shutdown Solutions",
   },
 ];
 
@@ -836,18 +849,46 @@ export default function Homepage() {
               </div>
             </div>
             <h2>Latest News and Updates</h2>
-            <article className="hp-news-feature-card" style={{ position: "relative" }}>
-              <Image
-                src={`/Images/our_projects/${featuredNews.image}`}
-                alt={featuredNews.alt}
-                key={featuredNews.image}
-                fill
-                sizes="(max-width: 991px) 100vw, 760px"
-                style={{ objectFit: "cover", objectPosition: "center center" }}
-              />
+            <style dangerouslySetInnerHTML={{ __html: `
+              .hp-news-feature-info {
+                background: rgba(0, 0, 0, 0.5) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+              }
+              @media (max-width: 991px) {
+                .hp-news-feature-info {
+                  left: 0 !important;
+                  right: 0 !important;
+                  bottom: 0 !important;
+                  width: 100% !important;
+                  border-radius: 0 0 16px 16px !important;
+                  padding: 16px 20px !important;
+                  height: auto !important;
+                  max-height: none !important;
+                }
+              }
+            `}} />
+            <article className="hp-news-feature-card" style={{ position: "relative", cursor: "pointer" }} onClick={() => window.open(featuredNews.link, "_blank")}>
+              {featuredNews.externalImage ? (
+                <img
+                  src={featuredNews.image}
+                  alt={featuredNews.alt}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", position: "absolute", top: 0, left: 0 }}
+                />
+              ) : (
+                <Image
+                  src={featuredNews.image.startsWith('/') ? featuredNews.image : `/Images/our_projects/${featuredNews.image}`}
+                  alt={featuredNews.alt}
+                  key={featuredNews.image}
+                  fill
+                  sizes="(max-width: 991px) 100vw, 760px"
+                  style={{ objectFit: "cover", objectPosition: "center center" }}
+                />
+              )}
               <div className="hp-news-feature-info">
-                <span className="hp-news-pill"><span></span>Industry News</span>
-                <h3>{featuredNews.title}</h3>
+                <span className="hp-news-pill"><span></span>{featuredNews.meta}</span>
+                <h3 style={{ color: "#ff5b05" }}>{featuredNews.title}</h3>
               </div>
             </article>
           </div>
@@ -857,17 +898,26 @@ export default function Homepage() {
               {latestPosts.map((post) => (
                 <div
                   className="hp-latest-item"
-                  key={post.image}
+                  key={post.title}
                   style={{ gridTemplateColumns: "180px 1fr", display: "grid", gap: "20px", cursor: "pointer" }}
+                  onClick={() => window.open(post.link, "_blank")}
                 >
-                  <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px" }}>
-                    <Image
-                      src={`/Images/our_projects/${post.image}`}
-                      alt={post.alt}
-                      fill
-                      sizes="180px"
-                      style={{ objectFit: "cover" }}
-                    />
+                  <div className="hp-latest-thumb" style={{ position: "relative", width: "180px", height: "110px", borderRadius: "12px", overflow: "hidden" }}>
+                    {post.externalImage ? (
+                      <img
+                        src={post.image}
+                        alt={post.alt}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: 0, left: 0 }}
+                      />
+                    ) : (
+                      <Image
+                        src={post.image.startsWith('/') ? post.image : `/Images/our_projects/${post.image}`}
+                        alt={post.alt}
+                        fill
+                        sizes="180px"
+                        style={{ objectFit: "cover" }}
+                      />
+                    )}
                   </div>
                   <div className="hp-latest-copy">
                     <h4>{post.title}</h4>

@@ -1284,10 +1284,12 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
               &lt;
             </button>
             <div className="test-facilities-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
-              {/* Displaying posters 1 to 10 from the test facilities folder */}
-              {[...Array(10)].map((_, i) => (
+              {/* Displaying posters 1 to 8 from the test facilities folder with specific extensions */}
+              {[
+                "1.jpg", "2.jpg", "3.png", "4.jpg", "5.png", "6.jpg", "7.jpg", "8.jpg"
+              ].map((file, i) => (
                 <div key={i} style={{ flex: "0 0 auto", width: "430px", height: "591px", position: "relative" }}>
-                  <Image src={`/Images/Obsta/test facilities/${i + 1}.jpg`} alt={`Test Facility Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
+                  <Image src={`/Images/Obsta/test facilities/${file}`} alt={`Test Facility Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
                 </div>
               ))}
             </div>
@@ -1309,9 +1311,32 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: "60px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111111" }}>
             OBSTA Videos
           </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "30px", marginBottom: "40px" }}>
-            <div style={{ flex: "1 1 500px", minWidth: 0, maxWidth: "800px" }}>
-              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000" }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (max-width: 991px) {
+              .obsta-video-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                padding-bottom: 30px !important;
+                justify-content: flex-start !important;
+                /* Hide scrollbar for cleaner look */
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+              .obsta-video-grid::-webkit-scrollbar {
+                display: none;
+              }
+              .obsta-video-grid > div {
+                flex: 0 0 85% !important;
+                min-width: 300px !important;
+                scroll-snap-align: center !important;
+              }
+            }
+          `}} />
+          <div className="obsta-video-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 450px), 1fr))", gap: "50px 40px", marginBottom: "40px", width: "100%", maxWidth: "1100px", margin: "0 auto 40px auto" }}>
+            <div style={{ width: "100%" }}>
+              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000", borderRadius: "12px", overflow: "hidden" }}>
                 <iframe
                   style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
                   src="https://www.youtube.com/embed/UiEXrWBNoPo"
@@ -1320,8 +1345,47 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 style={{ color: "#0066cc", fontSize: "22px", fontWeight: "bold", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center" }}>
-                OBSTA : Obstruction lighting
+              <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
+                OBSTA : OBSTRUCTION LIGHTING
+              </h3>
+            </div>
+
+            <div style={{ width: "100%" }}>
+              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000", borderRadius: "12px", overflow: "hidden" }}>
+                <video
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  controls
+                  src="/Images/Obsta/videos/OFD_ENG.mp4"
+                ></video>
+              </div>
+              <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
+                OFD ENG
+              </h3>
+            </div>
+
+            <div style={{ width: "100%" }}>
+              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000", borderRadius: "12px", overflow: "hidden" }}>
+                <video
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  controls
+                  src="/Images/Obsta/videos/Test_labo_eng.mp4"
+                ></video>
+              </div>
+              <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
+                TEST LABO ENG
+              </h3>
+            </div>
+
+            <div style={{ width: "100%" }}>
+              <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", background: "#000", borderRadius: "12px", overflow: "hidden" }}>
+                <video
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  controls
+                  src="/Images/Obsta/videos/obsta_corporate_slideshow1_ANG.mp4"
+                ></video>
+              </div>
+              <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
+                OBSTA CORPORATE SLIDESHOW
               </h3>
             </div>
           </div>

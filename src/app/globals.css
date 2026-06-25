@@ -2444,13 +2444,13 @@
     left: 20px;
     position: absolute;
     right: 20px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 12px;
     padding: 20px;
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .hp-news-pill {
@@ -5733,11 +5733,11 @@
   }
 
   .hp-news-feature-info {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(20px) !important;
     border-radius: 12px !important;
     padding: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
   /* Make news section wider with little margin */
@@ -5826,7 +5826,7 @@
     right: 0 !important;
     border-radius: 0 0 20px 20px !important;
     backdrop-filter: blur(10px) !important;
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(0, 0, 0, 0.6) !important;
     padding: 15px 20px !important;
   }
 
