@@ -60,7 +60,7 @@ const ELECTRICAL_CATEGORIES = [
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lightning, ACWL & Signal Lights",
+    label: "Lighting , ACWL & Signal Lights",
     tag: "Warning & Obstruction",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights",
   },
@@ -490,7 +490,7 @@ export default function Homepage() {
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
           <h1 className="hp-hero-title-desktop">
-            <span className="hp-hero-title-nowrap">Powering circuits,</span><br /><span className="hp-hero-title-nowrap" style={{ position: "relative", left: "-15px" }}>connecting your world today</span>
+            <span className="hp-hero-title-nowrap">Powering Infrastructure</span><br /><span className="hp-hero-title-nowrap" style={{ position: "relative", left: "-15px" }}>That Delivers</span>
           </h1>
           <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
             <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
@@ -509,7 +509,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Pioneers in Lightning and Electrical Systems</h2>{/* Hot reload trigger */}
+          <h2 className="hp-divisions-main-title">Pioneers in Lightning and Electrical Systems</h2>{/* Force reload height removal */}
 
           <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
@@ -578,19 +578,19 @@ export default function Homepage() {
         {/* STATS */}
         <section className="hp-stats-container" ref={statsRef}>
           <div className="hp-stats-stage">
-            <h2 className="hp-stats-main-title">Give Your Projects the Right Connection</h2>
+            <h2 className="hp-stats-main-title">Give Your Projects the Right Connection</h2>{/* Force reload 768px direct math fix */}
             <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
-            <div className="hp-stat-block hp-stat-card-one" ref={(node) => { statCardsRef.current[0] = node; }}>
+            <div className="hp-stat-block hp-stat-card-one hp-stat-block-fix" ref={(node) => { statCardsRef.current[0] = node; }}>
               <h3><span ref={(node) => { statNumberRefs.current[0] = node; }}>0</span><span>+</span></h3>
               <h4>Years of Professionalism</h4>
               <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
             </div>
-            <div className="hp-stat-block hp-stat-card-two" ref={(node) => { statCardsRef.current[1] = node; }}>
+            <div className="hp-stat-block hp-stat-card-two hp-stat-block-fix" ref={(node) => { statCardsRef.current[1] = node; }}>
               <h3><span ref={(node) => { statNumberRefs.current[1] = node; }}>0</span><span>+</span></h3>
               <h4>Countries Served Worldwide</h4>
               <p>Supporting projects across global<br />markets with a strong supply network</p>
             </div>
-            <div className="hp-stat-block hp-stat-card-three" ref={(node) => { statCardsRef.current[2] = node; }}>
+            <div className="hp-stat-block hp-stat-card-three hp-stat-block-fix" ref={(node) => { statCardsRef.current[2] = node; }}>
               <h3><span ref={(node) => { statNumberRefs.current[2] = node; }}>0</span><span>+</span></h3>
               <h4>Product Categories</h4>
               <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
@@ -661,10 +661,10 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* CERTIFICATION */}
-      <section className="hp-cert-section" ref={certRef}>
-        <div className="hp-cert-content-inner">
-          <div className="hp-cert-left">
+      {/* CERTIFICATION */}{/* Force reload complete cert flex bypass */}
+      <section className="hp-cert-section hp-cert-section-fix" ref={certRef}>
+        <div className="hp-cert-content-inner hp-cert-content-inner-fix">
+          <div className="hp-cert-left hp-cert-left-fix">
             <div className="hp-dist-subtitle" aria-label="Where we operate">
               <div className="hp-dist-subtitle-track" aria-hidden="true">
                 <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
@@ -679,7 +679,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          <div className="hp-cert-right-container">
+          <div className="hp-cert-right-container hp-cert-right-container-fix">
             <div
               className="hp-cert-scroll-window"
               aria-label="Certification approvals"
@@ -943,7 +943,7 @@ export default function Homepage() {
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
               </div>
             </div>
-            <h2 style={{ color: "#ffffff", marginBottom: "30px", lineHeight: "1.1" }}>Ready to Power<br />Your Next Project?</h2>
+            <h2 style={{ color: "#ffffff", marginBottom: "30px", lineHeight: "1.1" }}>Ready to Power<br />your Next Project?</h2>
             <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "20px", lineHeight: "1.6", maxWidth: "600px" }}>
               Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.
             </p>

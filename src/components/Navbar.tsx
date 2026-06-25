@@ -5,7 +5,7 @@ import StaggeredMenu from "./StaggeredMenu";
 
 const navLinks = [
   { link: "/homepage", label: "Home", ariaLabel: "Go to home page" },
-  { link: "/about", label: "About", ariaLabel: "Learn about Gulf Radiant" },
+  { link: "/about", label: "About\u00A0Us", ariaLabel: "Learn about Gulf Radiant" },
   { link: "/productpage", label: "Products", ariaLabel: "View products" },
   { link: "/projects", label: "Projects", ariaLabel: "View projects" },
   { link: "/clients", label: "Clients", ariaLabel: "View clients" },

@@ -78,7 +78,7 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
 
   const links = [
     { href: "/homepage", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/about", label: "About\u00A0Us" },
     { href: "/productpage", label: "Products" },
     { href: "/homepage#useful-information", label: "Useful Information" },
     { href: "/projects", label: "Projects" },

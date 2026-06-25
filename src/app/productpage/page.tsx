@@ -29,7 +29,7 @@ const CATEGORY_MAP = [
   },
   {
     id: "Lighting • ACWL • Signal Lights",
-    label: "Lightning, ACWL & Signal Lights",
+    label: "Lighting , ACWL & Signal Lights",
     image: "/Images/product/obstruction.webp",
     desc: "Safety tower hazard lighting, visual beacon indicators & structural aircraft warning lights"
   },
@@ -170,6 +170,36 @@ function ProductPageContent() {
 
   return (
     <div className="new-prod-page">
+      <style dangerouslySetInnerHTML={{__html: `
+        .new-prod-page .new-prod-hero-section {
+          padding-top: 140px !important;
+          padding-bottom: 140px !important;
+          height: auto !important;
+          min-height: auto !important;
+          position: relative !important;
+        }
+        .new-prod-page .new-prod-brands-section {
+          margin-top: -140px !important;
+          padding-top: 60px !important;
+          background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.3) 50px, rgba(255,255,255,0.8) 100px, #ffffff 140px, #ffffff 100%) !important;
+          content-visibility: visible !important;
+          position: relative !important;
+          z-index: 3 !important;
+        }
+        .new-prod-page .new-prod-brands-page {
+          border: none !important;
+        }
+        .new-prod-page .new-prod-card {
+          border: none !important;
+        }
+        .new-prod-page .new-prod-section-header {
+          margin-bottom: 20px !important;
+        }
+        .new-prod-page .new-prod-section-header:empty {
+          display: none !important;
+          margin-bottom: 0px !important;
+        }
+      `}} />
       {/* 1ST SECTION: HERO & CATEGORIES */}
       <section className="new-prod-hero-section">
         <div className="new-prod-section-inner">
@@ -225,25 +255,13 @@ function ProductPageContent() {
         </div>
       </section>
 
-      {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}
-      <section className="new-prod-brands-section">
+      {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}{/* Force reload border removal */}
+      <section className="new-prod-brands-section new-prod-brands-section-fade-fix">
         <div className="new-prod-section-inner-wide">
           {/* ACTIVE CATEGORY HEADER - REMAIN STICKY / FIXED AT TOP */}
           <div className="new-prod-section-header">
-            <div className="hp-dist-subtitle">
-              <div className="hp-dist-subtitle-track">
-                <span>PRODUCT RANGE • </span>
-                <span>PRODUCT RANGE • </span>
-                <span>PRODUCT RANGE • </span>
-                <span>PRODUCT RANGE • </span>
-              </div>
-            </div>
-            <h2 className="new-prod-section-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>
-              {activeCategoryData ? activeCategoryData.label : selectedCategory}
-            </h2>
-
             {selectedCategory === "Lighting • ACWL • Signal Lights" && (
-              <div className="new-prod-subcategory-tabs" style={{ display: "flex", gap: "12px", marginTop: "40px", justifyContent: "center", flexWrap: "wrap", maxWidth: "900px", margin: "40px auto 0 auto" }}>
+              <div className="new-prod-subcategory-tabs" style={{ display: "flex", gap: "12px", marginTop: "10px", justifyContent: "center", flexWrap: "wrap", maxWidth: "900px", margin: "10px auto 0 auto" }}>
                 <button 
                   className={`subcat-tab ${activeSubcategory === "All" ? "active" : ""}`}
                   onClick={() => setActiveSubcategory("All")}

@@ -313,8 +313,8 @@ export default function InformationPage() {
 
         /* GRID & CARDS FIGMA EXACT */
         .info-grid-figma-tight {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          display: flex;
+          flex-wrap: wrap;
           justify-content: center;
           gap: 30px;
           width: 100%;
@@ -323,7 +323,7 @@ export default function InformationPage() {
         .info-card-figma-exact {
           width: 100%;
           max-width: 315px;
-          margin: 0 auto;
+          margin: 0;
           height: 282px;
           opacity: 0;
           transform: translateY(30px);
@@ -443,18 +443,16 @@ export default function InformationPage() {
 
         /* Responsive Breakpoints */
         @media (max-width: 1300px) {
-          .info-grid-figma-tight { grid-template-columns: repeat(3, 1fr); }
+          /* Flexbox handles wrapping automatically now */
         }
 
         @media (max-width: 1024px) {
-          .info-grid-figma-tight { grid-template-columns: repeat(2, 1fr) !important; }
           .section-header-figma-centered h2 { font-size: 36px !important; font-weight: 500 !important; }
           .section-description-centered { font-size: 18px !important; padding: 0 20px; }
           .info-hero-content h1 { font-size: 36px !important; font-weight: 500 !important; }
         }
 
         @media (max-width: 600px) {
-          .info-grid-figma-tight { grid-template-columns: 1fr !important; }
           .container-full { padding: 0 20px; }
           .info-hero { padding-left: 20px; padding-right: 20px; height: 50vh !important; }
           .info-hero-content h1 { font-size: 42px !important; }
