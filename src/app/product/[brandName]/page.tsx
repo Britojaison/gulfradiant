@@ -1286,7 +1286,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
             <div className="test-facilities-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", minWidth: 0, maxWidth: "1330px" }}>
               {/* Displaying posters 1 to 8 from the test facilities folder with specific extensions */}
               {[
-                "1.jpg", "2.jpg", "3.png", "4.jpg", "5.png", "6.jpg", "7.jpg", "8.jpg"
+                "1.jpg", "2.jpg", "3.webp", "4.jpg", "5.webp", "6.jpg", "7.jpg", "8.jpg"
               ].map((file, i) => (
                 <div key={i} style={{ flex: "0 0 auto", width: "430px", height: "591px", position: "relative" }}>
                   <Image src={`/Images/Obsta/test facilities/${file}`} alt={`Test Facility Poster ${i + 1}`} fill style={{ objectFit: "contain" }} />
@@ -1355,7 +1355,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
                 <video
                   style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
                   controls
-                  src="/Images/Obsta/videos/OFD_ENG.mp4"
+                  src="/Images/Obsta/videos/OFD_ENG.webm"
                 ></video>
               </div>
               <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
@@ -1368,7 +1368,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
                 <video
                   style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
                   controls
-                  src="/Images/Obsta/videos/Test_labo_eng.mp4"
+                  src="/Images/Obsta/videos/Test_labo_eng.webm"
                 ></video>
               </div>
               <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
@@ -1381,7 +1381,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
                 <video
                   style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
                   controls
-                  src="/Images/Obsta/videos/obsta_corporate_slideshow1_ANG.mp4"
+                  src="/Images/Obsta/videos/obsta_corporate_slideshow1_ANG.webm"
                 ></video>
               </div>
               <h3 style={{ color: "#0066cc", fontSize: "17px", fontWeight: "500", marginTop: "20px", fontFamily: "var(--font-inter), sans-serif", textAlign: "center", textTransform: "uppercase" }}>
