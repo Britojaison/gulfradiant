@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { useState, Suspense } from "react";
 import React from "react";
 
 // Brand Database Interface
@@ -241,17 +241,59 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Explosion Proof & Industrial Switchgear",
     description: "Heavy-duty electrical connections, switch disconnectors, and IEC 309 plugs and sockets engineered for safety in explosive atmospheres.",
     website: "https://www.palazzoli.com/en/",
-    productRange: [
-      // Lighting
-      { image: "/Images/palazolli/Lighting/IMG_3326.webp", caption: "Industrial LED Lighting" },
-      { image: "/Images/palazolli/Lighting/META Lighting.webp", caption: "META Lighting" },
-      { image: "/Images/palazolli/Lighting/Rino lighting.webp", caption: "Rino Lighting" },
-      { image: "/Images/palazolli/Lighting/Tigua.webp", caption: "Tigua" },
-      { image: "/Images/palazolli/Lighting/Tigua_led.webp", caption: "Tigua LED" },
-      { image: "/Images/palazolli/Lighting/X-Tigua.webp", caption: "X-Tigua" },
-      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_suspension.jpg", caption: "X-Tigua Floodlight Suspension" },
-      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_tunnel.jpg", caption: "X-Tigua Floodlight Tunnel" },
-      { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_wall_mounted.jpg", caption: "X-Tigua Floodlight Wall Mounted" }
+    productRange: [],
+    categoryStyle: "carousel-list",
+    categories: [
+      {
+        name: "LIGHTING",
+        products: [
+          { image: "/Images/palazolli/Lighting/IMG_3326.webp", caption: "Industrial LED Lighting" },
+          { image: "/Images/palazolli/Lighting/META Lighting.webp", caption: "META Lighting" },
+          { image: "/Images/palazolli/Lighting/Rino lighting.webp", caption: "Rino Lighting" },
+          { image: "/Images/palazolli/Lighting/Tigua.webp", caption: "Tigua" },
+          { image: "/Images/palazolli/Lighting/Tigua_led.webp", caption: "Tigua LED" },
+          { image: "/Images/palazolli/Lighting/X-Tigua.webp", caption: "X-Tigua" },
+          { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_suspension.jpg", caption: "X-Tigua Floodlight Suspension" },
+          { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_tunnel.jpg", caption: "X-Tigua Floodlight Tunnel" },
+          { image: "/Images/palazolli/Lighting/X-Tigua_Floodlight_wall_mounted.jpg", caption: "X-Tigua Floodlight Wall Mounted" }
+        ]
+      },
+      {
+        name: "ATEX - EXPLOSION PROOF PLUGS & SOCKET RANGE",
+        products: [
+          { image: "/Images/palazolli/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/BOXES AND CABLE GLANDS.webp", caption: "Boxes and Cable Glands", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/palazolli/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/INTERLOCKED SOCKET OUTLET.webp", caption: "Interlocked Socket Outlet", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/palazolli/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/MOBILE PLUGS.webp", caption: "Mobile Plugs", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/palazolli/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/RESTRICTED BREATHING EQUIPMENT.webp", caption: "Restricted Breathing Equipment", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
+          { image: "/Images/palazolli/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/SMALL CONTROL AND SIGNALLING DEVICES.webp", caption: "Small Control And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" }
+        ]
+      },
+      {
+        name: "INDUSTRY",
+        products: [
+          { image: "/Images/palazolli/INDUSTRY/BOARDS & BOXES.webp", caption: "Boards & Boxes", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/palazolli/INDUSTRY/CONTROL AND PROTECTION.webp", caption: "Control And Protection", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/palazolli/INDUSTRY/INTERLOCKED SOCKET OUTLETS.webp", caption: "Interlocked Socket Outlets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/palazolli/INDUSTRY/PLUGS & SOCKETS.webp", caption: "Plugs & Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
+          { image: "/Images/palazolli/INDUSTRY/PRE WIRED BOARDS FOR STANDARD AND HEAVY DUTY APPLICATIONS.webp", caption: "Pre Wired Boards For Standard And Heavy Duty Applications", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" }
+        ]
+      },
+      {
+        name: "INFRASTRUCTURE",
+        products: [
+          { image: "/Images/palazolli/INFRASTRUCTURE/LIGHTING SIGN SYSTEMS.webp", caption: "Lighting Sign Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" },
+          { image: "/Images/palazolli/INFRASTRUCTURE/VENTILATION SYSTEMS.webp", caption: "Ventilation Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" }
+        ]
+      },
+      {
+        name: "MARINE",
+        products: [
+          { image: "/Images/palazolli/MARINE/CONTAINER SOCKETS.webp", caption: "Container Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/palazolli/MARINE/DISTRIBUTION TURRETS.webp", caption: "Distribution Turrets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/palazolli/MARINE/ON BOARD SHIP CONTROL WITHDRAWAL AND SIGNALLING DEVICES.webp", caption: "On Board Ship Control Withdrawal And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
+          { image: "/Images/palazolli/MARINE/UNAV CONTROL WITHDRAWAL AND SIGNALLING DEVICE.webp", caption: "Unav Control Withdrawal And Signalling Device", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" }
+        ]
+      }
     ],
     certifiedLogos: [
     ],
@@ -495,45 +537,15 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     subtitle: "Industrial Electrical & Connection Solutions",
     description: "Sleek industrial-grade distribution boards, customized enclosures, lighting systems, XCEE switches, and heavy-duty plugs manufactured to supreme safety standards.",
     website: "https://www.lewden.com/",
-    productRange: [],
-    categoryStyle: "carousel-list",
-    categories: [
-      {
-        name: "ATEX - EXPLOSION PROOF PLUGS & SOCKET RANGE",
-        products: [
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/BOXES AND CABLE GLANDS.webp", caption: "Boxes and Cable Glands", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/INTERLOCKED SOCKET OUTLET.webp", caption: "Interlocked Socket Outlet", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/MOBILE PLUGS.webp", caption: "Mobile Plugs", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/RESTRICTED BREATHING EQUIPMENT.webp", caption: "Restricted Breathing Equipment", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" },
-          { image: "/Images/PalazolliLewden/ATEX -EXPLOSION PROOF PLUGS SOCKET RANGE/SMALL CONTROL AND SIGNALLING DEVICES.webp", caption: "Small Control And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#boards-and-boxes" }
-        ]
-      },
-      {
-        name: "INDUSTRY",
-        products: [
-          { image: "/Images/PalazolliLewden/INDUSTRY/BOARDS & BOXES.webp", caption: "Boards & Boxes", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/CONTROL AND PROTECTION.webp", caption: "Control And Protection", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/INTERLOCKED SOCKET OUTLETS.webp", caption: "Interlocked Socket Outlets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/PLUGS & SOCKETS.webp", caption: "Plugs & Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" },
-          { image: "/Images/PalazolliLewden/INDUSTRY/PRE WIRED BOARDS FOR STANDARD AND HEAVY DUTY APPLICATIONS.webp", caption: "Pre Wired Boards For Standard And Heavy Duty Applications", link: "https://www.palazzoli.com/en/products/electrical-systems#interlocked-socket-outlets" }
-        ]
-      },
-      {
-        name: "INFRASTRUCTURE",
-        products: [
-          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/LIGHTING SIGN SYSTEMS.webp", caption: "Lighting Sign Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" },
-          { image: "/Images/PalazolliLewden/INFRASTRUCTURE/VENTILATION SYSTEMS.webp", caption: "Ventilation Systems", link: "https://www.palazzoli.com/en/products/electrical-systems#mobile-plugs" }
-        ]
-      },
-      {
-        name: "MARINE",
-        products: [
-          { image: "/Images/PalazolliLewden/MARINE/CONTAINER SOCKETS.webp", caption: "Container Sockets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/DISTRIBUTION TURRETS.webp", caption: "Distribution Turrets", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/ON BOARD SHIP CONTROL WITHDRAWAL AND SIGNALLING DEVICES.webp", caption: "On Board Ship Control Withdrawal And Signalling Devices", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" },
-          { image: "/Images/PalazolliLewden/MARINE/UNAV CONTROL WITHDRAWAL AND SIGNALLING DEVICE.webp", caption: "Unav Control Withdrawal And Signalling Device", link: "https://www.palazzoli.com/en/products/electrical-systems#distribution-turrets" }
-        ]
-      }
+    productRange: [
+      { image: "/Images/PalazolliLewden/CONTROL ROTARY ISOLATORS.jpg", caption: "Control Rotary Isolators" },
+      { image: "/Images/PalazolliLewden/EMERGENCY ROTARY ISOLATORS.jpg", caption: "Emergency Rotary Isolators" },
+      { image: "/Images/PalazolliLewden/FIRE RATED F400 ISOLATORS-ALUMINIUM ALLOY.jpg", caption: "Fire Rated F400 Isolators Aluminium Alloy" },
+      { image: "/Images/PalazolliLewden/METAL ISOLATOR SWITCH.jpg", caption: "Metal Isolator Switch" },
+      { image: "/Images/PalazolliLewden/PD METAL CLAD RANGE.png", caption: "PD Metal Clad Range" },
+      { image: "/Images/PalazolliLewden/ROTARY ISOLATORS-METAL.jpg", caption: "Rotary Isolators Metal" },
+      { image: "/Images/PalazolliLewden/SWITCH DISCONNECTOR - GRP MATERIAL.jpg", caption: "Switch Disconnector GRP Material" },
+      { image: "/Images/PalazolliLewden/SWITCH DISCONNECTOR -METAL.jpg", caption: "Switch Disconnector Metal" }
     ],
     certifiedLogos: [
       "/Images/Certificates/dewa.jpg"
@@ -1119,14 +1131,42 @@ interface DynamicBrandPageProps {
 }
 
 export default function DynamicBrandPage({ brandOverride }: DynamicBrandPageProps) {
+  return (
+    <Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: '#111' }}><p style={{ fontSize: '20px', opacity: 0.7 }}>Loading Brand Data...</p></div>}>
+      <DynamicBrandPageContent brandOverride={brandOverride} />
+    </Suspense>
+  );
+}
+
+function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
   const params = useParams();
+  const searchParams = useSearchParams();
 
   // Resolve brand name from override parameter or dynamic slug
   const resolvedBrandSlug = brandOverride || (params?.brandName as string) || "";
   const brandKey = resolvedBrandSlug.toLowerCase();
+  
+  const sourceCategory = searchParams.get('source');
 
   // Retrieve brand data, default to Kumwell as fallback
-  const brandData = BRAND_DATABASE[brandKey] || BRAND_DATABASE.kumwell;
+  let brandData = BRAND_DATABASE[brandKey] || BRAND_DATABASE.kumwell;
+
+  if (brandKey === 'palazzoli' && sourceCategory && brandData.categories) {
+    if (sourceCategory === "Lighting • ACWL • Signal Lights") {
+      const lightingCat = brandData.categories.find(c => c.name === "LIGHTING");
+      brandData = {
+        ...brandData,
+        categories: undefined,
+        categoryStyle: undefined,
+        productRange: lightingCat ? lightingCat.products : []
+      };
+    } else if (sourceCategory === "Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments") {
+      brandData = {
+        ...brandData,
+        categories: brandData.categories.filter(c => c.name !== "LIGHTING")
+      };
+    }
+  }
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 

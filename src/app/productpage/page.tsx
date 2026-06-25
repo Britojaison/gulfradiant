@@ -338,7 +338,7 @@ function ProductPageContent() {
                   );
 
                   return logo.link ? (
-                    <Link href={logo.link} className="new-prod-card" key={i}>
+                    <Link href={`${logo.link}?source=${encodeURIComponent(selectedCategory)}`} className="new-prod-card" key={i}>
                       {cardContent}
                     </Link>
                   ) : (
