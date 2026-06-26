@@ -178,6 +178,38 @@ export default function Homepage() {
   const projectsTopRef = useRef<HTMLDivElement | null>(null);
   const projectsViewportRef = useRef<HTMLDivElement | null>(null);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+
+  // Form State
+  const [formData, setFormData] = useState({
+    company: '',
+    fullName: '',
+    email: '',
+    phone: '',
+    industry: '',
+    country: '',
+    details: ''
+  });
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setFormStatus('success');
+        setFormData({ company: '', fullName: '', email: '', phone: '', industry: '', country: '', details: '' });
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    }
+  };
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [activeCertIndex, setActiveCertIndex] = useState(0);
@@ -965,30 +997,30 @@ export default function Homepage() {
             }}
           >
             <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Get in touch</h3>
-            <form className="hp-git-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="hp-git-form" onSubmit={handleContactSubmit}>
               <div className="hp-git-field">
                 <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>
-                <input id="git-company" type="text" placeholder="Jhon Smith" />
+                <input id="git-company" type="text" placeholder="Jhon Smith" required value={formData.company} onChange={e => setFormData({...formData, company: e.target.value})} />
               </div>
               <div className="hp-git-field">
                 <label htmlFor="git-fullname" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Full Name</label>
-                <input id="git-fullname" type="text" placeholder="Jhon Smith Comapny" />
+                <input id="git-fullname" type="text" placeholder="Jhon Smith Comapny" required value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} />
               </div>
               <div className="hp-git-row">
                 <div className="hp-git-field">
                   <label htmlFor="git-email" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Email Address</label>
-                  <input id="git-email" type="email" placeholder="john@email.com" />
+                  <input id="git-email" type="email" placeholder="john@email.com" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
                 </div>
                 <div className="hp-git-field">
                   <label htmlFor="git-phone" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Phone Number</label>
-                  <input id="git-phone" type="tel" placeholder="+XX XXXXXXXXX" />
+                  <input id="git-phone" type="tel" placeholder="+XX XXXXXXXXX" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
                 </div>
               </div>
               <div className="hp-git-row">
                 <div className="hp-git-field">
                   <label htmlFor="git-industry" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Industry</label>
                   <div className="hp-git-select-wrap">
-                    <select id="git-industry" defaultValue="">
+                    <select id="git-industry" value={formData.industry} onChange={e => setFormData({...formData, industry: e.target.value})} required>
                       <option value="" disabled style={{ color: "#000", backgroundColor: "#fff" }}>- None -</option>
                       <option value="infrastructure" style={{ color: "#000", backgroundColor: "#fff" }}>Infrastructure</option>
                       <option value="industrial" style={{ color: "#000", backgroundColor: "#fff" }}>Industrial</option>
@@ -1001,7 +1033,7 @@ export default function Homepage() {
                 <div className="hp-git-field">
                   <label htmlFor="git-country" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Country</label>
                   <div className="hp-git-select-wrap">
-                    <select id="git-country" defaultValue="">
+                    <select id="git-country" value={formData.country} onChange={e => setFormData({...formData, country: e.target.value})} required>
                       <option value="" disabled style={{ color: "#000", backgroundColor: "#fff" }}>- Select Country -</option>
                       {COUNTRIES.map(c => <option key={c} value={c} style={{ color: "#000", backgroundColor: "#fff" }}>{c}</option>)}
                     </select>
@@ -1010,9 +1042,13 @@ export default function Homepage() {
               </div>
               <div className="hp-git-field">
                 <label htmlFor="git-details">Project Details (Optional)</label>
-                <textarea id="git-details" rows={4} placeholder="Tell us about your project..." />
+                <textarea id="git-details" rows={4} placeholder="Tell us about your project..." value={formData.details} onChange={e => setFormData({...formData, details: e.target.value})} />
               </div>
-              <button type="submit" className="hp-git-submit-btn">Send Message</button>
+              <button type="submit" className="hp-git-submit-btn" disabled={formStatus === 'submitting'} style={{ opacity: formStatus === 'submitting' ? 0.7 : 1 }}>
+                {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+              </button>
+              {formStatus === 'success' && <p style={{ color: '#4ade80', marginTop: '16px', textAlign: 'center' }}>Message sent successfully!</p>}
+              {formStatus === 'error' && <p style={{ color: '#f87171', marginTop: '16px', textAlign: 'center' }}>Failed to send message. Please try again.</p>}
             </form>
           </div>
         </div>
