@@ -58,7 +58,7 @@
   width: 1px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-left: -200px;
+  margin-left: -230px;
 }
 
 .sm-secondary-logo-img {
@@ -66,7 +66,7 @@
   height: 90px;
   width: auto;
   object-fit: contain;
-  margin-left: -10px;
+  margin-left: -30px;
 }
 
 .sm-header-actions {
@@ -74,6 +74,14 @@
   align-items: center;
   gap: 20px;
   pointer-events: auto;
+}
+
+.sm-actions-divider {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 4px;
 }
 
 .sm-phone-link {
@@ -368,12 +376,20 @@
 
   .sm-logo-divider {
     height: 24px;
-    margin-left: -98px;
+    margin-left: -105px;
   }
 
   .sm-secondary-logo-img {
     height: 44px;
-    margin-left: -15px;
+    margin-left: -20px;
+  }
+
+  .sm-header-actions {
+    gap: 12px;
+  }
+
+  .sm-actions-divider {
+    margin: 0;
   }
 
   .sm-toggle {
@@ -408,5 +424,60 @@
 
   .staggered-menu-panel {
     padding: 100px 24px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .staggered-menu-header {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .sm-logo {
+    height: 70px;
+  }
+
+  .sm-logo-img {
+    width: 140px;
+    height: 45px;
+  }
+
+  .sm-logo-divider {
+    height: 20px;
+    margin-left: -75px;
+  }
+
+  .sm-secondary-logo-img {
+    height: 32px;
+    margin-left: -10px;
+  }
+
+  .sm-header-actions {
+    gap: 8px;
+  }
+
+  .sm-actions-divider {
+    margin: 0;
+    height: 16px;
+  }
+
+  .sm-phone-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sm-toggle {
+    font-size: 12px;
+    gap: 0.25rem;
+  }
+
+  .sm-icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  .staggered-menu-panel {
+    padding: 80px 20px 30px;
   }
 }

@@ -1196,7 +1196,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
               >
                 Request a Quote
               </a>
-              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px" }}>
+              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px", background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(255, 255, 255, 0.3)" }}>
                 Visit Website
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
                   <path d="M7 17L17 7"></path>
@@ -1230,7 +1230,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
               >
                 Request a Quote
               </a>
-              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px" }}>
+              <a href={brandData.website} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ borderRadius: "15px", background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(255, 255, 255, 0.3)" }}>
                 Visit Website
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "4px" }}>
                   <path d="M7 17L17 7"></path>
@@ -1239,6 +1239,9 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
               </a>
             </div>
           </div>
+          <a href="#product-range-section" className="hp-hero-scroll" aria-label="Scroll down">
+            <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+          </a>
         </section>
       )}
 
@@ -1485,7 +1488,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
         </section>
       )}
 
-      <section className="product-range" style={{ padding: "60px 0", background: "#ffffff", overflow: "hidden" }}>
+      <section id="product-range-section" className="product-range" style={{ padding: "60px 0", background: "#ffffff", overflow: "hidden" }}>
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: "80px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>
           {brandData.categories && !selectedCategory && brandKey !== 'citel' ? "Product Categories" : "Product Range"}
         </h2>

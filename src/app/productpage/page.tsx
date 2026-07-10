@@ -142,7 +142,13 @@ function ProductPageContent() {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      const el = document.getElementById("brands-section");
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 100);
   }, [selectedCategory]);
 
   const handleCategorySelect = (cat: string) => {
@@ -187,10 +193,44 @@ function ProductPageContent() {
           z-index: 3 !important;
         }
         .new-prod-page .new-prod-brands-page {
-          border: none !important;
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          border-top: 1px solid #000000 !important;
+          border-left: 1px solid #000000 !important;
+          gap: 0 !important;
+          padding: 0 !important;
         }
         .new-prod-page .new-prod-card {
-          border: none !important;
+          aspect-ratio: 16/9 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 30px !important;
+          background-color: #ffffff !important;
+          transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+          border-bottom: 1px solid #000000 !important;
+          border-right: 1px solid #000000 !important;
+          border-top: none !important;
+          border-left: none !important;
+          position: relative !important;
+          overflow: hidden !important;
+        }
+        .new-prod-page .new-prod-card::before {
+          content: '' !important;
+          position: absolute !important;
+          top: 0 !important; left: -100% !important;
+          width: 100% !important; height: 100% !important;
+          background: linear-gradient(120deg, transparent, rgba(255, 91, 5, 0.05), transparent) !important;
+          transition: left 0.6s ease !important;
+          z-index: 0 !important;
+        }
+        .new-prod-page .new-prod-card:hover::before {
+          left: 100% !important;
+        }
+        .new-prod-page .new-prod-card:hover {
+          transform: scale(1.05) !important;
+          z-index: 10 !important;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
         }
         .new-prod-page .new-prod-section-header {
           margin-bottom: 20px !important;
@@ -199,12 +239,29 @@ function ProductPageContent() {
           display: none !important;
           margin-bottom: 0px !important;
         }
+        @media (min-width: 601px) and (max-width: 1024px) {
+          .new-prod-page .new-prod-brands-page {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
+          .new-prod-page .new-prod-card {
+            aspect-ratio: 16/9 !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .new-prod-page .new-prod-brands-page {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .new-prod-page .new-prod-card {
+            aspect-ratio: 1 !important;
+            padding: 15px !important;
+          }
+        }
       `}} />
       {/* 1ST SECTION: HERO & CATEGORIES */}
       <section className="new-prod-hero-section">
         <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
-            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Key Brands</h1>
+            <h1 className="new-prod-title" style={{ fontFamily: "var(--font-degular), sans-serif", fontSize: "70px", fontWeight: "500" }}>Our Brand Partners</h1>
             <div className="new-prod-carousel-controls">
               <button onClick={scrollLeft} className="carousel-control-btn" aria-label="Scroll left">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -256,7 +313,7 @@ function ProductPageContent() {
       </section>
 
       {/* 2ND SECTION: ACTIVE CATEGORY & BRANDS */}{/* Force reload border removal */}
-      <section className="new-prod-brands-section new-prod-brands-section-fade-fix">
+      <section id="brands-section" className="new-prod-brands-section new-prod-brands-section-fade-fix">
         <div className="new-prod-section-inner-wide">
           {/* ACTIVE CATEGORY HEADER - REMAIN STICKY / FIXED AT TOP */}
           <div className="new-prod-section-header">
@@ -296,24 +353,8 @@ function ProductPageContent() {
                   <style dangerouslySetInnerHTML={{__html: `
                     .new-prod-brands-page.is-industrial {
                       grid-template-columns: repeat(3, 1fr) !important;
-                      border: none !important;
-                      gap: 40px !important;
-                      padding: 20px 80px !important;
                       max-width: 1920px !important;
                       margin: 0 auto !important;
-                    }
-                    .new-prod-brands-page.is-industrial .new-prod-card {
-                      border: none !important;
-                      padding: 0 !important;
-                      background: transparent !important;
-                    }
-                    .new-prod-brands-page.is-industrial .new-prod-card:hover {
-                      border: none !important;
-                      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
-                      transform: scale(1.02) !important;
-                    }
-                    .new-prod-brands-page.is-industrial .new-prod-card::before {
-                      display: none !important;
                     }
                     @media (max-width: 1024px) {
                       .new-prod-brands-page.is-industrial {

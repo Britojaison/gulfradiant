@@ -32,14 +32,18 @@ export default function ClientsPage() {
         <div className="clients-hero-content">
           <div className="clients-hero-text-wrapper">
             <h1 className="clients-hero-subtitle">Trusted Partners</h1>
-            <h2 className="clients-hero-subheading">Working with Industry-Leading Brands</h2>
+            <h2 className="clients-hero-subheading">Working with Industry Leaders.</h2>
             <p className="clients-hero-description">We partner with globally recognized brands to deliver high-quality electrical products and solutions, ensuring reliability, performance, and long-term value across every project.</p>
           </div>
         </div>
+        
+        <a href="#next-section" className="hp-hero-scroll" aria-label="Scroll down">
+          <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+        </a>
       </section>
 
       {/* BRANDS SECTION */}
-      <section className="clients-brands-section">
+      <section id="next-section" className="clients-brands-section">
         <div className="clients-brands-header" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <div className="hp-dist-subtitle">
             <div className="hp-dist-subtitle-track">
@@ -50,7 +54,7 @@ export default function ClientsPage() {
             </div>
           </div>
           <h2 className="clients-section-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", textAlign: "center", margin: "20px 0", lineHeight: "100%", color: "#1e1e1e", width: "100%" }}>
-            Key Clients
+            Our Clients
           </h2>
         </div>
 

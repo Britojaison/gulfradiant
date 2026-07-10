@@ -54,7 +54,7 @@ const newsItems = [
 const ELECTRICAL_CATEGORIES = [
   {
     id: "Earthing • Lightning • Surge Protection Systems",
-    label: "Earthing Lightning & Surge Protection Systems",
+    label: "Earthing, Lightning & Surge Protection Systems",
     tag: "Earthing & Surge",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions",
   },
@@ -111,8 +111,6 @@ const COUNTRIES = [
   "Zambia", "Zimbabwe"
 ];
 
-const statTargets = [25, 30, 100];
-
 const getCategoryIcon = (tag: string) => {
   switch (tag) {
     case "Earthing & Surge":
@@ -166,9 +164,6 @@ const getCategoryIcon = (tag: string) => {
 
 export default function Homepage() {
   const router = useRouter();
-  const statsRef = useRef<HTMLElement | null>(null);
-  const statCardsRef = useRef<Array<HTMLDivElement | null>>([]);
-  const statNumberRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const certRef = useRef<HTMLElement | null>(null);
   const certCardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -239,43 +234,17 @@ export default function Homepage() {
   };
 
   const certImages = [
-    { src: "/Images/Certificates/dewa.jpg", alt: "Kumwell - DEWA APPROVAL" },
-    { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR AD ICV Certificate" },
-    { src: "/Images/Certificates/cert-jsrs-logo.jpg", alt: "JSRS CERTIFICATE" },
-    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "PITTAS - ADDC Pre-Qualification" },
+    { src: "/Images/Certificates/GR-iso.jpg", alt: "GR ISO 9001" },
+    { src: "/Images/Certificates/dewa.jpg", alt: "DEWA Approval" },
+    { src: "/Images/Certificates/civil aviation.jpg", alt: "Dubai Civil Aviation" },
+    { src: "/Images/Certificates/cert-jsrs-logo.jpg", alt: "GR JSRS" },
+    { src: "/Images/Certificates/cert-icv-logo.jpg", alt: "GR ICV" },
+    { src: "/Images/Certificates/adnoc logo.svg", alt: "ADNOC" },
+    { src: "/Images/Certificates/cert-addc-logo.jpg", alt: "ADDC" },
+    { src: "/Images/Certificates/etihad we.webp", alt: "Etihad WE" },
   ];
   useEffect(() => {
     let rafId = 0;
-
-    const updateStatsCards = () => {
-      if (!statsRef.current) return;
-
-      const rect = statsRef.current.getBoundingClientRect();
-      const viewport = window.innerHeight || 1;
-
-      // Start animating when 50% of the section is in view
-      let startTrigger = viewport - (statsRef.current.offsetHeight * 0.5);
-      // Finish animating when 100% of the section is scrolled into view
-      let endTrigger = viewport - statsRef.current.offsetHeight;
-
-      if (window.innerWidth <= 768) {
-        startTrigger = viewport;
-        endTrigger = viewport * 0.1;
-      }
-
-      const progress = Math.max(0, Math.min(1, (startTrigger - rect.top) / (startTrigger - endTrigger)));
-
-      // Use linear progress to make the counting perfectly smooth and 1:1 with scrolling
-      const easedProgress = progress;
-
-      statCardsRef.current.forEach((card, index) => {
-        if (!card) return;
-        const number = statNumberRefs.current[index];
-        if (number) {
-          number.textContent = String(Math.round(statTargets[index] * easedProgress));
-        }
-      });
-    };
 
     const updateCertCards = () => {
       // Logic removed as desktop and mobile now share the auto-carousel via useEffect
@@ -291,7 +260,6 @@ export default function Homepage() {
     const onScroll = () => {
       window.cancelAnimationFrame(rafId);
       rafId = window.requestAnimationFrame(() => {
-        updateStatsCards();
         updateCertCards();
         updateProjects();
 
@@ -358,7 +326,6 @@ export default function Homepage() {
       projectsViewport.addEventListener("click", onClick);
     }
 
-    updateStatsCards();
     updateCertCards();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
@@ -396,25 +363,32 @@ export default function Homepage() {
       const count = certImages.length;
       let d = index - activeCertIndex;
       
-      // Wrap around so items always come from the right
-      if (d < -1) {
+      // Wrap around so items always come from the right or left
+      if (d < -Math.floor(count / 2)) {
         d += count;
       }
-      if (d > count - 2) {
+      if (d > Math.floor(count / 2)) {
         d -= count;
       }
 
-      const translateX = d * 110;
-      const opacity = index === activeCertIndex ? 1 : 0;
-      const scale = index === activeCertIndex ? 1 : 0.9;
-      const zIndex = index === activeCertIndex ? 5 : 1;
+      // Show 3 certificates: d = -1, 0, 1
+      const isVisible = Math.abs(d) <= 1;
+      
+      // Calculate responsive translate and scale
+      const isMobileView = window.innerWidth <= 768;
+      const offsetMultiplier = isMobileView ? 65 : 85; 
+      const translateX = d * offsetMultiplier;
+      
+      const opacity = isVisible ? (Math.abs(d) === 1 ? 0.7 : 1) : 0;
+      const scale = isVisible ? (Math.abs(d) === 1 ? 0.85 : 1) : 0.8;
+      const zIndex = 5 - Math.abs(d);
 
       card.style.transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}%, 0, 0) scale(${scale})`;
       card.style.opacity = `${opacity}`;
       card.style.zIndex = `${zIndex}`;
       card.style.pointerEvents = index === activeCertIndex ? "auto" : "none";
     });
-  }, [activeCertIndex]);
+  }, [activeCertIndex, certImages.length]);
 
 
 
@@ -500,6 +474,49 @@ export default function Homepage() {
     },
   ];
 
+  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+  const [playCount, setPlayCount] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  
+  const heroVideos = [
+    {
+      webm: "/Images/Home/hero-video-optimized.webm",
+      objectPosition: "center"
+    },
+    {
+      webm: "/Images/Home/hero video 2.webm",
+      objectPosition: "top"
+    }
+  ];
+
+  useEffect(() => {
+    heroVideos.forEach((_, idx) => {
+      const vid = videoRefs.current[idx];
+      if (vid) {
+        if (idx === activeHeroIndex) {
+          vid.currentTime = 0;
+          vid.play().catch(e => console.error("Video play failed:", e));
+        } else {
+          vid.pause();
+        }
+      }
+    });
+  }, [activeHeroIndex]);
+
+  const handleVideoEnded = (idx: number) => {
+    if (idx === 1 && playCount < 1) {
+      setPlayCount(c => c + 1);
+      const vid = videoRefs.current[idx];
+      if (vid) {
+        vid.currentTime = 0;
+        vid.play().catch(e => console.error("Video replay failed:", e));
+      }
+    } else {
+      setPlayCount(0);
+      setActiveHeroIndex((idx + 1) % heroVideos.length);
+    }
+  };
+
   const featuredNews = newsItems[activeNewsIndex];
   const latestPosts = newsItems.filter((_, index) => index !== activeNewsIndex);
 
@@ -507,27 +524,66 @@ export default function Homepage() {
     <div className="homepage-wrapper">
       {/* HERO */}
       <section className="hp-hero-new" id="home-hero">
-        <video
-          className="hp-hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-label="Gulf Radiant infrastructure hero video"
-        >
-          <source src="/Images/Home/hero-video-optimized.mp4" type="video/mp4" />
-          <source src="/Images/Home/hero-video-optimized.webm" type="video/webm" />
-        </video>
+        {heroVideos.map((vid, idx) => (
+          <video
+            key={idx}
+            ref={(el) => { videoRefs.current[idx] = el; }}
+            className="hp-hero-video"
+            autoPlay={idx === activeHeroIndex}
+            muted
+            playsInline
+            preload="auto"
+            onEnded={() => handleVideoEnded(idx)}
+            style={{ 
+              opacity: idx === activeHeroIndex ? 1 : 0, 
+              transition: "opacity 1s ease",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: vid.objectPosition,
+              zIndex: idx === activeHeroIndex ? 1 : 0
+            }}
+            aria-label="Gulf Radiant infrastructure hero video"
+          >
+            <source src={vid.webm} type="video/webm" />
+          </video>
+        ))}
         <div className="hp-hero-overlay-new"></div>
         <div className="hp-hero-content">
           <h1 className="hp-hero-title-desktop">
-            <span className="hp-hero-title-nowrap">Powering Infrastructure</span><br /><span className="hp-hero-title-nowrap" style={{ position: "relative", left: "-15px" }}>That Delivers</span>
+            <span className="hp-hero-title-nowrap">Give Your Projects</span><br /><span className="hp-hero-title-nowrap">the Right Connection</span>
           </h1>
-          <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products">
-            <Image src="/Images/Home/arrow.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
-          </a>
         </div>
+        
+        <div className="hp-hero-metrics">
+          <div className="hp-hero-metric">
+            <span className="hp-hero-metric-number">750+</span>
+            <span className="hp-hero-metric-text">Projects</span>
+          </div>
+          <div className="hp-hero-metric">
+            <span className="hp-hero-metric-number">250+</span>
+            <span className="hp-hero-metric-text">Clients</span>
+          </div>
+          <div className="hp-hero-metric">
+            <span className="hp-hero-metric-number">22+</span>
+            <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
+          </div>
+          <div className="hp-hero-metric">
+            <span className="hp-hero-metric-number">26+</span>
+            <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
+          </div>
+          <div className="hp-hero-metric">
+            <span className="hp-hero-metric-number">88+</span>
+            <span className="hp-hero-metric-text">Product<br/>Categories</span>
+          </div>
+        </div>
+
+        <a href="#products-distribute" className="hp-hero-scroll" aria-label="Scroll to products" style={{ zIndex: 10 }}>
+          <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+        </a>
       </section>
 
       {/* PRODUCT DIVISIONS - FORCE REBUILD */}
@@ -541,7 +597,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Pioneers in Lightning and Electrical Systems</h2>{/* Force reload height removal */}
+          <h2 className="hp-divisions-main-title">Region's Leading Project Solutions Specialist</h2>{/* Force reload height removal */}
 
           <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
@@ -577,7 +633,7 @@ export default function Homepage() {
                 <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
               </div>
             </div>
-            <h2><span>Key</span> Partners</h2>
+            <h2>Our Brand Partners</h2>
           </div>
 
           <div className="hp-dist-content-container">
@@ -607,28 +663,6 @@ export default function Homepage() {
           </div>
         </section>
 
-        {/* STATS */}
-        <section className="hp-stats-container" ref={statsRef}>
-          <div className="hp-stats-stage">
-            <h2 className="hp-stats-main-title">Give Your Projects the Right Connection</h2>{/* Force reload 768px direct math fix */}
-            <div className="hp-stats-bg hp-stats-bg-orange-bottom" aria-hidden="true"></div>
-            <div className="hp-stat-block hp-stat-card-one hp-stat-block-fix" ref={(node) => { statCardsRef.current[0] = node; }}>
-              <h3><span ref={(node) => { statNumberRefs.current[0] = node; }}>0</span><span>+</span></h3>
-              <h4>Years of Professionalism</h4>
-              <p>Delivering reliable electrical solutions<br />with proven industry expertise</p>
-            </div>
-            <div className="hp-stat-block hp-stat-card-two hp-stat-block-fix" ref={(node) => { statCardsRef.current[1] = node; }}>
-              <h3><span ref={(node) => { statNumberRefs.current[1] = node; }}>0</span><span>+</span></h3>
-              <h4>Countries Served Worldwide</h4>
-              <p>Supporting projects across global<br />markets with a strong supply network</p>
-            </div>
-            <div className="hp-stat-block hp-stat-card-three hp-stat-block-fix" ref={(node) => { statCardsRef.current[2] = node; }}>
-              <h3><span ref={(node) => { statNumberRefs.current[2] = node; }}>0</span><span>+</span></h3>
-              <h4>Product Categories</h4>
-              <p>Offering a wide range of specialized<br />products for diverse industrial needs</p>
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* WHY GULF RADIANT SECTION */}
@@ -643,7 +677,7 @@ export default function Homepage() {
                 <span>WHY CHOOSE US &bull;&nbsp;</span>
               </div>
             </div>
-            <h2>Why Gulf Radiant?</h2>
+            <h2>Why Choose Us?</h2>
           </div>
 
           <div className="why-gr-grid">
@@ -705,7 +739,7 @@ export default function Homepage() {
                 <span>{"- WHERE\u00A0WE\u00A0OPERATE -"}</span>
               </div>
             </div>
-            <h2>Certification &amp; Approvals</h2>
+            <h2>Certified and Approved</h2>
             <div className="hp-cert-btn-container">
               <Link href="/certifications" className="hp-btn-orange-rect">View All Certificates</Link>
             </div>
@@ -749,7 +783,7 @@ export default function Homepage() {
       <section className="hp-trusted-section">
         <div className="hp-trusted-content">
           <div className="hp-trusted-header">
-            <h2>Trusted by Key Clients</h2>
+            <h2>Our Clients</h2>
           </div>
           <div className="hp-trusted-grid-inner">
             {[
@@ -793,7 +827,7 @@ export default function Homepage() {
                 <span>{"- OUR\u00A0PROJECTS -"}</span>
               </div>
             </div>
-            <h2>Project Portfolio</h2>
+            <h2>Our Projects</h2>
           </div>
           <div className="hp-projects-viewport" ref={projectsViewportRef}>
             <div className="hp-projects-track hp-projects-marquee">
@@ -853,7 +887,7 @@ export default function Homepage() {
             </div>
             <h3>
               <span style={{ color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>Message from the</span>
-              <span style={{ color: "#ff5b05", display: "block" }}>CEO</span>
+              <span style={{ color: "#ff5b05", display: "block", marginTop: "-0.15em" }}>CEO</span>
             </h3>
           </div>
           <div className="hp-leadership-copy" style={{ fontSize: "clamp(18px, 1.4vw, 22px)" }}>
@@ -975,10 +1009,12 @@ export default function Homepage() {
                 <span>{"- BOOK\u00A0A\u00A0CALL -"}</span>
               </div>
             </div>
-            <h2 style={{ color: "#ffffff", marginBottom: "30px", lineHeight: "1.1" }}>Ready to Power<br />your Next Project?</h2>
-            <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "20px", lineHeight: "1.6", maxWidth: "600px" }}>
-              Let's discuss how Gulf Radiant can support your infrastructure, industrial, and engineering requirements with reliable electrical solutions tailored to your needs.
-            </p>
+            <style>{`
+              .hp-git-power-heading {
+                font-size: clamp(60px, 6vw, 85px) !important;
+              }
+            `}</style>
+            <h2 className="hp-git-power-heading" style={{ color: "#ffffff", marginBottom: "30px", lineHeight: "1.1" }}>Ready to Power<br />your Next Project?</h2>
           </div>
 
           {/* RIGHT - FORM */}
@@ -996,7 +1032,7 @@ export default function Homepage() {
               zIndex: 2
             }}
           >
-            <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Get in touch</h3>
+            <h3 style={{ color: "#ffffff", marginBottom: "30px", fontSize: "32px" }}>Talk to an Expert</h3>
             <form className="hp-git-form" onSubmit={handleContactSubmit}>
               <div className="hp-git-field">
                 <label htmlFor="git-company" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Company</label>

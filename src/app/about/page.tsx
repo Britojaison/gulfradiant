@@ -11,6 +11,18 @@ export default function AboutPage() {
   const [isPageReady, setIsPageReady] = useState(false);
 
   useEffect(() => {
+    if (isPageReady && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150); // Wait a tiny bit for DOM paint after isPageReady
+    }
+  }, [isPageReady]);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsPageReady(true);
     }, 700); // Deliberate delay to allow initial layout setup and preloading
@@ -21,7 +33,7 @@ export default function AboutPage() {
     {
       src: "/Images/About/img1.jpg",
       alt: "Engineering Reliability",
-      heading: <>Engineering Reliability.<br />Delivering Strength.</>,
+      heading: <>Engineering Reliability.</>,
       sub: "One-stop solution provider for electrical, electro-mechanical, and industrial engineering — since 2001."
     },
     {
@@ -141,10 +153,14 @@ export default function AboutPage() {
             />
           ))}
         </div>
+        
+        <a href="#next-section" className="hp-hero-scroll" aria-label="Scroll down">
+          <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+        </a>
       </section>
 
       {/* TRUSTED & CERTIFIED SECTION */}
-      <section className="trusted-cert-section">
+      <section id="next-section" className="trusted-cert-section">
         <div className="container">
           <h2 className="trusted-cert-title">Trusted by Industry Leaders</h2>
           <div className="marquee-wrapper">
@@ -175,89 +191,70 @@ export default function AboutPage() {
           style={{ objectFit: "cover" }} 
         />
         <div className="divisions-overlay"></div>
-        <div className="divisions-content-wrapper">
-          <div className="division-block-left">
-            <h2>Electrical Division</h2>
-            <p>
-              We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
-            </p>
-          </div>
-          <div className="division-block-right">
-            <h2>Industrial Division</h2>
-            <p>
-              The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...
-            </p>
-          </div>
+        <div className="divisions-heading">
+          <h2>Our Capabilities</h2>
         </div>
-      </section>
-
-
-
-      {/* COMPANY CAPABILITIES */}
-      <section className="capabilities-new">
-        <Image 
-          src="/Images/About/img4.jpg" 
-          alt="Company Capabilities Background" 
-          fill 
-          sizes="100vw"
-          style={{ objectFit: "cover" }} 
-          className="capabilities-bg"
-        />
-        <div className="capabilities-overlay"></div>
-        
-        <div className="capabilities-content">
-          {/* Left Column */}
-          <div className="cap-column-side">
-            <div className="cap-glass-card">
-              <h4>Electrical</h4>
-              <ul>
-                <li>LV/MV Switchgear & Panels</li>
-                <li>Power & Distribution Transformers</li>
-                <li>Cables & Cable Management</li>
-                <li>Lighting & Emergency Systems</li>
-              </ul>
+        <div className="divisions-content-wrapper">
+          <div className="division-column">
+            <div className="division-block-left">
+              <h2>Electrical Division</h2>
+              <p>
+                We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
+              </p>
             </div>
-            <div className="cap-glass-card">
-              <h4>Automation</h4>
-              <ul>
-                <li>PLC & SCADA Systems</li>
-                <li>Variable Frequency Drives</li>
-                <li>Motor Control Centers</li>
-                <li>Building Management Systems</li>
-              </ul>
+            <div className="cap-column-side">
+              <div className="cap-glass-card">
+                <h4>Electrical</h4>
+                <ul>
+                  <li>LV/MV Switchgear & Panels</li>
+                  <li>Power & Distribution Transformers</li>
+                  <li>Cables & Cable Management</li>
+                  <li>Lighting & Emergency Systems</li>
+                </ul>
+              </div>
+              <div className="cap-glass-card">
+                <h4>Automation</h4>
+                <ul>
+                  <li>PLC & SCADA Systems</li>
+                  <li>Variable Frequency Drives</li>
+                  <li>Motor Control Centers</li>
+                  <li>Building Management Systems</li>
+                </ul>
+              </div>
             </div>
           </div>
-
-          {/* Center Title */}
-          <div className="capabilities-center-text">
-            <h2>Our <br />Capabilities</h2>
-          </div>
-
-          {/* Right Column */}
-          <div className="cap-column-side">
-            <div className="cap-glass-card">
-              <h4>Instrumentation</h4>
-              <ul>
-                <li>Process Control Instruments</li>
-                <li>Flow & Level Measurement</li>
-                <li>Pressure & Temperature Gauges</li>
-                <li>Calibration Equipment</li>
-              </ul>
+          <div className="division-column">
+            <div className="division-block-right">
+              <h2>Industrial Division</h2>
+              <p>
+                The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...
+              </p>
             </div>
-            <div className="cap-glass-card">
-              <h4>Mechanical Supply</h4>
-              <ul>
-                <li>Valves & Actuators</li>
-                <li>Pumps & Compressors</li>
-                <li>Hydraulic & Pneumatic Systems</li>
-                <li>Piping & Fittings</li>
-              </ul>
+            <div className="cap-column-side">
+              <div className="cap-glass-card">
+                <h4>Instrumentation</h4>
+                <ul>
+                  <li>Process Control Instruments</li>
+                  <li>Flow & Level Measurement</li>
+                  <li>Pressure & Temperature Gauges</li>
+                  <li>Calibration Equipment</li>
+                </ul>
+              </div>
+              <div className="cap-glass-card">
+                <h4>Mechanical Supply</h4>
+                <ul>
+                  <li>Valves & Actuators</li>
+                  <li>Pumps & Compressors</li>
+                  <li>Hydraulic & Pneumatic Systems</li>
+                  <li>Piping & Fittings</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* TIMELINE SECTION */}
-      <section className="timeline-section-new">
+      <section id="timeline" className="timeline-section-new">
         <Image 
           src="/Images/About/img6.jpg" 
           alt="Timeline Background" 
@@ -561,7 +558,8 @@ export default function AboutPage() {
         .divisions-section-new {
           position: relative;
           width: 100%;
-          height: 100vh;
+          min-height: 100vh;
+          height: auto;
           overflow: hidden;
           background: #000;
         }
@@ -571,15 +569,39 @@ export default function AboutPage() {
           background: rgba(0, 0, 0, 0.1); 
           z-index: 1;
         }
+        .divisions-heading {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          text-align: center;
+          padding-top: 100px;
+        }
+        .divisions-heading h2 {
+          font-family: var(--font-degular), sans-serif !important;
+          font-size: 70px !important;
+          font-weight: 500 !important;
+          color: #ffffff;
+          line-height: 1.1;
+          letter-spacing: -1px;
+        }
         .divisions-content-wrapper {
           position: relative;
           z-index: 2;
           width: 100%;
-          height: 100vh;
-          padding: 0 80px;
+          min-height: 100vh;
+          height: auto;
+          padding: 60px 80px 120px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: stretch;
+          gap: 40px;
+        }
+        .division-column {
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          flex: 1;
+          max-width: 720px;
           gap: 40px;
         }
         .division-block-left, .division-block-right {
@@ -587,21 +609,19 @@ export default function AboutPage() {
           backdrop-filter: blur(24px);
           -webkit-backdrop-filter: blur(24px);
           border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 24px;
-          padding: 40px;
-          width: 746px;
-          height: 285px;
+          border-radius: 20px;
+          padding: 30px 40px;
+          width: 100%;
+          min-height: 230px;
           display: flex;
           flex-direction: column;
           justify-content: center;
         }
         .division-block-left {
-          align-self: flex-start;
           text-align: left;
         }
         .division-block-right {
-          align-self: flex-end;
-          text-align: right;
+          text-align: left;
         }
         .division-block-left h2, .division-block-right h2 {
           font-family: inherit;
@@ -661,14 +681,13 @@ export default function AboutPage() {
         .cap-column-side {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          height: 100%;
-          width: 460px;
-          gap: 80px;
+          justify-content: flex-start;
+          width: 100%;
+          gap: 40px;
         }
         .cap-glass-card {
-          width: 460px;
-          height: 340px;
+          width: 100%;
+          min-height: 280px;
           background: rgba(0, 0, 0, 0.45);
           backdrop-filter: blur(40px) saturate(150%);
           -webkit-backdrop-filter: blur(40px) saturate(150%);
@@ -853,13 +872,16 @@ export default function AboutPage() {
           .about-hero-content p { font-size: 17px; }
 
           /* Divisions */
-          .divisions-content-wrapper { padding: 0 40px; gap: 28px; }
+          .divisions-heading h2 { font-size: 42px !important; }
+          .divisions-content-wrapper { padding: 80px 40px; gap: 40px; flex-direction: column; justify-content: flex-start; height: auto; }
+          .division-column { width: 100%; max-width: none; align-self: stretch; }
           .division-block-left, .division-block-right {
             width: 100%;
+            max-width: none;
             height: auto;
             padding: 32px;
+            align-self: center;
           }
-          .division-block-right { align-self: flex-end; width: 90%; }
 
           /* Capabilities — 2-column grid */
           .capabilities-new { height: auto; }
@@ -947,6 +969,7 @@ export default function AboutPage() {
 
           /* Divisions — stack vertically */
           .divisions-section-new { height: auto; }
+          .divisions-heading h2 { font-size: 32px !important; }
           .divisions-content-wrapper {
             padding: 80px 20px 60px;
             height: auto;

@@ -65,10 +65,14 @@ export default function CertificationsPage() {
             decades of trust, quality, and compliance excellence
           </p>
         </div>
+        
+        <a href="#next-section" className="hp-hero-scroll" aria-label="Scroll down">
+          <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+        </a>
       </section>
 
       {/* CERTIFICATIONS GRID SECTION */}
-      <section className="certs-section-bg">
+      <section id="next-section" className="certs-section-bg">
         <div className="certs-header" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <div className="hp-dist-subtitle">
             <div className="hp-dist-subtitle-track">
@@ -79,7 +83,7 @@ export default function CertificationsPage() {
             </div>
           </div>
           <h2 className="certs-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "600", textAlign: "center", margin: "20px auto", color: "#ffffff", width: "100%" }}>
-            Industry Certifications & Approvals
+            Certifications & Approvals
           </h2>
         </div>
 

@@ -1307,6 +1307,44 @@
     text-align: center;
   }
 
+  .hp-hero-metrics {
+    position: absolute;
+    bottom: 195px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .hp-hero-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hp-hero-metric-number {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: var(--font-degular), sans-serif;
+  }
+
+  .hp-hero-metric-text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+    max-width: 160px;
+    line-height: 1.3;
+  }
+
   .hp-hero-subtitle {
     font-family: var(--font-geist-mono), monospace;
     font-size: 12px;
@@ -1340,7 +1378,8 @@
   .hp-hero-scroll {
     position: absolute;
     left: 50%;
-    top: calc(50% + min(25vh, 265px));
+    top: auto;
+    bottom: 30px;
     transform: translateX(-50%);
     display: inline-flex;
     align-items: center;
@@ -1917,7 +1956,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: min(44vw, 560px);
+    width: min(45vw, 800px);
     min-height: 100vh;
     justify-content: center;
   }
@@ -1969,7 +2008,7 @@
     border-radius: 8px;
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2325,7 +2364,7 @@
     font-size: clamp(46px, 4.3vw, 64px);
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 1.42;
+    line-height: 1.15;
     margin: 0 0 8px;
   }
 
@@ -2958,7 +2997,7 @@
 
   .hp-footer-grid {
     display: grid;
-    grid-template-columns: minmax(500px, 2.4fr) minmax(130px, 0.6fr) minmax(210px, 1fr) minmax(320px, 1.2fr);
+    grid-template-columns: minmax(320px, 1.8fr) minmax(130px, 0.6fr) minmax(160px, 0.8fr) minmax(750px, 3fr);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 40px;
     gap: 40px;
@@ -3117,7 +3156,7 @@
   .hp-footer-contact-line {
     display: flex;
     gap: 26px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .hp-footer-contact-line a {
@@ -4241,8 +4280,23 @@
       max-width: 900px;
     }
 
+    .hp-hero-metrics {
+      bottom: 20px;
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .hp-hero-metric-number {
+      font-size: 24px;
+    }
+
+    .hp-hero-metric-text {
+      font-size: 12px;
+    }
+
     .hp-hero-scroll {
-      display: none;
+      display: inline-flex !important;
+      bottom: 20px !important;
     }
 
     .hp-hero-content h1 {
@@ -5114,8 +5168,16 @@
       white-space: normal !important;
     }
 
+    .hp-footer-col {
+      padding-left: 0 !important;
+    }
+
     .hp-footer-locations-col {
       grid-column: span 2 !important;
+    }
+    
+    .hp-footer-locations {
+      gap: 20px !important;
     }
 
     .hp-footer-map {
@@ -6209,7 +6271,7 @@
     position: relative !important;
     flex: 0 0 calc((100% - 96px) / 4.5) !important;
     width: calc((100% - 96px) / 4.5) !important;
-    aspect-ratio: 246 / 301 !important;
+    aspect-ratio: 246 / 230 !important;
     height: auto !important;
     border-radius: 24px !important;
     padding: 0 !important;
@@ -6228,7 +6290,7 @@
 
   .new-prod-cat-card.active {
     border-color: #ffffff !important;
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25) !important;
+    box-shadow: none !important;
   }
 
   .new-prod-cat-card-img-wrapper {
@@ -6621,7 +6683,6 @@
 
     .new-prod-card {
       padding: 16px !important;
-      height: auto !important;
     }
   }
 
@@ -8090,8 +8151,37 @@
   }
 
   @media (max-width: 480px) {
-    .hp-hero-title-desktop {
-      font-size: 32px !important;
+    .hp-hero-content h1.hp-hero-title-desktop {
+      font-size: 26px !important;
+      line-height: 1.2 !important;
+    }
+    
+    .hp-hero-content {
+      top: 40% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+    
+    .hp-hero-metrics {
+      gap: 12px !important;
+      bottom: 110px !important;
+      padding: 0 5px !important;
+    }
+    
+    .hp-hero-metric-number {
+      font-size: 16px !important;
+    }
+    
+    .hp-hero-metric-text {
+      font-size: 9px !important;
+      line-height: 1.1 !important;
+    }
+    
+    .hp-hero-scroll {
+      bottom: 15px !important;
+    }
+    
+    .hp-hero-scroll img {
+      width: 24px !important;
     }
   }
 
@@ -8602,4 +8692,8 @@
   .hp-cert-content-inner {
     padding-top: 56px !important;
   }
+}
+
+.hp-git-power-heading {
+  font-size: clamp(64px, 7vw, 100px) !important;
 }

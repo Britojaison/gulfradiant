@@ -16,8 +16,7 @@ const CATEGORY_MAP = [
     id: "All",
     label: "All Projects",
     image: "/Images/our_projects/img7.svg",
-    desc: "Explore all our completed projects across industries",
-    filter: "brightness(1.8)"
+    desc: "Explore all our completed projects across industries"
   },
   {
     id: "LIGHTNING & EXOTHERMIC WELDING  PROTECTION",
@@ -225,7 +224,7 @@ function ProjectsPageContent() {
       {/* 1ST SECTION: HERO & CATEGORIES */}
       <section className="new-prod-hero-section" style={{ backgroundImage: "url('/Images/Certifications/bg.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
-        <div className="new-prod-section-inner">
+        <div className="new-prod-section-inner" style={{ paddingTop: "60px" }}>
           <div className="new-prod-header-row">
             <h1 className="new-prod-title projects-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Our Project Portfolio</h1>
           </div>
@@ -283,8 +282,8 @@ function ProjectsPageContent() {
 
       {/* TRUSTED BAR */}
       <div className="projects-trusted-bar" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", textAlign: "center", padding: "40px 20px", background: "#ffffff" }}>
-        <h2 className="projects-main-heading" style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", maxWidth: "900px", lineHeight: "1.3" }}>
-          {selectedCategory === "All" && "UAE's Leading Solutions Provider for Oil & Gas, Energy, Infrastructural & Industrial Projects for Over Two Decades."}
+        <h2 className="projects-main-heading" style={{ color: "#000000", margin: "0", fontFamily: "var(--font-degular), sans-serif", fontWeight: "500", maxWidth: "1600px", lineHeight: "1.2", fontSize: "48px" }}>
+          {selectedCategory === "All" && "UAE's Leading Solutions Provider for Oil & Gas, Energy, Infrastructural & Industrial Projects."}
           {selectedCategory === "LIGHTNING & EXOTHERMIC WELDING  PROTECTION" && "The GCC's Trusted Leader in EARTHING & LIGHTNING Protection Solutions"}
           {selectedCategory === "aircraft warning lights" && "Lighting the Skyline — Some of the UAE's Most Iconic Landmarks Trust our AIRCRAFT WARNING LIGHTS"}
           {selectedCategory === "high ampherage pluug and sockets " && "Powering Heavy Industry with High-Amperage Switching Systems and Heavy-Duty Industrial Connectivity Solutions."}

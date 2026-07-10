@@ -88,37 +88,24 @@ export default function InformationPage() {
               <span>{"- TECHNICAL\u00A0RESOURCES -"}</span>
             </div>
           </div>
-          <h1 className="hero-glow-text">Useful Information. <br />Expert Guidance.</h1>
+          <h1 className="hero-glow-text">
+            Expert Guidance.
+          </h1>
+          <div className="section-description-centered" style={{ margin: "20px 0 0", textAlign: "left", fontSize: "20px", color: "rgba(255, 255, 255, 0.85)" }}>
+            Access our comprehensive library of technical charts, selection guides, and reference materials to help you with your engineering projects.
+          </div>
         </div>
+        
+        <a href="#next-section" className="hp-hero-scroll" aria-label="Scroll down">
+          <Image src="/Images/Home/arrow-bold.svg" alt="Scroll down" width={34} height={34} style={{ height: "auto" }} />
+        </a>
       </section>
 
       {/* DOWNLOADS SECTION */}
-      <section className="info-main-section">
+      <section id="next-section" className="info-main-section">
         <div className="container-full">
           <div className="section-header-figma-centered">
             <h2>Technical <span className="text-orange">Charts & Guides</span></h2>
-            <p className="section-description-centered">
-              Access our comprehensive library of technical charts, selection guides, and reference materials to help you with your engineering projects.
-            </p>
-            <div className="download-all-right-wrapper">
-              <button 
-                className="info-download-all-btn-figma"
-                onClick={() => {
-                  downloads.forEach((item, index) => {
-                    setTimeout(() => {
-                      const link = document.createElement('a');
-                      link.href = item.file;
-                      link.download = item.title;
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
-                    }, index * 200);
-                  });
-                }}
-              >
-                Download All Resources
-              </button>
-            </div>
           </div>
 
           <div className="info-grid-figma-tight">
@@ -164,6 +151,26 @@ export default function InformationPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="download-all-right-wrapper" style={{ justifyContent: "center", marginTop: "60px" }}>
+            <button 
+              className="info-download-all-btn-figma"
+              onClick={() => {
+                downloads.forEach((item, index) => {
+                  setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = item.file;
+                    link.download = item.title;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }, index * 200);
+                });
+              }}
+            >
+              Download All Resources
+            </button>
           </div>
         </div>
       </section>
@@ -315,9 +322,11 @@ export default function InformationPage() {
         .info-grid-figma-tight {
           display: flex;
           flex-wrap: wrap;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 30px;
           width: 100%;
+          max-width: 1350px;
+          margin: 0 auto;
         }
 
         .info-card-figma-exact {
@@ -448,14 +457,14 @@ export default function InformationPage() {
 
         @media (max-width: 1024px) {
           .section-header-figma-centered h2 { font-size: 36px !important; font-weight: 500 !important; }
-          .section-description-centered { font-size: 18px !important; padding: 0 20px; }
-          .info-hero-content h1 { font-size: 36px !important; font-weight: 500 !important; }
+          .section-description-centered { font-size: 18px !important; }
+          .info-hero-content h1 { font-size: 50px !important; font-weight: 500 !important; }
         }
 
         @media (max-width: 600px) {
           .container-full { padding: 0 20px; }
-          .info-hero { padding-left: 20px; padding-right: 20px; height: 50vh !important; }
-          .info-hero-content h1 { font-size: 42px !important; }
+          .info-hero { padding-left: 20px; padding-right: 20px; height: 60vh !important; }
+          .info-hero-content h1 { font-size: 38px !important; }
           .section-header-figma-centered h2 { font-size: 28px !important; }
           .section-description-centered { font-size: 16px !important; }
           .download-all-right-wrapper { justify-content: center; margin-top: 30px; }
