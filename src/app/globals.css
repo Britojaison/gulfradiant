@@ -2997,37 +2997,15 @@
 
   .hp-footer-grid {
     display: grid;
-    grid-template-columns: minmax(320px, 1.8fr) minmax(130px, 0.6fr) minmax(160px, 0.8fr) minmax(750px, 3fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 3fr);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 40px;
-    gap: 40px;
+    gap: clamp(20px, 3vw, 40px);
   }
 
   @media (max-width: 1400px) {
     .hp-footer-content {
       padding: 0 40px;
-    }
-
-    .hp-footer-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 30px !important;
-      align-items: start !important;
-    }
-
-    .hp-footer-brand {
-      grid-column: span 2 !important;
-      max-width: 100%;
-    }
-
-    .hp-footer-brand h2 {
-      font-size: 36px !important;
-      font-weight: 500 !important;
-      white-space: normal !important;
-    }
-
-    .hp-footer-locations-col {
-      grid-column: span 2 !important;
     }
 
     .hp-footer-locations {
@@ -4478,24 +4456,6 @@
 
     .hp-footer-content {
       padding: 0 40px;
-    }
-
-    .hp-footer-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 30px !important;
-      align-items: start !important;
-    }
-
-    .hp-footer-brand {
-      grid-column: span 2 !important;
-      max-width: 100%;
-    }
-
-    .hp-footer-brand h2 {
-      font-size: 36px !important;
-      font-weight: 500 !important;
-      white-space: normal !important;
     }
 
     /* Projects page */

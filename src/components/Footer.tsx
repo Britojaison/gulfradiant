@@ -81,7 +81,7 @@ export default function Footer() {
               <li><a href="/homepage#contact">Contact</a></li>
             </ul>
           </div>
-          <div className="hp-footer-col" style={{ paddingLeft: "40px" }}>
+          <div className="hp-footer-col">
             <h4>Information</h4>
             <ul>
               <li><Link href="/productpage">Our Partnered Brands</Link></li>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li><a href="/homepage#contact">Leadership Message</a></li>
             </ul>
           </div>
-          <div className="hp-footer-col hp-footer-locations-col" style={{ paddingLeft: "80px" }}>
+          <div className="hp-footer-col hp-footer-locations-col">
             <div className="hp-footer-locations" style={{ display: "flex", gap: "60px", flexWrap: "nowrap" }}>
               <div className="hp-footer-location" style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
                 <h4>Dubai</h4>
@@ -131,9 +131,6 @@ export default function Footer() {
         </div>
         <div className="hp-footer-bottom">
           <span>&copy; Gulf Radiant {new Date().getFullYear()}. All rights reserved.</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <Link href="/privacy">Privacy Policy</Link>
-          </div>
         </div>
       </div>
     </footer>
