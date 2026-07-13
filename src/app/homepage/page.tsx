@@ -480,12 +480,12 @@ export default function Homepage() {
   
   const heroVideos = [
     {
-      webm: "/Images/Home/hero-video-optimized.webm",
-      objectPosition: "center"
-    },
-    {
       webm: "/Images/Home/hero video 2.webm",
       objectPosition: "top"
+    },
+    {
+      webm: "/Images/Home/hero-video-optimized.webm",
+      objectPosition: "center"
     }
   ];
 
