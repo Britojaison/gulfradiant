@@ -568,15 +568,15 @@ export default function Homepage() {
             <span className="hp-hero-metric-text">Clients</span>
           </div>
           <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">22+</span>
+            <span className="hp-hero-metric-number">25+</span>
             <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
           </div>
           <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">26+</span>
+            <span className="hp-hero-metric-number">30+</span>
             <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
           </div>
           <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">88+</span>
+            <span className="hp-hero-metric-number">99+</span>
             <span className="hp-hero-metric-text">Product<br/>Categories</span>
           </div>
         </div>
@@ -746,35 +746,13 @@ export default function Homepage() {
           </div>
 
           <div className="hp-cert-right-container hp-cert-right-container-fix">
-            <div
-              className="hp-cert-scroll-window"
-              aria-label="Certification approvals"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-[800px] mx-auto" aria-label="Certification approvals">
               {certImages.map((cert, idx) => (
-                <div
-                  className="hp-cert-box"
-                  key={`${cert.src}-${idx}`}
-                  ref={(node) => { certCardsRef.current[idx] = node; }}
-                >
+                <div className="relative w-full aspect-[3/2] bg-white rounded-lg flex justify-center items-center border border-white/70 shadow-[0_10px_30px_rgba(43,3,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(43,3,0,0.15),0_4px_15px_rgba(0,0,0,0.1)]" key={`${cert.src}-${idx}`}>
                   <Image src={cert.src} alt={cert.alt} fill sizes="(max-width: 768px) 84vw, 315px" style={{ objectFit: "contain", padding: "12px" }} />
                 </div>
               ))}
             </div>
-            {isMobile && (
-              <div className="hp-cert-carousel-dots">
-                {certImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    className={`hp-cert-carousel-dot ${activeCertIndex === idx ? "active" : ""}`}
-                    onClick={() => setActiveCertIndex(idx)}
-                    aria-label={`Go to certificate ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </section>
@@ -837,7 +815,7 @@ export default function Homepage() {
                     src={`/Images/our_projects/${project.image}`}
                     alt={project.alt}
                     fill
-                    sizes="(max-width: 767px) 82vw, (max-width: 1199px) 44vw, 520px"
+                    sizes="(max-width: 767px) 65vw, (max-width: 1199px) 44vw, 520px"
                     style={{ objectFit: "cover", objectPosition: project.position }}
                   />
                   <span className="hp-project-label">{project.title}</span>
@@ -849,7 +827,7 @@ export default function Homepage() {
                     src={`/Images/our_projects/${project.image}`}
                     alt={project.alt}
                     fill
-                    sizes="(max-width: 767px) 82vw, (max-width: 1199px) 44vw, 520px"
+                    sizes="(max-width: 767px) 65vw, (max-width: 1199px) 44vw, 520px"
                     style={{ objectFit: "cover", objectPosition: project.position }}
                   />
                   <span className="hp-project-label">{project.title}</span>
@@ -1095,14 +1073,16 @@ export default function Homepage() {
           .hp-projects-section-new { min-height: auto !important; }
           .hp-projects-sticky { min-height: auto !important; height: auto !important; overflow: visible !important; }
           .hp-project-card { 
-            flex: 0 0 65vw !important;
-            width: 65vw !important;
-            height: calc(65vw * 11 / 16) !important;
-            min-height: 300px !important;
+            flex: 0 0 calc((100vw - 40px) / 2.5) !important;
+            width: calc((100vw - 40px) / 2.5) !important;
+            min-width: 280px !important;
+            aspect-ratio: 16 / 11;
+            height: auto !important;
+            min-height: 0 !important;
           }
           .hp-projects-viewport {
-            height: calc(65vw * 11 / 16) !important;
-            min-height: 300px !important;
+            height: auto !important;
+            min-height: 0 !important;
           }
           .hp-projects-track { height: 100% !important; align-items: center !important; }
         }
@@ -1111,14 +1091,16 @@ export default function Homepage() {
           .hp-projects-section-new { min-height: auto !important; }
           .hp-projects-sticky { min-height: auto !important; height: auto !important; overflow: visible !important; }
           .hp-project-card { 
-            flex: 0 0 90vw !important;
-            width: 90vw !important;
-            height: 110vw !important;
-            min-height: 400px !important;
+            flex: 0 0 65vw !important;
+            width: 65vw !important;
+            min-width: 240px !important;
+            aspect-ratio: 16 / 11;
+            height: auto !important;
+            min-height: 0 !important;
           }
           .hp-projects-viewport {
-            height: 110vw !important;
-            min-height: 400px !important;
+            height: auto !important;
+            min-height: 0 !important;
           }
           .hp-projects-track { height: 100% !important; align-items: center !important; }
         }

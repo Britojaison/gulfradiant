@@ -130,7 +130,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="hp-footer-bottom">
-          <span>© Gulf Radiant 2026. All rights reserved.</span>
+          <span>&copy; Gulf Radiant {new Date().getFullYear()}. All rights reserved.</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
             <Link href="/privacy">Privacy Policy</Link>
           </div>

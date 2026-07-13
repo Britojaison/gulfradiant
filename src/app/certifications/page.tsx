@@ -61,7 +61,7 @@ export default function CertificationsPage() {
         <div className="certs-hero-content">
           <h1 className="certs-hero-title">Certifications</h1>
           <p className="certs-hero-subtitle">
-            Accredited by top UAE authorities — our certifications reflect two
+            Accredited by top UAE authorities, our certifications reflect two
             decades of trust, quality, and compliance excellence
           </p>
         </div>

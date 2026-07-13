@@ -195,61 +195,58 @@ export default function AboutPage() {
           <h2>Our Capabilities</h2>
         </div>
         <div className="divisions-content-wrapper">
-          <div className="division-column">
-            <div className="division-block-left">
-              <h2>Electrical Division</h2>
-              <p>
-                We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
-              </p>
-            </div>
-            <div className="cap-column-side">
-              <div className="cap-glass-card">
-                <h4>Electrical</h4>
-                <ul>
-                  <li>LV/MV Switchgear & Panels</li>
-                  <li>Power & Distribution Transformers</li>
-                  <li>Cables & Cable Management</li>
-                  <li>Lighting & Emergency Systems</li>
-                </ul>
-              </div>
-              <div className="cap-glass-card">
-                <h4>Automation</h4>
-                <ul>
-                  <li>PLC & SCADA Systems</li>
-                  <li>Variable Frequency Drives</li>
-                  <li>Motor Control Centers</li>
-                  <li>Building Management Systems</li>
-                </ul>
-              </div>
-            </div>
+          <div className="division-block-left">
+            <h2>Electrical Division</h2>
+            <p>
+              We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
+            </p>
           </div>
-          <div className="division-column">
-            <div className="division-block-right">
-              <h2>Industrial Division</h2>
-              <p>
-                The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...
-              </p>
-            </div>
-            <div className="cap-column-side">
-              <div className="cap-glass-card">
-                <h4>Instrumentation</h4>
-                <ul>
-                  <li>Process Control Instruments</li>
-                  <li>Flow & Level Measurement</li>
-                  <li>Pressure & Temperature Gauges</li>
-                  <li>Calibration Equipment</li>
-                </ul>
-              </div>
-              <div className="cap-glass-card">
-                <h4>Mechanical Supply</h4>
-                <ul>
-                  <li>Valves & Actuators</li>
-                  <li>Pumps & Compressors</li>
-                  <li>Hydraulic & Pneumatic Systems</li>
-                  <li>Piping & Fittings</li>
-                </ul>
-              </div>
-            </div>
+          
+          <div className="division-block-right">
+            <h2>Industrial Division</h2>
+            <p>
+              The Industrial division of Gulf Radiant caters to a wide range of products & solutions suited for various industries, viz.., Metallurgical, Manufacturing, Oil&Gas, Infrastructure & allied fields, with specialization in Hydraulics, Pneumatics, Instrumentation, Industrial Automation, Welding, Cutting, Metal alloys, Industrial tools etc...
+            </p>
+          </div>
+
+          <div className="cap-glass-card">
+            <h4>Electrical</h4>
+            <ul>
+              <li>LV/MV Switchgear & Panels</li>
+              <li>Power & Distribution Transformers</li>
+              <li>Cables & Cable Management</li>
+              <li>Lighting & Emergency Systems</li>
+            </ul>
+          </div>
+          
+          <div className="cap-glass-card">
+            <h4>Instrumentation</h4>
+            <ul>
+              <li>Process Control Instruments</li>
+              <li>Flow & Level Measurement</li>
+              <li>Pressure & Temperature Gauges</li>
+              <li>Calibration Equipment</li>
+            </ul>
+          </div>
+
+          <div className="cap-glass-card">
+            <h4>Automation</h4>
+            <ul>
+              <li>PLC & SCADA Systems</li>
+              <li>Variable Frequency Drives</li>
+              <li>Motor Control Centers</li>
+              <li>Building Management Systems</li>
+            </ul>
+          </div>
+
+          <div className="cap-glass-card">
+            <h4>Mechanical Supply</h4>
+            <ul>
+              <li>Valves & Actuators</li>
+              <li>Pumps & Compressors</li>
+              <li>Hydraulic & Pneumatic Systems</li>
+              <li>Piping & Fittings</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -560,6 +557,9 @@ export default function AboutPage() {
           width: 100%;
           min-height: 100vh;
           height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           overflow: hidden;
           background: #000;
         }
@@ -574,11 +574,11 @@ export default function AboutPage() {
           z-index: 2;
           width: 100%;
           text-align: center;
-          padding-top: 100px;
+          padding-top: clamp(30px, 8vh, 90px);
         }
         .divisions-heading h2 {
           font-family: var(--font-degular), sans-serif !important;
-          font-size: 70px !important;
+          font-size: clamp(40px, 7vh, 70px) !important;
           font-weight: 500 !important;
           color: #ffffff;
           line-height: 1.1;
@@ -588,21 +588,12 @@ export default function AboutPage() {
           position: relative;
           z-index: 2;
           width: 100%;
-          min-height: 100vh;
-          height: auto;
-          padding: 60px 80px 120px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: stretch;
-          gap: 40px;
-        }
-        .division-column {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          max-width: 720px;
-          gap: 40px;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: clamp(10px, 2vh, 20px) 40px clamp(20px, 5vh, 40px);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(16px, 3vh, 24px);
         }
         .division-block-left, .division-block-right {
           background: rgba(255, 255, 255, 0.08);
@@ -610,9 +601,8 @@ export default function AboutPage() {
           -webkit-backdrop-filter: blur(24px);
           border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 20px;
-          padding: 30px 40px;
+          padding: clamp(16px, 3vh, 30px) clamp(20px, 3vw, 40px);
           width: 100%;
-          min-height: 230px;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -625,14 +615,14 @@ export default function AboutPage() {
         }
         .division-block-left h2, .division-block-right h2 {
           font-family: inherit;
-          font-size: 36px;
+          font-size: 28px;
           font-weight: 500;
           color: #ffffff;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
         .division-block-left p, .division-block-right p {
-          font-size: 16px;
-          line-height: 1.6;
+          font-size: 14px;
+          line-height: 1.5;
           color: rgba(255, 255, 255, 0.9);
           margin: 0;
         }
@@ -678,16 +668,8 @@ export default function AboutPage() {
           line-height: 1.1;
           letter-spacing: -1px;
         }
-        .cap-column-side {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          width: 100%;
-          gap: 40px;
-        }
         .cap-glass-card {
           width: 100%;
-          min-height: 280px;
           background: rgba(0, 0, 0, 0.45);
           backdrop-filter: blur(40px) saturate(150%);
           -webkit-backdrop-filter: blur(40px) saturate(150%);
@@ -695,7 +677,7 @@ export default function AboutPage() {
           border-top: 1px solid rgba(255, 255, 255, 0.25);
           border-left: 1px solid rgba(255, 255, 255, 0.25);
           border-radius: 20px;
-          padding: 40px;
+          padding: clamp(20px, 3vh, 40px) clamp(20px, 3vw, 40px);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -705,10 +687,10 @@ export default function AboutPage() {
         }
         .cap-glass-card h4 {
           font-family: var(--font-inter-tight), sans-serif;
-          font-size: 40px;
+          font-size: 24px;
           font-weight: 500;
           color: #ffffff;
-          margin-bottom: 25px;
+          margin-bottom: 12px;
         }
         .cap-glass-card ul {
           list-style: none;
@@ -717,10 +699,10 @@ export default function AboutPage() {
         }
         .cap-glass-card ul li {
           font-family: var(--font-neutiva), sans-serif;
-          font-size: 16px;
+          font-size: 13px;
           color: rgba(255, 255, 255, 0.9);
-          margin-bottom: 12px;
-          line-height: 1.5;
+          margin-bottom: 8px;
+          line-height: 1.4;
         }
         /* TIMELINE NEW */
         .timeline-section-new { 
@@ -871,17 +853,7 @@ export default function AboutPage() {
           .about-hero-content h1 { font-size: 36px !important; font-weight: 500 !important; }
           .about-hero-content p { font-size: 17px; }
 
-          /* Divisions */
-          .divisions-heading h2 { font-size: 42px !important; }
-          .divisions-content-wrapper { padding: 80px 40px; gap: 40px; flex-direction: column; justify-content: flex-start; height: auto; }
-          .division-column { width: 100%; max-width: none; align-self: stretch; }
-          .division-block-left, .division-block-right {
-            width: 100%;
-            max-width: none;
-            height: auto;
-            padding: 32px;
-            align-self: center;
-          }
+
 
           /* Capabilities — 2-column grid */
           .capabilities-new { height: auto; }
@@ -971,8 +943,9 @@ export default function AboutPage() {
           .divisions-section-new { height: auto; }
           .divisions-heading h2 { font-size: 32px !important; }
           .divisions-content-wrapper {
-            padding: 80px 20px 60px;
+            padding: 40px 20px 60px;
             height: auto;
+            grid-template-columns: 1fr;
             gap: 20px;
           }
           .division-block-left, .division-block-right {
@@ -1119,6 +1092,18 @@ export default function AboutPage() {
             line-height: 1.4 !important;
             font-weight: 300 !important;
           }
+        }
+        
+        /* ── 4K / ULTRA-WIDE (≥1600px) ── */
+        @media (min-width: 1600px) {
+          .divisions-heading h2 { font-size: clamp(60px, 8vh, 80px) !important; }
+          .divisions-content-wrapper { max-width: 1800px; gap: clamp(20px, 4vh, 40px); }
+          .division-block-left h2, .division-block-right h2 { font-size: 32px; margin-bottom: 12px; }
+          .division-block-left p, .division-block-right p { font-size: 16px; }
+          .cap-glass-card h4 { font-size: 28px; margin-bottom: 12px; }
+          .cap-glass-card ul li { font-size: 15px; margin-bottom: 10px; }
+          .division-block-left, .division-block-right { padding: clamp(20px, 3vh, 30px) 40px; }
+          .cap-glass-card { padding: clamp(20px, 3vh, 30px) 40px; }
         }
       `}</style>
     </div>

@@ -4389,9 +4389,7 @@
     .hp-project-card {
       flex: 0 0 calc((100vw - 40px) / 2.5);
       width: calc((100vw - 40px) / 2.5);
-      min-width: 360px;
-      height: calc(((100vw - 40px) / 2.5) * 11 / 16) !important;
-      min-height: 247px !important;
+      min-width: 280px;
     }
 
     .hp-projects-track {
@@ -4400,8 +4398,7 @@
     }
 
     .hp-projects-viewport {
-      height: calc(((100vw - 40px) / 2.5) * 11 / 16) !important;
-      min-height: 247px !important;
+      
     }
 
     .hp-footer-locations {
@@ -4972,11 +4969,9 @@
     }
 
     .hp-project-card {
-      flex: 0 0 82vw;
-      width: 82vw;
-      min-width: 280px;
-      height: calc(82vw * 11 / 16) !important;
-      min-height: 192px !important;
+      flex: 0 0 65vw;
+      width: 65vw;
+      min-width: 240px;
     }
 
     .hp-projects-track {
@@ -4985,8 +4980,7 @@
     }
 
     .hp-projects-viewport {
-      height: calc(82vw * 11 / 16) !important;
-      min-height: 192px !important;
+      
     }
 
     .hp-footer-locations {
@@ -5969,7 +5963,7 @@
   .hp-contact-inner-new {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin: 0 auto;
     max-width: 1600px;
     width: 100%;
