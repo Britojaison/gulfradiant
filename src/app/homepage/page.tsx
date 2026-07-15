@@ -504,7 +504,7 @@ export default function Homepage() {
   }, [activeHeroIndex]);
 
   const handleVideoEnded = (idx: number) => {
-    if (idx === 1 && playCount < 1) {
+    if (idx === 0 && playCount < 1) {
       setPlayCount(c => c + 1);
       const vid = videoRefs.current[idx];
       if (vid) {
