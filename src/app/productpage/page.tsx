@@ -23,7 +23,7 @@ const CATEGORY_MAP = [
   },
   {
     id: "Earthing • Lightning • Surge Protection Systems",
-    label: "Earthing Lightning & Surge Protection Systems",
+    label: "Earthing, \nLightning & Surge Protection Systems",
     image: "/Images/product/earthing.webp",
     desc: "Kumwell systems, lightning protection, & exothermic welding solutions"
   },

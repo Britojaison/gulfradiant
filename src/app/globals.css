@@ -6291,6 +6291,7 @@
     color: #ffffff !important;
     margin: 0 !important;
     text-align: left !important;
+    white-space: pre-line !important;
   }
 
   /* Dynamic Active Category Header Section */

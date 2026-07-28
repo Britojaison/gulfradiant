@@ -103,6 +103,13 @@ export default function Footer() {
                 >
                   <div style={{ marginBottom: "4px" }}>GULF RADIANT L.L.C</div>
                   <div>P.O. Box: 26426, Amman Street,<br/>Al Qusais Industrial Area - 3, Dubai, U.A.E</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "8px", fontSize: "0.9em", color: "#f85800" }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Open in Maps</span>
+                  </div>
                 </a>
                 <div className="hp-footer-contact-line" style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
                   <a href="mailto:info@gulfradiant.com">info@gulfradiant.com</a>
@@ -120,6 +127,13 @@ export default function Footer() {
                 >
                   <div style={{ marginBottom: "4px" }}>GULF RADIANT ELECTRICALS L.L.C</div>
                   <div>P.O. Box: 91366, M-9,<br/>Abu Dhabi, U.A.E</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "8px", fontSize: "0.9em", color: "#f85800" }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Open in Maps</span>
+                  </div>
                 </a>
                 <div className="hp-footer-contact-line" style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
                   <a href="mailto:infoabu@gulfradiant.com">infoabu@gulfradiant.com</a>
