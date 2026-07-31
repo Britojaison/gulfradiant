@@ -140,8 +140,8 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
           <a href="mailto:info@gulfradiant.com">
             info@gulfradiant.com
           </a>
-          <a href="tel:+97142671662">
-            +971 4 2671662
+          <a href="tel:+97142671882">
+            +971 4 2671882
           </a>
         </div>
       </div>

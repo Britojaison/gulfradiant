@@ -23,8 +23,8 @@ interface BrandData {
   website: string;
   productRange?: ProductItem[];
   certifiedLogos: string[];
-  aboutP1: string;
-  aboutP2: string;
+  aboutP1: string | React.ReactNode;
+  aboutP2: string | React.ReactNode;
   aboutBg: string;
   aboutHighlight: string;
   categoryStyle?: "cards" | "tabs" | "carousel-list";
@@ -117,8 +117,33 @@ const BRAND_DATABASE: Record<string, BrandData> = {
       "/Images/Certificates/taqa group.webp",
       "/Images/Certificates/cert-rta-logo.jpg"
     ],
-    aboutP1: "Kumwell Corporation public company Limited is a manufacturer and distributor of products in grounding systems such as grounding rods, grounding conductors, exothermic welding equipment, ground enhancement materials, inspection pits and etc. Lightning protection system compose of air terminals, lightning conductors, connectors & fasteners and etc. Surge protection system, lightning detection and warning system are compiled for international standards under Kumwell brand.",
-    aboutP2: "Kumwell products export to over 40 countries around the world through our distributors. Our vision is a leader with total solution in lightning protection system and safety innovation with the strongest brand and sustainable growth.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Total Solutions for Grounding, Lightning Protection & Industrial Safety
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          KUMWELL Corporation Public Company Limited, Thailand's leading manufacturer of grounding and lightning protection solutions, is a globally recognized technology company providing comprehensive solutions for electrical safety, infrastructure protection and industrial monitoring. GULF RADIANT has been a long-standing proud partner of KUMWELL ever since our inception in 2001, as sole authorized distributor for GCC & ME&A region.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          KUMWELL offers an extensive portfolio of integrated solutions, including:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px" }}>
+          <li>Earthing & Lightning Protection Systems (E&LPS)</li>
+          <li>Exothermic Welding Systems</li>
+          <li>Isolating Spark Gaps (ISG)</li>
+          <li>Lightning Warning & Detection Systems (LWDS)</li>
+          <li>SMART Lightning Management Systems (SLMS)</li>
+          <li>Distributed Temperature Sensing (DTS)</li>
+          <li>Distributed Acoustic Sensing (DAS)</li>
+          <li>Truck & Tanker Static Grounding Systems</li>
+        </ul>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Exporting to 40+ Countries"
   },
@@ -209,8 +234,8 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Since 1937, CITEL has been keeping the world's critical networks and equipment protected from transient overvoltages. Whether a large magnitude lightning strike or the relentless barrage of switching events, our surge protectors keep sensitive electronics safe and operations uninterrupted. CITEL's thorough understanding of local standards and regulations, along with a continuous investment in R&D, inspire us to design, manufacture and supply millions of SPD’s each year to our clients who are conscious of the danger transients pose and actively take steps to eliminate the threat.",
-    aboutP2: "CITEL develops many of our critical surge protection components internally including gas discharge tubes, thermally protected varistors and high-energy varistor assemblies. This means that CITEL has expertise into every minute detail of the parts that make up an SPD. Our teams all over the globe are proud to bring our clients a comprehensive product range of surge protectors that is unmatched in customer service and product quality.",
+    aboutP1: "CITEL, your Expert in Surge Protection since 1937 - Discover our SPD solutions specially designed & manufactured in France, for safeguarding equipment & protecting installations from transient overvoltages & lightning strikes.",
+    aboutP2: "",
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Over 85 Years of Surge Expertise"
   },
@@ -230,8 +255,31 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     certifiedLogos: [
       "/Images/Certificates/taqa group.webp"
     ],
-    aboutP1: "PITTAS-DRAGNIS is a highly specialized Greek company operating for more than 30 years in the field of Lightning - Surge Protection and Grounding Systems. For every project, regardless its size, offers a quality, personalized solution. From the design and manufacturing parts to proper installation and maintenance.",
-    aboutP2: "The aim of PITTAS-DRAGNIS is the excellent cooperation and the establishment of a trust relationship with their customers. The instructed staff of the company is always ready to offer support and valid information. The high quality - competitive products that offered comply with the International, European and National standards. The range of products continues to expand and includes, among others: Early Streamer Emission arrestors TESLA-S, materials and accessories of lightning - grounding system.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Advanced Lightning Protection, Surge Protection & Foundation Earthing Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          PITTAS is a highly specialised Greek company with more than 30 years of expertise in the design, development and manufacture of advanced Lightning Protection, Surge Protection and Grounding Systems. Renowned for its engineering excellence, PITTAS has become a trusted partner for consultants, contractors and infrastructure developers seeking reliable, standards-compliant electrical protection solutions.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          The company<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s comprehensive product portfolio includes:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px" }}>
+          <li>Lightning Protection Systems : Early Streamer Emission TESLA-S as well as Frankin Rod type Air Terminals</li>
+          <li>Foundation Earthing Systems : using Galvanised Steel, Aluminium & Stainless-Steel conductors</li>
+          <li>Equipotential Bonding Components</li>
+          <li>Earthing Conductors, Clamps & Accessories</li>
+          <li>Inspection & Test Components</li>
+          <li>Custom Engineered Earthing Solutions</li>
+        </ul>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Pure Electrolytic Copper Conductors"
   },
@@ -297,8 +345,30 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Palazzoli was established in 1904, founded by Knight of Labor Federico Palazzoli, as a company specializing in electrical equipment for industrial plants for the supply of energy. For more than a century, unmatched high standards of safety and durability still remain our top priority. This commitment has made the Palazzoli brand synonymous with reliability in the electrotechnical industry, also challenged in the lighting sector with our first illuminated submarine in 1927.",
-    aboutP2: "Now Palazzoli covers an area of 84,000 square meters with 210 workers and 70 graduates and skilled workers. Its headquarters and production plant are in Brescia and its sales network is covering the main European and worldwide countries. Palazzoli is the parent company of a group composed of: Lewden in Braintree (UK), Stral in Brescia and Palazzoli Middle East in Dubai. Its catalogue, including over 5,000 products, is among the largest and most complete offer and meets, with specific solutions, all the needs of the Industry, Atex, Infrastructure and Marine sectors both for the electrical systems division and for the lighting division.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Over a Century of Excellence in Industrial Electrical Solutions :
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          PALAZZOLI offers a comprehensive portfolio of products, including:
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px" }}>
+          <li>Industrial Plugs & Socket Outlets</li>
+          <li>Switches & Switch Disconnectors</li>
+          <li>Distribution Boards & Enclosures</li>
+          <li>ATEX Electrical Equipment</li>
+          <li>Marine Electrical Solutions</li>
+          <li>Industrial & Emergency Lighting</li>
+          <li>Tunnel Lighting & Electrical Systems</li>
+          <li>Customized Electrical Solutions for OEMs and Special Applications</li>
+        </ul>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "ATEX & Hazardous Zone Certified"
   },
@@ -320,8 +390,23 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Siechem’s In-house cable design studio can design and develop any type of cable with its expertise supported by R&D team to make insulating, sheathing and jacketing compounds that any competitor can offer.",
-    aboutP2: "The company’s current production capacity is about 3000 kms of wires and cables a day of assorted sizes of wires & cables. Siechem has more than 22 million part numbers for 34 different segments/markets.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Specialty Wires &amp; Cables – Made in India
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Established in 2002, Siechem is one of India<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s leading manufacturers of specialty wires and cables, with its headquarters in Chennai and a state-of-the-art manufacturing facility in Puducherry (Pondicherry), India.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Siechem offers a comprehensive range of Automotive, Industrial, instrumentation, control, solar, railway and specialty cables, engineered to meet stringent international quality and safety standards. Renowned for innovation, reliability and superior performance, Siechem products serve diverse industries including power, infrastructure, automotive, renewable energy, railways, telecommunications and industrial manufacturing.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Operating from -60°C to +250°C"
   },
@@ -550,8 +635,29 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     certifiedLogos: [
       "/Images/Certificates/dewa.jpg"
     ],
-    aboutP1: "Palazzoli Lewden (Lewden) is a major UK and European designer of bespoke power distribution systems, robust metal-clad accessories, and specialized connection couplers. Powered by Palazzoli's industrial-grade components, Lewden delivers unparalleled durability inside challenging environments.",
-    aboutP2: "Our tailored solutions range from custom consumer units to heavy-duty power clusters for commercial construction, marine docks, and transport terminals globally.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Trusted Electrical Power Distribution Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          With over 200 years of industrial heritage, LEWDEN is a trusted manufacturer of electrical power distribution solutions for industrial, commercial and residential applications. As part of the Palazzoli Group, LEWDEN combines British engineering expertise with global innovation to deliver safe, reliable and high-quality electrical products.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Its extensive product portfolio includes control devices, isolation switches, switch fuses, enclosures, junction boxes, circuit protection devices, distribution boards, industrial plugs, connectors, socket outlets and hazardous area equipment. Designed to meet stringent international standards, LEWDEN solutions are widely used across industrial facilities, commercial buildings, infrastructure and utility projects, offering dependable performance, safety and long-term reliability.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "20px", fontWeight: "600" }}>
+          Metalcad Control devices, Isolation switches, Switch fuses, Enclosures and Junction boxes, Circuit Protection Devices, Distribution Boards, Plugs, Connectors, Socket outlets &amp; Hazardous Area equipment.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", fontStyle: "italic", opacity: 0.9 }}>
+          You can see the full range of Lewden items via their website.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Tailored UK & European Distribution"
   },
@@ -611,8 +717,37 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "LITETECH will supply lighting fixtures and associated spares and accessories meeting the quality standards and requirements.",
-    aboutP2: "",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Professional LED Lighting Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          LITETECH is a trusted provider of innovative, energy-efficient professional LED lighting solutions for commercial, industrial, infrastructure and architectural applications. Combining advanced lighting technology with contemporary design, LITETECH delivers high-performance luminaires that offer superior illumination, exceptional energy savings and long-term reliability.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          The product portfolio includes:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px", marginBottom: "20px" }}>
+          <li>Indoor LED Lighting</li>
+          <li>Architectural &amp; Commercial Lighting</li>
+          <li>Street &amp; Roadway Lighting</li>
+          <li>High-Power LED Floodlights</li>
+          <li>Façade &amp; Landscape Lighting</li>
+          <li>Industrial &amp; Warehouse Lighting</li>
+        </ul>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Designed to meet the highest standards of performance and aesthetics, LITETECH lighting solutions are specified for commercial buildings, hospitality projects, residential developments, retail spaces, public infrastructure and landmark architectural projects.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+          Engineered with premium LED components and precision optics, LITETECH products deliver high luminous efficacy, excellent colour rendering, extended service life and low maintenance costs, while significantly reducing energy consumption and environmental impact.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "High Efficiency & Bespoke Luminaires"
   },
@@ -631,10 +766,38 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "design and manufacture acoustic and optical devices for different fields of applications: mobility, industrial, and evacuation",
-    aboutP2: "",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Italian Excellence in Audible &amp; Visual Signaling Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Founded in Italy, SIRENA S.p.A. is a leading manufacturer of high-quality audible and visual signaling devices for industrial, commercial and civil applications. With decades of expertise in signaling technology, SIRENA has established itself as a trusted global brand, delivering innovative, reliable and standards-compliant solutions for safety, warning and emergency communication.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          SIRENA offers a comprehensive portfolio of products, including:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px", marginBottom: "20px" }}>
+          <li>Audible Alarms, Sirens &amp; Electronic Sounders</li>
+          <li>Buzzers &amp; Acoustic Signaling Devices</li>
+          <li>Flashing Beacons &amp; LED Warning Lights</li>
+          <li>Combined Audible-Visual Signaling Devices</li>
+          <li>Explosion-Proof (ATEX/IECEx) Signaling Equipment</li>
+          <li>Aircraft Obstruction Warning Lights</li>
+          <li>Fire Alarm &amp; Emergency Evacuation Systems</li>
+          <li>Industrial Signaling Solutions for OEM and Process Industries</li>
+        </ul>
+        <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+          Engineered for dependable performance in demanding environments, SIRENA products are widely used across industries such as oil &amp; gas, petrochemicals, power generation, manufacturing, infrastructure, marine, transportation and commercial buildings.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
-    aboutHighlight: "Italian Engineering Excellence"
+    aboutHighlight: ""
   },
   frater: {
     name: "Frater",
@@ -732,8 +895,36 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "HVTI is a premier brand specializing in high-voltage testing instrumentation and diagnostic systems. We deliver top-tier testing tools and systems designed to monitor, measure, and analyze high-voltage electrical assets such as transformers, generators, cables, and circuit breakers.",
-    aboutP2: "Our state-of-the-art products are engineered to meet the highest safety and accuracy standards, supporting power transmission, distribution networks, and industrial facilities globally to ensure operation reliability and safety.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Advanced Electrical Testing, Measurement &amp; Condition Monitoring Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          HVTI Private Limited specialises in advanced electrical testing, measurement, safety and condition monitoring solutions for the power industry. Its comprehensive range includes high-voltage test equipment, transformer diagnostics, cable testing, partial discharge detection, power quality analysers and predictive condition monitoring systems.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Serving utilities, industrial plants, renewable energy, railways, oil &amp; gas and critical infrastructure, HVTI<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s innovative solutions enhance electrical safety, improve asset reliability, reduce downtime and support predictive maintenance for efficient power system operation.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          The company<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s comprehensive portfolio includes:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px" }}>
+          <li>Electrical Testing Instruments</li>
+          <li>High Voltage Test Equipment</li>
+          <li>Power System Measurement Solutions</li>
+          <li>Transformer &amp; Substation Diagnostics</li>
+          <li>Cable Testing &amp; Fault Location Systems</li>
+          <li>Partial Discharge Detection</li>
+          <li>Condition Monitoring Systems</li>
+          <li>Electrical Safety Test Equipment</li>
+        </ul>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Advanced High-Voltage Diagnosis"
   },
@@ -779,8 +970,23 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Tigo is the worldwide leader in Flex MLPE (Module Level Power Electronics) with innovative solutions that increase energy production, enhance safety, and decrease operating costs of solar installations. Tigo’s TS4 platform maximizes the benefit of PV systems and provides customers with the most scalable, versatile, and reliable MLPE solution available.",
-    aboutP2: "Tigo was founded in Silicon Valley, California in 2007 to accelerate the adoption of solar energy worldwide",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Intelligent Solar Energy Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Founded in 2007, Tigo Energy is a global leader in intelligent solar energy solutions, offering innovative hardware and software that enhance the safety, performance and monitoring of photovoltaic (PV) systems.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Its product portfolio includes Module-level power Optimizers, Rapid Shutdown devices, energy monitoring and solar management platforms for residential, commercial and utility-scale installations. Tigo<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s advanced solutions maximise energy yield, improve system safety, simplify maintenance and reduce operating costs, helping customers achieve higher efficiency and long-term reliability from their solar investments.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "World-Class Solar Optimization"
   },
@@ -841,10 +1047,40 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Over the past 100 years, British manufacturing company Craig & Derricott have earned a strong reputation for customer service excellence and delivery of high-quality handmade products.",
-    aboutP2: "Established in 1922, Craig & Derricott specialise in the design, manufacture and overhaul of low voltage electrical control and switchgear, rail rolling stock components and LED lighting supplying to customers large and small around the world.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          British Engineering Excellence in LV Switching &amp; Industrial Control Solutions
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          With a heritage spanning over a century, Craig &amp; Derricott (C&amp;D) is a renowned British manufacturer of low voltage switchgear, industrial control equipment, rail components and LED lighting solutions. Established in 1922 and manufacturing in the United Kingdom since 1944, the company has built an outstanding reputation for engineering excellence, product reliability and exceptional customer service.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Craig &amp; Derricott designs and manufactures high-quality electrical products that serve a diverse range of industries, including industrial manufacturing, rail transportation, power generation, infrastructure, commercial buildings and OEM applications.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%", textAlign: "left" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px", fontWeight: "600" }}>
+          The company<span style={{ fontFamily: "sans-serif" }}>&apos;</span>s comprehensive product portfolio includes:
+        </p>
+        <ul style={{ listStyleType: "disc", textAlign: "left", fontSize: "17px", lineHeight: "1.8", color: "#ffffff", opacity: 0.9, paddingLeft: "20px", width: "100%", maxWidth: "800px" }}>
+          <li>Low Voltage Switchgear</li>
+          <li>Rotary Cam Switches</li>
+          <li>Electrical Isolation Switches</li>
+          <li>Automatic Transfer Switches (ATS)</li>
+          <li>Heavy-Duty Push Button Stations</li>
+          <li>Control Stations &amp; Enclosures</li>
+          <li>Motor Control Solutions</li>
+          <li>Limit Switches</li>
+          <li>Rail (Rolling Stock) Electrical Components</li>
+          <li>Industrial &amp; Commercial LED Lighting</li>
+        </ul>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
-    aboutHighlight: "British Engineered Safety Switchgear"
+    aboutHighlight: ""
   },
   wallmax: {
     name: "Wallmax",
@@ -939,8 +1175,23 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "Neelkanth Cables is a modern cable manufacturing company producing high-quality electrical conductors and wires for building construction and electrical grids.",
-    aboutP2: "With state-of-the-art extrusion lines and stringent quality control, our cables deliver safety and longevity in electrical power distribution systems.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <div style={{ fontSize: "22px", fontWeight: "700", marginBottom: "20px", color: "#E04F35" }}>
+          Quality Cabling Solutions – Made in UAE :
+        </div>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Neelkanth Cables is a leading manufacturer of high-performance Low Voltage (LV) and Medium Voltage (MV) power cables up to 35 kV, offering reliable cable solutions for industrial, commercial and infrastructure applications.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          Its comprehensive product range includes power cables, instrumentation cables, building wires and specialised conductors, engineered to deliver superior electrical performance, safety and long-term reliability. Designed to meet stringent international quality standards, Neelkanth Cables provide efficient power transmission and dependable performance across utilities, industrial plants, commercial buildings and critical infrastructure projects.
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Quality Extruded Wires"
   },
@@ -1059,8 +1310,20 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     ],
     certifiedLogos: [
     ],
-    aboutP1: "nVent ERICO offers a comprehensive range of grounding, equipotential bonding, surge protection, and lightning protection solutions.",
-    aboutP2: "Our products ensure personnel safety and equipment reliability, designed to meet or exceed international electrical safety standards across commercial and industrial infrastructure.",
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          nVent ERICO is a premier global brand specializing in electrical connection and protection solutions, offering core product categories such as grounding and earthing, lightning protection, and surge protection.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          nVent ERICO<span style={{ fontFamily: "sans-serif" }}>'</span>s CADWELD is synonymous with exothermic connections, functioning as the original pioneer and leading brand name for exothermically welded connection process of metals. CADWELD is the world<span style={{ fontFamily: "sans-serif" }}>'</span>s original exothermic welding system, Invented in 1938 and patented in 1939 by the Electric Railway Improvement Company (ERICO), the "Cadweld" proprietary name became so universally dominant in electrical and rail industries that people commonly call any exothermic or thermite-style metal bonding "cad welding"
+        </p>
+      </div>
+    ),
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Advanced Electrical Protection"
   },
@@ -1920,8 +2183,8 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
         <div className="about-overlay" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.5)" }}></div>
         <div className="about-content-card" style={{ position: "relative", zIndex: 1, background: "rgba(31, 31, 31, 0.1)", backdropFilter: "blur(10px)", padding: "40px 30px", borderRadius: "16px", width: "100%", maxWidth: "1184px", minHeight: "441px", height: "auto", color: "#ffffff", textAlign: "center", border: "1px solid rgba(255,255,255,0.2)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
           <h2 style={{ fontSize: "48px", marginBottom: "20px", fontWeight: "700" }}>About <span style={{ color: "#E04F35" }}>{brandData.name}</span></h2>
-          {brandData.aboutP1 && <p style={{ marginBottom: "15px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px" }}>{brandData.aboutP1}</p>}
-          {brandData.aboutP2 && <p style={{ marginBottom: "25px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px" }}>{brandData.aboutP2}</p>}
+          {brandData.aboutP1 && <div style={{ marginBottom: "15px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px", width: "100%" }}>{brandData.aboutP1}</div>}
+          {brandData.aboutP2 && <div style={{ marginBottom: "25px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px", width: "100%" }}>{brandData.aboutP2}</div>}
           {brandData.aboutHighlight && (
             <div className="about-highlight" style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(0, 0, 0, 0.2)", padding: "10px 25px", borderRadius: "30px", fontWeight: "600" }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#E04F35" }}>

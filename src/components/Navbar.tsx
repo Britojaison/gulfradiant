@@ -17,7 +17,7 @@ const navLinks = [
 const socialItems = [
   { label: "LinkedIn", link: "https://www.linkedin.com/company/gulf-radiant-llc-dubai/" },
   { label: "Email", link: "mailto:info@gulfradiant.com" },
-  { label: "Call", link: "tel:+97142671662" },
+  { label: "Call", link: "tel:+97142671882" },
 ];
 
 export default function Navbar() {
