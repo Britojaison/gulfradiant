@@ -428,7 +428,7 @@ export default function Homepage() {
     "BAHRA CABLES.svg", "CCG Logo.webp", "CITEL LOGO.webp", "COSMOPLAST LOGO.avif",
     "FRATER1-LOGO.webp",
     "HAUFF TECHNIK LOGO.webp", "LITETECH LOGO.webp", "NEELKANTH CABLE LOGO.webp",
-    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "OBSTA LOGO.webp",
+    "NVENT CADDY LOGO.svg", "NVENT ERICO LOGO.svg", "logo-eriflex.svg", "OBSTA LOGO.webp",
     "PALAZZOLI GROUP LOGO.webp", "PSI LOGO.webp", "ROSE LOGO.webp",
     "SIRENA LOGO.webp", "TEKAB CABLES.webp", "TIGO LOGO.webp",
     "TUBIFOR LOGO.webp", "WALLMAX LOGO.webp", "HVTI.webp"

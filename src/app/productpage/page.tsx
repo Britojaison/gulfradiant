@@ -65,6 +65,7 @@ const ALL_LOGOS = [
   { src: "/Images/product/FRATER1-LOGO.webp", brand: "Frater", link: "/product/frater", categories: ["Lighting • ACWL • Signal Lights"] },
   { src: "/Images/product/LITETECH LOGO.webp", brand: "Litetech", link: "/product/litetech", categories: ["Lighting • ACWL • Signal Lights"] },
   { src: "/Images/product/lewden.webp", brand: "Palazzoli Lewden", link: "/product/palazzolilewden", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
+  { src: "/Images/nventeriflex/logo-eriflex.svg", brand: "nVent Eriflex", link: "/product/nventeriflex", categories: ["Earthing • Lightning • Surge Protection Systems"] },
   { src: "/Images/product/extras/BG ELECTRIC LOGO.svg", brand: "BG Electric", link: "/product/bgelectric", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
   { src: "/Images/product/HVTI.webp", brand: "HVTI", link: "/product/hvti", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },
   { src: "/Images/product/TIGO LOGO.webp", brand: "Tigo", link: "/product/tigo", categories: ["Switching Accessories • Isolators Control Devices • Optimizers • Testing Equipments"] },

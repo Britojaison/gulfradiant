@@ -1327,6 +1327,39 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     aboutBg: "/Images/kumwell/bg7.svg",
     aboutHighlight: "Advanced Electrical Protection"
   },
+  nventeriflex: {
+    name: "nVent ERIFLEX",
+    heroBg: "/Images/hero_brand.jpg",
+    subtitle: "Low Voltage Distribution & Power Connections",
+    description: "Innovative copper grounding connections, flexible busbars, and distribution blocks for panel builders.",
+    website: "https://www.nvent.com/en-us/eriflex",
+    productRange: [
+      { image: "/Images/nventeriflex/distribution blocks and power blocks .png", caption: "Distribution Blocks & Power Blocks" },
+      { image: "/Images/nventeriflex/flexbus.png", caption: "ERIFLEX FlexBus" },
+      { image: "/Images/nventeriflex/flexibar.png", caption: "ERIFLEX FlexiBAR" },
+      { image: "/Images/nventeriflex/flexible power braids and shunts.png", caption: "Flexible Power Braids & Shunts" }
+    ],
+    certifiedLogos: [],
+    aboutP1: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", fontWeight: "700", lineHeight: "1.6", marginBottom: "10px", color: "#E04F35" }}>
+          nVent ERIFLEX Flexibar Flexible Busbars / Flexible Power Braids and Shunts :
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          The nVent ERIFLEX system includes Flexibar, FleXbus Power Braids, and flexible power connections. These products serve as high-performance, low-voltage power connections and alternatives to traditional heavy cables or rigid busbars.
+        </p>
+      </div>
+    ),
+    aboutP2: (
+      <div style={{ textAlign: "left", width: "100%" }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
+          nVent ERIFLEX Power Blocks & Distribution Blocks are DIN rail mounted output/input devices for connection between primary and secondary switchboards, or as main input/output links for industrial equipment.
+        </p>
+      </div>
+    ),
+    aboutBg: "/Images/kumwell/bg7.svg",
+    aboutHighlight: "Flexible Low-Voltage Solutions"
+  },
   rose: {
     name: "Rose",
     heroBg: "/Images/hero_brand.jpg",
@@ -1439,14 +1472,14 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
 
   return (
     <>
-      {brandKey === 'citel' || brandKey === 'obsta' || brandKey === 'kumwell' ? (
+      {brandData.name.toLowerCase() === 'citel' || brandData.name.toLowerCase() === 'obsta' || brandData.name.toLowerCase() === 'kumwell' ? (
         <section 
           className="brand-custom-hero-section brand-custom-padding"
         >
           <img
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
-            className="brand-custom-hero-img"
+            className={`brand-custom-hero-img ${brandData.name.toLowerCase() === 'kumwell' ? 'kumwell-custom-mobile-contain' : ''}`}
           />
           <div className="brand-hero-buttons-wrapper">
             <div className="hero-buttons" style={{ pointerEvents: "auto", display: "flex", gap: "20px" }}>
@@ -1470,7 +1503,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
           </div>
         </section>
       ) : (
-        <section className={`hero kumwell-hero ${brandKey !== 'kumwell' && brandKey !== 'citel' && brandKey !== 'obsta' ? 'other-brand-hero' : ''}`}>
+        <section className={`hero kumwell-hero ${brandData.name.toLowerCase() !== 'kumwell' && brandData.name.toLowerCase() !== 'citel' && brandData.name.toLowerCase() !== 'obsta' ? 'other-brand-hero' : ''}`}>
           <Image
             src={brandData.heroBg}
             alt={`${brandData.name} Hero background`}
@@ -2167,6 +2200,68 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
         </div>
       </section>
 
+      {brandKey === 'nventeriflex' && (
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px" }}>
+          <h2 style={{ textAlign: "center", marginBottom: "50px", fontSize: "36px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif", color: "#111" }}>
+            Catalogues
+          </h2>
+          <div className="nvent-catalogues-wrapper">
+            {[
+              { img: "thumbnail1.png", pdf: "DISTRIBUTION BLOCKS & POWER BLOCKS (pdf1).pdf", title: "Distribution Blocks & Power Blocks" },
+              { img: "thumbnail2.png", pdf: "ERIFLEX FlexBus (pdf2).pdf", title: "ERIFLEX FlexBus" },
+              { img: "thumbnail3.png", pdf: "ERIFLEX FlexiBAR (pdf3). pdf", title: "ERIFLEX FlexiBAR" },
+              { img: "thumbnail4.png", pdf: "Flexible Power Braids & Shunts (pdf 4).pdf", title: "Flexible Power Braids & Shunts" }
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={`/Images/nventeriflex/posters/${item.pdf}`}
+                download
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  width: "260px"
+                }}
+              >
+                <div style={{ position: "relative", width: "260px", height: "340px", borderRadius: "12px", overflow: "hidden", border: "1px solid #e0e0e0", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
+                  <Image
+                    src={`/Images/nventeriflex/posters/${item.img}`}
+                    alt={item.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                  <div style={{
+                    position: "absolute",
+                    bottom: "12px",
+                    right: "12px",
+                    background: "#ff5b05",
+                    color: "#fff",
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                    zIndex: 2
+                  }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </div>
+                </div>
+                <p style={{ marginTop: "16px", fontSize: "14px", fontWeight: "600", color: "#111", textAlign: "center", textTransform: "uppercase", fontFamily: "var(--font-inter), sans-serif", width: "100%" }}>
+                  {item.title}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {brandData.certifiedLogos.length > 0 && (
         <section className="certified-section" style={{ padding: "80px 0", background: "#ffffff" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: "60px", fontSize: "48px", fontWeight: "600", fontFamily: "var(--font-degular), sans-serif" }}>Certified & Approved</h2>
@@ -2185,19 +2280,39 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
           <h2 style={{ fontSize: "48px", marginBottom: "20px", fontWeight: "700" }}>About <span style={{ color: "#E04F35" }}>{brandData.name}</span></h2>
           {brandData.aboutP1 && <div style={{ marginBottom: "15px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px", width: "100%" }}>{brandData.aboutP1}</div>}
           {brandData.aboutP2 && <div style={{ marginBottom: "25px", fontSize: "18px", lineHeight: "1.6", maxWidth: "1000px", width: "100%" }}>{brandData.aboutP2}</div>}
-          {brandData.aboutHighlight && (
-            <div className="about-highlight" style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(0, 0, 0, 0.2)", padding: "10px 25px", borderRadius: "30px", fontWeight: "600" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#E04F35" }}>
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-              <span>{brandData.aboutHighlight}</span>
-            </div>
-          )}
         </div>
       </section>
 
       <style jsx global>{`
+        .nvent-catalogues-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          .kumwell-custom-mobile-contain {
+            object-fit: contain !important;
+          }
+          .nvent-catalogues-wrapper {
+            overflow-x: auto !important;
+            flex-wrap: nowrap !important;
+            justify-content: flex-start !important;
+            padding: 0 20px 20px 20px !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+          }
+          .nvent-catalogues-wrapper::-webkit-scrollbar {
+            display: none !important;
+          }
+          .nvent-catalogues-wrapper a {
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
+          }
+        }
         @media (min-width: 1025px) {
           .categories-grid {
             display: grid !important;
