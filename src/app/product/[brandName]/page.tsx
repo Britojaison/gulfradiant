@@ -1479,7 +1479,7 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
           <img
             src={brandData.heroBg}
             alt={`${brandData.name} Hero`}
-            className={`brand-custom-hero-img ${brandData.name.toLowerCase() === 'kumwell' ? 'kumwell-custom-mobile-contain' : ''}`}
+            className={`brand-custom-hero-img ${brandData.name.toLowerCase() === 'kumwell' ? 'kumwell-custom-mobile-contain kumwell-hero-img' : ''}`}
           />
           <div className="brand-hero-buttons-wrapper">
             <div className="hero-buttons" style={{ pointerEvents: "auto", display: "flex", gap: "20px" }}>

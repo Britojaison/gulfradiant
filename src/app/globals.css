@@ -4607,6 +4607,10 @@
       overflow-x: clip;
     }
 
+    .hp-hero-scroll {
+      display: none !important;
+    }
+
     /* ---- NAVBAR ---- */
     .hp-navbar {
       height: 64px;
@@ -8660,3 +8664,18 @@
 .hp-git-power-heading {
   font-size: clamp(64px, 7vw, 100px) !important;
 }
+
+@media (min-width: 1024px) {
+  .kumwell-hero-img {
+    height: 50vh !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .brand-custom-hero-section {
+    margin-top: -50px !important;
+  }
+}
+
+
