@@ -1709,18 +1709,18 @@ function DynamicBrandPageContent({ brandOverride }: DynamicBrandPageProps) {
             </button>
             <div className="kumwell-posters-wrapper citel-carousel-wrapper" style={{ overflowX: "auto", display: "flex", gap: "20px", paddingBottom: "20px", width: "100%", scrollSnapType: "x mandatory" }}>
               {[
-                { img: "1.Kumwell Exothermic Welding.webp", doc: "1.Kumwell Exothermic Welding TEXT.docx", title: "Kumwell Exothermic Welding" },
-                { img: "2.Kumwell Grounding Components.webp", doc: "2.Kumwell Grounding Components TEXT.docx", title: "Kumwell Grounding Components" },
-                { img: "3.Kumwell Isolating Spark Gap.webp", doc: "3.Kumwell Isolating Spark Gap TEXT.docx", title: "Kumwell Isolating Spark Gap" },
-                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.webp", doc: "4.Kumwell Static Earth Reels  and Remote Interlock Controlled TEXT.docx", title: "Kumwell Static Earth Reels" },
-                { img: "5.Smart Lightning Management System (SLMS).webp", doc: "5.Kumwell Smart Lightning Management System TEXT.docx", title: "Smart Lightning Management System" },
-                { img: "6.Smart Lightning Warning System (SLWS).webp", doc: "6.Kumwell Smart Lightning Warning System TEXT.docx", title: "Smart Lightning Warning System" },
-                { img: "7.Lightning Protection Components.webp", doc: "7.Kumwell Lighnting Protection System Components (TEXT).docx", title: "Lightning Protection Components" },
-                { img: "AI_Poster_Air_Termination_System.webp", doc: "Kumwell Air Termination System TEXT.docx", title: "Kumwell Air Termination System" },
-                { img: "AI_Poster_Ground_Rod.webp", doc: "Kumwell Ground Rod & Accessories TEXT.docx", title: "Kumwell Ground Rod & Accessories" },
-                { img: "AI_Poster_MEG.webp", doc: "Kumwell More Effective Grounding (MEG) TEXT.docx", title: "Kumwell More Effective Grounding" }
+                { img: "1.Kumwell Exothermic Welding.webp", pdf: "1.Kumwell Exothermic Welding.pdf", title: "Kumwell Exothermic Welding" },
+                { img: "2.Kumwell Grounding Components.webp", pdf: "2.Kumwell Grounding Components TEXT.pdf", title: "Kumwell Grounding Components" },
+                { img: "3.Kumwell Isolating Spark Gap.webp", pdf: "3.Kumwell Isolating Spark Gap TEXT.pdf", title: "Kumwell Isolating Spark Gap" },
+                { img: "4.Kumwell Static Earth Reels Monitor and Remote Interlock Controlled.webp", pdf: "4.Kumwell Static Earth Reels and Remote Interlock Controlled TEXT.pdf", title: "Kumwell Static Earth Reels" },
+                { img: "5.Smart Lightning Management System (SLMS).webp", pdf: "5.Kumwell Smart Lightning Management System TEXT.pdf", title: "Smart Lightning Management System" },
+                { img: "6.Smart Lightning Warning System (SLWS).webp", pdf: "6.Kumwell Smart Lightning Warning System TEXT.pdf", title: "Smart Lightning Warning System" },
+                { img: "7.Lightning Protection Components.webp", pdf: "7.Kumwell Lighnting Protection System Components (TEXT).pdf", title: "Lightning Protection Components" },
+                { img: "AI_Poster_Air_Termination_System.webp", pdf: "Kumwell Air Termination System TEXT.pdf", title: "Kumwell Air Termination System" },
+                { img: "AI_Poster_Ground_Rod.webp", pdf: "Kumwell Ground Rod & Accessories TEXT.pdf", title: "Kumwell Ground Rod & Accessories" },
+                { img: "AI_Poster_MEG.webp", pdf: "Kumwell More Effective Grounding (MEG) TEXT.pdf", title: "Kumwell More Effective Grounding" }
               ].map((poster, i) => (
-                <a key={i} href={`/Images/kumwell/Posters/${poster.doc}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
+                <a key={i} href={`/Images/kumwell/Posters/${poster.pdf}`} download className="kumwell-poster-item" style={{ display: "block", aspectRatio: "430/591", position: "relative", overflow: "hidden", borderRadius: "12px", border: "1px solid #333", background: "#111" }}>
                   <div style={{
                     position: "absolute",
                     top: 0,
