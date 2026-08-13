@@ -1,12 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import AboutLoading from "./loading";
 
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState("Oil & Gas");
   const [heroSlide, setHeroSlide] = useState(0);
   const [isPageReady, setIsPageReady] = useState(false);
 
@@ -61,45 +59,7 @@ export default function AboutPage() {
       setHeroSlide(prev => (prev + 1) % heroSlides.length);
     }, 8000);
     return () => clearInterval(timer);
-  }, []);
-
-  const segmentsData: { [key: string]: string[] } = {
-    "Oil & Gas": [
-      "Oil & Gas Fields — Offshore & Onshore",
-      "Hydro-carbon & Petro-chemical Projects",
-      "Refineries & Processing Plants"
-    ],
-    "Infrastructure": [
-      "Roads, Bridges & Tunnels",
-      "Railway & Metro Projects",
-      "Large Scale Housing Development",
-      "Civil Construction Projects"
-    ],
-    "Power & Utilities": [
-      "Power Plants & Sub-stations",
-      "Transmission & Distribution",
-      "Water & Desalination Plants",
-      "Sewage Treatment Plants",
-      "District Cooling Plants"
-    ],
-    "Aviation & Marine": [
-      "Airports & Aircraft Hangars",
-      "Civil Aviation Projects",
-      "Seaports & Reefer Platforms",
-      "Container Terminals & Ship Chandlers"
-    ],
-    "Industrial": [
-      "Cement, Sugar & Paper Plants",
-      "Steel & Aluminium Plants",
-      "Chemical & Fertilizer Plants",
-      "Golf Courses & Landscaping"
-    ]
-  };
-
-  const brandPartners = [
-    "image 48.png", "image 49.png", "image 50.png", "image 51.png",
-    "image 52.png", "image 53.png", "image 54.png"
-  ];
+  }, [heroSlides.length]);
 
   const productLogos = [
     "kumwell.webp", "pittas.jpg", "obo.webp", "dietzel.webp", "siechem.webp",
@@ -198,7 +158,7 @@ export default function AboutPage() {
           <div className="division-block-left">
             <h2>Electrical Division</h2>
             <p>
-              We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients' requirements & deadlines promptly & efficiently.
+              We are authorized distributors & stockists of many reputed Electrical Engineering Products which fully comply with all engineering norms and standards. With years of cumulative experience covering markets spanning various countries, our Electrical Division has the confidence & capability to meet all our clients&apos; requirements & deadlines promptly & efficiently.
             </p>
           </div>
           

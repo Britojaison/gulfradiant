@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { useState, Suspense } from "react";
 import React from "react";
@@ -123,7 +122,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
           Total Solutions for Grounding, Lightning Protection & Industrial Safety
         </div>
         <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
-          KUMWELL Corporation Public Company Limited, Thailand's leading manufacturer of grounding and lightning protection solutions, is a globally recognized technology company providing comprehensive solutions for electrical safety, infrastructure protection and industrial monitoring. GULF RADIANT has been a long-standing proud partner of KUMWELL ever since our inception in 2001, as sole authorized distributor for GCC & ME&A region.
+          KUMWELL Corporation Public Company Limited, Thailand&apos;s leading manufacturer of grounding and lightning protection solutions, is a globally recognized technology company providing comprehensive solutions for electrical safety, infrastructure protection and industrial monitoring. GULF RADIANT has been a long-standing proud partner of KUMWELL ever since our inception in 2001, as sole authorized distributor for GCC & ME&A region.
         </p>
       </div>
     ),
@@ -1320,7 +1319,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     aboutP2: (
       <div style={{ textAlign: "left", width: "100%" }}>
         <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "15px" }}>
-          nVent ERICO<span style={{ fontFamily: "sans-serif" }}>'</span>s CADWELD is synonymous with exothermic connections, functioning as the original pioneer and leading brand name for exothermically welded connection process of metals. CADWELD is the world<span style={{ fontFamily: "sans-serif" }}>'</span>s original exothermic welding system, Invented in 1938 and patented in 1939 by the Electric Railway Improvement Company (ERICO), the "Cadweld" proprietary name became so universally dominant in electrical and rail industries that people commonly call any exothermic or thermite-style metal bonding "cad welding"
+          nVent ERICO&apos;s CADWELD is synonymous with exothermic connections, functioning as the original pioneer and leading brand name for exothermically welded connection process of metals. CADWELD is the world&apos;s original exothermic welding system, Invented in 1938 and patented in 1939 by the Electric Railway Improvement Company (ERICO), the &quot;Cadweld&quot; proprietary name became so universally dominant in electrical and rail industries that people commonly call any exothermic or thermite-style metal bonding &quot;cad welding&quot;
         </p>
       </div>
     ),

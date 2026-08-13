@@ -11,7 +11,16 @@ const CATEGORIES = [
   "high ampherage pluug and sockets "
 ];
 
-const CATEGORY_MAP = [
+interface CategoryItem {
+  id: string;
+  label: string;
+  image: string;
+  desc: string;
+  objectFit?: "cover" | "contain" | "fill";
+  filter?: string;
+}
+
+const CATEGORY_MAP: CategoryItem[] = [
   {
     id: "All",
     label: "All Projects",
@@ -181,7 +190,8 @@ function ProjectsPageContent() {
   useEffect(() => {
     const cat = searchParams.get("category");
     if (cat && CATEGORIES.includes(cat)) {
-      setSelectedCategory(cat);
+      const timer = requestAnimationFrame(() => setSelectedCategory(cat));
+      return () => cancelAnimationFrame(timer);
     }
   }, [searchParams]);
 
@@ -197,18 +207,6 @@ function ProjectsPageContent() {
     window.history.pushState({}, "", url.toString());
   };
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
-
   const filteredProjects = selectedCategory === "All"
     ? PROJECTS
     : PROJECTS.filter(project => project.category === selectedCategory);
@@ -216,8 +214,6 @@ function ProjectsPageContent() {
   const filteredUpcomingProjects = selectedCategory === "All"
     ? UPCOMING_PROJECTS
     : UPCOMING_PROJECTS.filter(project => project.category === selectedCategory);
-
-  const activeCategoryData = CATEGORY_MAP.find(c => c.id === selectedCategory);
 
   return (
     <main className="projects-page-wrapper">
@@ -245,8 +241,8 @@ function ProjectsPageContent() {
                       alt={cat.label}
                       fill
                       style={{ 
-                        objectFit: (cat as any).objectFit || "cover",
-                        filter: (cat as any).filter || "none" 
+                        objectFit: cat.objectFit || "cover",
+                        filter: cat.filter || "none" 
                       }}
                       sizes="260px"
                     />

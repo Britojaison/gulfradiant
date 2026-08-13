@@ -28,7 +28,8 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
   };
 
   useEffect(() => {
-    setPortalRoot(document.body);
+    const timer = requestAnimationFrame(() => setPortalRoot(document.body));
+    return () => cancelAnimationFrame(timer);
   }, []);
 
   useEffect(() => {
@@ -36,8 +37,8 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
       if (closeTimer.current) {
         window.clearTimeout(closeTimer.current);
       }
-      setMounted(true);
-      return;
+      const timer = requestAnimationFrame(() => setMounted(true));
+      return () => cancelAnimationFrame(timer);
     }
 
     closeTimer.current = window.setTimeout(() => {
@@ -62,7 +63,7 @@ export default function MobileNav({ activePage, open: controlledOpen, onToggle }
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, onToggle]);
 
   const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     setOpen(false);

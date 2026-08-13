@@ -162,17 +162,26 @@ const getCategoryIcon = (tag: string) => {
   }
 };
 
+const HERO_VIDEOS = [
+  {
+    webm: "/Images/Home/hero video 2.webm",
+    objectPosition: "top"
+  },
+  {
+    webm: "/Images/Home/hero-video-optimized.webm",
+    objectPosition: "center"
+  }
+];
+
 export default function Homepage() {
   const router = useRouter();
   const certRef = useRef<HTMLElement | null>(null);
   const certCardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const projectsRef = useRef<HTMLElement | null>(null);
-  const projectsTrackRef = useRef<HTMLDivElement | null>(null);
   const projectsStickyRef = useRef<HTMLDivElement | null>(null);
   const cursorLinkRef = useRef<HTMLAnchorElement | null>(null);
   const projectsTopRef = useRef<HTMLDivElement | null>(null);
   const projectsViewportRef = useRef<HTMLDivElement | null>(null);
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -201,37 +210,12 @@ export default function Homepage() {
       } else {
         setFormStatus('error');
       }
-    } catch (error) {
+    } catch {
       setFormStatus('error');
     }
   };
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const [activeCertIndex, setActiveCertIndex] = useState(0);
-
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    const diffX = touchStartX.current - touchEndX.current;
-    const threshold = 50;
-    if (diffX > threshold) {
-      setActiveCertIndex((prev) => Math.min(prev + 1, certImages.length - 1));
-    } else if (diffX < -threshold) {
-      setActiveCertIndex((prev) => Math.max(prev - 1, 0));
-    }
-    touchStartX.current = 0;
-    touchEndX.current = 0;
-  };
 
   const certImages = [
     { src: "/Images/Certificates/GR-iso.jpg", alt: "GR ISO 9001" },
@@ -316,7 +300,6 @@ export default function Homepage() {
       router.push('/projects');
     };
 
-    const projectsSticky = projectsStickyRef.current;
     const projectsViewport = projectsViewportRef.current;
 
     // Attach mousemove to window to prevent circle getting stuck during fast scroll
@@ -339,16 +322,7 @@ export default function Homepage() {
         projectsViewport.removeEventListener("click", onClick);
       }
     };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -477,20 +451,9 @@ export default function Homepage() {
   const [activeHeroIndex, setActiveHeroIndex] = useState(0);
   const [playCount, setPlayCount] = useState(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  
-  const heroVideos = [
-    {
-      webm: "/Images/Home/hero video 2.webm",
-      objectPosition: "top"
-    },
-    {
-      webm: "/Images/Home/hero-video-optimized.webm",
-      objectPosition: "center"
-    }
-  ];
 
   useEffect(() => {
-    heroVideos.forEach((_, idx) => {
+    HERO_VIDEOS.forEach((_, idx) => {
       const vid = videoRefs.current[idx];
       if (vid) {
         if (idx === activeHeroIndex) {
@@ -513,7 +476,7 @@ export default function Homepage() {
       }
     } else {
       setPlayCount(0);
-      setActiveHeroIndex((idx + 1) % heroVideos.length);
+      setActiveHeroIndex((idx + 1) % HERO_VIDEOS.length);
     }
   };
 
@@ -524,7 +487,7 @@ export default function Homepage() {
     <div className="homepage-wrapper">
       {/* HERO */}
       <section className="hp-hero-new" id="home-hero">
-        {heroVideos.map((vid, idx) => (
+        {HERO_VIDEOS.map((vid, idx) => (
           <video
             key={idx}
             ref={(el) => { videoRefs.current[idx] = el; }}
@@ -597,7 +560,7 @@ export default function Homepage() {
               <span>{"- OUR EXPERTISE -"}</span>
             </div>
           </div>
-          <h2 className="hp-divisions-main-title">Region's Leading Project Solutions Specialist</h2>{/* Force reload height removal */}
+          <h2 className="hp-divisions-main-title">Region&apos;s Leading Project Solutions Specialist</h2>{/* Force reload height removal */}
 
           <div className="hp-divisions-grid-v4">
             {ELECTRICAL_CATEGORIES.map((cat) => (
@@ -870,10 +833,10 @@ export default function Homepage() {
           </div>
           <div className="hp-leadership-copy" style={{ fontSize: "clamp(18px, 1.4vw, 22px)" }}>
             <p style={{ marginBottom: "28px" }}>
-              "At Gulf Radiant, we believe that reliable engineering solutions are built through trust, quality, and long-term partnerships. For over two decades, we have proudly supported infrastructure, industrial, and energy projects across the GCC with globally trusted electrical solutions.
+              &quot;At Gulf Radiant, we believe that reliable engineering solutions are built through trust, quality, and long-term partnerships. For over two decades, we have proudly supported infrastructure, industrial, and energy projects across the GCC with globally trusted electrical solutions.
             </p>
             <p style={{ marginBottom: "28px" }}>
-              Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries."
+              Our commitment remains focused on delivering performance-driven products, technical expertise, and dependable service that meet the evolving needs of modern industries.&quot;
             </p>
 
           </div>

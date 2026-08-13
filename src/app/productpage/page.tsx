@@ -109,12 +109,14 @@ function ProductPageContent() {
   useEffect(() => {
     const cat = searchParams.get("category");
     if (cat && CATEGORIES.includes(cat)) {
-      setSelectedCategory(cat);
+      const timer = requestAnimationFrame(() => setSelectedCategory(cat));
+      return () => cancelAnimationFrame(timer);
     }
   }, [searchParams]);
 
   useEffect(() => {
-    setActiveSubcategory("All");
+    const timer = requestAnimationFrame(() => setActiveSubcategory("All"));
+    return () => cancelAnimationFrame(timer);
   }, [selectedCategory]);
 
   let filteredLogos = selectedCategory === "All"
@@ -132,8 +134,6 @@ function ProductPageContent() {
   }
 
   const isIndustrial = selectedCategory === "Industrial & Bulk Materials";
-
-
 
   useEffect(() => {
     document.documentElement.classList.add("new-prod-page-active");
@@ -172,8 +172,6 @@ function ProductPageContent() {
   };
 
 
-
-  const activeCategoryData = CATEGORY_MAP.find(c => c.id === selectedCategory);
 
   return (
     <div className="new-prod-page">
