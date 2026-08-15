@@ -1368,7 +1368,7 @@ const BRAND_DATABASE: Record<string, BrandData> = {
     productRange: [
       { image: "/Images/Rose/ABS Enclosures.webp", caption: "ABS Enclosures.webp" },
       { image: "/Images/Rose/Aluminium Enclosures.webp", caption: "Aluminium Enclosures.webp" },
-      { image: "/Images/Rose/Compact Enclosures ECO : PCI.webp", caption: "Compact Enclosures ECO : PCI.webp" },
+      { image: "/Images/Rose/Compact Enclosures ECO - PCI.webp", caption: "Compact Enclosures ECO - PCI" },
       { image: "/Images/Rose/Polycarbonate Enclosures.webp", caption: "Polycarbonate Enclosures.webp" },
       { image: "/Images/Rose/Polyester Enclosures.webp", caption: "Polyester Enclosures.webp" },
       { image: "/Images/Rose/Stainless Steel Enclosures.webp", caption: "Stainless Steel Enclosures.webp" }
