@@ -1149,6 +1149,63 @@
       min-height: auto !important;
       width: min(58vw, 750px) !important;
     }
+
+    .hp-leadership-section,
+    .hp-quote-banner-new {
+      padding: 80px 40px !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .hp-leadership-card {
+      width: 100% !important;
+      max-width: 1200px !important;
+      height: auto !important;
+      min-height: auto !important;
+      padding: 50px 40px !important;
+      gap: 36px !important;
+      grid-template-columns: 1fr 1.5fr !important;
+    }
+
+    .hp-leadership-comma-wrapper {
+      position: absolute !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: min(320px, 30vw) !important;
+      max-width: 320px !important;
+      z-index: 1 !important;
+    }
+
+    .hp-news-section-new {
+      padding: 60px 40px !important;
+    }
+
+    .hp-news-inner {
+      grid-template-columns: 1.15fr 1fr !important;
+      gap: 36px !important;
+    }
+
+    .hp-latest-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+    }
+
+    .hp-latest-item {
+      grid-template-columns: 120px minmax(0, 1fr) !important;
+      gap: 16px !important;
+    }
+
+    .hp-latest-thumb {
+      width: 120px !important;
+      height: 80px !important;
+    }
+
+    .hp-latest-copy h4 {
+      font-size: 14px !important;
+      line-height: 1.35 !important;
+      margin-bottom: 6px !important;
+    }
   }
 
   .hp-navbar-nav {
@@ -1335,29 +1392,32 @@
 
   .hp-hero-content {
     position: absolute;
-    top: 38%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    width: min(1180px, calc(100% - 48px));
-    max-width: 1180px;
+    width: min(1200px, calc(100% - 48px));
+    max-width: 1200px;
     text-align: center;
   }
 
   .hp-hero-metrics {
-    position: absolute;
-    bottom: 85px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-    flex-wrap: wrap;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin-top: 36px !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: clamp(24px, 4vw, 70px) !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
   }
 
   .hp-hero-metric {
@@ -2329,16 +2389,10 @@
 
   .hp-leadership-comma-wrapper {
     position: absolute;
-    bottom: 50px;
-    right: calc(50% - 750px);
+    bottom: 40px;
+    right: max(20px, calc(50% - 680px));
     z-index: 1;
-  }
-
-  @media (min-width: 1440px) {
-    .hp-leadership-comma-wrapper {
-      bottom: 10px;
-      right: calc(50% - 800px);
-    }
+    pointer-events: none;
   }
 
   .hp-leadership-section {
@@ -4300,9 +4354,12 @@
     }
 
     .hp-hero-metrics {
-      bottom: 20px;
-      gap: 20px;
-      padding: 0 10px;
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+      margin-top: 28px !important;
+      gap: 20px !important;
+      padding: 0 !important;
     }
 
     .hp-hero-metric-number {
@@ -5841,37 +5898,37 @@
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
-  /* Make news section wider with little margin */
-  .hp-news-section-new {}
+  /* Make news section wider on 4K & large desktop screens */
+  @media (min-width: 1441px) {
+    .hp-news-inner {
+      max-width: 1600px !important;
+      width: 100% !important;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+      gap: 60px !important;
+    }
 
-  .hp-news-inner {
-    max-width: 1600px !important;
-    width: 100% !important;
-    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr) !important;
-    gap: 60px !important;
-  }
+    .hp-news-feature-card {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 812 / 497 !important;
+    }
 
-  .hp-news-feature-card {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 812 / 497 !important;
-  }
+    .hp-news-feature h2 {
+      font-size: clamp(48px, 4vw, 64px) !important;
+    }
 
-  .hp-news-feature h2 {
-    font-size: clamp(48px, 4vw, 64px) !important;
-  }
+    .hp-news-feature-info h3 {
+      font-size: 32px !important;
+    }
 
-  .hp-news-feature-info h3 {
-    font-size: 32px !important;
-  }
+    .hp-latest-item {
+      grid-template-columns: 160px minmax(0, 1fr) !important;
+    }
 
-  .hp-latest-item {
-    grid-template-columns: 180px minmax(0, 1fr) !important;
-  }
-
-  .hp-latest-thumb {
-    width: 180px !important;
-    height: 110px !important;
+    .hp-latest-thumb {
+      width: 160px !important;
+      height: 100px !important;
+    }
   }
 
   .hp-latest-copy h4 {
@@ -5900,9 +5957,8 @@
   .hp-latest-list {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important;
-    gap: 0 !important;
+    gap: 20px !important;
+    height: auto !important;
   }
 
   /* Remove image fade-in animation and set border-radius from Figma */
@@ -8161,18 +8217,34 @@
     }
 
     .hp-hero-content {
-      top: 40% !important;
+      top: 50% !important;
       transform: translate(-50%, -50%) !important;
+      width: 100% !important;
+      padding: 0 12px !important;
     }
 
     .hp-hero-metrics {
-      gap: 12px !important;
-      bottom: 110px !important;
-      padding: 0 5px !important;
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+      margin-top: 20px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-around !important;
+      gap: 4px !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    .hp-hero-metric {
+      flex: 1 1 0px !important;
+      min-width: 0 !important;
+      text-align: center !important;
     }
 
     .hp-hero-metric-number {
-      font-size: 16px !important;
+      font-size: 15px !important;
     }
 
     .hp-hero-metric-text {

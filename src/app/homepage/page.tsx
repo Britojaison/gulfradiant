@@ -519,28 +519,28 @@ export default function Homepage() {
           <h1 className="hp-hero-title-desktop">
             <span className="hp-hero-title-nowrap">Give Your Projects</span><br /><span className="hp-hero-title-nowrap">the Right Connection</span>
           </h1>
-        </div>
-        
-        <div className="hp-hero-metrics">
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">750+</span>
-            <span className="hp-hero-metric-text">Projects</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">250+</span>
-            <span className="hp-hero-metric-text">Clients</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">25+</span>
-            <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">30+</span>
-            <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">99+</span>
-            <span className="hp-hero-metric-text">Product<br/>Categories</span>
+
+          <div className="hp-hero-metrics">
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">750+</span>
+              <span className="hp-hero-metric-text">Projects</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">250+</span>
+              <span className="hp-hero-metric-text">Clients</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">25+</span>
+              <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">30+</span>
+              <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">99+</span>
+              <span className="hp-hero-metric-text">Product<br/>Categories</span>
+            </div>
           </div>
         </div>
 
