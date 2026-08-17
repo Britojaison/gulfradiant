@@ -262,12 +262,11 @@ function ProjectsPageContent() {
       <style>{`
         @media (min-width: 1024px) {
           .new-prod-cat-grid {
-            justify-content: center !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            width: 100% !important;
-            padding-left: 0 !important;
-            padding-right: 0 !important;
+            margin: 0 auto !important;
+            width: max-content !important;
+            max-width: 100% !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
           .new-prod-cat-card {
             flex: 0 0 320px !important;

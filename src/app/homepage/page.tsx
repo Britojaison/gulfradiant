@@ -519,28 +519,28 @@ export default function Homepage() {
           <h1 className="hp-hero-title-desktop">
             <span className="hp-hero-title-nowrap">Give Your Projects</span><br /><span className="hp-hero-title-nowrap">the Right Connection</span>
           </h1>
-        </div>
-        
-        <div className="hp-hero-metrics">
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">750+</span>
-            <span className="hp-hero-metric-text">Projects</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">250+</span>
-            <span className="hp-hero-metric-text">Clients</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">25+</span>
-            <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">30+</span>
-            <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
-          </div>
-          <div className="hp-hero-metric">
-            <span className="hp-hero-metric-number">99+</span>
-            <span className="hp-hero-metric-text">Product<br/>Categories</span>
+
+          <div className="hp-hero-metrics">
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">750+</span>
+              <span className="hp-hero-metric-text">Projects</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">250+</span>
+              <span className="hp-hero-metric-text">Clients</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">25+</span>
+              <span className="hp-hero-metric-text">Years of<br/>Professionalism</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">30+</span>
+              <span className="hp-hero-metric-text">Countries Served<br/>Worldwide</span>
+            </div>
+            <div className="hp-hero-metric">
+              <span className="hp-hero-metric-number">99+</span>
+              <span className="hp-hero-metric-text">Product<br/>Categories</span>
+            </div>
           </div>
         </div>
 
@@ -709,10 +709,10 @@ export default function Homepage() {
           </div>
 
           <div className="hp-cert-right-container hp-cert-right-container-fix">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-[800px] mx-auto" aria-label="Certification approvals">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-[850px] mx-auto" aria-label="Certification approvals">
               {certImages.map((cert, idx) => (
                 <div className="relative w-full aspect-[3/2] bg-white rounded-lg flex justify-center items-center border border-white/70 shadow-[0_10px_30px_rgba(43,3,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(43,3,0,0.15),0_4px_15px_rgba(0,0,0,0.1)]" key={`${cert.src}-${idx}`}>
-                  <Image src={cert.src} alt={cert.alt} fill sizes="(max-width: 768px) 84vw, 315px" style={{ objectFit: "contain", padding: "12px" }} />
+                  <Image src={cert.src} alt={cert.alt} fill sizes="(max-width: 768px) 84vw, 350px" style={{ objectFit: "contain", padding: "8px" }} />
                 </div>
               ))}
             </div>

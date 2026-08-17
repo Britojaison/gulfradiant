@@ -1111,6 +1111,101 @@
       margin-left: 0 !important;
       left: auto !important;
     }
+
+    .hp-trusted-section .hp-trusted-grid-inner {
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 24px 16px !important;
+      width: 100% !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box {
+      width: 100% !important;
+      max-width: 140px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+      overflow: visible !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box img {
+      padding: 0 !important;
+      object-fit: contain !important;
+    }
+
+    .hp-cert-section,
+    .hp-cert-section-fix {
+      min-height: auto !important;
+      height: auto !important;
+    }
+
+    .hp-cert-content-inner,
+    .hp-cert-content-inner-fix {
+      min-height: auto !important;
+      height: auto !important;
+      padding: 60px 40px !important;
+    }
+
+    .hp-cert-right-container,
+    .hp-cert-right-container-fix {
+      min-height: auto !important;
+      width: min(58vw, 750px) !important;
+    }
+
+    .hp-leadership-section,
+    .hp-quote-banner-new {
+      padding: 80px 40px !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .hp-leadership-card {
+      width: 100% !important;
+      max-width: 1200px !important;
+      height: auto !important;
+      min-height: auto !important;
+      padding: 50px 40px !important;
+      gap: 36px !important;
+      grid-template-columns: 1fr 1.5fr !important;
+    }
+
+    .hp-leadership-comma-wrapper {
+      position: absolute !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: min(320px, 30vw) !important;
+      max-width: 320px !important;
+      z-index: 1 !important;
+    }
+
+    .hp-news-section-new {
+      padding: 60px 40px !important;
+    }
+
+    .hp-news-inner {
+      grid-template-columns: 1.15fr 1fr !important;
+      gap: 36px !important;
+    }
+
+    .hp-latest-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+    }
+
+    .hp-latest-item {
+      grid-template-columns: 120px minmax(0, 1fr) !important;
+      gap: 16px !important;
+    }
+
+    .hp-latest-thumb {
+      width: 120px !important;
+      height: 80px !important;
+    }
+
+    .hp-latest-copy h4 {
+      font-size: 14px !important;
+      line-height: 1.35 !important;
+      margin-bottom: 6px !important;
+    }
   }
 
   .hp-navbar-nav {
@@ -1297,29 +1392,32 @@
 
   .hp-hero-content {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    width: min(1180px, calc(100% - 48px));
-    max-width: 1180px;
+    width: min(1200px, calc(100% - 48px));
+    max-width: 1200px;
     text-align: center;
   }
 
   .hp-hero-metrics {
-    position: absolute;
-    bottom: 195px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-    flex-wrap: wrap;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin-top: 36px !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: clamp(24px, 4vw, 70px) !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
   }
 
   .hp-hero-metric {
@@ -1956,8 +2054,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: min(45vw, 800px);
-    min-height: 100vh;
+    width: min(58vw, 850px);
+    flex: 1 1 auto;
     justify-content: center;
   }
 
@@ -2070,9 +2168,10 @@
 
   .hp-trusted-section .hp-trusted-logo-box {
     position: relative;
-    width: 160px;
-    height: 110px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 150px;
+    height: 90px;
+    overflow: visible;
     background: transparent;
     margin: 0 auto;
   }
@@ -2290,16 +2389,10 @@
 
   .hp-leadership-comma-wrapper {
     position: absolute;
-    bottom: 50px;
-    right: calc(50% - 750px);
+    bottom: 40px;
+    right: max(20px, calc(50% - 680px));
     z-index: 1;
-  }
-
-  @media (min-width: 1440px) {
-    .hp-leadership-comma-wrapper {
-      bottom: 10px;
-      right: calc(50% - 800px);
-    }
+    pointer-events: none;
   }
 
   .hp-leadership-section {
@@ -3710,18 +3803,17 @@
 
   /* Grid & Cards */
   .certs-container {
-    max-width: 100%;
-    margin: 0;
+    max-width: 1440px !important;
+    margin: 0 auto !important;
     padding: 0 40px !important;
   }
 
   .certs-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     gap: 40px;
     justify-content: center;
   }
-
   .cert-card {
     background: rgba(255, 255, 255, 0.8) !important;
     border-radius: 12px;
@@ -4240,7 +4332,7 @@
       object-position: left center !important;
     }
 
-    /* ---- ALL HEROES (TABLET) ---- */
+    /* ---- ALL HEROES (TABLET & SMALL LAPTOP) ---- */
     .hp-hero-new,
     .prod-hero,
     .about-hero,
@@ -4248,7 +4340,9 @@
     .clients-hero,
     .certs-hero {
       height: 50vh !important;
-      min-height: 320px !important;
+      min-height: 50vh !important;
+      max-height: 50vh !important;
+      width: 100% !important;
     }
 
     .hp-hero-content {
@@ -4259,9 +4353,12 @@
     }
 
     .hp-hero-metrics {
-      bottom: 20px;
-      gap: 20px;
-      padding: 0 10px;
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+      margin-top: 28px !important;
+      gap: 20px !important;
+      padding: 0 !important;
     }
 
     .hp-hero-metric-number {
@@ -4273,8 +4370,7 @@
     }
 
     .hp-hero-scroll {
-      display: inline-flex !important;
-      bottom: 20px !important;
+      display: none !important;
     }
 
     .hp-hero-content h1 {
@@ -4333,18 +4429,21 @@
     }
 
     .hp-trusted-grid-inner {
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 14px;
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 24px 12px !important;
     }
 
     .hp-trusted-logo-box {
-      height: auto;
-      aspect-ratio: 427 / 212;
-      border-radius: 18px;
+      width: 100% !important;
+      max-width: 140px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+      aspect-ratio: unset !important;
+      border-radius: 0 !important;
     }
 
     .hp-trusted-logo-box img {
-      padding: 24px 36px !important;
+      padding: 0 !important;
     }
 
     .hp-projects-section-new {
@@ -4375,9 +4474,7 @@
       height: 100% !important;
     }
 
-    .hp-projects-viewport {
-      
-    }
+    .hp-projects-viewport {}
 
     .hp-footer-locations {
       display: flex;
@@ -4806,13 +4903,15 @@
     }
 
     /* ---- CERTIFICATION SECTION ---- */
-    .hp-cert-section, .hp-cert-section-fix {
+    .hp-cert-section,
+    .hp-cert-section-fix {
       height: fit-content !important;
       min-height: 0 !important;
       max-height: none !important;
     }
 
-    .hp-cert-content-inner, .hp-cert-content-inner-fix {
+    .hp-cert-content-inner,
+    .hp-cert-content-inner-fix {
       position: relative;
       min-height: 0 !important;
       height: fit-content !important;
@@ -4824,7 +4923,8 @@
       justify-content: flex-start;
     }
 
-    .hp-cert-left, .hp-cert-left-fix {
+    .hp-cert-left,
+    .hp-cert-left-fix {
       flex: none !important;
       width: 100% !important;
       height: auto !important;
@@ -4834,7 +4934,8 @@
       font-size: 28px;
     }
 
-    .hp-cert-right-container, .hp-cert-right-container-fix {
+    .hp-cert-right-container,
+    .hp-cert-right-container-fix {
       width: 100%;
       align-items: center;
       min-height: auto;
@@ -4943,9 +5044,7 @@
       height: 100% !important;
     }
 
-    .hp-projects-viewport {
-      
-    }
+    .hp-projects-viewport {}
 
     .hp-footer-locations {
       gap: 16px;
@@ -5133,7 +5232,7 @@
     .hp-footer-locations-col {
       grid-column: span 2 !important;
     }
-    
+
     .hp-footer-locations {
       gap: 20px !important;
     }
@@ -5798,37 +5897,37 @@
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
-  /* Make news section wider with little margin */
-  .hp-news-section-new {}
+  /* Make news section wider on 4K & large desktop screens */
+  @media (min-width: 1441px) {
+    .hp-news-inner {
+      max-width: 1600px !important;
+      width: 100% !important;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+      gap: 60px !important;
+    }
 
-  .hp-news-inner {
-    max-width: 1600px !important;
-    width: 100% !important;
-    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr) !important;
-    gap: 60px !important;
-  }
+    .hp-news-feature-card {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 812 / 497 !important;
+    }
 
-  .hp-news-feature-card {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 812 / 497 !important;
-  }
+    .hp-news-feature h2 {
+      font-size: clamp(48px, 4vw, 64px) !important;
+    }
 
-  .hp-news-feature h2 {
-    font-size: clamp(48px, 4vw, 64px) !important;
-  }
+    .hp-news-feature-info h3 {
+      font-size: 32px !important;
+    }
 
-  .hp-news-feature-info h3 {
-    font-size: 32px !important;
-  }
+    .hp-latest-item {
+      grid-template-columns: 160px minmax(0, 1fr) !important;
+    }
 
-  .hp-latest-item {
-    grid-template-columns: 180px minmax(0, 1fr) !important;
-  }
-
-  .hp-latest-thumb {
-    width: 180px !important;
-    height: 110px !important;
+    .hp-latest-thumb {
+      width: 160px !important;
+      height: 100px !important;
+    }
   }
 
   .hp-latest-copy h4 {
@@ -5857,9 +5956,8 @@
   .hp-latest-list {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important;
-    gap: 0 !important;
+    gap: 20px !important;
+    height: auto !important;
   }
 
   /* Remove image fade-in animation and set border-radius from Figma */
@@ -6087,7 +6185,7 @@
     z-index: 2 !important;
   }
 
-  .new-prod-brands-section-fade-fix > * {
+  .new-prod-brands-section-fade-fix>* {
     pointer-events: auto !important;
   }
 
@@ -6656,6 +6754,7 @@
   .other-brand-hero .hero-overlay {
     background: rgba(0, 0, 0, 0.3) !important;
   }
+
   .kumwell-hero .hero-title {
     font-family: var(--font-degular), sans-serif !important;
   }
@@ -6857,7 +6956,7 @@
     margin: 0 auto;
     position: relative;
   }
-  
+
   .hp-divisions-grid-v4::before {
     content: '';
     position: absolute;
@@ -6891,6 +6990,7 @@
     display: flex !important;
     flex-direction: column !important;
   }
+
   .hp-cat-card:nth-child(4) {
     grid-column: 2 / span 2 !important;
   }
@@ -8114,31 +8214,47 @@
       font-size: 26px !important;
       line-height: 1.2 !important;
     }
-    
+
     .hp-hero-content {
-      top: 40% !important;
+      top: 50% !important;
       transform: translate(-50%, -50%) !important;
+      width: 100% !important;
+      padding: 0 12px !important;
     }
-    
+
     .hp-hero-metrics {
-      gap: 12px !important;
-      bottom: 110px !important;
-      padding: 0 5px !important;
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+      margin-top: 20px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-around !important;
+      gap: 4px !important;
+      padding: 0 !important;
+      width: 100% !important;
     }
-    
+
+    .hp-hero-metric {
+      flex: 1 1 0px !important;
+      min-width: 0 !important;
+      text-align: center !important;
+    }
+
     .hp-hero-metric-number {
-      font-size: 16px !important;
+      font-size: 15px !important;
     }
-    
+
     .hp-hero-metric-text {
       font-size: 9px !important;
       line-height: 1.1 !important;
     }
-    
+
     .hp-hero-scroll {
       bottom: 15px !important;
     }
-    
+
     .hp-hero-scroll img {
       width: 24px !important;
     }
@@ -8222,13 +8338,15 @@
       justify-content: flex-start !important;
     }
 
-    .hp-cert-section, .hp-cert-section-fix {
+    .hp-cert-section,
+    .hp-cert-section-fix {
       height: fit-content !important;
       min-height: 0 !important;
       max-height: none !important;
     }
 
-    .hp-cert-content-inner, .hp-cert-content-inner-fix {
+    .hp-cert-content-inner,
+    .hp-cert-content-inner-fix {
       position: relative !important;
       min-height: 0 !important;
       height: fit-content !important;
@@ -8239,13 +8357,15 @@
       justify-content: flex-start !important;
     }
 
-    .hp-cert-left, .hp-cert-left-fix {
+    .hp-cert-left,
+    .hp-cert-left-fix {
       flex: none !important;
       width: 100% !important;
       height: auto !important;
     }
 
-    .hp-cert-right-container, .hp-cert-right-container-fix {
+    .hp-cert-right-container,
+    .hp-cert-right-container-fix {
       width: 100% !important;
       min-height: auto !important;
       height: auto !important;
@@ -8299,10 +8419,24 @@
     .hp-trusted-section .hp-trusted-grid-inner {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
+      gap: 28px 16px !important;
     }
 
     .hp-trusted-section .hp-trusted-grid-inner>div {
       display: flex !important;
+      justify-content: center !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box {
+      width: 100% !important;
+      max-width: 180px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box img {
+      object-fit: contain !important;
+      padding: 0 !important;
     }
   }
 
@@ -8602,6 +8736,7 @@
       position: relative !important;
       display: block !important;
     }
+
     .brand-custom-hero-img {
       position: absolute !important;
       top: 0 !important;
@@ -8613,9 +8748,11 @@
       object-fit: cover !important;
       z-index: 1 !important;
     }
+
     .brand-custom-hero-img.kumwell-custom-mobile-contain {
       object-fit: contain !important;
     }
+
     .brand-hero-buttons-wrapper {
       position: absolute !important;
       bottom: 15px !important;
@@ -8627,6 +8764,7 @@
       line-height: normal !important;
       z-index: 10 !important;
     }
+
     .brand-hero-buttons-wrapper .hero-buttons {
       display: flex !important;
       flex-direction: column !important;
@@ -8636,6 +8774,7 @@
       margin: 0 !important;
       align-items: flex-start !important;
     }
+
     .brand-hero-buttons-wrapper .hero-buttons a {
       width: 260px !important;
       max-width: 260px !important;
@@ -8645,37 +8784,38 @@
       text-align: center !important;
     }
   }
-@media (max-width: 768px) {
-  .hp-divisions-section,
-  .hp-products-dist,
-  .hp-stats-container,
-  .why-gr,
-  .hp-trusted-section,
-  .hp-quote-banner-new,
-  .hp-news-section-new,
-  .hp-contact-banner-new {
-    padding-top: 56px !important;
+
+  @media (max-width: 768px) {
+
+    .hp-divisions-section,
+    .hp-products-dist,
+    .hp-stats-container,
+    .why-gr,
+    .hp-trusted-section,
+    .hp-quote-banner-new,
+    .hp-news-section-new,
+    .hp-contact-banner-new {
+      padding-top: 56px !important;
+    }
+
+    .hp-cert-content-inner {
+      padding-top: 56px !important;
+    }
   }
-  .hp-cert-content-inner {
-    padding-top: 56px !important;
+
+  .hp-git-power-heading {
+    font-size: clamp(64px, 7vw, 100px) !important;
   }
-}
 
-.hp-git-power-heading {
-  font-size: clamp(64px, 7vw, 100px) !important;
-}
-
-@media (min-width: 1024px) {
-  .kumwell-hero-img {
-    height: 50vh !important;
-    object-fit: cover !important;
+  @media (min-width: 1024px) {
+    .kumwell-hero-img {
+      height: 50vh !important;
+      object-fit: cover !important;
+    }
   }
-}
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .brand-custom-hero-section {
-    margin-top: -50px !important;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .brand-custom-hero-section {
+      margin-top: -50px !important;
+    }
   }
-}
-
-

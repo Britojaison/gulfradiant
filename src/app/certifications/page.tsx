@@ -190,9 +190,14 @@ export default function CertificationsPage() {
 
       <style jsx global>{`
         /* GRID & CARDS LAYOUT */
+        .certs-container {
+          max-width: 1440px !important;
+          margin: 0 auto !important;
+          padding: 0 40px !important;
+        }
         .certs-grid {
           display: grid !important;
-          grid-template-columns: repeat(4, 1fr) !important;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
           gap: 40px !important;
           justify-content: center !important;
         }
