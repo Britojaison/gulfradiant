@@ -1112,6 +1112,25 @@
       left: auto !important;
     }
 
+    .hp-trusted-section .hp-trusted-grid-inner {
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 24px 16px !important;
+      width: 100% !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box {
+      width: 100% !important;
+      max-width: 140px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+      overflow: visible !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box img {
+      padding: 0 !important;
+      object-fit: contain !important;
+    }
+
     .hp-cert-section,
     .hp-cert-section-fix {
       min-height: auto !important;
@@ -1122,12 +1141,13 @@
     .hp-cert-content-inner-fix {
       min-height: auto !important;
       height: auto !important;
-      padding: 80px 48px !important;
+      padding: 60px 40px !important;
     }
 
     .hp-cert-right-container,
     .hp-cert-right-container-fix {
       min-height: auto !important;
+      width: min(58vw, 750px) !important;
     }
   }
 
@@ -1315,7 +1335,7 @@
 
   .hp-hero-content {
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -1327,7 +1347,7 @@
 
   .hp-hero-metrics {
     position: absolute;
-    bottom: 195px;
+    bottom: 85px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -2088,9 +2108,10 @@
 
   .hp-trusted-section .hp-trusted-logo-box {
     position: relative;
-    width: 160px;
-    height: 110px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 150px;
+    height: 90px;
+    overflow: visible;
     background: transparent;
     margin: 0 auto;
   }
@@ -4258,15 +4279,16 @@
       object-position: left center !important;
     }
 
-    /* ---- ALL HEROES (TABLET) ---- */
+    /* ---- ALL HEROES (TABLET & SMALL LAPTOP) ---- */
     .hp-hero-new,
     .prod-hero,
     .about-hero,
     .projects-hero,
     .clients-hero,
     .certs-hero {
-      height: 100vh !important;
-      min-height: 100vh !important;
+      height: 50vh !important;
+      min-height: 50vh !important;
+      max-height: 50vh !important;
       width: 100% !important;
     }
 
@@ -4351,18 +4373,21 @@
     }
 
     .hp-trusted-grid-inner {
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 14px;
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 24px 12px !important;
     }
 
     .hp-trusted-logo-box {
-      height: auto;
-      aspect-ratio: 427 / 212;
-      border-radius: 18px;
+      width: 100% !important;
+      max-width: 140px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+      aspect-ratio: unset !important;
+      border-radius: 0 !important;
     }
 
     .hp-trusted-logo-box img {
-      padding: 24px 36px !important;
+      padding: 0 !important;
     }
 
     .hp-projects-section-new {
@@ -8323,10 +8348,24 @@
     .hp-trusted-section .hp-trusted-grid-inner {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
+      gap: 28px 16px !important;
     }
 
     .hp-trusted-section .hp-trusted-grid-inner>div {
       display: flex !important;
+      justify-content: center !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box {
+      width: 100% !important;
+      max-width: 180px !important;
+      height: 80px !important;
+      margin: 0 auto !important;
+    }
+
+    .hp-trusted-section .hp-trusted-logo-box img {
+      object-fit: contain !important;
+      padding: 0 !important;
     }
   }
 
