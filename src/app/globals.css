@@ -1111,6 +1111,9 @@
       margin-left: 0 !important;
       left: auto !important;
     }
+    .hp-hero-scroll {
+      display: none !important;
+    }
   }
 
   .hp-navbar-nav {
@@ -4273,8 +4276,7 @@
     }
 
     .hp-hero-scroll {
-      display: inline-flex !important;
-      bottom: 20px !important;
+      display: none !important;
     }
 
     .hp-hero-content h1 {
@@ -4375,9 +4377,7 @@
       height: 100% !important;
     }
 
-    .hp-projects-viewport {
-      
-    }
+    .hp-projects-viewport {}
 
     .hp-footer-locations {
       display: flex;
@@ -4806,13 +4806,15 @@
     }
 
     /* ---- CERTIFICATION SECTION ---- */
-    .hp-cert-section, .hp-cert-section-fix {
+    .hp-cert-section,
+    .hp-cert-section-fix {
       height: fit-content !important;
       min-height: 0 !important;
       max-height: none !important;
     }
 
-    .hp-cert-content-inner, .hp-cert-content-inner-fix {
+    .hp-cert-content-inner,
+    .hp-cert-content-inner-fix {
       position: relative;
       min-height: 0 !important;
       height: fit-content !important;
@@ -4824,7 +4826,8 @@
       justify-content: flex-start;
     }
 
-    .hp-cert-left, .hp-cert-left-fix {
+    .hp-cert-left,
+    .hp-cert-left-fix {
       flex: none !important;
       width: 100% !important;
       height: auto !important;
@@ -4834,7 +4837,8 @@
       font-size: 28px;
     }
 
-    .hp-cert-right-container, .hp-cert-right-container-fix {
+    .hp-cert-right-container,
+    .hp-cert-right-container-fix {
       width: 100%;
       align-items: center;
       min-height: auto;
@@ -4943,9 +4947,7 @@
       height: 100% !important;
     }
 
-    .hp-projects-viewport {
-      
-    }
+    .hp-projects-viewport {}
 
     .hp-footer-locations {
       gap: 16px;
@@ -5133,7 +5135,7 @@
     .hp-footer-locations-col {
       grid-column: span 2 !important;
     }
-    
+
     .hp-footer-locations {
       gap: 20px !important;
     }
@@ -6087,7 +6089,7 @@
     z-index: 2 !important;
   }
 
-  .new-prod-brands-section-fade-fix > * {
+  .new-prod-brands-section-fade-fix>* {
     pointer-events: auto !important;
   }
 
@@ -6656,6 +6658,7 @@
   .other-brand-hero .hero-overlay {
     background: rgba(0, 0, 0, 0.3) !important;
   }
+
   .kumwell-hero .hero-title {
     font-family: var(--font-degular), sans-serif !important;
   }
@@ -6857,7 +6860,7 @@
     margin: 0 auto;
     position: relative;
   }
-  
+
   .hp-divisions-grid-v4::before {
     content: '';
     position: absolute;
@@ -6891,6 +6894,7 @@
     display: flex !important;
     flex-direction: column !important;
   }
+
   .hp-cat-card:nth-child(4) {
     grid-column: 2 / span 2 !important;
   }
@@ -8114,31 +8118,31 @@
       font-size: 26px !important;
       line-height: 1.2 !important;
     }
-    
+
     .hp-hero-content {
       top: 40% !important;
       transform: translate(-50%, -50%) !important;
     }
-    
+
     .hp-hero-metrics {
       gap: 12px !important;
       bottom: 110px !important;
       padding: 0 5px !important;
     }
-    
+
     .hp-hero-metric-number {
       font-size: 16px !important;
     }
-    
+
     .hp-hero-metric-text {
       font-size: 9px !important;
       line-height: 1.1 !important;
     }
-    
+
     .hp-hero-scroll {
       bottom: 15px !important;
     }
-    
+
     .hp-hero-scroll img {
       width: 24px !important;
     }
@@ -8222,13 +8226,15 @@
       justify-content: flex-start !important;
     }
 
-    .hp-cert-section, .hp-cert-section-fix {
+    .hp-cert-section,
+    .hp-cert-section-fix {
       height: fit-content !important;
       min-height: 0 !important;
       max-height: none !important;
     }
 
-    .hp-cert-content-inner, .hp-cert-content-inner-fix {
+    .hp-cert-content-inner,
+    .hp-cert-content-inner-fix {
       position: relative !important;
       min-height: 0 !important;
       height: fit-content !important;
@@ -8239,13 +8245,15 @@
       justify-content: flex-start !important;
     }
 
-    .hp-cert-left, .hp-cert-left-fix {
+    .hp-cert-left,
+    .hp-cert-left-fix {
       flex: none !important;
       width: 100% !important;
       height: auto !important;
     }
 
-    .hp-cert-right-container, .hp-cert-right-container-fix {
+    .hp-cert-right-container,
+    .hp-cert-right-container-fix {
       width: 100% !important;
       min-height: auto !important;
       height: auto !important;
@@ -8602,6 +8610,7 @@
       position: relative !important;
       display: block !important;
     }
+
     .brand-custom-hero-img {
       position: absolute !important;
       top: 0 !important;
@@ -8613,9 +8622,11 @@
       object-fit: cover !important;
       z-index: 1 !important;
     }
+
     .brand-custom-hero-img.kumwell-custom-mobile-contain {
       object-fit: contain !important;
     }
+
     .brand-hero-buttons-wrapper {
       position: absolute !important;
       bottom: 15px !important;
@@ -8627,6 +8638,7 @@
       line-height: normal !important;
       z-index: 10 !important;
     }
+
     .brand-hero-buttons-wrapper .hero-buttons {
       display: flex !important;
       flex-direction: column !important;
@@ -8636,6 +8648,7 @@
       margin: 0 !important;
       align-items: flex-start !important;
     }
+
     .brand-hero-buttons-wrapper .hero-buttons a {
       width: 260px !important;
       max-width: 260px !important;
@@ -8645,37 +8658,38 @@
       text-align: center !important;
     }
   }
-@media (max-width: 768px) {
-  .hp-divisions-section,
-  .hp-products-dist,
-  .hp-stats-container,
-  .why-gr,
-  .hp-trusted-section,
-  .hp-quote-banner-new,
-  .hp-news-section-new,
-  .hp-contact-banner-new {
-    padding-top: 56px !important;
+
+  @media (max-width: 768px) {
+
+    .hp-divisions-section,
+    .hp-products-dist,
+    .hp-stats-container,
+    .why-gr,
+    .hp-trusted-section,
+    .hp-quote-banner-new,
+    .hp-news-section-new,
+    .hp-contact-banner-new {
+      padding-top: 56px !important;
+    }
+
+    .hp-cert-content-inner {
+      padding-top: 56px !important;
+    }
   }
-  .hp-cert-content-inner {
-    padding-top: 56px !important;
+
+  .hp-git-power-heading {
+    font-size: clamp(64px, 7vw, 100px) !important;
   }
-}
 
-.hp-git-power-heading {
-  font-size: clamp(64px, 7vw, 100px) !important;
-}
-
-@media (min-width: 1024px) {
-  .kumwell-hero-img {
-    height: 50vh !important;
-    object-fit: cover !important;
+  @media (min-width: 1024px) {
+    .kumwell-hero-img {
+      height: 50vh !important;
+      object-fit: cover !important;
+    }
   }
-}
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .brand-custom-hero-section {
-    margin-top: -50px !important;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .brand-custom-hero-section {
+      margin-top: -50px !important;
+    }
   }
-}
-
-
