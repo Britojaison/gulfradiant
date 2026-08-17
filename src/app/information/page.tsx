@@ -321,18 +321,17 @@ export default function InformationPage() {
 
         /* GRID & CARDS FIGMA EXACT */
         .info-grid-figma-tight {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          gap: 30px;
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 30px !important;
           width: 100%;
           max-width: 1350px;
           margin: 0 auto;
         }
 
         .info-card-figma-exact {
-          width: 100%;
-          max-width: 315px;
+          width: 100% !important;
+          max-width: 100% !important;
           margin: 0;
           height: 282px;
           opacity: 0;
@@ -408,7 +407,7 @@ export default function InformationPage() {
           justify-content: center;
           border-radius: 8px;
           font-weight: 600;
-          font-size: 24px;
+          font-size: 20px !important;
           transition: all 0.3s ease;
           font-family: var(--font-degular), sans-serif;
         }
@@ -452,14 +451,29 @@ export default function InformationPage() {
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1300px) {
-          /* Flexbox handles wrapping automatically now */
+        @media (max-width: 1350px) {
+          .info-grid-figma-tight {
+            grid-template-columns: repeat(3, 1fr) !important;
+            justify-content: center !important;
+          }
         }
 
         @media (max-width: 1024px) {
           .section-header-figma-centered h2 { font-size: 36px !important; font-weight: 500 !important; }
           .section-description-centered { font-size: 18px !important; }
           .info-hero-content h1 { font-size: 50px !important; font-weight: 500 !important; }
+        }
+
+        @media (max-width: 900px) {
+          .info-grid-figma-tight {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+
+        @media (max-width: 680px) {
+          .info-card-figma-exact {
+            max-width: 100% !important;
+          }
         }
 
         @media (max-width: 600px) {
@@ -469,6 +483,9 @@ export default function InformationPage() {
           .section-header-figma-centered h2 { font-size: 28px !important; }
           .section-description-centered { font-size: 16px !important; }
           .download-all-right-wrapper { justify-content: center; margin-top: 30px; }
+          .info-grid-figma-tight {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
     </div>
