@@ -220,7 +220,7 @@ function ProjectsPageContent() {
       {/* 1ST SECTION: HERO & CATEGORIES */}
       <section className="new-prod-hero-section" style={{ backgroundImage: "url('/Images/Certifications/bg.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
-        <div className="new-prod-section-inner" style={{ paddingTop: "60px" }}>
+        <div className="new-prod-section-inner">
           <div className="new-prod-header-row">
             <h1 className="new-prod-title projects-main-heading" style={{ fontFamily: "var(--font-degular), sans-serif", fontWeight: "500" }}>Our Project Portfolio</h1>
           </div>
