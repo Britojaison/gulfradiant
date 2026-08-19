@@ -1164,7 +1164,7 @@
       min-height: auto !important;
       padding: 50px 40px !important;
       gap: 36px !important;
-      grid-template-columns: 1fr 1.5fr !important;
+      grid-template-columns: 1fr 1.5fr;
     }
 
     .hp-leadership-comma-wrapper {
@@ -8461,13 +8461,20 @@
       width: calc(100% - 64px) !important;
       /* 32px margin on each side for tablet */
       border-radius: 16px !important;
+      grid-template-columns: 1fr !important;
+      height: auto !important;
+      min-height: auto !important;
     }
   }
 
   @media (max-width: 768px) {
     .hp-leadership-card {
-      width: calc(100% - 48px) !important;
-      /* 24px margin on each side for mobile */
+      width: calc(100% - 32px) !important;
+      /* 16px margin on each side for mobile */
+      grid-template-columns: 1fr !important;
+      height: auto !important;
+      min-height: auto !important;
+      padding: 36px 20px 70px !important;
     }
   }
 
