@@ -226,20 +226,26 @@ export default function CertificationsPage() {
           }
           .certs-hero {
             height: auto !important;
-            min-height: 50vh !important;
+            min-height: 320px !important;
+            max-height: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: flex-start !important;
-            padding-top: 100px !important;
+            padding-top: 130px !important;
             padding-bottom: 40px !important;
           }
           .certs-hero-content {
             position: relative !important;
             top: auto !important;
             transform: none !important;
-            left: 40px !important;
+            left: 0 !important;
+            right: 0 !important;
             max-width: 100% !important;
+            width: 100% !important;
             padding-top: 0 !important;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            box-sizing: border-box !important;
           }
           .certs-hero-title {
             font-size: 36px !important;
@@ -269,21 +275,26 @@ export default function CertificationsPage() {
           }
           .certs-hero {
             height: auto !important;
-            min-height: 50vh !important;
+            min-height: 320px !important;
+            max-height: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: flex-start !important;
-            padding-top: 100px !important;
+            padding-top: 120px !important;
             padding-bottom: 40px !important;
           }
           .certs-hero-content {
             position: relative !important;
             top: auto !important;
             transform: none !important;
-            left: 20px !important;
-            right: 20px !important;
+            left: 0 !important;
+            right: 0 !important;
             max-width: 100% !important;
+            width: 100% !important;
             padding-top: 0 !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            box-sizing: border-box !important;
           }
           .certs-hero-title {
             font-size: 28px !important;
