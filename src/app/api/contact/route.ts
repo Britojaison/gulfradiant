@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const data = await req.json();
 
     // 1. Send data to Google Sheets via Apps Script Web App
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzEHCyXeGU_YXbA4NCegzCAkigQPsta_5PDc1pw2RDqZ_0WRTK__yfOSoBLr-QCFOIazA/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwmo32mYIzRtVWa1mT18Nul8WjHpOnTkg2kno8k66XByor3rVvZpAwonnftZDotjCBBjg/exec';
 
     try {
       await fetch(scriptUrl, {
